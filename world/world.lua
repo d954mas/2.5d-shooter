@@ -3,6 +3,7 @@ local RX = require "libs.rx"
 local STATE = require "world.state.state"
 local TAG = "World"
 local RESET_SAVE = false
+local LEVELS = require "world.levels"
 
 ---@class World:Observable
 local M = COMMON.class("World")
@@ -17,6 +18,11 @@ function M:initialize()
 	self.autosave_dt = 0
 	self.autosave_time = 5
 	self:reset()
+end
+
+function M:load_level(name)
+	assert(not self.level,"lvl alredy loaded")
+	self.level = LEVELS.load_level(name)
 end
 
 
