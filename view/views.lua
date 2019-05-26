@@ -1,30 +1,25 @@
 local COMMON = require "libs.common"
 local RX = require "libs.rx"
+local View = require "view.view_base"
 
----@class View
-local View = COMMON.class("ViewBase")
+--Incapsulate logic for view.
 
-local STATES = {SHOW = "SHOW", HIDE = "HIDE", DISPOSED = "DISPOSED"}
+---@class Views
+local Views = COMMON.class("Views")
+local STATES = View.static.STATES
 
-View.static.STATES = STATES
-
-function View:initialize()
-	self.states = STATES
+function Views:initialize()
 	self.state = STATES.DISPOSED
+	self.scheduler = RX.CooperativeScheduler.create()
 end
 
-function View:bind_vh()
-
-end
 
 function View:create(root_node_name)
 	assert(not self.root, "view already created")
 	assert(self.state == STATES.DISPOSED)
-	self.root_node_name = root_node_name
-	self.root = assert(gui.get_node(root_node_name))
-	self:bind_vh()
+	self.root = root_node_name
 	self.state = STATES.HIDE
-	self.scheduler = RX.CooperativeScheduler.create()
+
 end
 
 function View:dispose()
@@ -48,5 +43,7 @@ function View:update(dt)
 end
 
 function View:on_input(action_id,action) end
+
+function View:on_message( message_id, message, sender) end
 
 return View
