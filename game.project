@@ -1,7 +1,7 @@
 [project]
 title = DTFJam
 version = 0.1.0
-dependencies = https://github.com/subsoap/defos/archive/master.zip
+dependencies = https://github.com/subsoap/defos/archive/master.zip,https://github.com/dapetcu21/defold-fmod/archive/v1.0.5.zip
 custom_resources = 
 bundle_exclude_resources = 
 
@@ -22,7 +22,8 @@ update_frequency = 60
 
 [physics]
 scale = 0.02
-type = 2D
+type = 3D
+debug = 1
 
 [script]
 shared_state = 1
