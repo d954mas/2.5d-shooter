@@ -1,0 +1,31 @@
+local COMMON = require "libs.common"
+local LOADER = require "libs.sm.loader"
+local TAG = "SceneLoader"
+
+--LOAD COLLECTION PROXY. WHEN LOAD DONE SEND MESSAGE TO CALLER
+
+local function load_done(self, message_id, message, sender)
+	COMMON.i("load_done:" .. sender, TAG)
+	LOADER.load_done(sender)
+end
+
+local function start_load(self, message_id, message, sender)
+	COMMON.i("start load:" .. message.url, TAG)
+	msg.post(message.url, COMMON.HASHES.MSG_ASYNC_LOAD)
+end
+
+local Script = COMMON.new_n28s()
+
+function Script:init()
+	self.msg_receiver = COMMON.MSG()
+	self.msg_receiver:add(COMMON.HASHES.MSG_PROXY_LOADED, load_done)
+	self.msg_receiver:add(COMMON.HASHES.MSG_SM_LOAD, start_load)
+end
+
+function Script:on_message(message_id, message, sender)
+	self.msg_receiver:on_message(self, message_id, message, sender)
+end
+
+COMMON.N28S.register(Script)
+
+

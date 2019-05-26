@@ -1,0 +1,7 @@
+mesh: "/defold-standard-geometry/dae/quad.dae"
+material: "/defold-standard-geometry/materials/floor.material"
+textures: "/defold-standard-geometry/textures/blue-glow-square.png"
+skeleton: ""
+animations: ""
+default_animation: ""
+name: "unnamed"

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<COLLADA version="1.4.0" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+<asset>
+<contributor>
+<author>Wings3D Collada Exporter</author>
+<authoring_tool>Wings3D 2.1.5 Collada Exporter</authoring_tool>
+<comments/>
+<copyright/>
+<source_data/>
+</contributor>
+<created>2017-10-12T16:20:58</created>
+<modified>2017-10-12T16:20:58</modified>
+<unit meter="1.0" name="meter"/>
+<up_axis>Y_UP</up_axis>
+</asset>
+<library_effects><effect id="N-Gon1_auv-fx" name="N-Gon1_auv-fx"><profile_COMMON><newparam sid="auvBG_png-surface"><surface type="2D"><init_from>auvBG_png-img</init_from><format>A8R8G8B8</format></surface></newparam><newparam sid="auvBG_png-sampler"><sampler2D><source>auvBG_png-surface</source><minfilter>LINEAR_MIPMAP_LINEAR</minfilter><magfilter>LINEAR</magfilter></sampler2D></newparam><technique sid="wings3d"><phong><emission><color>0.000000 0.000000 0.000000 1.000000
+</color></emission><ambient><color>1.000000 1.000000 1.000000 1.000000
+</color></ambient><diffuse><texture texcoord="CHANNEL1" texture="auvBG_png-sampler"/></diffuse><specular><color>0.000000 0.000000 0.000000 1.000000
+</color></specular><shininess><float>0.900000</float></shininess></phong></technique></profile_COMMON></effect></library_effects>
+<library_images><image id="auvBG_png-img" name="auvBG_png-img"><init_from>c:/Users/Brian/Documents/GitHub/Defold-Standard-Geometry/defold-standard-geometry/dae/auvBG.png</init_from></image></library_images>
+<library_materials><material id="N-Gon1_auv" name="N-Gon1_auv"><instance_effect url="#N-Gon1_auv-fx"/></material></library_materials>
+<library_geometries><geometry name="N-Gon1-0" id="N-Gon1-0"><mesh><source id="N-Gon1-0-Pos"><float_array id="N-Gon1-0-Pos-array" count="36">1.000000 0.000000 0.000000 0.500000 0.000000 0.866025 -0.500000 0.000000 0.866025 -1.000000 0.000000 0.000000 -0.500000 0.000000 -0.866025 0.500000 0.000000 -0.866025 0.500000 1.000000 0.866025 1.000000 1.000000 0.000000 0.500000 1.000000 -0.866025 -0.500000 1.000000 -0.866025 -1.000000 1.000000 0.000000 -0.500000 1.000000 0.866025</float_array><technique_common><accessor count="12" source="#N-Gon1-0-Pos-array" stride="3"><param name="X" type="float"/><param name="Y" type="float"/><param name="Z" type="float"/></accessor></technique_common></source><source id="N-Gon1-0-Normal"><float_array id="N-Gon1-0-Normal-array" count="36">0.866025 -0.500000 -0.000000 0.433013 -0.500000 0.750000 -0.433013 -0.500000 0.750000 -0.866025 -0.500000 0.000000 -0.433013 -0.500000 -0.750000 0.433013 -0.500000 -0.750000 0.433013 0.500000 0.750000 0.866025 0.500000 -0.000000 0.433013 0.500000 -0.750000 -0.433013 0.500000 -0.750000 -0.866025 0.500000 0.000000 -0.433013 0.500000 0.750000</float_array><technique_common><accessor count="12" source="#N-Gon1-0-Normal-array" stride="3"><param name="X" type="float"/><param name="Y" type="float"/><param name="Z" type="float"/></accessor></technique_common></source><source id="N-Gon1-0-UV"><float_array id="N-Gon1-0-UV-array" count="54">0.000000 0.000000 0.000000 0.311004 0.000000 0.166667 0.083333 0.455342 0.083333 0.166667 0.166667 0.000000 0.166667 0.166667 0.250000 0.455342 0.250000 0.166667 0.333333 0.311004 0.333333 0.000000 0.333333 0.311004 0.333333 0.166667 0.416667 0.166667 0.416667 0.455342 0.500000 0.000000 0.500000 0.166667 0.583333 0.166667 0.583333 0.455342 0.666667 0.000000 0.666667 0.311004 0.666667 0.166667 0.833333 0.000000 0.833333 0.166667 1.000000 0.000000 1.000000 0.166667 0.000000 0.000000</float_array><technique_common><accessor count="27" source="#N-Gon1-0-UV-array" stride="2"><param name="S" type="float"/><param name="T" type="float"/></accessor></technique_common></source><vertices id="N-Gon1-0-Vtx"><input semantic="POSITION" source="#N-Gon1-0-Pos"/></vertices><polylist count="8" material="N-Gon1_auv"><input offset="0" semantic="VERTEX" source="#N-Gon1-0-Vtx"/><input offset="1" semantic="NORMAL" source="#N-Gon1-0-Normal"/><input offset="2" semantic="TEXCOORD" source="#N-Gon1-0-UV"/><vcount>4 4 4 4 4 4 6 6</vcount><p>1 1 6 6 6 5 11 11 10 2 2 12 2 2 12 11 11 10 10 10 15 3 3 16 3 3 16 10 10 15 9 9 19 4 4 21 4 4 21 9 9 19 8 8 22 5 5 23 5 5 23 8 8 22 7 7 24 0 0 25 0 0 2 7 7 0 6 6 5 1 1 6 1 1 13 2 2 17 3 3 20 4 4 18 5 5 14 0 0 11 7 7 9 8 8 7 9 9 3 10 10 1 11 11 4 6 6 8</p></polylist></mesh></geometry></library_geometries>
+<library_visual_scenes><visual_scene id="Scene" name="Scene"><node layer="L1" id="N-Gon1-0L1" name="N-Gon1-0"><translate sid="translate">0.00000 0.00000 0.00000</translate>
+<rotate sid="rotateZ">0 0 1 0.00000</rotate><rotate sid="rotateY">0 1 0 0.00000</rotate><rotate sid="rotateX">1 0 0 0.00000</rotate><scale sid="scale">1.0000 1.0000 1.0000</scale><instance_geometry url="#N-Gon1-0"><bind_material><technique_common><instance_material symbol="N-Gon1_auv" target="#N-Gon1_auv"><bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/></instance_material></technique_common></bind_material></instance_geometry></node></visual_scene></library_visual_scenes>
+<scene><instance_visual_scene url="#Scene"/></scene>
+</COLLADA>

@@ -1,0 +1,20 @@
+attribute mediump vec4 position;
+attribute mediump vec2 texcoord0;
+attribute mediump vec3 normal;
+
+uniform mediump mat4 mtx_view;
+uniform mediump mat4 mtx_proj;
+uniform mediump vec4 light;
+
+varying mediump vec4 var_position;
+varying mediump vec3 var_normal;
+varying mediump vec2 var_texcoord0;
+
+void main() {
+	// Pass variables to the fragment shader.
+    var_position = position;
+    var_texcoord0 = texcoord0;
+    var_normal = normalize(normal);
+	// Transform 3D space to the screen space.
+    gl_Position = mtx_proj * mtx_view * position;
+}

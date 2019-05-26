@@ -1,0 +1,7 @@
+mesh: "/defold-standard-geometry/dae/ship_1.dae"
+material: "/defold-standard-geometry/materials/test/model.material"
+textures: "/defold-standard-geometry/dae/ship_ao_occlusion.png"
+skeleton: ""
+animations: ""
+default_animation: ""
+name: "unnamed"

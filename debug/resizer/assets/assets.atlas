@@ -1,0 +1,9 @@
+images {
+  image: "/debug/resizer/assets/marker.png"
+}
+images {
+  image: "/debug/resizer/assets/marker_white.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0

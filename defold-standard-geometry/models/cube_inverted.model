@@ -1,0 +1,7 @@
+mesh: "/defold-standard-geometry/dae/cube_inverted.dae"
+material: "/defold-standard-geometry/materials/model_repeat.material"
+textures: "/defold-standard-geometry/textures/blue-glow-square.png"
+skeleton: ""
+animations: ""
+default_animation: ""
+name: "unnamed"

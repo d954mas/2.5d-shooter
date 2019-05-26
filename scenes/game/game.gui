@@ -1,0 +1,22 @@
+script: "/scenes/game/game.gui_script"
+fonts {
+  name: "PressStart2P-Regular"
+  font: "/assets/fonts/press_start_2_play_regular.font"
+}
+fonts {
+  name: "roboto_regular"
+  font: "/assets/fonts/roboto_regular.font"
+}
+textures {
+  name: "gui"
+  texture: "/assets/images/gui/gui.atlas"
+}
+background_color {
+  x: 0.0
+  y: 0.0
+  z: 0.0
+  w: 0.0
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
+max_nodes: 512

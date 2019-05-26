@@ -1,0 +1,54 @@
+local COMMON = require "libs.common"
+local WIDTH = 1920
+local HEIGHT = 1080
+local HORIZONTAL = false
+local RESOLUTION_SCALE = 0.5
+local INIT_SIZE = 2
+local resolutions = {
+	{19.5,9},
+	{16,9},
+	{4,3},
+}
+
+
+local sizes = {}
+
+for _,size in ipairs(resolutions) do
+	local w,h
+	local aspect = size[1]/size[2]
+	if HORIZONTAL then w = WIDTH h = WIDTH / aspect
+	else w = HEIGHT *aspect  h = HEIGHT end
+
+	local tag = string.format("%dx%d %dx%d",size[1],size[2],w,h)
+	table.insert(sizes,{math.floor(w),math.floor(h),tag=tag})
+end
+
+
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	self.resize_node = gui.get_node("resize_node")
+	local os = sys.get_sys_info().system_name
+	if os ~= "Windows" and os ~= "Darwin" then
+		msg.post(".", "disable")
+	end
+	gui.set_render_order(15)
+	defos.set_view_size(nil, nil, sizes[INIT_SIZE][1]*RESOLUTION_SCALE, sizes[INIT_SIZE][2]*RESOLUTION_SCALE)
+end
+
+function on_input(self, action_id, action)
+	if action_id == COMMON.HASHES.INPUT_RIGHT_CLICK and action.released and
+			gui.pick_node(self.resize_node, action.x, action.y)then
+		mnu.begin()
+		for i,size in ipairs(sizes) do
+			mnu.label(i, true, size.tag)
+		end
+		mnu.finish()
+		local _, _, _, h = defos.get_view_size()
+		local result = mnu.show(action.screen_x, h - action.screen_y)
+		if result == 0 then return end
+		local size = assert(sizes[result],"no size for:" .. result)
+		defos.set_view_size(nil, nil, size[1]*RESOLUTION_SCALE, size[2]*RESOLUTION_SCALE)
+		return true
+	end
+end

@@ -1,0 +1,15 @@
+name: "mnu"
+
+platforms:
+    x86-osx:
+        context:
+            frameworks: ["AppKit"]
+    x86_64-osx:
+        context:
+            frameworks: ["AppKit"]
+    x86_64-win32:
+        context:
+            use-clang: true
+    x86-win32:
+        context:
+            use-clang: true

@@ -1,0 +1,13 @@
+local Script = require "libs.scripts.gui_follow_go_go_script"
+go.property("gui_url",msg.url())
+
+--send msg to gui, with go position
+
+function init(self)
+	assert(self.gui_url ~= msg.url())
+	self.script = Script(self.gui_url)
+end
+
+function update(self, dt)
+	self.script:update(dt)
+end
