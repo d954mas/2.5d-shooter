@@ -1,6 +1,7 @@
 #include <math.h>
 #include "raycasting.h"
 #include "world_structures.h"
+#include "map.h"
 #include <set>
 //some problems here.Looks like mapX and mapY wrong.
 static inline void countStep(int mapX, double startX, double dx, double absDx, int* stepX, double* sx){

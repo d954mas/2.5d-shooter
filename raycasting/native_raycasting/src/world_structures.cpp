@@ -1,4 +1,5 @@
 #include "world_structures.h"
+#include "map.h"
 #include <stdlib.h>
 #include <dmsdk/sdk.h>
 

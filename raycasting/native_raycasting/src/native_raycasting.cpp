@@ -11,6 +11,7 @@
 #include <vector>
 #include "world_structures.h"
 #include "raycasting.h"
+#include "map.h"
 
 static Camera CAMERA;
 static Map MAP;
