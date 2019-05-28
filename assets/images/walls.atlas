@@ -1,0 +1,27 @@
+images {
+  image: "/assets/levels/tilesets/main/wall1.png"
+}
+images {
+  image: "/assets/levels/tilesets/main/wall2.png"
+}
+images {
+  image: "/assets/levels/tilesets/main/wall3.png"
+}
+images {
+  image: "/assets/levels/tilesets/main/wall4.png"
+}
+images {
+  image: "/assets/images/game/debug/wall_e.png"
+}
+images {
+  image: "/assets/images/game/debug/wall_n.png"
+}
+images {
+  image: "/assets/images/game/debug/wall_s.png"
+}
+images {
+  image: "/assets/images/game/debug/wall_w.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0
