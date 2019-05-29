@@ -12,10 +12,13 @@ using namespace micropather;
 struct ZoneData{
 	bool top, right; //Mark which sides of wall we see
 	bool rayCasted, visibility, blocked;
-	int x,y,id;
-};
-inline bool operator<(const ZoneData& lhs, const ZoneData& rhs){
-	return lhs.id < rhs.id;
+	int x,y,id; //x,y,id starts from 0. In lua they will be start from 1
+	bool operator == ( const ZoneData& a ) const{
+		return id == a.id;
+	}
+	bool operator<(const ZoneData& a) const {
+		return id < a.id;
+	};
 };
 class Map  : public Graph{
 	private:
@@ -38,3 +41,4 @@ class Map  : public Graph{
 		virtual void AdjacentCost( void* state, MP_VECTOR< micropather::StateCost > *neighbors );
 		virtual void PrintStateInfo(void* state);
 };
+void parseMap(lua_State*, struct Map*);

@@ -6,7 +6,6 @@
 // include the Defold SDK
 #include <dmsdk/sdk.h>
 #include "native_raycasting.h"
-
 static int getVisibleSpritesLua(lua_State* L){
 	getVisibleSprites(L);
 	return 1;
@@ -32,10 +31,6 @@ static int findPathLua(lua_State* L){
 	}
 	return 1;
 }
-static int raycastVisibilityFovLua(lua_State* L){
-	raycastVisibilityFov(L);
-	return 1;
-}
 
 static int raycast(lua_State* L){
 	getVisibleSprites(L);
@@ -46,33 +41,33 @@ static int updateVisibleSpritesLua(lua_State* L){
 	updateVisibleSprites(L);
 	return 3;
 }
-
-static int updateCameraLua(lua_State* L){
+//region Camera
+static int CameraUpdateLua(lua_State* L){
 	double posX = lua_tonumber(L, 1);
 	double posY = lua_tonumber(L, 2);
 	double angle = lua_tonumber(L, 3);
-	updateCamera(posX, posY, angle);
+	CameraUpdate(posX, posY, angle);
 	return 0;
 }
 
-static int setCameraFovLua(lua_State* L){
+static int CameraSetFovLua(lua_State* L){
 	double fov = lua_tonumber(L, 1);
-	setCameraFov(fov);
+	CameraSetFov(fov);
 	return 0;
 }
 
-static int setCameraRaysLua(lua_State* L){
+static int CameraSetRaysLua(lua_State* L){
 	int rays = (int)lua_tonumber(L, 1);
-	setCameraRays(rays);
+	CameraSetRays(rays);
 	return 0;
 }
 
-static int setCameraMaxDistLua(lua_State* L){
+static int CameraSetMaxDistanceLua(lua_State* L){
 	double dist = lua_tonumber(L, 1);
-	setCameraMaxDist(dist);
+	CameraSetMaxDistance(dist);
 	return 0;
 }
-
+//endregion
 static int setMapLua(lua_State* L){
 	setMap(L);
 	return 0;
@@ -81,14 +76,14 @@ static int setMapLua(lua_State* L){
 // Functions exposed to Lua
 static const luaL_reg Module_methods[] =
 {	
-	{"update_camera", updateCameraLua},
-	{"set_camera_fov", setCameraFovLua},
-	{"set_camera_rays", setCameraRaysLua},
-	{"set_camera_max_dist", setCameraMaxDistLua},
+	{"camera_update", CameraUpdateLua},
+	{"camera_set_fov", CameraSetFovLua},
+	{"camera_set_rays", CameraSetRaysLua},
+	{"camera_set_max_distance", CameraSetMaxDistanceLua},
+	
 	{"set_map", setMapLua},
 	{"update_sprites", updateVisibleSpritesLua},
 	{"get_visible_sprites", getVisibleSpritesLua},
-	{"raycast_visibility_fov", raycastVisibilityFovLua},
 	{"find_path", findPathLua},
 	{0, 0}
 };

@@ -12,58 +12,21 @@
 #include "world_structures.h"
 #include "raycasting.h"
 #include "map.h"
+#include "camera.h"
 
-static Camera CAMERA;
-static Map MAP;
-static std::vector<double> ANGLES;
+extern Camera MAIN_CAMERA;
+Map MAP;
+
 static std::unordered_set <Zone> ZONE_SET;
 static std::vector<Zone> VISIBLE_ZONES;
 static std::vector<Zone> NEED_LOAD_ZONES;
 static std::vector<Zone> NEED_UPDATE_ZONES;
 static std::vector<Zone> NEED_UNLOAD_ZONES;
-static double viewDist = 0;
-static double maxDistance = 30;
-
-
-
-
-static void viewDistanceUpdated(){
-	viewDist = CAMERA.rays/(2 * tan(CAMERA.fov/2.0));
-	ANGLES.resize(CAMERA.rays>>1);
-	ANGLES.clear();
-	for(int x=1;x<=CAMERA.rays>>1;x++){
-		ANGLES.push_back(atan(x/viewDist));
-	}
-}
-
-void setCameraFov(double fov){
-	CAMERA.fov = fov;
-	viewDistanceUpdated();
-}
-
-void setCameraRays(int rays){
-	CAMERA.rays = rays;
-	viewDistanceUpdated();
-}
-
-void setCameraMaxDist(double distance){
-	maxDistance = distance;
-}
-
-void updateCamera(double x, double y, double angle){
-	updateCamera(&CAMERA, x, y, angle);
-}
-
-void setCameraAngle(double angle){
-	CAMERA.angle = angle;
-}
-
+//DEPRECATED
 void setMap(lua_State* L){
 	parseMap(L, &MAP);
 	VISIBLE_ZONES.clear();
 }
-
-
 
 void getVisibleSprites(lua_State* L){
 	lua_newtable(L);
@@ -80,41 +43,15 @@ void getVisibleSprites(lua_State* L){
 }
 
 
-void raycastVisibilityFov(lua_State* L){
-	double fov = lua_tonumber(L, 1);
-	int rays = (int)lua_tonumber(L, 2);
-	double maxDist = lua_tonumber(L, 3);
-	std::unordered_set<Zone> zones;
-	double viewDist = rays/(2 * tan(fov/2.0));
-	for(int i=0; i<CAMERA.rays>>1; i++){
-		double rayAngle = atan(i/viewDist);
-		castRay(&CAMERA, -rayAngle, &MAP, maxDist, zones, false);
-		castRay(&CAMERA, rayAngle, &MAP, maxDist, zones, false);
-	}
-	lua_newtable(L);
-	int i =0;
-	for(Zone z : zones) {
-		lua_newtable(L);
-		lua_pushnumber(L, z.x+1);
-		lua_setfield(L, -2, "x");
-		lua_pushnumber(L, z.y+1);
-		lua_setfield(L, -2, "y");	
-		lua_rawseti(L, -2, i+1);
-		i++;
-	}
-}
-
-
 void updateVisibleSprites(lua_State* L){
 	ZONE_SET.clear();
 	NEED_LOAD_ZONES.clear();
 	NEED_UPDATE_ZONES.clear();
 	NEED_UNLOAD_ZONES.clear();
-	//	for(int i=0; i<1; i++){
-	for(int i=0; i<CAMERA.rays>>1; i++){
-		double rayAngle = ANGLES[i];
-		castRay(&CAMERA, -rayAngle, &MAP, maxDistance, ZONE_SET, false);
-		castRay(&CAMERA, rayAngle, &MAP, maxDistance, ZONE_SET, false);
+	for(int i=0; i<MAIN_CAMERA.rays>>1; i++){
+		double rayAngle = MAIN_CAMERA.angles[i];
+		castRay(&MAIN_CAMERA, -rayAngle, &MAP, MAIN_CAMERA.maxDistance, ZONE_SET, false);
+		castRay(&MAIN_CAMERA, rayAngle, &MAP, MAIN_CAMERA.maxDistance, ZONE_SET, false);
 	}
 	//reset prev raycasting
 	for(Zone z : VISIBLE_ZONES){

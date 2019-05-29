@@ -6,13 +6,6 @@
 #include <vector>
 #include <functional>
 using namespace micropather;
-struct Camera {
-	double x = 1;
-	double y = 1;
-	double angle = 0;
-	double fov=3.1415/2.0 * 1.3;
-	int rays = 128;
-};
 
 struct Point{int x, y;};
 
@@ -48,5 +41,3 @@ inline bool operator<(const Zone& lhs, const Zone& rhs){
 	}
 };
 
-void updateCamera(struct Camera*, double, double, double);
-void parseMap(lua_State*, struct Map*);
