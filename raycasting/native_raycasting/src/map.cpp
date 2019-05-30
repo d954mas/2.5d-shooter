@@ -6,6 +6,7 @@
 #include <vector>
 #include "map.h"
 
+Map MAP;
 
 Map::Map(){
 	pather = new MicroPather( this, 1024 );
@@ -39,53 +40,44 @@ aren't really human readable, normally you print out some concise info (like "(1
 without an ending newline.*/
 void Map::PrintStateInfo(void* state){printf("print info");}
 
-void Map::findPath(int x, int y, int x2, int y2, std::vector<Point>* points){
-	points->clear();
-	void* startState = (void*)(y * width + x );
-	void* endState = (void*)( y2 * width + x2 );
+void Map::findPath(int x, int y, int x2, int y2,  std::vector<ZoneData>& zones){
+	zones.clear();
+	void* startState = (void*)(CoordsToId(x,y));
+	void* endState = (void*)(CoordsToId(x2,y2));
 	std::vector< void* > path;
 	float totalCost = 0;
 	int result = pather->Solve( startState, endState, &path, &totalCost );
 	for(void* id: path){
-		ZoneData zoneData = cells[*((int *)id)];
-		Point point;
-		point.x = zoneData.x;
-		point.y = zoneData.y;
-		points->push_back(point);
+		zones.push_back( cells[*((int *)id)]);
 	}
 	pather->Reset();
 }
 
-namespace std {
-	template <>
-	struct hash<ZoneData>{
-		std::size_t operator()(const ZoneData& z) const{
-			return std::hash<int>()(z.id);
-		}
-	};
-}
-
-void parseMap(lua_State* L, Map* map){
+//TODO rewrite. current impl is wrong
+void MapParse(lua_State* L){
 	lua_getfield(L, 1, "WIDTH");
 	lua_getfield(L, 1, "HEIGHT");
 	int width = lua_tonumber(L, -2);
 	int height = lua_tonumber(L, -1);
 	lua_pop(L, 2);
-	map->width = width;
-	map->height = height;
-	free(map->cells);
-	map->cells = (ZoneData*)malloc(sizeof(ZoneData)*width*height);
-	memset(map->cells, 0, sizeof(ZoneData)*width*height);
+	MAP.width = width;
+	MAP.height = height;
+	free(MAP.cells);
+	MAP.cells = (ZoneData*)malloc(sizeof(ZoneData)*width*height);
+	memset(MAP.cells, 0, sizeof(ZoneData)*width*height);
 	lua_pushstring(L, "CELLS");
 	lua_gettable(L, -2);
 	lua_pushnil(L);
 	for(int y = 0;lua_next(L, -2) != 0;y++){
 		lua_pushnil(L);
 		for(int x = 0;lua_next(L, -2) != 0;x++){
-			map->cells[y * width + x].x = x;
-			map->cells[y * width + x].y = y;
+			int id = MAP.CoordsToId(x,y);
+			ZoneData data = MAP.cells[id];
+			data.x = x;
+			data.y = y;
+			data.id = id;
 			lua_getfield(L, -1, "blocked");
-			map->cells[y * width + x].blocked = lua_toboolean(L, -1);
+			data.blocked = lua_toboolean(L, -1);
 			lua_pop(L, 2);
 		}
 		lua_pop(L, 1);

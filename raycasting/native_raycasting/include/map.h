@@ -6,12 +6,12 @@
 #include "math.h"
 #include <vector>
 #include <functional>
-#include "world_structures.h"
 using namespace micropather;
 
 struct ZoneData{
-	bool top, right; //Mark which sides of wall we see
-	bool rayCasted, visibility, blocked;
+	//use prevValues to find if zoneData was updated
+	bool top, right, prevTop,prevRight; //Mark which sides of wall we see
+	bool rayCasted, visibility,prevVisibility, blocked;
 	int x,y,id; //x,y,id starts from 0. In lua they will be start from 1
 	bool operator == ( const ZoneData& a ) const{
 		return id == a.id;
@@ -36,9 +36,18 @@ class Map  : public Graph{
 			}		
 			return false;
 		}
-		void findPath(int, int, int, int, std::vector<Point>*);
+		void findPath(int, int, int, int, std::vector<ZoneData>&);
 		virtual float LeastCostEstimate( void* stateStart, void* stateEnd );
 		virtual void AdjacentCost( void* state, MP_VECTOR< micropather::StateCost > *neighbors );
 		virtual void PrintStateInfo(void* state);
 };
-void parseMap(lua_State*, struct Map*);
+
+namespace std {
+	template <>
+	struct hash<ZoneData>{
+		std::size_t operator()(const ZoneData& z) const{
+			return std::hash<int>()(z.id);
+		}
+	};
+}
+void MapParse(lua_State*);

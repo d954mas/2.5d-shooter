@@ -9,29 +9,23 @@
 #include <set>
 #include <unordered_set>
 #include <vector>
-#include "world_structures.h"
 #include "raycasting.h"
 #include "map.h"
 #include "camera.h"
 
 extern Camera MAIN_CAMERA;
-Map MAP;
+extern Map MAP;
 
-static std::unordered_set <Zone> ZONE_SET;
-static std::vector<Zone> VISIBLE_ZONES;
-static std::vector<Zone> NEED_LOAD_ZONES;
-static std::vector<Zone> NEED_UPDATE_ZONES;
-static std::vector<Zone> NEED_UNLOAD_ZONES;
-//DEPRECATED
-void setMap(lua_State* L){
-	parseMap(L, &MAP);
-	VISIBLE_ZONES.clear();
-}
+static std::unordered_set <ZoneData> ZONE_SET;
+static std::vector<ZoneData> VISIBLE_ZONES;
+static std::vector<ZoneData> NEED_LOAD_ZONES;
+static std::vector<ZoneData> NEED_UPDATE_ZONES;
+static std::vector<ZoneData> NEED_UNLOAD_ZONES;
 
 void getVisibleSprites(lua_State* L){
 	lua_newtable(L);
 	int i =0;
-	for(Zone z : VISIBLE_ZONES) {
+	for(ZoneData z : VISIBLE_ZONES) {
 		lua_newtable(L);
 		lua_pushnumber(L, z.x+1);
 		lua_setfield(L, -2, "x");
@@ -54,41 +48,36 @@ void updateVisibleSprites(lua_State* L){
 		castRay(&MAIN_CAMERA, rayAngle, &MAP, MAIN_CAMERA.maxDistance, ZONE_SET, false);
 	}
 	//reset prev raycasting
-	for(Zone z : VISIBLE_ZONES){
-		ZoneData *data = &MAP.cells[z.y * MAP.width + z.x];
-		data->rayCasted = false;
+	for(ZoneData data : VISIBLE_ZONES){
+		data.rayCasted = false;
 	}
 	//mark visible zones
-	for(Zone z : ZONE_SET) {
-		ZoneData *data = &MAP.cells[z.y * MAP.width + z.x];
-		data->rayCasted = true;
-		if(!data->visibility){
-			data->visibility = true;
-			data->right = z.right;
-			data->top = z.top;
-			VISIBLE_ZONES.push_back(z);
-			NEED_LOAD_ZONES.push_back(z);
-		}else if(data->right != z.right || data->top != z.top){
-			data->right = z.right;
-			data->top = z.top;
-			NEED_UPDATE_ZONES.push_back(z);
+	for(ZoneData data : ZONE_SET) {
+		data.rayCasted = true;
+		if(data.visibility!=data.prevVisibility){
+			data.visibility = data.prevVisibility;
+			VISIBLE_ZONES.push_back(data);
+			NEED_LOAD_ZONES.push_back(data);
+		}else if(data.right != data.prevRight || data.top != data.prevTop){
+			data.right = data.prevRight;
+			data.top = data.prevTop;
+			NEED_UPDATE_ZONES.push_back(data);
 		}
 	}
-
-	for(std::vector<Zone>::iterator  it = VISIBLE_ZONES.begin(); it != VISIBLE_ZONES.end();){
-		ZoneData *data = &MAP.cells[it->y * MAP.width + it->x];
-		if(!data->rayCasted){
-			data->visibility = false;
+	//use this iterator to make erase worked
+	for(std::vector<ZoneData>::iterator  it = VISIBLE_ZONES.begin(); it != VISIBLE_ZONES.end();){
+		if(!it->rayCasted){
+			it->visibility = false;
 			NEED_UNLOAD_ZONES.push_back(*it);
 			it = VISIBLE_ZONES.erase(it);
 		}else{
 			it++;
 		}
 	}
-	
+	//todo return userData instead of creating new zones
 	lua_newtable(L);
 	int i =0;
-	for(Zone z : NEED_LOAD_ZONES) {
+	for(ZoneData z : NEED_LOAD_ZONES) {
 		lua_newtable(L);
 		lua_pushnumber(L, z.x+1);
 		lua_setfield(L, -2, "x");
@@ -104,7 +93,7 @@ void updateVisibleSprites(lua_State* L){
 
 	lua_newtable(L);
 	i =0;
-	for(Zone z : NEED_UPDATE_ZONES) {
+	for(ZoneData z : NEED_UPDATE_ZONES) {
 		lua_newtable(L);
 		lua_pushnumber(L, z.x+1);
 		lua_setfield(L, -2, "x");
@@ -120,7 +109,7 @@ void updateVisibleSprites(lua_State* L){
 	
 	lua_newtable(L);
 	i = 0;
-	for(Zone z : NEED_UNLOAD_ZONES) {
+	for(ZoneData z : NEED_UNLOAD_ZONES) {
 		lua_newtable(L);
 		lua_pushnumber(L, z.x+1);
 		lua_setfield(L, -2, "x");
@@ -131,6 +120,6 @@ void updateVisibleSprites(lua_State* L){
 	}
 }
 
-void findPath(int x, int y, int x2, int y2, std::vector<Point>* points){
-	MAP.findPath(x, y, x2, y2, points);
+void findPath(int x, int y, int x2, int y2, std::vector<ZoneData>& zones){
+	MAP.findPath(x, y, x2, y2, zones);
 }

@@ -16,11 +16,11 @@ static int findPathLua(lua_State* L){
 	int y1 = lua_tonumber(L, 2) - 1;
 	int x2 = lua_tonumber(L, 3) - 1;
 	int y2 = lua_tonumber(L, 4) - 1;
-	std::vector<Point> path;
-	findPath(x1, y1, x2, y2, &path);
+	std::vector<ZoneData> path;
+	findPath(x1, y1, x2, y2, path);
 	lua_newtable(L);
 	int i = 0;
-	for(Point p : path) {
+	for(ZoneData p : path) {
 		lua_newtable(L);
 		lua_pushnumber(L, p.x+1);
 		lua_setfield(L, -2, "x");
@@ -68,8 +68,8 @@ static int CameraSetMaxDistanceLua(lua_State* L){
 	return 0;
 }
 //endregion
-static int setMapLua(lua_State* L){
-	setMap(L);
+static int MapSetLua(lua_State* L){
+	MapParse(L);
 	return 0;
 }
 
@@ -81,7 +81,8 @@ static const luaL_reg Module_methods[] =
 	{"camera_set_rays", CameraSetRaysLua},
 	{"camera_set_max_distance", CameraSetMaxDistanceLua},
 	
-	{"set_map", setMapLua},
+	{"map_set", MapSetLua},
+	
 	{"update_sprites", updateVisibleSpritesLua},
 	{"get_visible_sprites", getVisibleSpritesLua},
 	{"find_path", findPathLua},

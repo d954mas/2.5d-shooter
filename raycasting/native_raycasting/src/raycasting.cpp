@@ -1,6 +1,5 @@
 #include <math.h>
 #include "raycasting.h"
-#include "world_structures.h"
 #include "map.h"
 #include "camera.h"
 #include <set>
@@ -14,7 +13,7 @@ static inline void countStep(int mapX, double startX, double dx, double absDx, i
 		*stepX = - 1;
 	}
 }
-void castRay(Camera* camera, double rayAngle, Map* map, double maxDistance, std::unordered_set<Zone> &zones, bool blocking){
+void castRay(Camera* camera, double rayAngle, Map* map, double maxDistance, std::unordered_set<ZoneData> &zones, bool blocking){
 	double angle = camera->angle + rayAngle;
 	int mapX = (int)camera->x, mapY = (int)camera->y;
 	double angleSin = sin(angle), angleCos = cos(angle);
@@ -31,13 +30,12 @@ void castRay(Camera* camera, double rayAngle, Map* map, double maxDistance, std:
 		double distX = fabs(distanceX);
 		double distY = fabs(distanceY);
 		if(mapX >= 0 && mapY >= 0 && mapX < map->width && mapY < map->height && distX < maxDistance && distY < maxDistance){
-			bool isRight = distanceX > 0;
-			bool isTop = distanceY > 0;
-			Zone zone = {mapX , mapY,isRight,isTop};
+			ZoneData zone = map->cells[map->CoordsToId(mapX,mapY)];
+			zone.right = distanceX > 0;
+			zone.top = distanceY > 0;
 			zones.insert(zone);
 			if(blocking){
-				ZoneData* zoneData = &map->cells[mapY *map->height + mapX];
-				if(zoneData->blocked){
+				if(zone.blocked){
 					return;
 				}
 			}
