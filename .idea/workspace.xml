@@ -4,10 +4,11 @@
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/raycasting/native_raycasting/include/map.h" beforeDir="false" afterPath="$PROJECT_DIR$/raycasting/native_raycasting/include/map.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raycasting/native_raycasting/include/native_raycasting.h" beforeDir="false" afterPath="$PROJECT_DIR$/raycasting/native_raycasting/include/native_raycasting.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raycasting/native_raycasting/include/raycasting.h" beforeDir="false" afterPath="$PROJECT_DIR$/raycasting/native_raycasting/include/raycasting.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/raycasting/native_raycasting/src/lua_raycasting.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/raycasting/native_raycasting/src/lua_raycasting.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/raycasting/native_raycasting/src/map.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/raycasting/native_raycasting/src/map.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/raycasting/native_raycasting/src/native_raycasting.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/raycasting/native_raycasting/src/native_raycasting.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raycasting/native_raycasting/src/raycasting.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/raycasting/native_raycasting/src/raycasting.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/raycasting/native_raycasting/src/native_raycasting.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
+            <state relative-caret-position="320">
+              <caret line="49" column="42" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -42,10 +43,19 @@
       <find>update_[</find>
       <find>updatePlane</find>
       <find>update</find>
+      <find>CellsUp</find>
+      <find>ZoneData</find>
+      <find>zoneData</find>
+      <find>zones</find>
+      <find>zone</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>MAIN_CAMERA</replace>
+      <replace>CellData</replace>
+      <replace>cellData</replace>
+      <replace>cells</replace>
+      <replace>cell</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -159,17 +169,18 @@
       <option name="presentableId" value="Default" />
       <updated>1558881018344</updated>
       <workItem from="1558881019867" duration="11867000" />
-      <workItem from="1559078983032" duration="5469000" />
+      <workItem from="1559078983032" duration="6239000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17336000" />
+    <option name="totallyTimeSpent" value="18106000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="27" y="8" width="1882" height="996" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2524644" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2524644" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -177,7 +188,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49945235" visible="true" weight="0.32998884" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" sideWeight="0.49945235" visible="true" weight="0.32998884" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -339,8 +350,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/raycasting/native_raycasting/src/native_raycasting.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
+        <state relative-caret-position="320">
+          <caret line="49" column="42" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
         </state>
       </provider>
     </entry>

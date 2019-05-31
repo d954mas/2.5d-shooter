@@ -16,12 +16,12 @@
 extern Camera MAIN_CAMERA;
 extern Map MAP;
 
-std::vector<ZoneData> VISIBLE_ZONES;
+std::vector<CellData> VISIBLE_ZONES;
 
-static std::unordered_set <ZoneData> ZONE_SET;
-static std::vector<ZoneData> NEED_LOAD_ZONES;
-static std::vector<ZoneData> NEED_UPDATE_ZONES;
-static std::vector<ZoneData> NEED_UNLOAD_ZONES;
+static std::unordered_set <CellData> ZONE_SET;
+static std::vector<CellData> NEED_LOAD_ZONES;
+static std::vector<CellData> NEED_UPDATE_ZONES;
+static std::vector<CellData> NEED_UNLOAD_ZONES;
 
 void CastRays(bool blocking){
     ZONE_SET.clear();
@@ -38,10 +38,10 @@ void CellsUpdateVisible(){
 	NEED_UNLOAD_ZONES.clear();
 	CastRays(true);
 	//reset prev raycasting
-	for(ZoneData data : VISIBLE_ZONES)data.rayCasted = false;
+	for(CellData data : VISIBLE_ZONES)data.rayCasted = false;
 
-	//mark visible zones
-	for(ZoneData data : ZONE_SET) {
+	//mark visible cells
+	for(CellData data : ZONE_SET) {
 		data.rayCasted = true;
 		if(data.visibility!=data.raycastingVisibility){
 			data.visibility = data.raycastingVisibility;
@@ -54,7 +54,7 @@ void CellsUpdateVisible(){
 		}
 	}
 	//use this iterator to make erase worked
-	for(std::vector<ZoneData>::iterator  it = VISIBLE_ZONES.begin(); it != VISIBLE_ZONES.end();){
+	for(std::vector<CellData>::iterator  it = VISIBLE_ZONES.begin(); it != VISIBLE_ZONES.end();){
 		if(!it->rayCasted){
 			it->visibility = false;
 			NEED_UNLOAD_ZONES.push_back(*it);

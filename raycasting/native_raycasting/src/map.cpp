@@ -15,19 +15,19 @@ Map::~Map() {delete pather;}
 
 //Return the least possible cost between 2 states.
 float Map::LeastCostEstimate( void* stateStart, void* stateEnd ){
-	ZoneData start = cells[*((int *)stateStart)];
-	ZoneData end = cells[*((int *)stateEnd)];
+	CellData start = cells[*((int *)stateStart)];
+	CellData end = cells[*((int *)stateEnd)];
 	return  pow(end.x - start.x,2) + pow(end.y - start.y,2);
 }
 void Map::AdjacentCost( void* state, MP_VECTOR< micropather::StateCost > *neighbors  ){
-	ZoneData zoneData = cells[*((int *)state)];
+	CellData cellData = cells[*((int *)state)];
 	for(int y=-1;y<=1;y++){
 		for(int x=-1;x<=1;x++){
 			if(x!=0 && y!=0){
-				bool pass = Passable(zoneData.x + x,zoneData.y+y);
+				bool pass = Passable(cellData.x + x,cellData.y+y);
 				if (pass) {
 					//TODO add bigger dist for diagonals
-					StateCost nodeCost = {(void*)CoordsToId(zoneData.x+x,zoneData.y+y), 1};
+					StateCost nodeCost = {(void*)CoordsToId(cellData.x+x,cellData.y+y), 1};
 					neighbors ->push_back(nodeCost);
 				}
 			}
@@ -40,21 +40,21 @@ aren't really human readable, normally you print out some concise info (like "(1
 without an ending newline.*/
 void Map::PrintStateInfo(void* state){printf("print info");}
 
-void Map::findPath(int x, int y, int x2, int y2,  std::vector<ZoneData>& zones){
-	zones.clear();
+void Map::findPath(int x, int y, int x2, int y2,  std::vector<CellData>& cells){
+	cells.clear();
 	void* startState = (void*)(CoordsToId(x,y));
 	void* endState = (void*)(CoordsToId(x2,y2));
 	std::vector< void* > path;
 	float totalCost = 0;
 	int result = pather->Solve( startState, endState, &path, &totalCost );
 	for(void* id: path){
-		zones.push_back( cells[*((int *)id)]);
+		cells.push_back( cells[*((int *)id)]);
 	}
 	pather->Reset();
 }
 
-void MapFindPath(int x, int y, int x2, int y2, std::vector<ZoneData>& zones){
-	MAP.findPath(x, y, x2, y2, zones);
+void MapFindPath(int x, int y, int x2, int y2, std::vector<CellData>& cells){
+	MAP.findPath(x, y, x2, y2, cells);
 }
 
 //TODO rewrite. current impl is wrong
@@ -67,8 +67,8 @@ void MapParse(lua_State* L){
 	MAP.width = width;
 	MAP.height = height;
 	free(MAP.cells);
-	MAP.cells = (ZoneData*)malloc(sizeof(ZoneData)*width*height);
-	memset(MAP.cells, 0, sizeof(ZoneData)*width*height);
+	MAP.cells = (CellData*)malloc(sizeof(CellData)*width*height);
+	memset(MAP.cells, 0, sizeof(CellData)*width*height);
 	lua_pushstring(L, "CELLS");
 	lua_gettable(L, -2);
 	lua_pushnil(L);
@@ -76,7 +76,7 @@ void MapParse(lua_State* L){
 		lua_pushnil(L);
 		for(int x = 0;lua_next(L, -2) != 0;x++){
 			int id = MAP.CoordsToId(x,y);
-			ZoneData data = MAP.cells[id];
+			CellData data = MAP.cells[id];
 			data.x = x;
 			data.y = y;
 			data.id = id;

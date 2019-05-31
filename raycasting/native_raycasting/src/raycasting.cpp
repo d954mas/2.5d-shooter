@@ -13,7 +13,7 @@ static inline void countStep(int mapX, double startX, double dx, double absDx, i
 		*stepX = - 1;
 	}
 }
-void castRay(Camera* camera, double rayAngle, Map* map, double maxDistance, std::unordered_set<ZoneData> &zones, bool blocking){
+void castRay(Camera* camera, double rayAngle, Map* map, double maxDistance, std::unordered_set<CellData> &cells, bool blocking){
 	double angle = camera->angle + rayAngle;
 	int mapX = (int)camera->x, mapY = (int)camera->y;
 	double angleSin = sin(angle), angleCos = cos(angle);
@@ -30,12 +30,12 @@ void castRay(Camera* camera, double rayAngle, Map* map, double maxDistance, std:
 		double distX = fabs(distanceX);
 		double distY = fabs(distanceY);
 		if(mapX >= 0 && mapY >= 0 && mapX < map->width && mapY < map->height && distX < maxDistance && distY < maxDistance){
-			ZoneData zone = map->cells[map->CoordsToId(mapX,mapY)];
-			zone.right = distanceX > 0;
-			zone.top = distanceY > 0;
-			zones.insert(zone);
+			CellData cell = map->cells[map->CoordsToId(mapX,mapY)];
+			cell.right = distanceX > 0;
+			cell.top = distanceY > 0;
+			cells.insert(cell);
 			if(blocking){
-				if(zone.blocked){
+				if(cell.blocked){
 					return;
 				}
 			}
