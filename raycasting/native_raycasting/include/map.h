@@ -10,8 +10,8 @@ using namespace micropather;
 
 struct ZoneData{
 	//use prevValues to find if zoneData was updated
-	bool top, right, prevTop,prevRight; //Mark which sides of wall we see
-	bool rayCasted, visibility,prevVisibility, blocked;
+	bool top, right, raycastingTop,raycastingRight; //Mark which sides of wall we see
+	bool rayCasted, visibility,raycastingVisibility, blocked;
 	int x,y,id; //x,y,id starts from 0. In lua they will be start from 1
 	bool operator == ( const ZoneData& a ) const{
 		return id == a.id;
@@ -51,3 +51,4 @@ namespace std {
 	};
 }
 void MapParse(lua_State*);
+void MapFindPath(int, int, int, int, std::vector<ZoneData>&);

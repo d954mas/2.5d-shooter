@@ -6,41 +6,34 @@
 // include the Defold SDK
 #include <dmsdk/sdk.h>
 #include "native_raycasting.h"
-static int getVisibleSpritesLua(lua_State* L){
-	getVisibleSprites(L);
-	return 1;
-}
 
-static int findPathLua(lua_State* L){
+//region cells
+static int CellsGetVisibleLua(lua_State* L){
+	return 0;
+}
+static int CellsUpdateVisibleLua(lua_State* L){
+	CellsUpdateVisible();
+	return 0;
+}
+//endregion
+//region Map
+static int MapFindPathLua(lua_State* L){
 	int x1 = lua_tonumber(L, 1) - 1;
 	int y1 = lua_tonumber(L, 2) - 1;
 	int x2 = lua_tonumber(L, 3) - 1;
 	int y2 = lua_tonumber(L, 4) - 1;
 	std::vector<ZoneData> path;
-	findPath(x1, y1, x2, y2, path);
-	lua_newtable(L);
-	int i = 0;
-	for(ZoneData p : path) {
-		lua_newtable(L);
-		lua_pushnumber(L, p.x+1);
-		lua_setfield(L, -2, "x");
-		lua_pushnumber(L, p.y+1);
-		lua_setfield(L, -2, "y");	
-		lua_rawseti(L, -2, i+1);
-		i++;
-	}
-	return 1;
+	MapFindPath(x1, y1, x2, y2, path);
+	return 0;
 }
 
-static int raycast(lua_State* L){
-	getVisibleSprites(L);
-	return 1;
+static int MapSetLua(lua_State* L){
+	MapParse(L);
+	return 0;
 }
+//endregion
 
-static int updateVisibleSpritesLua(lua_State* L){
-	updateVisibleSprites(L);
-	return 3;
-}
+
 //region Camera
 static int CameraUpdateLua(lua_State* L){
 	double posX = lua_tonumber(L, 1);
@@ -68,10 +61,7 @@ static int CameraSetMaxDistanceLua(lua_State* L){
 	return 0;
 }
 //endregion
-static int MapSetLua(lua_State* L){
-	MapParse(L);
-	return 0;
-}
+
 
 // Functions exposed to Lua
 static const luaL_reg Module_methods[] =
@@ -82,10 +72,11 @@ static const luaL_reg Module_methods[] =
 	{"camera_set_max_distance", CameraSetMaxDistanceLua},
 	
 	{"map_set", MapSetLua},
+	{"map_find_path", MapFindPathLua},
 	
-	{"update_sprites", updateVisibleSpritesLua},
-	{"get_visible_sprites", getVisibleSpritesLua},
-	{"find_path", findPathLua},
+	{"cells_update_visible", CellsUpdateVisibleLua},
+	{"cells_get_visible",CellsGetVisibleLua},
+	
 	{0, 0}
 };
 

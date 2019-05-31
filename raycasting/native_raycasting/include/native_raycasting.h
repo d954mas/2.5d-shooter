@@ -4,9 +4,5 @@
 #include "camera.h"
 #include "map.h"
 
-
-void getVisibleSprites(lua_State*);
-void setMap(lua_State*);
-void updatePlane(int, int, int, int);
-void updateVisibleSprites(lua_State*);
-void findPath(int, int, int, int, std::vector<ZoneData>&);
+void MapSet(lua_State*);
+void CellsUpdateVisible();

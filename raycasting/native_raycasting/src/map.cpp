@@ -53,6 +53,10 @@ void Map::findPath(int x, int y, int x2, int y2,  std::vector<ZoneData>& zones){
 	pather->Reset();
 }
 
+void MapFindPath(int x, int y, int x2, int y2, std::vector<ZoneData>& zones){
+	MAP.findPath(x, y, x2, y2, zones);
+}
+
 //TODO rewrite. current impl is wrong
 void MapParse(lua_State* L){
 	lua_getfield(L, 1, "WIDTH");
