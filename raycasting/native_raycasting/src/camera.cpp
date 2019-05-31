@@ -1,18 +1,26 @@
 #pragma once
 #include "camera.h"
 #include "math.h"
+#include <dmsdk/dlib/log.h>
 
+#define DLIB_LOG_DOMAIN "CAMERA"
 Camera MAIN_CAMERA;
 
 void CameraSetFov(double fov){
+    if (MAIN_CAMERA.fov == fov)return;
+    dmLogInfo("fov changed:%.2f/%.2f",MAIN_CAMERA.fov, fov);
 	MAIN_CAMERA.fov = fov;
 	CameraViewDistanceUpdated();
+
 }
 void CameraSetRays(int rays){
+    if (MAIN_CAMERA.rays == rays)return;
+    dmLogInfo("rays changed:%d/%d",MAIN_CAMERA.rays, rays);
 	MAIN_CAMERA.rays = (rays / 2) * 2; //make it even
 	CameraViewDistanceUpdated();
 }
 void CameraSetMaxDistance(double distance){
+    dmLogInfo("max distance changed:%.2f/%.2f",MAIN_CAMERA.maxDistance, distance);
 	MAIN_CAMERA.maxDistance = distance;
 }
 void CameraViewDistanceUpdated(){

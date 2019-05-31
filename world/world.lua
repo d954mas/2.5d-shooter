@@ -3,7 +3,7 @@ local RX = require "libs.rx"
 local STATE = require "world.state.state"
 local TAG = "World"
 local RESET_SAVE = false
-local LEVELS = require "world.levels"
+local LEVELS = require "world.model.levels"
 
 ---@class World:Observable
 local M = COMMON.class("World")
@@ -23,11 +23,13 @@ end
 function M:load_level(name)
 	assert(not self.level,"lvl alredy loaded")
 	self.level = LEVELS.load_level(name)
+	self.level:prepare()
 end
 
 
 function M:update(dt)
 	self:process_autosave(dt)
+	if self.level then self.level:update(dt) end
 end
 
 function M:process_autosave(dt)

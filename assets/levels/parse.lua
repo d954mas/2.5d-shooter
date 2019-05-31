@@ -29,7 +29,6 @@ local LevelDataCellWalls = {}
 --If need draw always add to other
 ---@class LevelDataCell
 ---@field position vector3
----@field spawn_point vector3
 ---@field wall LevelDataCellWall
 ---@field objects LevelDataCellObjects[]
 local LevelDataCell = {}
@@ -39,6 +38,7 @@ local LevelDataCell = {}
 ---@class LevelData
 ---@field size vector3
 ---@field properties table map properties
+---@field spawn_point vector3
 ---@field cells LevelDataCell[][]
 local LevelData = {}
 

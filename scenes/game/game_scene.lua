@@ -2,7 +2,7 @@ local BaseScene = require "libs.sm.scene"
 local SM = require "libs.sm.sm"
 local COMMON = require "libs.common"
 local WORLD = require "world.world"
-local LEVELS = require "world.levels"
+local LEVELS = require "world.model.levels"
 
 ---@class GameScene:Scene
 local Scene = BaseScene:subclass("GameScene")

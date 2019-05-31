@@ -443,7 +443,7 @@ function World:refresh(system)
 end
 function World:update(dt, filter)
 end
-function World:clearEntities(system)
+function World:clearEntities()
 end
 function World:clearSystems(system)
 end

@@ -429,4 +429,12 @@ function M.world_to_screen(pos, adjust)
 end
 
 
+--region my functions
+
+function M.get_current_camera()
+	return curCam
+end
+
+--endregion
+
 return M
