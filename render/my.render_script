@@ -37,6 +37,8 @@ function update(self)
     render.set_view(rendercam.calculate_view())
     render.set_projection(rendercam.calculate_proj())
 
+    render.draw_debug3d()
+
     -- Sprite and particle rendering
     render.set_depth_mask(false)
     render.disable_state(render.STATE_DEPTH_TEST)
@@ -58,7 +60,7 @@ function update(self)
     -- Debug rendering - physics debug, draw_line
     render.disable_state(render.STATE_DEPTH_TEST)
     render.disable_state(render.STATE_CULL_FACE)
-    render.draw_debug3d()
+   
 
     -- GUI Rendering
     render.set_viewport(0, 0, rendercam.window.x, rendercam.window.y)

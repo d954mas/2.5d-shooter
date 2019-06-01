@@ -5,6 +5,10 @@ local TAG = "World"
 local RESET_SAVE = false
 local LEVELS = require "world.model.levels"
 local EVENTS = require "libs.events"
+local LevelView = require "world.view.level_view"
+
+--IT IS GAME WORLD
+--UPDATED FROM GAME COLLECTION
 
 ---@class World:Observable
 local M = COMMON.class("World")
@@ -25,6 +29,8 @@ function M:load_level(name)
 	assert(not self.level,"lvl alredy loaded")
 	self.level = LEVELS.load_level(name)
 	self.level:prepare()
+	self.level_view = LevelView()
+	self.level_view:build_level(self.level)
 	COMMON.EVENT_BUS:event(EVENTS.GAME_LEVEL_MAP_CHANGED)
 end
 
@@ -32,6 +38,7 @@ end
 function M:update(dt)
 	self:process_autosave(dt)
 	if self.level then self.level:update(dt) end
+	if self.level_view then self.level_view:update(dt) end
 end
 
 function M:process_autosave(dt)
@@ -63,6 +70,7 @@ end
 
 function M:dispose()
 	self:reset()
+	if self.level_view then self.level_view:dispose() end
 end
 
 return M()

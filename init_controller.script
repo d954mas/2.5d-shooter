@@ -30,7 +30,7 @@ end
 function update(self, dt)
     RX.MainScheduler:update(dt)
     SM:update(dt)
-    WORLD:update(dt)
+  --  WORLD:update(dt)
 end
 
 function final(self)

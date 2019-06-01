@@ -17,8 +17,9 @@ end
 function Scene:final(go_self)
 end
 
-function Scene:update(go_self, dt)
-    BaseScene.update(self,go_self,dt)
+function Scene:on_update(dt)
+    BaseScene.on_update(self,dt)
+    WORLD:update(dt)
 end
 
 function Scene:on_transition(transition)
