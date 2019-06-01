@@ -55,7 +55,7 @@ default_texture_mag_filter = nearest
 max_sound_buffers = 32
 
 [sprite]
-max_count = 1024
+max_count = 4096
 
 [resource]
 max_resources = 1024

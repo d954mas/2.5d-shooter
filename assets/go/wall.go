@@ -3,7 +3,7 @@ embedded_components {
   type: "sprite"
   data: "tile_set: \"/assets/images/walls.atlas\"\n"
   "default_animation: \"wall_s\"\n"
-  "material: \"/builtins/materials/sprite.material\"\n"
+  "material: \"/assets/materials/3dsprite/3dsprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {
@@ -23,7 +23,7 @@ embedded_components {
   type: "sprite"
   data: "tile_set: \"/assets/images/walls.atlas\"\n"
   "default_animation: \"wall_n\"\n"
-  "material: \"/builtins/materials/sprite.material\"\n"
+  "material: \"/assets/materials/3dsprite/3dsprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {
@@ -43,7 +43,7 @@ embedded_components {
   type: "sprite"
   data: "tile_set: \"/assets/images/walls.atlas\"\n"
   "default_animation: \"wall_e\"\n"
-  "material: \"/builtins/materials/sprite.material\"\n"
+  "material: \"/assets/materials/3dsprite/3dsprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {
@@ -63,7 +63,7 @@ embedded_components {
   type: "sprite"
   data: "tile_set: \"/assets/images/walls.atlas\"\n"
   "default_animation: \"wall_w\"\n"
-  "material: \"/builtins/materials/sprite.material\"\n"
+  "material: \"/assets/materials/3dsprite/3dsprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {
