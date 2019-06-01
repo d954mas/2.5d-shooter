@@ -1,5 +1,5 @@
 local COMMON = require "libs.common"
-local RichText = require "richtext.richtext"
+--[[local RichText = require "richtext.richtext"
 
 local base ={
     fonts = {
@@ -43,4 +43,4 @@ function M.make_copy(root,vars)
 end
 
 
-return M
+return M--]]

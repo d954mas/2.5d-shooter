@@ -1,6 +1,7 @@
-local lfs = require "lfs"
-local cjson = require "cjson"
-local pretty = require "resty.prettycjson"
+local requiref = require
+local lfs = requiref "lfs"
+local cjson = requiref "cjson"
+local pretty = requiref "resty.prettycjson"
 
 local NEED_PRETTY = true
 cjson.encode_sparse_array(true)

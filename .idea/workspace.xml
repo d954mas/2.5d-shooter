@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/libs/event_bus.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/events.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/levels/parse.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/parse.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/result/lvl_test.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/result/lvl_test.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/sources/lvl_test.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/sources/lvl_test.tmx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/materials/gui_nearest.material" beforeDir="false" afterPath="$PROJECT_DIR$/assets/materials/gui_nearest.material" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materials/tile_map_nearest.material" beforeDir="false" afterPath="$PROJECT_DIR$/assets/materials/tile_map_nearest.material" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.project" beforeDir="false" afterPath="$PROJECT_DIR$/game.project" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/common.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/common.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/game.collection" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/game.collection" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/entities/entities.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/entities/entities.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/model/level.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/model/level.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/world.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/world.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/text_settings.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/text_settings.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raycasting/native_raycasting/src/map.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/raycasting/native_raycasting/src/map.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,36 +16,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="2">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/assets/levels/result/lvl_test.json">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="88864">
-                    <caret line="5904" column="9" selection-start-line="5904" selection-start-column="9" selection-end-line="5904" selection-end-column="9" />
-                    <folding>
-                      <element signature="e#15#128#0" />
-                      <element signature="e#146#6214#0" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/debug/level_map/debug_level_map.gui_script">
+        <entry file="file://$PROJECT_DIR$/libs/common.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+            <state relative-caret-position="192">
+              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -133,12 +104,12 @@
         <option value="$PROJECT_DIR$/libs/events.lua" />
         <option value="$PROJECT_DIR$/libs/event_bus.lua" />
         <option value="$PROJECT_DIR$/world/world.lua" />
-        <option value="$PROJECT_DIR$/libs/common.lua" />
         <option value="$PROJECT_DIR$/world/ecs/entities/entities.lua" />
         <option value="$PROJECT_DIR$/assets/levels/parse.lua" />
         <option value="$PROJECT_DIR$/world/model/level.lua" />
         <option value="$PROJECT_DIR$/scenes/game/gui/minimap/minimap.lua" />
         <option value="$PROJECT_DIR$/debug/level_map/debug_level_map.gui_script" />
+        <option value="$PROJECT_DIR$/libs/common.lua" />
       </list>
     </option>
   </component>
@@ -170,11 +141,6 @@
             <path>
               <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
               <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
               <item name="game" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -190,7 +156,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559400300411" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559407067212" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../raycasting( then crawler 2)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -225,16 +191,15 @@
       <option name="presentableId" value="Default" />
       <updated>1558881018344</updated>
       <workItem from="1558881019867" duration="11867000" />
-      <workItem from="1559078983032" duration="23304000" />
+      <workItem from="1559078983032" duration="25396000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35171000" />
+    <option name="totallyTimeSpent" value="37263000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="14" y="0" width="1882" height="993" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2524644" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -498,13 +463,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/common.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="59" selection-start-line="9" selection-start-column="59" selection-end-line="9" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/world/model/levels.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -594,8 +552,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/debug/level_map/debug_level_map.gui_script">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+        <state relative-caret-position="465">
+          <caret line="58" column="33" lean-forward="true" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/text_settings.lua">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/common.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
         </state>
       </provider>
     </entry>

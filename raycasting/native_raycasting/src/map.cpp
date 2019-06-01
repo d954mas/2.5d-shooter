@@ -64,7 +64,6 @@ void MapParse(lua_State* L){
     DM_LUA_STACK_CHECK(L, 0);
     lua_pushstring(L, "size");
 	lua_gettable(L, -2);
-    if( lua_type(L, 1)!=LUA_TTABLE) throw "must be a table";
 	lua_getfield(L, -1, "x");
 	lua_getfield(L, -2, "y");
 	int width = lua_tointeger(L, -2);

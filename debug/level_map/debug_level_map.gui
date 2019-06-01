@@ -118,6 +118,6 @@ nodes {
   template_node_child: false
   size_mode: SIZE_MODE_AUTO
 }
-material: "/builtins/materials/gui.material"
+material: "/assets/materials/gui_nearest.material"
 adjust_reference: ADJUST_REFERENCE_PARENT
 max_nodes: 8
