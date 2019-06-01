@@ -11,6 +11,7 @@ local Entities = {}
 
 
 ---@param pos vector3
+---@return Entity
 function Entities.create_player(pos)
 	local e = {}
 	e.tag = "player"

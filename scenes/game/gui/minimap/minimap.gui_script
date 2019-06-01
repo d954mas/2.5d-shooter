@@ -1,0 +1,32 @@
+local COMMON = require "libs.common"
+local Minimap = require "scenes.game.gui.minimap.minimap"
+local WORLD = require "world.world"
+function init(self)
+	self.minimap = Minimap(gui.get_node("minimap_cell"))
+	self.player_pointer_node = gui.get_node("player_pointer")
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	self.minimap:update()
+--	gui.set_rotation(self.player_pointer_node, vmath.quat_rotation_z(-WORLD.PLAYER.angle))
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end

@@ -2,6 +2,7 @@ name: "gui"
 tags: "gui"
 vertex_program: "/builtins/materials/gui.vp"
 fragment_program: "/builtins/materials/gui.fp"
+vertex_space: VERTEX_SPACE_WORLD
 vertex_constants {
   name: "view_proj"
   type: CONSTANT_TYPE_VIEWPROJ
@@ -15,7 +16,7 @@ vertex_constants {
 samplers {
   name: "texture"
   wrap_u: WRAP_MODE_REPEAT
-  wrap_v: WRAP_MODE_REPEAT
+  wrap_v: WRAP_MODE_CLAMP_TO_EDGE
   filter_min: FILTER_MODE_MIN_NEAREST
   filter_mag: FILTER_MODE_MAG_NEAREST
 }

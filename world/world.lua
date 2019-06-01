@@ -4,6 +4,7 @@ local STATE = require "world.state.state"
 local TAG = "World"
 local RESET_SAVE = false
 local LEVELS = require "world.model.levels"
+local EVENTS = require "libs.events"
 
 ---@class World:Observable
 local M = COMMON.class("World")
@@ -24,6 +25,7 @@ function M:load_level(name)
 	assert(not self.level,"lvl alredy loaded")
 	self.level = LEVELS.load_level(name)
 	self.level:prepare()
+	COMMON.EVENT_BUS:event(EVENTS.GAME_LEVEL_MAP_CHANGED)
 end
 
 
@@ -56,7 +58,6 @@ function M:load()
 		return
 	end
 	COMMON.i("load state",TAG)
-	pprint(data.state)
 	self.state:load(data.state,self)
 end
 

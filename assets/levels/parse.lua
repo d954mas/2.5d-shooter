@@ -60,6 +60,39 @@ local function get_layer(tiled, layer_name)
 	for _,l in ipairs(tiled.layers) do if l.name == layer_name then return l end end
 end
 
+local function repack_layer(array,tiled)
+	assert(array)
+	assert(tiled)
+	local width = tiled.width
+	local height = #array/width
+	local cells = {}
+	for y=1,height do
+		for x=1,width do
+			local tiled_cell = assert(array[(y-1)*width + x])
+			local new_coords = (height-y)*width + x
+			cells[new_coords] = tiled_cell
+		end
+	end
+	assert(#cells == #array)
+	for i=1,#cells do
+		array[i]=cells[i]
+	end
+end
+
+local function repack_objects(array,tiled)
+	assert(array)
+	assert(tiled)
+	local total_height = tiled.height*tiled.tileheight
+	for _,object in ipairs(array)do
+		local x,y = object.x, object.y
+		y = total_height-y
+		object.x, object.y = x,y
+		object.cell_x = math.ceil(x/tiled.tilewidth)
+		object.cell_y = math.ceil(x/tiled.tileheight)
+	end
+end
+
+
 local function process_layer(data,layer,fun)
 	for y=1,data.size.y do
 		local row = assert(data.cells[y])
@@ -69,10 +102,6 @@ local function process_layer(data,layer,fun)
 			if tiled_cell ~= 0 then fun(cell,tiled_cell) end
 		end
 	end
-end
-
-local function coords_to_cells(tiled,x,y)
-	return math.ceil(x/tiled.tilewidth), math.ceil(y/tiled.tilewidth)
 end
 
 local function parse_level(path,result_path)
@@ -98,6 +127,11 @@ local function parse_level(path,result_path)
 			row[x] = cell
 		end
 	end
+	for _,l in ipairs(tiled.layers) do
+		if l.data then repack_layer(l.data,tiled) end
+		if l.objects then repack_objects(l.objects,tiled) end
+	end
+
 	process_layer(data,assert(get_layer(tiled,"floor")),function(cell,tiled_cell) cell.wall.floor = tiled_cell end)
 	local wall_keys = {"north","south","east","west"}
 	process_layer(data,assert(get_layer(tiled,"walls")),function(cell,tiled_cell) for _,v in pairs(wall_keys)do
@@ -110,9 +144,8 @@ local function parse_level(path,result_path)
 	local objects = assert(get_layer(tiled,"objects")).objects
 	for _,object in ipairs(objects)do
 		if object.properties.spawn_point then
-			local x,y = coords_to_cells(tiled,object.x,object.y)
 			assert(not data.spawn_point,"spawn point already set")
-			data.spawn_point = {x=x,y=y}
+			data.spawn_point = {x=object.cell_x,y=object.cell_y}
 		end
 	end
 

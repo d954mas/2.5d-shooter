@@ -1,0 +1,86 @@
+local WORLD = require "world.world"
+local COMMON = require "libs.common"
+
+
+local EMPTY_COLOR = string.char(0xff) .. string.char(0xff) .. string.char(0xff) .. string.char(0xff)
+local BLOCK_COLOR = string.char(0xaa) .. string.char(0xaa) .. string.char(0xaa) .. string.char(0xff)
+local TRANSPARENT_COLOR = string.char(0xff) .. string.char(0x00) .. string.char(0x00) .. string.char(0x00)
+local MIN_SIZE = 300
+
+local function is_visible(zones,x,y)
+	for _,zone in ipairs(zones) do
+		if x == zone.x and y == zone.y then
+			return true
+		end	
+	end	
+	return false
+end	
+
+
+
+local function update_map(self)
+	local map_width =  WORLD.level:map_get_width()
+	local map_height =  WORLD.level:map_get_height()
+	local pixels = ""
+	--local zones = native_raycasting.get_visible_sprites()
+	for y = map_height, 1, -1 do
+		for x=1, map_width do
+			local cell = WORLD.level:map_get_cell(x,y)
+			if cell.wall.floor == -1 then
+				--empty cell
+				pixels = pixels ..  TRANSPARENT_COLOR
+			else
+				if cell.wall.north ~= -1 then
+					pixels = pixels .. BLOCK_COLOR
+				else
+					pixels = pixels .. EMPTY_COLOR
+				end
+			end	
+		end
+	end
+	gui.set_texture_data("map", map_width, map_height, "rgba", pixels)
+	local scale = vmath.vector3(1)
+	if map_width<map_height then
+		scale.x = MIN_SIZE/map_width
+	else
+		scale.x = MIN_SIZE/map_height
+	end
+	scale.y = scale.x
+	gui.set_scale(self.vh.map_node, scale)
+	gui.set_position(self.vh.player_node,vmath.vector3(WORLD.level.player.pos.x,WORLD.level.player.pos.y,0))
+	gui.set_position(self.vh.map_node, vmath.vector3(1920-map_width*scale.x,1080-map_height*scale.y,1))
+--	self.map_pos = gui.get_position(self.map_node)
+	--self.player_pos = gui.get_position(self.player_node)
+end
+
+function init(self)
+	self.vh = {
+		map_node = gui.get_node("map"),
+		player_node = gui.get_node("player")
+	}
+	self.map_texture = nil
+	self.scheduler = COMMON.RX.CooperativeScheduler.create()
+
+	self.subscriptions = COMMON.RX.SubscriptionsStorage()
+	self.subscriptions:add(COMMON.EVENT_BUS:subscribe(COMMON.EVENTS.GAME_LEVEL_MAP_CHANGED):go_distinct(self.scheduler):subscribe(function (event)
+		if self.map_texture then gui.delete_texture("map") end
+		local width, height = WORLD.level:map_get_width(),WORLD.level:map_get_height()
+		gui.new_texture("map", width, height, "rgba", string.rep(string.char(0xff),  width * height * 4))
+		gui.set_texture(self.vh.map_node, "map")
+		gui.set_size(self.vh.map_node,vmath.vector3(width,height,1))
+	end))
+end
+
+function final(self)
+	self.subscriptions:unsubscribe()
+	if self.map_texture then gui.delete_texture("map") end
+end		
+
+function update(self,dt)
+	self.scheduler:update(dt)
+	update_map(self)
+	--init_map(self)
+--	self.player_pos.x = self.map_pos.x + (self.start_x + WORLD.PLAYER.position.x) * SCALE.x
+	--self.player_pos.y = self.map_pos.y + (self.start_y + WORLD.PLAYER.position.y) * SCALE.y
+	--gui.set_position(self.player_node, self.player_pos)
+end	

@@ -42,6 +42,16 @@ function Level:update(dt)
 	self:update_fov()
 end
 
+--region MAP
+function Level:map_get_width() return self.data.size.x end
+function Level:map_get_height() return self.data.size.y end
+---@return LevelDataCell
+function Level:map_get_cell(x,y) return self.data.cells[y][x] end
+function Level:map_cell_in(x,y)
+	return x>=1 and x <= self:map_get_width() and y>=1 and y <=self:map_get_height()
+end
+--endregion
+
 
 
 

@@ -5,7 +5,9 @@ M.MSG = require "libs.msg_receiver"
 M.CLASS = require "libs.middleclass"
 M.LUME = require "libs.lume"
 M.RX = require "libs.rx"
-M.EVENT_BUS = M.RX.Subject()
+M.EVENTS = require "libs.events"
+M.CONSTANTS = require "libs.constants"
+M.EVENT_BUS = require "libs.event_bus"() --global event_bus
 M.GLOBAL = {}
 M.N28S = require "libs.n28s"
 ---@type Localization

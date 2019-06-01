@@ -2,6 +2,7 @@ name: "tile_map"
 tags: "tile"
 vertex_program: "/builtins/materials/tile_map.vp"
 fragment_program: "/builtins/materials/tile_map.fp"
+vertex_space: VERTEX_SPACE_WORLD
 vertex_constants {
   name: "view_proj"
   type: CONSTANT_TYPE_VIEWPROJ
@@ -33,7 +34,7 @@ fragment_constants {
   }
 }
 samplers {
-  name: "DIFFUSE_TEXTURE"
+  name: "texture_sampler"
   wrap_u: WRAP_MODE_REPEAT
   wrap_v: WRAP_MODE_REPEAT
   filter_min: FILTER_MODE_MIN_NEAREST
