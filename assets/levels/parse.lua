@@ -6,6 +6,10 @@ local NEED_PRETTY = true
 cjson.encode_sparse_array(true)
 cjson.decode_invalid_numbers(false)
 
+--Cell used in cpp and im lua.
+--In lua id start from 1 in cpp from 0
+--In lua pos start from 1 in cpp from 0
+
 ---@class LevelDataCellObjects
 ---@field north table
 ---@field south table
@@ -29,8 +33,10 @@ local LevelDataCellWalls = {}
 --If need draw always add to other
 ---@class LevelDataCell
 ---@field position vector3
+---@field id number
 ---@field wall LevelDataCellWall
 ---@field objects LevelDataCellObjects[]
+---@field blocked boolean
 local LevelDataCell = {}
 
 
@@ -87,13 +93,18 @@ local function parse_level(path,result_path)
 		data.cells[y] = {}
 		local row = data.cells[y]
 		for x=1,data.size.x do
-			row[x] = assert(create_empty_cell(x,y))
+			local cell = assert(create_empty_cell(x,y))
+			cell.id = (y-1)* data.size.x + x
+			row[x] = cell
 		end
 	end
 	process_layer(data,assert(get_layer(tiled,"floor")),function(cell,tiled_cell) cell.wall.floor = tiled_cell end)
 	local wall_keys = {"north","south","east","west"}
 	process_layer(data,assert(get_layer(tiled,"walls")),function(cell,tiled_cell) for _,v in pairs(wall_keys)do
 			cell.wall[v] = tiled_cell
+			if true then --for now all walls are blocking
+				cell.blocked = true;
+			end
 		end
 	end)
 	local objects = assert(get_layer(tiled,"objects")).objects
@@ -111,7 +122,7 @@ local function parse_level(path,result_path)
 
 	--endregion
 
-	local json = NEED_PRETTY and pretty(data) or cjson.encode(data)
+	local json = NEED_PRETTY and pretty(data,nil,"  ","") or cjson.encode(data)
 	local file = assert(io.open(result_path, "w+"))
 	file:write(json)
 	file:close()

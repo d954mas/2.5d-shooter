@@ -3,6 +3,9 @@ local COMMON = require "libs.common"
 local ENTITIES = require "world.ecs.entities.entities"
 local RENDER_CAM = require "rendercam.rendercam"
 
+--Cell used in cpp and im lua.
+--In lua id start from 1 in cpp from 0
+--In lua pos start from 1 in cpp from 0
 
 local CAMERA_RAYS = 512
 local CAMERA_FOV = 60 --can be changed
@@ -24,6 +27,7 @@ function Level:prepare()
 	self.player = ENTITIES.create_player(vmath.vector3(self.data.spawn_point.x+0.5,self.data.spawn_point.y+0.5,0.5))
 	native_raycasting.camera_set_rays(CAMERA_RAYS)
 	native_raycasting.camera_set_max_distance(CAMERA_MAX_DIST)
+	native_raycasting.map_set(self.data)
 	self:update_fov()
 end
 

@@ -6,6 +6,8 @@
 #include <vector>
 #include "map.h"
 
+#define DLIB_LOG_DOMAIN "MAP"
+
 Map MAP;
 
 Map::Map(){
@@ -59,17 +61,22 @@ void MapFindPath(int x, int y, int x2, int y2, std::vector<CellData>& cells){
 
 //TODO rewrite. current impl is wrong
 void MapParse(lua_State* L){
-	lua_getfield(L, 1, "WIDTH");
-	lua_getfield(L, 1, "HEIGHT");
-	int width = lua_tonumber(L, -2);
-	int height = lua_tonumber(L, -1);
-	lua_pop(L, 2);
+    DM_LUA_STACK_CHECK(L, 0);
+    lua_pushstring(L, "size");
+	lua_gettable(L, -2);
+    if( lua_type(L, 1)!=LUA_TTABLE) throw "must be a table";
+	lua_getfield(L, -1, "x");
+	lua_getfield(L, -2, "y");
+	int width = lua_tointeger(L, -2);
+	int height = lua_tointeger(L, -1);
+	lua_pop(L, 3);
+	dmLogInfo("map size:%d/%d",width, height);
 	MAP.width = width;
 	MAP.height = height;
 	free(MAP.cells);
 	MAP.cells = (CellData*)malloc(sizeof(CellData)*width*height);
-	memset(MAP.cells, 0, sizeof(CellData)*width*height);
-	lua_pushstring(L, "CELLS");
+	//memset(MAP.cells, 0, sizeof(CellData)*width*height);
+	lua_pushstring(L, "cells");
 	lua_gettable(L, -2);
 	lua_pushnil(L);
 	for(int y = 0;lua_next(L, -2) != 0;y++){
@@ -86,4 +93,5 @@ void MapParse(lua_State* L){
 		}
 		lua_pop(L, 1);
 	}
+	lua_pop(L, 1);
 }
