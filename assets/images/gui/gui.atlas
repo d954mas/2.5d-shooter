@@ -4,6 +4,9 @@ images {
 images {
   image: "/assets/images/white.png"
 }
+images {
+  image: "/assets/images/gui/sight.png"
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0
