@@ -35,7 +35,9 @@ function Scene:on_update(dt)
 end
 
 function Scene:on_input(action_id, action)
-
+    if WORLD.level_view then
+        WORLD.level_view:on_input(action_id,action)
+    end
 end
 
 

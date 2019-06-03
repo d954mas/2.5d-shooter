@@ -2,7 +2,7 @@ local require_f = require --ignore defold cyclic dependencies error
 local COMMON = require "libs.common"
 local ENTITIES = require "world.ecs.entities.entities"
 local RENDER_CAM = require "rendercam.rendercam"
-
+local ECS_WORLD = require "world.ecs.ecs"
 --Cell used in cpp and im lua.
 --In lua id start from 1 in cpp from 0
 --In lua pos start from 1 in cpp from 0
@@ -14,21 +14,28 @@ local CAMERA_MAX_DIST = 50
 local Level = COMMON.class("Level")
 
 
-function Level:initialize(data,world)
+function Level:initialize(data)
 	---@type LevelData
 	self.data = assert(data)
 	self.world = require_f "world.world"
 	self.prepared = false
+	self.ecs_world = ECS_WORLD()
 end
 -- prepared to play. Call it after create and before play
 function Level:prepare()
 	assert(not self.prepared,"lvl already prepared to play")
+	self.ecs_world:clear()
 	self.prepared = true
+	self:configure_camera()
+	self:update_fov()
 	self.player = ENTITIES.create_player(vmath.vector3(self.data.spawn_point.x+0.5,self.data.spawn_point.y+0.5,0.5))
+	self.ecs_world.ecs:addEntity(self.player)
+end
+
+function Level:configure_camera()
 	native_raycasting.camera_set_rays(CAMERA_RAYS)
 	native_raycasting.camera_set_max_distance(CAMERA_MAX_DIST)
 	native_raycasting.map_set(self.data)
-	self:update_fov()
 end
 
 function Level:update_fov()
@@ -40,6 +47,11 @@ end
 
 function Level:update(dt)
 	self:update_fov()
+	self.ecs_world:update(dt)
+end
+
+function Level:dispose()
+	self.ecs_world:clear()
 end
 
 --region MAP

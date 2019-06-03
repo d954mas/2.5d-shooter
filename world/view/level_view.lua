@@ -1,5 +1,5 @@
 local COMMON = require "libs.common"
-
+local ENTITIES = require "world.ecs.entities.entities"
 local FACTORY_GO_EMPTY = msg.url("game:/factories#factory_empty")
 local FACTORY_GO_BLOCK = msg.url("game:/factories#factory_block")
 local FACTORY_GO_WALL = msg.url("game:/factories#factory_wall")
@@ -7,7 +7,6 @@ local LevelView = COMMON.class("LevelView")
 
 function LevelView:initialize()
 	self.physics_go = nil
-	self.camera_url = msg.url("/camera")
 end
 
 ---@param level Level
@@ -55,8 +54,16 @@ function LevelView:dispose()
 	end
 end
 
+function LevelView:update_camera()
+
+end
+
 function LevelView:update()
-	go.set_position(vmath.vector3(self.level.player.pos.x,0.5,self.level.player.pos.y),self.camera_url)
+
+end
+
+function LevelView:on_input(action_id,action)
+	self.level.ecs_world.ecs:addEntity(ENTITIES.create_input(action_id,action))
 end
 
 return LevelView
