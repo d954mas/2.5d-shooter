@@ -10,7 +10,7 @@ function System:process(e, dt)
 	if e.velocity.x ~= 0 and e.velocity.y ~= 0 then 
 		e.velocity = vmath.normalize(e.velocity) 
 	end
-	if e.angle then e.velocity = -vmath.rotate(vmath.quat_rotation_z(-e.angle.x),e.velocity) end
+	if e.angle then e.velocity = vmath.rotate(vmath.quat_rotation_z(e.angle.x),e.velocity) end
 end
 
 

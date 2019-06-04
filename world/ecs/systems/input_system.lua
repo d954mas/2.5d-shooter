@@ -25,8 +25,9 @@ function System:init_input()
 	self.input_handler:add_mouse(self.input_mouse_move)
 	self.input_handler:add(COMMON.HASHES.INPUT_UP,get_input_movement_fun("x"))
 	self.input_handler:add(COMMON.HASHES.INPUT_DOWN,get_input_movement_fun("y"))
-	self.input_handler:add(COMMON.HASHES.INPUT_LEFT,get_input_movement_fun("z"))
-	self.input_handler:add(COMMON.HASHES.INPUT_RIGHT,get_input_movement_fun("w"))
+	self.input_handler:add(COMMON.HASHES.INPUT_RIGHT,get_input_movement_fun("z"))
+	self.input_handler:add(COMMON.HASHES.INPUT_LEFT,get_input_movement_fun("w"))
+
 end
 
 function System:update_player_velocity()
