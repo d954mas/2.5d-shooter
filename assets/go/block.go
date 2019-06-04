@@ -28,7 +28,7 @@ embedded_components {
   "  }\n"
   "  data: 0.5\n"
   "  data: 0.5\n"
-  "  data: 10.0\n"
+  "  data: 0.5\n"
   "}\n"
   "linear_damping: 0.0\n"
   "angular_damping: 0.0\n"
