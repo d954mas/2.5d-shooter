@@ -5,8 +5,10 @@ local WORLD
 ---@field tag string tag used for help when debug
 ---@field player boolean true if player entity
 ---@field pos vector3
----@field direction vector3
----@field angle vector3 radians
+---@field direction vector4 up down left right
+---@field velocity vector3
+---@field speed number
+---@field angle vector3 radians anticlockwise  x-horizontal y-vertical
 ---@field rotation vector4 quaternion
 ---@field go_url nil|url
 ---@field input boolean used for player input
@@ -23,7 +25,9 @@ function Entities.create_player(pos)
 	e.tag = "player"
 	e.pos = assert(pos)
 	e.angle = vmath.vector3(0,0,0)
-	e.direction = vmath.vector3(0,0,0)
+	e.direction = vmath.vector4(0,0,0,0) 
+	e.velocity = vmath.vector3(0,0,0)
+	e.speed = 4
 	e.player = true
 	return e
 end

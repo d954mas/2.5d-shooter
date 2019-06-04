@@ -4,10 +4,13 @@ local HASH_RELEASE = hash("release_input_focus")
 local CLASS = require "libs.middleclass"
 
 local M = CLASS.class("InputReceiver")
+M.HASH_NIL = HASH_NIL
 
 local function ensure_hash(string_or_hash)
 	return type(string_or_hash) == "string" and hash(string_or_hash) or string_or_hash
 end
+
+
 
 function M:initialize()
 	self.action_funs = {}

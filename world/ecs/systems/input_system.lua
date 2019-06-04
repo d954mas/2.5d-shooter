@@ -1,11 +1,10 @@
 local ECS = require 'libs.ecs'
 local CURSOR_HELPER = require "libs.cursor_helper"
-local CAMERA_URL = msg.url("game:/camera")
 local COMMON = require "libs.common"
 
 ---@class InputSystem:ECSSystem
 local System = ECS.processingSystem()
-System.filter = ECS.filter("input","input_action_id","input_action")
+System.filter = ECS.requireAll("input","input_action_id","input_action")
 
 function System:input_mouse_move(action)
 	local player = self.world.world.level.player

@@ -54,16 +54,12 @@ function LevelView:dispose()
 	end
 end
 
-function LevelView:update_camera()
-
-end
-
 function LevelView:update()
-
 end
 
 function LevelView:on_input(action_id,action)
-	self.level.ecs_world.ecs:addEntity(ENTITIES.create_input(action_id,action))
+	--mouse movement action_id is nil.Use hash instead of nil
+	self.level.ecs_world.ecs:addEntity(ENTITIES.create_input(action_id or COMMON.INPUT.HASH_NIL,action))
 end
 
 return LevelView

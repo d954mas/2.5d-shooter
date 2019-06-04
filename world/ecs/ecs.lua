@@ -15,6 +15,8 @@ end
 function EcsWorld:_init_systems()
 	self.ecs:addSystem(SYSTEMS.CameraSystem)
 	self.ecs:addSystem(SYSTEMS.InputSystem)
+	self.ecs:addSystem(SYSTEMS.DirectionToVelocitySystem)
+	self.ecs:addSystem(SYSTEMS.MovementSystem)
 end
 
 function EcsWorld:update(dt)

@@ -4,6 +4,9 @@ local WORLD = require "world.world"
 function init(self)
 	self.minimap = Minimap(gui.get_node("minimap_cell"))
 	self.player_pointer_node = gui.get_node("player_pointer")
+	self.vh = {
+		lbl_player_pos = gui.get_node("lvl_player_pos"),
+	}
 end
 
 function final(self)
@@ -13,7 +16,8 @@ end
 
 function update(self, dt)
 	self.minimap:update()
---	gui.set_rotation(self.player_pointer_node, vmath.quat_rotation_z(-WORLD.PLAYER.angle))
+	gui.set_text(self.vh.lbl_player_pos, string.format("Pos:%.2f %.2f",WORLD.level.player.pos.x,WORLD.level.player.pos.y))
+	gui.set_rotation(self.player_pointer_node, vmath.quat_rotation_z(-WORLD.level.player.angle.x))
 end
 
 function on_message(self, message_id, message, sender)

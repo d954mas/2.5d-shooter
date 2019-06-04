@@ -3,7 +3,7 @@ local CAMERA_URL = msg.url("game:/camera")
 
 ---@class CameraSystem:ECSSystem
 local System = ECS.processingSystem()
-System.filter = ECS.filter("player","pos","angle")
+System.filter = ECS.requireAll("player","pos","angle")
 
 ---@param e Entity
 function System:process(e, dt)
