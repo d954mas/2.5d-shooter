@@ -6,10 +6,26 @@
 // include the Defold SDK
 #include <dmsdk/sdk.h>
 #include "native_raycasting.h"
+#include <set>
+#include <unordered_set>
+#include <vector>
+
+extern std::vector<CellData*> VISIBLE_ZONES;
+extern std::unordered_set <CellData> ZONE_SET;
+extern std::vector<CellData*> NEED_LOAD_ZONES;
+extern std::vector<CellData*> NEED_UPDATE_ZONES;
+extern std::vector<CellData*> NEED_UNLOAD_ZONES;
 
 //region cells
 static int CellsGetVisibleLua(lua_State* L){
-	return 0;
+    lua_newtable(L);
+	int i =0;
+	for(CellData *z : VISIBLE_ZONES) {
+	    CellDataPush(L,z);
+		lua_rawseti(L, -2, i+1);
+		i++;
+	}
+	return 1;
 }
 static int CellsUpdateVisibleLua(lua_State* L){
 	CellsUpdateVisible();
@@ -84,6 +100,7 @@ static void LuaInit(lua_State* L)
 {
 	int top = lua_gettop(L);
 	// Register lua names
+	CellDataBind(L);
 	luaL_register(L, MODULE_NAME, Module_methods);
 	lua_pop(L, 1);
 	assert(top == lua_gettop(L));

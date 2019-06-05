@@ -16,12 +16,12 @@
 extern Camera MAIN_CAMERA;
 extern Map MAP;
 
-std::vector<CellData> VISIBLE_ZONES;
+std::vector<CellData*> VISIBLE_ZONES;
 
-static std::unordered_set <CellData> ZONE_SET;
-static std::vector<CellData> NEED_LOAD_ZONES;
-static std::vector<CellData> NEED_UPDATE_ZONES;
-static std::vector<CellData> NEED_UNLOAD_ZONES;
+std::unordered_set <CellData> ZONE_SET;
+std::vector<CellData*> NEED_LOAD_ZONES;
+std::vector<CellData*> NEED_UPDATE_ZONES;
+std::vector<CellData*> NEED_UNLOAD_ZONES;
 
 void CastRays(bool blocking){
     ZONE_SET.clear();
@@ -38,26 +38,29 @@ void CellsUpdateVisible(){
 	NEED_UNLOAD_ZONES.clear();
 	CastRays(true);
 	//reset prev raycasting
-	for(CellData data : VISIBLE_ZONES)data.rayCasted = false;
+	for(CellData *data : VISIBLE_ZONES)data->rayCasted = false;
 
 	//mark visible cells
-	for(CellData data : ZONE_SET) {
+	for( const CellData &set_data : ZONE_SET) {
+	    CellData &data = MAP.cells[set_data.id];
 		data.rayCasted = true;
-		if(data.visibility!=data.raycastingVisibility){
-			data.visibility = data.raycastingVisibility;
-			VISIBLE_ZONES.push_back(data);
-			NEED_LOAD_ZONES.push_back(data);
+        if(!data.visibility){
+			data.visibility = true;
+			data.right = data.raycastingRight;
+            data.top = data.raycastingTop;
+			VISIBLE_ZONES.push_back(&data);
+			NEED_LOAD_ZONES.push_back(&data);
 		}else if(data.right != data.raycastingRight || data.top != data.raycastingTop){
 			data.right = data.raycastingRight;
 			data.top = data.raycastingTop;
-			NEED_UPDATE_ZONES.push_back(data);
+			NEED_UPDATE_ZONES.push_back(&data);
 		}
 	}
 	//use this iterator to make erase worked
-	for(std::vector<CellData>::iterator  it = VISIBLE_ZONES.begin(); it != VISIBLE_ZONES.end();){
-		if(!it->rayCasted){
-			it->visibility = false;
-			NEED_UNLOAD_ZONES.push_back(*it);
+	for(std::vector<CellData*>::iterator  it = VISIBLE_ZONES.begin(); it != VISIBLE_ZONES.end();){
+		if(!(*it)->rayCasted){
+			(*it)->visibility = false;
+			NEED_UNLOAD_ZONES.push_back((*it));
 			it = VISIBLE_ZONES.erase(it);
 		}else{
 			it++;

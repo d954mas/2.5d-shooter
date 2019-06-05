@@ -74,7 +74,7 @@ void MapParse(lua_State* L){
 	MAP.height = height;
 	free(MAP.cells);
 	MAP.cells = (CellData*)malloc(sizeof(CellData)*width*height);
-	//memset(MAP.cells, 0, sizeof(CellData)*width*height);
+	memset(MAP.cells, 0, sizeof(CellData)*width*height);
 	lua_pushstring(L, "cells");
 	lua_gettable(L, -2);
 	lua_pushnil(L);
@@ -82,7 +82,7 @@ void MapParse(lua_State* L){
 		lua_pushnil(L);
 		for(int x = 0;lua_next(L, -2) != 0;x++){
 			int id = MAP.CoordsToId(x,y);
-			CellData data = MAP.cells[id];
+			CellData &data = MAP.cells[id];
 			data.x = x;
 			data.y = y;
 			data.id = id;
