@@ -15,18 +15,34 @@ extern std::unordered_set <CellData> ZONE_SET;
 extern std::vector<CellData*> NEED_LOAD_ZONES;
 extern std::vector<CellData*> NEED_UPDATE_ZONES;
 extern std::vector<CellData*> NEED_UNLOAD_ZONES;
+extern Map MAP;
 
 //region cells
 static int CellsGetVisibleLua(lua_State* L){
     lua_newtable(L);
 	int i =0;
-	for(CellData *z : VISIBLE_ZONES) {
-	    CellDataPush(L,z);
+	for(CellData *cell : VISIBLE_ZONES) {
+		CellDataPush(L,cell);
 		lua_rawseti(L, -2, i+1);
 		i++;
 	}
 	return 1;
 }
+
+//region cells
+static int CellsGetByIdLua(lua_State* L){
+    int id = lua_tonumber(L, 1) - 1;
+    if(id>=0 && id <= MAP.CoordsToId(MAP.width-1,MAP.height-1)){
+        CellDataPush(L,&MAP.cells[id]);
+        return 1;
+    }else{
+        dmLogError("bad id:%d",id);
+        return 0;
+    }
+
+
+}
+
 static int CellsUpdateVisibleLua(lua_State* L){
 	CellsUpdateVisible();
 	return 0;
@@ -92,7 +108,8 @@ static const luaL_reg Module_methods[] =
 	
 	{"cells_update_visible", CellsUpdateVisibleLua},
 	{"cells_get_visible",CellsGetVisibleLua},
-	
+	{"cells_get_by_id",CellsGetByIdLua},
+
 	{0, 0}
 };
 

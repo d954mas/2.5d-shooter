@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/native/raycasting/native_raycasting/include/cell_data.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/native/raycasting/native_raycasting/src/cell_data.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/include/map.h" beforeDir="false" afterPath="$PROJECT_DIR$/native/raycasting/native_raycasting/include/map.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_headers/raycasting.lua" beforeDir="false" afterPath="$PROJECT_DIR$/_headers/raycasting.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/level_map/debug_level_map.gui" beforeDir="false" afterPath="$PROJECT_DIR$/debug/level_map/debug_level_map.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/level_map/debug_level_map.gui_script" beforeDir="false" afterPath="$PROJECT_DIR$/debug/level_map/debug_level_map.gui_script" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/src/lua_raycasting.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/native/raycasting/native_raycasting/src/lua_raycasting.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/src/map.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/native/raycasting/native_raycasting/src/map.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/src/native_raycasting.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/native/raycasting/native_raycasting/src/native_raycasting.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/src/raycasting.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/native/raycasting/native_raycasting/src/raycasting.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/world/ecs/systems/update_camera_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/update_camera_system.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/world/view/level_view.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/view/level_view.lua" afterDir="false" />
     </list>
@@ -22,10 +19,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/libs/cursor_helper.lua">
+        <entry file="file://$PROJECT_DIR$/debug/level_map/debug_level_map.gui_script">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="45" column="4" lean-forward="true" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+            <state relative-caret-position="192">
+              <caret line="30" column="50" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -41,8 +38,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>curCam</find>
-      <find>curCam =</find>
       <find>fov =</find>
       <find>map_pos</find>
       <find>player_pos</find>
@@ -71,6 +66,8 @@
       <find>visibility</find>
       <find>cells</find>
       <find>MAP.cells</find>
+      <find>CellDataPush</find>
+      <find>TRANSPARENT_COLOR</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -98,7 +95,6 @@
         <option value="$PROJECT_DIR$/world/model/player.lua" />
         <option value="$PROJECT_DIR$/world/ecs.lua" />
         <option value="$PROJECT_DIR$/world/model/levels.lua" />
-        <option value="$PROJECT_DIR$/_headers/raycasting.lua" />
         <option value="$PROJECT_DIR$/rendercam/rendercam.lua" />
         <option value="$PROJECT_DIR$/raycasting/native_raycasting/src/camera.cpp" />
         <option value="$PROJECT_DIR$/assets/levels/result/lvl_test.json" />
@@ -107,7 +103,6 @@
         <option value="$PROJECT_DIR$/libs/event_bus.lua" />
         <option value="$PROJECT_DIR$/assets/levels/parse.lua" />
         <option value="$PROJECT_DIR$/scenes/game/gui/minimap/minimap.lua" />
-        <option value="$PROJECT_DIR$/debug/level_map/debug_level_map.gui_script" />
         <option value="$PROJECT_DIR$/libs/common.lua" />
         <option value="$PROJECT_DIR$/world/view/LevelView.lua" />
         <option value="$PROJECT_DIR$/init_controller.script" />
@@ -129,15 +124,17 @@
         <option value="$PROJECT_DIR$/world/ecs/systems/direction_to_velocity_system.lua" />
         <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/include/CellData.h" />
         <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/include/cell_data.h" />
-        <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/src/cell_data.cpp" />
         <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/include/map.h" />
         <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/src/map.cpp" />
-        <option value="$PROJECT_DIR$/world/ecs/systems/update_camera_system.lua" />
         <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/src/raycasting.cpp" />
         <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/src/native_raycasting.cpp" />
+        <option value="$PROJECT_DIR$/libs/cursor_helper.lua" />
         <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/src/lua_raycasting.cpp" />
         <option value="$PROJECT_DIR$/world/view/level_view.lua" />
-        <option value="$PROJECT_DIR$/libs/cursor_helper.lua" />
+        <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/src/cell_data.cpp" />
+        <option value="$PROJECT_DIR$/_headers/raycasting.lua" />
+        <option value="$PROJECT_DIR$/world/ecs/systems/update_camera_system.lua" />
+        <option value="$PROJECT_DIR$/debug/level_map/debug_level_map.gui_script" />
       </list>
     </option>
   </component>
@@ -225,7 +222,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559775920361" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559852067574" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../dungeon crawler 2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -267,18 +264,18 @@
       <option name="presentableId" value="Default" />
       <updated>1558881018344</updated>
       <workItem from="1558881019867" duration="11867000" />
-      <workItem from="1559078983032" duration="57583000" />
+      <workItem from="1559078983032" duration="60157000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69450000" />
+    <option name="totallyTimeSpent" value="72024000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="14" y="0" width="1882" height="993" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2524644" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2524644" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -294,7 +291,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="LuaCheck" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4989047" visible="true" weight="0.32997763" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.4989047" visible="true" weight="0.32997763" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4989047" weight="0.35117057" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5010953" side_tool="true" weight="0.3310962" />
@@ -349,16 +346,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/libs/constants.lua">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/cursor_helper.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="26" column="18" lean-forward="true" selection-end-line="32" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/sm/go/scene_controller.script">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -582,38 +569,10 @@
     <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/src/micropather.cpp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/src/map.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="83" column="41" selection-start-line="83" selection-start-column="41" selection-end-line="83" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/include/map.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/update_camera_system.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="61" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/include/cell_data.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
           <caret line="26" column="43" lean-forward="true" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/src/cell_data.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="26" column="39" lean-forward="true" selection-start-line="26" selection-start-column="39" selection-end-line="27" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -639,27 +598,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_headers/raycasting.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="39" lean-forward="true" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/src/native_raycasting.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/src/lua_raycasting.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/lume.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
@@ -681,17 +619,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/world/view/level_view.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/cursor_helper.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="672">
           <caret line="45" column="4" lean-forward="true" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/event_bus.lua">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/src/native_raycasting.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="566">
+          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/include/map.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/src/map.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="83" column="41" selection-start-line="83" selection-start-column="41" selection-end-line="83" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/src/lua_raycasting.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="35" column="36" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_headers/raycasting.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/src/cell_data.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="38" column="28" lean-forward="true" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/view/level_view.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="59" column="27" lean-forward="true" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/ecs/systems/update_camera_system.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/debug/level_map/debug_level_map.gui_script">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="30" column="50" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
         </state>
       </provider>
     </entry>

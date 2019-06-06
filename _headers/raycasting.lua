@@ -10,4 +10,14 @@ function native_raycasting.map_set(level_data) end
 function native_raycasting.map_find_path(x,y,x2,y2) end
 
 function native_raycasting.cells_update_visible() end
+---@return NativeCellData[]
 function native_raycasting.cells_get_visible() end
+---@return NativeCellData
+function native_raycasting.cells_get_by_id(id) end
+
+
+---@class NativeCellData
+local NativeCellData = {}
+function NativeCellData:get_x() end
+function NativeCellData:get_y() end
+function NativeCellData:get_visibility() end

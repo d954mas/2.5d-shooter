@@ -58,7 +58,6 @@ end
 
 function LevelView:update(dt)
 	local time = os.clock()
-	native_raycasting.cells_update_visible()
 	local visible = native_raycasting.cells_get_visible()
 end
 

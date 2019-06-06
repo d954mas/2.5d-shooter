@@ -2,43 +2,47 @@ local WORLD = require "world.world"
 local COMMON = require "libs.common"
 
 
-local EMPTY_COLOR = string.char(0xff) .. string.char(0xff) .. string.char(0xff) .. string.char(0xff)
-local BLOCK_COLOR = string.char(0xaa) .. string.char(0xaa) .. string.char(0xaa) .. string.char(0xff)
-local TRANSPARENT_COLOR = string.char(0xff) .. string.char(0x00) .. string.char(0x00) .. string.char(0x00)
+local WHITE_COLOR = string.char(0xff) .. string.char(0xff) .. string.char(0xff) .. string.char(0xff)
+local WALL_COLOR = string.char(0xaa) .. string.char(0xaa) .. string.char(0xaa) .. string.char(0xff)
+local NO_WALLS_COLOR = string.char(0x00) .. string.char(0x00) .. string.char(0x00) .. string.char(0xff)
+local TRANSPARENT_COLOR = string.char(0x00) .. string.char(0x00) .. string.char(0x00) .. string.char(0x00)
+local VISIBLE_COLOR = string.char(0xff) .. string.char(0x00) .. string.char(0x00) .. string.char(0x33)
 local MIN_SIZE = 300
 
-local function is_visible(zones,x,y)
-	for _,zone in ipairs(zones) do
-		if x == zone.x and y == zone.y then
-			return true
-		end	
-	end	
-	return false
-end	
-
-
+local function clear_textures(self)
+	if self.map_texture then
+		gui.delete_texture("map")
+		gui.delete_texture("map_visibility")
+		self.map_texture = nil
+		self.map_visibility_texture = nil
+	end
+end
 
 local function update_map(self)
 	local map_width =  WORLD.level:map_get_width()
 	local map_height =  WORLD.level:map_get_height()
 	local pixels = ""
+	local pixels_visible = ""
 	--local zones = native_raycasting.get_visible_sprites()
 	for y = map_height, 1, -1 do
 		for x=1, map_width do
 			local cell = WORLD.level:map_get_cell(x,y)
+			pixels_visible = pixels_visible .. (native_raycasting.cells_get_by_id(cell.id):get_visibility() and
+				VISIBLE_COLOR or TRANSPARENT_COLOR)
 			if cell.wall.floor == -1 then
 				--empty cell
-				pixels = pixels ..  TRANSPARENT_COLOR
+				pixels = pixels ..  NO_WALLS_COLOR
 			else
 				if cell.wall.north ~= -1 then
-					pixels = pixels .. BLOCK_COLOR
+					pixels = pixels .. WALL_COLOR
 				else
-					pixels = pixels .. EMPTY_COLOR
+					pixels = pixels .. WHITE_COLOR
 				end
-			end	
+			end
 		end
 	end
 	gui.set_texture_data("map", map_width, map_height, "rgba", pixels)
+	gui.set_texture_data("map_visibility", map_width, map_height, "rgba", pixels_visible)
 	local scale = vmath.vector3(1)
 	if map_width<map_height then
 		scale.x = MIN_SIZE/map_width
@@ -49,13 +53,12 @@ local function update_map(self)
 	gui.set_scale(self.vh.map_node, scale)
 	gui.set_position(self.vh.player_node,vmath.vector3(WORLD.level.player.pos.x,WORLD.level.player.pos.y,0))
 	gui.set_position(self.vh.map_node, vmath.vector3(1920-map_width*scale.x,1080-map_height*scale.y,1))
---	self.map_pos = gui.get_position(self.map_node)
-	--self.player_pos = gui.get_position(self.player_node)
 end
 
 function init(self)
 	self.vh = {
 		map_node = gui.get_node("map"),
+		map_visibility_node = gui.get_node("visibility"),
 		player_node = gui.get_node("player")
 	}
 	self.map_texture = nil
@@ -63,17 +66,21 @@ function init(self)
 
 	self.subscriptions = COMMON.RX.SubscriptionsStorage()
 	self.subscriptions:add(COMMON.EVENT_BUS:subscribe(COMMON.EVENTS.GAME_LEVEL_MAP_CHANGED):go_distinct(self.scheduler):subscribe(function (event)
-		if self.map_texture then gui.delete_texture("map") end
+		clear_textures(self)
 		local width, height = WORLD.level:map_get_width(),WORLD.level:map_get_height()
-		gui.new_texture("map", width, height, "rgba", string.rep(string.char(0xff),  width * height * 4))
+		gui.new_texture("map", width, height, "rgba", string.rep(WHITE_COLOR,  width * height))
+		gui.new_texture("map_visibility", width, height, "rgba", string.rep(TRANSPARENT_COLOR,  width * height))
 		gui.set_texture(self.vh.map_node, "map")
+		gui.set_texture(self.vh.map_visibility_node, "map_visibility")
 		gui.set_size(self.vh.map_node,vmath.vector3(width,height,1))
+		gui.set_size(self.vh.map_visibility_node,vmath.vector3(width,height,1))
 	end))
 end
 
+
 function final(self)
 	self.subscriptions:unsubscribe()
-	if self.map_texture then gui.delete_texture("map") end
+
 end		
 
 function update(self,dt)
