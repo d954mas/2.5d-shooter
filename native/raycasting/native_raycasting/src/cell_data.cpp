@@ -18,7 +18,6 @@ void CellDataPush(lua_State *L, CellData *cellData){
 
 static int CellDataBindGetX (lua_State *L){
 	CellData *im = CellDataCheck(L, 1);
-	printf("x:%d\n",im->x);
 	lua_pushnumber(L, im->x+1);
 	return 1;
 }
@@ -35,11 +34,18 @@ static int CellDataBindGetVisibility(lua_State *L){
 	return 1;
 }
 
+static int CellDataBindGetId(lua_State *L){
+	CellData *im = CellDataCheck(L, 1);
+	lua_pushnumber(L, im->id+1);
+	return 1;
+}
+
 void CellDataBind(lua_State * L){
     luaL_Reg functions[] = {
         {"get_x",CellDataBindGetX},
         {"get_y",CellDataBindGetY},
         {"get_visibility",CellDataBindGetVisibility},
+        {"get_id",CellDataBindGetId},
         { 0, 0 }
     };
     luaL_newmetatable(L, META_NAME);

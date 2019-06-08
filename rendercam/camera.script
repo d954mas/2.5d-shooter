@@ -140,7 +140,6 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("post-update") then
 		-- have to update pos after update or it jitters like crazy
-
 		-- Update transform stuff
 		self.data.lpos = go.get_position()
 		self.lrot = go.get_rotation()

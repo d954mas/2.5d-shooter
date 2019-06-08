@@ -18,18 +18,36 @@ extern std::vector<CellData*> NEED_UNLOAD_ZONES;
 extern Map MAP;
 
 //region cells
-static int CellsGetVisibleLua(lua_State* L){
+static void CellsPutVectorToLua(lua_State* L, std::vector<CellData*> &vec){
     lua_newtable(L);
-	int i =0;
-	for(CellData *cell : VISIBLE_ZONES) {
-		CellDataPush(L,cell);
-		lua_rawseti(L, -2, i+1);
-		i++;
-	}
+    int i =0;
+    for(CellData *cell : vec) {
+        CellDataPush(L,cell);
+        lua_rawseti(L, -2, i+1);
+        i++;
+    }
+}
+
+static int CellsGetVisibleLua(lua_State* L){
+    CellsPutVectorToLua(L,VISIBLE_ZONES);
 	return 1;
 }
 
-//region cells
+static int CellsGetNeedLoadLua(lua_State* L){
+    CellsPutVectorToLua(L,NEED_LOAD_ZONES);
+	return 1;
+}
+
+static int CellsGetNeedUnloadLua(lua_State* L){
+    CellsPutVectorToLua(L,NEED_UNLOAD_ZONES);
+	return 1;
+}
+
+static int CellsGetNeedUpdateLua(lua_State* L){
+    CellsPutVectorToLua(L,NEED_UPDATE_ZONES);
+	return 1;
+}
+
 static int CellsGetByIdLua(lua_State* L){
     int id = lua_tonumber(L, 1) - 1;
     if(id>=0 && id <= MAP.CoordsToId(MAP.width-1,MAP.height-1)){
@@ -39,8 +57,6 @@ static int CellsGetByIdLua(lua_State* L){
         dmLogError("bad id:%d",id);
         return 0;
     }
-
-
 }
 
 static int CellsUpdateVisibleLua(lua_State* L){
@@ -108,6 +124,9 @@ static const luaL_reg Module_methods[] =
 	
 	{"cells_update_visible", CellsUpdateVisibleLua},
 	{"cells_get_visible",CellsGetVisibleLua},
+	{"cells_get_need_load",CellsGetNeedLoadLua},
+	{"cells_get_need_unload",CellsGetNeedUnloadLua},
+	{"cells_get_need_update",CellsGetNeedUpdateLua},
 	{"cells_get_by_id",CellsGetByIdLua},
 
 	{0, 0}

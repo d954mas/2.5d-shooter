@@ -1,5 +1,5 @@
 embedded_components {
-  id: "south"
+  id: "sprite_south"
   type: "sprite"
   data: "tile_set: \"/assets/images/walls.atlas\"\n"
   "default_animation: \"wall_s\"\n"
@@ -19,7 +19,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "north"
+  id: "sprite_north"
   type: "sprite"
   data: "tile_set: \"/assets/images/walls.atlas\"\n"
   "default_animation: \"wall_n\"\n"
@@ -39,7 +39,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "east"
+  id: "sprite_east"
   type: "sprite"
   data: "tile_set: \"/assets/images/walls.atlas\"\n"
   "default_animation: \"wall_e\"\n"
@@ -59,7 +59,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "west"
+  id: "sprite_west"
   type: "sprite"
   data: "tile_set: \"/assets/images/walls.atlas\"\n"
   "default_animation: \"wall_w\"\n"

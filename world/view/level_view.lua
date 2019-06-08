@@ -1,11 +1,13 @@
 local COMMON = require "libs.common"
 local ENTITIES = require "world.ecs.entities.entities"
+local CURSOR_HELPER = require "libs.cursor_helper"
+local WallRender = require "world.view.level_wall_render"
+
 local FACTORY_GO_EMPTY = msg.url("game:/factories#factory_empty")
 local FACTORY_GO_BLOCK = msg.url("game:/factories#factory_block")
 local FACTORY_GO_WALL = msg.url("game:/factories#factory_wall")
-local LevelView = COMMON.class("LevelView")
-local CURSOR_HELPER = require "libs.cursor_helper"
 
+local LevelView = COMMON.class("LevelView")
 function LevelView:initialize()
 	self.physics_go = nil
 end
@@ -15,7 +17,8 @@ function LevelView:build_level(level)
 	self:dispose()
 	self.level = level
 	self:create_physics()
-	self:create_walls()
+	--self:create_walls()
+	self.wall_render = WallRender(level)
 end
 
 function LevelView:create_physics()
@@ -58,8 +61,7 @@ function LevelView:dispose()
 end
 
 function LevelView:update(dt)
-	local time = os.clock()
-	local visible = native_raycasting.cells_get_visible()
+	self.wall_render:update()
 end
 
 function LevelView:on_input(action_id,action)
