@@ -31,7 +31,7 @@ end
 function Scene:on_update(dt)
     BaseScene.on_update(self,dt)
     WORLD:update(dt)
-    CURSOR_HELPER.check()
+    CURSOR_HELPER.update_cursor_movement()
 end
 
 function Scene:on_input(action_id, action)

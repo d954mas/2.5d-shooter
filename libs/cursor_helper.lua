@@ -1,6 +1,6 @@
 local COMMON = require "libs.common"
 local RENDERCAM = require "rendercam.rendercam"
-
+local IS_HTML = sys.get_sys_info().system_name == "HTML5"
 
 --LOCK CURSOR LIKE IN SHOOTER.
 local M = {}
@@ -17,33 +17,60 @@ function M.register_listeners()
 			end
 		end
 	end)
+	if IS_HTML then
+		defos.on_click(function ()
+			if M.locked then
+				defos.set_cursor_locked(true)
+			else
+				defos.set_cursor_locked(false)
+			end
+		end)
+	end
 end
 
 function M.unregister_listener()
 	window.set_listener(function () end)
+	if IS_HTML then defos.on_click(function () end) end
 end
 
 function M.lock_cursor()
 	M.locked = true
-	defos.set_cursor_visible(false)
-	defos.set_cursor_clipped(true)
 	M.cursor_movement = vmath.vector3(0)
-	M.check()
+	if not IS_HTML then
+		defos.set_cursor_visible(false)
+		defos.set_cursor_clipped(true)
+		M.update_cursor_movement()
+	end
+end
+
+function M.on_input(action_id,action)
+	if IS_HTML then
+		if action_id == nil then
+			M.cursor_movement.x = action.dx
+			M.cursor_movement.y = action.dy
+		end
+	end
 end
 
 function M.unlock_cursor()
-	defos.set_cursor_visible(true)
-	defos.set_cursor_clipped(false)
+	if IS_HTML then
+		defos.set_cursor_locked(false)
+	else
+		defos.set_cursor_visible(true)
+		defos.set_cursor_clipped(false)
+	end
 	M.cursor_movement = vmath.vector3(0)
 	M.locked = false
 end
 
-function M.check()
-	if M.locked then
-		local x,y = defos.get_cursor_pos_view()
-		M.cursor_movement.x = x-RENDERCAM.window.x/2
-		M.cursor_movement.y = y-RENDERCAM.window.y/2
-		defos.set_cursor_pos_view(RENDERCAM.window.x/2, RENDERCAM.window.y/2) -- In game view coordinates
+function M.update_cursor_movement()
+	if not IS_HTML then
+		if M.locked then
+			local x,y = defos.get_cursor_pos_view()
+			M.cursor_movement.x = x-RENDERCAM.window.x/2
+			M.cursor_movement.y = y-RENDERCAM.window.y/2
+			defos.set_cursor_pos_view(RENDERCAM.window.x/2, RENDERCAM.window.y/2) -- In game view coordinates
+		end
 	end
 end
 

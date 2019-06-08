@@ -4,6 +4,7 @@ local FACTORY_GO_EMPTY = msg.url("game:/factories#factory_empty")
 local FACTORY_GO_BLOCK = msg.url("game:/factories#factory_block")
 local FACTORY_GO_WALL = msg.url("game:/factories#factory_wall")
 local LevelView = COMMON.class("LevelView")
+local CURSOR_HELPER = require "libs.cursor_helper"
 
 function LevelView:initialize()
 	self.physics_go = nil
@@ -63,6 +64,7 @@ end
 
 function LevelView:on_input(action_id,action)
 	--mouse movement action_id is nil.Use hash instead of nil
+	CURSOR_HELPER.on_input(action_id,action)
 	self.level.ecs_world.ecs:addEntity(ENTITIES.create_input(action_id or COMMON.INPUT.HASH_NIL,action))
 end
 
