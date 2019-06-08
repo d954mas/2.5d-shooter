@@ -70,7 +70,12 @@ end
 
 function M:dispose()
 	self:reset()
-	if self.level_view then self.level_view:dispose() end
+	self.subscriptions:unsubscribe()
+	self.subscriptions = nil
+	if self.level_view then
+		self.level_view:dispose()
+		self.level_view = nil
+	end
 end
 
 return M()

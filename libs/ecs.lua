@@ -456,6 +456,15 @@ end
 function World:clear()
 end
 
+function World:on_entity_removed(e)
+end
+
+function World:on_entity_updated(e)
+end
+
+function World:on_entity_added(e)
+end
+
     --- Creates a new World.
     -- Can optionally add default Systems and Entities. Returns the new World along
     -- with default Entities and Systems.
@@ -674,6 +683,9 @@ end
                 local index = #entities + 1
                 entities[entity] = index
                 entities[index] = entity
+                world:on_entity_added(entity)
+            else
+                world:on_entity_updated(entity)
             end
             for j = 1, #systems do
                 local system = systems[j]
@@ -722,6 +734,7 @@ end
                 entities[entity] = nil
                 entities[listIndex] = lastEntity
                 entities[#entities] = nil
+                world:on_entity_removed(entity)
                 -- Remove from cached systems
                 for j = 1, #systems do
                     local system = systems[j]
@@ -886,6 +899,7 @@ end
         return oldIndex
     end
 
+    local function empty() end
     -- Construct world metatable.
     worldMetaTable = {
         __index = {
@@ -902,6 +916,9 @@ end
             getEntityCount = tiny.getEntityCount,
             getSystemCount = tiny.getSystemCount,
             setSystemIndex = tiny.setSystemIndex,
+            on_entity_added = empty,
+            on_entity_updated = empty,
+            on_entity_removed = empty,
 			clear = tiny.clear
         },
         __tostring = function()

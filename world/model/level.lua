@@ -3,7 +3,7 @@ local COMMON = require "libs.common"
 local ENTITIES = require "world.ecs.entities.entities"
 local RENDER_CAM = require "rendercam.rendercam"
 local ECS_WORLD = require "world.ecs.ecs"
---Cell used in cpp and im lua.
+--Cell used in cpp and in lua.
 --In lua id start from 1 in cpp from 0
 --In lua pos start from 1 in cpp from 0
 
@@ -20,7 +20,29 @@ function Level:initialize(data)
 	self.world = require_f "world.world"
 	self.prepared = false
 	self.ecs_world = ECS_WORLD()
+
+	self.physics_subject = COMMON.RX.Subject.create()
+	self.scheduler = COMMON.RX.CooperativeScheduler.create()
+	self.subscriptions = COMMON.RX.SubscriptionsStorage()
+	self.subscriptions:add(self.physics_subject:go(self.scheduler):subscribe(function(value)
+		self.ecs_world.ecs:addEntity(ENTITIES.create_physics(value.message_id,value.message,value.source))
+	end))
+	ENTITIES.clear()
+	self:register_world_entities_callbacks()
 end
+
+function Level:register_world_entities_callbacks()
+	self.ecs_world.ecs.on_entity_added = function(self,e)
+		ENTITIES.on_entity_added(e)
+	end
+	self.ecs_world.ecs.on_entity_updated = function(self,e)
+		ENTITIES.on_entity_updated(e)
+	end
+	self.ecs_world.ecs.on_entity_removed = function(self,e)
+		ENTITIES.on_entity_removed(e)
+	end
+end
+
 -- prepared to play. Call it after create and before play
 function Level:prepare()
 	assert(not self.prepared,"lvl already prepared to play")
@@ -42,16 +64,19 @@ function Level:update_fov()
 	local aspect = RENDER_CAM.window.x/RENDER_CAM.window.y
 	local v_fov = assert(RENDER_CAM.get_current_camera(),"no active camera").fov
 	local h_fov = 2 * math.atan( math.tan( v_fov / 2 ) * aspect );
-	native_raycasting.camera_set_fov(h_fov)
+	native_raycasting.camera_set_fov(h_fov*1.2) --use bigger fov then camera
 end
 
 function Level:update(dt)
 	self:update_fov()
+	self.scheduler:update(dt)
 	self.ecs_world:update(dt)
 end
 
 function Level:dispose()
 	self.ecs_world:clear()
+	self.physics_subject:onCompleted()
+	self.subscriptions:unsubscribe()
 end
 
 --region MAP
