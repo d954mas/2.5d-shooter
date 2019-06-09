@@ -25,7 +25,7 @@ function LevelView:create_physics()
 	self.physics_go = msg.url(factory.create(FACTORY_GO_EMPTY))
 	local scale = math.max(self.level:map_get_width(),self.level:map_get_height())
 	--mb i do not need floor.Place it a little lower then need, to avoid useless collision responses
-	local floor = msg.url(factory.create(FACTORY_GO_BLOCK,vmath.vector3(scale/2,-scale/2+0.6,-scale/2),nil,nil,scale))
+	local floor = msg.url(factory.create(FACTORY_GO_BLOCK,vmath.vector3(scale/2,-scale/2+0.95,-scale/2),nil,nil,scale))
 	go.set_parent(floor,self.physics_go)
 	for y=1,self.level:map_get_height() do
 		for x=1, self.level:map_get_width() do
