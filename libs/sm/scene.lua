@@ -160,10 +160,10 @@ function Scene:on_update(dt)
     self._scheduler:update(dt)
 end
 
-function Scene:on_message(go_self, message_id, message, sender)
+function Scene:on_message( message_id, message, sender)
 end
 
-function Scene:on_input(go_self, action_id, action)
+function Scene:on_input( action_id, action)
 end
 
 function Scene:on_reload(go_self)

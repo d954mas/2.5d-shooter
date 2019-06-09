@@ -37,6 +37,7 @@ M.MSG_SET_PARENT = hash("set_parent")
 M.RGB = hash("rgb")
 
 M.MSG_GUI_UPDATE_GO_POS = hash("msg_gui_update_go_pos")
+M.MSG_POST_UPDATE = hash("msg_post_update")
 
 
 M.MSG_PROXY_LOADED = hash("proxy_loaded")

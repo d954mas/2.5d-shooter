@@ -6,6 +6,7 @@ function Script:init()
 	self.msg_receiver = COMMON.MSG()
 	self.msg_receiver:add(COMMON.HASHES.MSG_PHYSICS_CONTACT, self.on_physic_message)
 	self.source_url = msg.url()
+	self.source_url.fragment = nil
 end
 
 function Script:on_physic_message(message_id, message, sender)

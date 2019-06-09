@@ -46,7 +46,7 @@ function M:update()
 		if cell_data.wall.north ~= -1 then
 			local object = self.objects[cell_data.id]
 			if object then
-				self.objects[cell_data.id] = nil
+				self.objects[cell_data.id] = nild
 				go.delete(object.url)
 			else
 				COMMON.w("can't unload not loaded id:" .. cell_data.id,TAG)

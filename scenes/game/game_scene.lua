@@ -29,14 +29,22 @@ function Scene:final(go_self)
 end
 
 function Scene:on_update(dt)
+    self.dt = dt
     BaseScene.on_update(self,dt)
     WORLD:update(dt)
     CURSOR_HELPER.update_cursor_movement()
+    msg.post("#",COMMON.HASHES.MSG_POST_UPDATE)
 end
 
 function Scene:on_input(action_id, action)
     if WORLD.level_view then
         WORLD.level_view:on_input(action_id,action)
+    end
+end
+
+function Scene:on_message(message_id, message, sender)
+    if message_id == COMMON.HASHES.MSG_POST_UPDATE then
+        WORLD:post_update(self.dt)
     end
 end
 

@@ -1,6 +1,6 @@
 local COMMON = require "libs.common"
 local require_f = require
-local WORLD
+local TAG = "ENTITIES"
 ---@class Entity
 ---@field tag string tag used for help when debug
 ---@field player boolean true if player entity
@@ -18,6 +18,7 @@ local WORLD
 ---@field physics_message_id hash
 ---@field physics_message table
 ---@field physics_source hash
+---@field physics_obstacles_correction vector3
 
 local Entities = {}
 
@@ -34,52 +35,53 @@ function Entities.create_player(pos)
 	e.velocity = vmath.vector3(0,0,0)
 	e.speed = 4
 	e.player = true
+	e.go_url =   msg.url("/player")
 	return e
+end
+
+---@param url url key that used for mapping entity to go_url
+local function url_to_key(url)
+	return url.path
 end
 
 function Entities.create_physics(message_id,message,source)
 	local e = {}
 	e.physics = true
-	e.physics_message_id = message_id
-	e.physics_message = message
-	e.physics_source = source
+	e.physics_message_id = assert(message_id)
+	e.physics_message = assert(message)
+	e.physics_source = assert(source)
+	return e
 end
 
 function Entities.get_entity_for_url(url)
-	return Entities.url_to_entity[url]
+	local e =  Entities.url_to_entity[url_to_key(url)]
+	if not e then 
+		COMMON.w("no entity for url:" .. url,TAG) 
+	end
+	return e
 end
 
 function Entities.clear() end
 
+
 ---@param e Entity
 function Entities.on_entity_removed(e)
-	if e.go_url then Entities.url_to_entity[e.go_url] = nil end
+	if e.go_url then Entities.url_to_entity[url_to_key(e.go_url)] = nil end
 end
 
 ---@param e Entity
 function Entities.on_entity_added(e)
-	if e.go_url then Entities.url_to_entity[e.go_url] = e end
+	if e.go_url then Entities.url_to_entity[url_to_key(e.go_url)] = e end
 end
 
 ---@param e Entity
 function Entities.on_entity_updated(e)
-	if e.go_url then Entities.url_to_entity[e.go_url] = nil end
+	if e.go_url then Entities.url_to_entity[url_to_key(e.go_url)] = e end
 end
 
 function Entities.create_input(action_id,action)
 	return {input = true,input_action_id = action_id,input_action = action}
 end
-
-
-
-
-
-
-
-
-
-
-
 return Entities
 
 

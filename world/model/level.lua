@@ -64,7 +64,7 @@ function Level:update_fov()
 	local aspect = RENDER_CAM.window.x/RENDER_CAM.window.y
 	local v_fov = assert(RENDER_CAM.get_current_camera(),"no active camera").fov
 	local h_fov = 2 * math.atan( math.tan( v_fov / 2 ) * aspect );
-	native_raycasting.camera_set_fov(h_fov*1.2) --use bigger fov then camera
+	native_raycasting.camera_set_fov(h_fov*1) --use bigger fov then camera
 end
 
 function Level:update(dt)

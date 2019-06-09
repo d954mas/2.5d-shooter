@@ -34,9 +34,12 @@ function M:load_level(name)
 	COMMON.EVENT_BUS:event(EVENTS.GAME_LEVEL_MAP_CHANGED)
 end
 
-
 function M:update(dt)
 	self:process_autosave(dt)
+end
+
+
+function M:post_update(dt)
 	if self.level then self.level:update(dt) end
 	if self.level_view then self.level_view:update(dt) end
 end
