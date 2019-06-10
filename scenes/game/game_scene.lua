@@ -12,7 +12,7 @@ function Scene:initialize()
 end
 
 function Scene:on_show(input)
-    WORLD:load_level(assert(LEVELS.TEST_LEVEL))
+    WORLD:load_level(assert(LEVELS.TESTS.MOVEMENT))
     CURSOR_HELPER.lock_cursor()
     CURSOR_HELPER.register_listeners()
     COMMON.input_acquire()

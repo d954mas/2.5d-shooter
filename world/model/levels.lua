@@ -3,8 +3,9 @@ local Level = require "world.model.level"
 local M = {}
 local TAG = "LEVEL"
 
-
-M.TEST_LEVEL = "lvl_test"
+M.TESTS = {
+	MOVEMENT = "test_movement"
+}
 
 
 ---@return Level

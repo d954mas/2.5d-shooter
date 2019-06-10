@@ -64,7 +64,7 @@ max_count = 4096
 max_resources = 1024
 
 [collection]
-max_instances = 512
+max_instances = 2048
 
 [factory]
 max_count = 128

@@ -4,7 +4,17 @@ local HASH_SPRITE_EAST = hash("sprite_east")
 local HASH_SPRITE_WEST = hash("sprite_west")
 local HASH_SPRITE_NORTH = hash("sprite_north")
 local HASH_SPRITE_SOUTH = hash("sprite_south")
+local HASH_SPRITE = hash("sprite")
 local FACTORY_WALL_URL = msg.url("game:/factories#factory_wall")
+local FACTORY_FLOOR_URL = msg.url("game:/factories#factory_floor")
+local TILE_ID_TO_HASH = {}
+
+local function INIT_ID_TO_HASHES()
+	for id=1,20 do
+		TILE_ID_TO_HASH[id] = hash("wall" .. id)
+	end
+end
+INIT_ID_TO_HASHES()
 
 local TAG = "WallRender"
 
@@ -20,11 +30,21 @@ function WallRenderObject:initialize(url)
 	}
 end
 
+local FloorRenderObject = COMMON.class("FloorRenderObject")
+---@param url url
+function FloorRenderObject:initialize(url)
+	self.url = assert(url)
+	self.components = {
+		sprite = msg.url(self.url.socket,self.url.path,HASH_SPRITE),
+	}
+end
+
 local M = COMMON.class("WallRender")
 
 ---@param level Level
 function M:initialize(level)
-	self.objects = {} --map key is cell_id value is WallRenderObject
+	self.wall_objects = {} --map key is cell_id value is WallRenderObject
+	self.floor_objects = {} --map key is cell_id value is FloorRenderObject
 	self.level = assert(level)
 end
 
@@ -34,9 +54,20 @@ function M:update()
 		local x,y =cell:get_x(),cell:get_y()
 		local cell_data = self.level:map_get_cell(x,y)
 		if cell_data.wall.north ~= - 1 then
-			local wall_object = msg.url(factory.create(FACTORY_WALL_URL,vmath.vector3(x-0.5,0.5,-y+0.5),nil,nil,vmath.vector3(1/64)))
-			assert(not self.objects[cell_data.id],"already created id:" .. cell_data.id)
-			self.objects[cell_data.id] = WallRenderObject(wall_object)
+			local wall_url = msg.url(factory.create(FACTORY_WALL_URL,vmath.vector3(x-0.5,0.5,-y+0.5),nil,nil,vmath.vector3(1/64)))
+			assert(not self.wall_objects[cell_data.id], "already created id:" .. cell_data.id)
+			local wall_object = WallRenderObject(wall_url)
+			self.wall_objects[cell_data.id] = wall_object
+			for k,v in pairs(wall_object.components)do
+				sprite.play_flipbook(v,TILE_ID_TO_HASH[cell_data.wall.north])
+			end
+		end
+		if cell_data.wall.floor ~= -1 then
+			local floor_url = msg.url(factory.create(FACTORY_FLOOR_URL,vmath.vector3(x-0.5,0,-y+0.5),nil,nil,vmath.vector3(1/64)))
+			assert(not self.floor_objects[cell_data.id], "already created id:" .. cell_data.id)
+			local floor_object = FloorRenderObject(floor_url)
+			sprite.play_flipbook(floor_object.components.sprite,TILE_ID_TO_HASH[cell_data.wall.floor])
+			self.floor_objects[cell_data.id] = floor_object
 		end
 	end
 	local need_unload = native_raycasting.cells_get_need_unload()
@@ -44,15 +75,23 @@ function M:update()
 		local x,y =cell:get_x(),cell:get_y()
 		local cell_data = self.level:map_get_cell(x,y)
 		if cell_data.wall.north ~= -1 then
-			local object = self.objects[cell_data.id]
+			local object = self.wall_objects[cell_data.id]
+			self.wall_objects[cell_data.id] = nil
 			if object then
-				self.objects[cell_data.id] = nild
 				go.delete(object.url)
 			else
-				COMMON.w("can't unload not loaded id:" .. cell_data.id,TAG)
+				--COMMON.w("can't unload not loaded id:" .. cell_data.id,TAG)
 			end
 		end
-
+		if cell_data.wall.floor ~= -1 then
+			local object = self.floor_objects[cell_data.id]
+			self.floor_objects[cell_data.id] = nil
+			if object then
+				go.delete(object.url)
+			else
+				--COMMON.w("can't unload not loaded id:" .. cell_data.id,TAG)
+			end
+		end
 	end
 end
 

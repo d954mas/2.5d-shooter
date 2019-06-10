@@ -100,7 +100,7 @@ local function process_layer(data,layer,fun)
 		for x=1,data.size.x do
 			local cell = assert(row[x])
 			local tiled_cell = assert(layer.data[(y-1)*data.size.x + x])
-			if tiled_cell ~= 0 then fun(cell,tiled_cell) end
+			if tiled_cell ~= 0 then fun(cell,tiled_cell-1) end
 		end
 	end
 end
