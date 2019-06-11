@@ -46,6 +46,19 @@ function M:initialize(level)
 	self.wall_objects = {} --map key is cell_id value is WallRenderObject
 	self.floor_objects = {} --map key is cell_id value is FloorRenderObject
 	self.level = assert(level)
+	self.scale_for_id = {}
+end
+
+function M:sprite_set_image(url,id)
+	local tile = self.level.data.id_to_tile[id]
+	sprite.play_flipbook(url,hash(tile.image))
+	local scale_for_id = self.scale_for_id[id]
+	if not scale_for_id then
+		--know angle use needed scale. If wall have different width and height it will be broken
+		self.scale_for_id[id] = vmath.vector3(1/tile.width,1/tile.height,1/tile.width)
+		scale_for_id = self.scale_for_id[id]
+	end
+	go.set_scale(scale_for_id,url)
 end
 
 function M:update()
@@ -53,21 +66,22 @@ function M:update()
 	for _,cell in ipairs(need_load)do
 		local x,y =cell:get_x(),cell:get_y()
 		local cell_data = self.level:map_get_cell(x,y)
-		if cell_data.wall.north ~= - 1 then
-			local wall_url = msg.url(factory.create(FACTORY_WALL_URL,vmath.vector3(x-0.5,0.5,-y+0.5),nil,nil,vmath.vector3(1/64)))
+		if cell_data.wall.north ~= - 1 or cell_data.wall.south ~= - 1 or cell_data.wall.east ~= - 1 or cell_data.wall.west ~= - 1 then
+			local wall_url = msg.url(factory.create(FACTORY_WALL_URL,vmath.vector3(x-0.5,0.5,-y+0.5),nil,nil))
 			assert(not self.wall_objects[cell_data.id], "already created id:" .. cell_data.id)
 			local wall_object = WallRenderObject(wall_url)
 			self.wall_objects[cell_data.id] = wall_object
-			for k,v in pairs(wall_object.components)do
-				sprite.play_flipbook(v,TILE_ID_TO_HASH[cell_data.wall.north])
-			end
+			self:sprite_set_image(wall_object.components.sprite_north,cell_data.wall.north)
+			self:sprite_set_image(wall_object.components.sprite_south,cell_data.wall.south)
+			self:sprite_set_image(wall_object.components.sprite_east,cell_data.wall.east)
+			self:sprite_set_image(wall_object.components.sprite_west,cell_data.wall.west)
 		end
 		if cell_data.wall.floor ~= -1 then
 			local floor_url = msg.url(factory.create(FACTORY_FLOOR_URL,vmath.vector3(x-0.5,0,-y+0.5),nil,nil,vmath.vector3(1/64)))
 			assert(not self.floor_objects[cell_data.id], "already created id:" .. cell_data.id)
 			local floor_object = FloorRenderObject(floor_url)
-			sprite.play_flipbook(floor_object.components.sprite,TILE_ID_TO_HASH[cell_data.wall.floor])
 			self.floor_objects[cell_data.id] = floor_object
+			self:sprite_set_image(floor_object.components.sprite,cell_data.wall.floor)
 		end
 	end
 	local need_unload = native_raycasting.cells_get_need_unload()

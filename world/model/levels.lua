@@ -4,7 +4,8 @@ local M = {}
 local TAG = "LEVEL"
 
 M.TESTS = {
-	MOVEMENT = "test_movement"
+	MOVEMENT = "test_movement",
+	OBJECTS = "test_objects"
 }
 
 

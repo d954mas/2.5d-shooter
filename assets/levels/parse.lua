@@ -44,7 +44,8 @@ local LevelDataCell = {}
 --vector3 is not vector3 here. I use it only to autocomplete worked. It will be tables with x,y,z
 ---@class LevelData
 ---@field size vector3
----@field properties table map properties
+---@field id_to_tile table
+---@field spawn_point vector3
 ---@field spawn_point vector3
 ---@field cells LevelDataCell[][]
 local LevelData = {}
@@ -116,8 +117,19 @@ local function parse_level(path,result_path)
 	data.properties = tiled.properties
 	data.cells = {}
 	data.tilesets = {}
+	data.id_to_tile = {}
 	for _, tileset in ipairs(tiled.tilesets)do
 		table.insert(data.tilesets,{name = tileset.name,firstgid = tileset.firstgid})
+		for _,tile in ipairs(tileset.tiles) do
+			data.id_to_tile[tileset.firstgid+tile.id-1] = tile
+			local image_path = tile.image
+			local pathes = {}
+			for word in string.gmatch(image_path, "([^/]+)") do
+				table.insert(pathes,word)
+			end
+			tile.atlas = pathes[#pathes-1]
+			tile.image = string.sub(pathes[#pathes],1,string.find(pathes[#pathes],"%.")-1)
+		end
 	end
 	for y=1,data.size.y do
 		data.cells[y] = {}

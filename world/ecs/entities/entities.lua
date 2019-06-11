@@ -19,6 +19,9 @@ local TAG = "ENTITIES"
 ---@field physics_message table
 ---@field physics_source hash
 ---@field physics_obstacles_correction vector3
+---@field hp number
+---@field rotate_to_hero boolean
+---@field rotate_to_global boolean for pickups they use one global angle
 
 local Entities = {}
 
