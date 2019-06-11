@@ -2,7 +2,6 @@ local requiref = require
 local lfs = requiref "lfs"
 local cjson = requiref "cjson"
 local pretty = requiref "resty.prettycjson"
-
 local NEED_PRETTY = true
 cjson.encode_sparse_array(true)
 cjson.decode_invalid_numbers(false)
@@ -89,8 +88,10 @@ local function repack_objects(array,tiled)
 		local x,y = object.x, object.y
 		y = total_height-y
 		object.x, object.y = x,y
+		object.cell_xf = x/tiled.tilewidth
+		object.cell_yf = y/tiled.tileheight
 		object.cell_x = math.ceil(x/tiled.tilewidth)
-		object.cell_y = math.ceil(x/tiled.tileheight)
+		object.cell_y = math.ceil(y/tiled.tileheight)
 	end
 end
 
@@ -118,6 +119,7 @@ local function parse_level(path,result_path)
 	data.cells = {}
 	data.tilesets = {}
 	data.id_to_tile = {}
+	data.objects = {}
 	for _, tileset in ipairs(tiled.tilesets)do
 		table.insert(data.tilesets,{name = tileset.name,firstgid = tileset.firstgid})
 		for _,tile in ipairs(tileset.tiles) do
@@ -159,6 +161,22 @@ local function parse_level(path,result_path)
 		if object.properties.spawn_point then
 			assert(not data.spawn_point,"spawn point already set")
 			data.spawn_point = {x=object.cell_x,y=object.cell_y}
+		elseif object.gid ~= 0 then
+			local object_data = {
+				tile_id = object.gid,
+				properties = object.properties,
+				cell_x = object.cell_x, cell_y = object.cell_y,
+				cell_xf = object.cell_xf, cell_yf = object.cell_yf
+			}
+			local tile = data.id_to_tile[object_data.tile_id]
+			if tile then
+				for k,v in pairs(tile.properties)do
+					if not object_data.properties[k]	then
+						object_data.properties[k] = v
+					end
+				end
+			end
+			table.insert(data.objects,object_data)
 		end
 	end
 

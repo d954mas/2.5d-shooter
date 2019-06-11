@@ -7,4 +7,6 @@ M.UpdateGoSystem = require "world.ecs.systems.update_go_system"
 M.PhysicsObstaclesSystem = require "world.ecs.systems.physics_obstacles_system"
 M.PhysicsResetCorrectionsSystem = require "world.ecs.systems.physics_reset_corrections_system"
 
+M.DrawObjectsSystem = require "world.ecs.systems.draw_objects_system"
+
 return M

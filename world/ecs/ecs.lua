@@ -13,11 +13,12 @@ function EcsWorld:initialize()
 end
 
 function EcsWorld:_init_systems()
-	self.ecs:addSystem(SYSTEMS.PhysicsResetCorrectionsSystem)
 	self.ecs:addSystem(SYSTEMS.InputSystem)
 	self.ecs:addSystem(SYSTEMS.DirectionToVelocitySystem)
+	self.ecs:addSystem(SYSTEMS.PhysicsResetCorrectionsSystem)
 	self.ecs:addSystem(SYSTEMS.PhysicsObstaclesSystem)
 	self.ecs:addSystem(SYSTEMS.MovementSystem)
+	self.ecs:addSystem(SYSTEMS.DrawObjectsSystem)
 
 	self.ecs:addSystem(SYSTEMS.UpdateGoSystem)
 	self.ecs:addSystem(SYSTEMS.CameraSystem)

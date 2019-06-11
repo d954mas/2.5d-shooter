@@ -13,8 +13,8 @@ vec3 color  = texColor.rgb;
   //  vec3 color  = (1.0-f) * fog_color.rgb +  f * texColor.rgb;
    //gl_FragColor = vec4(dist/10);
     //color = mix(vec3(0.0),color, texColor.a);
-   // if(texColor.a < 0.01){
-       // discard;
-   // }
+    if(texColor.a < 0.01){
+        discard;
+    }
     gl_FragColor = vec4(color,texColor.a);
 }
