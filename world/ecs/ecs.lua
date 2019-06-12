@@ -20,6 +20,8 @@ function EcsWorld:_init_systems()
 	self.ecs:addSystem(SYSTEMS.MovementSystem)
 	self.ecs:addSystem(SYSTEMS.DrawObjectsSystem)
 
+	self.ecs:addSystem(SYSTEMS.LookAtPlayerSystem)
+	self.ecs:addSystem(SYSTEMS.GlobalRotationSystem)
 	self.ecs:addSystem(SYSTEMS.UpdateGoSystem)
 	self.ecs:addSystem(SYSTEMS.CameraSystem)
 

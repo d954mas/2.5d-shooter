@@ -40,7 +40,11 @@
   <object id="17" gid="14" x="384" y="832" width="56" height="60"/>
   <object id="18" gid="15" x="512" y="832" width="86" height="25"/>
   <object id="19" gid="16" x="512" y="960" width="64" height="64"/>
-  <object id="20" gid="11" x="128" y="704" width="64" height="64"/>
+  <object id="20" gid="11" x="128" y="704" width="64" height="64">
+   <properties>
+    <property name="look_at_player" type="bool" value="false"/>
+   </properties>
+  </object>
   <object id="21" gid="18" x="256" y="704" width="64" height="54"/>
  </objectgroup>
  <layer id="3" name="walls" width="20" height="20">

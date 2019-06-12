@@ -67,7 +67,7 @@ function M:update()
 		local x,y =cell:get_x(),cell:get_y()
 		local cell_data = self.level:map_get_cell(x,y)
 		if cell_data.wall.north ~= - 1 or cell_data.wall.south ~= - 1 or cell_data.wall.east ~= - 1 or cell_data.wall.west ~= - 1 then
-			local wall_url = msg.url(factory.create(FACTORY_WALL_URL,vmath.vector3(x-0.5,0.5,-y+0.5),nil,nil))
+			local wall_url = msg.url(factory.create(FACTORY_WALL_URL,vmath.vector3(x-0.5,0.5,-y+0.5),vmath.quat_rotation_z(0),nil))
 			assert(not self.wall_objects[cell_data.id], "already created id:" .. cell_data.id)
 			local wall_object = WallRenderObject(wall_url)
 			self.wall_objects[cell_data.id] = wall_object
@@ -77,7 +77,7 @@ function M:update()
 			self:sprite_set_image(wall_object.components.sprite_west,cell_data.wall.west)
 		end
 		if cell_data.wall.floor ~= -1 then
-			local floor_url = msg.url(factory.create(FACTORY_FLOOR_URL,vmath.vector3(x-0.5,0,-y+0.5),nil,nil,vmath.vector3(1/64)))
+			local floor_url = msg.url(factory.create(FACTORY_FLOOR_URL,vmath.vector3(x-0.5,0,-y+0.5),vmath.quat_rotation_z(0),nil,vmath.vector3(1/64)))
 			assert(not self.floor_objects[cell_data.id], "already created id:" .. cell_data.id)
 			local floor_object = FloorRenderObject(floor_url)
 			self.floor_objects[cell_data.id] = floor_object

@@ -94,7 +94,8 @@ return {
         {
           id = 2,
           properties = {
-            ["draw"] = true
+            ["draw"] = true,
+            ["look_at_player"] = true
           },
           image = "../tilesets/objects/block.png",
           width = 64,
@@ -103,7 +104,8 @@ return {
         {
           id = 3,
           properties = {
-            ["draw"] = true
+            ["draw"] = true,
+            ["look_at_player"] = true
           },
           image = "../tilesets/objects/bot_crystal.png",
           width = 64,
@@ -112,7 +114,8 @@ return {
         {
           id = 4,
           properties = {
-            ["draw"] = true
+            ["draw"] = true,
+            ["look_at_player"] = true
           },
           image = "../tilesets/objects/bot_crystal_2.png",
           width = 46,
@@ -121,7 +124,9 @@ return {
         {
           id = 5,
           properties = {
-            ["draw"] = true
+            ["draw"] = true,
+            ["global_rotation"] = true,
+            ["look_at_player"] = false
           },
           image = "../tilesets/objects/box.png",
           width = 64,
@@ -130,7 +135,8 @@ return {
         {
           id = 6,
           properties = {
-            ["draw"] = true
+            ["draw"] = true,
+            ["look_at_player"] = true
           },
           image = "../tilesets/objects/lamp.png",
           width = 25,
@@ -139,7 +145,8 @@ return {
         {
           id = 7,
           properties = {
-            ["draw"] = true
+            ["draw"] = true,
+            ["look_at_player"] = true
           },
           image = "../tilesets/objects/mushroom_1.png",
           width = 53,
@@ -148,7 +155,8 @@ return {
         {
           id = 8,
           properties = {
-            ["draw"] = true
+            ["draw"] = true,
+            ["look_at_player"] = true
           },
           image = "../tilesets/objects/mushroom_2.png",
           width = 56,
@@ -157,7 +165,8 @@ return {
         {
           id = 9,
           properties = {
-            ["draw"] = true
+            ["draw"] = true,
+            ["look_at_player"] = true
           },
           image = "../tilesets/objects/skull.png",
           width = 86,
@@ -166,7 +175,8 @@ return {
         {
           id = 10,
           properties = {
-            ["draw"] = true
+            ["draw"] = true,
+            ["look_at_player"] = true
           },
           image = "../tilesets/objects/table.png",
           width = 64,
@@ -175,7 +185,8 @@ return {
         {
           id = 11,
           properties = {
-            ["draw"] = true
+            ["draw"] = true,
+            ["look_at_player"] = true
           },
           image = "../tilesets/objects/top_crystal_1.png",
           width = 61,
@@ -184,7 +195,8 @@ return {
         {
           id = 12,
           properties = {
-            ["draw"] = true
+            ["draw"] = true,
+            ["look_at_player"] = true
           },
           image = "../tilesets/objects/top_crystal_2.png",
           width = 64,
@@ -382,7 +394,9 @@ return {
           rotation = 0,
           gid = 11,
           visible = true,
-          properties = {}
+          properties = {
+            ["look_at_player"] = false
+          }
         },
         {
           id = 21,

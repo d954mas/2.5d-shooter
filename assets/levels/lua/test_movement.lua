@@ -64,7 +64,7 @@ return {
       name = "objects",
       firstgid = 6,
       filename = "../tilesets/objects.tsx",
-      tilewidth = 64,
+      tilewidth = 86,
       tileheight = 64,
       spacing = 0,
       margin = 0,
@@ -80,7 +80,7 @@ return {
       },
       properties = {},
       terrains = {},
-      tilecount = 1,
+      tilecount = 12,
       tiles = {
         {
           id = 1,
@@ -90,6 +90,116 @@ return {
           image = "../tilesets/objects/spawn_point.png",
           width = 64,
           height = 64
+        },
+        {
+          id = 2,
+          properties = {
+            ["draw"] = true,
+            ["look_at_player"] = true
+          },
+          image = "../tilesets/objects/block.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 3,
+          properties = {
+            ["draw"] = true,
+            ["look_at_player"] = true
+          },
+          image = "../tilesets/objects/bot_crystal.png",
+          width = 64,
+          height = 62
+        },
+        {
+          id = 4,
+          properties = {
+            ["draw"] = true,
+            ["look_at_player"] = true
+          },
+          image = "../tilesets/objects/bot_crystal_2.png",
+          width = 46,
+          height = 64
+        },
+        {
+          id = 5,
+          properties = {
+            ["draw"] = true,
+            ["look_at_player"] = true
+          },
+          image = "../tilesets/objects/box.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 6,
+          properties = {
+            ["draw"] = true,
+            ["look_at_player"] = true
+          },
+          image = "../tilesets/objects/lamp.png",
+          width = 25,
+          height = 13
+        },
+        {
+          id = 7,
+          properties = {
+            ["draw"] = true,
+            ["look_at_player"] = true
+          },
+          image = "../tilesets/objects/mushroom_1.png",
+          width = 53,
+          height = 63
+        },
+        {
+          id = 8,
+          properties = {
+            ["draw"] = true,
+            ["look_at_player"] = true
+          },
+          image = "../tilesets/objects/mushroom_2.png",
+          width = 56,
+          height = 60
+        },
+        {
+          id = 9,
+          properties = {
+            ["draw"] = true,
+            ["look_at_player"] = true
+          },
+          image = "../tilesets/objects/skull.png",
+          width = 86,
+          height = 25
+        },
+        {
+          id = 10,
+          properties = {
+            ["draw"] = true,
+            ["look_at_player"] = true
+          },
+          image = "../tilesets/objects/table.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 11,
+          properties = {
+            ["draw"] = true,
+            ["look_at_player"] = true
+          },
+          image = "../tilesets/objects/top_crystal_1.png",
+          width = 61,
+          height = 56
+        },
+        {
+          id = 12,
+          properties = {
+            ["draw"] = true,
+            ["look_at_player"] = true
+          },
+          image = "../tilesets/objects/top_crystal_2.png",
+          width = 64,
+          height = 54
         }
       }
     }

@@ -20,6 +20,8 @@ function native_raycasting.cells_get_need_unload() end
 function native_raycasting.cells_get_need_update() end
 ---@return NativeCellData
 function native_raycasting.cells_get_by_id(id) end
+---@return NativeCellData
+function native_raycasting.cells_get_by_coords(x,y) end
 
 
 

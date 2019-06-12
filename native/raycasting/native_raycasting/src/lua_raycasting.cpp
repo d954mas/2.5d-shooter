@@ -59,6 +59,20 @@ static int CellsGetByIdLua(lua_State* L){
     }
 }
 
+static int CellsGetByCoordsLua(lua_State* L){
+    int x = lua_tonumber(L, 1) - 1;
+    int y = lua_tonumber(L, 2) - 1;
+    int id = MAP.CoordsToId(x,y);
+    if(id>=0 && id <= MAP.CoordsToId(MAP.width-1,MAP.height-1)){
+        CellDataPush(L,&MAP.cells[id]);
+        return 1;
+    }else{
+        dmLogError("bad id:%d",id);
+        return 0;
+    }
+
+}
+
 static int CellsUpdateVisibleLua(lua_State* L){
 	CellsUpdateVisible();
 	return 0;
@@ -128,6 +142,7 @@ static const luaL_reg Module_methods[] =
 	{"cells_get_need_unload",CellsGetNeedUnloadLua},
 	{"cells_get_need_update",CellsGetNeedUpdateLua},
 	{"cells_get_by_id",CellsGetByIdLua},
+	{"cells_get_by_coords",CellsGetByCoordsLua},
 
 	{0, 0}
 };

@@ -9,7 +9,6 @@ local TAG = "ENTITIES"
 ---@field velocity vector3
 ---@field speed number
 ---@field angle vector3 radians anticlockwise  x-horizontal y-vertical
----@field rotation vector4 quaternion
 ---@field go_url nil|url Do not use different urls for same entity or url_to_entity will be broken
 ---@field input boolean used for player input
 ---@field input_action_id hash used for player input
@@ -20,12 +19,13 @@ local TAG = "ENTITIES"
 ---@field physics_source hash
 ---@field physics_obstacles_correction vector3
 ---@field hp number
----@field rotate_to_hero boolean
----@field rotate_to_global boolean for pickups they use one global angle
+---@field look_at_player boolean
+---@field global_rotation boolean for pickups they use one global angle
 ---@field need_draw boolean objects that can be draw
 ---@field sprite_url url need for draw
 ---@field tile_id number need for draw objects
 ---@field drawing boolean this frame visible entities
+---@field cell_data NativeCellData
 
 local Entities = {}
 
@@ -107,12 +107,34 @@ function Entities.create_physics(message_id,message,source)
 	return e
 end
 ---@return Entity
-function Entities.create_draw_object(pos)
+function Entities.create_draw_object_base(pos)
 	local e = {}
 	e.pos = assert(pos)
 	e.need_draw = true
 	return e
 end
+
+---@return Entity
+function Entities.create_floor(pos)
+	return Entities.create_draw_object_base(pos)
+end
+
+
+---@return Entity
+function Entities.create_object_from_tiled(object)
+	if object.properties.draw then
+		local e = Entities.create_draw_object_base(vmath.vector3(object.cell_xf-0.5, object.cell_yf - 0.5, 0))
+		e.tile_id = object.tile_id
+		if object.properties.look_at_player then
+			e.look_at_player = true
+		end
+		if object.properties.global_rotation then
+			e.global_rotation = true
+		end
+		return e
+	end
+end
+
 ---@return Entity
 function Entities.create_input(action_id,action)
 	return {input = true,input_action_id = action_id,input_action = action }

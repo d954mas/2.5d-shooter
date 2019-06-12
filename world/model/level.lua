@@ -17,6 +17,7 @@ function Level:initialize(data)
 	self.world = require_f "world.world"
 	self.prepared = false
 	self.ecs_world = ECS_WORLD()
+	self.global_rotation = 0
 
 	self.physics_subject = COMMON.RX.Subject.create()
 	self.scheduler = COMMON.RX.CooperativeScheduler.create()
@@ -48,11 +49,8 @@ function Level:prepare()
 	self.player = ENTITIES.create_player(vmath.vector3(self.data.spawn_point.x+0.5,self.data.spawn_point.y+0.5,0.5))
 	self.ecs_world.ecs:addEntity(self.player)
 	for _,object in ipairs(self.data.objects)do
-		if object.properties.draw then
-			local e = ENTITIES.create_draw_object(vmath.vector3(object.cell_xf-0.5,object.cell_yf - 0.5,0))
-			e.tile_id = object.tile_id
-			self.ecs_world.ecs:addEntity(e)
-		end
+		local e = ENTITIES.create_object_from_tiled(object)
+		if e then self.ecs_world.ecs:addEntity(e) end
 	end
 end
 

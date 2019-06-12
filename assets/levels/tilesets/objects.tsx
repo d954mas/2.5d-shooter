@@ -10,66 +10,78 @@
  <tile id="2">
   <properties>
    <property name="draw" type="bool" value="true"/>
+   <property name="look_at_player" type="bool" value="true"/>
   </properties>
   <image width="64" height="64" source="objects/block.png"/>
  </tile>
  <tile id="3">
   <properties>
    <property name="draw" type="bool" value="true"/>
+   <property name="look_at_player" type="bool" value="true"/>
   </properties>
   <image width="64" height="62" source="objects/bot_crystal.png"/>
  </tile>
  <tile id="4">
   <properties>
    <property name="draw" type="bool" value="true"/>
+   <property name="look_at_player" type="bool" value="true"/>
   </properties>
   <image width="46" height="64" source="objects/bot_crystal_2.png"/>
  </tile>
  <tile id="5">
   <properties>
    <property name="draw" type="bool" value="true"/>
+   <property name="global_rotation" type="bool" value="true"/>
+   <property name="look_at_player" type="bool" value="false"/>
   </properties>
   <image width="64" height="64" source="objects/box.png"/>
  </tile>
  <tile id="6">
   <properties>
    <property name="draw" type="bool" value="true"/>
+   <property name="look_at_player" type="bool" value="true"/>
   </properties>
   <image width="25" height="13" source="objects/lamp.png"/>
  </tile>
  <tile id="7">
   <properties>
    <property name="draw" type="bool" value="true"/>
+   <property name="look_at_player" type="bool" value="true"/>
   </properties>
   <image width="53" height="63" source="objects/mushroom_1.png"/>
  </tile>
  <tile id="8">
   <properties>
    <property name="draw" type="bool" value="true"/>
+   <property name="look_at_player" type="bool" value="true"/>
   </properties>
   <image width="56" height="60" source="objects/mushroom_2.png"/>
  </tile>
  <tile id="9">
   <properties>
    <property name="draw" type="bool" value="true"/>
+   <property name="look_at_player" type="bool" value="true"/>
   </properties>
   <image width="86" height="25" source="objects/skull.png"/>
  </tile>
  <tile id="10">
   <properties>
    <property name="draw" type="bool" value="true"/>
+   <property name="look_at_player" type="bool" value="true"/>
   </properties>
   <image width="64" height="64" source="objects/table.png"/>
  </tile>
  <tile id="11">
   <properties>
    <property name="draw" type="bool" value="true"/>
+   <property name="look_at_player" type="bool" value="true"/>
   </properties>
   <image width="61" height="56" source="objects/top_crystal_1.png"/>
  </tile>
  <tile id="12">
   <properties>
    <property name="draw" type="bool" value="true"/>
+   <property name="look_at_player" type="bool" value="true"/>
   </properties>
   <image width="64" height="54" source="objects/top_crystal_2.png"/>
  </tile>
