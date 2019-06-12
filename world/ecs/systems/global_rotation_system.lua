@@ -6,7 +6,7 @@ System.filter = ECS.requireAll("sprite_url","global_rotation")
 
 ---@param e Entity
 function System:process(e, dt)
-	go.set_rotation(self.quaternion,e.sprite_url)
+	go.set_rotation(self.quaternion,e.go_url)
 end
 
 ---@param e Entity

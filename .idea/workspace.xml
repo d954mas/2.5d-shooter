@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/world/ecs/systems/global_rotation_system.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/world/ecs/systems/look_at_player_system.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_headers/raycasting.lua" beforeDir="false" afterPath="$PROJECT_DIR$/_headers/raycasting.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/lua/test_movement.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/lua/test_movement.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/lua/test_objects.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/lua/test_objects.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/result/test_movement.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/result/test_movement.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/result/test_objects.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/result/test_objects.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/sources/test_movement.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/sources/test_movement.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/sources/test_objects.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/sources/test_objects.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/objects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/tilesets/objects.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/src/lua_raycasting.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/native/raycasting/native_raycasting/src/lua_raycasting.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/ecs.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/ecs.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/entities/entities.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/entities/entities.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/systems.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/model/level.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/model/level.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/view/level_wall_render.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/view/level_wall_render.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/global_rotation_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/global_rotation_system.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/look_at_player_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/look_at_player_system.lua" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,10 +15,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/world/view/level_view.lua">
+        <entry file="file://$PROJECT_DIR$/world/ecs/systems/look_at_player_system.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
+            <state relative-caret-position="128">
+              <caret line="8" column="89" selection-start-line="8" selection-start-column="89" selection-end-line="8" selection-end-column="89" />
             </state>
           </provider>
         </entry>
@@ -142,13 +127,13 @@
         <option value="$PROJECT_DIR$/world/ecs/systems/rotate_sprite_system.lua" />
         <option value="$PROJECT_DIR$/world/view/level_wall_render.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/systems/look_at_player_system.lua" />
         <option value="$PROJECT_DIR$/world/model/level.lua" />
         <option value="$PROJECT_DIR$/world/ecs/entities/entities.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems.lua" />
         <option value="$PROJECT_DIR$/world/ecs/ecs.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/systems/global_rotation_system.lua" />
         <option value="$PROJECT_DIR$/world/view/level_view.lua" />
+        <option value="$PROJECT_DIR$/world/ecs/systems/global_rotation_system.lua" />
+        <option value="$PROJECT_DIR$/world/ecs/systems/look_at_player_system.lua" />
       </list>
     </option>
   </component>
@@ -228,7 +213,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560370572647" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560372725060" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../dungeon crawler 2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -274,12 +259,12 @@
       <workItem from="1558881019867" duration="11867000" />
       <workItem from="1559078983032" duration="61364000" />
       <workItem from="1560009443315" duration="37847000" />
-      <workItem from="1560367592621" duration="2979000" />
+      <workItem from="1560367592621" duration="3877000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114057000" />
+    <option name="totallyTimeSpent" value="114955000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="457" y="120" width="1350" height="995" extended-state="0" />
@@ -635,13 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/look_at_player_system.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/world/model/level.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="547">
@@ -677,13 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/global_rotation_system.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/world/ecs/systems/update_camera_system.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -693,8 +664,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/world/view/level_view.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
+        <state relative-caret-position="50">
+          <caret line="30" column="50" lean-forward="true" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/ecs/systems/global_rotation_system.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/ecs/systems/look_at_player_system.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="89" selection-start-line="8" selection-start-column="89" selection-end-line="8" selection-end-column="89" />
         </state>
       </provider>
     </entry>
