@@ -2,33 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/walls.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/walls.atlas" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/lua/test_objects.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/lua/test_objects.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/parse.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/parse.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/result/test_movement.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/result/test_movement.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/result/test_objects.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/result/test_objects.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/tilesets/main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/main/wall1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/main/wall2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/main/wall3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/main/wall4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/objects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/tilesets/objects.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/objects/block.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/objects/bot_crystal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/objects/bot_crystal_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/objects/box.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/objects/lamp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/objects/mushroom_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/objects/mushroom_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/objects/objects.atlas" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/objects/skull.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/objects/table.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/objects/top_crystal_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/objects/top_crystal_2.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/global_rotation_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/global_rotation_system.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/look_at_player_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/look_at_player_system.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/world/ecs/systems/update_go_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/update_go_system.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/view/level_wall_render.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/view/level_wall_render.lua" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,10 +16,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/world/view/level_wall_render.lua">
+        <entry file="file://$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="50" column="35" lean-forward="true" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+            <state relative-caret-position="451">
+              <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -151,13 +128,13 @@
         <option value="$PROJECT_DIR$/world/ecs/systems.lua" />
         <option value="$PROJECT_DIR$/world/ecs/ecs.lua" />
         <option value="$PROJECT_DIR$/world/view/level_view.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/systems/global_rotation_system.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/systems/look_at_player_system.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/systems/update_go_system.lua" />
         <option value="$PROJECT_DIR$/assets/levels/parse.lua" />
         <option value="$PROJECT_DIR$/assets/levels/tilesets/main.tsx" />
         <option value="$PROJECT_DIR$/world/view/level_wall_render.lua" />
+        <option value="$PROJECT_DIR$/world/ecs/systems/global_rotation_system.lua" />
+        <option value="$PROJECT_DIR$/world/ecs/systems/look_at_player_system.lua" />
+        <option value="$PROJECT_DIR$/world/ecs/systems/update_go_system.lua" />
+        <option value="$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua" />
       </list>
     </option>
   </component>
@@ -168,8 +145,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="457" />
-    <option name="y" value="120" />
+    <option name="x" value="247" />
+    <option name="y" value="27" />
     <option name="width" value="1350" />
     <option name="height" value="995" />
   </component>
@@ -284,15 +261,15 @@
       <workItem from="1559078983032" duration="61364000" />
       <workItem from="1560009443315" duration="37847000" />
       <workItem from="1560367592621" duration="7275000" />
-      <workItem from="1560456698212" duration="31000" />
+      <workItem from="1560456698212" duration="863000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118384000" />
+    <option name="totallyTimeSpent" value="119216000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="457" y="120" width="1350" height="995" extended-state="0" />
+    <frame x="247" y="27" width="1350" height="995" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3068006" />
@@ -648,38 +625,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/global_rotation_system.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/look_at_player_system.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/world/ecs/systems/movement_system.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/update_go_system.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -699,8 +648,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/world/view/level_wall_render.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="50" column="35" lean-forward="true" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+        <state relative-caret-position="129">
+          <caret line="47" column="30" lean-forward="true" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/ecs/systems/global_rotation_system.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="44" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/ecs/systems/look_at_player_system.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/ecs/systems/update_go_system.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
         </state>
       </provider>
     </entry>

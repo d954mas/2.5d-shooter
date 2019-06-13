@@ -8,9 +8,6 @@ System.filter = ECS.requireAll("go_url")
 function System:process(e, dt)
 	if e.pos then
 		local current_pos = vmath.vector3(e.pos.x,0.5,-e.pos.y)
-		if e.tile and e.tile.origin then
-			current_pos.y = current_pos.y + e.tile.origin.y
-		end
 		go.set_position(current_pos,e.go_url)
 	end
 	if e.angle then
