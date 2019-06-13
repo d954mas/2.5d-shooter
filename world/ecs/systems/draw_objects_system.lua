@@ -24,6 +24,7 @@ function System:process(e, dt)
 		e.go_url = go_url
 		e.sprite_url = sprite_url
 		e.drawing = true
+		e.tile = self.world.world.level.data.id_to_tile[e.tile_id]
 		self:sprite_set_image(e)
 		self.world:addEntity(e)
 	end
@@ -32,8 +33,7 @@ end
 function System:sprite_set_image(e)
 	local tile = self.world.world.level.data.id_to_tile[e.tile_id]
 	sprite.play_flipbook(e.sprite_url,hash(tile.image))
-	local scale_for_id = vmath.vector3(tile.width/64/64,tile.height/64/64,tile.width/64/64)
-	go.set_scale(scale_for_id,e.go_url)
+	go.set_scale(tile.scale,e.go_url)
 end
 
 

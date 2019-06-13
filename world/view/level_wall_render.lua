@@ -46,19 +46,12 @@ function M:initialize(level)
 	self.wall_objects = {} --map key is cell_id value is WallRenderObject
 	self.floor_objects = {} --map key is cell_id value is FloorRenderObject
 	self.level = assert(level)
-	self.scale_for_id = {}
 end
 
 function M:sprite_set_image(url,id)
 	local tile = self.level.data.id_to_tile[id]
 	sprite.play_flipbook(url,hash(tile.image))
-	local scale_for_id = self.scale_for_id[id]
-	if not scale_for_id then
-		--know angle use needed scale. If wall have different width and height it will be broken
-		self.scale_for_id[id] = vmath.vector3(1/tile.width,1/tile.height,1/tile.width)
-		scale_for_id = self.scale_for_id[id]
-	end
-	go.set_scale(scale_for_id,url)
+	go.set_scale(tile.scale,url)
 end
 
 function M:update()

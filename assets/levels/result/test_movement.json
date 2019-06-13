@@ -14,28 +14,36 @@
     {
       "image":"wall1",
       "atlas":"main",
+      "scale":0.015625,
       "height":64,
+      "properties":      {},
       "id":1,
       "width":64
     },
     {
       "image":"wall2",
       "atlas":"main",
+      "scale":0.015625,
       "height":64,
+      "properties":      {},
       "id":2,
       "width":64
     },
     {
       "image":"wall3",
       "atlas":"main",
+      "scale":0.015625,
       "height":64,
+      "properties":      {},
       "id":3,
       "width":64
     },
     {
       "image":"wall4",
       "atlas":"main",
+      "scale":0.015625,
       "height":64,
+      "properties":      {},
       "id":4,
       "width":64
     },
@@ -43,6 +51,7 @@
     {
       "image":"spawn_point",
       "atlas":"objects",
+      "scale":0.015625,
       "id":1,
       "properties":{
         "spawn_point":true
@@ -53,6 +62,7 @@
     {
       "image":"block",
       "atlas":"objects",
+      "scale":0.015625,
       "id":2,
       "properties":{
         "draw":true,
@@ -64,6 +74,7 @@
     {
       "image":"bot_crystal",
       "atlas":"objects",
+      "scale":0.016129032258065,
       "id":3,
       "properties":{
         "draw":true,
@@ -75,6 +86,7 @@
     {
       "image":"bot_crystal_2",
       "atlas":"objects",
+      "scale":0.015625,
       "id":4,
       "properties":{
         "draw":true,
@@ -86,6 +98,7 @@
     {
       "image":"box",
       "atlas":"objects",
+      "scale":0.015625,
       "id":5,
       "properties":{
         "draw":true,
@@ -97,6 +110,7 @@
     {
       "image":"lamp",
       "atlas":"objects",
+      "scale":0.076923076923077,
       "id":6,
       "properties":{
         "draw":true,
@@ -108,6 +122,7 @@
     {
       "image":"mushroom_1",
       "atlas":"objects",
+      "scale":0.015873015873016,
       "id":7,
       "properties":{
         "draw":true,
@@ -119,6 +134,7 @@
     {
       "image":"mushroom_2",
       "atlas":"objects",
+      "scale":0.016666666666667,
       "id":8,
       "properties":{
         "draw":true,
@@ -130,6 +146,7 @@
     {
       "image":"skull",
       "atlas":"objects",
+      "scale":0.04,
       "id":9,
       "properties":{
         "draw":true,
@@ -141,6 +158,7 @@
     {
       "image":"table",
       "atlas":"objects",
+      "scale":0.015625,
       "id":10,
       "properties":{
         "draw":true,
@@ -152,6 +170,7 @@
     {
       "image":"top_crystal_1",
       "atlas":"objects",
+      "scale":0.017857142857143,
       "id":11,
       "properties":{
         "draw":true,
@@ -163,6 +182,7 @@
     {
       "image":"top_crystal_2",
       "atlas":"objects",
+      "scale":0.018518518518519,
       "id":12,
       "properties":{
         "draw":true,

@@ -123,6 +123,7 @@ local function parse_level(path,result_path)
 	for _, tileset in ipairs(tiled.tilesets)do
 		table.insert(data.tilesets,{name = tileset.name,firstgid = tileset.firstgid})
 		for _,tile in ipairs(tileset.tiles) do
+			tile.properties = tile.properties or {}
 			data.id_to_tile[tileset.firstgid+tile.id-1] = tile
 			local image_path = tile.image
 			local pathes = {}
@@ -131,6 +132,15 @@ local function parse_level(path,result_path)
 			end
 			tile.atlas = pathes[#pathes-1]
 			tile.image = string.sub(pathes[#pathes],1,string.find(pathes[#pathes],"%.")-1)
+			tile.scale = 1/( tile.properties.size_for_scale or tile.height)
+			local origin = tile.properties.origin
+			if origin then
+				local size = tile.properties.size_for_scale or tile.height
+				local dy = (size - tile.height)*tile.scale/2
+				if origin == "top" then tile.origin = {x=0,y=dy}
+				elseif origin == "bottom" then tile.origin = {x=0,y=-dy}
+				end
+			end
 		end
 	end
 	for y=1,data.size.y do

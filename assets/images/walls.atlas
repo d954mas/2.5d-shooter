@@ -1,16 +1,4 @@
 images {
-  image: "/assets/levels/tilesets/main/wall1.png"
-}
-images {
-  image: "/assets/levels/tilesets/main/wall2.png"
-}
-images {
-  image: "/assets/levels/tilesets/main/wall3.png"
-}
-images {
-  image: "/assets/levels/tilesets/main/wall4.png"
-}
-images {
   image: "/assets/images/game/debug/wall_e.png"
 }
 images {
@@ -21,6 +9,18 @@ images {
 }
 images {
   image: "/assets/images/game/debug/wall_w.png"
+}
+images {
+  image: "/assets/images/game/walls/wall1.png"
+}
+images {
+  image: "/assets/images/game/walls/wall2.png"
+}
+images {
+  image: "/assets/images/game/walls/wall3.png"
+}
+images {
+  image: "/assets/images/game/walls/wall4.png"
 }
 margin: 0
 extrude_borders: 0
