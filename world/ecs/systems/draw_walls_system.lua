@@ -1,3 +1,5 @@
+local ECS = require 'libs.ecs'
+
 local COMMON = require "libs.common"
 
 local HASH_SPRITE_EAST = hash("sprite_east")
@@ -7,16 +9,8 @@ local HASH_SPRITE_SOUTH = hash("sprite_south")
 local HASH_SPRITE = hash("sprite")
 local FACTORY_WALL_URL = msg.url("game:/factories#factory_wall")
 local FACTORY_FLOOR_URL = msg.url("game:/factories#factory_floor")
-local TILE_ID_TO_HASH = {}
 
-local function INIT_ID_TO_HASHES()
-	for id=1,20 do
-		TILE_ID_TO_HASH[id] = hash("wall" .. id)
-	end
-end
-INIT_ID_TO_HASHES()
-
-local TAG = "WallRender"
+--Draw wall and floors
 
 local WallRenderObject = COMMON.class("WallRenderObject")
 ---@param url url
@@ -39,26 +33,29 @@ function FloorRenderObject:initialize(url)
 	}
 end
 
-local M = COMMON.class("WallRender")
+---@class DrawWallsSystem:ECSSystem
+local System = ECS.system()
 
----@param level Level
-function M:initialize(level)
+function System:initialize()
 	self.wall_objects = {} --map key is cell_id value is WallRenderObject
-	self.floor_objects = {} --map key is cell_id value is FloorRenderObject
-	self.level = assert(level)
+	self.floor_objects = {} --map key is cell_id valuee is FloorRenderObject
 end
 
-function M:sprite_set_image(url,id)
-	local tile = self.level.data.id_to_tile[id]
+System:initialize()
+
+
+
+function System:sprite_set_image(url,id)
+	local tile = self.world.world.level.data.id_to_tile[id]
 	sprite.play_flipbook(url,hash(tile.image))
 	go.set_scale(tile.scale,url)
 end
 
-function M:update()
+function System:update(dt)
 	local need_load = native_raycasting.cells_get_need_load()
 	for _,cell in ipairs(need_load)do
 		local x,y =cell:get_x(),cell:get_y()
-		local cell_data = self.level:map_get_cell(x,y)
+		local cell_data = self.world.world.level:map_get_cell(x,y)
 		if cell_data.wall.north ~= - 1 or cell_data.wall.south ~= - 1 or cell_data.wall.east ~= - 1 or cell_data.wall.west ~= - 1 then
 			local wall_url = msg.url(factory.create(FACTORY_WALL_URL,vmath.vector3(x-0.5,0.5,-y+0.5),vmath.quat_rotation_z(0),nil))
 			assert(not self.wall_objects[cell_data.id], "already created id:" .. cell_data.id)
@@ -80,7 +77,7 @@ function M:update()
 	local need_unload = native_raycasting.cells_get_need_unload()
 	for _,cell in ipairs(need_unload)do
 		local x,y =cell:get_x(),cell:get_y()
-		local cell_data = self.level:map_get_cell(x,y)
+		local cell_data = self.world.world.level:map_get_cell(x,y)
 		if cell_data.wall.north ~= -1 then
 			local object = self.wall_objects[cell_data.id]
 			self.wall_objects[cell_data.id] = nil
@@ -105,5 +102,4 @@ end
 
 
 
-
-return M
+return System

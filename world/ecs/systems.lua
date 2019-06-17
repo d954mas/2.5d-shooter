@@ -10,5 +10,6 @@ M.LookAtPlayerSystem = require "world.ecs.systems.look_at_player_system"
 M.GlobalRotationSystem = require "world.ecs.systems.global_rotation_system"
 
 M.DrawObjectsSystem = require "world.ecs.systems.draw_objects_system"
+M.DrawWallsSystem = require "world.ecs.systems.draw_walls_system"
 
 return M

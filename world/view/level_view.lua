@@ -2,7 +2,6 @@ local COMMON = require "libs.common"
 local ENTITIES = require "world.ecs.entities.entities"
 local CURSOR_HELPER = require "libs.cursor_helper"
 local RENDER_CAM = require "rendercam.rendercam"
-local WallRender = require "world.view.level_wall_render"
 
 local CAMERA_RAYS = 512
 local CAMERA_MAX_DIST = 50
@@ -21,7 +20,6 @@ function LevelView:build_level(level)
 	self:dispose()
 	self.level = level
 	self:create_physics()
-	--self:create_walls()
 	self.wall_render = WallRender(level)
 	self:configure_camera()
 	self:update_fov()
@@ -40,7 +38,6 @@ function LevelView:update_fov()
 	native_raycasting.camera_set_fov(h_fov*1.2) --use bigger fov then camera
 end
 
-
 function LevelView:create_physics()
 	self.physics_go = msg.url(factory.create(FACTORY_GO_EMPTY))
 	local scale = math.max(self.level:map_get_width(),self.level:map_get_height())
@@ -58,19 +55,6 @@ function LevelView:create_physics()
 	end
 end
 
-function LevelView:create_walls()
-	self.walls_go = msg.url(factory.create(FACTORY_GO_EMPTY))
-	for y=1,self.level:map_get_height() do
-		for x=1, self.level:map_get_width() do
-			local cell = self.level:map_get_cell(x,y)
-			if cell.wall.north ~= - 1 then
-				local wall = msg.url(factory.create(FACTORY_GO_WALL,vmath.vector3(x-0.5,0.5,-y+0.5),nil,nil,vmath.vector3(1/64)))
-				go.set_parent(wall,self.walls_go)
-			end
-		end
-	end
-end
-
 function LevelView:dispose()
 	if self.level then
 		go.delete(self.physics_go,true)
@@ -80,7 +64,7 @@ function LevelView:dispose()
 end
 
 function LevelView:update(dt)
-	self.wall_render:update()
+	--self.wall_render:update()
 end
 
 function LevelView:on_input(action_id,action)
