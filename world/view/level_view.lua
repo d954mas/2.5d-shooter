@@ -20,7 +20,6 @@ function LevelView:build_level(level)
 	self:dispose()
 	self.level = level
 	self:create_physics()
-	self.wall_render = WallRender(level)
 	self:configure_camera()
 	self:update_fov()
 end
@@ -64,7 +63,6 @@ function LevelView:dispose()
 end
 
 function LevelView:update(dt)
-	--self.wall_render:update()
 end
 
 function LevelView:on_input(action_id,action)

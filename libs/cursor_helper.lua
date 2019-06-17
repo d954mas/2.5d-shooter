@@ -49,6 +49,16 @@ function M.on_input(action_id,action)
 			M.cursor_movement.x = action.dx
 			M.cursor_movement.y = action.dy
 		end
+	else
+		if action_id == COMMON.HASHES.INPUT_ESC then
+			if M.locked then
+				M.unlock_cursor()
+				M.wait_for_touch = true -- enable lock when user touch inside game window
+			end
+		elseif action_id == COMMON.HASHES.INPUT_TOUCH and action.pressed and M.wait_for_touch then
+			M.lock_cursor()
+			M.wait_for_touch = false
+		end
 	end
 end
 

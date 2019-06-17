@@ -13,6 +13,7 @@ M.INPUT_LEFT = hash("left")
 M.INPUT_RIGHT = hash("right")
 M.INPUT_DOWN = hash("down")
 M.INPUT_SPACE = hash("space")
+M.INPUT_ESC = hash("escape")
 
 M.INPUT_TOUCH = hash("touch")
 M.INPUT_RIGHT_CLICK = hash("right_click")

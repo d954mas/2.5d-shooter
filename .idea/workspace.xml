@@ -3,16 +3,29 @@
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/ecs.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/ecs.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/systems.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.input_binding" beforeDir="false" afterPath="$PROJECT_DIR$/game.input_binding" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/cursor_helper.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/cursor_helper.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/hashes.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/hashes.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/world/view/level_view.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/view/level_view.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/view/level_wall_render.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/draw_walls_system.lua" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/libs/cursor_helper.lua">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="53" column="28" lean-forward="true" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -88,7 +101,6 @@
         <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/src/raycasting.cpp" />
         <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/src/native_raycasting.cpp" />
         <option value="$PROJECT_DIR$/debug/level_map/debug_level_map.gui_script" />
-        <option value="$PROJECT_DIR$/libs/cursor_helper.lua" />
         <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/src/cell_data.cpp" />
         <option value="$PROJECT_DIR$/rendercam/camera.script" />
         <option value="$PROJECT_DIR$/render/my.render_script" />
@@ -96,7 +108,6 @@
         <option value="$PROJECT_DIR$/world/model/physics.lua" />
         <option value="$PROJECT_DIR$/libs/ecs.lua" />
         <option value="$PROJECT_DIR$/go_scripts/handle_physics.script" />
-        <option value="$PROJECT_DIR$/libs/hashes.lua" />
         <option value="$PROJECT_DIR$/libs/sm/scene.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems/reset_physics_correction_system.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems/physics_reset_corrections_system.lua" />
@@ -124,6 +135,8 @@
         <option value="$PROJECT_DIR$/world/ecs/systems.lua" />
         <option value="$PROJECT_DIR$/world/ecs/ecs.lua" />
         <option value="$PROJECT_DIR$/world/view/level_view.lua" />
+        <option value="$PROJECT_DIR$/libs/hashes.lua" />
+        <option value="$PROJECT_DIR$/libs/cursor_helper.lua" />
       </list>
     </option>
   </component>
@@ -134,8 +147,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="99" />
-    <option name="y" value="55" />
+    <option name="x" value="145" />
+    <option name="y" value="57" />
     <option name="width" value="1350" />
     <option name="height" value="995" />
   </component>
@@ -251,15 +264,16 @@
       <workItem from="1560009443315" duration="37847000" />
       <workItem from="1560367592621" duration="7275000" />
       <workItem from="1560456698212" duration="863000" />
-      <workItem from="1560803197909" duration="1366000" />
+      <workItem from="1560803197909" duration="2070000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120582000" />
+    <option name="totallyTimeSpent" value="121286000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="99" y="55" width="1350" height="995" extended-state="0" />
+    <frame x="145" y="57" width="1350" height="995" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3114374" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -352,9 +366,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/libs/event_bus.lua">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/rendercam/rendercam.render_script">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -436,13 +447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/hashes.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/sm/scene.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
@@ -479,13 +483,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/materials/3dsprite/3dsprite.fp">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/game_scene.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
-        </state>
-      </provider>
     </entry>
     <entry file="jar://$APPLICATION_PLUGINS_DIR$/EmmyLua/lib/EmmyLua-1.2.7-IDEA182.jar!/std/Lua51/string.lua">
       <provider selected="true" editor-type-id="text-editor">
@@ -662,6 +659,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="17" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/hashes.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/game/game_scene.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/cursor_helper.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="53" column="28" lean-forward="true" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
         </state>
       </provider>
     </entry>
