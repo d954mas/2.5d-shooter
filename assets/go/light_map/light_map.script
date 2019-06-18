@@ -1,0 +1,17 @@
+local COMMON = require "libs.common"
+function init(self)
+	self.resource_path = go.get("#model", "texture0")
+	self.header = {
+		width = 128,
+		height = 128,
+		type = resource.TEXTURE_TYPE_2D,
+		format = resource.TEXTURE_FORMAT_RGB,
+		num_mip_maps = 1
+	}
+end
+
+function update(self, dt)
+	if COMMON.RENDER.light_map_updated then
+		resource.set_texture(self.resource_path, self.header, COMMON.RENDER.buffers.light_map)
+	end
+end

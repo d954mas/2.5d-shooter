@@ -2,8 +2,12 @@ local COMMON = require "libs.common"
 local RENDERCAM = require "rendercam.rendercam"
 local RENDERCAM_VIEWPORT = RENDERCAM.viewport
 
+--draw all ambient light of level to texture
+--if level bigger then LIGHT_MAP_SIZE there will be problems
 local LIGHT_MAP_SIZE = 128
+local TAG = "Render"
 
+---@class Render
 local Render = COMMON.new_n28s()
 --region init
 function Render:init()
@@ -11,7 +15,10 @@ function Render:init()
     self:init_predicates()
     self:init_rendercam()
     self:init_render_targets()
+    self:init_buffers()
+    self:init_constants_buffers()
     self:register_messages()
+    COMMON.RENDER = self
 end
 
 function Render:create_render_target(name,params)
@@ -37,6 +44,12 @@ function Render:init_render_targets()
     }
 end
 
+function Render:init_buffers()
+    self.buffers = {
+        light_map =  buffer.create( LIGHT_MAP_SIZE * LIGHT_MAP_SIZE, { {name=hash("light_map"), type=buffer.VALUE_TYPE_UINT8, count=3 } })
+    }
+end
+
 function Render:init_predicates()
     self.predicates = {
         tile = render.predicate({"tile"}),
@@ -45,6 +58,7 @@ function Render:init_predicates()
         model = render.predicate({"model"}),
         particle = render.predicate({"particle"}),
         sprite_3d = render.predicate({"sprite_3d"}),
+        light_map = render.predicate({"light_map"}),
     }
 end
 
@@ -53,6 +67,13 @@ function Render:init_rendercam()
     RENDERCAM.configWin.y = render.get_height()
     RENDERCAM.update_window_size(render.get_window_width(), render.get_window_height())
     self:window_size_changed()
+end
+
+function Render:init_constants_buffers()
+    self.constants_buffers = {
+        light_map = render.constant_buffer()
+    }
+    self.constants_buffers.light_map.light_map = vmath.vector4(LIGHT_MAP_SIZE,LIGHT_MAP_SIZE,0,0)
 end
 
 function Render:register_messages()
@@ -70,16 +91,42 @@ function Render:window_size_changed()
     self.gui_proj = vmath.matrix4_orthographic(0, render.get_window_width(), 0, render.get_window_height(), -1, 1)
 end
 
-function Render:draw_light_map()
+function Render:update_light_map(dt)
+    self.light_map_updated = false
+    self.light_map_time = (self.light_map_time or 10) + dt
+    if self.light_map_time > 4 then
+        self.light_map_time = 0
+        self.light_map_updated = true
+        local stream = buffer.get_stream(self.buffers.light_map, hash("light_map"))
+        for y=0,LIGHT_MAP_SIZE-1 do
+            for x=0,LIGHT_MAP_SIZE-1 do
+                local index = y * LIGHT_MAP_SIZE * 3 + x * 3 + 1
+                stream[index + 0] = math.random(0,255)
+                stream[index + 1] = math.random(0,255)
+                stream[index + 2] = math.random(0,255)
+            end
+        end
+    end
+end
+
+
+function Render:draw_light_map(debug)
     render.disable_state(render.STATE_DEPTH_TEST)
     render.disable_state(render.STATE_STENCIL_TEST)
     render.disable_state(render.STATE_CULL_FACE)
-    render.set_viewport(0, 0, LIGHT_MAP_SIZE, LIGHT_MAP_SIZE)
-    render.set_projection(vmath.matrix4_orthographic(0, LIGHT_MAP_SIZE, 0, LIGHT_MAP_SIZE, -1, 1))
-
-    render.enable_render_target(self.targets.light_map)
-    render.clear({[render.BUFFER_COLOR_BIT] = vmath.vector4(1,1,1,1), [render.BUFFER_DEPTH_BIT] = 1, [render.BUFFER_STENCIL_BIT] = 0})
-    render.disable_render_target(self.targets.light_map)
+    if debug then
+        render.set_viewport(0, 0, LIGHT_MAP_SIZE, LIGHT_MAP_SIZE)
+    else
+        render.set_viewport(0, 0, LIGHT_MAP_SIZE, LIGHT_MAP_SIZE)
+    end
+    render.set_view(vmath.matrix4())
+    render.set_projection(vmath.matrix4_orthographic(-0.01, 0.01, -0.01, 0.01, -1, 1))
+    if not debug then
+        render.enable_render_target(self.targets.light_map)
+        render.clear({[render.BUFFER_COLOR_BIT] = vmath.vector4(1,1,1,1), [render.BUFFER_DEPTH_BIT] = 1, [render.BUFFER_STENCIL_BIT] = 0})
+    end
+    render.draw(self.predicates.light_map)
+    if not debug then render.disable_render_target(self.targets.light_map) end
 end
 
 function Render:draw_gui()
@@ -113,13 +160,14 @@ function Render:draw_3d()
     render.set_depth_mask(true)
     render.enable_texture(1, self.targets.light_map, render.BUFFER_COLOR_BIT)
     render.draw(self.predicates.model)
-    render.draw(self.predicates.sprite_3d)
+    render.draw(self.predicates.sprite_3d,self.constants_buffers.light_map)
     -- Debug rendering - physics debug, draw_line
     render.disable_state(render.STATE_DEPTH_TEST)
 
 end
 
 function Render:update(dt)
+    self:update_light_map(dt)
     render.set_depth_mask(true)
     render.set_stencil_mask(0xff)
     render.clear({[render.BUFFER_COLOR_BIT] = self.clear_color, [render.BUFFER_DEPTH_BIT] = 1, [render.BUFFER_STENCIL_BIT] = 0})
@@ -132,6 +180,7 @@ function Render:update(dt)
 
     self:draw_sprites()
     self:draw_3d()
+    self:draw_light_map(true)
     self:draw_gui()
 end
 

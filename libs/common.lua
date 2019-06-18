@@ -13,6 +13,8 @@ M.CONSTANTS = require "libs.constants"
 M.EVENT_BUS =EVENT_BUS() --global event_bus
 M.GLOBAL = {}
 M.N28S = require "libs.n28s"
+---@type Render set inside render. Used to get buffers outside from render
+M.RENDER = nil
 ---@type Localization
 M.LOCALE = nil
 
