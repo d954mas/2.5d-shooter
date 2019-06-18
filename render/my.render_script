@@ -2,13 +2,39 @@ local COMMON = require "libs.common"
 local RENDERCAM = require "rendercam.rendercam"
 local RENDERCAM_VIEWPORT = RENDERCAM.viewport
 
+local LIGHT_MAP_SIZE = 128
+
 local Render = COMMON.new_n28s()
 --region init
 function Render:init()
     self.clear_color = vmath.vector4(0)
     self:init_predicates()
     self:init_rendercam()
+    self:init_render_targets()
     self:register_messages()
+end
+
+function Render:create_render_target(name,params)
+    -- render target buffer parameters
+    local color_params = { format = params.format or render.FORMAT_RGBA,
+                           width = assert(params.w),
+                           height = assert(params.h),
+                           min_filter = params.min_filter or render.FILTER_LINEAR,
+                           mag_filter = params.mag_filter or render.FILTER_LINEAR,
+                           u_wrap = params.u_wrap or render.WRAP_CLAMP_TO_EDGE,
+                           v_wrap = params.v_wrap or render.WRAP_CLAMP_TO_EDGE }
+    local depth_params = { format = render.FORMAT_DEPTH,
+                           width = params.w,
+                           height = params.h,
+                           u_wrap = params.u_wrap or render.WRAP_CLAMP_TO_EDGE,
+                           v_wrap = params.v_wrap or render.WRAP_CLAMP_TO_EDGE }
+    return render.render_target(assert(name), {[render.BUFFER_COLOR_BIT] = color_params, [render.BUFFER_DEPTH_BIT] = depth_params })
+end
+
+function Render:init_render_targets()
+    self.targets = {
+        light_map = self:create_render_target("light_map",{w=LIGHT_MAP_SIZE,h=LIGHT_MAP_SIZE})
+    }
 end
 
 function Render:init_predicates()
@@ -44,6 +70,18 @@ function Render:window_size_changed()
     self.gui_proj = vmath.matrix4_orthographic(0, render.get_window_width(), 0, render.get_window_height(), -1, 1)
 end
 
+function Render:draw_light_map()
+    render.disable_state(render.STATE_DEPTH_TEST)
+    render.disable_state(render.STATE_STENCIL_TEST)
+    render.disable_state(render.STATE_CULL_FACE)
+    render.set_viewport(0, 0, LIGHT_MAP_SIZE, LIGHT_MAP_SIZE)
+    render.set_projection(vmath.matrix4_orthographic(0, LIGHT_MAP_SIZE, 0, LIGHT_MAP_SIZE, -1, 1))
+
+    render.enable_render_target(self.targets.light_map)
+    render.clear({[render.BUFFER_COLOR_BIT] = vmath.vector4(1,1,1,1), [render.BUFFER_DEPTH_BIT] = 1, [render.BUFFER_STENCIL_BIT] = 0})
+    render.disable_render_target(self.targets.light_map)
+end
+
 function Render:draw_gui()
     -- GUI Rendering
     render.set_viewport(0, 0, RENDERCAM.window.x, RENDERCAM.window.y)
@@ -73,6 +111,7 @@ end
 function Render:draw_3d()
     render.enable_state(render.STATE_DEPTH_TEST)
     render.set_depth_mask(true)
+    render.enable_texture(1, self.targets.light_map, render.BUFFER_COLOR_BIT)
     render.draw(self.predicates.model)
     render.draw(self.predicates.sprite_3d)
     -- Debug rendering - physics debug, draw_line
@@ -84,6 +123,8 @@ function Render:update(dt)
     render.set_depth_mask(true)
     render.set_stencil_mask(0xff)
     render.clear({[render.BUFFER_COLOR_BIT] = self.clear_color, [render.BUFFER_DEPTH_BIT] = 1, [render.BUFFER_STENCIL_BIT] = 0})
+
+    self:draw_light_map()
 
     render.set_viewport(RENDERCAM_VIEWPORT.x, RENDERCAM_VIEWPORT.y, RENDERCAM_VIEWPORT.width, RENDERCAM_VIEWPORT.height)
     render.set_view(RENDERCAM.calculate_view())

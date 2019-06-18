@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materials/3dsprite/3dsprite.material" beforeDir="false" afterPath="$PROJECT_DIR$/assets/materials/3dsprite/3dsprite.material" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materials/sprite_m3.material" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/materials/3dsprite/3dsprite.fp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/materials/3dsprite/3dsprite.fp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/render/my.render_script" beforeDir="false" afterPath="$PROJECT_DIR$/render/my.render_script" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +20,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$USER_HOME$/AppData/Local/Temp/asset-dnd21554524397729681/default.render_script">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="34">
-                    <caret line="75" column="25" lean-forward="true" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
+                  <state relative-caret-position="194">
+                    <caret line="85" column="41" selection-start-line="85" selection-start-column="41" selection-end-line="85" selection-end-column="41" />
                   </state>
                 </provider>
               </entry>
@@ -37,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/render/my.render_script">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+            <state relative-caret-position="311">
+              <caret line="80" column="67" selection-start-line="80" selection-start-column="67" selection-end-line="80" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -54,9 +53,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>self.stopped =</find>
-      <find>printf</find>
-      <find>E</find>
       <find>Add</find>
       <find>Remove</find>
       <find>entitiesToRemove</find>
@@ -84,6 +80,9 @@
       <find>self.level</find>
       <find>wall_render</find>
       <find>TILE_ID_TO_HASH</find>
+      <find>render_t</find>
+      <find>my_</find>
+      <find>view</find>
     </findStrings>
     <replaceStrings>
       <replace>MAIN_CAMERA</replace>
@@ -167,7 +166,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-41" />
     <option name="y" value="49" />
-    <option name="width" value="1350" />
+    <option name="width" value="1535" />
     <option name="height" value="995" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -182,6 +181,11 @@
             <path>
               <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
               <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
@@ -282,18 +286,18 @@
       <workItem from="1560009443315" duration="37847000" />
       <workItem from="1560367592621" duration="7275000" />
       <workItem from="1560456698212" duration="863000" />
-      <workItem from="1560803197909" duration="4179000" />
+      <workItem from="1560803197909" duration="5960000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123395000" />
+    <option name="totallyTimeSpent" value="125176000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-41" y="49" width="1350" height="995" extended-state="0" />
+    <frame x="-41" y="49" width="1535" height="995" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3114374" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2724814" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -301,7 +305,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" sideWeight="0.49945235" visible="true" weight="0.32924107" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49945235" visible="true" weight="0.32924107" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -384,13 +388,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/init_controller.script">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="30" column="30" lean-forward="true" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rendercam/camera.script">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="512">
@@ -691,17 +688,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/development/Defold/api1_2_151.zip!/api/render.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="110" column="18" selection-start-line="110" selection-start-column="18" selection-end-line="110" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/asset-dnd21554524397729681/default.render_script">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="75" column="25" lean-forward="true" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
+        <state relative-caret-position="194">
+          <caret line="85" column="41" selection-start-line="85" selection-start-column="41" selection-end-line="85" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/render/my.render_script">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        <state relative-caret-position="311">
+          <caret line="80" column="67" selection-start-line="80" selection-start-column="67" selection-end-line="80" selection-end-column="67" />
         </state>
       </provider>
     </entry>
