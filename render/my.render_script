@@ -97,7 +97,7 @@ function Render:update_light_map(data,w,h)
     local arshift = bit.arshift
     local band = bit.band
     local idx = 0
-    for y=0,LIGHT_MAP_SIZE-1 do
+    for y=LIGHT_MAP_SIZE-1,0,-1 do
         local index = y * LIGHT_MAP_SIZE * 3 + 1
         for x=0,LIGHT_MAP_SIZE-1 do
             local color = data[(LIGHT_MAP_SIZE-y-1)*w + x + 1] or 0xFFFF0000
@@ -105,9 +105,9 @@ function Render:update_light_map(data,w,h)
             stream[index + 1] =  arshift(band(color, 0x0000FF00),8)
             stream[index + 2] =  arshift(band(color, 0x000000ff),0)
             index = index + 3
-            --if x > w then break end
+            if x > w then break end
         end
-       -- if y > h then break end
+        if (LIGHT_MAP_SIZE-y+1) > h then break end
     end
 end
 
