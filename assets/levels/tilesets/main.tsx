@@ -5,12 +5,12 @@
   <image width="64" height="64" source="../../images/game/walls/wall1.png"/>
  </tile>
  <tile id="2">
-  <image width="64" height="64" source="main/wall2.png"/>
+  <image width="64" height="64" source="../../images/game/walls/wall2.png"/>
  </tile>
  <tile id="3">
-  <image width="64" height="64" source="main/wall3.png"/>
+  <image width="64" height="64" source="../../images/game/walls/wall3.png"/>
  </tile>
  <tile id="4">
-  <image width="64" height="64" source="main/wall4.png"/>
+  <image width="64" height="64" source="../../images/game/walls/wall4.png"/>
  </tile>
 </tileset>
