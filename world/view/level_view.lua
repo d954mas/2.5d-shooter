@@ -22,6 +22,11 @@ function LevelView:build_level(level)
 	self:create_physics()
 	self:configure_camera()
 	self:update_fov()
+	self:build_light_map()
+end
+
+function LevelView:build_light_map()
+	COMMON.RENDER:update_light_map(self.level.data.light_map,self.level.data.size.x,self.level.data.size.y)
 end
 
 function LevelView:configure_camera()

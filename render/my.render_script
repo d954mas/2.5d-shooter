@@ -91,21 +91,23 @@ function Render:window_size_changed()
     self.gui_proj = vmath.matrix4_orthographic(0, render.get_window_width(), 0, render.get_window_height(), -1, 1)
 end
 
-function Render:update_light_map(dt)
-    self.light_map_updated = false
-    self.light_map_time = (self.light_map_time or 10) + dt
-    if self.light_map_time > 4 then
-        self.light_map_time = 0
-        self.light_map_updated = true
-        local stream = buffer.get_stream(self.buffers.light_map, hash("light_map"))
-        for y=0,LIGHT_MAP_SIZE-1 do
-            for x=0,LIGHT_MAP_SIZE-1 do
-                local index = y * LIGHT_MAP_SIZE * 3 + x * 3 + 1
-                stream[index + 0] = math.random(0,255)
-                stream[index + 1] = math.random(0,255)
-                stream[index + 2] = math.random(0,255)
-            end
+function Render:update_light_map(data,w,h)
+    COMMON.EVENT_BUS:event(COMMON.EVENTS.GAME_LIGHT_MAP_CHANGED)
+    local stream = buffer.get_stream(self.buffers.light_map, hash("light_map"))
+    local arshift = bit.arshift
+    local band = bit.band
+    local idx = 0
+    for y=0,LIGHT_MAP_SIZE-1 do
+        local index = y * LIGHT_MAP_SIZE * 3 + 1
+        for x=0,LIGHT_MAP_SIZE-1 do
+            local color = data[(LIGHT_MAP_SIZE-y-1)*w + x + 1] or 0xFFFF0000
+            stream[index] = arshift(band(color, 0x00FF0000),16)
+            stream[index + 1] =  arshift(band(color, 0x0000FF00),8)
+            stream[index + 2] =  arshift(band(color, 0x000000ff),0)
+            index = index + 3
+            --if x > w then break end
         end
+       -- if y > h then break end
     end
 end
 
@@ -167,7 +169,6 @@ function Render:draw_3d()
 end
 
 function Render:update(dt)
-    self:update_light_map(dt)
     render.set_depth_mask(true)
     render.set_stencil_mask(0xff)
     render.clear({[render.BUFFER_COLOR_BIT] = self.clear_color, [render.BUFFER_DEPTH_BIT] = 1, [render.BUFFER_STENCIL_BIT] = 0})

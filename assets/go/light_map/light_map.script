@@ -8,10 +8,18 @@ function init(self)
 		format = resource.TEXTURE_FORMAT_RGB,
 		num_mip_maps = 1
 	}
+	self.scheduler = COMMON.RX.CooperativeScheduler.create()
+	resource.set_texture(self.resource_path, self.header, COMMON.RENDER.buffers.light_map)
+	self.subscriptions = COMMON.RX.SubscriptionsStorage()
+	self.subscriptions:add(COMMON.EVENT_BUS:subscribe(COMMON.EVENTS.GAME_LIGHT_MAP_CHANGED):go_distinct(self.scheduler):subscribe(function (event)
+		resource.set_texture(self.resource_path, self.header, COMMON.RENDER.buffers.light_map)
+	end))
 end
 
 function update(self, dt)
-	if COMMON.RENDER.light_map_updated then
-		resource.set_texture(self.resource_path, self.header, COMMON.RENDER.buffers.light_map)
-	end
+	self.scheduler:update(dt)
+end
+
+function final(self)
+	self.subscriptions:unsubscribe()
 end

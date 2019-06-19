@@ -8,7 +8,7 @@ return {
   height = 20,
   tilewidth = 64,
   tileheight = 64,
-  nextlayerid = 6,
+  nextlayerid = 7,
   nextobjectid = 6,
   properties = {},
   tilesets = {
@@ -36,25 +36,25 @@ return {
       tiles = {
         {
           id = 1,
-          image = "../tilesets/main/wall1.png",
+          image = "../../images/game/walls/wall1.png",
           width = 64,
           height = 64
         },
         {
           id = 2,
-          image = "../tilesets/main/wall2.png",
+          image = "../../images/game/walls/wall2.png",
           width = 64,
           height = 64
         },
         {
           id = 3,
-          image = "../tilesets/main/wall3.png",
+          image = "../../images/game/walls/wall3.png",
           width = 64,
           height = 64
         },
         {
           id = 4,
-          image = "../tilesets/main/wall4.png",
+          image = "../../images/game/walls/wall4.png",
           width = 64,
           height = 64
         }
@@ -95,9 +95,12 @@ return {
           id = 2,
           properties = {
             ["draw"] = true,
-            ["look_at_player"] = true
+            ["global_rotation"] = false,
+            ["look_at_player"] = true,
+            ["origin"] = "",
+            ["size_for_scale"] = 64
           },
-          image = "../tilesets/objects/block.png",
+          image = "../../images/game/objects/block.png",
           width = 64,
           height = 64
         },
@@ -105,9 +108,12 @@ return {
           id = 3,
           properties = {
             ["draw"] = true,
-            ["look_at_player"] = true
+            ["global_rotation"] = false,
+            ["look_at_player"] = true,
+            ["origin"] = "",
+            ["size_for_scale"] = 64
           },
-          image = "../tilesets/objects/bot_crystal.png",
+          image = "../../images/game/objects/bot_crystal.png",
           width = 64,
           height = 62
         },
@@ -115,9 +121,12 @@ return {
           id = 4,
           properties = {
             ["draw"] = true,
-            ["look_at_player"] = true
+            ["global_rotation"] = false,
+            ["look_at_player"] = true,
+            ["origin"] = "",
+            ["size_for_scale"] = 64
           },
-          image = "../tilesets/objects/bot_crystal_2.png",
+          image = "../../images/game/objects/bot_crystal_2.png",
           width = 46,
           height = 64
         },
@@ -125,9 +134,12 @@ return {
           id = 5,
           properties = {
             ["draw"] = true,
-            ["look_at_player"] = true
+            ["global_rotation"] = true,
+            ["look_at_player"] = false,
+            ["origin"] = "",
+            ["size_for_scale"] = 64
           },
-          image = "../tilesets/objects/box.png",
+          image = "../../images/game/objects/box.png",
           width = 64,
           height = 64
         },
@@ -135,9 +147,12 @@ return {
           id = 6,
           properties = {
             ["draw"] = true,
-            ["look_at_player"] = true
+            ["global_rotation"] = false,
+            ["look_at_player"] = true,
+            ["origin"] = "top",
+            ["size_for_scale"] = 64
           },
-          image = "../tilesets/objects/lamp.png",
+          image = "../../images/game/objects/lamp.png",
           width = 25,
           height = 13
         },
@@ -145,9 +160,12 @@ return {
           id = 7,
           properties = {
             ["draw"] = true,
-            ["look_at_player"] = true
+            ["global_rotation"] = false,
+            ["look_at_player"] = true,
+            ["origin"] = "",
+            ["size_for_scale"] = 64
           },
-          image = "../tilesets/objects/mushroom_1.png",
+          image = "../../images/game/objects/mushroom_1.png",
           width = 53,
           height = 63
         },
@@ -155,9 +173,12 @@ return {
           id = 8,
           properties = {
             ["draw"] = true,
-            ["look_at_player"] = true
+            ["global_rotation"] = false,
+            ["look_at_player"] = true,
+            ["origin"] = "",
+            ["size_for_scale"] = 64
           },
-          image = "../tilesets/objects/mushroom_2.png",
+          image = "../../images/game/objects/mushroom_2.png",
           width = 56,
           height = 60
         },
@@ -165,9 +186,12 @@ return {
           id = 9,
           properties = {
             ["draw"] = true,
-            ["look_at_player"] = true
+            ["global_rotation"] = false,
+            ["look_at_player"] = true,
+            ["origin"] = "bottom",
+            ["size_for_scale"] = 86
           },
-          image = "../tilesets/objects/skull.png",
+          image = "../../images/game/objects/skull.png",
           width = 86,
           height = 25
         },
@@ -175,9 +199,12 @@ return {
           id = 10,
           properties = {
             ["draw"] = true,
-            ["look_at_player"] = true
+            ["global_rotation"] = false,
+            ["look_at_player"] = true,
+            ["origin"] = "",
+            ["size_for_scale"] = 64
           },
-          image = "../tilesets/objects/table.png",
+          image = "../../images/game/objects/table.png",
           width = 64,
           height = 64
         },
@@ -185,9 +212,12 @@ return {
           id = 11,
           properties = {
             ["draw"] = true,
-            ["look_at_player"] = true
+            ["global_rotation"] = false,
+            ["look_at_player"] = true,
+            ["origin"] = "",
+            ["size_for_scale"] = 64
           },
-          image = "../tilesets/objects/top_crystal_1.png",
+          image = "../../images/game/objects/top_crystal_1.png",
           width = 61,
           height = 56
         },
@@ -195,9 +225,12 @@ return {
           id = 12,
           properties = {
             ["draw"] = true,
-            ["look_at_player"] = true
+            ["global_rotation"] = false,
+            ["look_at_player"] = true,
+            ["origin"] = "",
+            ["size_for_scale"] = 64
           },
-          image = "../tilesets/objects/top_crystal_2.png",
+          image = "../../images/game/objects/top_crystal_2.png",
           width = 64,
           height = 54
         }
@@ -240,6 +273,43 @@ return {
         5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
         5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
         5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5
+      }
+    },
+    {
+      type = "tilelayer",
+      id = 6,
+      name = "lights",
+      x = 0,
+      y = 0,
+      width = 20,
+      height = 20,
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      encoding = "lua",
+      data = {
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
       }
     },
     {

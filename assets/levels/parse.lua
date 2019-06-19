@@ -46,6 +46,7 @@ local LevelDataCell = {}
 ---@field id_to_tile table
 ---@field spawn_point vector3
 ---@field spawn_point vector3
+---@field light_map number[]
 ---@field cells LevelDataCell[][]
 local LevelData = {}
 
@@ -125,14 +126,16 @@ local function parse_level(path,result_path)
 		for _,tile in ipairs(tileset.tiles) do
 			tile.properties = tile.properties or {}
 			data.id_to_tile[tileset.firstgid+tile.id-1] = tile
-			local image_path = tile.image
-			local pathes = {}
-			for word in string.gmatch(image_path, "([^/]+)") do
-				table.insert(pathes,word)
+			if tile.image then
+				local image_path = tile.image
+				local pathes = {}
+				for word in string.gmatch(image_path, "([^/]+)") do
+					table.insert(pathes,word)
+				end
+				tile.atlas = pathes[#pathes-1]
+				tile.image = string.sub(pathes[#pathes],1,string.find(pathes[#pathes],"%.")-1)
 			end
-			tile.atlas = pathes[#pathes-1]
-			tile.image = string.sub(pathes[#pathes],1,string.find(pathes[#pathes],"%.")-1)
-			tile.scale = 1/( tile.properties.size_for_scale or tile.height)
+			tile.scale = 1/( tile.properties.size_for_scale or tile.height or 1)
 			local origin = tile.properties.origin
 			if origin then
 				local size = tile.properties.size_for_scale or tile.height
@@ -166,6 +169,10 @@ local function parse_level(path,result_path)
 			end
 		end
 	end)
+	data.light_map = {}
+	for k,v in ipairs(get_layer(tiled,"lights").data)do
+		data.light_map[k] = v == 0 and 0xFFFFFFFF or tonumber("0x"..string.sub(data.id_to_tile[v].properties.color,2))
+	end
 	local objects = assert(get_layer(tiled,"objects")).objects
 	for _,object in ipairs(objects)do
 		if object.properties.spawn_point then
