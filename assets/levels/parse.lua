@@ -161,6 +161,7 @@ local function parse_level(path,result_path)
 	end
 
 	process_layer(data,assert(get_layer(tiled,"floor")),function(cell,tiled_cell) cell.wall.floor = tiled_cell end)
+	process_layer(data,assert(get_layer(tiled,"ceil")),function(cell,tiled_cell) cell.wall.ceil = tiled_cell end)
 	local wall_keys = {"north","south","east","west"}
 	process_layer(data,assert(get_layer(tiled,"walls")),function(cell,tiled_cell) for _,v in pairs(wall_keys)do
 			cell.wall[v] = tiled_cell

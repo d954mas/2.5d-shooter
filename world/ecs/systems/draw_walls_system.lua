@@ -39,6 +39,7 @@ local System = ECS.system()
 function System:initialize()
 	self.wall_objects = {} --map key is cell_id value is WallRenderObject
 	self.floor_objects = {} --map key is cell_id valuee is FloorRenderObject
+	self.ceil_objects = {} --map key is cell_id valuee is FloorRenderObject
 end
 
 System:initialize()
@@ -73,6 +74,13 @@ function System:update(dt)
 			self.floor_objects[cell_data.id] = floor_object
 			self:sprite_set_image(floor_object.components.sprite,cell_data.wall.floor)
 		end
+		if cell_data.wall.ceil ~= -1 then
+			local floor_url = msg.url(factory.create(FACTORY_FLOOR_URL,vmath.vector3(x-0.5,1,-y+0.5),vmath.quat_rotation_z(0),nil,vmath.vector3(1/64)))
+			assert(not self.ceil_objects[cell_data.id], "already created id:" .. cell_data.id)
+			local floor_object = FloorRenderObject(floor_url)
+			self.ceil_objects[cell_data.id] = floor_object
+			self:sprite_set_image(floor_object.components.sprite,cell_data.wall.ceil)
+		end
 	end
 	local need_unload = native_raycasting.cells_get_need_unload()
 	for _,cell in ipairs(need_unload)do
@@ -90,6 +98,15 @@ function System:update(dt)
 		if cell_data.wall.floor ~= -1 then
 			local object = self.floor_objects[cell_data.id]
 			self.floor_objects[cell_data.id] = nil
+			if object then
+				go.delete(object.url)
+			else
+				--COMMON.w("can't unload not loaded id:" .. cell_data.id,TAG)
+			end
+		end
+		if cell_data.wall.ceil ~= -1 then
+			local object = self.ceil_objects[cell_data.id]
+			self.ceil_objects[cell_data.id] = nil
 			if object then
 				go.delete(object.url)
 			else

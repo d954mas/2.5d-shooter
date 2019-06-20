@@ -22,6 +22,96 @@ images {
 images {
   image: "/assets/images/game/walls/wall4.png"
 }
+images {
+  image: "/assets/images/game/walls/wall5.png"
+}
+images {
+  image: "/assets/images/game/walls/wall6.png"
+}
+images {
+  image: "/assets/images/game/walls/wall7.png"
+}
+images {
+  image: "/assets/images/game/walls/wall8.png"
+}
+images {
+  image: "/assets/images/game/walls/wall9.png"
+}
+images {
+  image: "/assets/images/game/walls/wall10.png"
+}
+images {
+  image: "/assets/images/game/walls/wall11.png"
+}
+images {
+  image: "/assets/images/game/walls/wall12.png"
+}
+images {
+  image: "/assets/images/game/walls/wall13.png"
+}
+images {
+  image: "/assets/images/game/walls/wall14.png"
+}
+images {
+  image: "/assets/images/game/walls/wall15.png"
+}
+images {
+  image: "/assets/images/game/walls/wall16.png"
+}
+images {
+  image: "/assets/images/game/walls/wall17.png"
+}
+images {
+  image: "/assets/images/game/walls/wall18.png"
+}
+images {
+  image: "/assets/images/game/walls/wall19.png"
+}
+images {
+  image: "/assets/images/game/walls/wall20.png"
+}
+images {
+  image: "/assets/images/game/walls/wall21.png"
+}
+images {
+  image: "/assets/images/game/walls/wall22.png"
+}
+images {
+  image: "/assets/images/game/walls/wall23.png"
+}
+images {
+  image: "/assets/images/game/walls/wall24.png"
+}
+images {
+  image: "/assets/images/game/walls/wall25.png"
+}
+images {
+  image: "/assets/images/game/walls/wall26.png"
+}
+images {
+  image: "/assets/images/game/walls/wall27.png"
+}
+images {
+  image: "/assets/images/game/walls/wall28.png"
+}
+images {
+  image: "/assets/images/game/walls/wall29.png"
+}
+images {
+  image: "/assets/images/game/walls/wall30.png"
+}
+images {
+  image: "/assets/images/game/walls/wall31.png"
+}
+images {
+  image: "/assets/images/game/walls/wall32.png"
+}
+images {
+  image: "/assets/images/game/walls/wall33.png"
+}
+images {
+  image: "/assets/images/game/walls/wall34.png"
+}
 margin: 0
 extrude_borders: 0
 inner_padding: 0

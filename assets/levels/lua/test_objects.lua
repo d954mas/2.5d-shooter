@@ -8,7 +8,7 @@ return {
   height = 20,
   tilewidth = 64,
   tileheight = 64,
-  nextlayerid = 7,
+  nextlayerid = 8,
   nextobjectid = 23,
   properties = {},
   tilesets = {
@@ -32,7 +32,7 @@ return {
       },
       properties = {},
       terrains = {},
-      tilecount = 4,
+      tilecount = 34,
       tiles = {
         {
           id = 1,
@@ -57,12 +57,192 @@ return {
           image = "../../images/game/walls/wall4.png",
           width = 64,
           height = 64
+        },
+        {
+          id = 5,
+          image = "../../images/game/walls/wall5.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 6,
+          image = "../../images/game/walls/wall6.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 7,
+          image = "../../images/game/walls/wall7.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 8,
+          image = "../../images/game/walls/wall8.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 9,
+          image = "../../images/game/walls/wall9.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 10,
+          image = "../../images/game/walls/wall10.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 11,
+          image = "../../images/game/walls/wall11.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 12,
+          image = "../../images/game/walls/wall12.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 13,
+          image = "../../images/game/walls/wall13.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 14,
+          image = "../../images/game/walls/wall14.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 15,
+          image = "../../images/game/walls/wall15.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 16,
+          image = "../../images/game/walls/wall16.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 17,
+          image = "../../images/game/walls/wall17.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 18,
+          image = "../../images/game/walls/wall18.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 19,
+          image = "../../images/game/walls/wall19.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 20,
+          image = "../../images/game/walls/wall20.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 21,
+          image = "../../images/game/walls/wall21.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 22,
+          image = "../../images/game/walls/wall22.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 23,
+          image = "../../images/game/walls/wall23.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 24,
+          image = "../../images/game/walls/wall24.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 25,
+          image = "../../images/game/walls/wall25.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 26,
+          image = "../../images/game/walls/wall26.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 27,
+          image = "../../images/game/walls/wall27.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 28,
+          image = "../../images/game/walls/wall28.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 29,
+          image = "../../images/game/walls/wall29.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 30,
+          image = "../../images/game/walls/wall30.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 31,
+          image = "../../images/game/walls/wall31.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 32,
+          image = "../../images/game/walls/wall32.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 33,
+          image = "../../images/game/walls/wall33.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 34,
+          image = "../../images/game/walls/wall34.png",
+          width = 64,
+          height = 64
         }
       }
     },
     {
       name = "objects",
-      firstgid = 6,
+      firstgid = 36,
       filename = "../tilesets/objects.tsx",
       tilewidth = 86,
       tileheight = 64,
@@ -276,6 +456,43 @@ return {
       }
     },
     {
+      type = "tilelayer",
+      id = 7,
+      name = "ceil",
+      x = 0,
+      y = 0,
+      width = 20,
+      height = 20,
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      encoding = "lua",
+      data = {
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+      }
+    },
+    {
       type = "objectgroup",
       id = 5,
       name = "objects",
@@ -296,7 +513,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 7,
+          gid = 37,
           visible = true,
           properties = {
             ["spawn_point"] = true
@@ -312,7 +529,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 8,
+          gid = 38,
           visible = true,
           properties = {}
         },
@@ -326,7 +543,7 @@ return {
           width = 64,
           height = 62,
           rotation = 0,
-          gid = 9,
+          gid = 39,
           visible = true,
           properties = {}
         },
@@ -340,7 +557,7 @@ return {
           width = 46,
           height = 64,
           rotation = 0,
-          gid = 10,
+          gid = 40,
           visible = true,
           properties = {}
         },
@@ -354,7 +571,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 12,
+          gid = 42,
           visible = true,
           properties = {}
         },
@@ -368,7 +585,7 @@ return {
           width = 53,
           height = 63,
           rotation = 0,
-          gid = 13,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -382,7 +599,7 @@ return {
           width = 56,
           height = 60,
           rotation = 0,
-          gid = 14,
+          gid = 44,
           visible = true,
           properties = {}
         },
@@ -396,7 +613,7 @@ return {
           width = 86,
           height = 25,
           rotation = 0,
-          gid = 15,
+          gid = 45,
           visible = true,
           properties = {}
         },
@@ -410,7 +627,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 16,
+          gid = 46,
           visible = true,
           properties = {}
         },
@@ -424,7 +641,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 11,
+          gid = 41,
           visible = true,
           properties = {
             ["look_at_player"] = false
@@ -440,7 +657,7 @@ return {
           width = 64,
           height = 54,
           rotation = 0,
-          gid = 18,
+          gid = 48,
           visible = true,
           properties = {}
         }
