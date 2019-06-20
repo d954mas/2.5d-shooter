@@ -71,9 +71,13 @@ end
 
 function Render:init_constants_buffers()
     self.constants_buffers = {
-        light_map = render.constant_buffer()
+        light_map = render.constant_buffer(),
+        sprite3d = render.constant_buffer()
     }
     self.constants_buffers.light_map.light_map = vmath.vector4(LIGHT_MAP_SIZE,LIGHT_MAP_SIZE,0,0)
+    self.constants_buffers.light_map.fog_color = vmath.vector4(0.5)
+    self.constants_buffers.light_map.fog = vmath.vector4(2.5,0,0.15,0) -- //x start distance y end dist. z exp
+
 end
 
 function Render:register_messages()
@@ -111,7 +115,7 @@ function Render:update_light_map(data,w,h)
     end
 end
 
-
+--region draw
 function Render:draw_light_map(debug)
     render.disable_state(render.STATE_DEPTH_TEST)
     render.disable_state(render.STATE_STENCIL_TEST)
@@ -163,10 +167,9 @@ function Render:draw_3d()
     render.enable_texture(1, self.targets.light_map, render.BUFFER_COLOR_BIT)
     render.draw(self.predicates.model)
     render.draw(self.predicates.sprite_3d,self.constants_buffers.light_map)
-    -- Debug rendering - physics debug, draw_line
     render.disable_state(render.STATE_DEPTH_TEST)
-
 end
+--endregion
 
 function Render:update(dt)
     render.set_depth_mask(true)

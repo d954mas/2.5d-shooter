@@ -4,12 +4,19 @@ uniform lowp sampler2D DIFFUSE_TEXTURE;
 uniform lowp sampler2D LIGHT_MAP_TEXTURE;
 uniform mediump vec4 fog_color;
 uniform mediump vec4 light_map;
-uniform mediump vec4 fog; //x start distance y end dist. z for exponent
+uniform mediump vec4 fog; //x start distance y end dist.
 void main()
-{
+{    
+    float dist = gl_FragCoord.z/gl_FragCoord.w;
     vec4 spriteColor = texture2D(DIFFUSE_TEXTURE, var_texcoord0.xy);
     if(spriteColor.a < 0.01){discard;}
     vec4 lightColor = texture2D(LIGHT_MAP_TEXTURE, vec2((pos.x+0.00001)/light_map.x,(pos.z+0.00001)/light_map.y));// multiply to fix wall on cell borders
     vec3 color  = spriteColor.rgb * lightColor.rgb;
-    gl_FragColor = vec4(color,spriteColor.a);
+
+    float f = 1.0 /exp((dist-fog.x) * fog.z);
+    f = clamp(f, 0.2, 1.0);
+    vec3 total_color  = (1.0-f) * fog_color.rgb +  f * color.rgb;
+    total_color = mix(vec3(0.0),total_color, f);
+    
+    gl_FragColor = vec4(total_color,spriteColor.a);
 }
