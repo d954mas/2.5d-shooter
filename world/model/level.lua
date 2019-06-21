@@ -52,6 +52,12 @@ function Level:prepare()
 		local e = ENTITIES.create_object_from_tiled(object)
 		if e then self.ecs_world.ecs:addEntity(e) end
 	end
+	self:spawn_enemies()
+end
+
+function Level:spawn_enemies()
+	local e = ENTITIES.create_blob(vmath.vector3(7.1,22.1,0))
+	if e then self.ecs_world.ecs:addEntity(e) end
 end
 
 function Level:update(dt)

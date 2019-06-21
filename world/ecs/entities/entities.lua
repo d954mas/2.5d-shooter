@@ -5,11 +5,13 @@ local TAG = "ENTITIES"
 ---@field tag string tag used for help when debug
 ---@field player boolean true if player entity
 ---@field pos vector3
+---@field pos_translate vector3 additional movement for pos. If go need bottom or top align
 ---@field direction vector4 up down left right
 ---@field velocity vector3
 ---@field speed number
 ---@field angle vector3 radians anticlockwise  x-horizontal y-vertical
----@field go_url nil|url Do not use different urls for same entity or url_to_entity will be broken
+---@field url_go nil|url Do not use different urls for same entity or url_to_entity will be broken
+---@field url_sprite url need for draw
 ---@field input boolean used for player input
 ---@field input_action_id hash used for player input
 ---@field input_action table used for player input
@@ -22,10 +24,20 @@ local TAG = "ENTITIES"
 ---@field look_at_player boolean
 ---@field global_rotation boolean for pickups they use one global angle
 ---@field need_draw boolean objects that can be draw
----@field sprite_url url need for draw
+---@field draw_always boolean that object draw always. Used for enemies because of animations
+
 ---@field tile_id number need for draw objects
 ---@field drawing boolean this frame visible entities
 ---@field cell_data NativeCellData
+---@field enemy boolean
+
+local HASH_SPRITE = hash("sprite")
+local OBJECT_HASHES = {
+	root = hash("/root"),
+	sprite = hash("/sprite")
+}
+
+local FACTORY_ENEMY_BLOB_URL = msg.url("game:/factories#factory_enemy_blob")
 
 local Entities = {}
 
@@ -33,7 +45,7 @@ Entities.url_to_entity = {}
 Entities.entity_to_url = {}
 
 --region utils
----@param url url key that used for mapping entity to go_url
+---@param url url key that used for mapping entity to url_go
 local function url_to_key(url)
 	return url.path
 end
@@ -54,29 +66,29 @@ end
 
 ---@param e Entity
 function Entities.on_entity_removed(e)
-	if e.go_url then
-		Entities.url_to_entity[url_to_key(e.go_url)] = nil
+	if e.url_go then
+		Entities.url_to_entity[url_to_key(e.url_go)] = nil
 		Entities.entity_to_url[e] = nil
 	end
 end
 
 ---@param e Entity
 function Entities.on_entity_added(e)
-	if e.go_url then
-		Entities.url_to_entity[url_to_key(e.go_url)] = e
-		Entities.entity_to_url[e] = e.go_url
+	if e.url_go then
+		Entities.url_to_entity[url_to_key(e.url_go)] = e
+		Entities.entity_to_url[e] = e.url_go
 	end
 end
 
 ---@param e Entity
 function Entities.on_entity_updated(e)
 	local prev_url = Entities.entity_to_url[e] and url_to_key(Entities.entity_to_url[e])
-	local new_url = e.go_url and url_to_key(e.go_url)
-	if prev_url ~= e.go_url then
+	local new_url = e.url_go and url_to_key(e.url_go)
+	if prev_url ~= e.url_go then
 		---COMMON.i(string.format("url changed:%s to %s",prev_url,new_url))
 		if prev_url then Entities.url_to_entity[prev_url] = e end
 		if new_url then Entities.url_to_entity[new_url] = e end
-		Entities.entity_to_url[e] = e.go_url
+		Entities.entity_to_url[e] = e.url_go
 	end
 end
 --endregion
@@ -94,7 +106,7 @@ function Entities.create_player(pos)
 	e.velocity = vmath.vector3(0,0,0)
 	e.speed = 4
 	e.player = true
-	e.go_url =   msg.url("/player")
+	e.url_go =   msg.url("/player")
 	return e
 end
 ---@return Entity
@@ -112,6 +124,29 @@ function Entities.create_draw_object_base(pos)
 	e.pos = assert(pos)
 	e.need_draw = true
 	return e
+end
+
+function Entities.create_enemy(pos,factory)
+	local scale = 1/128
+	local default_scale = 1/64
+	local e = {}
+	e.pos = assert(pos)
+	e.angle = vmath.vector3(0,0,0)
+	e.direction = vmath.vector4(0,0,0,0)
+	e.velocity = vmath.vector3(0,0,0)
+	e.speed = 4
+	e.enemy = true
+	local urls = collectionfactory.create(factory,vmath.vector3(e.pos.x,0.5,-e.pos.z+0.5),vmath.quat_rotation_z(0),nil,scale)
+	e.url_go = msg.url(urls[OBJECT_HASHES.root])
+	e.url_sprite = msg.url(urls[OBJECT_HASHES.sprite])
+	e.url_sprite.fragment = HASH_SPRITE
+	e.look_at_player = true
+	e.pos_translate = vmath.vector3(0,scale/default_scale/2,0)
+	return e
+end
+
+function Entities.create_blob(pos)
+	return Entities.create_enemy(pos,FACTORY_ENEMY_BLOB_URL)
 end
 
 ---@return Entity

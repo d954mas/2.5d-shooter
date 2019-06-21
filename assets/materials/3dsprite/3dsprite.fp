@@ -14,7 +14,7 @@ void main()
     vec3 color  = spriteColor.rgb * lightColor.rgb;
 
     float f = 1.0 /exp((dist-fog.x) * fog.z);
-    f = clamp(f, 0.2, 1.0);
+    f = clamp(f, 0.0, 1.0);
     vec3 total_color  = (1.0-f) * fog_color.rgb +  f * color.rgb;
     total_color = mix(vec3(0.0),total_color, f);
     

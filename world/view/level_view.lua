@@ -59,6 +59,7 @@ function LevelView:create_physics()
 	end
 end
 
+
 function LevelView:dispose()
 	if self.level then
 		go.delete(self.physics_go,true)
