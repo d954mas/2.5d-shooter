@@ -1,5 +1,4 @@
 local COMMON = require "libs.common"
-local require_f = require
 local TAG = "ENTITIES"
 ---@class Entity
 ---@field tag string tag used for help when debug

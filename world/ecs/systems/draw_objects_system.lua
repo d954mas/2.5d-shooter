@@ -20,7 +20,7 @@ function System:process(e, dt)
 		assert(not e.url_sprite,"object already visible")
 		--create simple go with one sprite
 		if not e.url_go then
-			e.url_go = msg.url(factory.create(FACTORY_EMPTY_URL,vmath.vector3(e.position.x,0,-e.position.z+0.5),vmath.quat_rotation_z(0)))
+			e.url_go = msg.url(factory.create(FACTORY_EMPTY_URL,vmath.vector3(e.position.x,0,-e.position.z+0.5), vmath.quat_rotation_z(0)))
 		end
 		e.url_sprite =  msg.url(factory.create(FACTORY_SPRITE_URL,nil,vmath.quat_rotation_z(0)))
 		e.url_sprite = msg.url(e.url_sprite.socket,e.url_sprite.path,HASH_SPRITE)

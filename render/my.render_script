@@ -47,7 +47,8 @@ end
 
 function Render:init_buffers()
     self.buffers = {
-        light_map =  buffer.create( LIGHT_MAP_SIZE * LIGHT_MAP_SIZE, { {name=hash("light_map"), type=buffer.VALUE_TYPE_UINT8, count=3 } })
+        light_map =  buffer.create( LIGHT_MAP_SIZE * LIGHT_MAP_SIZE, {
+            {name=hash("light_map"), type=buffer.VALUE_TYPE_UINT8, count=3 } })
     }
 end
 
@@ -101,7 +102,6 @@ function Render:update_light_map(data,w,h)
     local stream = buffer.get_stream(self.buffers.light_map, hash("light_map"))
     local arshift = bit.arshift
     local band = bit.band
-    local idx = 0
     for y=LIGHT_MAP_SIZE-1,0,-1 do
         local index = y * LIGHT_MAP_SIZE * 3 + 1
         for x=0,LIGHT_MAP_SIZE-1 do

@@ -1,5 +1,4 @@
 local COMMON = require "libs.common"
-local LUME = require "libs.lume"
 
 ---@class RecyclerViewAdapter
 local Adapter = COMMON.class("GuiRecyclerViewAdapter")

@@ -74,17 +74,17 @@ function RecyclerView:_fill_cells()
 
 	local need_nodes = math.ceil(self.scroll_area_size.y/self.node_size.y) + 1
 	for i=2, need_nodes do
-		local vh, nodes = self.adapter:create_view_holder()
+		vh, nodes = self.adapter:create_view_holder()
 		assert(nodes)
-		local root_node = nodes[self.adapter.root_node_name]
+		root_node = nodes[self.adapter.root_node_name]
 		gui.set_parent(root_node, self.scroll_area)
 		gui.set_pivot(root_node, gui.PIVOT_N)
 		print("pos:" .. -self.node_size.y *(i-1))
 		gui.set_position(root_node,vmath.vector3(0,-self.node_size.y *(i-1),0))
 		table.insert(self.items, {nodes = nodes, root_node = root_node, idx = i, vh = vh})
 	end
-	self.scroll_borders = {min = - self.scroll_area_size.y * 0.2, max = self.node_size.y * need_nodes - self.scroll_area_size.y
-		+ self.scroll_area_size.y * 0.2
+	self.scroll_borders = {min = - self.scroll_area_size.y * 0.2,
+						   max = self.node_size.y * need_nodes - self.scroll_area_size.y + self.scroll_area_size.y * 0.2
 	}
 end
 

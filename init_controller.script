@@ -1,5 +1,4 @@
 local COMMON = require "libs.common"
-local LOCALE = require "assets.localization.localization"
 local SM = require "libs.sm.sm"
 COMMON.LOG.set_appname("game")
 COMMON.LOG.toggle_print()

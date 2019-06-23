@@ -56,7 +56,6 @@ end
 
 
 function M:save()
-	local state =  self.state:save()
 	--COMMON.i("save state",TAG)--pprint(state)
 	sys.save(sys.get_save_file("world","data"),  {state = self.state:save()})
 end

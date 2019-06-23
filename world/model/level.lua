@@ -30,13 +30,13 @@ function Level:initialize(data)
 end
 
 function Level:register_world_entities_callbacks()
-	self.ecs_world.ecs.on_entity_added = function(self,e)
+	self.ecs_world.ecs.on_entity_added = function(_,e)
 		ENTITIES.on_entity_added(e)
 	end
-	self.ecs_world.ecs.on_entity_updated = function(self,e)
+	self.ecs_world.ecs.on_entity_updated = function(_,e)
 		ENTITIES.on_entity_updated(e)
 	end
-	self.ecs_world.ecs.on_entity_removed = function(self,e)
+	self.ecs_world.ecs.on_entity_removed = function(_,e)
 		ENTITIES.on_entity_removed(e)
 	end
 end

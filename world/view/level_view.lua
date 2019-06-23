@@ -8,7 +8,6 @@ local CAMERA_MAX_DIST = 50
 
 local FACTORY_GO_EMPTY = msg.url("game:/factories#factory_empty")
 local FACTORY_GO_BLOCK = msg.url("game:/factories#factory_block")
-local FACTORY_GO_WALL = msg.url("game:/factories#factory_wall")
 
 local LevelView = COMMON.class("LevelView")
 function LevelView:initialize()

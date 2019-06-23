@@ -1,5 +1,4 @@
 local COMMON = require "libs.common"
-local RX = require "libs.rx"
 
 --Incapsulate logic for view.
 

@@ -68,14 +68,16 @@ function System:update(dt)
 			self:sprite_set_image(wall_object.components.sprite_west,cell_data.wall.west)
 		end
 		if cell_data.wall.floor ~= -1 then
-			local floor_url = msg.url(factory.create(FACTORY_FLOOR_URL,vmath.vector3(x-0.5,0,-y+0.5),vmath.quat_rotation_z(0),nil,vmath.vector3(1/64)))
+			local floor_url = msg.url(factory.create(FACTORY_FLOOR_URL,vmath.vector3(x-0.5,0,-y+0.5),vmath.quat_rotation_z(0),
+													 nil,vmath.vector3(1/64)))
 			assert(not self.floor_objects[cell_data.id], "already created id:" .. cell_data.id)
 			local floor_object = FloorRenderObject(floor_url)
 			self.floor_objects[cell_data.id] = floor_object
 			self:sprite_set_image(floor_object.components.sprite,cell_data.wall.floor)
 		end
 		if cell_data.wall.ceil ~= -1 then
-			local floor_url = msg.url(factory.create(FACTORY_FLOOR_URL,vmath.vector3(x-0.5,1,-y+0.5),vmath.quat_rotation_z(0),nil,vmath.vector3(1/64)))
+			local floor_url = msg.url(factory.create(FACTORY_FLOOR_URL,vmath.vector3(x-0.5,1,-y+0.5),vmath.quat_rotation_z(0),
+													 nil,vmath.vector3(1/64)))
 			assert(not self.ceil_objects[cell_data.id], "already created id:" .. cell_data.id)
 			local floor_object = FloorRenderObject(floor_url)
 			self.ceil_objects[cell_data.id] = floor_object
@@ -91,7 +93,7 @@ function System:update(dt)
 			self.wall_objects[cell_data.id] = nil
 			if object then
 				go.delete(object.url)
-			else
+			--else
 				--COMMON.w("can't unload not loaded id:" .. cell_data.id,TAG)
 			end
 		end
@@ -100,7 +102,7 @@ function System:update(dt)
 			self.floor_objects[cell_data.id] = nil
 			if object then
 				go.delete(object.url)
-			else
+		--	else
 				--COMMON.w("can't unload not loaded id:" .. cell_data.id,TAG)
 			end
 		end
@@ -109,7 +111,7 @@ function System:update(dt)
 			self.ceil_objects[cell_data.id] = nil
 			if object then
 				go.delete(object.url)
-			else
+			--else
 				--COMMON.w("can't unload not loaded id:" .. cell_data.id,TAG)
 			end
 		end

@@ -33,9 +33,9 @@ function Bar:set_progress(progress)
 	local percents = LUME.clamp(progress/self.max_value,0,1)
 	self.background_size.x = self.background_max_width * percents
 	gui.set_size(self.background, self.background_size)
-	if self.show_text then
+	--if self.show_text then
 	--	gui.set_text(self.label, progress .. "/" .. self.max_value)
-	end
+	--end
 end
 
 

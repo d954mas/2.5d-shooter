@@ -68,7 +68,6 @@ void MapFindPath(int x, int y, int x2, int y2, std::vector<CellData>& cells){
 	MAP.findPath(x, y, x2, y2, cells);
 }
 
-//TODO rewrite. current impl is wrong
 void MapParse(lua_State* L){
 
     //reset current state

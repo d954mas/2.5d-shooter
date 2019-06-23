@@ -18,7 +18,6 @@ cjson.decode_invalid_numbers(false)
 ---@field floor table
 ---@field cell table
 
-
 ---@class LevelDataCellWall
 ---@field north number if -1 then no wall
 ---@field south number
@@ -26,19 +25,13 @@ cjson.decode_invalid_numbers(false)
 ---@field west number
 ---@field floor number
 ---@field ceil number
-local LevelDataCellWalls = {}
 
-
---Draw only north/south east/west.
---If need draw always add to other
 ---@class LevelDataCell
 ---@field position vector3
 ---@field id number
 ---@field wall LevelDataCellWall
 ---@field objects LevelDataCellObjects[]
 ---@field blocked boolean
-local LevelDataCell = {}
-
 
 --vector3 is not vector3 here. I use it only to autocomplete worked. It will be tables with x,y,z
 ---@class LevelData
@@ -47,8 +40,6 @@ local LevelDataCell = {}
 ---@field spawn_point vector3
 ---@field spawn_point vector3
 ---@field light_map number[]
----@field cells LevelDataCell[][]
-local LevelData = {}
 
 local function create_empty_cell(x,y)
 	local cell = {}

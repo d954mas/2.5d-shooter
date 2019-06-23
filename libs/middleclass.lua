@@ -119,8 +119,6 @@ local DefaultMixin = {
   initialize   = function(self, ...) end,
 
   isInstanceOf = function(self, aClass)
-    local class = self.class
-    local subclass = self.class:isSubclassOf(aClass)
     return type(aClass) == 'table'
        and type(self) == 'table'
        and (self.class == aClass

@@ -1,4 +1,4 @@
-local COMMON = require "libs.common"
+--local COMMON = require "libs.common"
 --[[local RichText = require "richtext.richtext"
 
 local base ={

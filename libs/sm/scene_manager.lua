@@ -151,7 +151,7 @@ function M:show(scene_name, input, options)
     input = input or {}
     options = options or {}
     local scene = assert(self:get_scene_by_name(scene_name))
-   
+
     local current_scene =  scene._config.modal and self.stack:peek() or self.stack:pop()
     self.stack:push(scene)
     self.co = coroutine.create(show_new_scene)
@@ -167,7 +167,7 @@ function M:back(input, options)
     local prev_scene =  self.stack:pop()
 
     self.co = coroutine.create(show_new_scene)
-    
+
     local ok, res = coroutine.resume(self.co, self, prev_scene, self.stack:peek(), input, options)
     if not ok then
         COMMON.e(res, TAG)

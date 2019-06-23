@@ -3,6 +3,8 @@ files['.luacheckrc'].global = false
 unused_args = false
 cache = true
 jobs = 4
+max_line_length = 130
+max_code_line_length = 130
 --remove some imported libs
 exclude_files = {
 	"richtext/**",
@@ -10,10 +12,15 @@ exclude_files = {
 	"libs/rx.lua",
 	"libs/log.lua",
 	"libs/ecs.lua",
+	"libs/checks.lua",
+	"_headers/**",
+	"rendercam/**",
+	"assets/levels/lua/**",
 }
 
 read_globals = {
   "sys",
+  "bit",
   "go",
   "gui",
   "label",
@@ -52,7 +59,8 @@ read_globals = {
   "model",
   "profiler",
   "defos",
-  "mnu"
+  "mnu",
+  "native_raycasting"
 }
 
 globals = {

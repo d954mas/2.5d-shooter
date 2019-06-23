@@ -1,5 +1,3 @@
-local COMMON = require "libs.common"
-local LUME = require "libs.lume"
 local Base = require "gui.recycler_list_adapter"
 
 ---@class InventoryViewAdapter:RecyclerViewAdapter

@@ -65,7 +65,8 @@ function init(self)
 	self.scheduler = COMMON.RX.CooperativeScheduler.create()
 
 	self.subscriptions = COMMON.RX.SubscriptionsStorage()
-	self.subscriptions:add(COMMON.EVENT_BUS:subscribe(COMMON.EVENTS.GAME_LEVEL_MAP_CHANGED):go_distinct(self.scheduler):subscribe(function (event)
+	self.subscriptions:add(COMMON.EVENT_BUS:subscribe(COMMON.EVENTS.GAME_LEVEL_MAP_CHANGED):go_distinct(self.scheduler)
+								   :subscribe(function (event)
 		clear_textures(self)
 		local width, height = WORLD.level:map_get_width(),WORLD.level:map_get_height()
 		gui.new_texture("map", width, height, "rgba", string.rep(WHITE_COLOR,  width * height))
@@ -80,8 +81,7 @@ end
 
 function final(self)
 	self.subscriptions:unsubscribe()
-
-end		
+end
 
 function update(self,dt)
 	self.scheduler:update(dt)
@@ -90,4 +90,4 @@ function update(self,dt)
 --	self.player_pos.x = self.map_pos.x + (self.start_x + WORLD.PLAYER.position.x) * SCALE.x
 	--self.player_pos.y = self.map_pos.y + (self.start_y + WORLD.PLAYER.position.y) * SCALE.y
 	--gui.set_position(self.player_node, self.player_pos)
-end	
+end

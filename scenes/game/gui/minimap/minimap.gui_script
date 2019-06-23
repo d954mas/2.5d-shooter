@@ -1,4 +1,3 @@
-local COMMON = require "libs.common"
 local Minimap = require "scenes.game.gui.minimap.minimap"
 local WORLD = require "world.world"
 function init(self)

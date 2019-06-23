@@ -1,6 +1,5 @@
 local ECS = require 'libs.ecs'
-local COMMON = require "libs.common"
-local ENTITIES = require "world.ecs.entities.entities"
+
 ---@class PhysicsResetCorrectionsSystem:ECSSystem
 local System = ECS.processingSystem()
 System.filter = ECS.requireAll("physics_obstacles_correction")

@@ -40,7 +40,7 @@ function M:on_input(go_self, action_id, action)
 				or (fun.is_repeated and action.repeated)  then
 			fun.fun(go_self, action_id, action)
 			return true
-		end	
+		end
 	end
 	return false
 end
