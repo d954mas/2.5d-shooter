@@ -18,6 +18,7 @@ function Render:init()
     self:init_buffers()
     self:init_constants_buffers()
     self:register_messages()
+    self.need_draw_3d_debug = false
     COMMON.RENDER = self
 end
 
@@ -58,6 +59,7 @@ function Render:init_predicates()
         model = render.predicate({"model"}),
         particle = render.predicate({"particle"}),
         sprite_3d = render.predicate({"sprite_3d"}),
+        sprite_3d_object = render.predicate({"sprite_3d_object"}),
         light_map = render.predicate({"light_map"}),
     }
 end
@@ -167,6 +169,8 @@ function Render:draw_3d()
     render.enable_texture(1, self.targets.light_map, render.BUFFER_COLOR_BIT)
     render.draw(self.predicates.model)
     render.draw(self.predicates.sprite_3d,self.constants_buffers.light_map)
+    render.draw(self.predicates.sprite_3d_object,self.constants_buffers.light_map)
+    if self.need_draw_3d_debug then render.draw_debug3d() end
     render.disable_state(render.STATE_DEPTH_TEST)
 end
 --endregion

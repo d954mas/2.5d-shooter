@@ -3,14 +3,17 @@ varying mediump vec4 pos;
 uniform lowp sampler2D DIFFUSE_TEXTURE;
 uniform lowp sampler2D LIGHT_MAP_TEXTURE;
 uniform mediump vec4 fog_color;
+uniform mediump vec4 object_position;
 uniform mediump vec4 light_map;
 uniform mediump vec4 fog; //x start distance y end dist.
+
+//Same as 3d sprite. But use object position. Used for sprites that can be in two cells
 void main()
 {    
     float dist = gl_FragCoord.z/gl_FragCoord.w;
     vec4 spriteColor = texture2D(DIFFUSE_TEXTURE, var_texcoord0.xy);
     if(spriteColor.a < 0.01){discard;}
-    vec4 lightColor = texture2D(LIGHT_MAP_TEXTURE, vec2((pos.x+0.00001)/light_map.x,(pos.z+0.00001)/light_map.y));// multiply to fix wall on cell borders
+    vec4 lightColor = texture2D(LIGHT_MAP_TEXTURE, vec2((object_position.x+0.00001)/light_map.x,(-object_position.y+0.00001)/light_map.y));// multiply to fix wall on cell borders
     vec3 color  = spriteColor.rgb * lightColor.rgb;
 
     float f = 1.0 /exp((dist-fog.x) * fog.z);

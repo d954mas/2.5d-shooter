@@ -56,8 +56,15 @@ function Level:prepare()
 end
 
 function Level:spawn_enemies()
-	local e = ENTITIES.create_blob(vmath.vector3(7.1,22.1,0))
-	if e then self.ecs_world.ecs:addEntity(e) end
+	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,22.1,0)))
+	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,24.1,0)))
+	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,26.1,0)))
+	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,27.1,0)))
+	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,21.1,0)))
+	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,19.1,0)))
+	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,17.1,0)))
+	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,16.1,0)))
+	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,12.1,0)))
 end
 
 function Level:update(dt)

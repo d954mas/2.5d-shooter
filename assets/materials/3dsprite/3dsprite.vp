@@ -9,6 +9,6 @@ varying mediump vec4 pos;
 void main()
 {
     gl_Position = view_proj * vec4(position.xyz, 1.0);
-    pos = position; 
+    pos = vec4(position.xyz, 1.0);
     var_texcoord0 = texcoord0;
 }

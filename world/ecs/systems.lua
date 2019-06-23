@@ -11,5 +11,6 @@ M.GlobalRotationSystem = require "world.ecs.systems.global_rotation_system"
 
 M.DrawObjectsSystem = require "world.ecs.systems.draw_objects_system"
 M.DrawWallsSystem = require "world.ecs.systems.draw_walls_system"
+M.UpdateObjectColor = require "world.ecs.systems.update_object_color"
 
 return M

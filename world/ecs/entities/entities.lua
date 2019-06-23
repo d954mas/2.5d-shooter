@@ -25,6 +25,7 @@ local TAG = "ENTITIES"
 ---@field global_rotation boolean for pickups they use one global angle
 ---@field need_draw boolean objects that can be draw
 ---@field draw_always boolean that object draw always. Used for enemies because of animations
+---@field render_dynamic_color boolean
 
 ---@field tile_id number need for draw objects
 ---@field drawing boolean this frame visible entities
@@ -127,8 +128,6 @@ function Entities.create_draw_object_base(pos)
 end
 
 function Entities.create_enemy(pos,factory)
-	local scale = 1/128
-	local default_scale = 1/64
 	local e = {}
 	e.pos = assert(pos)
 	e.angle = vmath.vector3(0,0,0)
@@ -136,12 +135,12 @@ function Entities.create_enemy(pos,factory)
 	e.velocity = vmath.vector3(0,0,0)
 	e.speed = 4
 	e.enemy = true
-	local urls = collectionfactory.create(factory,vmath.vector3(e.pos.x,0.5,-e.pos.z+0.5),vmath.quat_rotation_z(0),nil,scale)
+	local urls = collectionfactory.create(factory,vmath.vector3(e.pos.x,0.5,-e.pos.z+0.5),vmath.quat_rotation_z(0),nil)
 	e.url_go = msg.url(urls[OBJECT_HASHES.root])
 	e.url_sprite = msg.url(urls[OBJECT_HASHES.sprite])
 	e.url_sprite.fragment = HASH_SPRITE
 	e.look_at_player = true
-	e.pos_translate = vmath.vector3(0,scale/default_scale/2,0)
+	e.render_dynamic_color = true
 	return e
 end
 
