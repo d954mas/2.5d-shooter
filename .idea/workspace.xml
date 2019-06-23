@@ -3,16 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/walls.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/walls.atlas" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/lua/test_level.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/lua/test_level.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/lua/test_movement.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/lua/test_movement.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/lua/test_objects.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/lua/test_objects.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/parse.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/parse.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/result/test_level.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/result/test_level.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/result/test_movement.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/result/test_movement.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/result/test_objects.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/result/test_objects.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/sources/test_level.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/sources/test_level.tmx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/tilesets/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/materials/3dsprite/3dsprite.fp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/materials/3dsprite/3dsprite.fp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/materials/3dsprite/3dsprite_object.fp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/materials/3dsprite/3dsprite_object.fp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/my.render_script" beforeDir="false" afterPath="$PROJECT_DIR$/render/my.render_script" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,10 +17,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/world/ecs/systems/draw_walls_system.lua">
+        <entry file="file://$PROJECT_DIR$/render/my.render_script">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
+            <state relative-caret-position="305">
+              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
             </state>
           </provider>
         </entry>
@@ -136,7 +130,6 @@
         <option value="$PROJECT_DIR$/assets/materials/3dsprite/3dsprite.fp" />
         <option value="$PROJECT_DIR$/world/model/level.lua" />
         <option value="$PROJECT_DIR$/world/view/level_view.lua" />
-        <option value="$PROJECT_DIR$/render/my.render_script" />
         <option value="$PROJECT_DIR$/world/ecs/systems/update_go_system.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems/update_object_color.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems/movement_system.lua" />
@@ -152,6 +145,7 @@
         <option value="$PROJECT_DIR$/world/ecs/ecs.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua" />
         <option value="$PROJECT_DIR$/assets/levels/parse.lua" />
+        <option value="$PROJECT_DIR$/render/my.render_script" />
       </list>
     </option>
   </component>
@@ -173,6 +167,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -232,12 +227,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561298819398" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561298820353" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../dungeon crawler 2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -285,17 +279,19 @@
       <workItem from="1560009443315" duration="37847000" />
       <workItem from="1560367592621" duration="7275000" />
       <workItem from="1560456698212" duration="863000" />
-      <workItem from="1560803197909" duration="42590000" />
+      <workItem from="1560803197909" duration="43188000" />
+      <workItem from="1561302877562" duration="791000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161806000" />
+    <option name="totallyTimeSpent" value="163195000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="61" y="17" width="1535" height="995" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2724814" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27586207" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -311,7 +307,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="LuaCheck" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4989047" visible="true" weight="0.32924107" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.4989047" visible="true" weight="0.32924107" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4989047" weight="0.35083798" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5010953" side_tool="true" weight="0.3310962" />
@@ -389,7 +385,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="lua-line">
           <url>file://$PROJECT_DIR$/render/my.render_script</url>
-          <line>194</line>
+          <line>193</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
@@ -420,13 +416,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/world/view/level_wall_render.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="17" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/world/view/level_wall_render.lua" />
     <entry file="file://$PROJECT_DIR$/libs/hashes.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
@@ -581,13 +571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/render/my.render_script">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="176" selection-start-line="176" selection-end-line="176" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/development/Defold/api1_2_151.zip!/api/sprite.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
@@ -602,13 +585,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/direction_to_velocity_system.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/world/ecs/systems/direction_to_velocity_system.lua" />
     <entry file="file://$PROJECT_DIR$/world/ecs/systems/input_system.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -746,6 +723,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/render/my.render_script">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
         </state>
       </provider>
     </entry>

@@ -74,11 +74,10 @@ end
 function Render:init_constants_buffers()
     self.constants_buffers = {
         light_map = render.constant_buffer(),
-        sprite3d = render.constant_buffer()
     }
     self.constants_buffers.light_map.light_map = vmath.vector4(LIGHT_MAP_SIZE,LIGHT_MAP_SIZE,0,0)
-    self.constants_buffers.light_map.fog_color = vmath.vector4(0.5)
-    self.constants_buffers.light_map.fog = vmath.vector4(2.5,0,0.15,0) -- //x start distance y end dist. z exp
+    self.constants_buffers.light_map.fog_color = vmath.vector4(0.15)
+    self.constants_buffers.light_map.fog = vmath.vector4(2,0,0.1,0) -- //x start distance y end dist. z exp
 
 end
 
