@@ -31,8 +31,8 @@ end
 		local proj = vmath.project(correction, normal * distance)
 		if proj < 1 then
 			local comp = (distance - distance * proj) * normal
-			e.pos.x = e.pos.x + comp.x
-			e.pos.y = e.pos.y - comp.z
+			e.position.x = e.position.x + comp.x
+			e.position.y = e.position.y - comp.z
 			e.physics_obstacles_correction = correction + comp
 		end
 	end

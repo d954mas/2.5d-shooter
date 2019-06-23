@@ -4,9 +4,9 @@ local TAG = "ENTITIES"
 ---@class Entity
 ---@field tag string tag used for help when debug
 ---@field player boolean true if player entity
----@field pos vector3
----@field pos_translate vector3 additional movement for pos. If go need bottom or top align
----@field direction vector4 up down left right
+---@field enemy boolean
+---@field position vector3
+---@field input_direction vector4 up down left right. Used for player input
 ---@field velocity vector3
 ---@field speed number
 ---@field angle vector3 radians anticlockwise  x-horizontal y-vertical
@@ -30,7 +30,7 @@ local TAG = "ENTITIES"
 ---@field tile_id number need for draw objects
 ---@field drawing boolean this frame visible entities
 ---@field cell_data NativeCellData
----@field enemy boolean
+
 
 local HASH_SPRITE = hash("sprite")
 local OBJECT_HASHES = {
@@ -101,9 +101,9 @@ end
 function Entities.create_player(pos)
 	local e = {}
 	e.tag = "player"
-	e.pos = assert(pos)
+	e.position= assert(pos)
 	e.angle = vmath.vector3(0,0,0)
-	e.direction = vmath.vector4(0,0,0,0) 
+	e.input_direction = vmath.vector4(0,0,0,0)
 	e.velocity = vmath.vector3(0,0,0)
 	e.speed = 4
 	e.player = true
@@ -122,20 +122,19 @@ end
 ---@return Entity
 function Entities.create_draw_object_base(pos)
 	local e = {}
-	e.pos = assert(pos)
+	e.position= assert(pos)
 	e.need_draw = true
 	return e
 end
 
 function Entities.create_enemy(pos,factory)
 	local e = {}
-	e.pos = assert(pos)
+	e.position= assert(pos)
 	e.angle = vmath.vector3(0,0,0)
-	e.direction = vmath.vector4(0,0,0,0)
 	e.velocity = vmath.vector3(0,0,0)
 	e.speed = 4
 	e.enemy = true
-	local urls = collectionfactory.create(factory,vmath.vector3(e.pos.x,0.5,-e.pos.z+0.5),vmath.quat_rotation_z(0),nil)
+	local urls = collectionfactory.create(factory,vmath.vector3(e.position.x,0.5,-e.position.z+0.5),vmath.quat_rotation_z(0),nil)
 	e.url_go = msg.url(urls[OBJECT_HASHES.root])
 	e.url_sprite = msg.url(urls[OBJECT_HASHES.sprite])
 	e.url_sprite.fragment = HASH_SPRITE

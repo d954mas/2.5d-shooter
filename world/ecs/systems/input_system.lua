@@ -31,8 +31,15 @@ function System:init_input()
 end
 
 function System:update_player_velocity()
-	self.world.world.level.player.direction.x = self.movement.z - self.movement.w
-	self.world.world.level.player.direction.y = self.movement.x - self.movement.y
+	local player = self.world.world.level.player
+	player.input_direction.x = self.movement.z - self.movement.w
+	player.input_direction.y = self.movement.x - self.movement.y
+	player.velocity.x = player.input_direction.x
+	player.velocity.y = player.input_direction.y
+	if player.velocity.x ~= 0 and player.velocity.y ~= 0 then
+		player.velocity = vmath.normalize(player.velocity)
+	end
+	if player.angle then player.velocity = vmath.rotate(vmath.quat_rotation_z(player.angle.x),player.velocity) end
 end
 
 

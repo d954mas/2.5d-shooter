@@ -51,7 +51,7 @@ local function update_map(self)
 	end
 	scale.y = scale.x
 	gui.set_scale(self.vh.map_node, scale)
-	gui.set_position(self.vh.player_node,vmath.vector3(WORLD.level.player.pos.x,WORLD.level.player.pos.y,0))
+	gui.set_position(self.vh.player_node,vmath.vector3(WORLD.level.player.position.x,WORLD.level.player.position.y,0))
 	gui.set_position(self.vh.map_node, vmath.vector3(1920-map_width*scale.x,1080-map_height*scale.y,1))
 end
 

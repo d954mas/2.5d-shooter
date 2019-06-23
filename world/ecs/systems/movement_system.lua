@@ -1,13 +1,13 @@
 local ECS = require 'libs.ecs'
 ---@class MovementSystem:ECSSystem
 local System = ECS.processingSystem()
-System.filter = ECS.requireAll("direction","pos","velocity","speed")
+System.filter = ECS.requireAll("position","velocity","speed")
 
 ---@param e Entity
 function System:process(e, dt)
 	local movement = e.velocity * e.speed * dt
-	e.pos.x = e.pos.x + movement.x
-	e.pos.y = e.pos.y + movement.y
+	e.position.x = e.position.x + movement.x
+	e.position.y = e.position.y + movement.y
 end
 
 

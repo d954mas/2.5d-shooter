@@ -6,8 +6,8 @@ System.filter = ECS.requireAll("url_go")
 
 ---@param e Entity
 function System:process(e, dt)
-	if e.pos then
-		local current_pos = vmath.vector3(e.pos.x,0,-e.pos.y)
+	if e.position then
+		local current_pos = vmath.vector3(e.position.x,0,-e.position.y)
 		go.set_position(current_pos,e.url_go)
 	end
 	if e.angle then

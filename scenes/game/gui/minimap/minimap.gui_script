@@ -16,7 +16,7 @@ end
 
 function update(self, dt)
 	self.minimap:update()
-	gui.set_text(self.vh.lbl_player_pos, string.format("Pos:%.2f %.2f",WORLD.level.player.pos.x,WORLD.level.player.pos.y))
+	gui.set_text(self.vh.lbl_player_pos, string.format("Pos:%.2f %.2f",WORLD.level.player.position.x,WORLD.level.player.position.y))
 	gui.set_rotation(self.player_pointer_node, vmath.quat_rotation_z(-WORLD.level.player.angle.x))
 end
 

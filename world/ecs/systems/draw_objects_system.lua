@@ -5,11 +5,11 @@ local FACTORY_SPRITE_URL = msg.url("game:/factories#factory_sprite_object")
 local FACTORY_EMPTY_URL = msg.url("game:/factories#factory_empty")
 ---@class DrawObjectsSystem:ECSSystem
 local System = ECS.processingSystem()
-System.filter = ECS.requireAll("need_draw","pos")
+System.filter = ECS.requireAll("need_draw","position")
 
 ---@param e Entity
 function System:process(e, dt)
-	local visible = native_raycasting.cells_get_by_coords(math.ceil(e.pos.x),math.ceil(e.pos.y)):get_visibility()
+	local visible = native_raycasting.cells_get_by_coords(math.ceil(e.position.x),math.ceil(e.position.y)):get_visibility()
 	if e.drawing and not visible then
 		go.delete(e.url_sprite)
 		e.drawing = false
@@ -20,7 +20,7 @@ function System:process(e, dt)
 		assert(not e.url_sprite,"object already visible")
 		--create simple go with one sprite
 		if not e.url_go then
-			e.url_go = msg.url(factory.create(FACTORY_EMPTY_URL,vmath.vector3(e.pos.x,0.5,-e.pos.z+0.5),vmath.quat_rotation_z(0)))
+			e.url_go = msg.url(factory.create(FACTORY_EMPTY_URL,vmath.vector3(e.position.x,0.5,-e.position.z+0.5),vmath.quat_rotation_z(0)))
 		end
 		e.url_sprite =  msg.url(factory.create(FACTORY_SPRITE_URL,nil,vmath.quat_rotation_z(0)))
 		e.url_sprite = msg.url(e.url_sprite.socket,e.url_sprite.path,HASH_SPRITE)

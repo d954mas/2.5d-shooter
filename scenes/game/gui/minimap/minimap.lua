@@ -120,7 +120,7 @@ end
 function Map:update()
 	if WORLD.level then
 		self:update_cells()
-		self:set_position(WORLD.level.player.pos)
+		self:set_position(WORLD.level.player.position)
 	end
 end
 
