@@ -32,209 +32,320 @@ return {
       },
       properties = {},
       terrains = {},
-      tilecount = 34,
+      tilecount = 35,
       tiles = {
         {
           id = 1,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall1.png",
           width = 64,
           height = 64
         },
         {
           id = 2,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall2.png",
           width = 64,
           height = 64
         },
         {
           id = 3,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall3.png",
           width = 64,
           height = 64
         },
         {
           id = 4,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall4.png",
           width = 64,
           height = 64
         },
         {
           id = 5,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall5.png",
           width = 64,
           height = 64
         },
         {
           id = 6,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall6.png",
           width = 64,
           height = 64
         },
         {
           id = 7,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall7.png",
           width = 64,
           height = 64
         },
         {
           id = 8,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall8.png",
           width = 64,
           height = 64
         },
         {
           id = 9,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall9.png",
           width = 64,
           height = 64
         },
         {
           id = 10,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall10.png",
           width = 64,
           height = 64
         },
         {
           id = 11,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall11.png",
           width = 64,
           height = 64
         },
         {
           id = 12,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall12.png",
           width = 64,
           height = 64
         },
         {
           id = 13,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall13.png",
           width = 64,
           height = 64
         },
         {
           id = 14,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall14.png",
           width = 64,
           height = 64
         },
         {
           id = 15,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall15.png",
           width = 64,
           height = 64
         },
         {
           id = 16,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall16.png",
           width = 64,
           height = 64
         },
         {
           id = 17,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall17.png",
           width = 64,
           height = 64
         },
         {
           id = 18,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall18.png",
           width = 64,
           height = 64
         },
         {
           id = 19,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall19.png",
           width = 64,
           height = 64
         },
         {
           id = 20,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall20.png",
           width = 64,
           height = 64
         },
         {
           id = 21,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall21.png",
           width = 64,
           height = 64
         },
         {
           id = 22,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall22.png",
           width = 64,
           height = 64
         },
         {
           id = 23,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall23.png",
           width = 64,
           height = 64
         },
         {
           id = 24,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall24.png",
           width = 64,
           height = 64
         },
         {
           id = 25,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall25.png",
           width = 64,
           height = 64
         },
         {
           id = 26,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall26.png",
           width = 64,
           height = 64
         },
         {
           id = 27,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall27.png",
           width = 64,
           height = 64
         },
         {
           id = 28,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall28.png",
           width = 64,
           height = 64
         },
         {
           id = 29,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall29.png",
           width = 64,
           height = 64
         },
         {
           id = 30,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall30.png",
           width = 64,
           height = 64
         },
         {
           id = 31,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall31.png",
           width = 64,
           height = 64
         },
         {
           id = 32,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall32.png",
           width = 64,
           height = 64
         },
         {
           id = 33,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall33.png",
           width = 64,
           height = 64
         },
         {
           id = 34,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall34.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 35,
+          properties = {
+            ["block"] = false
+          },
+          image = "../../images/game/walls/wall35.png",
           width = 64,
           height = 64
         }
@@ -242,7 +353,7 @@ return {
     },
     {
       name = "objects",
-      firstgid = 36,
+      firstgid = 37,
       filename = "../tilesets/objects.tsx",
       tilewidth = 86,
       tileheight = 64,
@@ -415,7 +526,7 @@ return {
     },
     {
       name = "lights",
-      firstgid = 49,
+      firstgid = 50,
       filename = "../tilesets/lights.tsx",
       tilewidth = 64,
       tileheight = 64,
@@ -1472,7 +1583,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 37,
+          gid = 38,
           visible = true,
           properties = {
             ["spawn_point"] = true
@@ -1488,7 +1599,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 41,
+          gid = 42,
           visible = true,
           properties = {}
         },
@@ -1502,7 +1613,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 41,
+          gid = 42,
           visible = true,
           properties = {}
         },
@@ -1516,7 +1627,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 41,
+          gid = 42,
           visible = true,
           properties = {}
         },
@@ -1530,7 +1641,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 41,
+          gid = 42,
           visible = true,
           properties = {}
         },
@@ -1544,7 +1655,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 41,
+          gid = 42,
           visible = true,
           properties = {}
         },
@@ -1558,7 +1669,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 41,
+          gid = 42,
           visible = true,
           properties = {}
         },
@@ -1572,7 +1683,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 41,
+          gid = 42,
           visible = true,
           properties = {}
         },
@@ -1586,7 +1697,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 41,
+          gid = 42,
           visible = true,
           properties = {}
         },
@@ -1600,7 +1711,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 41,
+          gid = 42,
           visible = true,
           properties = {}
         },
@@ -1614,7 +1725,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 41,
+          gid = 42,
           visible = true,
           properties = {}
         },
@@ -1628,7 +1739,7 @@ return {
           width = 64,
           height = 62,
           rotation = 0,
-          gid = 39,
+          gid = 40,
           visible = true,
           properties = {}
         },
@@ -1642,7 +1753,7 @@ return {
           width = 64,
           height = 62,
           rotation = 0,
-          gid = 39,
+          gid = 40,
           visible = true,
           properties = {}
         },
@@ -1656,7 +1767,7 @@ return {
           width = 64,
           height = 62,
           rotation = 0,
-          gid = 39,
+          gid = 40,
           visible = true,
           properties = {}
         },
@@ -1670,7 +1781,7 @@ return {
           width = 64,
           height = 62,
           rotation = 0,
-          gid = 39,
+          gid = 40,
           visible = true,
           properties = {}
         },
@@ -1684,7 +1795,7 @@ return {
           width = 64,
           height = 62,
           rotation = 0,
-          gid = 39,
+          gid = 40,
           visible = true,
           properties = {}
         },
@@ -1698,7 +1809,7 @@ return {
           width = 64,
           height = 62,
           rotation = 0,
-          gid = 39,
+          gid = 40,
           visible = true,
           properties = {}
         },
@@ -1712,7 +1823,7 @@ return {
           width = 64,
           height = 62,
           rotation = 0,
-          gid = 39,
+          gid = 40,
           visible = true,
           properties = {}
         },
@@ -1726,7 +1837,7 @@ return {
           width = 64,
           height = 62,
           rotation = 0,
-          gid = 39,
+          gid = 40,
           visible = true,
           properties = {}
         },
@@ -1740,7 +1851,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -1754,7 +1865,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -1768,7 +1879,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -1782,7 +1893,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -1796,7 +1907,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -1810,7 +1921,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -1824,7 +1935,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -1838,7 +1949,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -1852,7 +1963,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -1866,7 +1977,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -1880,7 +1991,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -1894,7 +2005,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -1908,7 +2019,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -1922,7 +2033,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -1936,7 +2047,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -1950,7 +2061,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -1964,7 +2075,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -1978,7 +2089,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -1992,7 +2103,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -2006,7 +2117,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -2020,7 +2131,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -2034,7 +2145,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -2048,7 +2159,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -2062,7 +2173,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -2076,7 +2187,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -2090,7 +2201,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -2104,7 +2215,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -2118,7 +2229,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -2132,49 +2243,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 57,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 384,
-          y = 640,
-          width = 86,
-          height = 25,
-          rotation = 0,
-          gid = 45,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 58,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 448,
-          y = 640,
-          width = 86,
-          height = 25,
-          rotation = 0,
-          gid = 45,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 59,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 512,
-          y = 640,
-          width = 86,
-          height = 25,
-          rotation = 0,
-          gid = 45,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -2188,7 +2257,7 @@ return {
           width = 86,
           height = 25,
           rotation = 0,
-          gid = 45,
+          gid = 46,
           visible = true,
           properties = {}
         },
@@ -2202,7 +2271,7 @@ return {
           width = 86,
           height = 25,
           rotation = 0,
-          gid = 45,
+          gid = 46,
           visible = true,
           properties = {}
         },
@@ -2216,7 +2285,7 @@ return {
           width = 86,
           height = 25,
           rotation = 0,
-          gid = 45,
+          gid = 46,
           visible = true,
           properties = {}
         },
@@ -2230,7 +2299,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         }
@@ -2260,11 +2329,11 @@ return {
         0, 27, 0, 0, 0, 13, 13, 0, 13, 13, 0, 0, 0, 0, 0, 0, 0, 0, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27, 27, 27, 0, 0, 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27, 0, 27, 0, 0, 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 27, 27, 27, 0, 0, 0, 27, 27, 27, 0, 0, 27, 0, 0, 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 27, 27, 27, 36, 36, 36, 27, 27, 27, 0, 0, 27, 0, 0, 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 27, 0, 0, 0, 27, 0, 0, 0, 0, 27, 0, 0, 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 27, 0, 0, 0, 27, 0, 0, 0, 27, 27, 0, 0, 27, 27, 0, 0, 0, 0, 0, 27, 27, 27, 27, 27, 27, 0, 0,
         0, 0, 0, 0, 0, 27, 0, 0, 0, 27, 0, 0, 27, 0, 0, 0, 0, 0, 0, 27, 0, 0, 0, 27, 0, 0, 0, 0, 0, 0, 27, 0,
-        0, 0, 0, 0, 0, 27, 0, 0, 0, 27, 27, 27, 27, 0, 0, 0, 0, 0, 0, 27, 27, 27, 27, 27, 0, 0, 0, 0, 0, 0, 27, 0,
+        0, 0, 0, 0, 0, 27, 0, 36, 0, 27, 27, 27, 27, 0, 0, 0, 0, 0, 0, 27, 27, 27, 27, 27, 0, 0, 0, 0, 0, 0, 27, 0,
         0, 0, 0, 0, 0, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 13, 0, 0, 27, 0,
         0, 0, 0, 0, 0, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 13, 0, 0, 27, 0,
         0, 0, 0, 0, 0, 27, 0, 0, 0, 27, 27, 27, 27, 0, 0, 0, 0, 0, 0, 27, 27, 27, 27, 27, 0, 0, 0, 0, 0, 0, 27, 0,
@@ -2351,28 +2420,28 @@ return {
       data = {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 168, 168, 0, 168, 168, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 184, 168, 152, 152, 168, 152, 152, 168, 184, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 168, 152, 136, 136, 152, 136, 136, 152, 168, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 168, 152, 136, 0, 0, 136, 0, 0, 136, 152, 168, 184, 180, 164, 148, 132, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 168, 152, 136, 0, 0, 136, 0, 0, 136, 152, 168, 184, 180, 164, 148, 132, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 168, 152, 136, 136, 152, 136, 136, 152, 168, 0, 0, 0, 180, 180, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 184, 168, 152, 152, 168, 152, 152, 168, 184, 0, 0, 0, 196, 196, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 168, 184, 168, 0, 0, 0, 0, 0, 0, 196, 196, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 184, 200, 184, 0, 0, 0, 0, 0, 0, 180, 180, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 180, 196, 200, 0, 0, 0, 0, 0, 0, 164, 164, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 164, 180, 196, 0, 0, 0, 0, 180, 164, 148, 148, 164, 180, 0, 0, 0, 0, 0, 189, 173, 157, 157, 173, 189, 0, 0,
-        0, 0, 0, 0, 0, 0, 148, 164, 180, 0, 0, 0, 0, 164, 148, 132, 132, 148, 164, 0, 0, 0, 0, 0, 173, 157, 141, 141, 157, 173, 0, 0,
-        0, 0, 0, 0, 0, 0, 132, 148, 164, 180, 196, 180, 164, 148, 132, 0, 0, 132, 148, 164, 180, 196, 195, 189, 157, 141, 0, 0, 141, 157, 0, 0,
-        0, 0, 0, 0, 0, 0, 132, 148, 164, 180, 196, 180, 164, 148, 132, 0, 0, 132, 148, 164, 180, 196, 195, 189, 157, 141, 0, 0, 141, 157, 0, 0,
-        0, 0, 0, 0, 0, 0, 148, 164, 180, 0, 0, 0, 0, 164, 148, 132, 132, 148, 164, 0, 0, 0, 0, 0, 173, 157, 141, 141, 157, 173, 0, 0,
-        0, 0, 0, 0, 0, 0, 164, 180, 196, 0, 0, 0, 0, 180, 164, 148, 148, 164, 180, 0, 0, 0, 0, 0, 189, 173, 157, 157, 173, 189, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 164, 164, 0, 0, 0, 0, 0, 0, 0, 0, 0, 173, 173, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 180, 180, 0, 0, 0, 0, 134, 134, 150, 166, 182, 189, 189, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 198, 198, 0, 0, 0, 0, 150, 150, 166, 182, 198, 205, 205, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 166, 150, 134, 134, 150, 166, 182, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 198, 182, 166, 150, 150, 166, 182, 198, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 166, 166, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 169, 169, 0, 169, 169, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 185, 169, 153, 153, 169, 153, 153, 169, 185, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 169, 153, 137, 137, 153, 137, 137, 153, 169, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 169, 153, 137, 0, 0, 137, 0, 0, 137, 153, 169, 185, 181, 165, 149, 133, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 169, 153, 137, 0, 0, 137, 0, 0, 137, 153, 169, 185, 181, 165, 149, 133, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 169, 153, 137, 137, 153, 137, 137, 153, 169, 0, 0, 0, 181, 181, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 185, 169, 153, 153, 169, 153, 153, 169, 185, 0, 0, 0, 197, 197, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 169, 185, 169, 0, 0, 0, 0, 0, 0, 197, 197, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 185, 201, 185, 0, 0, 0, 0, 0, 0, 181, 181, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 181, 197, 201, 0, 0, 0, 0, 0, 0, 165, 165, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 165, 181, 197, 0, 0, 0, 0, 181, 165, 149, 149, 165, 181, 0, 0, 0, 0, 0, 190, 174, 158, 158, 174, 190, 0, 0,
+        0, 0, 0, 0, 0, 0, 149, 165, 181, 0, 0, 0, 0, 165, 149, 133, 133, 149, 165, 0, 0, 0, 0, 0, 174, 158, 142, 142, 158, 174, 0, 0,
+        0, 0, 0, 0, 0, 0, 133, 149, 165, 181, 197, 181, 165, 149, 133, 0, 0, 133, 149, 165, 181, 197, 196, 190, 158, 142, 0, 0, 142, 158, 0, 0,
+        0, 0, 0, 0, 0, 0, 133, 149, 165, 181, 197, 181, 165, 149, 133, 0, 0, 133, 149, 165, 181, 197, 196, 190, 158, 142, 0, 0, 142, 158, 0, 0,
+        0, 0, 0, 0, 0, 0, 149, 165, 181, 0, 0, 0, 0, 165, 149, 133, 133, 149, 165, 0, 0, 0, 0, 0, 174, 158, 142, 142, 158, 174, 0, 0,
+        0, 0, 0, 0, 0, 0, 165, 181, 197, 0, 0, 0, 0, 181, 165, 149, 149, 165, 181, 0, 0, 0, 0, 0, 190, 174, 158, 158, 174, 190, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 165, 165, 0, 0, 0, 0, 0, 0, 0, 0, 0, 174, 174, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 181, 181, 0, 0, 0, 0, 135, 135, 151, 167, 183, 190, 190, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 199, 199, 0, 0, 0, 0, 151, 151, 167, 183, 199, 206, 206, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 183, 167, 151, 135, 135, 151, 167, 183, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 199, 183, 167, 151, 151, 167, 183, 199, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 183, 167, 167, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,

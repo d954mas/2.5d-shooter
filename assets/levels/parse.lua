@@ -163,9 +163,8 @@ local function parse_level(path,result_path)
 	local wall_keys = {"north","south","east","west"}
 	process_layer(data,assert(get_layer(tiled,"walls")),function(cell,tiled_cell) for _,v in pairs(wall_keys)do
 			cell.wall[v] = tiled_cell
-			if true then --for now all walls are blocking
-				cell.blocked = true;
-			end
+			local tile = data.id_to_tile[tiled_cell]
+			cell.blocked = tile.properties.block;
 		end
 	end)
 	data.light_map = {}

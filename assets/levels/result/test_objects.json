@@ -5,11 +5,10 @@
       "cell_yf":5,
       "tile_id":38,
       "properties":{
+        "scale":0.5,
         "look_at_player":true,
-        "origin":"",
-        "draw":true,
         "global_rotation":false,
-        "size_for_scale":64
+        "draw":true
       },
       "cell_y":5,
       "cell_x":2
@@ -20,8 +19,8 @@
       "tile_id":39,
       "properties":{
         "look_at_player":true,
-        "origin":"",
         "draw":true,
+        "scale":0.5,
         "global_rotation":false,
         "size_for_scale":64
       },
@@ -33,11 +32,10 @@
       "cell_yf":5,
       "tile_id":40,
       "properties":{
+        "scale":0.5,
         "look_at_player":true,
-        "origin":"",
-        "draw":true,
         "global_rotation":false,
-        "size_for_scale":64
+        "draw":true
       },
       "cell_y":5,
       "cell_x":6
@@ -47,11 +45,12 @@
       "cell_yf":7,
       "tile_id":42,
       "properties":{
-        "look_at_player":true,
+        "size_for_scale":64,
         "origin":"top",
         "draw":true,
+        "scale":1,
         "global_rotation":false,
-        "size_for_scale":64
+        "look_at_player":true
       },
       "cell_y":7,
       "cell_x":2
@@ -62,8 +61,8 @@
       "tile_id":43,
       "properties":{
         "look_at_player":true,
-        "origin":"",
         "draw":true,
+        "scale":0.5,
         "global_rotation":false,
         "size_for_scale":64
       },
@@ -76,8 +75,8 @@
       "tile_id":44,
       "properties":{
         "look_at_player":true,
-        "origin":"",
         "draw":true,
+        "scale":0.5,
         "global_rotation":false,
         "size_for_scale":64
       },
@@ -90,10 +89,10 @@
       "tile_id":45,
       "properties":{
         "look_at_player":true,
-        "origin":"bottom",
         "draw":true,
+        "scale":0.5,
         "global_rotation":false,
-        "size_for_scale":86
+        "size_for_scale":64
       },
       "cell_y":7,
       "cell_x":8
@@ -103,11 +102,10 @@
       "cell_yf":5,
       "tile_id":46,
       "properties":{
+        "scale":1,
         "look_at_player":true,
-        "origin":"",
-        "draw":true,
         "global_rotation":false,
-        "size_for_scale":64
+        "draw":true
       },
       "cell_y":5,
       "cell_x":8
@@ -117,11 +115,10 @@
       "cell_yf":9,
       "tile_id":41,
       "properties":{
-        "look_at_player":false,
-        "origin":"",
         "draw":true,
+        "scale":0.5,
         "global_rotation":true,
-        "size_for_scale":64
+        "look_at_player":false
       },
       "cell_y":9,
       "cell_x":2
@@ -132,8 +129,8 @@
       "tile_id":48,
       "properties":{
         "look_at_player":true,
-        "origin":"",
         "draw":true,
+        "scale":0.5,
         "global_rotation":false,
         "size_for_scale":64
       },
@@ -147,306 +144,374 @@
       "image":"wall1",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":1,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall2",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":2,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall3",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":3,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall4",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":4,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall5",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":5,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall6",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":6,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall7",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":7,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall8",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":8,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall9",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":9,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall10",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":10,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall11",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":11,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall12",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":12,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall13",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":13,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall14",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":14,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall15",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":15,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall16",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":16,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall17",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":17,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall18",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":18,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall19",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":19,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall20",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":20,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall21",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":21,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall22",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":22,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall23",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":23,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall24",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":24,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall25",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":25,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall26",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":26,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall27",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":27,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall28",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":28,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall29",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":29,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall30",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":30,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall31",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":31,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall32",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":32,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall33",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":33,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall34",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":34,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     null,
@@ -464,14 +529,13 @@
     {
       "image":"block",
       "atlas":"objects",
-      "scale":0.015625,
+      "scale":0.0078125,
       "id":2,
       "properties":{
-        "look_at_player":true,
-        "origin":"",
         "draw":true,
+        "scale":0.5,
         "global_rotation":false,
-        "size_for_scale":64
+        "look_at_player":true
       },
       "height":64,
       "width":64
@@ -479,14 +543,14 @@
     {
       "image":"bot_crystal",
       "atlas":"objects",
-      "scale":0.015625,
+      "scale":0.0078125,
       "id":3,
       "properties":{
         "look_at_player":true,
-        "origin":"",
         "draw":true,
+        "size_for_scale":64,
         "global_rotation":false,
-        "size_for_scale":64
+        "scale":0.5
       },
       "height":62,
       "width":64
@@ -494,14 +558,13 @@
     {
       "image":"bot_crystal_2",
       "atlas":"objects",
-      "scale":0.015625,
+      "scale":0.0078125,
       "id":4,
       "properties":{
-        "look_at_player":true,
-        "origin":"",
         "draw":true,
+        "scale":0.5,
         "global_rotation":false,
-        "size_for_scale":64
+        "look_at_player":true
       },
       "height":64,
       "width":46
@@ -509,14 +572,13 @@
     {
       "image":"box",
       "atlas":"objects",
-      "scale":0.015625,
+      "scale":0.0078125,
       "id":5,
       "properties":{
-        "look_at_player":false,
-        "origin":"",
         "draw":true,
+        "scale":0.5,
         "global_rotation":true,
-        "size_for_scale":64
+        "look_at_player":false
       },
       "height":64,
       "width":64
@@ -534,8 +596,9 @@
         "look_at_player":true,
         "origin":"top",
         "draw":true,
+        "size_for_scale":64,
         "global_rotation":false,
-        "size_for_scale":64
+        "scale":1
       },
       "height":13,
       "width":25
@@ -543,14 +606,14 @@
     {
       "image":"mushroom_1",
       "atlas":"objects",
-      "scale":0.015625,
+      "scale":0.0078125,
       "id":7,
       "properties":{
         "look_at_player":true,
-        "origin":"",
         "draw":true,
+        "size_for_scale":64,
         "global_rotation":false,
-        "size_for_scale":64
+        "scale":0.5
       },
       "height":63,
       "width":53
@@ -558,14 +621,14 @@
     {
       "image":"mushroom_2",
       "atlas":"objects",
-      "scale":0.015625,
+      "scale":0.0078125,
       "id":8,
       "properties":{
         "look_at_player":true,
-        "origin":"",
         "draw":true,
+        "size_for_scale":64,
         "global_rotation":false,
-        "size_for_scale":64
+        "scale":0.5
       },
       "height":60,
       "width":56
@@ -573,14 +636,14 @@
     {
       "image":"skull",
       "atlas":"objects",
-      "scale":0.011627906976744,
+      "scale":0.0078125,
       "id":9,
       "properties":{
         "look_at_player":true,
-        "origin":"bottom",
         "draw":true,
+        "size_for_scale":64,
         "global_rotation":false,
-        "size_for_scale":86
+        "scale":0.5
       },
       "height":25,
       "width":86
@@ -591,11 +654,10 @@
       "scale":0.015625,
       "id":10,
       "properties":{
-        "look_at_player":true,
-        "origin":"",
         "draw":true,
+        "scale":1,
         "global_rotation":false,
-        "size_for_scale":64
+        "look_at_player":true
       },
       "height":64,
       "width":64
@@ -603,14 +665,14 @@
     {
       "image":"top_crystal_1",
       "atlas":"objects",
-      "scale":0.015625,
+      "scale":0.0078125,
       "id":11,
       "properties":{
         "look_at_player":true,
-        "origin":"",
         "draw":true,
+        "size_for_scale":64,
         "global_rotation":false,
-        "size_for_scale":64
+        "scale":0.5
       },
       "height":56,
       "width":61
@@ -618,14 +680,14 @@
     {
       "image":"top_crystal_2",
       "atlas":"objects",
-      "scale":0.015625,
+      "scale":0.0078125,
       "id":12,
       "properties":{
         "look_at_player":true,
-        "origin":"",
         "draw":true,
+        "size_for_scale":64,
         "global_rotation":false,
-        "size_for_scale":64
+        "scale":0.5
       },
       "height":54,
       "width":64

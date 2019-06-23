@@ -36,204 +36,306 @@ return {
       tiles = {
         {
           id = 1,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall1.png",
           width = 64,
           height = 64
         },
         {
           id = 2,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall2.png",
           width = 64,
           height = 64
         },
         {
           id = 3,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall3.png",
           width = 64,
           height = 64
         },
         {
           id = 4,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall4.png",
           width = 64,
           height = 64
         },
         {
           id = 5,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall5.png",
           width = 64,
           height = 64
         },
         {
           id = 6,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall6.png",
           width = 64,
           height = 64
         },
         {
           id = 7,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall7.png",
           width = 64,
           height = 64
         },
         {
           id = 8,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall8.png",
           width = 64,
           height = 64
         },
         {
           id = 9,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall9.png",
           width = 64,
           height = 64
         },
         {
           id = 10,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall10.png",
           width = 64,
           height = 64
         },
         {
           id = 11,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall11.png",
           width = 64,
           height = 64
         },
         {
           id = 12,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall12.png",
           width = 64,
           height = 64
         },
         {
           id = 13,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall13.png",
           width = 64,
           height = 64
         },
         {
           id = 14,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall14.png",
           width = 64,
           height = 64
         },
         {
           id = 15,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall15.png",
           width = 64,
           height = 64
         },
         {
           id = 16,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall16.png",
           width = 64,
           height = 64
         },
         {
           id = 17,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall17.png",
           width = 64,
           height = 64
         },
         {
           id = 18,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall18.png",
           width = 64,
           height = 64
         },
         {
           id = 19,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall19.png",
           width = 64,
           height = 64
         },
         {
           id = 20,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall20.png",
           width = 64,
           height = 64
         },
         {
           id = 21,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall21.png",
           width = 64,
           height = 64
         },
         {
           id = 22,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall22.png",
           width = 64,
           height = 64
         },
         {
           id = 23,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall23.png",
           width = 64,
           height = 64
         },
         {
           id = 24,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall24.png",
           width = 64,
           height = 64
         },
         {
           id = 25,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall25.png",
           width = 64,
           height = 64
         },
         {
           id = 26,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall26.png",
           width = 64,
           height = 64
         },
         {
           id = 27,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall27.png",
           width = 64,
           height = 64
         },
         {
           id = 28,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall28.png",
           width = 64,
           height = 64
         },
         {
           id = 29,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall29.png",
           width = 64,
           height = 64
         },
         {
           id = 30,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall30.png",
           width = 64,
           height = 64
         },
         {
           id = 31,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall31.png",
           width = 64,
           height = 64
         },
         {
           id = 32,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall32.png",
           width = 64,
           height = 64
         },
         {
           id = 33,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall33.png",
           width = 64,
           height = 64
         },
         {
           id = 34,
+          properties = {
+            ["block"] = true
+          },
           image = "../../images/game/walls/wall34.png",
           width = 64,
           height = 64
@@ -277,8 +379,7 @@ return {
             ["draw"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
-            ["origin"] = "",
-            ["size_for_scale"] = 64
+            ["scale"] = 0.5
           },
           image = "../../images/game/objects/block.png",
           width = 64,
@@ -290,7 +391,7 @@ return {
             ["draw"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
-            ["origin"] = "",
+            ["scale"] = 0.5,
             ["size_for_scale"] = 64
           },
           image = "../../images/game/objects/bot_crystal.png",
@@ -303,8 +404,7 @@ return {
             ["draw"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
-            ["origin"] = "",
-            ["size_for_scale"] = 64
+            ["scale"] = 0.5
           },
           image = "../../images/game/objects/bot_crystal_2.png",
           width = 46,
@@ -316,8 +416,7 @@ return {
             ["draw"] = true,
             ["global_rotation"] = true,
             ["look_at_player"] = false,
-            ["origin"] = "",
-            ["size_for_scale"] = 64
+            ["scale"] = 0.5
           },
           image = "../../images/game/objects/box.png",
           width = 64,
@@ -330,6 +429,7 @@ return {
             ["global_rotation"] = false,
             ["look_at_player"] = true,
             ["origin"] = "top",
+            ["scale"] = 1,
             ["size_for_scale"] = 64
           },
           image = "../../images/game/objects/lamp.png",
@@ -342,7 +442,7 @@ return {
             ["draw"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
-            ["origin"] = "",
+            ["scale"] = 0.5,
             ["size_for_scale"] = 64
           },
           image = "../../images/game/objects/mushroom_1.png",
@@ -355,7 +455,7 @@ return {
             ["draw"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
-            ["origin"] = "",
+            ["scale"] = 0.5,
             ["size_for_scale"] = 64
           },
           image = "../../images/game/objects/mushroom_2.png",
@@ -368,8 +468,8 @@ return {
             ["draw"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
-            ["origin"] = "bottom",
-            ["size_for_scale"] = 86
+            ["scale"] = 0.5,
+            ["size_for_scale"] = 64
           },
           image = "../../images/game/objects/skull.png",
           width = 86,
@@ -381,8 +481,7 @@ return {
             ["draw"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
-            ["origin"] = "",
-            ["size_for_scale"] = 64
+            ["scale"] = 1
           },
           image = "../../images/game/objects/table.png",
           width = 64,
@@ -394,7 +493,7 @@ return {
             ["draw"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
-            ["origin"] = "",
+            ["scale"] = 0.5,
             ["size_for_scale"] = 64
           },
           image = "../../images/game/objects/top_crystal_1.png",
@@ -407,7 +506,7 @@ return {
             ["draw"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
-            ["origin"] = "",
+            ["scale"] = 0.5,
             ["size_for_scale"] = 64
           },
           image = "../../images/game/objects/top_crystal_2.png",

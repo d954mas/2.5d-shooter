@@ -6,306 +6,374 @@
       "image":"wall1",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":1,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall2",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":2,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall3",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":3,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall4",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":4,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall5",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":5,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall6",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":6,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall7",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":7,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall8",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":8,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall9",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":9,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall10",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":10,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall11",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":11,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall12",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":12,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall13",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":13,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall14",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":14,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall15",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":15,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall16",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":16,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall17",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":17,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall18",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":18,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall19",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":19,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall20",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":20,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall21",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":21,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall22",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":22,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall23",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":23,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall24",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":24,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall25",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":25,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall26",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":26,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall27",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":27,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall28",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":28,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall29",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":29,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall30",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":30,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall31",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":31,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall32",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":32,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall33",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":33,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     {
       "image":"wall34",
       "atlas":"walls",
       "scale":0.015625,
-      "height":64,
-      "properties":      {},
       "id":34,
+      "properties":{
+        "block":true
+      },
+      "height":64,
       "width":64
     },
     null,
@@ -378,12 +446,17 @@
       "width":64
     },
     {
+      "scale":0.015625,
       "image":"lamp",
       "atlas":"objects",
-      "scale":0.015625,
+      "origin":{
+        "y":0.796875,
+        "x":0
+      },
       "id":6,
       "properties":{
         "look_at_player":true,
+        "origin":"top",
         "draw":true,
         "size_for_scale":64,
         "global_rotation":false,
