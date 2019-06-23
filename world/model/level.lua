@@ -83,7 +83,7 @@ function Level:map_get_width() return self.data.size.x end
 function Level:map_get_height() return self.data.size.y end
 ---@return LevelDataCell
 function Level:map_get_cell(x,y)
-	assert(self:map_cell_in(x,y))
+	assert(self:map_cell_in(x,y),"x:" .. x .. "y:" ..y)
 	return self.data.cells[y][x]
 end
 function Level:map_cell_in(x,y)

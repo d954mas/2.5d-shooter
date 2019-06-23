@@ -4,9 +4,18 @@
 #include "micropather.h"
 #include <limits>
 #include <vector>
+#include <set>
+#include <unordered_set>
+#include <vector>
 #include "map.h"
 
 #define DLIB_LOG_DOMAIN "MAP"
+
+extern std::vector<CellData*> VISIBLE_ZONES;
+extern std::unordered_set <CellData> ZONE_SET;
+extern std::vector<CellData*> NEED_LOAD_ZONES;
+extern std::vector<CellData*> NEED_UPDATE_ZONES;
+extern std::vector<CellData*> NEED_UNLOAD_ZONES;
 
 Map MAP;
 
@@ -61,6 +70,19 @@ void MapFindPath(int x, int y, int x2, int y2, std::vector<CellData>& cells){
 
 //TODO rewrite. current impl is wrong
 void MapParse(lua_State* L){
+
+    //reset current state
+    VISIBLE_ZONES.clear();
+    ZONE_SET.clear();
+    NEED_LOAD_ZONES.clear();
+    NEED_UPDATE_ZONES.clear();
+    NEED_UNLOAD_ZONES.clear();
+
+    std::unordered_set <CellData> ZONE_SET;
+    std::vector<CellData*> NEED_LOAD_ZONES;
+    std::vector<CellData*> NEED_UPDATE_ZONES;
+    std::vector<CellData*> NEED_UNLOAD_ZONES;
+
     DM_LUA_STACK_CHECK(L, 0);
     lua_pushstring(L, "size");
 	lua_gettable(L, -2);
