@@ -2,7 +2,7 @@ local ECS = require 'libs.ecs'
 
 ---@class GlobalRotationSystem:ECSSystem
 local System = ECS.processingSystem()
-System.filter = ECS.requireAll("url_sprite","global_rotation")
+System.filter = ECS.requireAll("url_sprite","rotation_global")
 
 ---@param e Entity
 function System:process(e, dt)
@@ -11,8 +11,8 @@ end
 
 ---@param e Entity
 function System:preProcess( dt)
-	self.world.world.level.global_rotation = self.world.world.level.global_rotation + 2 * dt
-	self.quaternion = vmath.quat_rotation_y(self.world.world.level.global_rotation)
+	self.world.world.level.rotation_global = self.world.world.level.rotation_global + 2 * dt
+	self.quaternion = vmath.quat_rotation_y(self.world.world.level.rotation_global)
 end
 
 return System

@@ -103,7 +103,7 @@ local function process_layer(data,layer,fun)
 		for x=1,data.size.x do
 			local cell = assert(row[x])
 			local tiled_cell = assert(layer.data[(y-1)*data.size.x + x])
-			if tiled_cell ~= 0 then fun(cell,tiled_cell-1) end
+			if tiled_cell ~= 0 then fun(cell,tiled_cell) end
 		end
 	end
 end
@@ -125,7 +125,7 @@ local function parse_level(path,result_path)
 		table.insert(data.tilesets,{name = tileset.name,firstgid = tileset.firstgid})
 		for _,tile in ipairs(tileset.tiles) do
 			tile.properties = tile.properties or {}
-			data.id_to_tile[tileset.firstgid+tile.id-1] = tile
+			data.id_to_tile[tile.id + tileset.firstgid] = tile
 			if tile.image then
 				local image_path = tile.image
 				local pathes = {}
@@ -135,14 +135,12 @@ local function parse_level(path,result_path)
 				tile.atlas = pathes[#pathes-1]
 				tile.image = string.sub(pathes[#pathes],1,string.find(pathes[#pathes],"%.")-1)
 			end
-			tile.scale = 1/( tile.properties.size_for_scale or tile.height or 1)
+			tile.scale = 1/( tile.properties.size_for_scale or tile.height or 1)*(tile.properties.scale or 1)
 			local origin = tile.properties.origin
 			if origin then
 				local size = tile.properties.size_for_scale or tile.height
-				local dy = (size - tile.height)*tile.scale/2
-				if origin == "top" then tile.origin = {x=0,y=dy}
-				elseif origin == "bottom" then tile.origin = {x=0,y=-dy}
-				end
+				local dy = (size - tile.height)*tile.scale
+				if origin == "top" then tile.origin = {x=0,y=dy} end
 			end
 		end
 	end

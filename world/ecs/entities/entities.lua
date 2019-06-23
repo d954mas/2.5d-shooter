@@ -6,27 +6,25 @@ local TAG = "ENTITIES"
 ---@field player boolean true if player entity
 ---@field enemy boolean
 ---@field position vector3
----@field input_direction vector4 up down left right. Used for player input
 ---@field velocity vector3
 ---@field speed number
 ---@field angle vector3 radians anticlockwise  x-horizontal y-vertical
----@field url_go nil|url Do not use different urls for same entity or url_to_entity will be broken
----@field url_sprite url need for draw
+---@field url_go nil|url need update entity when changed or url_to_entity will be broken
+---@field url_sprite url
 ---@field input boolean used for player input
 ---@field input_action_id hash used for player input
 ---@field input_action table used for player input
+---@field input_direction vector4 up down left right. Used for player input
 ---@field physics boolean
 ---@field physics_message_id hash
 ---@field physics_message table
 ---@field physics_source hash
 ---@field physics_obstacles_correction vector3
----@field hp number
----@field look_at_player boolean
----@field global_rotation boolean for pickups they use one global angle
+---@field rotation_look_at_player boolean
+---@field rotation_global boolean for pickups they use one global angle
 ---@field need_draw boolean objects that can be draw
 ---@field draw_always boolean that object draw always. Used for enemies because of animations
----@field render_dynamic_color boolean
-
+---@field dynamic_color boolean
 ---@field tile_id number need for draw objects
 ---@field drawing boolean this frame visible entities
 ---@field cell_data NativeCellData
@@ -124,6 +122,7 @@ function Entities.create_draw_object_base(pos)
 	local e = {}
 	e.position= assert(pos)
 	e.need_draw = true
+	e.dynamic_color = true
 	return e
 end
 
@@ -138,8 +137,8 @@ function Entities.create_enemy(pos,factory)
 	e.url_go = msg.url(urls[OBJECT_HASHES.root])
 	e.url_sprite = msg.url(urls[OBJECT_HASHES.sprite])
 	e.url_sprite.fragment = HASH_SPRITE
-	e.look_at_player = true
-	e.render_dynamic_color = true
+	e.rotation_look_at_player = true
+	e.dynamic_color = true
 	return e
 end
 
@@ -159,10 +158,10 @@ function Entities.create_object_from_tiled(object)
 		local e = Entities.create_draw_object_base(vmath.vector3(object.cell_xf-0.5, object.cell_yf - 0.5, 0))
 		e.tile_id = object.tile_id
 		if object.properties.look_at_player then
-			e.look_at_player = true
+			e.rotation_look_at_player = true
 		end
 		if object.properties.global_rotation then
-			e.global_rotation = true
+			e.rotation_global = true
 		end
 		return e
 	end

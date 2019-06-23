@@ -1,6 +1,7 @@
 {
   "objects":  {},
   "id_to_tile":[
+    null,
     {
       "image":"wall1",
       "atlas":"walls",
@@ -322,14 +323,13 @@
     {
       "image":"block",
       "atlas":"objects",
-      "scale":0.015625,
+      "scale":0.0078125,
       "id":2,
       "properties":{
-        "look_at_player":true,
-        "origin":"",
         "draw":true,
+        "scale":0.5,
         "global_rotation":false,
-        "size_for_scale":64
+        "look_at_player":true
       },
       "height":64,
       "width":64
@@ -337,14 +337,14 @@
     {
       "image":"bot_crystal",
       "atlas":"objects",
-      "scale":0.015625,
+      "scale":0.0078125,
       "id":3,
       "properties":{
         "look_at_player":true,
-        "origin":"",
         "draw":true,
+        "size_for_scale":64,
         "global_rotation":false,
-        "size_for_scale":64
+        "scale":0.5
       },
       "height":62,
       "width":64
@@ -352,14 +352,13 @@
     {
       "image":"bot_crystal_2",
       "atlas":"objects",
-      "scale":0.015625,
+      "scale":0.0078125,
       "id":4,
       "properties":{
-        "look_at_player":true,
-        "origin":"",
         "draw":true,
+        "scale":0.5,
         "global_rotation":false,
-        "size_for_scale":64
+        "look_at_player":true
       },
       "height":64,
       "width":46
@@ -367,33 +366,28 @@
     {
       "image":"box",
       "atlas":"objects",
-      "scale":0.015625,
+      "scale":0.0078125,
       "id":5,
       "properties":{
-        "look_at_player":false,
-        "origin":"",
         "draw":true,
+        "scale":0.5,
         "global_rotation":true,
-        "size_for_scale":64
+        "look_at_player":false
       },
       "height":64,
       "width":64
     },
     {
-      "scale":0.015625,
       "image":"lamp",
       "atlas":"objects",
-      "origin":{
-        "y":0.3984375,
-        "x":0
-      },
+      "scale":0.015625,
       "id":6,
       "properties":{
         "look_at_player":true,
-        "origin":"top",
         "draw":true,
+        "size_for_scale":64,
         "global_rotation":false,
-        "size_for_scale":64
+        "scale":1
       },
       "height":13,
       "width":25
@@ -401,14 +395,14 @@
     {
       "image":"mushroom_1",
       "atlas":"objects",
-      "scale":0.015625,
+      "scale":0.0078125,
       "id":7,
       "properties":{
         "look_at_player":true,
-        "origin":"",
         "draw":true,
+        "size_for_scale":64,
         "global_rotation":false,
-        "size_for_scale":64
+        "scale":0.5
       },
       "height":63,
       "width":53
@@ -416,33 +410,29 @@
     {
       "image":"mushroom_2",
       "atlas":"objects",
-      "scale":0.015625,
+      "scale":0.0078125,
       "id":8,
       "properties":{
         "look_at_player":true,
-        "origin":"",
         "draw":true,
+        "size_for_scale":64,
         "global_rotation":false,
-        "size_for_scale":64
+        "scale":0.5
       },
       "height":60,
       "width":56
     },
     {
-      "scale":0.011627906976744,
       "image":"skull",
       "atlas":"objects",
-      "origin":{
-        "y":-0.3546511627907,
-        "x":0
-      },
+      "scale":0.0078125,
       "id":9,
       "properties":{
         "look_at_player":true,
-        "origin":"bottom",
         "draw":true,
+        "size_for_scale":64,
         "global_rotation":false,
-        "size_for_scale":86
+        "scale":0.5
       },
       "height":25,
       "width":86
@@ -453,11 +443,10 @@
       "scale":0.015625,
       "id":10,
       "properties":{
-        "look_at_player":true,
-        "origin":"",
         "draw":true,
+        "scale":1,
         "global_rotation":false,
-        "size_for_scale":64
+        "look_at_player":true
       },
       "height":64,
       "width":64
@@ -465,14 +454,14 @@
     {
       "image":"top_crystal_1",
       "atlas":"objects",
-      "scale":0.015625,
+      "scale":0.0078125,
       "id":11,
       "properties":{
         "look_at_player":true,
-        "origin":"",
         "draw":true,
+        "size_for_scale":64,
         "global_rotation":false,
-        "size_for_scale":64
+        "scale":0.5
       },
       "height":56,
       "width":61
@@ -480,14 +469,14 @@
     {
       "image":"top_crystal_2",
       "atlas":"objects",
-      "scale":0.015625,
+      "scale":0.0078125,
       "id":12,
       "properties":{
         "look_at_player":true,
-        "origin":"",
         "draw":true,
+        "size_for_scale":64,
         "global_rotation":false,
-        "size_for_scale":64
+        "scale":0.5
       },
       "height":54,
       "width":64
@@ -917,11 +906,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":1,
-          "west":1,
-          "east":1,
-          "north":1
+          "floor":5,
+          "south":2,
+          "west":2,
+          "east":2,
+          "north":2
         }
       },
       {
@@ -934,11 +923,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":1,
-          "west":1,
-          "east":1,
-          "north":1
+          "floor":5,
+          "south":2,
+          "west":2,
+          "east":2,
+          "north":2
         }
       },
       {
@@ -951,11 +940,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":1,
-          "west":1,
-          "east":1,
-          "north":1
+          "floor":5,
+          "south":2,
+          "west":2,
+          "east":2,
+          "north":2
         }
       },
       {
@@ -968,11 +957,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":1,
-          "west":1,
-          "east":1,
-          "north":1
+          "floor":5,
+          "south":2,
+          "west":2,
+          "east":2,
+          "north":2
         }
       },
       {
@@ -985,11 +974,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":1,
-          "west":1,
-          "east":1,
-          "north":1
+          "floor":5,
+          "south":2,
+          "west":2,
+          "east":2,
+          "north":2
         }
       },
       {
@@ -1002,11 +991,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -1019,11 +1008,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -1036,11 +1025,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -1053,11 +1042,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -1070,11 +1059,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -1087,11 +1076,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -1104,11 +1093,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -1121,11 +1110,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -1138,11 +1127,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -1155,11 +1144,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -1172,11 +1161,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -1189,11 +1178,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -1206,11 +1195,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -1223,11 +1212,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -1240,11 +1229,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       }
     ],
@@ -1259,17 +1248,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":2,
-          "west":2,
-          "east":2,
-          "north":2
+          "floor":5,
+          "south":3,
+          "west":3,
+          "east":3,
+          "north":3
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1285,7 +1274,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1301,7 +1290,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1317,7 +1306,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1333,7 +1322,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1349,7 +1338,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1365,7 +1354,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1381,7 +1370,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1397,7 +1386,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1413,7 +1402,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1429,7 +1418,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1445,7 +1434,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1461,7 +1450,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1477,7 +1466,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1493,7 +1482,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1509,7 +1498,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1525,7 +1514,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1541,7 +1530,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1564,11 +1553,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       }
     ],
@@ -1583,17 +1572,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":2,
-          "west":2,
-          "east":2,
-          "north":2
+          "floor":5,
+          "south":3,
+          "west":3,
+          "east":3,
+          "north":3
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1609,7 +1598,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1625,7 +1614,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1641,7 +1630,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1657,7 +1646,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1673,7 +1662,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1689,7 +1678,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1705,7 +1694,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1721,7 +1710,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1737,7 +1726,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1753,7 +1742,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1769,7 +1758,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1785,7 +1774,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1808,17 +1797,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1834,7 +1823,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1850,7 +1839,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1866,7 +1855,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1889,11 +1878,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       }
     ],
@@ -1908,17 +1897,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":2,
-          "west":2,
-          "east":2,
-          "north":2
+          "floor":5,
+          "south":3,
+          "west":3,
+          "east":3,
+          "north":3
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1934,7 +1923,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1950,7 +1939,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1966,7 +1955,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -1982,7 +1971,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2005,11 +1994,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":4,
-          "west":4,
-          "east":4,
-          "north":4
+          "floor":5,
+          "south":5,
+          "west":5,
+          "east":5,
+          "north":5
         }
       },
       {
@@ -2022,17 +2011,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":4,
-          "west":4,
-          "east":4,
-          "north":4
+          "floor":5,
+          "south":5,
+          "west":5,
+          "east":5,
+          "north":5
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2048,7 +2037,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2064,7 +2053,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2080,7 +2069,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2096,7 +2085,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2112,7 +2101,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2128,7 +2117,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2151,17 +2140,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2177,7 +2166,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2193,7 +2182,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2216,11 +2205,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       }
     ],
@@ -2235,17 +2224,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2261,7 +2250,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2277,7 +2266,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2293,7 +2282,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2309,7 +2298,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2332,11 +2321,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":4,
-          "west":4,
-          "east":4,
-          "north":4
+          "floor":5,
+          "south":5,
+          "west":5,
+          "east":5,
+          "north":5
         }
       },
       {
@@ -2349,17 +2338,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":4,
-          "west":4,
-          "east":4,
-          "north":4
+          "floor":5,
+          "south":5,
+          "west":5,
+          "east":5,
+          "north":5
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2382,11 +2371,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -2399,11 +2388,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -2416,11 +2405,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -2433,11 +2422,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -2450,11 +2439,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -2467,11 +2456,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -2484,11 +2473,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -2501,17 +2490,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2527,7 +2516,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2550,11 +2539,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       }
     ],
@@ -2569,17 +2558,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2595,7 +2584,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2611,7 +2600,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2627,7 +2616,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2643,7 +2632,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2659,7 +2648,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2675,7 +2664,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2691,7 +2680,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2714,17 +2703,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2740,7 +2729,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2756,7 +2745,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2772,7 +2761,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2788,7 +2777,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2811,17 +2800,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2837,7 +2826,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2853,7 +2842,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2876,11 +2865,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       }
     ],
@@ -2895,17 +2884,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2921,7 +2910,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2937,7 +2926,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2953,7 +2942,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2969,7 +2958,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -2985,7 +2974,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3001,7 +2990,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3017,7 +3006,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3040,17 +3029,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3066,7 +3055,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3082,7 +3071,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3098,7 +3087,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3121,17 +3110,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3147,7 +3136,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3163,7 +3152,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3179,7 +3168,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3202,11 +3191,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       }
     ],
@@ -3221,17 +3210,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3247,7 +3236,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3263,7 +3252,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3279,7 +3268,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3295,7 +3284,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3311,7 +3300,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3327,7 +3316,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3343,7 +3332,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3366,17 +3355,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3392,7 +3381,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3408,7 +3397,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3424,7 +3413,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3440,7 +3429,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3456,7 +3445,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3472,7 +3461,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3488,7 +3477,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3504,7 +3493,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3527,11 +3516,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       }
     ],
@@ -3546,17 +3535,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3572,7 +3561,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3588,7 +3577,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3604,7 +3593,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3620,7 +3609,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3636,7 +3625,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3652,7 +3641,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3668,7 +3657,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3691,17 +3680,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3717,7 +3706,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3733,7 +3722,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3749,7 +3738,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3765,7 +3754,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3781,7 +3770,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3797,7 +3786,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3813,7 +3802,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3829,7 +3818,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3852,11 +3841,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       }
     ],
@@ -3871,17 +3860,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3897,7 +3886,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3913,7 +3902,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3929,7 +3918,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3945,7 +3934,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3961,7 +3950,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -3984,17 +3973,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4017,17 +4006,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4050,17 +4039,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4076,7 +4065,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4092,7 +4081,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4108,7 +4097,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4124,7 +4113,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4140,7 +4129,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4156,7 +4145,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4179,11 +4168,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       }
     ],
@@ -4198,17 +4187,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4224,7 +4213,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4240,7 +4229,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4256,7 +4245,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4272,7 +4261,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4288,7 +4277,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4304,7 +4293,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4327,11 +4316,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -4344,11 +4333,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -4361,17 +4350,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4387,7 +4376,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4403,7 +4392,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4419,7 +4408,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4435,7 +4424,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4451,7 +4440,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4467,7 +4456,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4483,7 +4472,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4506,11 +4495,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       }
     ],
@@ -4525,17 +4514,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4551,7 +4540,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4567,7 +4556,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4583,7 +4572,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4599,7 +4588,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4615,7 +4604,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4631,7 +4620,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4654,11 +4643,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -4671,11 +4660,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -4688,17 +4677,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4714,7 +4703,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4730,7 +4719,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4746,7 +4735,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4762,7 +4751,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4778,7 +4767,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4794,7 +4783,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4810,7 +4799,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4833,11 +4822,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       }
     ],
@@ -4852,17 +4841,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4878,7 +4867,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4894,7 +4883,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4910,7 +4899,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4926,7 +4915,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4942,7 +4931,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4958,7 +4947,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4974,7 +4963,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -4997,17 +4986,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5023,7 +5012,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5039,7 +5028,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5055,7 +5044,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5071,7 +5060,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5087,7 +5076,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5103,7 +5092,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5119,7 +5108,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5135,7 +5124,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5158,11 +5147,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       }
     ],
@@ -5177,17 +5166,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5203,7 +5192,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5219,7 +5208,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5235,7 +5224,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5251,7 +5240,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5267,7 +5256,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5283,7 +5272,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5299,7 +5288,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5315,7 +5304,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5331,7 +5320,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5347,7 +5336,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5363,7 +5352,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5379,7 +5368,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5395,7 +5384,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5411,7 +5400,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5427,7 +5416,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5443,7 +5432,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5459,7 +5448,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5482,11 +5471,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       }
     ],
@@ -5501,17 +5490,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5527,7 +5516,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5543,7 +5532,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5559,7 +5548,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5575,7 +5564,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5591,7 +5580,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5607,7 +5596,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5623,7 +5612,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5639,7 +5628,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5655,7 +5644,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5671,7 +5660,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5687,7 +5676,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5703,7 +5692,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5719,7 +5708,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5735,7 +5724,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5751,7 +5740,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5767,7 +5756,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5783,7 +5772,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5806,11 +5795,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       }
     ],
@@ -5825,17 +5814,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5851,7 +5840,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5867,7 +5856,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5883,7 +5872,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5899,7 +5888,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5915,7 +5904,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5931,7 +5920,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5947,7 +5936,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5963,7 +5952,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5979,7 +5968,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -5995,7 +5984,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6011,7 +6000,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6027,7 +6016,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6043,7 +6032,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6059,7 +6048,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6075,7 +6064,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6091,7 +6080,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6107,7 +6096,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6130,11 +6119,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       }
     ],
@@ -6149,17 +6138,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6175,7 +6164,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6191,7 +6180,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6207,7 +6196,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6223,7 +6212,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6239,7 +6228,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6255,7 +6244,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6271,7 +6260,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6287,7 +6276,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6303,7 +6292,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6319,7 +6308,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6335,7 +6324,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6351,7 +6340,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6367,7 +6356,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6383,7 +6372,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6399,7 +6388,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6415,7 +6404,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6431,7 +6420,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6454,11 +6443,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       }
     ],
@@ -6473,17 +6462,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6499,7 +6488,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6515,7 +6504,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6531,7 +6520,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6547,7 +6536,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6563,7 +6552,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6579,7 +6568,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6595,7 +6584,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6611,7 +6600,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6627,7 +6616,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6643,7 +6632,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6659,7 +6648,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6675,7 +6664,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6691,7 +6680,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6707,7 +6696,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6723,7 +6712,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6739,7 +6728,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6755,7 +6744,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6778,11 +6767,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       }
     ],
@@ -6797,17 +6786,17 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6823,7 +6812,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6839,7 +6828,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6855,7 +6844,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6871,7 +6860,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6887,7 +6876,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6903,7 +6892,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6919,7 +6908,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6935,7 +6924,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6951,7 +6940,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6967,7 +6956,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6983,7 +6972,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -6999,7 +6988,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -7015,7 +7004,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -7031,7 +7020,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -7047,7 +7036,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -7063,7 +7052,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -7079,7 +7068,7 @@
       {
         "wall":{
           "ceil":-1,
-          "floor":4,
+          "floor":5,
           "south":-1,
           "west":-1,
           "east":-1,
@@ -7102,11 +7091,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       }
     ],
@@ -7121,11 +7110,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -7138,11 +7127,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -7155,11 +7144,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -7172,11 +7161,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -7189,11 +7178,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -7206,11 +7195,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -7223,11 +7212,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -7240,11 +7229,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -7257,11 +7246,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -7274,11 +7263,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -7291,11 +7280,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -7308,11 +7297,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -7325,11 +7314,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -7342,11 +7331,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -7359,11 +7348,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -7376,11 +7365,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -7393,11 +7382,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -7410,11 +7399,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -7427,11 +7416,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       },
       {
@@ -7444,11 +7433,11 @@
         "blocked":true,
         "wall":{
           "ceil":-1,
-          "floor":4,
-          "south":3,
-          "west":3,
-          "east":3,
-          "north":3
+          "floor":5,
+          "south":4,
+          "west":4,
+          "east":4,
+          "north":4
         }
       }
     ]

@@ -17,15 +17,17 @@ function EcsWorld:_init_systems()
 	self.ecs:addSystem(SYSTEMS.PhysicsResetCorrectionsSystem)
 	self.ecs:addSystem(SYSTEMS.PhysicsObstaclesSystem)
 	self.ecs:addSystem(SYSTEMS.MovementSystem)
+
 	self.ecs:addSystem(SYSTEMS.DrawObjectsSystem)
 	self.ecs:addSystem(SYSTEMS.DrawWallsSystem)
 
-	self.ecs:addSystem(SYSTEMS.UpdateObjectColor)
+	self.ecs:addSystem(SYSTEMS.RotationLookAtPlayerSystem)
+	self.ecs:addSystem(SYSTEMS.RotationGlobalSystem)
 
-	self.ecs:addSystem(SYSTEMS.LookAtPlayerSystem)
-	self.ecs:addSystem(SYSTEMS.GlobalRotationSystem)
 	self.ecs:addSystem(SYSTEMS.UpdateGoSystem)
 	self.ecs:addSystem(SYSTEMS.CameraSystem)
+
+	self.ecs:addSystem(SYSTEMS.UpdateObjectColor)
 
 end
 

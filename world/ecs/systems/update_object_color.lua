@@ -2,7 +2,7 @@
 local HASH_OBJECT_POSITION = hash("object_position")
 ---@class UpdateObjectColorSystem:ECSSystem
 local System = ECS.processingSystem()
-System.filter = ECS.requireAll("render_dynamic_color","url_sprite")
+System.filter = ECS.requireAll("dynamic_color","url_sprite")
 
 ---@param e Entity
 function System:process(e, dt)

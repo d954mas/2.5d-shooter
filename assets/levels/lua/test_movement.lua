@@ -277,8 +277,7 @@ return {
             ["draw"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
-            ["origin"] = "",
-            ["size_for_scale"] = 64
+            ["scale"] = 0.5
           },
           image = "../../images/game/objects/block.png",
           width = 64,
@@ -290,7 +289,7 @@ return {
             ["draw"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
-            ["origin"] = "",
+            ["scale"] = 0.5,
             ["size_for_scale"] = 64
           },
           image = "../../images/game/objects/bot_crystal.png",
@@ -303,8 +302,7 @@ return {
             ["draw"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
-            ["origin"] = "",
-            ["size_for_scale"] = 64
+            ["scale"] = 0.5
           },
           image = "../../images/game/objects/bot_crystal_2.png",
           width = 46,
@@ -316,8 +314,7 @@ return {
             ["draw"] = true,
             ["global_rotation"] = true,
             ["look_at_player"] = false,
-            ["origin"] = "",
-            ["size_for_scale"] = 64
+            ["scale"] = 0.5
           },
           image = "../../images/game/objects/box.png",
           width = 64,
@@ -329,7 +326,7 @@ return {
             ["draw"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
-            ["origin"] = "top",
+            ["scale"] = 1,
             ["size_for_scale"] = 64
           },
           image = "../../images/game/objects/lamp.png",
@@ -342,7 +339,7 @@ return {
             ["draw"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
-            ["origin"] = "",
+            ["scale"] = 0.5,
             ["size_for_scale"] = 64
           },
           image = "../../images/game/objects/mushroom_1.png",
@@ -355,7 +352,7 @@ return {
             ["draw"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
-            ["origin"] = "",
+            ["scale"] = 0.5,
             ["size_for_scale"] = 64
           },
           image = "../../images/game/objects/mushroom_2.png",
@@ -368,8 +365,8 @@ return {
             ["draw"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
-            ["origin"] = "bottom",
-            ["size_for_scale"] = 86
+            ["scale"] = 0.5,
+            ["size_for_scale"] = 64
           },
           image = "../../images/game/objects/skull.png",
           width = 86,
@@ -381,8 +378,7 @@ return {
             ["draw"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
-            ["origin"] = "",
-            ["size_for_scale"] = 64
+            ["scale"] = 1
           },
           image = "../../images/game/objects/table.png",
           width = 64,
@@ -394,7 +390,7 @@ return {
             ["draw"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
-            ["origin"] = "",
+            ["scale"] = 0.5,
             ["size_for_scale"] = 64
           },
           image = "../../images/game/objects/top_crystal_1.png",
@@ -407,7 +403,7 @@ return {
             ["draw"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
-            ["origin"] = "",
+            ["scale"] = 0.5,
             ["size_for_scale"] = 64
           },
           image = "../../images/game/objects/top_crystal_2.png",

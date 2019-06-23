@@ -17,7 +17,7 @@ function Level:initialize(data)
 	self.world = require_f "world.world"
 	self.prepared = false
 	self.ecs_world = ECS_WORLD()
-	self.global_rotation = 0
+	self.rotation_global = 0
 
 	self.physics_subject = COMMON.RX.Subject.create()
 	self.scheduler = COMMON.RX.CooperativeScheduler.create()
