@@ -1,6 +1,8 @@
 #pragma once
 #include <dmsdk/sdk.h>
+#include <string>
 #include "cell_data.h"
+
 
 
 #define META_NAME "Raycasting::CellDataClass"
@@ -40,12 +42,21 @@ static int CellDataBindGetId(lua_State *L){
 	return 1;
 }
 
+static int CellDataToString(lua_State *L){
+    CellData *im = CellDataCheck(L, 1);
+    std::string str = "[id:" + std::to_string(im->id+1) + " x:" +  std::to_string(im->x+1) + " y:" +  std::to_string(im->y+1) + " visible:"
+    +  std::to_string(im->visibility) + " ]";
+    lua_pushstring(L,str.c_str());
+	return 1;
+}
+
 void CellDataBind(lua_State * L){
     luaL_Reg functions[] = {
         {"get_x",CellDataBindGetX},
         {"get_y",CellDataBindGetY},
         {"get_visibility",CellDataBindGetVisibility},
         {"get_id",CellDataBindGetId},
+        {"__tostring",CellDataToString},
         { 0, 0 }
     };
     luaL_newmetatable(L, META_NAME);

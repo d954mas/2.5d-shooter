@@ -25,10 +25,10 @@ class Map  : public Graph{
 			}		
 			return false;
 		}
-		void findPath(int, int, int, int, std::vector<CellData>&);
+		void findPath(int, int, int, int, std::vector<CellData*>&);
 		virtual float LeastCostEstimate( void* stateStart, void* stateEnd );
 		virtual void AdjacentCost( void* state, MP_VECTOR< micropather::StateCost > *neighbors );
 		virtual void PrintStateInfo(void* state);
 };
 void MapParse(lua_State*);
-void MapFindPath(int, int, int, int, std::vector<CellData>&);
+void MapFindPath(int, int, int, int, std::vector<CellData*>&);

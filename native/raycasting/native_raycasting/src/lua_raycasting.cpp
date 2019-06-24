@@ -84,9 +84,16 @@ static int MapFindPathLua(lua_State* L){
 	int y1 = lua_tonumber(L, 2) - 1;
 	int x2 = lua_tonumber(L, 3) - 1;
 	int y2 = lua_tonumber(L, 4) - 1;
-	std::vector<CellData> path;
+	std::vector<CellData*> path;
 	MapFindPath(x1, y1, x2, y2, path);
-	return 0;
+	lua_newtable(L);
+    int i =0;
+    for(CellData *cell : path) {
+        CellDataPush(L,cell);
+        lua_rawseti(L, -2, i+1);
+        i++;
+    }
+	return 1;
 }
 
 static int MapSetLua(lua_State* L){

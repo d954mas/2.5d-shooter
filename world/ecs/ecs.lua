@@ -13,6 +13,7 @@ function EcsWorld:initialize()
 end
 
 function EcsWorld:_init_systems()
+	self.ecs:addSystem(SYSTEMS.UpdateAISystem)
 	self.ecs:addSystem(SYSTEMS.InputSystem)
 	self.ecs:addSystem(SYSTEMS.PhysicsResetCorrectionsSystem)
 	self.ecs:addSystem(SYSTEMS.PhysicsObstaclesSystem)
@@ -27,7 +28,8 @@ function EcsWorld:_init_systems()
 	self.ecs:addSystem(SYSTEMS.UpdateGoSystem)
 	self.ecs:addSystem(SYSTEMS.CameraSystem)
 
-	self.ecs:addSystem(SYSTEMS.UpdateObjectColor)
+	self.ecs:addSystem(SYSTEMS.UpdateObjectColorSystem)
+
 
 end
 

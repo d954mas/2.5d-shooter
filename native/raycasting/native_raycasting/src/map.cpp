@@ -26,24 +26,26 @@ Map::~Map() {delete pather;}
 
 //Return the least possible cost between 2 states.
 float Map::LeastCostEstimate( void* stateStart, void* stateEnd ){
-	CellData start = cells[*((int *)stateStart)];
-	CellData end = cells[*((int *)stateEnd)];
+	CellData start = cells[(int)stateStart];
+	CellData end = cells[(int)stateEnd];
 	return  pow(end.x - start.x,2) + pow(end.y - start.y,2);
 }
+
+static const int dx[8] = { 1, 1, 0, -1, -1, -1, 0, 1 };
+static const int dy[8] = { 0, 1, 1, 1, 0, -1, -1, -1 };
+static const float cost[8] = { 1.0f, 21.41f, 1.0f, 21.41f, 1.0f, 21.41f, 1.0f, 21.41f };
+//TODO запретить ходить по диагонали рядом со стенами иначе застревают
 void Map::AdjacentCost( void* state, MP_VECTOR< micropather::StateCost > *neighbors  ){
-	CellData cellData = cells[*((int *)state)];
-	for(int y=-1;y<=1;y++){
-		for(int x=-1;x<=1;x++){
-			if(x!=0 && y!=0){
-				bool pass = Passable(cellData.x + x,cellData.y+y);
-				if (pass) {
-					//TODO add bigger dist for diagonals
-					StateCost nodeCost = {(void*)CoordsToId(cellData.x+x,cellData.y+y), 1};
-					neighbors ->push_back(nodeCost);
-				}
-			}
-		}
-	}
+	CellData cellData = cells[(int)state];
+    for( int i=0; i<8; ++i ) {
+        int nx = cellData.x  + dx[i];
+        int ny = cellData.y + dy[i];
+        bool pass = Passable(nx,ny);
+        if(pass){
+            StateCost nodeCost = {(void*)CoordsToId(nx,ny), cost[i] };
+            neighbors->push_back( nodeCost );
+        }
+    }
 }
 
 /**This function is only used in DEBUG mode - it dumps output to stdout. Since void* 
@@ -51,20 +53,20 @@ aren't really human readable, normally you print out some concise info (like "(1
 without an ending newline.*/
 void Map::PrintStateInfo(void* state){printf("print info");}
 
-void Map::findPath(int x, int y, int x2, int y2,  std::vector<CellData>& cells){
-	cells.clear();
+void Map::findPath(int x, int y, int x2, int y2,  std::vector<CellData*>& cells_result){
+	cells_result.clear();
 	void* startState = (void*)(CoordsToId(x,y));
 	void* endState = (void*)(CoordsToId(x2,y2));
 	std::vector< void* > path;
 	float totalCost = 0;
 	int result = pather->Solve( startState, endState, &path, &totalCost );
-	for(void* id: path){
-		cells.push_back( cells[*((int *)id)]);
+    for(void* id: path){
+	    cells_result.push_back( &cells[(int)id]);
 	}
-	pather->Reset();
+//	pather->Reset();
 }
 
-void MapFindPath(int x, int y, int x2, int y2, std::vector<CellData>& cells){
+void MapFindPath(int x, int y, int x2, int y2, std::vector<CellData*>& cells){
 	MAP.findPath(x, y, x2, y2, cells);
 }
 

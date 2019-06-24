@@ -1,4 +1,5 @@
 local COMMON = require "libs.common"
+local AI = require "world.ai.ai"
 local TAG = "ENTITIES"
 ---@class Entity
 ---@field tag string tag used for help when debug
@@ -27,6 +28,7 @@ local TAG = "ENTITIES"
 ---@field tile_id number need for draw objects
 ---@field drawing boolean this frame visible entities
 ---@field cell_data NativeCellData
+---@field ai AI
 
 
 local HASH_SPRITE = hash("sprite")
@@ -130,7 +132,7 @@ function Entities.create_enemy(pos,factory)
 	e.position= assert(pos)
 	e.angle = vmath.vector3(0,0,0)
 	e.velocity = vmath.vector3(0,0,0)
-	e.speed = 4
+	e.speed = 1
 	e.enemy = true
 	local urls = collectionfactory.create(factory,vmath.vector3(e.position.x,0.5,-e.position.z+0.5),vmath.quat_rotation_z(0),nil)
 	e.url_go = msg.url(urls[OBJECT_HASHES.root])
@@ -142,7 +144,9 @@ function Entities.create_enemy(pos,factory)
 end
 
 function Entities.create_blob(pos)
-	return Entities.create_enemy(pos,FACTORY_ENEMY_BLOB_URL)
+	local e = Entities.create_enemy(pos,FACTORY_ENEMY_BLOB_URL)
+	e.ai = AI.Blob(e,Entities.world)
+	return e
 end
 
 ---@return Entity
@@ -169,6 +173,10 @@ end
 ---@return Entity
 function Entities.create_input(action_id,action)
 	return {input = true,input_action_id = action_id,input_action = action }
+end
+
+function Entities.set_world(world)
+	Entities.world = assert(world)
 end
 return Entities
 

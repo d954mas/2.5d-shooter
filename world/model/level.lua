@@ -26,6 +26,7 @@ function Level:initialize(data)
 		self.ecs_world.ecs:addEntity(ENTITIES.create_physics(value.message_id,value.message,value.source))
 	end))
 	ENTITIES.clear()
+	ENTITIES.set_world(self.world)
 	self:register_world_entities_callbacks()
 end
 
@@ -58,13 +59,10 @@ end
 function Level:spawn_enemies()
 	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,22.1,0)))
 	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,24.1,0)))
-	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,26.1,0)))
-	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,27.1,0)))
 	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,21.1,0)))
 	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,19.1,0)))
 	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,17.1,0)))
 	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,16.1,0)))
-	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,12.1,0)))
 end
 
 function Level:update(dt)
