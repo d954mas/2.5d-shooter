@@ -33,14 +33,14 @@ float Map::LeastCostEstimate( void* stateStart, void* stateEnd ){
 
 static const int dx[8] = { 1, 1, 0, -1, -1, -1, 0, 1 };
 static const int dy[8] = { 0, 1, 1, 1, 0, -1, -1, -1 };
-static const float cost[8] = { 1.0f, 21.41f, 1.0f, 21.41f, 1.0f, 21.41f, 1.0f, 21.41f };
+static const float cost[8] = { 1.0f, 1.41f, 1.0f, 1.41f, 1.0f, 1.41f, 1.0f, 1.41f };
 //TODO запретить ходить по диагонали рядом со стенами иначе застревают
 void Map::AdjacentCost( void* state, MP_VECTOR< micropather::StateCost > *neighbors  ){
 	CellData cellData = cells[(int)state];
     for( int i=0; i<8; ++i ) {
         int nx = cellData.x  + dx[i];
         int ny = cellData.y + dy[i];
-        bool pass = Passable(nx,ny);
+		bool pass = Passable(cellData.x,cellData.y,nx,ny);
         if(pass){
             StateCost nodeCost = {(void*)CoordsToId(nx,ny), cost[i] };
             neighbors->push_back( nodeCost );

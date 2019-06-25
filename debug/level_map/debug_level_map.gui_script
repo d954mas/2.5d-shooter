@@ -33,7 +33,7 @@ local function update_map(self)
 				--empty cell
 				pixels = pixels ..  NO_WALLS_COLOR
 			else
-				if cell.wall.north ~= -1 then
+				if cell.blocked  then
 					pixels = pixels .. WALL_COLOR
 				else
 					pixels = pixels .. WHITE_COLOR

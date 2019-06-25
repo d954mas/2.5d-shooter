@@ -18,10 +18,10 @@ function AI:update(dt)
 		local current_x, current_y = self:get_current_cell_position()
 		local dx,dy = next_cell:get_x() - current_x,next_cell:get_y() - current_y
 		local cell_dx,cell_dy = 1-(current_x  - self.e.position.x), 1-(current_y - self.e.position.y)
-		if dy ~= 0 and (cell_dx <0.4 or cell_dx > 0.6) then
+		if dy ~= 0 and dx==0 and (cell_dx <0.4 or cell_dx > 0.6) then
 			dy = 0
 			dx =  0.5 - cell_dx
-		elseif dx ~= 0 and (cell_dy <0.4 or cell_dy > 0.6) then
+		elseif dx ~= 0 and dy==0 and (cell_dy <0.4 or cell_dy > 0.6) then
 			dx = 0
 			dy =  0.5 - cell_dy
 		end
