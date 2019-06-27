@@ -43,6 +43,7 @@ local Entities = {}
 
 Entities.url_to_entity = {}
 Entities.entity_to_url = {}
+Entities.enemies = {}
 
 --region utils
 ---@param url url key that used for mapping entity to url_go
@@ -61,6 +62,7 @@ end
 function Entities.clear()
 	Entities.entity_to_url = {}
 	Entities.url_to_entity = {}
+	Entities.enemies = {}
 end
 
 
@@ -70,6 +72,11 @@ function Entities.on_entity_removed(e)
 		Entities.url_to_entity[url_to_key(e.url_go)] = nil
 		Entities.entity_to_url[e] = nil
 	end
+	--TODO fix performance
+	if e.enemy then
+		local idx = assert(COMMON.LUME.find(Entities.enemies,e),"unknown enemy")
+		table.remove(Entities.enemies,idx)
+	end
 end
 
 ---@param e Entity
@@ -77,6 +84,12 @@ function Entities.on_entity_added(e)
 	if e.url_go then
 		Entities.url_to_entity[url_to_key(e.url_go)] = e
 		Entities.entity_to_url[e] = e.url_go
+	end
+	if e.enemy then
+		local idx = COMMON.LUME.find(Entities.enemies,e)
+		if not idx then
+			Entities.enemies[#Entities.enemies+1] = e
+		end
 	end
 end
 

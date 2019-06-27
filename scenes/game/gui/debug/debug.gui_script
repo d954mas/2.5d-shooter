@@ -1,0 +1,23 @@
+local COMMON = require "libs.common"
+local WORLD = require "world.world"
+local ENTITIES = require "world.ecs.entities.entities"
+local Script = COMMON.new_n28s()
+
+function Script:init()
+	self:bind_vh()
+end
+
+function Script:bind_vh()
+	self.vh = {
+		lbl_enemies = gui.get_node("lbl_enemies")
+	}
+end
+
+function Script:update(dt)
+	gui.set_text(self.vh.lbl_enemies,"Enemies:" .. #ENTITIES.enemies )
+end
+
+
+COMMON.N28S.register(Script)
+
+
