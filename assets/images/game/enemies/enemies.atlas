@@ -18,7 +18,7 @@ animations {
   images {
     image: "/assets/images/game/enemies/blob/idle/blob_idle_6.png"
   }
-  playback: PLAYBACK_LOOP_PINGPONG
+  playback: PLAYBACK_LOOP_FORWARD
   fps: 10
   flip_horizontal: 0
   flip_vertical: 0
@@ -91,7 +91,7 @@ animations {
   images {
     image: "/assets/images/game/enemies/blob/spawn/tile021.png"
   }
-  playback: PLAYBACK_LOOP_FORWARD
+  playback: PLAYBACK_ONCE_FORWARD
   fps: 10
   flip_horizontal: 0
   flip_vertical: 0

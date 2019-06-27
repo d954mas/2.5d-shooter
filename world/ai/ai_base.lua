@@ -14,7 +14,7 @@ function AI:initialize(e,world)
 	self.e = assert(e)
 	self.world = assert(world)
 	self.states = AT_STATES
-	self.state = self.states.CREATED
+	self:change_state(self.states.CREATED)
 end
 
 function AI:update(dt)
@@ -46,5 +46,9 @@ function AI:get_current_cell_position()
 	return math.ceil(self.e.position.x),math.ceil(self.e.position.y)
 end
 
+function AI:animation_play(animation,comlete_function)
+	sprite.play_flipbook(self.e.url_sprite,animation.animation,comlete_function)
+	go.set_position(vmath.vector3(0,animation.dy,0),self.e.url_sprite)
+end
 
 return AI
