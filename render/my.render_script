@@ -7,6 +7,26 @@ local RENDERCAM_VIEWPORT = RENDERCAM.viewport
 local LIGHT_MAP_SIZE = 128
 local TAG = "Render"
 
+--region projections
+local function fixed_projection(near, far, zoom)
+    local projected_width = render.get_window_width() / (zoom or 1)
+    local xoffset = -(projected_width - render.get_width()) / 2
+    return vmath.matrix4_orthographic(xoffset, xoffset + projected_width, 0, projected_width
+            *render.get_window_height()/render.get_window_width(), near, far)
+end
+--
+-- projection that centers and fits content with maintained aspect ratio
+--
+local function fixed_fit_projection()
+    local width = render.get_width()
+    local height = render.get_height()
+    local window_width = render.get_window_width()
+    local window_height = render.get_window_height()
+    local zoom = math.min(window_width / width, window_height / height)
+    return fixed_projection(-1, 1, zoom)
+end
+--endregion
+
 ---@class Render
 local Render = COMMON.new_n28s()
 --region init
@@ -151,7 +171,25 @@ end
 function Render:draw_sprites()
     render.set_viewport(0, 0, RENDERCAM.window.x, RENDERCAM.window.y)
     render.set_view(vmath.matrix4())
-    render.set_projection(vmath.matrix4_orthographic(0, render.get_width(), 0, render.get_height(), -1, 1))
+
+    --try keep weapon art same on different resolutions
+    local width = render.get_width()
+    local height = render.get_height()
+    local aspect = width/height
+    local window_width = render.get_window_width()
+    local window_height = render.get_window_height()
+    local window_aspect = window_width/window_height
+    local zoom
+    if window_aspect > aspect then
+        zoom = math.min(window_width / width, window_height / height)
+    else
+        zoom = math.max(window_width / width, window_height / height)
+    end
+    local projected_width = window_width / (zoom or 1)
+    local projected_height = window_height / (zoom or 1)
+    local xoffset = -(projected_width - width) / 2
+
+    render.set_projection(vmath.matrix4_orthographic(xoffset, xoffset + projected_width, 0,  projected_height, -1, 1))
     render.set_depth_mask(false)
 
     render.disable_state(render.STATE_DEPTH_TEST)
@@ -161,8 +199,6 @@ function Render:draw_sprites()
     render.set_blend_func(render.BLEND_SRC_ALPHA, render.BLEND_ONE_MINUS_SRC_ALPHA)
 
     render.draw(self.predicates.tile)
-    render.draw(self.predicates.particle)
-    render.draw_debug3d()
 end
 
 function Render:draw_3d()
