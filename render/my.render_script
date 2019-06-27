@@ -149,6 +149,9 @@ function Render:draw_gui()
 end
 
 function Render:draw_sprites()
+    render.set_viewport(0, 0, RENDERCAM.window.x, RENDERCAM.window.y)
+    render.set_view(vmath.matrix4())
+    render.set_projection(vmath.matrix4_orthographic(0, render.get_width(), 0, render.get_height(), -1, 1))
     render.set_depth_mask(false)
 
     render.disable_state(render.STATE_DEPTH_TEST)
@@ -185,8 +188,9 @@ function Render:update(dt)
     render.set_view(RENDERCAM.calculate_view())
     render.set_projection(RENDERCAM.calculate_proj())
 
-    self:draw_sprites()
+
     self:draw_3d()
+    self:draw_sprites()
     self:draw_light_map(true)
     self:draw_gui()
 end

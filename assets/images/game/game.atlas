@@ -4,6 +4,31 @@ images {
 images {
   image: "/assets/images/white.png"
 }
+images {
+  image: "/assets/images/weapons/pistol/pistol_1.png"
+}
+animations {
+  id: "pistol_shoot"
+  images {
+    image: "/assets/images/weapons/pistol/pistol_1.png"
+  }
+  images {
+    image: "/assets/images/weapons/pistol/pistol_2.png"
+  }
+  images {
+    image: "/assets/images/weapons/pistol/pistol_3.png"
+  }
+  images {
+    image: "/assets/images/weapons/pistol/pistol_4.png"
+  }
+  images {
+    image: "/assets/images/weapons/pistol/pistol_1.png"
+  }
+  playback: PLAYBACK_ONCE_FORWARD
+  fps: 10
+  flip_horizontal: 0
+  flip_vertical: 0
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0

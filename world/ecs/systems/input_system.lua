@@ -27,6 +27,13 @@ function System:init_input()
 	self.input_handler:add(COMMON.HASHES.INPUT_DOWN,get_input_movement_fun("y"))
 	self.input_handler:add(COMMON.HASHES.INPUT_RIGHT,get_input_movement_fun("z"))
 	self.input_handler:add(COMMON.HASHES.INPUT_LEFT,get_input_movement_fun("w"))
+	self.input_handler:add(COMMON.HASHES.INPUT_TOUCH,self.make_shot)
+end
+
+function System:make_shot(action_id, action)
+	if action.pressed then
+		sprite.play_flipbook("/weapon#sprite",hash("pistol_shoot"))
+	end
 
 end
 
