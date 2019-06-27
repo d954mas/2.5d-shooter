@@ -1,0 +1,7 @@
+local DEFTEST = require "tests.deftest.deftest"
+local TEST_PATHFINFING = require "tests.test_pathfinding"
+
+function init(self)
+	DEFTEST.add(TEST_PATHFINFING)
+	DEFTEST.run()
+end
