@@ -140,12 +140,14 @@ function Entities.create_draw_object_base(pos)
 	return e
 end
 
-function Entities.create_enemy(pos,factory)
+function Entities.create_enemy(enemy,factory)
+	assert(enemy)
+	assert(factory)
 	local e = {}
-	e.position= assert(pos)
+	e.position= assert(vmath.vector3(enemy.cell_xf + 0.5, enemy.cell_yf+0.5,0))
 	e.angle = vmath.vector3(0,0,0)
 	e.velocity = vmath.vector3(0,0,0)
-	e.speed = 1
+	e.speed = 0.9 + math.random()*0.25
 	e.enemy = true
 	local urls = collectionfactory.create(factory,vmath.vector3(e.position.x,0.5,-e.position.z+0.5),vmath.quat_rotation_z(0),nil)
 	e.url_go = msg.url(urls[OBJECT_HASHES.root])
@@ -156,8 +158,8 @@ function Entities.create_enemy(pos,factory)
 	return e
 end
 
-function Entities.create_blob(pos)
-	local e = Entities.create_enemy(pos,FACTORY_ENEMY_BLOB_URL)
+function Entities.create_blob(enemy)
+	local e = Entities.create_enemy(enemy,FACTORY_ENEMY_BLOB_URL)
 	e.ai = AI.Blob(e,Entities.world)
 	return e
 end

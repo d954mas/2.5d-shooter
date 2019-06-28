@@ -38,7 +38,7 @@ cjson.decode_invalid_numbers(false)
 ---@field size vector3
 ---@field id_to_tile table
 ---@field spawn_point vector3
----@field spawn_point vector3
+---@field enemies table[]
 ---@field light_map number[]
 
 local function create_empty_cell(x,y)
@@ -51,6 +51,7 @@ end
 
 local function get_layer(tiled, layer_name)
 	for _,l in ipairs(tiled.layers) do if l.name == layer_name then return l end end
+	return nil
 end
 
 local function repack_layer(array,tiled)
@@ -112,6 +113,7 @@ local function parse_level(path,result_path)
 	data.tilesets = {}
 	data.id_to_tile = {}
 	data.objects = {}
+	data.enemies = {}
 	for _, tileset in ipairs(tiled.tilesets)do
 		table.insert(data.tilesets,{name = tileset.name,firstgid = tileset.firstgid})
 		for _,tile in ipairs(tileset.tiles) do
@@ -186,6 +188,25 @@ local function parse_level(path,result_path)
 		end
 	end
 
+	local enemies = assert(get_layer(tiled,"enemies"),"no enemies layer").objects
+	for _,object in ipairs(enemies)do
+		local object_data = {
+			tile_id = object.gid,
+			properties = object.properties,
+			cell_x = object.cell_x, cell_y = object.cell_y,
+			cell_xf = object.cell_xf, cell_yf = object.cell_yf
+		}
+		local tile = data.id_to_tile[object_data.tile_id]
+		if tile then
+			for k,v in pairs(tile.properties)do
+				if not object_data.properties[k]	then
+					object_data.properties[k] = v
+				end
+			end
+		end
+		assert(object_data.properties.enemy,"should be enemy:" .. object.gid)
+		table.insert(data.enemies,object_data)
+	end
 	--region validations
 	assert(data.spawn_point,"no spawn point")
 

@@ -8,7 +8,7 @@ return {
   height = 20,
   tilewidth = 64,
   tileheight = 64,
-  nextlayerid = 8,
+  nextlayerid = 9,
   nextobjectid = 23,
   properties = {},
   tilesets = {
@@ -32,7 +32,7 @@ return {
       },
       properties = {},
       terrains = {},
-      tilecount = 34,
+      tilecount = 35,
       tiles = {
         {
           id = 1,
@@ -339,12 +339,21 @@ return {
           image = "../../images/game/walls/wall34.png",
           width = 64,
           height = 64
+        },
+        {
+          id = 35,
+          properties = {
+            ["block"] = false
+          },
+          image = "../../images/game/walls/wall35.png",
+          width = 64,
+          height = 64
         }
       }
     },
     {
       name = "objects",
-      firstgid = 36,
+      firstgid = 37,
       filename = "../tilesets/objects.tsx",
       tilewidth = 86,
       tileheight = 64,
@@ -612,7 +621,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 37,
+          gid = 38,
           visible = true,
           properties = {
             ["spawn_point"] = true
@@ -628,7 +637,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 38,
+          gid = 39,
           visible = true,
           properties = {}
         },
@@ -642,7 +651,7 @@ return {
           width = 64,
           height = 62,
           rotation = 0,
-          gid = 39,
+          gid = 40,
           visible = true,
           properties = {}
         },
@@ -656,7 +665,7 @@ return {
           width = 46,
           height = 64,
           rotation = 0,
-          gid = 40,
+          gid = 41,
           visible = true,
           properties = {}
         },
@@ -670,7 +679,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {}
         },
@@ -684,7 +693,7 @@ return {
           width = 53,
           height = 63,
           rotation = 0,
-          gid = 43,
+          gid = 44,
           visible = true,
           properties = {}
         },
@@ -698,7 +707,7 @@ return {
           width = 56,
           height = 60,
           rotation = 0,
-          gid = 44,
+          gid = 45,
           visible = true,
           properties = {}
         },
@@ -712,7 +721,7 @@ return {
           width = 86,
           height = 25,
           rotation = 0,
-          gid = 45,
+          gid = 46,
           visible = true,
           properties = {}
         },
@@ -726,7 +735,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 46,
+          gid = 47,
           visible = true,
           properties = {}
         },
@@ -740,7 +749,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 41,
+          gid = 42,
           visible = true,
           properties = {
             ["look_at_player"] = false
@@ -756,11 +765,23 @@ return {
           width = 64,
           height = 54,
           rotation = 0,
-          gid = 48,
+          gid = 49,
           visible = true,
           properties = {}
         }
       }
+    },
+    {
+      type = "objectgroup",
+      id = 8,
+      name = "enemies",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      draworder = "topdown",
+      properties = {},
+      objects = {}
     },
     {
       type = "tilelayer",

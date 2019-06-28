@@ -6,6 +6,7 @@ local ECS_WORLD = require "world.ecs.ecs"
 --In lua id start from 1 in cpp from 0
 --In lua pos start from 1 in cpp from 0
 
+local TAG = "Level"
 
 ---@class Level
 local Level = COMMON.class("Level")
@@ -57,12 +58,14 @@ function Level:prepare()
 end
 
 function Level:spawn_enemies()
-	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,22.1,0)))
-	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,24.1,0)))
-	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,21.1,0)))
-	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,19.1,0)))
-	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,17.1,0)))
-	self.ecs_world.ecs:addEntity(ENTITIES.create_blob(vmath.vector3(7.1,16.1,0)))
+	for _, enemy in ipairs(self.data.enemies) do
+		local name = enemy.properties.name
+		local f = ENTITIES["create_" .. name]
+		if not f then
+			COMMON.e("unknown enemy:" .. tostring(name),TAG)
+		end
+		self.ecs_world.ecs:addEntity(f(enemy))
+	end
 end
 
 function Level:update(dt)

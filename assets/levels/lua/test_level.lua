@@ -8,8 +8,8 @@ return {
   height = 32,
   tilewidth = 64,
   tileheight = 64,
-  nextlayerid = 8,
-  nextobjectid = 67,
+  nextlayerid = 9,
+  nextobjectid = 75,
   properties = {},
   tilesets = {
     {
@@ -1510,6 +1510,40 @@ return {
           }
         }
       }
+    },
+    {
+      name = "enemies",
+      firstgid = 210,
+      filename = "../tilesets/enemies.tsx",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 0,
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 1,
+        height = 1
+      },
+      properties = {},
+      terrains = {},
+      tilecount = 1,
+      tiles = {
+        {
+          id = 1,
+          properties = {
+            ["enemy"] = true,
+            ["name"] = "blob"
+          },
+          image = "../../images/game/enemies/blob/idle/blob_idle_1.png",
+          width = 64,
+          height = 64
+        }
+      }
     }
   },
   layers = {
@@ -1560,6 +1594,131 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+      }
+    },
+    {
+      type = "objectgroup",
+      id = 8,
+      name = "enemies",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      draworder = "topdown",
+      properties = {},
+      objects = {
+        {
+          id = 67,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 704,
+          y = 576,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 211,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 68,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 704,
+          y = 256,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 211,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 69,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 512,
+          y = 1152,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 211,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 70,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1216,
+          y = 1536,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 211,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 71,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1856,
+          y = 1152,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 211,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 72,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1536,
+          y = 832,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 211,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 73,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1152,
+          y = 832,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 211,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 74,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1088,
+          y = 384,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 211,
+          visible = true,
+          properties = {}
+        }
       }
     },
     {
