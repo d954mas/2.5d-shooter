@@ -6,6 +6,7 @@ local RESET_SAVE = false
 local LEVELS = require "world.model.levels"
 local EVENTS = require "libs.events"
 local LevelView = require "world.view.level_view"
+local SOUNDS = require "libs.sounds"
 
 --IT IS GAME WORLD
 --UPDATED FROM GAME COLLECTION
@@ -78,6 +79,16 @@ function M:dispose()
 		self.level_view:dispose()
 		self.level_view = nil
 	end
+end
+
+
+function M:player_shoot()
+	if self.player_shooting then return end
+	self.player_shooting = true
+	SOUNDS:play_sound(SOUNDS.sounds.game.weapon_pistol_shoot)
+	sprite.play_flipbook("/weapon#sprite",hash("pistol_shoot"),function ()
+		self.player_shooting = false
+	end)
 end
 
 return M()

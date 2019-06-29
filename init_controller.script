@@ -4,10 +4,14 @@ local SM = require "libs.sm.sm"
 COMMON.LOG.set_appname("game")
 COMMON.LOG.toggle_print()
 COMMON.LOG.override_print()
+COMMON.LOG.add_to_blacklist("Sound")
+COMMON.LOG.use_tag_blacklist = true
 math.randomseed(os.time())
 local RX = require "libs.rx"
 local WORLD = require "world.world"
 COMMON.empty_ne("defos")
+
+local SOUNDS = require "libs.sounds"
 
 local scenes = {
     require "scenes.game.game_scene",
@@ -30,6 +34,7 @@ end
 function update(self, dt)
     RX.MainScheduler:update(dt)
     SM:update(dt)
+    SOUNDS:update(dt)
   --  WORLD:update(dt)
 end
 

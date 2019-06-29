@@ -32,7 +32,7 @@ end
 
 function System:make_shot(action_id, action)
 	if action.pressed then
-		sprite.play_flipbook("/weapon#sprite",hash("pistol_shoot"))
+		self.world.world:player_shoot()
 	end
 
 end
