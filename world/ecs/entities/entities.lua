@@ -5,6 +5,7 @@ local TAG = "ENTITIES"
 ---@field tag string tag used for help when debug
 ---@field player boolean true if player entity
 ---@field enemy boolean
+---@field spawner boolean
 ---@field position vector3
 ---@field velocity vector3
 ---@field speed number
@@ -39,6 +40,7 @@ local OBJECT_HASHES = {
 
 local FACTORY_ENEMY_BLOB_URL = msg.url("game:/factories#factory_enemy_blob")
 
+---@class ENTITIES
 local Entities = {}
 
 Entities.url_to_entity = {}
@@ -64,7 +66,6 @@ function Entities.clear()
 	Entities.url_to_entity = {}
 	Entities.enemies = {}
 end
-
 
 ---@param e Entity
 function Entities.on_entity_removed(e)
@@ -104,6 +105,11 @@ function Entities.on_entity_updated(e)
 		Entities.entity_to_url[e] = e.url_go
 	end
 end
+
+function Entities.set_world(world)
+	Entities.world = assert(world)
+end
+
 --endregion
 
 --region Entities
@@ -122,15 +128,7 @@ function Entities.create_player(pos)
 	e.url_go =   msg.url("/player")
 	return e
 end
----@return Entity
-function Entities.create_physics(message_id,message,source)
-	local e = {}
-	e.physics = true
-	e.physics_message_id = assert(message_id)
-	e.physics_message = assert(message)
-	e.physics_source = assert(source)
-	return e
-end
+
 ---@return Entity
 function Entities.create_draw_object_base(pos)
 	local e = {}
@@ -140,11 +138,13 @@ function Entities.create_draw_object_base(pos)
 	return e
 end
 
-function Entities.create_enemy(enemy,factory)
-	assert(enemy)
+
+--region enemies
+function Entities.create_enemy(position,factory)
+	assert(position)
 	assert(factory)
 	local e = {}
-	e.position= assert(vmath.vector3(enemy.cell_xf + 0.5, enemy.cell_yf+0.5,0))
+	e.position= position
 	e.angle = vmath.vector3(0,0,0)
 	e.velocity = vmath.vector3(0,0,0)
 	e.speed = 0.9 + math.random()*0.25
@@ -158,11 +158,24 @@ function Entities.create_enemy(enemy,factory)
 	return e
 end
 
-function Entities.create_blob(enemy)
-	local e = Entities.create_enemy(enemy,FACTORY_ENEMY_BLOB_URL)
+function Entities.create_blob(pos,tile_object)
+	pos = pos or vmath.vector3(tile_object.cell_xf + 0.5, tile_object.cell_yf+0.5,0)
+	local e = Entities.create_enemy(pos,FACTORY_ENEMY_BLOB_URL)
 	e.ai = AI.Blob(e,Entities.world)
 	return e
 end
+--endregion
+
+--region spawners
+function Entities.create_spawner_enemy(object)
+	local e = {}
+	e.spawner = true
+	e.ai = AI.SpawnerEnemy(e,Entities.world,object)
+	return e
+end
+
+--endregion
+
 
 ---@return Entity
 function Entities.create_floor(pos)
@@ -185,14 +198,36 @@ function Entities.create_object_from_tiled(object)
 	end
 end
 
+
+--region entities utils
 ---@return Entity
 function Entities.create_input(action_id,action)
 	return {input = true,input_action_id = action_id,input_action = action }
 end
 
-function Entities.set_world(world)
-	Entities.world = assert(world)
+---@return Entity
+function Entities.create_physics(message_id,message,source)
+	local e = {}
+	e.physics = true
+	e.physics_message_id = assert(message_id)
+	e.physics_message = assert(message)
+	e.physics_source = assert(source)
+	return e
 end
+
+function Entities.create(name,...)
+	assert(name)
+	local f = Entities["create_" .. name]
+	if not f then
+		COMMON.e("unknown entity:" .. tostring(name),TAG)
+	else
+		return f(...)
+	end
+end
+--endregion
+
+--endregion
+
 return Entities
 
 

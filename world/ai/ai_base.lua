@@ -10,7 +10,10 @@ local AT_STATES = {
 local AI = COMMON.class("AIBase")
 
 ---@param e Entity
+---@param world World
 function AI:initialize(e,world)
+	---@type ENTITIES
+	self.ENTITIES = requiref("world.ecs.entities.entities")
 	self.e = assert(e)
 	self.world = assert(world)
 	self.states = AT_STATES
@@ -50,5 +53,24 @@ function AI:animation_play(animation,comlete_function)
 	sprite.play_flipbook(self.e.url_sprite,animation.animation,comlete_function)
 	go.set_position(vmath.vector3(0,animation.dy,0),self.e.url_sprite)
 end
+
+--TODO CAN LOOP INFINITY
+--TODO FIX PERFORMANCE
+function AI:get_random_spawn_position()
+	local w,h = self.world.level:map_get_width(), self.world.level:map_get_height()
+	while true do
+		local x,y = math.random(1,w), math.random(1,h)
+		local map_cell = self.world.level:map_get_cell(x,y)
+		if not map_cell.blocked  and map_cell.wall.floor ~= -1 then
+			return vmath.vector3(x,y,0)
+		end
+	end
+end
+
+---@return Entity
+function AI:get_player_entity()
+	return self.world.level.player
+end
+
 
 return AI

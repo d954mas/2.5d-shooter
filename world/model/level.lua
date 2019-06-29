@@ -54,17 +54,25 @@ function Level:prepare()
 		local e = ENTITIES.create_object_from_tiled(object)
 		if e then self.ecs_world.ecs:addEntity(e) end
 	end
-	self:spawn_enemies()
+	self:create_enemies()
+	self:create_spawners()
 end
 
-function Level:spawn_enemies()
+function Level:create_enemies()
 	for _, enemy in ipairs(self.data.enemies) do
-		local name = enemy.properties.name
+		self.ecs_world.ecs:addEntity(ENTITIES.create(enemy.properties.name,nil,enemy))
+	end
+end
+
+function Level:create_spawners()
+	for _, spawner in ipairs(self.data.spawners) do
+		local name = spawner.properties.name
 		local f = ENTITIES["create_" .. name]
 		if not f then
-			COMMON.e("unknown enemy:" .. tostring(name),TAG)
+			COMMON.w("unknown spawner:" .. tostring(name),TAG)
+		else
+			self.ecs_world.ecs:addEntity(f(spawner))
 		end
-		self.ecs_world.ecs:addEntity(f(enemy))
 	end
 end
 

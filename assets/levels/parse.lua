@@ -39,12 +39,13 @@ cjson.decode_invalid_numbers(false)
 ---@field id_to_tile table
 ---@field spawn_point vector3
 ---@field enemies table[]
+---@field spawners table[]
 ---@field light_map number[]
 
 local function create_empty_cell(x,y)
 	local cell = {}
 	cell.position = {x=x or 0,y = y or y}
-	cell.wall ={ north = -1,south = -1,east = -1, west = -1, floor = -1, ceil = -1 }
+	cell.wall ={ north = -1,south = -1,east = -1, west = -1, floor = -1, ceil = -1,blocked = true }
 	cell.objects = {}
 	return cell
 end
@@ -114,6 +115,7 @@ local function parse_level(path,result_path)
 	data.id_to_tile = {}
 	data.objects = {}
 	data.enemies = {}
+	data.spawners = {}
 	for _, tileset in ipairs(tiled.tilesets)do
 		table.insert(data.tilesets,{name = tileset.name,firstgid = tileset.firstgid})
 		for _,tile in ipairs(tileset.tiles) do
@@ -205,7 +207,12 @@ local function parse_level(path,result_path)
 			end
 		end
 		assert(object_data.properties.enemy,"should be enemy:" .. object.gid)
-		table.insert(data.enemies,object_data)
+		if object_data.properties.spawner then
+			table.insert(data.spawners,object_data)
+		else
+			table.insert(data.enemies,object_data)
+		end
+
 	end
 	--region validations
 	assert(data.spawn_point,"no spawn point")

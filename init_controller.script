@@ -1,3 +1,4 @@
+requiref = require -- to fix cyclic dependencies
 local COMMON = require "libs.common"
 local SM = require "libs.sm.sm"
 COMMON.LOG.set_appname("game")

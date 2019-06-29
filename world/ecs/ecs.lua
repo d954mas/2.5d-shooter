@@ -19,7 +19,7 @@ function EcsWorld:_init_systems()
 	self.ecs:addSystem(SYSTEMS.PhysicsObstaclesSystem)
 	self.ecs:addSystem(SYSTEMS.MovementSystem)
 
-	self.ecs:addSystem(SYSTEMS.DrawObjectsSystem)
+	--self.ecs:addSystem(SYSTEMS.DrawObjectsSystem)
 	self.ecs:addSystem(SYSTEMS.DrawWallsSystem)
 
 	self.ecs:addSystem(SYSTEMS.RotationLookAtPlayerSystem)

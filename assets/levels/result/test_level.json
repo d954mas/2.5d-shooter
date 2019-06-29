@@ -1696,6 +1696,21 @@
       },
       "height":64,
       "width":64
+    },
+    {
+      "image":"spawner",
+      "atlas":"objects",
+      "scale":0.015625,
+      "id":2,
+      "properties":{
+        "spawner":true,
+        "name":"spawner_enemy",
+        "spawn_enemy":"blob",
+        "delay":2,
+        "enemy":true
+      },
+      "height":64,
+      "width":64
     }
   ],
   "spawn_point":{
@@ -1790,6 +1805,40 @@
       },
       "cell_y":26,
       "cell_x":17
+    }
+  ],
+  "spawners":[
+    {
+      "cell_xf":0,
+      "cell_yf":31,
+      "tile_id":212,
+      "properties":{
+        "spawner":true,
+        "name":"spawner_enemy",
+        "spawn_enemy":"blob",
+        "delay":2,
+        "enemy":true
+      },
+      "cell_y":31,
+      "cell_x":0
+    }
+  ],
+  "tilesets":[
+    {
+      "name":"main",
+      "firstgid":1
+    },
+    {
+      "name":"objects",
+      "firstgid":37
+    },
+    {
+      "name":"lights",
+      "firstgid":50
+    },
+    {
+      "name":"enemies",
+      "firstgid":210
     }
   ],
   "objects":[
@@ -2528,24 +2577,6 @@
       "cell_x":7
     }
   ],
-  "tilesets":[
-    {
-      "name":"main",
-      "firstgid":1
-    },
-    {
-      "name":"objects",
-      "firstgid":37
-    },
-    {
-      "name":"lights",
-      "firstgid":50
-    },
-    {
-      "name":"enemies",
-      "firstgid":210
-    }
-  ],
   "cells":[
     [
       {
@@ -2553,6 +2584,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2569,6 +2601,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2585,6 +2618,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2601,6 +2635,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2617,6 +2652,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2633,6 +2669,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2649,6 +2686,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2665,6 +2703,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2681,6 +2720,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2697,6 +2737,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2713,6 +2754,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2729,6 +2771,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2745,6 +2788,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2761,6 +2805,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2777,6 +2822,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2793,6 +2839,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2809,6 +2856,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2825,6 +2873,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2841,6 +2890,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2857,6 +2907,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2873,6 +2924,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2889,6 +2941,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2905,6 +2958,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2921,6 +2975,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2937,6 +2992,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2953,6 +3009,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2969,6 +3026,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -2985,6 +3043,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3001,6 +3060,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3017,6 +3077,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3033,6 +3094,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3049,6 +3111,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3067,6 +3130,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3083,6 +3147,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3099,6 +3164,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3115,6 +3181,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3131,6 +3198,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3147,6 +3215,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3163,6 +3232,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3179,6 +3249,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3195,6 +3266,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3211,6 +3283,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3227,6 +3300,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3243,6 +3317,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3259,6 +3334,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3275,6 +3351,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3291,6 +3368,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3307,6 +3385,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3323,6 +3402,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3339,6 +3419,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3355,6 +3436,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3371,6 +3453,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3387,6 +3470,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3403,6 +3487,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3419,6 +3504,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3435,6 +3521,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3451,6 +3538,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3467,6 +3555,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3483,6 +3572,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3499,6 +3589,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3515,6 +3606,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3531,6 +3623,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3547,6 +3640,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3563,6 +3657,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3581,6 +3676,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3597,6 +3693,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3613,6 +3710,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3629,6 +3727,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3645,6 +3744,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3661,6 +3761,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3677,6 +3778,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3693,6 +3795,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3709,6 +3812,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3725,6 +3829,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3741,6 +3846,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3757,6 +3863,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3773,6 +3880,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3789,6 +3897,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3805,6 +3914,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3821,6 +3931,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3837,6 +3948,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3853,6 +3965,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3869,6 +3982,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3885,6 +3999,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3901,6 +4016,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3917,6 +4033,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3933,6 +4050,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3949,6 +4067,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3965,6 +4084,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3981,6 +4101,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -3997,6 +4118,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4013,6 +4135,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4029,6 +4152,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4045,6 +4169,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4061,6 +4186,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4077,6 +4203,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4095,6 +4222,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4111,6 +4239,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4127,6 +4256,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4143,6 +4273,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4159,6 +4290,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4175,6 +4307,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4191,6 +4324,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4207,6 +4341,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4223,6 +4358,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4239,6 +4375,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4255,6 +4392,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4271,6 +4409,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4287,6 +4426,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4303,6 +4443,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4319,6 +4460,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4335,6 +4477,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4351,6 +4494,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4367,6 +4511,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4383,6 +4528,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4399,6 +4545,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4415,6 +4562,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4431,6 +4579,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4447,6 +4596,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4463,6 +4613,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4479,6 +4630,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4495,6 +4647,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4511,6 +4664,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4527,6 +4681,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4543,6 +4698,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4559,6 +4715,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4575,6 +4732,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4591,6 +4749,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4609,6 +4768,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4625,6 +4785,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4641,6 +4802,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4657,6 +4819,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4673,6 +4836,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4689,6 +4853,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4705,6 +4870,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4721,6 +4887,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4737,6 +4904,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4753,6 +4921,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4769,6 +4938,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4785,6 +4955,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4801,6 +4972,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4817,6 +4989,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4833,6 +5006,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4849,6 +5023,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4865,6 +5040,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4881,6 +5057,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4897,6 +5074,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4913,6 +5091,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4929,6 +5108,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4945,6 +5125,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4961,6 +5142,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4977,6 +5159,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -4993,6 +5176,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5009,6 +5193,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5025,6 +5210,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5041,6 +5227,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5057,6 +5244,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5073,6 +5261,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5089,6 +5278,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5105,6 +5295,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5123,6 +5314,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5139,6 +5331,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5155,6 +5348,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5171,6 +5365,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5187,6 +5382,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5203,6 +5399,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5219,6 +5416,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5235,6 +5433,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5251,6 +5450,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5267,6 +5467,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5283,6 +5484,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5299,6 +5501,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5315,6 +5518,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5331,6 +5535,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5347,6 +5552,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5363,6 +5569,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5379,6 +5586,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5395,6 +5603,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5411,6 +5620,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5427,6 +5637,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5443,6 +5654,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5459,6 +5671,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5475,6 +5688,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5491,6 +5705,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5507,6 +5722,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5523,6 +5739,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5539,6 +5756,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5555,6 +5773,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5571,6 +5790,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5587,6 +5807,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5603,6 +5824,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5619,6 +5841,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5637,6 +5860,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5653,6 +5877,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5669,6 +5894,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5685,6 +5911,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5701,6 +5928,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5717,6 +5945,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5733,6 +5962,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5749,6 +5979,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5765,6 +5996,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5781,6 +6013,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5797,6 +6030,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5813,6 +6047,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5829,6 +6064,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5845,6 +6081,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5861,6 +6098,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5877,6 +6115,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5893,6 +6132,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5909,6 +6149,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5925,6 +6166,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5941,6 +6183,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5957,6 +6200,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5973,6 +6217,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -5989,6 +6234,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6005,6 +6251,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6021,6 +6268,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6037,6 +6285,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6053,6 +6302,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6069,6 +6319,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6085,6 +6336,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6101,6 +6353,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6117,6 +6370,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6133,6 +6387,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6151,6 +6406,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6167,6 +6423,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6183,6 +6440,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6199,6 +6457,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6215,6 +6474,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6231,6 +6491,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6247,6 +6508,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6263,6 +6525,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6279,6 +6542,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6295,6 +6559,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6311,6 +6576,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6327,6 +6593,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6343,6 +6610,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6359,6 +6627,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6375,6 +6644,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6391,6 +6661,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6407,6 +6678,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6430,6 +6702,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -6447,6 +6720,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -6464,6 +6738,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -6474,6 +6749,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6490,6 +6766,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6506,6 +6783,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6522,6 +6800,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6538,6 +6817,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6554,6 +6834,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6570,6 +6851,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6586,6 +6868,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6602,6 +6885,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6618,6 +6902,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6634,6 +6919,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6650,6 +6936,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6668,6 +6955,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6684,6 +6972,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6700,6 +6989,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6716,6 +7006,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6732,6 +7023,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6748,6 +7040,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6764,6 +7057,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6780,6 +7074,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6796,6 +7091,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6812,6 +7108,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6828,6 +7125,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6844,6 +7142,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6860,6 +7159,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6876,6 +7176,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6892,6 +7193,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6915,6 +7217,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -6932,6 +7235,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -6942,6 +7246,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6958,6 +7263,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6974,6 +7280,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -6997,6 +7304,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -7014,6 +7322,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -7031,6 +7340,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -7041,6 +7351,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7057,6 +7368,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7073,6 +7385,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7089,6 +7402,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7105,6 +7419,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7121,6 +7436,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7137,6 +7453,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7153,6 +7470,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7169,6 +7487,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7187,6 +7506,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7203,6 +7523,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7219,6 +7540,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7235,6 +7557,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7251,6 +7574,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7267,6 +7591,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7283,6 +7608,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7299,6 +7625,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7315,6 +7642,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7331,6 +7659,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7347,6 +7676,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7363,6 +7693,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7379,6 +7710,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7395,6 +7727,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7418,6 +7751,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -7428,6 +7762,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7444,6 +7779,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7460,6 +7796,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7476,6 +7813,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7492,6 +7830,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7508,6 +7847,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7524,6 +7864,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7540,6 +7881,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7563,6 +7905,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -7573,6 +7916,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7589,6 +7933,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7605,6 +7950,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7621,6 +7967,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7637,6 +7984,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7653,6 +8001,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7669,6 +8018,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7685,6 +8035,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7703,6 +8054,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7719,6 +8071,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7735,6 +8088,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7751,6 +8105,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7767,6 +8122,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7783,6 +8139,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7799,6 +8156,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7815,6 +8173,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7831,6 +8190,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7847,6 +8207,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7863,6 +8224,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7879,6 +8241,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7895,6 +8258,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7911,6 +8275,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7934,6 +8299,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -7944,6 +8310,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7960,6 +8327,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7976,6 +8344,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -7992,6 +8361,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8008,6 +8378,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8024,6 +8395,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8040,6 +8412,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8056,6 +8429,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8079,6 +8453,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -8096,6 +8471,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -8113,6 +8489,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -8130,6 +8507,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -8147,6 +8525,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -8157,6 +8536,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8173,6 +8553,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8189,6 +8570,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8205,6 +8587,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8223,6 +8606,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8239,6 +8623,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8255,6 +8640,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8271,6 +8657,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8287,6 +8674,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8303,6 +8691,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8319,6 +8708,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8335,6 +8725,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8351,6 +8742,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8367,6 +8759,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8383,6 +8776,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8399,6 +8793,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8415,6 +8810,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8431,6 +8827,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8454,6 +8851,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -8464,6 +8862,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8480,6 +8879,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8503,6 +8903,7 @@
           "ceil":6,
           "floor":6,
           "south":19,
+          "blocked":true,
           "west":19,
           "east":19,
           "north":19
@@ -8520,6 +8921,7 @@
           "ceil":6,
           "floor":6,
           "south":19,
+          "blocked":true,
           "west":19,
           "east":19,
           "north":19
@@ -8537,6 +8939,7 @@
           "ceil":6,
           "floor":6,
           "south":19,
+          "blocked":true,
           "west":19,
           "east":19,
           "north":19
@@ -8554,6 +8957,7 @@
           "ceil":6,
           "floor":6,
           "south":19,
+          "blocked":true,
           "west":19,
           "east":19,
           "north":19
@@ -8564,6 +8968,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8580,6 +8985,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8596,6 +9002,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8612,6 +9019,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8628,6 +9036,7 @@
           "ceil":8,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8644,6 +9053,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8660,6 +9070,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8683,6 +9094,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -8693,6 +9105,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8709,6 +9122,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8725,6 +9139,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8743,6 +9158,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8759,6 +9175,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8775,6 +9192,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8791,6 +9209,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8807,6 +9226,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8823,6 +9243,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8839,6 +9260,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8855,6 +9277,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8871,6 +9294,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8887,6 +9311,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8903,6 +9328,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8919,6 +9345,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8935,6 +9362,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8951,6 +9379,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -8974,6 +9403,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -8984,6 +9414,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9000,6 +9431,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9023,41 +9455,46 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
         }
       },
       {
-        "wall":{
-          "ceil":6,
-          "floor":6,
-          "south":-1,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
-        "id":403,
         "objects":        {},
         "position":{
           "y":13,
           "x":19
-        }
-      },
-      {
+        },
+        "id":403,
+        "blocked":true,
         "wall":{
           "ceil":6,
           "floor":6,
-          "south":-1,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
-        "id":404,
+          "south":6,
+          "blocked":true,
+          "west":6,
+          "east":6,
+          "north":6
+        }
+      },
+      {
         "objects":        {},
         "position":{
           "y":13,
           "x":20
+        },
+        "id":404,
+        "blocked":true,
+        "wall":{
+          "ceil":6,
+          "floor":6,
+          "south":6,
+          "blocked":true,
+          "west":6,
+          "east":6,
+          "north":6
         }
       },
       {
@@ -9072,6 +9509,7 @@
           "ceil":6,
           "floor":6,
           "south":19,
+          "blocked":true,
           "west":19,
           "east":19,
           "north":19
@@ -9082,6 +9520,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9098,6 +9537,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9114,6 +9554,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9130,6 +9571,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9146,6 +9588,7 @@
           "ceil":8,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9162,6 +9605,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9178,6 +9622,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9201,6 +9646,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -9211,6 +9657,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9227,6 +9674,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9243,6 +9691,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9261,6 +9710,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9277,6 +9727,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9293,6 +9744,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9309,6 +9761,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9325,6 +9778,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9341,6 +9795,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9364,6 +9819,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -9381,6 +9837,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -9398,6 +9855,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -9408,6 +9866,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9424,6 +9883,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9440,6 +9900,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9456,6 +9917,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9479,6 +9941,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -9496,6 +9959,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -9506,6 +9970,7 @@
           "ceil":8,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9522,6 +9987,7 @@
           "ceil":8,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9545,6 +10011,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -9562,41 +10029,46 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
         }
       },
       {
-        "wall":{
-          "ceil":6,
-          "floor":6,
-          "south":-1,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
-        "id":436,
         "objects":        {},
         "position":{
           "y":14,
           "x":20
-        }
-      },
-      {
+        },
+        "id":436,
+        "blocked":true,
         "wall":{
           "ceil":6,
           "floor":6,
-          "south":-1,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
-        "id":437,
+          "south":6,
+          "blocked":true,
+          "west":6,
+          "east":6,
+          "north":6
+        }
+      },
+      {
         "objects":        {},
         "position":{
           "y":14,
           "x":21
+        },
+        "id":437,
+        "blocked":true,
+        "wall":{
+          "ceil":6,
+          "floor":6,
+          "south":6,
+          "blocked":true,
+          "west":6,
+          "east":6,
+          "north":6
         }
       },
       {
@@ -9611,6 +10083,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -9628,6 +10101,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -9645,6 +10119,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -9662,6 +10137,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -9679,6 +10155,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -9689,6 +10166,7 @@
           "ceil":8,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9705,6 +10183,7 @@
           "ceil":8,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9728,6 +10207,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -9745,6 +10225,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -9755,6 +10236,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9771,6 +10253,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9789,6 +10272,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9805,6 +10289,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9821,6 +10306,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9837,6 +10323,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9853,6 +10340,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9876,6 +10364,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -9886,6 +10375,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9902,6 +10392,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9918,6 +10409,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9941,6 +10433,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -9951,6 +10444,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9967,6 +10461,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -9990,6 +10485,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -10000,6 +10496,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10016,6 +10513,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10032,6 +10530,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10048,6 +10547,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10064,6 +10564,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10080,6 +10581,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10103,57 +10605,64 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
         }
       },
       {
-        "wall":{
-          "ceil":6,
-          "floor":6,
-          "south":-1,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
-        "id":469,
         "objects":        {},
         "position":{
           "y":15,
           "x":21
-        }
-      },
-      {
+        },
+        "id":469,
+        "blocked":true,
         "wall":{
           "ceil":6,
           "floor":6,
-          "south":-1,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
-        "id":470,
+          "south":6,
+          "blocked":true,
+          "west":6,
+          "east":6,
+          "north":6
+        }
+      },
+      {
         "objects":        {},
         "position":{
           "y":15,
           "x":22
-        }
-      },
-      {
+        },
+        "id":470,
+        "blocked":true,
         "wall":{
           "ceil":6,
           "floor":6,
-          "south":-1,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
-        "id":471,
+          "south":6,
+          "blocked":true,
+          "west":6,
+          "east":6,
+          "north":6
+        }
+      },
+      {
         "objects":        {},
         "position":{
           "y":15,
           "x":23
+        },
+        "id":471,
+        "blocked":true,
+        "wall":{
+          "ceil":6,
+          "floor":6,
+          "south":6,
+          "blocked":true,
+          "west":6,
+          "east":6,
+          "north":6
         }
       },
       {
@@ -10168,6 +10677,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -10178,6 +10688,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10194,6 +10705,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10210,6 +10722,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10226,6 +10739,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10242,6 +10756,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10258,6 +10773,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10281,6 +10797,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -10291,6 +10808,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10309,6 +10827,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10325,6 +10844,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10341,6 +10861,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10357,6 +10878,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10373,6 +10895,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10396,6 +10919,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -10406,6 +10930,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10422,6 +10947,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10438,6 +10964,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10461,6 +10988,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -10478,6 +11006,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -10495,6 +11024,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -10512,6 +11042,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -10522,6 +11053,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10538,6 +11070,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10554,6 +11087,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10570,6 +11104,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10586,6 +11121,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10602,6 +11138,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10625,6 +11162,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -10642,6 +11180,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -10659,6 +11198,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -10676,6 +11216,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -10693,6 +11234,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -10703,6 +11245,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10719,6 +11262,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10735,6 +11279,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10751,6 +11296,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10767,6 +11313,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10783,6 +11330,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10806,6 +11354,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -10816,6 +11365,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10834,6 +11384,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10850,6 +11401,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10866,6 +11418,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10882,6 +11435,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10898,6 +11452,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10921,6 +11476,7 @@
           "ceil":6,
           "floor":6,
           "south":19,
+          "blocked":true,
           "west":19,
           "east":19,
           "north":19
@@ -10931,6 +11487,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10947,6 +11504,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10963,6 +11521,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10979,6 +11538,7 @@
           "ceil":8,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -10995,6 +11555,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11011,6 +11572,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11027,6 +11589,7 @@
           "ceil":8,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11043,6 +11606,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11059,6 +11623,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11082,6 +11647,7 @@
           "ceil":6,
           "floor":6,
           "south":13,
+          "blocked":true,
           "west":13,
           "east":13,
           "north":13
@@ -11099,6 +11665,7 @@
           "ceil":6,
           "floor":6,
           "south":13,
+          "blocked":true,
           "west":13,
           "east":13,
           "north":13
@@ -11109,6 +11676,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11125,6 +11693,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11141,6 +11710,7 @@
           "ceil":8,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11157,6 +11727,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11173,6 +11744,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11189,6 +11761,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11205,6 +11778,7 @@
           "ceil":8,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11221,6 +11795,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11237,6 +11812,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11260,6 +11836,7 @@
           "ceil":6,
           "floor":6,
           "south":13,
+          "blocked":true,
           "west":13,
           "east":13,
           "north":13
@@ -11277,6 +11854,7 @@
           "ceil":6,
           "floor":6,
           "south":13,
+          "blocked":true,
           "west":13,
           "east":13,
           "north":13
@@ -11287,6 +11865,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11303,6 +11882,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11326,6 +11906,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -11336,6 +11917,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11354,6 +11936,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11370,6 +11953,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11386,6 +11970,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11402,6 +11987,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11418,6 +12004,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11441,6 +12028,7 @@
           "ceil":6,
           "floor":6,
           "south":19,
+          "blocked":true,
           "west":19,
           "east":19,
           "north":19
@@ -11451,6 +12039,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11467,6 +12056,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11483,6 +12073,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11499,6 +12090,7 @@
           "ceil":8,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11515,6 +12107,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11531,6 +12124,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11547,6 +12141,7 @@
           "ceil":8,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11563,6 +12158,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11579,6 +12175,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11602,6 +12199,7 @@
           "ceil":6,
           "floor":6,
           "south":13,
+          "blocked":true,
           "west":13,
           "east":13,
           "north":13
@@ -11619,6 +12217,7 @@
           "ceil":6,
           "floor":6,
           "south":13,
+          "blocked":true,
           "west":13,
           "east":13,
           "north":13
@@ -11629,6 +12228,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11645,6 +12245,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11661,6 +12262,7 @@
           "ceil":8,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11677,6 +12279,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11693,6 +12296,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11709,6 +12313,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11725,6 +12330,7 @@
           "ceil":8,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11741,6 +12347,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11757,6 +12364,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11780,6 +12388,7 @@
           "ceil":6,
           "floor":6,
           "south":13,
+          "blocked":true,
           "west":13,
           "east":13,
           "north":13
@@ -11797,6 +12406,7 @@
           "ceil":6,
           "floor":6,
           "south":13,
+          "blocked":true,
           "west":13,
           "east":13,
           "north":13
@@ -11807,6 +12417,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11823,6 +12434,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11846,6 +12458,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -11856,6 +12469,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11874,6 +12488,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11890,6 +12505,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11906,6 +12522,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11922,6 +12539,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11938,6 +12556,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11961,6 +12580,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -11971,6 +12591,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -11994,6 +12615,7 @@
           "ceil":6,
           "floor":6,
           "south":36,
+          "blocked":true,
           "west":36,
           "east":36,
           "north":36
@@ -12004,6 +12626,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12027,6 +12650,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -12044,6 +12668,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -12061,6 +12686,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -12078,6 +12704,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -12088,6 +12715,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12104,6 +12732,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12120,6 +12749,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12136,6 +12766,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12152,6 +12783,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12168,6 +12800,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12191,6 +12824,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -12208,6 +12842,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -12225,6 +12860,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -12242,6 +12878,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -12259,6 +12896,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -12269,6 +12907,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12285,6 +12924,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12301,6 +12941,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12317,6 +12958,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12333,6 +12975,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12349,6 +12992,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12372,6 +13016,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -12382,6 +13027,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12400,6 +13046,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12416,6 +13063,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12432,6 +13080,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12448,6 +13097,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12464,6 +13114,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12487,6 +13138,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -12497,6 +13149,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12513,6 +13166,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12529,6 +13183,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12552,41 +13207,46 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":-1,
-          "south":-1,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
-        "id":619,
         "objects":        {},
         "position":{
           "y":20,
           "x":11
-        }
-      },
-      {
+        },
+        "id":619,
+        "blocked":true,
         "wall":{
           "ceil":-1,
           "floor":-1,
-          "south":-1,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
-        "id":620,
+          "south":6,
+          "blocked":true,
+          "west":6,
+          "east":6,
+          "north":6
+        }
+      },
+      {
         "objects":        {},
         "position":{
           "y":20,
           "x":12
+        },
+        "id":620,
+        "blocked":true,
+        "wall":{
+          "ceil":-1,
+          "floor":-1,
+          "south":6,
+          "blocked":true,
+          "west":6,
+          "east":6,
+          "north":6
         }
       },
       {
@@ -12601,6 +13261,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -12611,6 +13272,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12627,6 +13289,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12643,6 +13306,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12659,6 +13323,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12675,6 +13340,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12691,6 +13357,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12714,6 +13381,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -12724,6 +13392,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12740,6 +13409,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12756,6 +13426,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12779,6 +13450,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -12789,6 +13461,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12805,6 +13478,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12821,6 +13495,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12837,6 +13512,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12853,6 +13529,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12869,6 +13546,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12892,6 +13570,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -12902,6 +13581,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12920,6 +13600,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12936,6 +13617,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12952,6 +13634,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12968,6 +13651,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -12984,6 +13668,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13007,6 +13692,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -13017,6 +13703,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13033,6 +13720,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13049,6 +13737,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13072,57 +13761,64 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":-1,
-          "south":-1,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
-        "id":651,
         "objects":        {},
         "position":{
           "y":21,
           "x":11
-        }
-      },
-      {
+        },
+        "id":651,
+        "blocked":true,
         "wall":{
           "ceil":-1,
           "floor":-1,
-          "south":-1,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
-        "id":652,
+          "south":6,
+          "blocked":true,
+          "west":6,
+          "east":6,
+          "north":6
+        }
+      },
+      {
         "objects":        {},
         "position":{
           "y":21,
           "x":12
-        }
-      },
-      {
+        },
+        "id":652,
+        "blocked":true,
         "wall":{
           "ceil":-1,
           "floor":-1,
-          "south":-1,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
-        "id":653,
+          "south":6,
+          "blocked":true,
+          "west":6,
+          "east":6,
+          "north":6
+        }
+      },
+      {
         "objects":        {},
         "position":{
           "y":21,
           "x":13
+        },
+        "id":653,
+        "blocked":true,
+        "wall":{
+          "ceil":-1,
+          "floor":-1,
+          "south":6,
+          "blocked":true,
+          "west":6,
+          "east":6,
+          "north":6
         }
       },
       {
@@ -13137,6 +13833,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -13154,6 +13851,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -13164,6 +13862,7 @@
           "ceil":8,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13180,6 +13879,7 @@
           "ceil":8,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13203,6 +13903,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -13220,6 +13921,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -13230,6 +13932,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13246,6 +13949,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13262,6 +13966,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13278,6 +13983,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13294,6 +14000,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13317,6 +14024,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -13334,6 +14042,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -13351,6 +14060,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -13368,6 +14078,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -13385,6 +14096,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -13402,6 +14114,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -13412,6 +14125,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13428,6 +14142,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13446,6 +14161,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13462,6 +14178,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13478,6 +14195,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13494,6 +14212,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13510,6 +14229,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13533,6 +14253,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -13543,6 +14264,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13559,6 +14281,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13575,6 +14298,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13598,73 +14322,82 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":-1,
-          "south":-1,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
-        "id":683,
         "objects":        {},
         "position":{
           "y":22,
           "x":11
-        }
-      },
-      {
+        },
+        "id":683,
+        "blocked":true,
         "wall":{
           "ceil":-1,
           "floor":-1,
-          "south":-1,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
-        "id":684,
+          "south":6,
+          "blocked":true,
+          "west":6,
+          "east":6,
+          "north":6
+        }
+      },
+      {
         "objects":        {},
         "position":{
           "y":22,
           "x":12
-        }
-      },
-      {
+        },
+        "id":684,
+        "blocked":true,
         "wall":{
           "ceil":-1,
           "floor":-1,
-          "south":-1,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
-        "id":685,
+          "south":6,
+          "blocked":true,
+          "west":6,
+          "east":6,
+          "north":6
+        }
+      },
+      {
         "objects":        {},
         "position":{
           "y":22,
           "x":13
-        }
-      },
-      {
+        },
+        "id":685,
+        "blocked":true,
         "wall":{
           "ceil":-1,
           "floor":-1,
-          "south":-1,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
-        "id":686,
+          "south":6,
+          "blocked":true,
+          "west":6,
+          "east":6,
+          "north":6
+        }
+      },
+      {
         "objects":        {},
         "position":{
           "y":22,
           "x":14
+        },
+        "id":686,
+        "blocked":true,
+        "wall":{
+          "ceil":-1,
+          "floor":-1,
+          "south":6,
+          "blocked":true,
+          "west":6,
+          "east":6,
+          "north":6
         }
       },
       {
@@ -13679,6 +14412,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -13689,6 +14423,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13705,6 +14440,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13728,6 +14464,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -13738,6 +14475,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13754,6 +14492,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13770,6 +14509,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13786,6 +14526,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13802,6 +14543,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13818,6 +14560,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13834,6 +14577,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13850,6 +14594,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13866,6 +14611,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13882,6 +14628,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13898,6 +14645,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13914,6 +14662,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13930,6 +14679,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13946,6 +14696,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13964,6 +14715,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13980,6 +14732,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -13996,6 +14749,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14019,6 +14773,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -14036,6 +14791,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -14053,6 +14809,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -14070,6 +14827,7 @@
           "ceil":8,
           "floor":6,
           "south":36,
+          "blocked":true,
           "west":36,
           "east":36,
           "north":36
@@ -14087,6 +14845,7 @@
           "ceil":8,
           "floor":6,
           "south":36,
+          "blocked":true,
           "west":36,
           "east":36,
           "north":36
@@ -14104,6 +14863,7 @@
           "ceil":8,
           "floor":6,
           "south":36,
+          "blocked":true,
           "west":36,
           "east":36,
           "north":36
@@ -14121,6 +14881,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -14138,6 +14899,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -14155,41 +14917,46 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":-1,
-          "south":-1,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
-        "id":717,
         "objects":        {},
         "position":{
           "y":23,
           "x":13
-        }
-      },
-      {
+        },
+        "id":717,
+        "blocked":true,
         "wall":{
           "ceil":-1,
           "floor":-1,
-          "south":-1,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
-        "id":718,
+          "south":6,
+          "blocked":true,
+          "west":6,
+          "east":6,
+          "north":6
+        }
+      },
+      {
         "objects":        {},
         "position":{
           "y":23,
           "x":14
+        },
+        "id":718,
+        "blocked":true,
+        "wall":{
+          "ceil":-1,
+          "floor":-1,
+          "south":6,
+          "blocked":true,
+          "west":6,
+          "east":6,
+          "north":6
         }
       },
       {
@@ -14204,6 +14971,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -14214,6 +14982,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14230,6 +14999,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14253,6 +15023,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -14263,6 +15034,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14279,6 +15051,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14295,6 +15068,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14311,6 +15085,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14327,6 +15102,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14343,6 +15119,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14359,6 +15136,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14375,6 +15153,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14391,6 +15170,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14407,6 +15187,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14423,6 +15204,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14439,6 +15221,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14455,6 +15238,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14471,6 +15255,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14489,6 +15274,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14505,6 +15291,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14528,6 +15315,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -14538,6 +15326,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14554,6 +15343,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14570,6 +15360,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14586,6 +15377,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14602,6 +15394,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14618,6 +15411,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14634,6 +15428,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14650,6 +15445,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14666,6 +15462,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14689,25 +15486,28 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":-1,
-          "south":-1,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
-        "id":750,
         "objects":        {},
         "position":{
           "y":24,
           "x":14
+        },
+        "id":750,
+        "blocked":true,
+        "wall":{
+          "ceil":-1,
+          "floor":-1,
+          "south":6,
+          "blocked":true,
+          "west":6,
+          "east":6,
+          "north":6
         }
       },
       {
@@ -14722,6 +15522,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -14732,6 +15533,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14748,6 +15550,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14771,6 +15574,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -14781,6 +15585,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14797,6 +15602,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14813,6 +15619,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14829,6 +15636,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14845,6 +15653,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14861,6 +15670,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14877,6 +15687,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14893,6 +15704,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14909,6 +15721,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14925,6 +15738,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14941,6 +15755,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14957,6 +15772,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14973,6 +15789,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -14989,6 +15806,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15007,6 +15825,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15023,6 +15842,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15046,6 +15866,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -15056,6 +15877,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15072,6 +15894,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15088,6 +15911,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15104,6 +15928,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15120,6 +15945,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15136,6 +15962,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15152,6 +15979,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15168,6 +15996,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15184,6 +16013,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15207,6 +16037,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -15224,6 +16055,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -15241,6 +16073,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -15251,6 +16084,7 @@
           "ceil":8,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15267,6 +16101,7 @@
           "ceil":8,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15290,6 +16125,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -15300,6 +16136,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15316,6 +16153,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15332,6 +16170,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15348,6 +16187,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15364,6 +16204,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15380,6 +16221,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15396,6 +16238,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15412,6 +16255,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15428,6 +16272,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15444,6 +16289,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15460,6 +16306,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15476,6 +16323,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15492,6 +16340,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15508,6 +16357,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15526,6 +16376,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15549,6 +16400,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -15559,6 +16411,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15575,6 +16428,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15591,6 +16445,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15614,6 +16469,7 @@
           "ceil":6,
           "floor":6,
           "south":13,
+          "blocked":true,
           "west":13,
           "east":13,
           "north":13
@@ -15631,6 +16487,7 @@
           "ceil":6,
           "floor":6,
           "south":13,
+          "blocked":true,
           "west":13,
           "east":13,
           "north":13
@@ -15641,6 +16498,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15664,6 +16522,7 @@
           "ceil":6,
           "floor":6,
           "south":13,
+          "blocked":true,
           "west":13,
           "east":13,
           "north":13
@@ -15681,6 +16540,7 @@
           "ceil":6,
           "floor":6,
           "south":13,
+          "blocked":true,
           "west":13,
           "east":13,
           "north":13
@@ -15691,6 +16551,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15707,6 +16568,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15723,6 +16585,7 @@
           "ceil":8,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15739,6 +16602,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15755,6 +16619,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15771,6 +16636,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15787,6 +16653,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15803,6 +16670,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15826,6 +16694,7 @@
           "ceil":6,
           "floor":6,
           "south":19,
+          "blocked":true,
           "west":19,
           "east":19,
           "north":19
@@ -15836,6 +16705,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15852,6 +16722,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15868,6 +16739,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15884,6 +16756,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15900,6 +16773,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15916,6 +16790,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15932,6 +16807,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15948,6 +16824,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15964,6 +16841,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15980,6 +16858,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -15996,6 +16875,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16012,6 +16892,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16028,6 +16909,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16046,6 +16928,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16069,6 +16952,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -16079,6 +16963,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16095,6 +16980,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16111,6 +16997,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16134,6 +17021,7 @@
           "ceil":6,
           "floor":6,
           "south":13,
+          "blocked":true,
           "west":13,
           "east":13,
           "north":13
@@ -16151,6 +17039,7 @@
           "ceil":6,
           "floor":6,
           "south":13,
+          "blocked":true,
           "west":13,
           "east":13,
           "north":13
@@ -16161,6 +17050,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16184,6 +17074,7 @@
           "ceil":6,
           "floor":6,
           "south":13,
+          "blocked":true,
           "west":13,
           "east":13,
           "north":13
@@ -16201,6 +17092,7 @@
           "ceil":6,
           "floor":6,
           "south":13,
+          "blocked":true,
           "west":13,
           "east":13,
           "north":13
@@ -16211,6 +17103,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16227,6 +17120,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16243,6 +17137,7 @@
           "ceil":8,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16259,6 +17154,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16275,6 +17171,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16291,6 +17188,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16307,6 +17205,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16323,6 +17222,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16346,6 +17246,7 @@
           "ceil":6,
           "floor":6,
           "south":19,
+          "blocked":true,
           "west":19,
           "east":19,
           "north":19
@@ -16356,6 +17257,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16372,6 +17274,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16388,6 +17291,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16404,6 +17308,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16420,6 +17325,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16436,6 +17342,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16452,6 +17359,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16468,6 +17376,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16484,6 +17393,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16500,6 +17410,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16516,6 +17427,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16532,6 +17444,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16548,6 +17461,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16566,6 +17480,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16582,6 +17497,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16605,6 +17521,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -16615,6 +17532,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16631,6 +17549,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16647,6 +17566,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16663,6 +17583,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16679,6 +17600,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16695,6 +17617,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16711,6 +17634,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16727,6 +17651,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16743,6 +17668,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16766,6 +17692,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -16783,6 +17710,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -16800,6 +17728,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -16817,6 +17746,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -16834,6 +17764,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -16851,6 +17782,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -16861,6 +17793,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16877,6 +17810,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16893,6 +17827,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16909,6 +17844,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16925,6 +17861,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16941,6 +17878,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16957,6 +17895,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16973,6 +17912,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -16989,6 +17929,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17005,6 +17946,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17021,6 +17963,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17037,6 +17980,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17053,6 +17997,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17069,6 +18014,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17087,6 +18033,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17103,6 +18050,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17126,6 +18074,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -17136,6 +18085,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17152,6 +18102,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17168,6 +18119,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17184,6 +18136,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17200,6 +18153,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17216,6 +18170,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17232,6 +18187,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17248,6 +18204,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17264,6 +18221,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17287,6 +18245,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -17297,6 +18256,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17313,6 +18273,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17329,6 +18290,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17345,6 +18307,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17361,6 +18324,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17377,6 +18341,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17393,6 +18358,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17409,6 +18375,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17425,6 +18392,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17441,6 +18409,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17457,6 +18426,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17473,6 +18443,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17489,6 +18460,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17505,6 +18477,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17521,6 +18494,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17537,6 +18511,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17553,6 +18528,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17569,6 +18545,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17585,6 +18562,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17603,6 +18581,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17619,6 +18598,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17635,6 +18615,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17658,6 +18639,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -17675,6 +18657,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -17685,6 +18668,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17701,6 +18685,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17724,6 +18709,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -17734,6 +18720,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17750,6 +18737,7 @@
           "ceil":6,
           "floor":6,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17773,6 +18761,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -17790,6 +18779,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -17800,6 +18790,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17816,6 +18807,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17832,6 +18824,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17848,6 +18841,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17864,6 +18858,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17880,6 +18875,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17896,6 +18892,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17912,6 +18909,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17928,6 +18926,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17944,6 +18943,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17960,6 +18960,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17976,6 +18977,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -17992,6 +18994,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18008,6 +19011,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18024,6 +19028,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18040,6 +19045,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18056,6 +19062,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18072,6 +19079,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18088,6 +19096,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18104,6 +19113,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18122,6 +19132,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18138,6 +19149,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18154,6 +19166,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18170,6 +19183,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18186,6 +19200,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18209,6 +19224,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -18226,6 +19242,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -18236,6 +19253,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18259,6 +19277,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -18276,6 +19295,7 @@
           "ceil":6,
           "floor":6,
           "south":27,
+          "blocked":true,
           "west":27,
           "east":27,
           "north":27
@@ -18286,6 +19306,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18302,6 +19323,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18318,6 +19340,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18334,6 +19357,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18350,6 +19374,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18366,6 +19391,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18382,6 +19408,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18398,6 +19425,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18414,6 +19442,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18430,6 +19459,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18446,6 +19476,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18462,6 +19493,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18478,6 +19510,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18494,6 +19527,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18510,6 +19544,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18526,6 +19561,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18542,6 +19578,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18558,6 +19595,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18574,6 +19612,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18590,6 +19629,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18606,6 +19646,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18622,6 +19663,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18640,6 +19682,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18656,6 +19699,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18672,6 +19716,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18688,6 +19733,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18704,6 +19750,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18720,6 +19767,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18736,6 +19784,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18752,6 +19801,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18768,6 +19818,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18784,6 +19835,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18800,6 +19852,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18816,6 +19869,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18832,6 +19886,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18848,6 +19903,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18864,6 +19920,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18880,6 +19937,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18896,6 +19954,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18912,6 +19971,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18928,6 +19988,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18944,6 +20005,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18960,6 +20022,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18976,6 +20039,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -18992,6 +20056,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -19008,6 +20073,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -19024,6 +20090,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -19040,6 +20107,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -19056,6 +20124,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -19072,6 +20141,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -19088,6 +20158,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -19104,6 +20175,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -19120,6 +20192,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
@@ -19136,6 +20209,7 @@
           "ceil":-1,
           "floor":-1,
           "south":-1,
+          "blocked":true,
           "west":-1,
           "east":-1,
           "north":-1
