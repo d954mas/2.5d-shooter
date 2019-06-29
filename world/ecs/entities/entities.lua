@@ -30,7 +30,10 @@ local TAG = "ENTITIES"
 ---@field drawing boolean this frame visible entities
 ---@field cell_data NativeCellData
 ---@field ai AI
-
+---@field camera_bob number
+---@field camera_bob_speed number
+---@field camera_bob_height number
+---@field camera_bob_offset number
 
 local HASH_SPRITE = hash("sprite")
 local OBJECT_HASHES = {
@@ -126,6 +129,10 @@ function Entities.create_player(pos)
 	e.speed = 4
 	e.player = true
 	e.url_go =   msg.url("/player")
+	e.camera_bob = 0
+	e.camera_bob_height = 0.012
+	e.camera_bob_speed = 4
+	e.camera_bob_offset = 0
 	return e
 end
 

@@ -91,4 +91,10 @@ function M:player_shoot()
 	end)
 end
 
+function M:weapon_set_bob_offset(offset)
+	offset = offset * 200 - 10 -- -10 is dy to hide weapon bottom edge
+	local pos = vmath.vector3(960,offset,0)
+	go.set_position(pos,"/weapon")
+end
+
 return M()
