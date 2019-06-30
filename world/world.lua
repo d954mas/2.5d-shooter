@@ -37,6 +37,7 @@ function M:load_level(name)
 	self.level_view = LevelView()
 	self.level_view:build_level(self.level)
 	COMMON.EVENT_BUS:event(EVENTS.GAME_LEVEL_MAP_CHANGED)
+	self:spawn_pickups()
 end
 
 function M:update(dt)
@@ -83,14 +84,14 @@ end
 
 --TODO MOVE TO ENTITY WEAPON
 function M:player_shoot()
-	if self.player_shooting then return end
-	self.player_shooting = true
+	if self.level.player.player_shooting then return end
+	self.level.player.player_shooting = true
 	local can_shoot = self.level.player.ammo.pistol > 0
 	SOUNDS:play_sound(can_shoot and SOUNDS.sounds.game.weapon_pistol_shoot or SOUNDS.sounds.game.weapon_pistol_empty)
 	if can_shoot then
 		self.level.player.ammo.pistol = self.level.player.ammo.pistol - 1
 		sprite.play_flipbook("/weapon#sprite",hash("pistol_shoot"),function ()
-			self.player_shooting = false
+			self.level.player.player_shooting = false
 		end)
 		local player = self.level.player
 		local start_point = vmath.vector3(self.level.player.position.x,0.5,-self.level.player.position.y)
@@ -107,7 +108,7 @@ function M:player_shoot()
 			end)
 		end
 	else
-		timer.delay(0.3,false,function ()self.player_shooting = false end)
+		timer.delay(0.3,false,function ()self.level.player.player_shooting = false end)
 	end
 end
 
@@ -124,6 +125,31 @@ function M:attack_player()
 			require("libs.sm.sm"):reload()
 		end
 
+	end
+end
+--@TODO TMP
+local hp_pickup = {properties = {{global_rotation = true}},tile_id = 217}
+local ammo_pickup = {properties = {{global_rotation = true}},tile_id = 218}
+local pickups_weights = {}
+pickups_weights[hp_pickup] = 1
+pickups_weights[ammo_pickup] = 2
+function M:spawn_pickups()
+	timer.delay(8,true,function()
+		---@type ENTITIES
+		local ENTITIES = requiref "world.ecs.entities.entities"
+		local pickup = COMMON.LUME.weightedchoice(pickups_weights)
+		self.level.ecs_world.ecs:addEntity(ENTITIES.create_pickup(self:get_random_spawn_position()-vmath.vector3(0.5,0.5,0),pickup))
+	end)
+end
+
+function M:get_random_spawn_position()
+	local w,h = self.level:map_get_width(), self.level:map_get_height()
+	while true do
+		local x,y = math.random(1,w), math.random(1,h)
+		local map_cell = self.level:map_get_cell(x,y)
+		if not map_cell.blocked  and map_cell.wall.floor ~= -1 then
+			return vmath.vector3(x,y,0)
+		end
 	end
 end
 

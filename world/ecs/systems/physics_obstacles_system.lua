@@ -37,7 +37,7 @@ end
  ---@param e Entity
  function System:handle_geometry(physics_e,e)
 	 assert(physics_e)
-	 assert(e)
+	if not e then return end	
 	 local normal, distance = physics_e.physics_message.normal, physics_e.physics_message.distance
 	 local correction = e.physics_obstacles_correction
 	 if not correction then
