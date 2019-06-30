@@ -5,15 +5,17 @@ local Sounds = COMMON.class("Sounds")
 
 --gate https://www.defold.com/manuals/sound/
 function Sounds:initialize()
-	self.gate_time = 0.3
+	self.gate_time = 0.1
 	self.gate_sounds = {}
 	self.sounds = {
 		game = {
 			object_health_pickup = {url = msg.url("game:/sounds#object_health_pickup"),name = "object_health_pickup"},
+			object_ammo_pickup = {url = msg.url("game:/sounds#object_ammo_pickup"),name = "object_ammo_pickup"},
 			player_hurt_1 = {url = msg.url("game:/sounds#player_hurt_1"),name ="player_hurt_1"},
 			player_hurt_2 = {url = msg.url("game:/sounds#player_hurt_2"),name ="player_hurt_2"},
 			player_hurt_3 = {url = msg.url("game:/sounds#player_hurt_3"),name ="player_hurt_3"},
 			weapon_pistol_shoot = {url = msg.url("game:/sounds#weapon_pistol_shoot"),name ="weapon_pistol_shoot"},
+			weapon_pistol_empty = {url = msg.url("game:/sounds#weapon_pistol_empty"),name ="weapon_pistol_empty"},
 		}
 	}
 end

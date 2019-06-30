@@ -85,10 +85,17 @@ end
 function M:player_shoot()
 	if self.player_shooting then return end
 	self.player_shooting = true
-	SOUNDS:play_sound(SOUNDS.sounds.game.weapon_pistol_shoot)
-	sprite.play_flipbook("/weapon#sprite",hash("pistol_shoot"),function ()
-		self.player_shooting = false
-	end)
+	local can_shoot = self.level.player.ammo.pistol > 0
+	SOUNDS:play_sound(can_shoot and SOUNDS.sounds.game.weapon_pistol_shoot or SOUNDS.sounds.game.weapon_pistol_empty)
+	if can_shoot then
+		self.level.player.ammo.pistol = self.level.player.ammo.pistol - 1
+		sprite.play_flipbook("/weapon#sprite",hash("pistol_shoot"),function ()
+			self.player_shooting = false
+		end)
+	else
+		timer.delay(0.3,false,function ()self.player_shooting = false end)
+	end
+
 end
 
 function M:weapon_set_bob_offset(offset)

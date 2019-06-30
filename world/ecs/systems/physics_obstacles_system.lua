@@ -1,6 +1,7 @@
 local ECS = require 'libs.ecs'
 local COMMON = require "libs.common"
 local ENTITIES = require "world.ecs.entities.entities"
+local SOUNDS = require "libs.sounds"
 ---@class PhysicsSystem:ECSSystem
 local System = ECS.processingSystem()
 System.filter = ECS.requireAll("physics","physics_message_id","physics_message","physics_source")
@@ -24,9 +25,11 @@ function System:handle_pickup(e)
 		e.pickuped = true
 		player.hp = math.min(player.hp + 15,100)
 		self.world:removeEntity(e)
+		SOUNDS:play_sound(SOUNDS.sounds.game.object_health_pickup)
 	elseif key == "ammo_pistol" then
 		e.pickuped = true
 		player.ammo.pistol = player.ammo.pistol + 10
+		SOUNDS:play_sound(SOUNDS.sounds.game.object_ammo_pickup)
 		self.world:removeEntity(e)
 	end
 end

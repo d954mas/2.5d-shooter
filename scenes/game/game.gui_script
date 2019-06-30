@@ -1,0 +1,25 @@
+local COMMON = require "libs.common"
+local WORLD = require "world.world"
+
+local Script = COMMON.new_n28s()
+
+function Script:init()
+	self:bind_vh()
+end
+
+function Script:bind_vh()
+	self.vh = {
+		lbl_hp = gui.get_node("hp_node/lbl"),
+		lbl_ammo = gui.get_node("ammo_node/lbl")
+	}
+end
+
+function Script:update(dt)
+	gui.set_text(self.vh.lbl_hp,WORLD.level.player.hp )
+	gui.set_text(self.vh.lbl_ammo,WORLD.level.player.ammo.pistol )
+end
+
+
+COMMON.N28S.register(Script)
+
+

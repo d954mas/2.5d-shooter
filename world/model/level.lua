@@ -54,8 +54,8 @@ function Level:prepare()
 		local e = ENTITIES.create_object_from_tiled(object)
 		if e then self.ecs_world.ecs:addEntity(e) end
 	end
-	--self:create_enemies()
-	--self:create_spawners()
+	self:create_enemies()
+	self:create_spawners()
 	self:create_pickups()
 end
 

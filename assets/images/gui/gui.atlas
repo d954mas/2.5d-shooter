@@ -7,6 +7,12 @@ images {
 images {
   image: "/assets/images/gui/sight.png"
 }
+images {
+  image: "/assets/images/gui/ammo_pistol_icon.png"
+}
+images {
+  image: "/assets/images/gui/hp_icon.png"
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0
