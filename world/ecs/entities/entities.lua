@@ -42,6 +42,7 @@ local TAG = "ENTITIES"
 ---@field weapon Entity
 ---@field ammo Ammo
 ---@field hp number
+---@field pickuped boolean pickup already get. Need because can have multiple responses
 
 local HASH_SPRITE = hash("sprite")
 local OBJECT_HASHES = {
@@ -65,9 +66,10 @@ local function url_to_key(url)
 	return url.path
 end
 
-function Entities.get_entity_for_url(url)
+---@param ignore_warning boolean pickup can try get entity while go is already removed. Something with physics
+function Entities.get_entity_for_url(url,ignore_warning)
 	local e =  Entities.url_to_entity[url_to_key(url)]
-	if not e then
+	if not e and not ignore_warning then
 		COMMON.w("no entity for url:" .. url,TAG)
 	end
 	return e
@@ -89,6 +91,10 @@ function Entities.on_entity_removed(e)
 	if e.enemy then
 		local idx = assert(COMMON.LUME.find(Entities.enemies,e),"unknown enemy")
 		table.remove(Entities.enemies,idx)
+	end
+
+	if e.url_go then
+		go.delete(e.url_go,true)
 	end
 end
 

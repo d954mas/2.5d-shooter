@@ -6,10 +6,29 @@ local System = ECS.processingSystem()
 System.filter = ECS.requireAll("physics","physics_message_id","physics_message","physics_source")
 ---@param e Entity
 function System:process(e, dt)
-	if e.physics_message_id == COMMON.HASHES.MSG_PHYSICS_CONTACT then
+	if e.physics_message_id == COMMON.HASHES.MSG_PHYSICS_CONTACT and e.physics_message.group == hash("obstacle") then
 		self:handle_geometry(e,ENTITIES.get_entity_for_url(e.physics_source))
+	elseif e.physics_message_id == COMMON.HASHES.MSG_PHYSICS_COLLISION and  e.physics_message.group == hash("pickup") then
+		self:handle_pickup(ENTITIES.get_entity_for_url(msg.url(e.physics_message.other_id),true))
 	end
 	self.world:removeEntity(e)
+end
+
+---@param e Entity
+function System:handle_pickup(e)
+	if not e or  e.pickuped then return end
+	local tile = ENTITIES.world.level.data.id_to_tile[e.tile_id]
+	local key = tile.properties.pickup_key
+	local player = self.world.world.level.player
+	if key == "hp" and player.hp < 100 then
+		e.pickuped = true
+		player.hp = math.min(player.hp + 15,100)
+		self.world:removeEntity(e)
+	elseif key == "ammo_pistol" then
+		e.pickuped = true
+		player.ammo.pistol = player.ammo.pistol + 10
+		self.world:removeEntity(e)
+	end
 end
 
  ---@param e Entity
