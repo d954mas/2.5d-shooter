@@ -15,6 +15,10 @@ local SOUNDS = require "libs.sounds"
 local M = COMMON.class("World")
 
 function M:reset()
+	if self.level then	self.level:dispose() end
+	if self.level_view then self.level_view:dispose() end
+	self.level = nil
+	self.level_view = nil
 end
 
 function M:initialize()
@@ -73,12 +77,8 @@ end
 
 function M:dispose()
 	self:reset()
-	self.subscriptions:unsubscribe()
+	if self.subscriptions then	self.subscriptions:unsubscribe() end
 	self.subscriptions = nil
-	if self.level_view then
-		self.level_view:dispose()
-		self.level_view = nil
-	end
 end
 
 --TODO MOVE TO ENTITY WEAPON
@@ -109,8 +109,8 @@ function M:player_shoot()
 	else
 		timer.delay(0.3,false,function ()self.player_shooting = false end)
 	end
-
 end
+
 
 function M:weapon_set_bob_offset(offset)
 	offset = offset * 200 - 10 -- -10 is dy to hide weapon bottom edge

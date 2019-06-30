@@ -24,7 +24,8 @@ function Scene:on_hide()
 
 end
 
-function Scene:final(go_self)
+function Scene:on_final(go_self)
+    WORLD:dispose()
 end
 
 function Scene:on_update(dt)

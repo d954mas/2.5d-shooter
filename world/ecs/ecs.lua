@@ -13,6 +13,7 @@ function EcsWorld:initialize()
 end
 
 function EcsWorld:_init_systems()
+	SYSTEMS.load()
 	self.ecs:addSystem(SYSTEMS.UpdateAISystem)
 	self.ecs:addSystem(SYSTEMS.InputSystem)
 	self.ecs:addSystem(SYSTEMS.PhysicsResetCorrectionsSystem)
@@ -39,7 +40,7 @@ function EcsWorld:update(dt)
 end
 
 function EcsWorld:clear()
-	self.ecs:clearEntities()
+	self.ecs:clear()
 end
 
 return EcsWorld

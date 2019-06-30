@@ -15,8 +15,10 @@ function Script:bind_vh()
 end
 
 function Script:update(dt)
-	gui.set_text(self.vh.lbl_hp,WORLD.level.player.hp )
-	gui.set_text(self.vh.lbl_ammo,WORLD.level.player.ammo.pistol )
+	if WORLD.level then
+		gui.set_text(self.vh.lbl_hp,WORLD.level.player.hp )
+		gui.set_text(self.vh.lbl_ammo,WORLD.level.player.ammo.pistol )
+	end
 end
 
 
