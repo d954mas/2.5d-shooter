@@ -16,6 +16,7 @@ function Sounds:initialize()
 			player_hurt_3 = {url = msg.url("game:/sounds#player_hurt_3"),name ="player_hurt_3"},
 			weapon_pistol_shoot = {url = msg.url("game:/sounds#weapon_pistol_shoot"),name ="weapon_pistol_shoot"},
 			weapon_pistol_empty = {url = msg.url("game:/sounds#weapon_pistol_empty"),name ="weapon_pistol_empty"},
+			monster_blob_die = {url = msg.url("game:/sounds#monster_blob_die"),name ="monster_blob_die"},
 		}
 	}
 end

@@ -81,7 +81,7 @@ function M:dispose()
 	end
 end
 
-
+--TODO MOVE TO ENTITY WEAPON
 function M:player_shoot()
 	if self.player_shooting then return end
 	self.player_shooting = true
@@ -92,6 +92,20 @@ function M:player_shoot()
 		sprite.play_flipbook("/weapon#sprite",hash("pistol_shoot"),function ()
 			self.player_shooting = false
 		end)
+		local player = self.level.player
+		local start_point = vmath.vector3(self.level.player.position.x,0.5,-self.level.player.position.y)
+		local direction =  vmath.rotate(vmath.quat_rotation_y(player.angle.x),vmath.vector3(0,0,-1))
+		local end_point = start_point +  direction * 8
+		local raycast = physics.raycast(start_point,end_point,{hash("enemy")})
+		if raycast then
+			timer.delay(0.1,false,function ()
+				--kill enemy
+				---@type ENTITIES
+				local entities = requiref("world.ecs.entities.entities")
+				self.level.ecs_world.ecs:removeEntity(entities.get_entity_for_url(msg.url(raycast.id)))
+				SOUNDS:play_sound(SOUNDS.sounds.game.monster_blob_die)
+			end)
+		end
 	else
 		timer.delay(0.3,false,function ()self.player_shooting = false end)
 	end
