@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-up" width="32" height="32" tilewidth="64" tileheight="64" infinite="0" nextlayerid="9" nextobjectid="76">
+<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-up" width="32" height="32" tilewidth="64" tileheight="64" infinite="0" nextlayerid="10" nextobjectid="90">
  <tileset firstgid="1" source="../tilesets/main.tsx"/>
  <tileset firstgid="37" source="../tilesets/objects.tsx"/>
  <tileset firstgid="50" source="../tilesets/lights.tsx"/>
  <tileset firstgid="210" source="../tilesets/enemies.tsx"/>
+ <tileset firstgid="213" source="../tilesets/pickups.tsx"/>
+ <tileset firstgid="216" source="../tilesets/pickups.tsx"/>
  <layer id="2" name="floor" width="32" height="32">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -51,63 +53,30 @@
   <object id="74" gid="211" x="1088" y="384" width="64" height="64"/>
   <object id="75" gid="212" x="0" y="64" width="64" height="64"/>
  </objectgroup>
- <objectgroup id="5" name="objects" visible="0">
+ <objectgroup id="5" name="objects">
   <object id="5" gid="38" x="192" y="448" width="64" height="64">
    <properties>
     <property name="spawn_point" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="6" gid="42" x="192" y="320" width="64" height="64"/>
-  <object id="7" gid="42" x="192" y="256" width="64" height="64"/>
-  <object id="8" gid="42" x="256" y="256" width="64" height="64"/>
-  <object id="9" gid="42" x="256" y="320" width="64" height="64"/>
-  <object id="10" gid="42" x="320" y="320" width="64" height="64"/>
-  <object id="11" gid="42" x="320" y="256" width="64" height="64"/>
-  <object id="12" gid="42" x="320" y="192" width="64" height="64"/>
-  <object id="13" gid="42" x="384" y="192" width="64" height="64"/>
-  <object id="14" gid="42" x="384" y="256" width="64" height="64"/>
-  <object id="15" gid="42" x="384" y="320" width="64" height="64"/>
-  <object id="16" gid="40" x="448" y="320" width="64" height="62"/>
-  <object id="17" gid="40" x="448" y="256" width="64" height="62"/>
-  <object id="18" gid="40" x="512" y="256" width="64" height="62"/>
-  <object id="19" gid="40" x="512" y="320" width="64" height="62"/>
-  <object id="20" gid="40" x="512" y="192" width="64" height="62"/>
-  <object id="21" gid="40" x="576" y="192" width="64" height="62"/>
-  <object id="22" gid="40" x="576" y="256" width="64" height="62"/>
-  <object id="23" gid="40" x="576" y="320" width="64" height="62"/>
-  <object id="24" gid="43" x="640" y="256" width="25" height="13"/>
-  <object id="25" gid="43" x="704" y="256" width="25" height="13"/>
-  <object id="26" gid="43" x="704" y="320" width="25" height="13"/>
-  <object id="27" gid="43" x="640" y="320" width="25" height="13"/>
   <object id="28" gid="43" x="704" y="384" width="25" height="13"/>
   <object id="29" gid="43" x="704" y="384" width="25" height="13"/>
-  <object id="30" gid="43" x="640" y="384" width="25" height="13"/>
   <object id="31" gid="43" x="704" y="448" width="25" height="13"/>
-  <object id="32" gid="43" x="704" y="448" width="25" height="13"/>
-  <object id="33" gid="43" x="640" y="448" width="25" height="13"/>
-  <object id="34" gid="43" x="704" y="512" width="25" height="13"/>
   <object id="35" gid="43" x="640" y="512" width="25" height="13"/>
-  <object id="36" gid="43" x="640" y="512" width="25" height="13"/>
-  <object id="37" gid="43" x="640" y="576" width="25" height="13"/>
-  <object id="38" gid="43" x="704" y="576" width="25" height="13"/>
-  <object id="39" gid="43" x="576" y="576" width="25" height="13"/>
-  <object id="40" gid="43" x="576" y="512" width="25" height="13"/>
-  <object id="41" gid="43" x="512" y="512" width="25" height="13"/>
-  <object id="42" gid="43" x="512" y="576" width="25" height="13"/>
-  <object id="43" gid="43" x="448" y="576" width="25" height="13"/>
   <object id="44" gid="43" x="448" y="512" width="25" height="13"/>
-  <object id="45" gid="43" x="448" y="384" width="25" height="13"/>
-  <object id="46" gid="43" x="448" y="448" width="25" height="13"/>
-  <object id="50" gid="43" x="384" y="512" width="25" height="13"/>
-  <object id="51" gid="43" x="384" y="576" width="25" height="13"/>
-  <object id="52" gid="43" x="320" y="576" width="25" height="13"/>
-  <object id="53" gid="43" x="320" y="512" width="25" height="13"/>
   <object id="54" gid="43" x="256" y="512" width="25" height="13"/>
-  <object id="55" gid="43" x="256" y="576" width="25" height="13"/>
   <object id="60" gid="46" x="512" y="704" width="86" height="25"/>
   <object id="61" gid="46" x="448" y="704" width="86" height="25"/>
   <object id="62" gid="46" x="384" y="704" width="86" height="25"/>
   <object id="66" gid="43" x="448" y="768" width="25" height="13"/>
+ </objectgroup>
+ <objectgroup id="9" name="pickups" visible="0">
+  <object id="84" gid="217" x="320" y="192" width="32" height="32"/>
+  <object id="85" gid="217" x="384" y="192" width="32" height="32"/>
+  <object id="86" gid="218" x="512" y="192" width="32" height="32"/>
+  <object id="87" gid="218" x="576" y="192" width="32" height="32"/>
+  <object id="88" gid="218" x="704" y="256" width="32" height="32"/>
+  <object id="89" gid="217" x="192" y="256" width="32" height="32"/>
  </objectgroup>
  <layer id="3" name="walls" width="32" height="32">
   <data encoding="csv">

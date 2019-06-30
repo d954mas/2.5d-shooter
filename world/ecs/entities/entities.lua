@@ -1,6 +1,11 @@
 local COMMON = require "libs.common"
 local AI = require "world.ai.ai"
 local TAG = "ENTITIES"
+
+---@class Ammo
+---@field pistol number
+
+
 ---@class Entity
 ---@field tag string tag used for help when debug
 ---@field player boolean true if player entity
@@ -34,14 +39,18 @@ local TAG = "ENTITIES"
 ---@field camera_bob_speed number
 ---@field camera_bob_height number
 ---@field camera_bob_offset number
+---@field weapon Entity
+---@field ammo Ammo
+---@field hp number
 
 local HASH_SPRITE = hash("sprite")
 local OBJECT_HASHES = {
 	root = hash("/root"),
-	sprite = hash("/sprite")
+	sprite = hash("/sprite"),
 }
 
 local FACTORY_ENEMY_BLOB_URL = msg.url("game:/factories#factory_enemy_blob")
+local FACTORY_PICKUP_URL = msg.url("game:/factories#factory_pickup")
 
 ---@class ENTITIES
 local Entities = {}
@@ -109,6 +118,7 @@ function Entities.on_entity_updated(e)
 	end
 end
 
+---@param world World
 function Entities.set_world(world)
 	Entities.world = assert(world)
 end
@@ -133,6 +143,10 @@ function Entities.create_player(pos)
 	e.camera_bob_height = 0.012
 	e.camera_bob_speed = 4
 	e.camera_bob_offset = 0
+	e.hp = 100
+	e.ammo = {
+		pistol = 20
+	}
 	return e
 end
 
@@ -203,6 +217,26 @@ function Entities.create_object_from_tiled(object)
 		end
 		return e
 	end
+end
+
+function Entities.create_pickup(pos,tile_object)
+	pos = pos or vmath.vector3(tile_object.cell_xf + 0.5, tile_object.cell_yf+0.5,0)
+	local e = {}
+	e.tile_id = tile_object.tile_id
+	e.position= pos
+	local url = factory.create(FACTORY_PICKUP_URL,vmath.vector3(e.position.x,0.5,e.position.y),vmath.quat_rotation_z(0),nil,1/128)
+	e.url_go = msg.url(url)
+	e.url_sprite = msg.url(url)
+	e.url_sprite.fragment = HASH_SPRITE
+	if tile_object.properties.look_at_player then
+		e.rotation_look_at_player = true
+	end
+	if tile_object.properties.global_rotation then
+		e.rotation_global = true
+	end
+	local tile = Entities.world.level.data.id_to_tile[e.tile_id]
+	sprite.play_flipbook(e.url_sprite,hash(tile.image))
+	return e
 end
 
 

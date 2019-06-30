@@ -1,4 +1,11 @@
 {
+  "properties":  {},
+  "spawn_point":{
+    "y":2,
+    "x":2
+  },
+  "enemies":  {},
+  "objects":  {},
   "id_to_tile":[
     null,
     {
@@ -565,12 +572,6 @@
       "width":64
     }
   ],
-  "spawn_point":{
-    "y":2,
-    "x":2
-  },
-  "enemies":  {},
-  "spawners":  {},
   "tilesets":[
     {
       "name":"main",
@@ -581,7 +582,7 @@
       "firstgid":37
     }
   ],
-  "objects":  {},
+  "spawners":  {},
   "cells":[
     [
       {
@@ -7932,7 +7933,7 @@
     4294967295,
     4294967295
   ],
-  "properties":  {},
+  "pickups":  {},
   "size":{
     "y":20,
     "x":20

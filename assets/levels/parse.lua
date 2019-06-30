@@ -114,6 +114,7 @@ local function parse_level(path,result_path)
 	data.tilesets = {}
 	data.id_to_tile = {}
 	data.objects = {}
+	data.pickups = {}
 	data.enemies = {}
 	data.spawners = {}
 	for _, tileset in ipairs(tiled.tilesets)do
@@ -186,6 +187,7 @@ local function parse_level(path,result_path)
 					end
 				end
 			end
+			assert(not object_data.properties.pickup,"pickup on objects layer")
 			table.insert(data.objects,object_data)
 		end
 	end
@@ -212,7 +214,26 @@ local function parse_level(path,result_path)
 		else
 			table.insert(data.enemies,object_data)
 		end
+	end
 
+	local pickups = assert(get_layer(tiled,"pickups"),"no pickups layer").objects
+	for _,object in ipairs(pickups)do
+		local object_data = {
+			tile_id = object.gid,
+			properties = object.properties,
+			cell_x = object.cell_x, cell_y = object.cell_y,
+			cell_xf = object.cell_xf, cell_yf = object.cell_yf
+		}
+		local tile = data.id_to_tile[object_data.tile_id]
+		if tile then
+			for k,v in pairs(tile.properties)do
+				if not object_data.properties[k]	then
+					object_data.properties[k] = v
+				end
+			end
+		end
+		assert(object_data.properties.pickup,"should be enemy:" .. object.gid)
+		table.insert(data.pickups,object_data)
 	end
 	--region validations
 	assert(data.spawn_point,"no spawn point")

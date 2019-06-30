@@ -56,6 +56,7 @@ function Level:prepare()
 	end
 	self:create_enemies()
 	self:create_spawners()
+	self:create_pickups()
 end
 
 function Level:create_enemies()
@@ -73,6 +74,12 @@ function Level:create_spawners()
 		else
 			self.ecs_world.ecs:addEntity(f(spawner))
 		end
+	end
+end
+
+function Level:create_pickups()
+	for _, pickup in ipairs(self.data.pickups) do
+		self.ecs_world.ecs:addEntity(ENTITIES.create_pickup(nil,pickup))
 	end
 end
 
