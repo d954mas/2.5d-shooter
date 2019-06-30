@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/levels/sources/test_level.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/sources/test_level.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/entities/entities.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/entities/entities.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/systems/physics_obstacles_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/physics_obstacles_system.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/world.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/world.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init_controller.script" beforeDir="false" afterPath="$PROJECT_DIR$/init_controller.script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/my.render_script" beforeDir="false" afterPath="$PROJECT_DIR$/render/my.render_script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/gui/debug/debug.gui" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/gui/debug/debug.gui" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,10 +19,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/world/world.lua">
+        <entry file="file://$PROJECT_DIR$/init_controller.script">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="86" column="24" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
+            <state relative-caret-position="537">
+              <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -38,8 +38,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tile_id</find>
-      <find>em</find>
       <find>pio</find>
       <find>pic</find>
       <find>pickup</find>
@@ -68,6 +66,8 @@
       <find>Enti</find>
       <find>w</find>
       <find>self.</find>
+      <find>self.player_shooting</find>
+      <find>init+c</find>
     </findStrings>
     <replaceStrings>
       <replace>MAIN_CAMERA</replace>
@@ -128,7 +128,6 @@
         <option value="$PROJECT_DIR$/tests/tests.script" />
         <option value="$PROJECT_DIR$/tests/test_pathfinding.lua" />
         <option value="$PROJECT_DIR$/scenes/game/gui/debug/debug.gui_script" />
-        <option value="$PROJECT_DIR$/render/my.render_script" />
         <option value="$PROJECT_DIR$/world/ai/ai.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems/draw_walls_system.lua" />
         <option value="$PROJECT_DIR$/world/ai/ai_spawner_enemy.lua" />
@@ -140,7 +139,6 @@
         <option value="$PROJECT_DIR$/scenes/game/game.gui_script" />
         <option value="$PROJECT_DIR$/world/ecs/systems/physics_obstacles_system.lua" />
         <option value="$PROJECT_DIR$/world/model/level.lua" />
-        <option value="$PROJECT_DIR$/init_controller.script" />
         <option value="$PROJECT_DIR$/scenes/game/game_scene.lua" />
         <option value="$PROJECT_DIR$/libs/ecs.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems.lua" />
@@ -151,6 +149,8 @@
         <option value="$PROJECT_DIR$/world/ai/ai_blob.lua" />
         <option value="$PROJECT_DIR$/world/ecs/entities/entities.lua" />
         <option value="$PROJECT_DIR$/world/world.lua" />
+        <option value="$PROJECT_DIR$/render/my.render_script" />
+        <option value="$PROJECT_DIR$/init_controller.script" />
       </list>
     </option>
   </component>
@@ -281,12 +281,12 @@
       <workItem from="1561313162804" duration="3704000" />
       <workItem from="1561318671631" duration="7124000" />
       <workItem from="1561409274796" duration="16410000" />
-      <workItem from="1561833548442" duration="29079000" />
+      <workItem from="1561833548442" duration="29451000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222188000" />
+    <option name="totallyTimeSpent" value="222560000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -463,13 +463,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/render/my.render_script">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="197" column="29" selection-start-line="197" selection-start-column="29" selection-end-line="198" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_PLUGINS_DIR$/EmmyLua/lib/EmmyLua-1.2.7-IDEA182.jar!/std/Lua51/builtin.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -633,13 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/init_controller.script">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="38" column="3" lean-forward="true" selection-start-line="38" selection-start-column="3" selection-end-line="38" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/render_helper.lua">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -743,8 +729,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/world/world.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="86" column="24" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
+        <state relative-caret-position="174">
+          <caret line="93" column="53" lean-forward="true" selection-start-line="93" selection-start-column="53" selection-end-line="93" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/render/my.render_script">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="215" selection-start-line="215" selection-end-line="215" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/init_controller.script">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
         </state>
       </provider>
     </entry>

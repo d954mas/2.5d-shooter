@@ -227,7 +227,7 @@ function Render:update(dt)
 
     self:draw_3d()
     self:draw_sprites()
-    self:draw_light_map(true)
+   -- self:draw_light_map(true)
     self:draw_gui()
 end
 
