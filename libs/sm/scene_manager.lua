@@ -141,7 +141,7 @@ local function show_new_scene(self, old_scene, new_scene, input,options)
     COMMON.i("acquire input for scene:" .. new_scene._name, TAG)
     msg.post(new_scene._url,COMMON.HASHES.INPUT_ACQUIRE_FOCUS)
     self.co = nil
-    COMMON.i(string.format("scene changed from:%s to:%s",old_scene and old_scene._name or nil
+    COMMON.i(string.format("scene changed from:%s to:%s",old_scene and old_scene._name or tostring(nil)
         ,new_scene._name), TAG)
     COMMON.i("time:" .. (os.clock() - start_time),TAG)
 end

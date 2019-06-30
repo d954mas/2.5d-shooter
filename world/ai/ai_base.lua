@@ -34,7 +34,7 @@ function AI:change_state(new_state)
 end
 
 function AI:state_changed(old)
-	COMMON.i(string.format("state changed from:%s to:%s",old,self.state))
+	COMMON.i(string.format("state changed from:%s to:%s",tostring(old),self.state))
 end
 
 ---@return NativeCellData[]

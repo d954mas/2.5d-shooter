@@ -24,7 +24,7 @@ update_frequency = 60
 [physics]
 scale = 1.0
 type = 3D
-debug = 1
+debug = 0
 debug_alpha = 0.5
 gravity_z = 0.0
 debug_scale = 1.0
