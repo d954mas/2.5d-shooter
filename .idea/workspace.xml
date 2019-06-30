@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/world/ai/ai_base.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ai/ai_base.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/sounds.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/sounds.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/world/ai/ai_blob.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ai/ai_blob.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/world/world.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/world.lua" afterDir="false" />
     </list>
@@ -18,10 +18,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/world/world.lua">
+        <entry file="file://$PROJECT_DIR$/world/ai/ai_blob.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="123" column="42" selection-start-line="123" selection-start-column="42" selection-end-line="123" selection-end-column="42" />
+            <state relative-caret-position="457">
+              <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -53,7 +53,6 @@
       <find>physics_message</find>
       <find>.position.y</find>
       <find>sou</find>
-      <find>w</find>
       <find>e</find>
       <find>ga</find>
       <find>Lock</find>
@@ -67,6 +66,7 @@
       <find>System,</find>
       <find>System</find>
       <find>o</find>
+      <find>w</find>
     </findStrings>
     <replaceStrings>
       <replace>MAIN_CAMERA</replace>
@@ -140,7 +140,6 @@
         <option value="$PROJECT_DIR$/world/ecs/systems/physics_obstacles_system.lua" />
         <option value="$PROJECT_DIR$/world/ecs/entities/entities.lua" />
         <option value="$PROJECT_DIR$/world/model/level.lua" />
-        <option value="$PROJECT_DIR$/libs/sounds.lua" />
         <option value="$PROJECT_DIR$/init_controller.script" />
         <option value="$PROJECT_DIR$/scenes/game/game_scene.lua" />
         <option value="$PROJECT_DIR$/libs/ecs.lua" />
@@ -148,8 +147,9 @@
         <option value="$PROJECT_DIR$/world/ecs/ecs.lua" />
         <option value="$PROJECT_DIR$/libs/cursor_helper.lua" />
         <option value="$PROJECT_DIR$/world/ai/ai_base.lua" />
-        <option value="$PROJECT_DIR$/world/ai/ai_blob.lua" />
+        <option value="$PROJECT_DIR$/libs/sounds.lua" />
         <option value="$PROJECT_DIR$/world/world.lua" />
+        <option value="$PROJECT_DIR$/world/ai/ai_blob.lua" />
       </list>
     </option>
   </component>
@@ -280,12 +280,12 @@
       <workItem from="1561313162804" duration="3704000" />
       <workItem from="1561318671631" duration="7124000" />
       <workItem from="1561409274796" duration="16410000" />
-      <workItem from="1561833548442" duration="27155000" />
+      <workItem from="1561833548442" duration="27371000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220264000" />
+    <option name="totallyTimeSpent" value="220480000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -639,13 +639,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/sounds.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="105" lean-forward="true" selection-start-line="18" selection-start-column="105" selection-end-line="18" selection-end-column="105" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/init_controller.script">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
@@ -733,17 +726,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/world/ai/ai_blob.lua">
+    <entry file="file://$PROJECT_DIR$/libs/sounds.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
+        <state relative-caret-position="276">
+          <caret line="26" column="39" lean-forward="true" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/world/world.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="123" column="42" selection-start-line="123" selection-start-column="42" selection-end-line="123" selection-end-column="42" />
+        <state relative-caret-position="228">
+          <caret line="114" column="82" lean-forward="true" selection-start-line="114" selection-start-column="82" selection-end-line="114" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/ai/ai_blob.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
         </state>
       </provider>
     </entry>

@@ -38,11 +38,11 @@ function AI:update(dt)
 			self.e.velocity.y = 0
 		end
 		local dist_to_player = self:get_distance_to_player()
-		if dist_to_player < 0.75 then
+		if dist_to_player < 1.1 then
 			self.attack = true
 			timer.delay(0.5,false,function()
 				self.attack = false
-				if self:get_distance_to_player() < 0.75 then
+				if self:get_distance_to_player() < 1.1 then
 					self.world:attack_player()
 				end
 			end)

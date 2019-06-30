@@ -28,7 +28,11 @@ function Sounds:update(dt)
 			self.gate_sounds[k] = nil
 		end
 	end
+end
 
+function Sounds:play_sound_player_hurt()
+	local sound = self.sounds.game["player_hurt_" .. math.random(3)]
+	self:play_sound(sound)
 end
 
 function Sounds:play_sound(sound_obj)
