@@ -111,6 +111,22 @@ function M:player_shoot()
 	end
 end
 
+function M:attack_player()
+	pprint(self.level.player.ignore_damage)
+	if self.level.player.ignore_damage or self.level.player.hp < 0 then return end
+	self.level.player.hp = self.level.player.hp - 10
+	self.level.player.ignore_damage = true
+	timer.delay(1,false,function ()self.level.player.ignore_damage  = false end)
+	if self.level.player.hp < 0 then
+		self.level.player.hp = 0
+		if not self.level.game_over then
+			self.level.game_over = true
+			require("libs.sm.sm"):reload()
+		end
+
+	end
+end
+
 
 function M:weapon_set_bob_offset(offset)
 	offset = offset * 200 - 10 -- -10 is dy to hide weapon bottom edge

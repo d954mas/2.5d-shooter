@@ -72,5 +72,9 @@ function AI:get_player_entity()
 	return self.world.level.player
 end
 
+function AI:get_distance_to_player()
+	return vmath.length(self.world.level.player.position - self.e.position)
+end
+
 
 return AI
