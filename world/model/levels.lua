@@ -20,4 +20,4 @@ end
 
 
 
-return COMMON.read_only(M)
+return M
