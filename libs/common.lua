@@ -1,8 +1,6 @@
 local EVENT_BUS = require "libs.event_bus"
 
 local M = {}
-
-
 M.HASHES = require "libs.hashes"
 M.MSG = require "libs.msg_receiver"
 M.CLASS = require "libs.middleclass"
@@ -32,6 +30,15 @@ end
 
 --region log
 M.LOG = require "libs.log"
+
+function M.init_log()
+	M.LOG.set_appname("game")
+	M.LOG.toggle_print()
+	M.LOG.override_print()
+	M.LOG.add_to_blacklist("Sound")
+	M.LOG.use_tag_blacklist = true
+end
+M.init_log()
 
 function M.t(message, tag)
 	M.LOG.t(message, tag,2)
@@ -185,15 +192,23 @@ function M.coroutine_resume(cor,...)
 	end
 end
 
-function M.empty_ne(name)
+--generate empty table for native extension.
+--use it on system that not supported
+function M.empty_ne(name,ignore_log)
 	if not _G[name] then
 		local t = {}
 		local mt = {}
 		local f = function() end
-		function mt.__index()
+		function mt.__index(_, k)
+			if not ignore_log then
+				M.w("NE","index empty ne:" .. k)
+			end
 			return f
 		end
-		function mt.__newindex()
+		function mt.__newindex(_,k,_)
+			if not ignore_log then
+				M.w("NE","newindex empty ne:" .. k)
+			end
 			return
 		end
 		setmetatable(t, mt)

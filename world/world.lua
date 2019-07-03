@@ -24,7 +24,7 @@ end
 function M:initialize()
 	self.rx = RX.Subject()
 	self.state = STATE
-	self.autosave = true
+	self.autosave = false
 	self.autosave_dt = 0
 	self.autosave_time = 5
 	self:reset()
@@ -63,7 +63,7 @@ end
 
 function M:save()
 	--COMMON.i("save state",TAG)--pprint(state)
-	sys.save(sys.get_save_file("world","data"),  {state = self.state:save()})
+--	sys.save(sys.get_save_file("world","data"),  {state = self.state:save()})
 end
 
 function M:load()

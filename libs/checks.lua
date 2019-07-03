@@ -1,54 +1,64 @@
 #!/usr/bin/env tarantool
 
-local function check_plain_type(value, expected_type)
-	if type(value) == expected_type then
-		return true
-	end
+local _qualifiers_cache = {
+	-- ['?type1|type2'] = {
+	--     [1] = 'type1',
+	--     [2] = 'type2',
+	--     optional = true,
+	-- },
+}
 
-	local mt = getmetatable(value)
-	local value_metatype = mt and mt.__type
-	if value_metatype == expected_type then
-		return true
-	end
-
-	local checker = _G.checkers[expected_type]
-	if type(checker) == 'function' and checker(value) == true then
-		return true
-	end
-
-	return false
-end
-
-local function check_multi_type(value, expected_type)
-	local _expected_type = expected_type
-
-	-- 1. Check optional type.
+local function check_string_type(value, expected_type)
+	-- 1. Check any value.
 	if expected_type == '?' then
 		return true
-	elseif expected_type:startswith('?') then
-		if value == nil then
-			return true
-		end
-		expected_type = expected_type:sub(2)
 	end
 
-	-- 2. Check exact type match
-	if check_plain_type(value, expected_type) then
+	-- 2. Parse type qualifier
+	local qualifier = _qualifiers_cache[expected_type]
+	if qualifier == nil then
+		qualifier = { optional = false }
+
+		for typ in expected_type:gmatch('[^|]+') do
+			if typ:startswith('?') then
+				qualifier.optional = true
+				typ = typ:sub(2)
+			end
+
+			table.insert(qualifier, typ)
+		end
+
+		_qualifiers_cache[expected_type] = qualifier
+	end
+
+	-- 3. Check optional argument
+	if qualifier.optional and value == nil then
 		return true
 	end
 
-	-- 3. Check multiple types.
-	for typ in expected_type:gmatch('[^|]+') do
-		if check_plain_type(value, typ) then
+	-- 4. Check types
+	for _, typ in ipairs(qualifier) do
+		if type(value) == typ then
+			return true
+		end
+
+		local mt = getmetatable(value)
+		local value_metatype = mt and mt.__type
+		if value_metatype == typ then
+			return true
+		end
+
+		local checker = _G.checkers[typ]
+		if type(checker) == 'function' and checker(value) == true then
 			return true
 		end
 	end
 
-	-- 4. Nothing works, throw error
+	-- 5. Nothing works, return an error
 	return nil, string.format(
 			'bad argument %s to %s (%s expected, got %s)',
 	-- argname and function name are formatted by the caller
-			'%s', '%s', _expected_type, type(value)
+			'%s', '%s', expected_type, type(value)
 	)
 end
 
@@ -63,18 +73,27 @@ local function keyname_fmt(key)
 end
 
 local function check_table_type(tbl, expected_fields)
+	if tbl == nil then
+		tbl = nil
+	end
+
 	for expected_key, expected_type in pairs(expected_fields) do
 		local value = tbl and tbl[expected_key]
 
 		if type(expected_type) == 'string' then
-			local ok, efmt = check_multi_type(value, expected_type)
+			local ok, efmt = check_string_type(value, expected_type)
 			if not ok then
 				return nil, string.format(efmt, '%s'..keyname_fmt(expected_key), '%s')
 			end
 		elseif type(expected_type) == 'table' then
-			local ok, efmt = check_multi_type(value, '?table')
+			local ok, efmt = check_string_type(value, '?table')
 			if not ok then
 				return nil, string.format(efmt, '%s'..keyname_fmt(expected_key), '%s')
+			end
+
+			if _G._checks_v2_compatible and value == nil then
+				value = {}
+				tbl[expected_key] = value
 			end
 
 			local ok, efmt = check_table_type(value, expected_type)
@@ -133,7 +152,7 @@ local function checks(...)
 			local err = 'checks: excess check, absent argument'
 			error(err, level)
 		elseif type(expected_type) == 'string' then
-			local ok, efmt = check_multi_type(value, expected_type)
+			local ok, efmt = check_string_type(value, expected_type)
 			if not ok then
 				local info = debug.getinfo(level, 'nl')
 				local err = string.format(efmt, '#'..tostring(i), info.name)
@@ -141,11 +160,16 @@ local function checks(...)
 			end
 
 		elseif type(expected_type) == 'table' then
-			local ok, efmt = check_multi_type(value, '?table')
+			local ok, efmt = check_string_type(value, '?table')
 			if not ok then
 				local info = debug.getinfo(level, 'nl')
 				local err = string.format(efmt, '#'..tostring(i), info.name)
 				error(err, level)
+			end
+
+			if _G._checks_v2_compatible and value == nil then
+				value = {}
+				debug.setlocal(level, i, value)
 			end
 
 			local ok, efmt = check_table_type(value, expected_type)
@@ -166,6 +190,7 @@ end
 
 _G.checks = checks
 _G.checkers = rawget(_G, 'checkers') or {}
+
 
 
 return checks

@@ -7,14 +7,12 @@ M.INPUT_BACK = hash("back")
 M.INPUT_TOGGLE_PROFILER = hash("toggle_profile")
 M.INPUT_TOGGLE_PHYSICS = hash("toggle_physics")
 M.INPUT_TOGGLE_DEBUG_GUI = hash("toggle_debug_gui")
-
 M.INPUT_UP = hash("up")
 M.INPUT_LEFT = hash("left")
 M.INPUT_RIGHT = hash("right")
 M.INPUT_DOWN = hash("down")
 M.INPUT_SPACE = hash("space")
 M.INPUT_ESC = hash("escape")
-
 M.INPUT_TOUCH = hash("touch")
 M.INPUT_RIGHT_CLICK = hash("right_click")
 
@@ -35,7 +33,6 @@ M.MSG_DISABLE = hash("disable")
 M.MSG_PLAY_ANIMATION = hash("play_animation")
 M.MSG_ACQUIRE_CAMERA_FOCUS = hash("acquire_camera_focus")
 M.MSG_SET_PARENT = hash("set_parent")
-M.RGB = hash("rgb")
 
 M.MSG_GUI_UPDATE_GO_POS = hash("msg_gui_update_go_pos")
 M.MSG_POST_UPDATE = hash("msg_post_update")
@@ -55,10 +52,6 @@ M.MSG_SM_LOAD = hash("msg_sm_load")
 
 
 M.EMPTY = hash("empty")
-
-
-function M.ensure_hash(string_or_hash)
-	return type(string_or_hash) == "string" and hash(string_or_hash) or string_or_hash
-end
+M.NIL = hash("nil")
 
 return M

@@ -2422,7 +2422,7 @@ return {
 	AsyncSubject = AsyncSubject,
 	BehaviorSubject = BehaviorSubject,
 	ReplaySubject = ReplaySubject,
-	MainScheduler = CooperativeScheduler.create(),
+	MainScheduler = CooperativeScheduler.create(), -- Application thread.update in bootstrap collection.
 	SubscriptionsStorage = SubscriptionsStorage,
 	MsgScheduler = MsgScheduler
 }
