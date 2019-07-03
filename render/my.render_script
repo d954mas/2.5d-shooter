@@ -7,26 +7,6 @@ local RENDERCAM_VIEWPORT = RENDERCAM.viewport
 local LIGHT_MAP_SIZE = 128
 local TAG = "Render"
 
---region projections
-local function fixed_projection(near, far, zoom)
-    local projected_width = render.get_window_width() / (zoom or 1)
-    local xoffset = -(projected_width - render.get_width()) / 2
-    return vmath.matrix4_orthographic(xoffset, xoffset + projected_width, 0, projected_width
-            *render.get_window_height()/render.get_window_width(), near, far)
-end
---
--- projection that centers and fits content with maintained aspect ratio
---
-local function fixed_fit_projection()
-    local width = render.get_width()
-    local height = render.get_height()
-    local window_width = render.get_window_width()
-    local window_height = render.get_window_height()
-    local zoom = math.min(window_width / width, window_height / height)
-    return fixed_projection(-1, 1, zoom)
-end
---endregion
-
 ---@class Render
 local Render = COMMON.new_n28s()
 --region init
@@ -104,7 +84,7 @@ end
 
 function Render:register_messages()
     self.msg_receiver = COMMON.MSG()
-    self.msg_receiver:add("clear_color",function(self,_,message)  self.clear_color = message.color end)
+    self.msg_receiver:add("clear_color",function(_,_,message)  self.clear_color = message.color end)
     -- sent by rendercam when a camera is activated ("window_resized" engine message requires data)
     self.msg_receiver:add("update window",self.window_size_changed)
     self.msg_receiver:add("window_resized",self.window_size_changed)

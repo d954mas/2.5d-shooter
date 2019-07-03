@@ -1,5 +1,4 @@
 local COMMON = require "libs.common"
-local WORLD = require "world.world"
 local ENTITIES = require "world.ecs.entities.entities"
 local Script = COMMON.new_n28s()
 

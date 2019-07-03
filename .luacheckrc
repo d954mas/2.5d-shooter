@@ -13,7 +13,9 @@ exclude_files = {
 	"libs/log.lua",
 	"libs/ecs.lua",
 	"libs/checks.lua",
+	"libs/i18n/**",
 	"_headers/**",
+	"tests/**",
 	"rendercam/**",
 	"assets/levels/lua/**",
 }
@@ -60,7 +62,8 @@ read_globals = {
   "profiler",
   "defos",
   "mnu",
-  "native_raycasting"
+  "native_raycasting",
+  "requiref"
 }
 
 globals = {

@@ -28,7 +28,7 @@ function init(self)
     --endregion
     WORLD:load()
     SM:register(reg_scenes)
-    SM:show("GameScene")    
+    SM:show("GameScene")
 end
 
 function update(self, dt)
