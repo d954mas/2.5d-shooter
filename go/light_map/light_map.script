@@ -1,5 +1,6 @@
 local COMMON = require "libs.common"
-function init(self)
+local Script = COMMON.new_n28s()
+function Script:init()
 	self.resource_path = go.get("#model", "texture0")
 	self.header = {
 		width = 128,
@@ -17,10 +18,12 @@ function init(self)
 	end))
 end
 
-function update(self, dt)
+function Script:update(dt)
 	self.scheduler:update(dt)
 end
 
-function final(self)
+function Script:final()
 	self.subscriptions:unsubscribe()
 end
+
+COMMON.N28S.register(Script)

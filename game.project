@@ -20,6 +20,7 @@ height = 1080
 high_dpi = 1
 fullscreen = 0
 update_frequency = 60
+display_profiles = /builtins/render/default.display_profilesc
 
 [physics]
 scale = 1.0
@@ -52,7 +53,7 @@ gcm_sender_id =
 push_field_text = 
 
 [graphics]
-texture_profiles = /default.texture_profiles
+texture_profiles = /render/my.texture_profiles
 default_texture_min_filter = nearest
 default_texture_mag_filter = nearest
 

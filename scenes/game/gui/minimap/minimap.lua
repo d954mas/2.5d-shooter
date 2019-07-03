@@ -105,11 +105,15 @@ function Map:update_cells()
 	for _, cell in pairs(self.node_map) do
 		local visible = WORLD.level:map_cell_in(cell.x,cell.y)
 		if visible then
-			local blocked = WORLD.level:map_get_cell(cell.x,cell.y).blocked
-			if blocked then
-				gui.set_color(cell.root_node, BLOCKED_COLOR)
+			local cell_level = WORLD.level:map_get_cell(cell.x,cell.y)
+			if cell_level.wall.floor == -1 then
+				gui.set_color(cell.root_node, UNKNOWN_COLOR)
 			else
-				gui.set_color(cell.root_node, EMPTY_COLOR)
+				if cell_level.blocked then
+					gui.set_color(cell.root_node, BLOCKED_COLOR)
+				else
+					gui.set_color(cell.root_node, EMPTY_COLOR)
+				end
 			end
 		else
 			gui.set_color(cell.root_node, UNKNOWN_COLOR)
