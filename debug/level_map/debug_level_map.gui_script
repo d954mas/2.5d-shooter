@@ -1,5 +1,6 @@
-local WORLD = require "world.world"
 local COMMON = require "libs.common"
+local WORLD = require "world.world"
+
 
 
 local WHITE_COLOR = string.char(0xff) .. string.char(0xff) .. string.char(0xff) .. string.char(0xff)
@@ -9,7 +10,32 @@ local TRANSPARENT_COLOR = string.char(0x00) .. string.char(0x00) .. string.char(
 local VISIBLE_COLOR = string.char(0xff) .. string.char(0x00) .. string.char(0x00) .. string.char(0x33)
 local MIN_SIZE = 300
 
-local function clear_textures(self)
+local Script = COMMON.new_n28s()
+
+function Script:init()
+	self.vh = {
+		map_node = gui.get_node("map"),
+		map_visibility_node = gui.get_node("visibility"),
+		player_node = gui.get_node("player")
+	}
+	self.map_texture = nil
+	self.scheduler = COMMON.RX.CooperativeScheduler.create()
+
+	self.subscriptions = COMMON.RX.SubscriptionsStorage()
+	self.subscriptions:add(COMMON.EVENT_BUS:subscribe(COMMON.EVENTS.GAME_LEVEL_MAP_CHANGED):go_distinct(self.scheduler)
+								   :subscribe(function (event)
+		self:clear_textures()
+		local width, height = WORLD.level:map_get_width(),WORLD.level:map_get_height()
+		gui.new_texture("map", width, height, "rgba", string.rep(WHITE_COLOR,  width * height))
+		gui.new_texture("map_visibility", width, height, "rgba", string.rep(TRANSPARENT_COLOR,  width * height))
+		gui.set_texture(self.vh.map_node, "map")
+		gui.set_texture(self.vh.map_visibility_node, "map_visibility")
+		gui.set_size(self.vh.map_node,vmath.vector3(width,height,1))
+		gui.set_size(self.vh.map_visibility_node,vmath.vector3(width,height,1))
+	end))
+end
+
+function Script:clear_textures()
 	if self.map_texture then
 		gui.delete_texture("map")
 		gui.delete_texture("map_visibility")
@@ -18,7 +44,7 @@ local function clear_textures(self)
 	end
 end
 
-local function update_map(self)
+function Script:update_map()
 	local map_width =  WORLD.level:map_get_width()
 	local map_height =  WORLD.level:map_get_height()
 	local pixels = ""
@@ -28,9 +54,9 @@ local function update_map(self)
 		for x=1, map_width do
 			local cell = WORLD.level:map_get_cell(x,y)
 			pixels_visible = pixels_visible .. (native_raycasting.cells_get_by_id(cell.id):get_visibility() and
-				VISIBLE_COLOR or TRANSPARENT_COLOR)
+					VISIBLE_COLOR or TRANSPARENT_COLOR)
+			--empty cell
 			if cell.wall.floor == -1 then
-				--empty cell
 				pixels = pixels ..  NO_WALLS_COLOR
 			else
 				if cell.blocked  then
@@ -55,39 +81,13 @@ local function update_map(self)
 	gui.set_position(self.vh.map_node, vmath.vector3(1920-map_width*scale.x,1080-map_height*scale.y,1))
 end
 
-function init(self)
-	self.vh = {
-		map_node = gui.get_node("map"),
-		map_visibility_node = gui.get_node("visibility"),
-		player_node = gui.get_node("player")
-	}
-	self.map_texture = nil
-	self.scheduler = COMMON.RX.CooperativeScheduler.create()
-
-	self.subscriptions = COMMON.RX.SubscriptionsStorage()
-	self.subscriptions:add(COMMON.EVENT_BUS:subscribe(COMMON.EVENTS.GAME_LEVEL_MAP_CHANGED):go_distinct(self.scheduler)
-								   :subscribe(function (event)
-		clear_textures(self)
-		local width, height = WORLD.level:map_get_width(),WORLD.level:map_get_height()
-		gui.new_texture("map", width, height, "rgba", string.rep(WHITE_COLOR,  width * height))
-		gui.new_texture("map_visibility", width, height, "rgba", string.rep(TRANSPARENT_COLOR,  width * height))
-		gui.set_texture(self.vh.map_node, "map")
-		gui.set_texture(self.vh.map_visibility_node, "map_visibility")
-		gui.set_size(self.vh.map_node,vmath.vector3(width,height,1))
-		gui.set_size(self.vh.map_visibility_node,vmath.vector3(width,height,1))
-	end))
+function Script:update(dt)
+	self.scheduler:update(dt)
+	self:update_map()
 end
 
-
-function final(self)
+function Script:final()
 	self.subscriptions:unsubscribe()
 end
 
-function update(self,dt)
-	self.scheduler:update(dt)
-	update_map(self)
-	--init_map(self)
---	self.player_pos.x = self.map_pos.x + (self.start_x + WORLD.PLAYER.position.x) * SCALE.x
-	--self.player_pos.y = self.map_pos.y + (self.start_y + WORLD.PLAYER.position.y) * SCALE.y
-	--gui.set_position(self.player_node, self.player_pos)
-end
+COMMON.N28S.register(Script)
