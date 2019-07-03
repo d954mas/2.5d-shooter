@@ -38,7 +38,7 @@ shared_state = 1
 include_dirs = 
 
 [native_extension]
-app_manifest = /debug.appmanifest
+app_manifest = /app_manifest_debug.appmanifest
 
 [android]
 package = com.d954mas.dtfjam

@@ -1,4 +1,0 @@
-lua ./parse.lua 
-pause
-
-

@@ -114,7 +114,7 @@ instances {
 }
 instances {
   id: "light_map"
-  prototype: "/assets/go/light_map/light_map.go"
+  prototype: "/go/light_map/light_map.go"
   position {
     x: 0.0
     y: 0.0
@@ -188,7 +188,7 @@ embedded_instances {
   data: "embedded_components {\n"
   "  id: \"factory_wall\"\n"
   "  type: \"factory\"\n"
-  "  data: \"prototype: \\\"/assets/go/wall.go\\\"\\n"
+  "  data: \"prototype: \\\"/go/wall.go\\\"\\n"
   "load_dynamically: false\\n"
   "\"\n"
   "  position {\n"
@@ -206,7 +206,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"factory_empty\"\n"
   "  type: \"factory\"\n"
-  "  data: \"prototype: \\\"/assets/go/empty.go\\\"\\n"
+  "  data: \"prototype: \\\"/go/empty.go\\\"\\n"
   "load_dynamically: false\\n"
   "\"\n"
   "  position {\n"
@@ -224,7 +224,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"factory_block\"\n"
   "  type: \"factory\"\n"
-  "  data: \"prototype: \\\"/assets/go/block.go\\\"\\n"
+  "  data: \"prototype: \\\"/go/block.go\\\"\\n"
   "load_dynamically: false\\n"
   "\"\n"
   "  position {\n"
@@ -242,7 +242,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"factory_floor\"\n"
   "  type: \"factory\"\n"
-  "  data: \"prototype: \\\"/assets/go/floor.go\\\"\\n"
+  "  data: \"prototype: \\\"/go/floor.go\\\"\\n"
   "load_dynamically: false\\n"
   "\"\n"
   "  position {\n"
@@ -260,7 +260,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"factory_sprite_object\"\n"
   "  type: \"factory\"\n"
-  "  data: \"prototype: \\\"/assets/go/sprite_objects.go\\\"\\n"
+  "  data: \"prototype: \\\"/go/sprite_objects.go\\\"\\n"
   "load_dynamically: false\\n"
   "\"\n"
   "  position {\n"

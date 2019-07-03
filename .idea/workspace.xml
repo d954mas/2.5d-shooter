@@ -3,16 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init_controller.script" beforeDir="false" afterPath="$PROJECT_DIR$/init_controller.script" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/checks.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/checks.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/common.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/common.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/constants.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/constants.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/hashes.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/hashes.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/input_receiver.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/input_receiver.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/json.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/render_helper.lua" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/rx.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/rx.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/world.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/world.lua" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -193,7 +183,18 @@
             <path>
               <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
               <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="_docs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="fonts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -263,12 +264,12 @@
       <workItem from="1562163346874" duration="3134000" />
       <workItem from="1562167095037" duration="851000" />
       <workItem from="1562170013554" duration="1187000" />
-      <workItem from="1562171221528" duration="3758000" />
+      <workItem from="1562171221528" duration="4373000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="233507000" />
+    <option name="totallyTimeSpent" value="234122000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -281,9 +282,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="219" y="0" width="1529" height="1027" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30142567" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30142567" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -302,7 +302,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49490836" visible="true" weight="0.31788793" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49490836" weight="0.35021552" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="12" sideWeight="0.50509167" side_tool="true" visible="true" weight="0.31788793" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50509167" side_tool="true" visible="true" weight="0.31788793" />
       <window_info anchor="bottom" id="TypeScript" order="13" weight="0.32924107" />
       <window_info anchor="bottom" id="Messages" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
