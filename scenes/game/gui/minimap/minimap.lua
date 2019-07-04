@@ -1,5 +1,5 @@
 local COMMON = require "libs.common"
-local WORLD = require "world.world"
+local WORLD = require "scenes.game.model.game_controller"
 
 local UNKNOWN_COLOR = vmath.vector4(0, 0, 0, 1)
 local BLOCKED_COLOR = vmath.vector4(0.5, 0.5, 0.5, 1)

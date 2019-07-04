@@ -8,7 +8,7 @@ local EcsWorld = COMMON.class("EcsWorld")
 
 function EcsWorld:initialize()
 	self.ecs = ECS.world()
-	self.ecs.world = requiref("world.world")
+	self.ecs.world = requiref("scenes.game.model.game_controller")
 	self:_init_systems()
 end
 
@@ -42,6 +42,15 @@ end
 function EcsWorld:clear()
 	self.ecs:clear()
 end
+
+function EcsWorld:add(...)
+	self.ecs:add()
+end
+
+function EcsWorld:add_entity(e)
+	self.ecs:addEntity(e)
+end
+
 
 return EcsWorld
 

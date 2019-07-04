@@ -1,5 +1,5 @@
 local COMMON = require "libs.common"
-local WORLD = require "world.world"
+local WORLD = require "scenes.game.model.game_controller"
 local Script = COMMON.new_n28s()
 
 function Script:init()

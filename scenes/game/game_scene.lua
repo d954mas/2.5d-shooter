@@ -1,7 +1,7 @@
 local BaseScene = require "libs.sm.scene"
 local COMMON = require "libs.common"
-local WORLD = require "world.world"
-local LEVELS = require "world.model.levels"
+local WORLD = require "scenes.game.model.game_controller"
+local LEVELS = require "scenes.game.model.levels"
 local CURSOR_HELPER = require "libs.cursor_helper"
 
 ---@class GameScene:Scene

@@ -1,13 +1,12 @@
 local COMMON = require "libs.common"
 local RX = require "libs.rx"
-local STATE = require "world.state.state"
-local TAG = "World"
-local RESET_SAVE = false
-local LEVELS = require "world.model.levels"
+local LEVELS = require "scenes.game.model.levels"
 local EVENTS = require "libs.events"
 local LevelView = require "world.view.level_view"
 local SOUNDS = require "libs.sounds"
+local ENTITIES = require "world.ecs.entities.entities"
 
+local TAG = "GameController"
 --IT IS GAME WORLD
 --UPDATED FROM GAME COLLECTION
 
@@ -19,19 +18,17 @@ function M:reset()
 	if self.level_view then self.level_view:dispose() end
 	self.level = nil
 	self.level_view = nil
+	ENTITIES.clear()
 end
 
 function M:initialize()
+	ENTITIES.set_world(self)
 	self.rx = RX.Subject()
-	self.state = STATE
-	self.autosave = false
-	self.autosave_dt = 0
-	self.autosave_time = 5
 	self:reset()
 end
 
 function M:load_level(name)
-	assert(not self.level,"lvl alredy loaded")
+	assert(not self.level,"lvl already loaded")
 	self.level = LEVELS.load_level(name)
 	self.level:prepare()
 	self.level_view = LevelView()
@@ -40,40 +37,11 @@ function M:load_level(name)
 	self:spawn_pickups()
 end
 
-function M:update(dt)
-	self:process_autosave(dt)
-end
-
+function M:update(dt) end
 
 function M:post_update(dt)
 	if self.level then self.level:update(dt) end
 	if self.level_view then self.level_view:update(dt) end
-end
-
-function M:process_autosave(dt)
-	if self.autosave then
-		self.autosave_dt = self.autosave_dt + dt
-		if self.autosave_dt > self.autosave_time then
-			self.autosave_dt = 0
-			self:save()
-		end
-	end
-end
-
-
-function M:save()
-	--COMMON.i("save state",TAG)--pprint(state)
---	sys.save(sys.get_save_file("world","data"),  {state = self.state:save()})
-end
-
-function M:load()
-	local data =  RESET_SAVE and {} or sys.load(sys.get_save_file("world", "data"))
-	if not data.state then
-		self.state:init_default()
-		return
-	end
-	COMMON.i("load state",TAG)
-	self.state:load(data.state,self)
 end
 
 function M:dispose()

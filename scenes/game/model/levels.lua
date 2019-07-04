@@ -1,5 +1,5 @@
 local COMMON = require "libs.common"
-local Level = require "world.model.level"
+local Level = require "scenes.game.model.level"
 local M = {}
 local TAG = "LEVEL"
 

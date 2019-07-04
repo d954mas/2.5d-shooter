@@ -1,5 +1,5 @@
 local Minimap = require "scenes.game.gui.minimap.minimap"
-local WORLD = require "world.world"
+local WORLD = require "scenes.game.model.game_controller"
 local COMMON = require "libs.common"
 
 local Script = COMMON.new_n28s()
