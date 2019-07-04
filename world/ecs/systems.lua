@@ -1,20 +1,15 @@
 local M = {}
 
-function M.load()
-	package.loaded["world.ecs.systems.update_camera_system"] = nil
-	package.loaded["world.ecs.systems.input_system"] = nil
-	package.loaded["world.ecs.systems.movement_system"] = nil
-	package.loaded["world.ecs.systems.update_go_system"] = nil
-	package.loaded["world.ecs.systems.physics_obstacles_system"] = nil
-	package.loaded["world.ecs.systems.physics_reset_corrections_system"] = nil
-	package.loaded["world.ecs.systems.rotation_look_at_player_system"] = nil
-	package.loaded["world.ecs.systems.rotation_global_system"] = nil
-	package.loaded["world.ecs.systems.draw_objects_system"] = nil
-	package.loaded["world.ecs.systems.draw_walls_system"] = nil
-	package.loaded["world.ecs.systems.update_object_color_system"] = nil
-	package.loaded["world.ecs.systems.update_ai_system"] = nil
-	package.loaded["world.ecs.systems.camera_bob_system"] = nil
+--ecs systems created in require.
+--so do not cache then
+local require_old = require
+local require = function(k)
+	local m = require_old(k)
+	package.loaded[k] = nil
+	return m
+end
 
+function M.load()
 	M.CameraSystem = require "world.ecs.systems.update_camera_system"
 	M.InputSystem = require "world.ecs.systems.input_system"
 	M.MovementSystem = require "world.ecs.systems.movement_system"
