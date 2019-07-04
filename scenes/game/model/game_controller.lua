@@ -2,10 +2,12 @@ local COMMON = require "libs.common"
 local RX = require "libs.rx"
 local LEVELS = require "scenes.game.model.levels"
 local EVENTS = require "libs.events"
-local LevelView = require "world.view.level_view"
 local SOUNDS = require "libs.sounds"
 local ENTITIES = require "world.ecs.entities.entities"
+local RENDER_CAM = require "rendercam.rendercam"
 
+local CAMERA_RAYS = 512
+local CAMERA_MAX_DIST = 50
 local TAG = "GameController"
 --IT IS GAME WORLD
 --UPDATED FROM GAME COLLECTION
@@ -14,10 +16,8 @@ local TAG = "GameController"
 local M = COMMON.class("World")
 
 function M:reset()
-	if self.level then	self.level:dispose() end
-	if self.level_view then self.level_view:dispose() end
+	if self.level then self.level:dispose() end
 	self.level = nil
-	self.level_view = nil
 	ENTITIES.clear()
 end
 
@@ -25,14 +25,35 @@ function M:initialize()
 	ENTITIES.set_world(self)
 	self.rx = RX.Subject()
 	self:reset()
+	self:camera_configure()
+	COMMON.EVENT_BUS:subscribe(COMMON.EVENTS.WINDOW_RESIZED):subscribe(function()
+		--called from render context
+		self:camera_update_fov()
+	end)
 end
+
+--region camera
+function M:camera_configure()
+	native_raycasting.camera_set_rays(CAMERA_RAYS)
+	native_raycasting.camera_set_max_distance(CAMERA_MAX_DIST)
+end
+
+function M:camera_update_fov()
+	if self.level then
+		local aspect = RENDER_CAM.window.x/RENDER_CAM.window.y
+		local v_fov = assert(RENDER_CAM.get_current_camera(),"no active camera").fov
+		local h_fov = 2 * math.atan( math.tan( v_fov / 2 ) * aspect );
+		native_raycasting.camera_set_fov(h_fov*1.2) --use bigger fov then visible
+	end
+end
+--endregion
 
 function M:load_level(name)
 	assert(not self.level,"lvl already loaded")
 	self.level = LEVELS.load_level(name)
+	native_raycasting.map_set(self.level.data)
 	self.level:prepare()
-	self.level_view = LevelView()
-	self.level_view:build_level(self.level)
+	self:camera_update_fov()
 	COMMON.EVENT_BUS:event(EVENTS.GAME_LEVEL_MAP_CHANGED)
 	self:spawn_pickups()
 end
@@ -41,7 +62,6 @@ function M:update(dt) end
 
 function M:post_update(dt)
 	if self.level then self.level:update(dt) end
-	if self.level_view then self.level_view:update(dt) end
 end
 
 function M:dispose()
@@ -126,6 +146,10 @@ function M:weapon_set_bob_offset(offset)
 	offset = offset * 200 - 10 -- -10 is dy to hide weapon bottom edge
 	local pos = vmath.vector3(960,offset,0)
 	go.set_position(pos,"/weapon")
+end
+
+function M:on_input(action_id,action)
+	self.level.ecs_world:add_entity(ENTITIES.create_input(action_id or COMMON.INPUT.HASH_NIL,action))
 end
 
 return M()

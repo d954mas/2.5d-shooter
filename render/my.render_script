@@ -87,7 +87,10 @@ function Render:register_messages()
     self.msg_receiver:add("clear_color",function(_,_,message)  self.clear_color = message.color end)
     -- sent by rendercam when a camera is activated ("window_resized" engine message requires data)
     self.msg_receiver:add("update window",self.window_size_changed)
-    self.msg_receiver:add("window_resized",self.window_size_changed)
+    self.msg_receiver:add("window_resized",function (...)
+        self.window_size_changed(...)
+        COMMON.EVENT_BUS:event(COMMON.EVENTS.WINDOW_RESIZED)
+    end)
 end
 --endregion
 
