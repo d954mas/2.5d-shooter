@@ -385,7 +385,7 @@ return {
         {
           id = 2,
           properties = {
-            ["draw"] = true,
+            ["culling"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
             ["scale"] = 0.5
@@ -397,7 +397,7 @@ return {
         {
           id = 3,
           properties = {
-            ["draw"] = true,
+            ["culling"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
             ["scale"] = 0.5,
@@ -410,7 +410,7 @@ return {
         {
           id = 4,
           properties = {
-            ["draw"] = true,
+            ["culling"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
             ["scale"] = 0.5
@@ -422,7 +422,7 @@ return {
         {
           id = 5,
           properties = {
-            ["draw"] = true,
+            ["culling"] = true,
             ["global_rotation"] = true,
             ["look_at_player"] = false,
             ["scale"] = 0.5
@@ -434,7 +434,7 @@ return {
         {
           id = 6,
           properties = {
-            ["draw"] = true,
+            ["culling"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
             ["origin"] = "top",
@@ -448,7 +448,7 @@ return {
         {
           id = 7,
           properties = {
-            ["draw"] = true,
+            ["culling"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
             ["scale"] = 0.5,
@@ -461,7 +461,7 @@ return {
         {
           id = 8,
           properties = {
-            ["draw"] = true,
+            ["culling"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
             ["scale"] = 0.5,
@@ -474,7 +474,7 @@ return {
         {
           id = 9,
           properties = {
-            ["draw"] = true,
+            ["culling"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
             ["scale"] = 0.5,
@@ -487,7 +487,7 @@ return {
         {
           id = 10,
           properties = {
-            ["draw"] = true,
+            ["culling"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
             ["scale"] = 1
@@ -499,7 +499,7 @@ return {
         {
           id = 11,
           properties = {
-            ["draw"] = true,
+            ["culling"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
             ["scale"] = 0.5,
@@ -512,7 +512,7 @@ return {
         {
           id = 12,
           properties = {
-            ["draw"] = true,
+            ["culling"] = true,
             ["global_rotation"] = false,
             ["look_at_player"] = true,
             ["scale"] = 0.5,

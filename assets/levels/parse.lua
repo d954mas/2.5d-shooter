@@ -146,6 +146,8 @@ local function create_tileset(tiled)
 			tile.properties = tile.properties or {}
 			id_to_tile[tile.id + tileset.firstgid] = tile
 			tile.id = tile.id + tileset.firstgid
+			tile.width = tile.width or tileset.tilewidth
+			tile.height = tile.height or tileset.tileheight
 			if tile.image then
 				local image_path = tile.image
 				local pathes = {}
@@ -155,7 +157,7 @@ local function create_tileset(tiled)
 				tile.atlas = pathes[#pathes-1]
 				tile.image = string.sub(pathes[#pathes],1,string.find(pathes[#pathes],"%.")-1)
 			end
-			tile.scale = 1/( tile.properties.size_for_scale or tile.height or 1)*(tile.properties.scale or 1)
+			tile.scale = 1/(tile.properties.size_for_scale or tile.height)*(tile.properties.scale or 1)
 			local origin = tile.properties.origin
 			if origin then
 				local size = tile.properties.size_for_scale or tile.height

@@ -28,7 +28,7 @@ local TAG = "ENTITIES"
 ---@field physics_obstacles_correction vector3
 ---@field rotation_look_at_player boolean
 ---@field rotation_global boolean for pickups they use one global angle
----@field need_draw boolean objects that can be draw
+---@field culling boolean objects that need culling like walls
 ---@field draw_always boolean that object draw always. Used for enemies because of animations
 ---@field dynamic_color boolean
 ---@field tile_id number need for draw objects
@@ -160,7 +160,7 @@ end
 function Entities.create_draw_object_base(pos)
 	local e = {}
 	e.position= assert(pos)
-	e.need_draw = true
+	e.culling = true
 	e.dynamic_color = true
 	return e
 end
@@ -212,7 +212,7 @@ end
 
 ---@return Entity
 function Entities.create_object_from_tiled(object)
-	if object.properties.draw then
+	if object.properties.culling then
 		local e = Entities.create_draw_object_base(vmath.vector3(object.cell_xf-0.5, object.cell_yf - 0.5, 0))
 		e.tile_id = object.tile_id
 		if object.properties.look_at_player then

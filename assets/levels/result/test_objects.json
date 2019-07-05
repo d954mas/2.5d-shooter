@@ -16,7 +16,7 @@
         "scale":0.5,
         "look_at_player":true,
         "global_rotation":false,
-        "draw":true
+        "culling":true
       },
       "cell_y":5,
       "cell_x":2
@@ -28,7 +28,7 @@
       "tile_id":40,
       "properties":{
         "look_at_player":true,
-        "draw":true,
+        "culling":true,
         "scale":0.5,
         "global_rotation":false,
         "size_for_scale":64
@@ -45,7 +45,7 @@
         "scale":0.5,
         "look_at_player":true,
         "global_rotation":false,
-        "draw":true
+        "culling":true
       },
       "cell_y":5,
       "cell_x":6
@@ -58,7 +58,7 @@
       "properties":{
         "size_for_scale":64,
         "origin":"top",
-        "draw":true,
+        "culling":true,
         "scale":1,
         "global_rotation":false,
         "look_at_player":true
@@ -73,7 +73,7 @@
       "tile_id":44,
       "properties":{
         "look_at_player":true,
-        "draw":true,
+        "culling":true,
         "scale":0.5,
         "global_rotation":false,
         "size_for_scale":64
@@ -88,7 +88,7 @@
       "tile_id":45,
       "properties":{
         "look_at_player":true,
-        "draw":true,
+        "culling":true,
         "scale":0.5,
         "global_rotation":false,
         "size_for_scale":64
@@ -103,7 +103,7 @@
       "tile_id":46,
       "properties":{
         "look_at_player":true,
-        "draw":true,
+        "culling":true,
         "scale":0.5,
         "global_rotation":false,
         "size_for_scale":64
@@ -120,7 +120,7 @@
         "scale":1,
         "look_at_player":true,
         "global_rotation":false,
-        "draw":true
+        "culling":true
       },
       "cell_y":5,
       "cell_x":8
@@ -131,7 +131,7 @@
       "cell_yf":9,
       "tile_id":42,
       "properties":{
-        "draw":true,
+        "culling":true,
         "scale":0.5,
         "global_rotation":true,
         "look_at_player":false
@@ -146,7 +146,7 @@
       "tile_id":49,
       "properties":{
         "look_at_player":true,
-        "draw":true,
+        "culling":true,
         "scale":0.5,
         "global_rotation":false,
         "size_for_scale":64

@@ -128,7 +128,7 @@
       "properties":{
         "size_for_scale":64,
         "origin":"top",
-        "draw":true,
+        "culling":true,
         "scale":1,
         "global_rotation":false,
         "look_at_player":true
@@ -144,7 +144,7 @@
       "properties":{
         "size_for_scale":64,
         "origin":"top",
-        "draw":true,
+        "culling":true,
         "scale":1,
         "global_rotation":false,
         "look_at_player":true
@@ -160,7 +160,7 @@
       "properties":{
         "size_for_scale":64,
         "origin":"top",
-        "draw":true,
+        "culling":true,
         "scale":1,
         "global_rotation":false,
         "look_at_player":true
@@ -176,7 +176,7 @@
       "properties":{
         "size_for_scale":64,
         "origin":"top",
-        "draw":true,
+        "culling":true,
         "scale":1,
         "global_rotation":false,
         "look_at_player":true
@@ -192,7 +192,7 @@
       "properties":{
         "size_for_scale":64,
         "origin":"top",
-        "draw":true,
+        "culling":true,
         "scale":1,
         "global_rotation":false,
         "look_at_player":true
@@ -208,7 +208,7 @@
       "properties":{
         "size_for_scale":64,
         "origin":"top",
-        "draw":true,
+        "culling":true,
         "scale":1,
         "global_rotation":false,
         "look_at_player":true
@@ -223,7 +223,7 @@
       "tile_id":46,
       "properties":{
         "look_at_player":true,
-        "draw":true,
+        "culling":true,
         "scale":0.5,
         "global_rotation":false,
         "size_for_scale":64
@@ -238,7 +238,7 @@
       "tile_id":46,
       "properties":{
         "look_at_player":true,
-        "draw":true,
+        "culling":true,
         "scale":0.5,
         "global_rotation":false,
         "size_for_scale":64
@@ -253,7 +253,7 @@
       "tile_id":46,
       "properties":{
         "look_at_player":true,
-        "draw":true,
+        "culling":true,
         "scale":0.5,
         "global_rotation":false,
         "size_for_scale":64
@@ -269,7 +269,7 @@
       "properties":{
         "size_for_scale":64,
         "origin":"top",
-        "draw":true,
+        "culling":true,
         "scale":1,
         "global_rotation":false,
         "look_at_player":true

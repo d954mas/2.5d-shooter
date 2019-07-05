@@ -9,7 +9,7 @@
  </tile>
  <tile id="2">
   <properties>
-   <property name="draw" type="bool" value="true"/>
+   <property name="culling" type="bool" value="true"/>
    <property name="global_rotation" type="bool" value="false"/>
    <property name="look_at_player" type="bool" value="true"/>
    <property name="scale" type="float" value="0.5"/>
@@ -18,7 +18,7 @@
  </tile>
  <tile id="3">
   <properties>
-   <property name="draw" type="bool" value="true"/>
+   <property name="culling" type="bool" value="true"/>
    <property name="global_rotation" type="bool" value="false"/>
    <property name="look_at_player" type="bool" value="true"/>
    <property name="scale" type="float" value="0.5"/>
@@ -28,7 +28,7 @@
  </tile>
  <tile id="4">
   <properties>
-   <property name="draw" type="bool" value="true"/>
+   <property name="culling" type="bool" value="true"/>
    <property name="global_rotation" type="bool" value="false"/>
    <property name="look_at_player" type="bool" value="true"/>
    <property name="scale" type="float" value="0.5"/>
@@ -37,7 +37,7 @@
  </tile>
  <tile id="5">
   <properties>
-   <property name="draw" type="bool" value="true"/>
+   <property name="culling" type="bool" value="true"/>
    <property name="global_rotation" type="bool" value="true"/>
    <property name="look_at_player" type="bool" value="false"/>
    <property name="scale" type="float" value="0.5"/>
@@ -46,7 +46,7 @@
  </tile>
  <tile id="6">
   <properties>
-   <property name="draw" type="bool" value="true"/>
+   <property name="culling" type="bool" value="true"/>
    <property name="global_rotation" type="bool" value="false"/>
    <property name="look_at_player" type="bool" value="true"/>
    <property name="origin" value="top"/>
@@ -57,7 +57,7 @@
  </tile>
  <tile id="7">
   <properties>
-   <property name="draw" type="bool" value="true"/>
+   <property name="culling" type="bool" value="true"/>
    <property name="global_rotation" type="bool" value="false"/>
    <property name="look_at_player" type="bool" value="true"/>
    <property name="scale" type="float" value="0.5"/>
@@ -67,7 +67,7 @@
  </tile>
  <tile id="8">
   <properties>
-   <property name="draw" type="bool" value="true"/>
+   <property name="culling" type="bool" value="true"/>
    <property name="global_rotation" type="bool" value="false"/>
    <property name="look_at_player" type="bool" value="true"/>
    <property name="scale" type="float" value="0.5"/>
@@ -77,7 +77,7 @@
  </tile>
  <tile id="9">
   <properties>
-   <property name="draw" type="bool" value="true"/>
+   <property name="culling" type="bool" value="true"/>
    <property name="global_rotation" type="bool" value="false"/>
    <property name="look_at_player" type="bool" value="true"/>
    <property name="scale" type="float" value="0.5"/>
@@ -87,7 +87,7 @@
  </tile>
  <tile id="10">
   <properties>
-   <property name="draw" type="bool" value="true"/>
+   <property name="culling" type="bool" value="true"/>
    <property name="global_rotation" type="bool" value="false"/>
    <property name="look_at_player" type="bool" value="true"/>
    <property name="scale" type="float" value="1"/>
@@ -96,7 +96,7 @@
  </tile>
  <tile id="11">
   <properties>
-   <property name="draw" type="bool" value="true"/>
+   <property name="culling" type="bool" value="true"/>
    <property name="global_rotation" type="bool" value="false"/>
    <property name="look_at_player" type="bool" value="true"/>
    <property name="scale" type="float" value="0.5"/>
@@ -106,7 +106,7 @@
  </tile>
  <tile id="12">
   <properties>
-   <property name="draw" type="bool" value="true"/>
+   <property name="culling" type="bool" value="true"/>
    <property name="global_rotation" type="bool" value="false"/>
    <property name="look_at_player" type="bool" value="true"/>
    <property name="scale" type="float" value="0.5"/>

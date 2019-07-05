@@ -5,7 +5,7 @@ local FACTORY_SPRITE_URL = msg.url("game:/factories#factory_sprite_object")
 local FACTORY_EMPTY_URL = msg.url("game:/factories#factory_empty")
 ---@class DrawObjectsSystem:ECSSystem
 local System = ECS.processingSystem()
-System.filter = ECS.requireAll("need_draw","position")
+System.filter = ECS.requireAll("culling","position")
 
 ---@param e Entity
 function System:process(e, dt)

@@ -403,7 +403,7 @@
     "scale":0.0078125,
     "id":39,
     "properties":{
-      "draw":true,
+      "culling":true,
       "scale":0.5,
       "global_rotation":false,
       "look_at_player":true
@@ -418,7 +418,7 @@
     "id":40,
     "properties":{
       "look_at_player":true,
-      "draw":true,
+      "culling":true,
       "size_for_scale":64,
       "global_rotation":false,
       "scale":0.5
@@ -432,7 +432,7 @@
     "scale":0.0078125,
     "id":41,
     "properties":{
-      "draw":true,
+      "culling":true,
       "scale":0.5,
       "global_rotation":false,
       "look_at_player":true
@@ -446,7 +446,7 @@
     "scale":0.0078125,
     "id":42,
     "properties":{
-      "draw":true,
+      "culling":true,
       "scale":0.5,
       "global_rotation":true,
       "look_at_player":false
@@ -466,7 +466,7 @@
     "properties":{
       "look_at_player":true,
       "origin":"top",
-      "draw":true,
+      "culling":true,
       "size_for_scale":64,
       "global_rotation":false,
       "scale":1
@@ -481,7 +481,7 @@
     "id":44,
     "properties":{
       "look_at_player":true,
-      "draw":true,
+      "culling":true,
       "size_for_scale":64,
       "global_rotation":false,
       "scale":0.5
@@ -496,7 +496,7 @@
     "id":45,
     "properties":{
       "look_at_player":true,
-      "draw":true,
+      "culling":true,
       "size_for_scale":64,
       "global_rotation":false,
       "scale":0.5
@@ -511,7 +511,7 @@
     "id":46,
     "properties":{
       "look_at_player":true,
-      "draw":true,
+      "culling":true,
       "size_for_scale":64,
       "global_rotation":false,
       "scale":0.5
@@ -525,7 +525,7 @@
     "scale":0.015625,
     "id":47,
     "properties":{
-      "draw":true,
+      "culling":true,
       "scale":1,
       "global_rotation":false,
       "look_at_player":true
@@ -540,7 +540,7 @@
     "id":48,
     "properties":{
       "look_at_player":true,
-      "draw":true,
+      "culling":true,
       "size_for_scale":64,
       "global_rotation":false,
       "scale":0.5
@@ -555,7 +555,7 @@
     "id":49,
     "properties":{
       "look_at_player":true,
-      "draw":true,
+      "culling":true,
       "size_for_scale":64,
       "global_rotation":false,
       "scale":0.5
@@ -564,1124 +564,1444 @@
     "width":64
   },
   {
-    "id":50,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#fffffbfb"
     },
-    "scale":1
+    "id":50,
+    "width":64
   },
   {
-    "id":51,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffff1b00"
     },
-    "scale":1
+    "id":51,
+    "width":64
   },
   {
-    "id":52,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffff7800"
     },
-    "scale":1
+    "id":52,
+    "width":64
   },
   {
-    "id":53,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffffd900"
     },
-    "scale":1
+    "id":53,
+    "width":64
   },
   {
-    "id":54,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffdfff00"
     },
-    "scale":1
+    "id":54,
+    "width":64
   },
   {
-    "id":55,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff00ff4c"
     },
-    "scale":1
+    "id":55,
+    "width":64
   },
   {
-    "id":56,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff00ffe7"
     },
-    "scale":1
+    "id":56,
+    "width":64
   },
   {
-    "id":57,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff00deff"
     },
-    "scale":1
+    "id":57,
+    "width":64
   },
   {
-    "id":58,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff007cff"
     },
-    "scale":1
+    "id":58,
+    "width":64
   },
   {
-    "id":59,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff001eff"
     },
-    "scale":1
+    "id":59,
+    "width":64
   },
   {
-    "id":60,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff2000ff"
     },
-    "scale":1
+    "id":60,
+    "width":64
   },
   {
-    "id":61,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff8000ff"
     },
-    "scale":1
+    "id":61,
+    "width":64
   },
   {
-    "id":62,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffe100ff"
     },
-    "scale":1
+    "id":62,
+    "width":64
   },
   {
-    "id":63,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffff00df"
     },
-    "scale":1
+    "id":63,
+    "width":64
   },
   {
-    "id":64,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffff007f"
     },
-    "scale":1
+    "id":64,
+    "width":64
   },
   {
-    "id":65,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffff0020"
     },
-    "scale":1
+    "id":65,
+    "width":64
   },
   {
-    "id":66,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffefebeb"
     },
-    "scale":1
+    "id":66,
+    "width":64
   },
   {
-    "id":67,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffd81700"
     },
-    "scale":1
+    "id":67,
+    "width":64
   },
   {
-    "id":68,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffd86600"
     },
-    "scale":1
+    "id":68,
+    "width":64
   },
   {
-    "id":69,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffd8b800"
     },
-    "scale":1
+    "id":69,
+    "width":64
   },
   {
-    "id":70,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffbdd800"
     },
-    "scale":1
+    "id":70,
+    "width":64
   },
   {
-    "id":71,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff00d840"
     },
-    "scale":1
+    "id":71,
+    "width":64
   },
   {
-    "id":72,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff00d8c4"
     },
-    "scale":1
+    "id":72,
+    "width":64
   },
   {
-    "id":73,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff00bcd8"
     },
-    "scale":1
+    "id":73,
+    "width":64
   },
   {
-    "id":74,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff0069d8"
     },
-    "scale":1
+    "id":74,
+    "width":64
   },
   {
-    "id":75,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff0019d8"
     },
-    "scale":1
+    "id":75,
+    "width":64
   },
   {
-    "id":76,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff1b00d8"
     },
-    "scale":1
+    "id":76,
+    "width":64
   },
   {
-    "id":77,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff6d00d8"
     },
-    "scale":1
+    "id":77,
+    "width":64
   },
   {
-    "id":78,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffbf00d8"
     },
-    "scale":1
+    "id":78,
+    "width":64
   },
   {
-    "id":79,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffd800bd"
     },
-    "scale":1
+    "id":79,
+    "width":64
   },
   {
-    "id":80,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffd8006c"
     },
-    "scale":1
+    "id":80,
+    "width":64
   },
   {
-    "id":81,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffd8001b"
     },
-    "scale":1
+    "id":81,
+    "width":64
   },
   {
-    "id":82,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffd8d5d5"
     },
-    "scale":1
+    "id":82,
+    "width":64
   },
   {
-    "id":83,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffa01100"
     },
-    "scale":1
+    "id":83,
+    "width":64
   },
   {
-    "id":84,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffa04b00"
     },
-    "scale":1
+    "id":84,
+    "width":64
   },
   {
-    "id":85,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffa08700"
     },
-    "scale":1
+    "id":85,
+    "width":64
   },
   {
-    "id":86,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff8c9f00"
     },
-    "scale":1
+    "id":86,
+    "width":64
   },
   {
-    "id":87,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff019f2f"
     },
-    "scale":1
+    "id":87,
+    "width":64
   },
   {
-    "id":88,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff019f90"
     },
-    "scale":1
+    "id":88,
+    "width":64
   },
   {
-    "id":89,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff018a9f"
     },
-    "scale":1
+    "id":89,
+    "width":64
   },
   {
-    "id":90,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff014d9f"
     },
-    "scale":1
+    "id":90,
+    "width":64
   },
   {
-    "id":91,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff01139f"
     },
-    "scale":1
+    "id":91,
+    "width":64
   },
   {
-    "id":92,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff15009f"
     },
-    "scale":1
+    "id":92,
+    "width":64
   },
   {
-    "id":93,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff51009f"
     },
-    "scale":1
+    "id":93,
+    "width":64
   },
   {
-    "id":94,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff8d009f"
     },
-    "scale":1
+    "id":94,
+    "width":64
   },
   {
-    "id":95,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffa0008b"
     },
-    "scale":1
+    "id":95,
+    "width":64
   },
   {
-    "id":96,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffa0004f"
     },
-    "scale":1
+    "id":96,
+    "width":64
   },
   {
-    "id":97,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffa00014"
     },
-    "scale":1
+    "id":97,
+    "width":64
   },
   {
-    "id":98,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffbebaba"
     },
-    "scale":1
+    "id":98,
+    "width":64
   },
   {
-    "id":99,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff610a00"
     },
-    "scale":1
+    "id":99,
+    "width":64
   },
   {
-    "id":100,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff612d00"
     },
-    "scale":1
+    "id":100,
+    "width":64
   },
   {
-    "id":101,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff615200"
     },
-    "scale":1
+    "id":101,
+    "width":64
   },
   {
-    "id":102,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff556000"
     },
-    "scale":1
+    "id":102,
+    "width":64
   },
   {
-    "id":103,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff01601d"
     },
-    "scale":1
+    "id":103,
+    "width":64
   },
   {
-    "id":104,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff016057"
     },
-    "scale":1
+    "id":104,
+    "width":64
   },
   {
-    "id":105,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff015460"
     },
-    "scale":1
+    "id":105,
+    "width":64
   },
   {
-    "id":106,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff012f60"
     },
-    "scale":1
+    "id":106,
+    "width":64
   },
   {
-    "id":107,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff010b60"
     },
-    "scale":1
+    "id":107,
+    "width":64
   },
   {
-    "id":108,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff0d0060"
     },
-    "scale":1
+    "id":108,
+    "width":64
   },
   {
-    "id":109,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff310060"
     },
-    "scale":1
+    "id":109,
+    "width":64
   },
   {
-    "id":110,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff560060"
     },
-    "scale":1
+    "id":110,
+    "width":64
   },
   {
-    "id":111,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff610054"
     },
-    "scale":1
+    "id":111,
+    "width":64
   },
   {
-    "id":112,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff610030"
     },
-    "scale":1
+    "id":112,
+    "width":64
   },
   {
-    "id":113,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff61000c"
     },
-    "scale":1
+    "id":113,
+    "width":64
   },
   {
-    "id":114,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff908d8d"
     },
-    "scale":1
+    "id":114,
+    "width":64
   },
   {
-    "id":115,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff3f0600"
     },
-    "scale":1
+    "id":115,
+    "width":64
   },
   {
-    "id":116,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff3f1d00"
     },
-    "scale":1
+    "id":116,
+    "width":64
   },
   {
-    "id":117,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff3f3500"
     },
-    "scale":1
+    "id":117,
+    "width":64
   },
   {
-    "id":118,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff383e00"
     },
-    "scale":1
+    "id":118,
+    "width":64
   },
   {
-    "id":119,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff023e13"
     },
-    "scale":1
+    "id":119,
+    "width":64
   },
   {
-    "id":120,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff023e38"
     },
-    "scale":1
+    "id":120,
+    "width":64
   },
   {
-    "id":121,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff02363e"
     },
-    "scale":1
+    "id":121,
+    "width":64
   },
   {
-    "id":122,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff021e3e"
     },
-    "scale":1
+    "id":122,
+    "width":64
   },
   {
-    "id":123,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff02073e"
     },
-    "scale":1
+    "id":123,
+    "width":64
   },
   {
-    "id":124,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff09003e"
     },
-    "scale":1
+    "id":124,
+    "width":64
   },
   {
-    "id":125,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff20003e"
     },
-    "scale":1
+    "id":125,
+    "width":64
   },
   {
-    "id":126,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff38003e"
     },
-    "scale":1
+    "id":126,
+    "width":64
   },
   {
-    "id":127,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff3f0036"
     },
-    "scale":1
+    "id":127,
+    "width":64
   },
   {
-    "id":128,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff3f001f"
     },
-    "scale":1
+    "id":128,
+    "width":64
   },
   {
-    "id":129,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff3f0008"
     },
-    "scale":1
+    "id":129,
+    "width":64
   },
   {
-    "id":130,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff716e6e"
     },
-    "scale":1
+    "id":130,
+    "width":64
   },
   {
-    "id":131,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffff7f7d"
     },
-    "scale":1
+    "id":131,
+    "width":64
   },
   {
-    "id":132,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffffa17d"
     },
-    "scale":1
+    "id":132,
+    "width":64
   },
   {
-    "id":133,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffffe17d"
     },
-    "scale":1
+    "id":133,
+    "width":64
   },
   {
-    "id":134,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffe6ff7d"
     },
-    "scale":1
+    "id":134,
+    "width":64
   },
   {
-    "id":135,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff7dff8c"
     },
-    "scale":1
+    "id":135,
+    "width":64
   },
   {
-    "id":136,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff7dffec"
     },
-    "scale":1
+    "id":136,
+    "width":64
   },
   {
-    "id":137,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff7de5ff"
     },
-    "scale":1
+    "id":137,
+    "width":64
   },
   {
-    "id":138,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff7da3ff"
     },
-    "scale":1
+    "id":138,
+    "width":64
   },
   {
-    "id":139,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff7d80ff"
     },
-    "scale":1
+    "id":139,
+    "width":64
   },
   {
-    "id":140,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff807dff"
     },
-    "scale":1
+    "id":140,
+    "width":64
   },
   {
-    "id":141,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffa57dff"
     },
-    "scale":1
+    "id":141,
+    "width":64
   },
   {
-    "id":142,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffe87dff"
     },
-    "scale":1
+    "id":142,
+    "width":64
   },
   {
-    "id":143,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffff7de6"
     },
-    "scale":1
+    "id":143,
+    "width":64
   },
   {
-    "id":144,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffff7da4"
     },
-    "scale":1
+    "id":144,
+    "width":64
   },
   {
-    "id":145,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffff7d80"
     },
-    "scale":1
+    "id":145,
+    "width":64
   },
   {
-    "id":146,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff52504f"
     },
-    "scale":1
+    "id":146,
+    "width":64
   },
   {
-    "id":147,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffd86b69"
     },
-    "scale":1
+    "id":147,
+    "width":64
   },
   {
-    "id":148,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffd88869"
     },
-    "scale":1
+    "id":148,
+    "width":64
   },
   {
-    "id":149,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffd8bf69"
     },
-    "scale":1
+    "id":149,
+    "width":64
   },
   {
-    "id":150,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffc3d869"
     },
-    "scale":1
+    "id":150,
+    "width":64
   },
   {
-    "id":151,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff69d876"
     },
-    "scale":1
+    "id":151,
+    "width":64
   },
   {
-    "id":152,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff69d8c8"
     },
-    "scale":1
+    "id":152,
+    "width":64
   },
   {
-    "id":153,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff69c2d8"
     },
-    "scale":1
+    "id":153,
+    "width":64
   },
   {
-    "id":154,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff698ad8"
     },
-    "scale":1
+    "id":154,
+    "width":64
   },
   {
-    "id":155,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff696cd8"
     },
-    "scale":1
+    "id":155,
+    "width":64
   },
   {
-    "id":156,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff6c69d8"
     },
-    "scale":1
+    "id":156,
+    "width":64
   },
   {
-    "id":157,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff8c69d8"
     },
-    "scale":1
+    "id":157,
+    "width":64
   },
   {
-    "id":158,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffc469d8"
     },
-    "scale":1
+    "id":158,
+    "width":64
   },
   {
-    "id":159,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffd869c3"
     },
-    "scale":1
+    "id":159,
+    "width":64
   },
   {
-    "id":160,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffd8698b"
     },
-    "scale":1
+    "id":160,
+    "width":64
   },
   {
-    "id":161,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffd8696c"
     },
-    "scale":1
+    "id":161,
+    "width":64
   },
   {
-    "id":162,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff353333"
     },
-    "scale":1
+    "id":162,
+    "width":64
   },
   {
-    "id":163,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffa04e4c"
     },
-    "scale":1
+    "id":163,
+    "width":64
   },
   {
-    "id":164,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffa0644c"
     },
-    "scale":1
+    "id":164,
+    "width":64
   },
   {
-    "id":165,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffa08d4c"
     },
-    "scale":1
+    "id":165,
+    "width":64
   },
   {
-    "id":166,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff909f4b"
     },
-    "scale":1
+    "id":166,
+    "width":64
   },
   {
-    "id":167,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff4c9f56"
     },
-    "scale":1
+    "id":167,
+    "width":64
   },
   {
-    "id":168,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff4c9f93"
     },
-    "scale":1
+    "id":168,
+    "width":64
   },
   {
-    "id":169,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff4c8f9f"
     },
-    "scale":1
+    "id":169,
+    "width":64
   },
   {
-    "id":170,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff4c659f"
     },
-    "scale":1
+    "id":170,
+    "width":64
   },
   {
-    "id":171,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff4c4e9f"
     },
-    "scale":1
+    "id":171,
+    "width":64
   },
   {
-    "id":172,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff4e4b9f"
     },
-    "scale":1
+    "id":172,
+    "width":64
   },
   {
-    "id":173,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff674b9f"
     },
-    "scale":1
+    "id":173,
+    "width":64
   },
   {
-    "id":174,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff914b9f"
     },
-    "scale":1
+    "id":174,
+    "width":64
   },
   {
-    "id":175,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffa04c90"
     },
-    "scale":1
+    "id":175,
+    "width":64
   },
   {
-    "id":176,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffa04c66"
     },
-    "scale":1
+    "id":176,
+    "width":64
   },
   {
-    "id":177,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ffa04c4f"
     },
-    "scale":1
+    "id":177,
+    "width":64
   },
   {
-    "id":178,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff1c1a1a"
     },
-    "scale":1
+    "id":178,
+    "width":64
   },
   {
-    "id":179,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff612e2b"
     },
-    "scale":1
+    "id":179,
+    "width":64
   },
   {
-    "id":180,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff613c2b"
     },
-    "scale":1
+    "id":180,
+    "width":64
   },
   {
-    "id":181,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff61552b"
     },
-    "scale":1
+    "id":181,
+    "width":64
   },
   {
-    "id":182,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff57602b"
     },
-    "scale":1
+    "id":182,
+    "width":64
   },
   {
-    "id":183,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff2b6034"
     },
-    "scale":1
+    "id":183,
+    "width":64
   },
   {
-    "id":184,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff2b6059"
     },
-    "scale":1
+    "id":184,
+    "width":64
   },
   {
-    "id":185,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff2b5660"
     },
-    "scale":1
+    "id":185,
+    "width":64
   },
   {
-    "id":186,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff2b3d60"
     },
-    "scale":1
+    "id":186,
+    "width":64
   },
   {
-    "id":187,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff2b2e60"
     },
-    "scale":1
+    "id":187,
+    "width":64
   },
   {
-    "id":188,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff2e2b60"
     },
-    "scale":1
+    "id":188,
+    "width":64
   },
   {
-    "id":189,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff3e2b60"
     },
-    "scale":1
+    "id":189,
+    "width":64
   },
   {
-    "id":190,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff582b60"
     },
-    "scale":1
+    "id":190,
+    "width":64
   },
   {
-    "id":191,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff612b57"
     },
-    "scale":1
+    "id":191,
+    "width":64
   },
   {
-    "id":192,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff612b3e"
     },
-    "scale":1
+    "id":192,
+    "width":64
   },
   {
-    "id":193,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff612b2e"
     },
-    "scale":1
+    "id":193,
+    "width":64
   },
   {
-    "id":194,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff0a0707"
     },
-    "scale":1
+    "id":194,
+    "width":64
   },
   {
-    "id":195,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff3f1e1c"
     },
-    "scale":1
+    "id":195,
+    "width":64
   },
   {
-    "id":196,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff3f281c"
     },
-    "scale":1
+    "id":196,
+    "width":64
   },
   {
-    "id":197,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff3f381c"
     },
-    "scale":1
+    "id":197,
+    "width":64
   },
   {
-    "id":198,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff393e1c"
     },
-    "scale":1
+    "id":198,
+    "width":64
   },
   {
-    "id":199,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff1d3d23"
     },
-    "scale":1
+    "id":199,
+    "width":64
   },
   {
-    "id":200,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff1d3d39"
     },
-    "scale":1
+    "id":200,
+    "width":64
   },
   {
-    "id":201,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff1d383d"
     },
-    "scale":1
+    "id":201,
+    "width":64
   },
   {
-    "id":202,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff1d283d"
     },
-    "scale":1
+    "id":202,
+    "width":64
   },
   {
-    "id":203,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff1d1f3d"
     },
-    "scale":1
+    "id":203,
+    "width":64
   },
   {
-    "id":204,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff1f1c3e"
     },
-    "scale":1
+    "id":204,
+    "width":64
   },
   {
-    "id":205,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff291c3e"
     },
-    "scale":1
+    "id":205,
+    "width":64
   },
   {
-    "id":206,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff391c3e"
     },
-    "scale":1
+    "id":206,
+    "width":64
   },
   {
-    "id":207,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff3f1c38"
     },
-    "scale":1
+    "id":207,
+    "width":64
   },
   {
-    "id":208,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff3f1c29"
     },
-    "scale":1
+    "id":208,
+    "width":64
   },
   {
-    "id":209,
+    "scale":0.015625,
+    "height":64,
     "properties":{
       "color":"#ff3f1c1f"
     },
-    "scale":1
+    "id":209,
+    "width":64
   },
   null,
   {
