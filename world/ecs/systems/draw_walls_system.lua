@@ -47,7 +47,7 @@ System:initialize()
 
 
 function System:sprite_set_image(url,id)
-	local tile = self.world.world.level.data.id_to_tile[id]
+	local tile = self.world.world.level:get_tile(id)
 	sprite.play_flipbook(url,hash(tile.image))
 	go.set_scale(tile.scale,url)
 end

@@ -3,6 +3,7 @@ local lfs = requiref "lfs"
 local cjson = requiref "cjson"
 local pretty = requiref "resty.prettycjson"
 local NEED_PRETTY = true
+local TILESET
 cjson.encode_sparse_array(true)
 cjson.decode_invalid_numbers(false)
 
@@ -111,17 +112,17 @@ local function parse_level(path,result_path)
 	data.size = {x=tiled.width,y = tiled.height}
 	data.properties = tiled.properties
 	data.cells = {}
-	data.tilesets = {}
-	data.id_to_tile = {}
 	data.objects = {}
 	data.pickups = {}
 	data.enemies = {}
 	data.spawners = {}
+
+	local id_to_tile = {}
 	for _, tileset in ipairs(tiled.tilesets)do
-		table.insert(data.tilesets,{name = tileset.name,firstgid = tileset.firstgid})
 		for _,tile in ipairs(tileset.tiles) do
 			tile.properties = tile.properties or {}
-			data.id_to_tile[tile.id + tileset.firstgid] = tile
+			id_to_tile[tile.id + tileset.firstgid] = tile
+			tile.id = tile.id + tileset.firstgid
 			if tile.image then
 				local image_path = tile.image
 				local pathes = {}
@@ -138,6 +139,17 @@ local function parse_level(path,result_path)
 				local dy = (size - tile.height)*tile.scale
 				if origin == "top" then tile.origin = {x=0,y=dy} end
 			end
+		end
+	end
+	if not TILESET then
+		TILESET = id_to_tile
+	else
+		local json_global_tileset = cjson.encode(TILESET)
+		local json_local_tileset = cjson.encode(id_to_tile)
+		if json_global_tileset ~= json_local_tileset then
+			print("GLOBAL:" .. json_global_tileset)
+			print("LOCAL:" .. json_local_tileset)
+			assert(nil,"tileset not equal")
 		end
 	end
 	for y=1,data.size.y do
@@ -159,13 +171,13 @@ local function parse_level(path,result_path)
 	local wall_keys = {"north","south","east","west"}
 	process_layer(data,assert(get_layer(tiled,"walls")),function(cell,tiled_cell) for _,v in pairs(wall_keys)do
 			cell.wall[v] = tiled_cell
-			local tile = data.id_to_tile[tiled_cell]
+			local tile = TILESET[tiled_cell]
 			cell.blocked = tile.properties.block;
 		end
 	end)
 	data.light_map = {}
 	for k,v in ipairs(get_layer(tiled,"lights").data)do
-		data.light_map[k] = v == 0 and 0xFFFFFFFF or tonumber("0x"..string.sub(data.id_to_tile[v].properties.color,2))
+		data.light_map[k] = v == 0 and 0xFFFFFFFF or tonumber("0x"..string.sub(TILESET[v].properties.color,2))
 	end
 	local objects = assert(get_layer(tiled,"objects")).objects
 	for _,object in ipairs(objects)do
@@ -179,7 +191,7 @@ local function parse_level(path,result_path)
 				cell_x = object.cell_x, cell_y = object.cell_y,
 				cell_xf = object.cell_xf, cell_yf = object.cell_yf
 			}
-			local tile = data.id_to_tile[object_data.tile_id]
+			local tile = TILESET[object_data.tile_id]
 			if tile then
 				for k,v in pairs(tile.properties)do
 					if not object_data.properties[k]	then
@@ -200,7 +212,7 @@ local function parse_level(path,result_path)
 			cell_x = object.cell_x, cell_y = object.cell_y,
 			cell_xf = object.cell_xf, cell_yf = object.cell_yf
 		}
-		local tile = data.id_to_tile[object_data.tile_id]
+		local tile = TILESET[object_data.tile_id]
 		if tile then
 			for k,v in pairs(tile.properties)do
 				if not object_data.properties[k]	then
@@ -224,7 +236,7 @@ local function parse_level(path,result_path)
 			cell_x = object.cell_x, cell_y = object.cell_y,
 			cell_xf = object.cell_xf, cell_yf = object.cell_yf
 		}
-		local tile = data.id_to_tile[object_data.tile_id]
+		local tile = TILESET[object_data.tile_id]
 		if tile then
 			for k,v in pairs(tile.properties)do
 				if not object_data.properties[k]	then
@@ -255,3 +267,8 @@ for file in lfs.dir( lfs.currentdir() .. "\\" .. LEVELS_PATH) do
 		parse_level( lfs.currentdir() .. "\\" .. LEVELS_PATH .. "\\" .. file , lfs.currentdir() .. "\\" .. RESULT_PATH .. "\\")
 	end
 end
+
+local json = NEED_PRETTY and pretty(TILESET,nil,"  ","") or cjson.encode(TILESET)
+local file = assert(io.open(lfs.currentdir() .. "\\" .. RESULT_PATH .. "\\" .. "tileset.json", "w+"))
+file:write(json)
+file:close()

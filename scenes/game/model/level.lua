@@ -2,6 +2,8 @@ local COMMON = require "libs.common"
 local ENTITIES = require "world.ecs.entities.entities"
 local ECS_WORLD = require "world.ecs.ecs"
 
+local TILESET
+
 local FACTORY_GO_EMPTY = msg.url("game:/factories#factory_empty")
 local FACTORY_GO_BLOCK = msg.url("game:/factories#factory_block")
 
@@ -16,6 +18,10 @@ local Level = COMMON.class("Level")
 
 ---@param data LevelData
 function Level:initialize(data)
+	if TILESET == nil then
+		--load tileset once
+		TILESET = json.decode(assert(sys.load_resource("/assets/levels/result/tileset.json"),"no tileset"))
+	end
 	self.data = assert(data)
 	self.ecs_world = ECS_WORLD()
 	self.scheduler = COMMON.RX.CooperativeScheduler.create()
@@ -128,6 +134,10 @@ function Level:map_get_cell(x,y)
 end
 function Level:map_cell_in(x,y)
 	return x>=1 and x <= self:map_get_width() and y>=1 and y <=self:map_get_height()
+end
+
+function Level:get_tile(id)
+	return assert(TILESET[id],"no tile with id:" .. id)
 end
 --endregion
 

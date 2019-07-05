@@ -1607,56 +1607,6 @@ return {
           height = 32
         }
       }
-    },
-    {
-      name = "pickups",
-      firstgid = 216,
-      filename = "../tilesets/pickups.tsx",
-      tilewidth = 32,
-      tileheight = 32,
-      spacing = 0,
-      margin = 0,
-      columns = 0,
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 1,
-        height = 1
-      },
-      properties = {},
-      terrains = {},
-      tilecount = 2,
-      tiles = {
-        {
-          id = 1,
-          properties = {
-            ["global_rotation"] = true,
-            ["look_at_player"] = false,
-            ["pickup"] = true,
-            ["pickup_key"] = "ammo_pistol",
-            ["scale"] = 0.25
-          },
-          image = "../../images/game/pickups/pickup_ammo_pistol.png",
-          width = 32,
-          height = 32
-        },
-        {
-          id = 2,
-          properties = {
-            ["global_rotation"] = true,
-            ["look_at_player"] = false,
-            ["pickup"] = true,
-            ["pickup_key"] = "hp",
-            ["scale"] = 0.25
-          },
-          image = "../../images/game/pickups/pickup_hp.png",
-          width = 32,
-          height = 32
-        }
-      }
     }
   },
   layers = {
@@ -2021,7 +1971,7 @@ return {
       type = "objectgroup",
       id = 9,
       name = "pickups",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -2038,7 +1988,7 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
-          gid = 217,
+          gid = 214,
           visible = true,
           properties = {}
         },
@@ -2052,7 +2002,7 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
-          gid = 217,
+          gid = 214,
           visible = true,
           properties = {}
         },
@@ -2066,7 +2016,7 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
-          gid = 218,
+          gid = 215,
           visible = true,
           properties = {}
         },
@@ -2080,7 +2030,7 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
-          gid = 218,
+          gid = 215,
           visible = true,
           properties = {}
         },
@@ -2094,7 +2044,7 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
-          gid = 218,
+          gid = 215,
           visible = true,
           properties = {}
         },
@@ -2108,7 +2058,7 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
-          gid = 217,
+          gid = 214,
           visible = true,
           properties = {}
         }

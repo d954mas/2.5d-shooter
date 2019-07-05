@@ -1,4 +1,4 @@
 cd ./assets/levels
 
-lua ./parse.lua
+update_levels.bat
 pause
