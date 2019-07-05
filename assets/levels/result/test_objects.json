@@ -9,6 +9,7 @@
   "objects":[
     {
       "cell_xf":2,
+      "cell_id":82,
       "cell_yf":5,
       "tile_id":39,
       "properties":{
@@ -22,6 +23,7 @@
     },
     {
       "cell_xf":4,
+      "cell_id":84,
       "cell_yf":5,
       "tile_id":40,
       "properties":{
@@ -36,6 +38,7 @@
     },
     {
       "cell_xf":6,
+      "cell_id":86,
       "cell_yf":5,
       "tile_id":41,
       "properties":{
@@ -49,6 +52,7 @@
     },
     {
       "cell_xf":2,
+      "cell_id":122,
       "cell_yf":7,
       "tile_id":43,
       "properties":{
@@ -64,6 +68,7 @@
     },
     {
       "cell_xf":4,
+      "cell_id":124,
       "cell_yf":7,
       "tile_id":44,
       "properties":{
@@ -78,6 +83,7 @@
     },
     {
       "cell_xf":6,
+      "cell_id":126,
       "cell_yf":7,
       "tile_id":45,
       "properties":{
@@ -92,6 +98,7 @@
     },
     {
       "cell_xf":8,
+      "cell_id":128,
       "cell_yf":7,
       "tile_id":46,
       "properties":{
@@ -106,6 +113,7 @@
     },
     {
       "cell_xf":8,
+      "cell_id":88,
       "cell_yf":5,
       "tile_id":47,
       "properties":{
@@ -119,6 +127,7 @@
     },
     {
       "cell_xf":2,
+      "cell_id":162,
       "cell_yf":9,
       "tile_id":42,
       "properties":{
@@ -132,6 +141,7 @@
     },
     {
       "cell_xf":4,
+      "cell_id":164,
       "cell_yf":9,
       "tile_id":49,
       "properties":{

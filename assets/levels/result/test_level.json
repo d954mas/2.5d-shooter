@@ -7,6 +7,7 @@
   "enemies":[
     {
       "cell_xf":11,
+      "cell_id":715,
       "cell_yf":23,
       "tile_id":211,
       "properties":{
@@ -18,6 +19,7 @@
     },
     {
       "cell_xf":11,
+      "cell_id":875,
       "cell_yf":28,
       "tile_id":211,
       "properties":{
@@ -29,6 +31,7 @@
     },
     {
       "cell_xf":8,
+      "cell_id":424,
       "cell_yf":14,
       "tile_id":211,
       "properties":{
@@ -40,6 +43,7 @@
     },
     {
       "cell_xf":19,
+      "cell_id":243,
       "cell_yf":8,
       "tile_id":211,
       "properties":{
@@ -51,6 +55,7 @@
     },
     {
       "cell_xf":29,
+      "cell_id":445,
       "cell_yf":14,
       "tile_id":211,
       "properties":{
@@ -62,6 +67,7 @@
     },
     {
       "cell_xf":24,
+      "cell_id":600,
       "cell_yf":19,
       "tile_id":211,
       "properties":{
@@ -73,6 +79,7 @@
     },
     {
       "cell_xf":18,
+      "cell_id":594,
       "cell_yf":19,
       "tile_id":211,
       "properties":{
@@ -84,6 +91,7 @@
     },
     {
       "cell_xf":17,
+      "cell_id":817,
       "cell_yf":26,
       "tile_id":211,
       "properties":{
@@ -97,6 +105,7 @@
   "spawners":[
     {
       "cell_xf":0,
+      "cell_id":960,
       "cell_yf":31,
       "tile_id":212,
       "properties":{
@@ -113,6 +122,7 @@
   "objects":[
     {
       "cell_xf":11,
+      "cell_id":811,
       "cell_yf":26,
       "tile_id":43,
       "properties":{
@@ -128,6 +138,7 @@
     },
     {
       "cell_xf":11,
+      "cell_id":811,
       "cell_yf":26,
       "tile_id":43,
       "properties":{
@@ -143,6 +154,7 @@
     },
     {
       "cell_xf":11,
+      "cell_id":779,
       "cell_yf":25,
       "tile_id":43,
       "properties":{
@@ -158,6 +170,7 @@
     },
     {
       "cell_xf":10,
+      "cell_id":746,
       "cell_yf":24,
       "tile_id":43,
       "properties":{
@@ -173,6 +186,7 @@
     },
     {
       "cell_xf":7,
+      "cell_id":743,
       "cell_yf":24,
       "tile_id":43,
       "properties":{
@@ -188,6 +202,7 @@
     },
     {
       "cell_xf":4,
+      "cell_id":740,
       "cell_yf":24,
       "tile_id":43,
       "properties":{
@@ -203,6 +218,7 @@
     },
     {
       "cell_xf":8,
+      "cell_id":648,
       "cell_yf":21,
       "tile_id":46,
       "properties":{
@@ -217,6 +233,7 @@
     },
     {
       "cell_xf":7,
+      "cell_id":647,
       "cell_yf":21,
       "tile_id":46,
       "properties":{
@@ -231,6 +248,7 @@
     },
     {
       "cell_xf":6,
+      "cell_id":646,
       "cell_yf":21,
       "tile_id":46,
       "properties":{
@@ -245,6 +263,7 @@
     },
     {
       "cell_xf":7,
+      "cell_id":615,
       "cell_yf":20,
       "tile_id":43,
       "properties":{
@@ -18934,6 +18953,7 @@
   "pickups":[
     {
       "cell_xf":5,
+      "cell_id":901,
       "cell_yf":29,
       "tile_id":214,
       "properties":{
@@ -18948,6 +18968,7 @@
     },
     {
       "cell_xf":6,
+      "cell_id":902,
       "cell_yf":29,
       "tile_id":214,
       "properties":{
@@ -18962,6 +18983,7 @@
     },
     {
       "cell_xf":8,
+      "cell_id":904,
       "cell_yf":29,
       "tile_id":215,
       "properties":{
@@ -18976,6 +18998,7 @@
     },
     {
       "cell_xf":9,
+      "cell_id":905,
       "cell_yf":29,
       "tile_id":215,
       "properties":{
@@ -18990,6 +19013,7 @@
     },
     {
       "cell_xf":11,
+      "cell_id":875,
       "cell_yf":28,
       "tile_id":215,
       "properties":{
@@ -19004,6 +19028,7 @@
     },
     {
       "cell_xf":3,
+      "cell_id":867,
       "cell_yf":28,
       "tile_id":214,
       "properties":{
