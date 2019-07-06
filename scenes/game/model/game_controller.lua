@@ -140,13 +140,6 @@ function M:get_random_spawn_position()
 	end
 end
 
-
-function M:weapon_set_bob_offset(offset)
-	offset = offset * 200 - 10 -- -10 is dy to hide weapon bottom edge
-	local pos = vmath.vector3(960,offset,0)
-	go.set_position(pos,"/weapon")
-end
-
 function M:on_input(action_id,action)
 	self.level.ecs_world:add_entity(ENTITIES.create_input(action_id or COMMON.INPUT.HASH_NIL,action))
 end

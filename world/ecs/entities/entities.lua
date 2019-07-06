@@ -39,6 +39,7 @@ local TAG = "ENTITIES"
 ---@field camera_bob_speed number
 ---@field camera_bob_height number
 ---@field camera_bob_offset number
+---@field weapon_bob_offset number
 ---@field weapon Entity
 ---@field ammo Ammo
 ---@field hp number

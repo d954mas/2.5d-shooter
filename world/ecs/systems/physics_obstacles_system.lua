@@ -34,21 +34,22 @@ function System:handle_pickup(e)
 	end
 end
 
+--https://www.defold.com/tutorials/runner/#_step_4_creating_a_hero_character
  ---@param e Entity
  function System:handle_geometry(physics_e,e)
-	 assert(physics_e)
+	assert(physics_e)
 	if not e then return end
-	 local normal, distance = physics_e.physics_message.normal, physics_e.physics_message.distance
-	 local correction = e.physics_obstacles_correction
-	 if not correction then
-		 --create correction vector
-		 e.physics_obstacles_correction = vmath.vector3()
-		 correction = e.physics_obstacles_correction
+	local normal, distance = physics_e.physics_message.normal, physics_e.physics_message.distance
+	local correction = e.physics_obstacles_correction
+	if not correction then
+ 		--create correction vector
+		e.physics_obstacles_correction = vmath.vector3()
+		correction = e.physics_obstacles_correction
 		self.world:addEntity(e)
-	 end
-	 if(vmath.length(normal * distance)<=0)then
-		 return
-	 end
+	end
+	if(vmath.length(normal * distance)<=0)then
+		return
+	end
 	if distance > 0 then
 		local proj = vmath.project(correction, normal * distance)
 		if proj < 1 then
