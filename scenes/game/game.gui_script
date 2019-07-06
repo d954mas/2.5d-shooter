@@ -1,5 +1,5 @@
 local COMMON = require "libs.common"
-local WORLD = require "scenes.game.model.game_controller"
+local GAME_CONTROLLER = require "scenes.game.model.game_controller"
 
 local Script = COMMON.new_n28s()
 
@@ -15,9 +15,9 @@ function Script:bind_vh()
 end
 
 function Script:update(dt)
-	if WORLD.level then
-		gui.set_text(self.vh.lbl_hp,WORLD.level.player.hp )
-		gui.set_text(self.vh.lbl_ammo,WORLD.level.player.ammo.pistol )
+	if GAME_CONTROLLER.level then
+		gui.set_text(self.vh.lbl_hp,GAME_CONTROLLER.level.player.hp )
+		gui.set_text(self.vh.lbl_ammo,GAME_CONTROLLER.level.player.ammo.pistol )
 	end
 end
 

@@ -11,8 +11,8 @@ end
 
 ---@param e Entity
 function System:preProcess( dt)
-	self.world.world.level.rotation_global = self.world.world.level.rotation_global + 2 * dt
-	self.quaternion = vmath.quat_rotation_y(self.world.world.level.rotation_global)
+	self.world.game_controller.level.rotation_global = self.world.game_controller.level.rotation_global + 2 * dt
+	self.quaternion = vmath.quat_rotation_y(self.world.game_controller.level.rotation_global)
 end
 
 return System

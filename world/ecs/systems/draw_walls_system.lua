@@ -47,7 +47,7 @@ System:initialize()
 
 
 function System:sprite_set_image(url,id)
-	local tile = self.world.world.level:get_tile(id)
+	local tile = self.world.game_controller.level:get_tile(id)
 	sprite.play_flipbook(url,hash(tile.image))
 	go.set_scale(tile.scale,url)
 end
@@ -56,7 +56,7 @@ function System:update(dt)
 	local need_load = native_raycasting.cells_get_need_load()
 	for _,cell in ipairs(need_load)do
 		local x,y =cell:get_x(),cell:get_y()
-		local cell_data = self.world.world.level:map_get_cell(x,y)
+		local cell_data = self.world.game_controller.level:map_get_cell(x,y)
 		if cell_data.wall.north ~= - 1 or cell_data.wall.south ~= - 1 or cell_data.wall.east ~= - 1 or cell_data.wall.west ~= - 1 then
 			local wall_url = msg.url(factory.create(FACTORY_WALL_URL,vmath.vector3(x-0.5,0.5,-y+0.5),vmath.quat_rotation_z(0),nil))
 			assert(not self.wall_objects[cell_data.id], "already created id:" .. cell_data.id)
@@ -87,7 +87,7 @@ function System:update(dt)
 	local need_unload = native_raycasting.cells_get_need_unload()
 	for _,cell in ipairs(need_unload)do
 		local x,y =cell:get_x(),cell:get_y()
-		local cell_data = self.world.world.level:map_get_cell(x,y)
+		local cell_data = self.world.game_controller.level:map_get_cell(x,y)
 		if cell_data.wall.north ~= -1 then
 			local object = self.wall_objects[cell_data.id]
 			self.wall_objects[cell_data.id] = nil

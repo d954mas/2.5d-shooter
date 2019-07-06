@@ -1,5 +1,5 @@
 local COMMON = require "libs.common"
-local WORLD = require "scenes.game.model.game_controller"
+local GAME_CONTROLLER = require "scenes.game.model.game_controller"
 local Script = COMMON.new_n28s()
 
 function Script:init()
@@ -11,7 +11,7 @@ function Script:init()
 end
 
 function Script:on_physic_message(message_id, message, sender)
-	WORLD.level.physics_subject:onNext({message_id = message_id,message = message,sender = sender, source = self.source_url})
+	GAME_CONTROLLER.level.physics_subject:onNext({message_id = message_id,message = message,sender = sender, source = self.source_url})
 end
 
 

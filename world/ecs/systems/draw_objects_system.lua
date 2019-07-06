@@ -26,14 +26,14 @@ function System:process(e, dt)
 		e.url_sprite = msg.url(e.url_sprite.socket,e.url_sprite.path,HASH_SPRITE)
 		go.set_parent(e.url_sprite,e.url_go)
 		e.drawing = true
-		e.tile = self.world.world.level:get_tile(e.tile_id)
+		e.tile = self.world.game_controller.level:get_tile(e.tile_id)
 		self:sprite_set_image(e)
 		self.world:addEntity(e)
 	end
 end
 ---@param e Entity
 function System:sprite_set_image(e)
-	local tile = self.world.world.level:get_tile(e.tile_id)
+	local tile = self.world.game_controller.level:get_tile(e.tile_id)
 	sprite.play_flipbook(e.url_sprite,hash(tile.image))
 	go.set_scale(tile.scale,e.url_sprite)
 	local half_sprite = e.tile.height/2*tile.scale

@@ -10,9 +10,9 @@ local ANIMATIONS = {
 }
 
 ---@param e Entity
----@param world World
-function AI:initialize(e,world)
-	AIBase.initialize(self,e,world)
+---@param game_controller GameController
+function AI:initialize(e,game_controller)
+	AIBase.initialize(self,e,game_controller)
 	self:change_state(self.states.SPAWN)
 end
 
@@ -43,7 +43,7 @@ function AI:update(dt)
 			timer.delay(0.5,false,function()
 				self.attack = false
 				if self:get_distance_to_player() < 1.1 then
-					self.world:attack_player()
+					self.game_controller:attack_player()
 				end
 			end)
 		end

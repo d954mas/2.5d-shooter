@@ -7,7 +7,7 @@ local System = ECS.processingSystem()
 System.filter = ECS.requireAll("input","input_action_id","input_action")
 
 function System:input_mouse_move(action)
-	local player = self.world.world.level.player
+	local player = self.world.game_controller.level.player
 	player.angle.x = player.angle.x -CURSOR_HELPER.cursor_movement.x/540
 end
 
@@ -32,13 +32,13 @@ end
 
 function System:make_shot(action_id, action)
 	if action.pressed then
-		self.world.world:player_shoot()
+		self.world.game_controller:player_shoot()
 	end
 
 end
 
 function System:update_player_velocity()
-	local player = self.world.world.level.player
+	local player = self.world.game_controller.level.player
 	player.input_direction.x = self.movement.z - self.movement.w
 	player.input_direction.y = self.movement.x - self.movement.y
 	player.velocity.x = player.input_direction.x

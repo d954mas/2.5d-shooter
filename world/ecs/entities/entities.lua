@@ -124,9 +124,9 @@ function Entities.on_entity_updated(e)
 	end
 end
 
----@param world World
-function Entities.set_world(world)
-	Entities.world = assert(world)
+---@param game_controller GameController
+function Entities.set_game_controller(game_controller)
+	Entities.game_controller = assert(game_controller)
 end
 
 --endregion
@@ -188,7 +188,7 @@ end
 function Entities.create_blob(pos,tile_object)
 	pos = pos or vmath.vector3(tile_object.cell_xf + 0.5, tile_object.cell_yf+0.5,0)
 	local e = Entities.create_enemy(pos,FACTORY_ENEMY_BLOB_URL)
-	e.ai = AI.Blob(e,Entities.world)
+	e.ai = AI.Blob(e,Entities.game_controller)
 	return e
 end
 --endregion
@@ -197,7 +197,7 @@ end
 function Entities.create_spawner_enemy(object)
 	local e = {}
 	e.spawner = true
-	e.ai = AI.SpawnerEnemy(e,Entities.world,object)
+	e.ai = AI.SpawnerEnemy(e,Entities.game_controller,object)
 	return e
 end
 
@@ -241,7 +241,7 @@ function Entities.create_pickup(pos,tile_object)
 		e.rotation_global = true
 	end
 	e.rotation_global = true
-	local tile = assert(Entities.world.level:get_tile(e.tile_id),"no tile with id" .. tostring(e.tile_id))
+	local tile = assert(Entities.game_controller.level:get_tile(e.tile_id),"no tile with id" .. tostring(e.tile_id))
 	sprite.play_flipbook(e.url_sprite,hash(tile.image))
 	return e
 end

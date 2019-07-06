@@ -1,6 +1,6 @@
 local BaseScene = require "libs.sm.scene"
 local COMMON = require "libs.common"
-local WORLD = require "scenes.game.model.game_controller"
+local GAME_CONTROLLER = require "scenes.game.model.game_controller"
 local LEVELS = require "scenes.game.model.levels"
 local CURSOR_HELPER = require "libs.cursor_helper"
 
@@ -11,7 +11,7 @@ function Scene:initialize()
 end
 
 function Scene:on_show(input)
-    WORLD:load_level(assert(LEVELS.TESTS.LEVEL))
+    GAME_CONTROLLER:load_level(assert(LEVELS.TESTS.LEVEL))
     CURSOR_HELPER.lock_cursor()
     CURSOR_HELPER.register_listeners()
     COMMON.input_acquire()
@@ -25,25 +25,25 @@ function Scene:on_hide()
 end
 
 function Scene:on_final(go_self)
-    WORLD:dispose()
+    GAME_CONTROLLER:dispose()
 end
 
 function Scene:on_update(dt)
     self.dt = dt
     BaseScene.on_update(self,dt)
-    WORLD:update(dt)
+    GAME_CONTROLLER:update(dt)
     CURSOR_HELPER.update_cursor_movement()
     msg.post("#",COMMON.HASHES.MSG_POST_UPDATE)
 end
 
 function Scene:on_input(action_id, action)
     CURSOR_HELPER.on_input(action_id,action)
-    return WORLD:on_input(action_id,action)
+    return GAME_CONTROLLER:on_input(action_id,action)
 end
 
 function Scene:on_message(message_id, message, sender)
     if message_id == COMMON.HASHES.MSG_POST_UPDATE then
-        WORLD:post_update(self.dt)
+        GAME_CONTROLLER:post_update(self.dt)
     end
 end
 

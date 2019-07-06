@@ -1,5 +1,5 @@
 local COMMON = require "libs.common"
-local WORLD = require "scenes.game.model.game_controller"
+local GAME_CONTROLLER = require "scenes.game.model.game_controller"
 
 local UNKNOWN_COLOR = vmath.vector4(0, 0, 0, 1)
 local BLOCKED_COLOR = vmath.vector4(0.5, 0.5, 0.5, 1)
@@ -103,9 +103,9 @@ end
 
 function Map:update_cells()
 	for _, cell in pairs(self.node_map) do
-		local visible = WORLD.level:map_cell_in(cell.x,cell.y)
+		local visible = GAME_CONTROLLER.level:map_cell_in(cell.x,cell.y)
 		if visible then
-			local cell_level = WORLD.level:map_get_cell(cell.x,cell.y)
+			local cell_level = GAME_CONTROLLER.level:map_get_cell(cell.x,cell.y)
 			if cell_level.wall.floor == -1 then
 				gui.set_color(cell.root_node, UNKNOWN_COLOR)
 			else
@@ -122,9 +122,9 @@ function Map:update_cells()
 end
 
 function Map:update()
-	if WORLD.level then
+	if GAME_CONTROLLER.level then
 		self:update_cells()
-		self:set_position(WORLD.level.player.position)
+		self:set_position(GAME_CONTROLLER.level.player.position)
 	end
 end
 

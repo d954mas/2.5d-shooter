@@ -426,7 +426,7 @@ the Software, and to permit persons to whom the Software is furnished to do so,
     local worldMetaTable
 
 ---@class ECSWorld
----@field world World
+---@field game_controller GameController
 local World = {}
 function World:add(...)
 end

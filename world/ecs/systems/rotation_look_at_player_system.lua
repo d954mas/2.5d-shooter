@@ -11,7 +11,7 @@ end
 
 ---@param e Entity
 function System:preProcess( dt)
-	self.quaternion = vmath.quat_rotation_y(self.world.world.level.player.angle.x)
+	self.quaternion = vmath.quat_rotation_y(self.world.game_controller.level.player.angle.x)
 end
 
 

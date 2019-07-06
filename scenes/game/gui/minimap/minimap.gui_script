@@ -1,5 +1,5 @@
 local Minimap = require "scenes.game.gui.minimap.minimap"
-local WORLD = require "scenes.game.model.game_controller"
+local GAME_CONTROLLER = require "scenes.game.model.game_controller"
 local COMMON = require "libs.common"
 
 local Script = COMMON.new_n28s()
@@ -13,9 +13,9 @@ end
 
 function Script:update(dt)
 	self.minimap:update()
-	if WORLD.level then
-		gui.set_text(self.vh.lbl_player_pos, string.format("Pos:%.2f %.2f",WORLD.level.player.position.x,WORLD.level.player.position.y))
-		gui.set_rotation(self.vh.player_pointer_node, vmath.quat_rotation_z(-WORLD.level.player.angle.x))
+	if GAME_CONTROLLER.level then
+		gui.set_text(self.vh.lbl_player_pos, string.format("Pos:%.2f %.2f",GAME_CONTROLLER.level.player.position.x,GAME_CONTROLLER.level.player.position.y))
+		gui.set_rotation(self.vh.player_pointer_node, vmath.quat_rotation_z(-GAME_CONTROLLER.level.player.angle.x))
 	end
 end
 

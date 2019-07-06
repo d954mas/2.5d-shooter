@@ -9,11 +9,10 @@ local RENDER_CAM = require "rendercam.rendercam"
 local CAMERA_RAYS = 512
 local CAMERA_MAX_DIST = 50
 local TAG = "GameController"
---IT IS GAME WORLD
 --UPDATED FROM GAME COLLECTION
 
----@class World:Observable
-local M = COMMON.class("World")
+---@class GameController
+local M = COMMON.class("GameController")
 
 function M:reset()
 	if self.level then self.level:dispose() end
@@ -22,7 +21,7 @@ function M:reset()
 end
 
 function M:initialize()
-	ENTITIES.set_world(self)
+	ENTITIES.set_game_controller(self)
 	self.rx = RX.Subject()
 	self:reset()
 	self:camera_configure()

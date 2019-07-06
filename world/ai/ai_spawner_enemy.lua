@@ -6,11 +6,11 @@ local AI = COMMON.class("AISpawnerEnemy",AIBase)
 
 
 ---@param e Entity
----@param world World
-function AI:initialize(e,world,tiled_object)
+---@param game_controller GameController
+function AI:initialize(e,game_controller,tiled_object)
 	self.tiled_object = assert(tiled_object)
 	assert(self.tiled_object.properties.delay, "no delay for spawner")
-	AIBase.initialize(self,e,world)
+	AIBase.initialize(self,e,game_controller)
 	self.time = 0
 end
 
@@ -28,7 +28,7 @@ function AI:update(dt)
 			end
 		end
 		if pos then
-			self.world.level.ecs_world.ecs:addEntity(self.ENTITIES.create(self.tiled_object.properties.spawn_enemy,pos))
+			self.game_controller.level.ecs_world.ecs:addEntity(self.ENTITIES.create(self.tiled_object.properties.spawn_enemy,pos))
 			self.time = 0
 		end
 	end

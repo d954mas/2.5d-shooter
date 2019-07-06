@@ -1,5 +1,5 @@
 local COMMON = require "libs.common"
-local WORLD = require "scenes.game.model.game_controller"
+local GAME_CONTROLLER = require "scenes.game.model.game_controller"
 
 
 
@@ -25,7 +25,7 @@ function Script:init()
 	self.subscriptions:add(COMMON.EVENT_BUS:subscribe(COMMON.EVENTS.GAME_LEVEL_MAP_CHANGED):go_distinct(self.scheduler)
 								   :subscribe(function (event)
 		self:clear_textures()
-		local width, height = WORLD.level:map_get_width(),WORLD.level:map_get_height()
+		local width, height = GAME_CONTROLLER.level:map_get_width(),GAME_CONTROLLER.level:map_get_height()
 		gui.new_texture("map", width, height, "rgba", string.rep(WHITE_COLOR,  width * height))
 		gui.new_texture("map_visibility", width, height, "rgba", string.rep(TRANSPARENT_COLOR,  width * height))
 		gui.set_texture(self.vh.map_node, "map")
@@ -45,14 +45,14 @@ function Script:clear_textures()
 end
 
 function Script:update_map()
-	local map_width =  WORLD.level:map_get_width()
-	local map_height =  WORLD.level:map_get_height()
+	local map_width =  GAME_CONTROLLER.level:map_get_width()
+	local map_height =  GAME_CONTROLLER.level:map_get_height()
 	local pixels = ""
 	local pixels_visible = ""
 	--local zones = native_raycasting.get_visible_sprites()
 	for y = map_height, 1, -1 do
 		for x=1, map_width do
-			local cell = WORLD.level:map_get_cell(x,y)
+			local cell = GAME_CONTROLLER.level:map_get_cell(x,y)
 			pixels_visible = pixels_visible .. (native_raycasting.cells_get_by_id(cell.id):get_visibility() and
 					VISIBLE_COLOR or TRANSPARENT_COLOR)
 			--empty cell
@@ -77,7 +77,7 @@ function Script:update_map()
 	end
 	scale.y = scale.x
 	gui.set_scale(self.vh.map_node, scale)
-	gui.set_position(self.vh.player_node,vmath.vector3(WORLD.level.player.position.x,WORLD.level.player.position.y,0))
+	gui.set_position(self.vh.player_node,vmath.vector3(GAME_CONTROLLER.level.player.position.x,GAME_CONTROLLER.level.player.position.y,0))
 	gui.set_position(self.vh.map_node, vmath.vector3(1920-map_width*scale.x,1080-map_height*scale.y,1))
 end
 
