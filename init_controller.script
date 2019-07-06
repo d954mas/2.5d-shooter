@@ -3,6 +3,9 @@ local COMMON = require "libs.common"
 local SM = require "libs.sm.sm"
 local RX = require "libs.rx"
 local SOUNDS = require "libs.sounds"
+local LEVELS = require "scenes.game.model.levels"
+
+local RUN_TEST = false
 
 COMMON.empty_ne("defos")
 local Script = COMMON.new_n28s()
@@ -35,13 +38,22 @@ function Script:init()
     math.randomseed(os.time())
     self:scenes_register()
     self:input_init()
-    SM:show("GameScene")
+    if not RUN_TEST then
+        SM:show("GameScene",{level = LEVELS.TESTS.LEVEL })
+    else
+        self.test_runner = require("tests.tests") -- run tests
+        self.test_runner.run()
+    end
+
 end
 
 function Script:update(dt)
     RX.MainScheduler:update(dt)
     SM:update(dt)
     SOUNDS:update(dt)
+    if self.test_runner then
+        self.test_runner.update(dt)
+    end
 end
 
 function Script:final()

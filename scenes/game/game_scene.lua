@@ -10,8 +10,8 @@ function Scene:initialize()
     BaseScene.initialize(self, "GameScene", "/game#proxy", "game:/scene_controller")
 end
 
-function Scene:on_show(input)
-    GAME_CONTROLLER:load_level(assert(LEVELS.TESTS.LEVEL))
+function Scene:on_show()
+    GAME_CONTROLLER:load_level(assert(self._input.level,"need level name"))
     CURSOR_HELPER.lock_cursor()
     CURSOR_HELPER.register_listeners()
     COMMON.input_acquire()

@@ -14,7 +14,7 @@ M.TESTS = {
 function M.load_level(name)
 	local data = assert(sys.load_resource("/assets/levels/result/" .. name .. ".json","no lvl:" .. name))
 	local lvl = Level(json.decode(data))
-	COMMON.d(TAG,"lvl:" .. name .. " loaded")
+	COMMON.d("lvl:" .. name .. " loaded",TAG)
 	return lvl
 end
 

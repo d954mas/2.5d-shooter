@@ -98,11 +98,8 @@ end
 
 function Scene:init()
     assert(self._state == STATES.LOADED)
-    msg.post(self._url, COMMON.HASHES.MSG_ENABLE)
     msg.post(self._controller_url, COMMON.HASHES.MSG_SM_INIT, {scene_name = self._name})
-    msg.post(self._controller_url, COMMON.HASHES.MSG_SM_SHOW)
     self._state_subject:onNext(STATES.HIDE)
-    self._state_subject:onNext(STATES.PAUSED)
 end
 
 function Scene:pause()

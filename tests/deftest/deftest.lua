@@ -104,10 +104,15 @@ function M.run(options)
 		end
 		os.exit(0)
 	end)
+	M.co = co
+	M.continue()
+end
 
-	local ok, message = coroutine.resume(co)
+function M.continue()
+	assert(M.co)
+	local ok, message = coroutine.resume(M.co)
 	if not ok then
-		print("Something went wrong while running tests", message)
+		print("Something went wrong while running tests" ..  message)
 		os.exit(1)
 	end
 end

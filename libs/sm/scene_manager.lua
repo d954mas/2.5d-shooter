@@ -100,49 +100,55 @@ end
 ---@param new_scene Scene
 local function show_new_scene(self, old_scene, new_scene, input,options)
     assert(self, "self can't be nil")
-    assert(new_scene, "new_scene can't be nil")
+    assert(new_scene or options.to_init_collection, "new_scene can't be nil")
     local start_time = os.clock()
-    local STATES  = new_scene.STATIC.STATES
-    COMMON.i("change scene from " .. (old_scene and old_scene._name or "nil") .. " to " .. new_scene._name,TAG)
+    local STATES
+    COMMON.i("change scene from " .. (old_scene and old_scene._name or "nil") .. " to " .. (new_scene and new_scene._name or "nil"),TAG)
     options = options or {}
-    if new_scene == old_scene and not options.reload then
-        COMMON.i("scene:" .. new_scene._name .. " already on top")
-        self.co = nil
-        return
-    end
-    --try preload scene
-    if new_scene._state == STATES.UNLOADED then
-        load(self,new_scene)
+    if new_scene then
+        STATES  = new_scene.STATIC.STATES
+        if new_scene == old_scene and not options.reload then
+            COMMON.i("scene:" .. new_scene._name .. " already on top")
+            self.co = nil
+            return
+        end
+        --try preload scene
+        if new_scene._state == STATES.UNLOADED then
+            load(self,new_scene)
+        end
     end
 
     if old_scene then unload_scene(self,old_scene,new_scene) end
 
-    --need for reload
-    if new_scene._state == STATES.UNLOADED then
-        load(self,new_scene)
+    if new_scene then
+        --need for reload
+        if new_scene._state == STATES.UNLOADED then
+            load(self,new_scene)
+        end
+
+        --wait next scene loaded
+        while new_scene._state == STATES.LOADING do coroutine.yield() end
+
+        if new_scene._state == STATES.LOADED then
+            new_scene:init()
+        end
+
+        if new_scene._state == STATES.HIDE then
+            show(new_scene, input)
+        end
+
+        if new_scene._state == STATES.PAUSED then
+            new_scene:resume()
+            scene_transition(self,new_scene,new_scene.STATIC.TRANSITIONS.ON_SHOW)
+        end
     end
-
-    --wait next scene loaded
-    while new_scene._state == STATES.LOADING do coroutine.yield() end
-
-    if new_scene._state == STATES.LOADED then
-        new_scene:init()
+    if new_scene then
+        COMMON.i("acquire input for scene:" .. new_scene._name, TAG)
+        msg.post(new_scene._url,COMMON.HASHES.INPUT_ACQUIRE_FOCUS)
     end
-
-    if new_scene._state == STATES.HIDE then
-        show(new_scene, input)
-    end
-
-    if new_scene._state == STATES.PAUSED then
-        new_scene:resume()
-        scene_transition(self,new_scene,new_scene.STATIC.TRANSITIONS.ON_SHOW)
-    end
-
-    COMMON.i("acquire input for scene:" .. new_scene._name, TAG)
-    msg.post(new_scene._url,COMMON.HASHES.INPUT_ACQUIRE_FOCUS)
     self.co = nil
     COMMON.i(string.format("scene changed from:%s to:%s",old_scene and old_scene._name or tostring(nil)
-        ,new_scene._name), TAG)
+    ,new_scene and new_scene._name or "nil"), TAG)
     COMMON.i("time:" .. (os.clock() - start_time),TAG)
 end
 

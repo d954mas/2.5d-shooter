@@ -45,6 +45,7 @@ function Script:clear_textures()
 end
 
 function Script:update_map()
+	if not GAME_CONTROLLER.level then return end
 	local map_width =  GAME_CONTROLLER.level:map_get_width()
 	local map_height =  GAME_CONTROLLER.level:map_get_height()
 	local pixels = ""
