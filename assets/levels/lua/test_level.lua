@@ -2171,7 +2171,7 @@ return {
       y = 0,
       width = 32,
       height = 32,
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,

@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/scenes/game/model/level.lua" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/model/level.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests.collection" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/entities/entities.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/entities/entities.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/lua/test_level.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/lua/test_level.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/lua/test_movement.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/lua/test_movement.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/lua/test_objects.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/lua/test_objects.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/result/test_level.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/result/test_level.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/result/tileset.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/result/tileset.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/sources/test_level.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/sources/test_level.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/game.collection" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/game.collection" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/world/ecs/systems/draw_walls_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/draw_walls_system.lua" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,10 +37,13 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scenes/game/model/level.lua">
+        <entry file="file://$PROJECT_DIR$/world/ecs/systems/draw_walls_system.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
+            <state relative-caret-position="103">
+              <caret line="46" column="57" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="57" />
+              <folding>
+                <element signature="e#3048#4237#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -53,7 +59,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.world =</find>
       <find>world =</find>
       <find>ecs.world</find>
       <find>World</find>
@@ -83,6 +88,7 @@
       <find>wea</find>
       <find>camera_bob_offset</find>
       <find>hash\(.*image</find>
+      <find>factory_sprite</find>
     </findStrings>
     <replaceStrings>
       <replace>cellData</replace>
@@ -171,8 +177,8 @@
         <option value="$PROJECT_DIR$/world/ecs/systems/camera_bob_system.lua" />
         <option value="$PROJECT_DIR$/world/ecs/entities/entities.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/systems/draw_walls_system.lua" />
         <option value="$PROJECT_DIR$/scenes/game/model/level.lua" />
+        <option value="$PROJECT_DIR$/world/ecs/systems/draw_walls_system.lua" />
       </list>
     </option>
   </component>
@@ -183,8 +189,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="105" />
-    <option name="y" value="44" />
+    <option name="x" value="27" />
+    <option name="y" value="53" />
     <option name="width" value="1682" />
     <option name="height" value="1027" />
   </component>
@@ -212,7 +218,7 @@
               <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
               <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="materials" type="462c0819:PsiDirectoryNode" />
+              <item name="runtime_replaced" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
@@ -302,12 +308,12 @@
       <workItem from="1562171221528" duration="9743000" />
       <workItem from="1562268368532" duration="5351000" />
       <workItem from="1562352885346" duration="10847000" />
-      <workItem from="1562431896969" duration="12261000" />
+      <workItem from="1562431896969" duration="15271000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="267951000" />
+    <option name="totallyTimeSpent" value="270961000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -319,7 +325,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="105" y="44" width="1682" height="1027" extended-state="0" />
+    <frame x="27" y="53" width="1682" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28351784" />
@@ -340,8 +346,8 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4883149" weight="0.31681034" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.48769987" visible="true" weight="0.35021552" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.51230013" side_tool="true" visible="true" weight="0.35021552" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.48769987" visible="true" weight="0.17780173" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.51230013" side_tool="true" visible="true" weight="0.17780173" />
       <window_info anchor="bottom" id="TypeScript" order="13" weight="0.32924107" />
       <window_info anchor="bottom" id="Messages" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -449,23 +455,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scenes/game/game.gui">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/event_bus.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/events.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/render/my.render_script">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="443">
@@ -604,13 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/deftest/deftest.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="803">
-          <caret line="51" column="29" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_PLUGINS_DIR$/EmmyLua/lib/EmmyLua-1.2.10-IDEA182.jar!/std/Lua51/global.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
@@ -686,13 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/draw_walls_system.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-697">
-          <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/world/ecs/systems/update_object_color_system.lua">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -746,8 +721,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scenes/game/model/level.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
+        <state relative-caret-position="113">
+          <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/levels/result/tileset.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$USER_HOME$/development/Defold/api1_2_151.zip!/api/game_object.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="203" column="12" selection-start-line="203" selection-start-column="12" selection-end-line="203" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/deftest/deftest.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="709">
+          <caret line="51" column="29" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/ecs/systems/draw_walls_system.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="46" column="57" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="57" />
+          <folding>
+            <element signature="e#3048#4237#0" />
+          </folding>
         </state>
       </provider>
     </entry>

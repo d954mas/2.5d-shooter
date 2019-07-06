@@ -7,8 +7,8 @@ local HASH_SPRITE_WEST = hash("sprite_west")
 local HASH_SPRITE_NORTH = hash("sprite_north")
 local HASH_SPRITE_SOUTH = hash("sprite_south")
 local HASH_SPRITE = hash("sprite")
-local FACTORY_WALL_URL = msg.url("game:/factories#factory_wall")
-local FACTORY_FLOOR_URL = msg.url("game:/factories#factory_floor")
+local FACTORY_EMPTY_URL = msg.url("game:/factories#factory_empty")
+local FACTORY_SPRITE_WALL_URL = msg.url("game:/factories#factory_sprite_wall")
 
 --Draw wall and floors
 
@@ -39,13 +39,36 @@ local System = ECS.system()
 function System:initialize()
 	self.wall_objects = {} --map key is cell_id value is WallRenderObject
 	self.wall_transparent_objects = {} --map key is cell_id value is WallRenderObject Small wall for transparent tiles. Need to show correct color inside cell
-	self.floor_objects = {} --map key is cell_id valuee is FloorRenderObject
-	self.ceil_objects = {} --map key is cell_id valuee is FloorRenderObject
-	self.wall_scale = 1/64 + 0.000001 --make wall bigger to get correct color and avoid z fighting for near walls
-	self.wall_transparent_scale = 1/64 - 0.00001 --make wall smaller to get correct color(inner cell color) and avoid z fighting for main wall
-	self.floor_scale = 1/64
 	self.all_objects = {
-		self.floor_objects,self.ceil_objects,self.wall_objects,self.wall_transparent_objects
+		self.wall_objects,self.wall_transparent_objects
+	}
+	self.wall_side_configs = {
+		north = {
+			rotation = vmath.quat_rotation_y(math.rad(180)),
+			position = vmath.vector3(0,0.5,-0.5)
+		},
+		south = {
+			rotation = vmath.quat_rotation_y(math.rad(0)),
+			position = vmath.vector3(0,0.5,0.5)
+		},
+		east = {
+			rotation = vmath.quat_rotation_y(math.rad(90)),
+			position = vmath.vector3(0.5,0.5,0)
+		},
+		west = {
+			rotation = vmath.quat_rotation_y(math.rad(90)),
+			position = vmath.vector3(-0.5,0.5,0)
+		},
+		floor = {
+			rotation = vmath.quat_rotation_x(math.rad(90)),
+			position = vmath.vector3(0,0,0),
+			no_transparent = true
+		},
+		ceil = {
+			rotation = vmath.quat_rotation_x(math.rad(90)),
+			position = vmath.vector3(0,1,0),
+			no_transparent = true
+		}
 	}
 end
 
@@ -59,48 +82,41 @@ function System:sprite_set_image(url,id)
 	--go.set_scale(tile.scale,url) -- DO not works.It change scale of all object
 end
 
+function System:create_wall_object(cell_data,x,y,transparent)
+	local root_go,transparent_go
+	local have_transparent = false
+	local scale = transparent and 0.9990 or 1.0001
+	if transparent then
+		assert(not self.wall_transparent_objects[cell_data.id], "already created id:" .. cell_data.id)
+	else
+		assert(not self.wall_objects[cell_data.id], "already created id:" .. cell_data.id)
+	end
+	for k,v in pairs(cell_data.wall)do
+		if v~=-1 and self.wall_side_configs[k] then
+			local config = self.wall_side_configs[k]
+			local tile = self.world.game_controller.level:get_tile(v)
+			have_transparent = have_transparent or tile.properties.transparent
+			if  not(transparent and config.no_transparent) then
+				root_go = root_go or msg.url(factory.create(FACTORY_EMPTY_URL,vmath.vector3(x-0.5,0,-y+0.5),vmath.quat_rotation_z(0),nil,scale))
+				local sprite_go = msg.url(factory.create(FACTORY_SPRITE_WALL_URL,config.position,config.rotation,nil,tile.scale))
+				sprite.play_flipbook(sprite_go,tile.image)
+				go.set_parent(sprite_go,root_go)
+			end
+		end
+	end
+	--need same go but smaller for inner cell lights
+	if not transparent and have_transparent then
+		transparent_go = self:create_wall_object(cell_data,x,y,true)
+	end
+	return root_go,transparent_go
+end
+
 function System:update(dt)
 	local need_load = native_raycasting.cells_get_need_load()
 	for _,cell in ipairs(need_load)do
 		local x,y =cell:get_x(),cell:get_y()
 		local cell_data = self.world.game_controller.level:map_get_cell(x,y)
-		if cell_data.wall.north ~= - 1 or cell_data.wall.south ~= - 1 or cell_data.wall.east ~= - 1 or cell_data.wall.west ~= - 1 then
-			local wall_url = msg.url(factory.create(FACTORY_WALL_URL,vmath.vector3(x-0.5,0.5,-y+0.5),vmath.quat_rotation_z(0),nil,self.wall_scale))
-			assert(not self.wall_objects[cell_data.id], "already created id:" .. cell_data.id)
-			local wall_object = WallRenderObject(wall_url)
-			self.wall_objects[cell_data.id] = wall_object
-			self:sprite_set_image(wall_object.components.sprite_north,cell_data.wall.north)
-			self:sprite_set_image(wall_object.components.sprite_south,cell_data.wall.south)
-			self:sprite_set_image(wall_object.components.sprite_east,cell_data.wall.east)
-			self:sprite_set_image(wall_object.components.sprite_west,cell_data.wall.west)
-			local tile = self.world.game_controller.level:get_tile(cell_data.wall.north)
-			if tile.properties.transparent then --one or more edge transparent
-				local wall_transparent_url = msg.url(factory.create(FACTORY_WALL_URL,vmath.vector3(x-0.5,0.5,-y+0.5),vmath.quat_rotation_z(0),nil,self.wall_transparent_scale))
-				local wall_object_transparent = WallRenderObject(wall_transparent_url)
-				self.wall_transparent_objects[cell_data.id] = wall_object_transparent
-				self:sprite_set_image(wall_object_transparent.components.sprite_north,cell_data.wall.north)
-				self:sprite_set_image(wall_object_transparent.components.sprite_south,cell_data.wall.south)
-				self:sprite_set_image(wall_object_transparent.components.sprite_east,cell_data.wall.east)
-				self:sprite_set_image(wall_object_transparent.components.sprite_west,cell_data.wall.west)
-			end
-
-		end
-		if cell_data.wall.floor ~= -1 then
-			local floor_url = msg.url(factory.create(FACTORY_FLOOR_URL,vmath.vector3(x-0.5,0,-y+0.5),vmath.quat_rotation_z(0),
-													 nil,self.floor_scale))
-			assert(not self.floor_objects[cell_data.id], "already created id:" .. cell_data.id)
-			local floor_object = FloorRenderObject(floor_url)
-			self.floor_objects[cell_data.id] = floor_object
-			self:sprite_set_image(floor_object.components.sprite,cell_data.wall.floor)
-		end
-		if cell_data.wall.ceil ~= -1 then
-			local floor_url = msg.url(factory.create(FACTORY_FLOOR_URL,vmath.vector3(x-0.5,1,-y+0.5),vmath.quat_rotation_z(0),
-													 nil,self.floor_scale))
-			assert(not self.ceil_objects[cell_data.id], "already created id:" .. cell_data.id)
-			local floor_object = FloorRenderObject(floor_url)
-			self.ceil_objects[cell_data.id] = floor_object
-			self:sprite_set_image(floor_object.components.sprite,cell_data.wall.ceil)
-		end
+		self.wall_objects[cell_data.id],self.wall_transparent_objects[cell_data.id] = self:create_wall_object(cell_data,x,y)
 	end
 	local need_unload = native_raycasting.cells_get_need_unload()
 	for _,cell in ipairs(need_unload)do
@@ -109,7 +125,7 @@ function System:update(dt)
 		for _, objects in ipairs(self.all_objects)do
 			local object = objects[cell_data.id]
 			if object then
-				go.delete(object.url)
+				go.delete(object,true)
 				objects[cell_data.id] = nil
 			end
 		end
