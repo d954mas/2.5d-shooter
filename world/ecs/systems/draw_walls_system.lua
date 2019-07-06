@@ -12,33 +12,12 @@ local FACTORY_SPRITE_WALL_URL = msg.url("game:/factories#factory_sprite_wall")
 
 --Draw wall and floors
 
-local WallRenderObject = COMMON.class("WallRenderObject")
----@param url url
-function WallRenderObject:initialize(url)
-	self.url = assert(url)
-	self.components = {
-		sprite_east = msg.url(self.url.socket,self.url.path,HASH_SPRITE_EAST),
-		sprite_west = msg.url(self.url.socket,self.url.path,HASH_SPRITE_WEST),
-		sprite_north = msg.url(self.url.socket,self.url.path,HASH_SPRITE_NORTH),
-		sprite_south = msg.url(self.url.socket,self.url.path,HASH_SPRITE_SOUTH)
-	}
-end
-
-local FloorRenderObject = COMMON.class("FloorRenderObject")
----@param url url
-function FloorRenderObject:initialize(url)
-	self.url = assert(url)
-	self.components = {
-		sprite = msg.url(self.url.socket,self.url.path,HASH_SPRITE),
-	}
-end
-
 ---@class DrawWallsSystem:ECSSystem
 local System = ECS.system()
 
 function System:initialize()
-	self.wall_objects = {} --map key is cell_id value is WallRenderObject
-	self.wall_transparent_objects = {} --map key is cell_id value is WallRenderObject Small wall for transparent tiles. Need to show correct color inside cell
+	self.wall_objects = {} --map key is cell_id value is url
+	self.wall_transparent_objects = {} --map key is cell_id value is url
 	self.all_objects = {
 		self.wall_objects,self.wall_transparent_objects
 	}
