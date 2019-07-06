@@ -32,7 +32,7 @@ end
 
 function Sounds:play_sound_player_hurt()
 	local sound = self.sounds.game["player_hurt_" .. math.random(3)]
-	self:play_sound(sound)
+	--self:play_sound(sound) --HATE THIS SOUND WHILE DEVELOP
 end
 
 function Sounds:play_sound(sound_obj)
