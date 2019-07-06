@@ -343,7 +343,8 @@ return {
         {
           id = 35,
           properties = {
-            ["block"] = false
+            ["block"] = false,
+            ["transparent"] = true
           },
           image = "../../images/game/walls/wall35.png",
           width = 64,

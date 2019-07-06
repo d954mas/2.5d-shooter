@@ -380,6 +380,7 @@
     "scale":0.015625,
     "id":36,
     "properties":{
+      "transparent":true,
       "block":false
     },
     "height":64,

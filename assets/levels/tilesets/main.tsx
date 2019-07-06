@@ -208,6 +208,7 @@
  <tile id="35">
   <properties>
    <property name="block" type="bool" value="false"/>
+   <property name="transparent" type="bool" value="true"/>
   </properties>
   <image width="64" height="64" source="../../images/game/walls/wall35.png"/>
  </tile>

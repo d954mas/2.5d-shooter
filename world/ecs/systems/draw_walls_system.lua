@@ -38,10 +38,15 @@ local System = ECS.system()
 
 function System:initialize()
 	self.wall_objects = {} --map key is cell_id value is WallRenderObject
+	self.wall_transparent_objects = {} --map key is cell_id value is WallRenderObject Small wall for transparent tiles. Need to show correct color inside cell
 	self.floor_objects = {} --map key is cell_id valuee is FloorRenderObject
 	self.ceil_objects = {} --map key is cell_id valuee is FloorRenderObject
 	self.wall_scale = 1/64 + 0.000001 --make wall bigger to get correct color and avoid z fighting for near walls
+	self.wall_transparent_scale = 1/64 - 0.00001 --make wall smaller to get correct color(inner cell color) and avoid z fighting for main wall
 	self.floor_scale = 1/64
+	self.all_objects = {
+		self.floor_objects,self.ceil_objects,self.wall_objects,self.wall_transparent_objects
+	}
 end
 
 System:initialize()
@@ -68,6 +73,17 @@ function System:update(dt)
 			self:sprite_set_image(wall_object.components.sprite_south,cell_data.wall.south)
 			self:sprite_set_image(wall_object.components.sprite_east,cell_data.wall.east)
 			self:sprite_set_image(wall_object.components.sprite_west,cell_data.wall.west)
+			local tile = self.world.game_controller.level:get_tile(cell_data.wall.north)
+			if tile.properties.transparent then --one or more edge transparent
+				local wall_transparent_url = msg.url(factory.create(FACTORY_WALL_URL,vmath.vector3(x-0.5,0.5,-y+0.5),vmath.quat_rotation_z(0),nil,self.wall_transparent_scale))
+				local wall_object_transparent = WallRenderObject(wall_transparent_url)
+				self.wall_transparent_objects[cell_data.id] = wall_object_transparent
+				self:sprite_set_image(wall_object_transparent.components.sprite_north,cell_data.wall.north)
+				self:sprite_set_image(wall_object_transparent.components.sprite_south,cell_data.wall.south)
+				self:sprite_set_image(wall_object_transparent.components.sprite_east,cell_data.wall.east)
+				self:sprite_set_image(wall_object_transparent.components.sprite_west,cell_data.wall.west)
+			end
+
 		end
 		if cell_data.wall.floor ~= -1 then
 			local floor_url = msg.url(factory.create(FACTORY_FLOOR_URL,vmath.vector3(x-0.5,0,-y+0.5),vmath.quat_rotation_z(0),
@@ -90,31 +106,11 @@ function System:update(dt)
 	for _,cell in ipairs(need_unload)do
 		local x,y =cell:get_x(),cell:get_y()
 		local cell_data = self.world.game_controller.level:map_get_cell(x,y)
-		if cell_data.wall.north ~= -1 then
-			local object = self.wall_objects[cell_data.id]
-			self.wall_objects[cell_data.id] = nil
+		for _, objects in ipairs(self.all_objects)do
+			local object = objects[cell_data.id]
 			if object then
 				go.delete(object.url)
-			--else
-				--COMMON.w("can't unload not loaded id:" .. cell_data.id,TAG)
-			end
-		end
-		if cell_data.wall.floor ~= -1 then
-			local object = self.floor_objects[cell_data.id]
-			self.floor_objects[cell_data.id] = nil
-			if object then
-				go.delete(object.url)
-		--	else
-				--COMMON.w("can't unload not loaded id:" .. cell_data.id,TAG)
-			end
-		end
-		if cell_data.wall.ceil ~= -1 then
-			local object = self.ceil_objects[cell_data.id]
-			self.ceil_objects[cell_data.id] = nil
-			if object then
-				go.delete(object.url)
-			--else
-				--COMMON.w("can't unload not loaded id:" .. cell_data.id,TAG)
+				objects[cell_data.id] = nil
 			end
 		end
 	end
