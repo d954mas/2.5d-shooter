@@ -40,6 +40,8 @@ function System:initialize()
 	self.wall_objects = {} --map key is cell_id value is WallRenderObject
 	self.floor_objects = {} --map key is cell_id valuee is FloorRenderObject
 	self.ceil_objects = {} --map key is cell_id valuee is FloorRenderObject
+	self.wall_scale = 1/64 + 0.000001 --make wall bigger to get correct color and avoid z fighting for near walls
+	self.floor_scale = 1/64
 end
 
 System:initialize()
@@ -49,7 +51,7 @@ System:initialize()
 function System:sprite_set_image(url,id)
 	local tile = self.world.game_controller.level:get_tile(id)
 	sprite.play_flipbook(url,hash(tile.image))
-	go.set_scale(tile.scale,url)
+	--go.set_scale(tile.scale,url) -- DO not works.It change scale of all object
 end
 
 function System:update(dt)
@@ -58,7 +60,7 @@ function System:update(dt)
 		local x,y =cell:get_x(),cell:get_y()
 		local cell_data = self.world.game_controller.level:map_get_cell(x,y)
 		if cell_data.wall.north ~= - 1 or cell_data.wall.south ~= - 1 or cell_data.wall.east ~= - 1 or cell_data.wall.west ~= - 1 then
-			local wall_url = msg.url(factory.create(FACTORY_WALL_URL,vmath.vector3(x-0.5,0.5,-y+0.5),vmath.quat_rotation_z(0),nil))
+			local wall_url = msg.url(factory.create(FACTORY_WALL_URL,vmath.vector3(x-0.5,0.5,-y+0.5),vmath.quat_rotation_z(0),nil,self.wall_scale))
 			assert(not self.wall_objects[cell_data.id], "already created id:" .. cell_data.id)
 			local wall_object = WallRenderObject(wall_url)
 			self.wall_objects[cell_data.id] = wall_object
@@ -69,7 +71,7 @@ function System:update(dt)
 		end
 		if cell_data.wall.floor ~= -1 then
 			local floor_url = msg.url(factory.create(FACTORY_FLOOR_URL,vmath.vector3(x-0.5,0,-y+0.5),vmath.quat_rotation_z(0),
-													 nil,vmath.vector3(1/64)))
+													 nil,self.floor_scale))
 			assert(not self.floor_objects[cell_data.id], "already created id:" .. cell_data.id)
 			local floor_object = FloorRenderObject(floor_url)
 			self.floor_objects[cell_data.id] = floor_object
@@ -77,7 +79,7 @@ function System:update(dt)
 		end
 		if cell_data.wall.ceil ~= -1 then
 			local floor_url = msg.url(factory.create(FACTORY_FLOOR_URL,vmath.vector3(x-0.5,1,-y+0.5),vmath.quat_rotation_z(0),
-													 nil,vmath.vector3(1/64)))
+													 nil,self.floor_scale))
 			assert(not self.ceil_objects[cell_data.id], "already created id:" .. cell_data.id)
 			local floor_object = FloorRenderObject(floor_url)
 			self.ceil_objects[cell_data.id] = floor_object
