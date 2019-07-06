@@ -35,7 +35,7 @@ end
 ---@param e Entity
 function System:sprite_set_image(e)
 	local tile = e.tile
-	sprite.play_flipbook(e.url_sprite,hash(tile.image))
+	sprite.play_flipbook(e.url_sprite,tile.image)
 	go.set_scale(tile.scale,e.url_sprite)
 	local half_sprite = e.tile.height/2*tile.scale
 	local sprite_offset = vmath.vector3(0,half_sprite,0)

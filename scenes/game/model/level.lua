@@ -21,6 +21,9 @@ function Level:initialize(data)
 	if TILESET == nil then
 		--load tileset once
 		TILESET = json.decode(assert(sys.load_resource("/assets/levels/result/tileset.json"),"no tileset"))
+		for k,v in pairs(TILESET)do
+			if v.image then v.image = hash(v.image) end
+		end
 	end
 	self.data = assert(data)
 	self.ecs_world = ECS_WORLD()

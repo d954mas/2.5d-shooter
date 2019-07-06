@@ -55,7 +55,7 @@ System:initialize()
 
 function System:sprite_set_image(url,id)
 	local tile = self.world.game_controller.level:get_tile(id)
-	sprite.play_flipbook(url,hash(tile.image))
+	sprite.play_flipbook(url,tile.image)
 	--go.set_scale(tile.scale,url) -- DO not works.It change scale of all object
 end
 
