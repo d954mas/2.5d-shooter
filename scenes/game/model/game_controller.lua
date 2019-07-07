@@ -69,6 +69,36 @@ function M:dispose()
 	self.subscriptions = nil
 end
 
+--region Utils
+--TODO CAN LOOP INFINITY
+--TODO FIX PERFORMANCE
+function M:utils_get_random_spawn_position()
+	local w,h = self.level:map_get_width(), self.level:map_get_height()
+	while true do
+		local x,y = math.random(1,w), math.random(1,h)
+		local map_cell = self.level:map_get_cell(x,y)
+		if not map_cell.blocked  and map_cell.wall.floor ~= -1 then
+			return vmath.vector3(x,y,0)
+		end
+	end
+end
+--TODO FIX PERFORMANCE
+function M:utils_get_random_spawn_position_greater_than(distance,max_tries)
+	max_tries = max_tries or math.huge()
+	for _=1,max_tries do
+		local spawn_pos = self:utils_get_random_spawn_position()
+		if vmath.length(self.level.player.position-spawn_pos) >= distance then
+			return spawn_pos
+		end
+	end
+end
+
+---@return NativeCellData[]
+function M:utils_find_path_to_player(start_pos)
+	return native_raycasting.map_find_path(start_pos.x,start_pos.y,
+										   math.ceil(self.level.player.position.x),math.ceil(self.level.player.position.y))
+end
+
 --TODO MOVE TO ENTITY WEAPON
 function M:player_shoot()
 	if self.level.player.player_shooting then return end
@@ -125,19 +155,8 @@ function M:spawn_pickups()
 		---@type ENTITIES
 		local ENTITIES = requiref "world.ecs.entities.entities"
 		local pickup = COMMON.LUME.weightedchoice(pickups_weights)
-		self.level.ecs_world.ecs:addEntity(ENTITIES.create_pickup(self:get_random_spawn_position()-vmath.vector3(0.5,0.5,0),pickup))
+		self.level.ecs_world.ecs:addEntity(ENTITIES.create_pickup(self:utils_get_random_spawn_position()-vmath.vector3(0.5,0.5,0),pickup))
 	end)
-end
-
-function M:get_random_spawn_position()
-	local w,h = self.level:map_get_width(), self.level:map_get_height()
-	while true do
-		local x,y = math.random(1,w), math.random(1,h)
-		local map_cell = self.level:map_get_cell(x,y)
-		if not map_cell.blocked  and map_cell.wall.floor ~= -1 then
-			return vmath.vector3(x,y,0)
-		end
-	end
 end
 
 function M:on_input(action_id,action)

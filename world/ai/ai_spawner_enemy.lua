@@ -18,15 +18,7 @@ function AI:update(dt)
 	AIBase.update(self,dt)
 	self.time = self.time + dt
 	if self.time > self.tiled_object.properties.delay and #self.ENTITIES.enemies<30 then
-		local player = self:get_player_entity()
-		local pos
-		for i=1,10 do
-			local spawn_pos = self:get_random_spawn_position()
-			if vmath.length(player.position-spawn_pos) > 4 then
-				pos = spawn_pos
-				break
-			end
-		end
+		local pos = self.game_controller:utils_get_random_spawn_position_greater_than(4,10)
 		if pos then
 			self.game_controller.level.ecs_world.ecs:addEntity(self.ENTITIES.create(self.tiled_object.properties.spawn_enemy,pos))
 			self.time = 0

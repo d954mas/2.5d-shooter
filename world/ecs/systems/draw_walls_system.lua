@@ -1,12 +1,6 @@
 local ECS = require 'libs.ecs'
-
 local COMMON = require "libs.common"
 
-local HASH_SPRITE_EAST = hash("sprite_east")
-local HASH_SPRITE_WEST = hash("sprite_west")
-local HASH_SPRITE_NORTH = hash("sprite_north")
-local HASH_SPRITE_SOUTH = hash("sprite_south")
-local HASH_SPRITE = hash("sprite")
 local FACTORY_EMPTY_URL = msg.url("game:/factories#factory_empty")
 local FACTORY_SPRITE_WALL_URL = msg.url("game:/factories#factory_sprite_wall")
 
@@ -53,14 +47,7 @@ end
 
 System:initialize()
 
-
-
-function System:sprite_set_image(url,id)
-	local tile = self.world.game_controller.level:get_tile(id)
-	sprite.play_flipbook(url,tile.image)
-	--go.set_scale(tile.scale,url) -- DO not works.It change scale of all object
-end
-
+--create Wall and smaller inner Wall for transparent
 function System:create_wall_object(cell_data,x,y,transparent)
 	local root_go,transparent_go
 	local have_transparent = false

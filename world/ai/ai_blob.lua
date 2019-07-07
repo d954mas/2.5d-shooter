@@ -21,9 +21,9 @@ function AI:update(dt)
 	if self.state == self.states.IDLE then
 		local next_cell = self:find_path_to_player()[2]
 		if next_cell then
-			local current_x, current_y = self:get_current_cell_position()
-			local dx,dy = next_cell:get_x() - current_x,next_cell:get_y() - current_y
-			local cell_dx,cell_dy = 1-(current_x  - self.e.position.x), 1-(current_y - self.e.position.y)
+			local current_pos = self:get_current_cell_position()
+			local dx,dy = next_cell:get_x() - current_pos.x,next_cell:get_y() - current_pos.y
+			local cell_dx,cell_dy = 1-(current_pos.x  - self.e.position.x), 1-(current_pos.y - self.e.position.y)
 			if dy ~= 0 and dx==0 and (cell_dx <0.4 or cell_dx > 0.6) then
 				dy = 0
 				dx =  0.5 - cell_dx

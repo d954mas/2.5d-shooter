@@ -242,7 +242,7 @@ function Entities.create_pickup(pos,tile_object)
 		e.rotation_global = true
 	end
 	e.rotation_global = true
-	local tile = assert(Entities.game_controller.level:get_tile(e.tile_id),"no tile with id" .. tostring(e.tile_id))
+	local tile = Entities.game_controller.level:get_tile(e.tile_id)
 	sprite.play_flipbook(e.url_sprite,tile.image)
 	return e
 end
