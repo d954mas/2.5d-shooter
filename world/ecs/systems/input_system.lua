@@ -2,6 +2,8 @@ local ECS = require 'libs.ecs'
 local CURSOR_HELPER = require "libs.cursor_helper"
 local COMMON = require "libs.common"
 
+local TAG = "InputSystem"
+
 ---@class InputSystem:ECSSystem
 local System = ECS.processingSystem()
 System.filter = ECS.requireAll("input","input_action_id","input_action")
@@ -28,13 +30,19 @@ function System:init_input()
 	self.input_handler:add(COMMON.HASHES.INPUT_RIGHT,get_input_movement_fun("z"))
 	self.input_handler:add(COMMON.HASHES.INPUT_LEFT,get_input_movement_fun("w"))
 	self.input_handler:add(COMMON.HASHES.INPUT_TOUCH,self.make_shot)
+	self.input_handler:add(COMMON.HASHES.INPUT_NEED_CHECK,self.check_input)
+end
+
+function System:check_input()
+	COMMON.i("check input from global PRESSED_KEYS",TAG)
+	self.movement.x = COMMON.INPUT.PRESSED_KEYS[COMMON.HASHES.INPUT_UP] and 1 or 0
+	self.movement.y = COMMON.INPUT.PRESSED_KEYS[COMMON.HASHES.INPUT_DOWN]  and 1 or 0
+	self.movement.z = COMMON.INPUT.PRESSED_KEYS[COMMON.HASHES.INPUT_RIGHT]  and 1 or 0
+	self.movement.w = COMMON.INPUT.PRESSED_KEYS[COMMON.HASHES.INPUT_LEFT]  and 1 or 0
 end
 
 function System:make_shot(action_id, action)
-	if action.pressed then
 		self.world.game_controller:player_shoot()
-	end
-
 end
 
 function System:update_player_velocity()
@@ -48,8 +56,6 @@ function System:update_player_velocity()
 	end
 	if player.angle then player.velocity = vmath.rotate(vmath.quat_rotation_z(player.angle.x),player.velocity) end
 end
-
-
 
 
 ---@param e Entity

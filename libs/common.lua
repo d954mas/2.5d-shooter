@@ -192,6 +192,14 @@ function M.coroutine_resume(cor,...)
 	end
 end
 
+function M.coroutine_wait(time)
+	assert(time)
+	local dt = 0
+	while dt<time do
+		dt = dt + coroutine.yield()
+	end
+end
+
 --generate empty table for native extension.
 --use it on system that not supported
 function M.empty_ne(name,ignore_log)

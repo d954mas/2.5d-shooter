@@ -12,6 +12,7 @@ local Script = COMMON.new_n28s()
 
 local scenes = {
     require "scenes.game.game_scene",
+    require "scenes.modal.pause.pause_modal",
 }
 
 function Script:scenes_register()
@@ -57,10 +58,12 @@ function Script:update(dt)
 end
 
 function Script:final()
+    COMMON.INPUT.clear()
     self.input.release()
 end
 
 function Script:on_input(action_id, action)
+    COMMON.INPUT.handle_pressed_keys(action_id,action)
     return self.input:on_input(self,action_id,action)
 end
 

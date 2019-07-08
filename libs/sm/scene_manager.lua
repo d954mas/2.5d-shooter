@@ -101,10 +101,15 @@ end
 local function show_new_scene(self, old_scene, new_scene, input,options)
     assert(self, "self can't be nil")
     assert(new_scene or options.to_init_collection, "new_scene can't be nil")
+    options = options or {}
+    if options.delay then
+        COMMON.i("change scene delay:" .. options.delay)
+        COMMON.coroutine_wait(options.delay)
+    end
     local start_time = os.clock()
     local STATES
     COMMON.i("change scene from " .. (old_scene and old_scene._name or "nil") .. " to " .. (new_scene and new_scene._name or "nil"),TAG)
-    options = options or {}
+
     if new_scene then
         STATES  = new_scene.STATIC.STATES
         if new_scene == old_scene and not options.reload then
@@ -202,6 +207,26 @@ function M:update(dt)
         if not ok then
             COMMON.e(res, TAG)
             self.co = nil
+        end
+    end
+end
+
+function M:is_loading()
+    return self.co
+end
+
+function M:is_show_modal(name)
+    local scene = self:get_scene_by_name(name)
+    if not scene._config.modal then
+        COMMON.w("scene:" .. name .. " is not modal",TAG)
+        return false
+    end
+    for i=#self.stack,1,-1 do
+        ---@type Scene
+        local current_scene = self.stack[i]
+        if current_scene == scene then return true end
+        if not current_scene._config.modal then
+            return false
         end
     end
 end

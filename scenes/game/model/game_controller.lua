@@ -99,6 +99,8 @@ function M:utils_find_path_to_player(start_pos)
 										   math.ceil(self.level.player.position.x),math.ceil(self.level.player.position.y))
 end
 
+--endregion
+
 --TODO MOVE TO ENTITY WEAPON
 function M:player_shoot()
 	if self.level.player.player_shooting then return end
@@ -157,6 +159,10 @@ function M:spawn_pickups()
 		local pickup = COMMON.LUME.weightedchoice(pickups_weights)
 		self.level.ecs_world.ecs:addEntity(ENTITIES.create_pickup(self:utils_get_random_spawn_position()-vmath.vector3(0.5,0.5,0),pickup))
 	end)
+end
+
+function M:on_resume()
+	self.level.ecs_world:add_entity(ENTITIES.create_input(COMMON.HASHES.INPUT_NEED_CHECK,{}))
 end
 
 function M:on_input(action_id,action)

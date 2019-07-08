@@ -15,6 +15,7 @@ M.INPUT_SPACE = hash("space")
 M.INPUT_ESC = hash("escape")
 M.INPUT_TOUCH = hash("touch")
 M.INPUT_RIGHT_CLICK = hash("right_click")
+M.INPUT_NEED_CHECK = hash("input_need_check") -- after resume paused scene. While paused scene do not received pressed,release, so current state may be wrong
 
 M.MSG_SYSTEM_TOGGLE_PROFILER = hash("toggle_profile")
 

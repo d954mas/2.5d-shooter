@@ -4,6 +4,8 @@ local CLASS = require "libs.middleclass"
 local M = CLASS.class("InputReceiver")
 M.HASH_NIL = HASHES.NIL --used for mouse movement
 
+M.PRESSED_KEYS = {}
+
 local function ensure_hash(string_or_hash)
 	return type(string_or_hash) == "string" and hash(string_or_hash) or string_or_hash
 end
@@ -39,6 +41,18 @@ function M:on_input(go_self, action_id, action)
 		end
 	end
 	return false
+end
+
+function M.clear()
+	M.PRESSED_KEYS = {}
+end
+
+function M.handle_pressed_keys(action_id,action)
+	if action.pressed then
+		M.PRESSED_KEYS[action_id] = true
+	elseif action.released then
+		M.PRESSED_KEYS[action_id] = false
+	end
 end
 
 function M.acquire(url)

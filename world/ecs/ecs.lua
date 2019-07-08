@@ -10,6 +10,7 @@ function EcsWorld:initialize()
 	self.ecs = ECS.world()
 	self.ecs.game_controller = requiref("scenes.game.model.game_controller")
 	self:_init_systems()
+	self.systems = SYSTEMS
 end
 
 function EcsWorld:_init_systems()

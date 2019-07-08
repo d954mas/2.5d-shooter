@@ -3,12 +3,15 @@ local RENDERCAM = require "rendercam.rendercam"
 local IS_HTML = sys.get_sys_info().system_name == "HTML5"
 
 --LOCK CURSOR LIKE IN SHOOTER.
+--use defos.set_cursor_locked in html
+--for pc is clip and hide cursor.Keep it in center. Can't use set_cursor_locked,
+--because when locked do not received cursor movement
 local M = {}
 M.focus = true
 M.cursor_movement = vmath.vector3(0)
 function M.register_listeners()
 	window.set_listener(function (self,event,sss)
-		M.prev_state = not M.locked
+		--M.prev_state = not M.locked
 		if event == window.WINDOW_EVENT_FOCUS_LOST then
 			M.unlock_cursor()
 			M.focus = false
@@ -36,6 +39,13 @@ function M.unregister_listener()
 	if IS_HTML then defos.on_click(function () end) end
 end
 
+function M.is_locked()
+	if IS_HTML then
+		return defos.is_cursor_locked()
+	end
+	return M.locked
+end
+
 function M.lock_cursor()
 	if not M.focus then return true end
 	M.locked = true
@@ -49,7 +59,7 @@ end
 
 function M.on_input(action_id,action)
 	if IS_HTML then
-		if action_id == nil then
+		if action_id == nil and defos:is_cursor_locked() then
 			M.cursor_movement.x = action.dx
 			M.cursor_movement.y = action.dy
 		end
