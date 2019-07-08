@@ -19,7 +19,7 @@ end
 function AI:update(dt)
 	AIBase.update(self,dt)
 	if self.state == self.states.IDLE then
-		local next_cell = self:find_path_to_player()[2]
+		local next_cell = self:player_find_path()[2]
 		if next_cell then
 			local current_pos = self:get_current_cell_position()
 			local dx,dy = next_cell:get_x() - current_pos.x,next_cell:get_y() - current_pos.y
@@ -37,12 +37,12 @@ function AI:update(dt)
 			self.e.velocity.x = 0
 			self.e.velocity.y = 0
 		end
-		local dist_to_player = self:get_distance_to_player()
+		local dist_to_player = self:player_get_distance()
 		if dist_to_player < 1.1 then
 			self.attack = true
 			timer.delay(0.5,false,function()
 				self.attack = false
-				if self:get_distance_to_player() < 1.1 then
+				if self:player_get_distance() < 1.1 then
 					self.game_controller:attack_player()
 				end
 			end)

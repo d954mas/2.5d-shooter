@@ -5,7 +5,7 @@ local AT_STATES = {
 	SPAWN = "SPAWN",
 	IDLE = "IDLE"
 }
-
+local TAG = "AI"
 ---@class AI
 local AI = COMMON.class("AIBase")
 
@@ -34,12 +34,7 @@ function AI:change_state(new_state)
 end
 
 function AI:state_changed(old)
-	COMMON.i(string.format("state changed from:%s to:%s",tostring(old),self.state))
-end
-
----@return NativeCellData[]
-function AI:find_path_to_player()
-	return self.game_controller:utils_find_path_to_player(self:get_current_cell_position())
+	COMMON.i(string.format("state changed from:%s to:%s",tostring(old),self.state),TAG)
 end
 
 function AI:get_current_cell_position()
@@ -51,14 +46,21 @@ function AI:animation_play(animation,comlete_function)
 	go.set_position(vmath.vector3(0,animation.dy,0),self.e.url_sprite)
 end
 
+--region Player
 ---@return Entity
-function AI:get_player_entity()
+function AI:player_get_entity()
 	return self.game_controller.level.player
 end
 
-function AI:get_distance_to_player()
+function AI:player_get_distance()
 	return vmath.length(self.game_controller.level.player.position - self.e.position)
 end
+
+---@return NativeCellData[]
+function AI:player_find_path()
+	return self.game_controller:utils_find_path_to_player(self:get_current_cell_position())
+end
+--endregion
 
 
 return AI
