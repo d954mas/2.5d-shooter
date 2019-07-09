@@ -90,7 +90,7 @@ embedded_instances {
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/images/game/enemies/enemies.atlas\\\"\\n"
   "default_animation: \\\"blob_spawn\\\"\\n"
-  "material: \\\"/assets/materials/3dsprite/3dsprite_object.material\\\"\\n"
+  "material: \\\"/assets/materials/3dsprite/3dsprite_enemy.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
