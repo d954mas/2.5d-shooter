@@ -48,28 +48,25 @@ function Script:update_map()
 	if not GAME_CONTROLLER.level then return end
 	local map_width =  GAME_CONTROLLER.level:map_get_width()
 	local map_height =  GAME_CONTROLLER.level:map_get_height()
-	local pixels = ""
-	local pixels_visible = ""
-	--local zones = native_raycasting.get_visible_sprites()
-	for y = map_height, 1, -1 do
+	--fast string concat https://stackoverflow.com/questions/19138974/does-lua-optimize-the-operator
+	local buf_visible = {}
+	local buf = {}
+	local index = 0
+	for y = 1, map_height do
 		for x=1, map_width do
-			local cell = GAME_CONTROLLER.level:map_get_cell(x,y)
-			pixels_visible = pixels_visible .. (native_raycasting.cells_get_by_id(cell.id):get_visibility() and
-					VISIBLE_COLOR or TRANSPARENT_COLOR)
+			index = index+1
+			local cell = GAME_CONTROLLER.level:map_get_cell_unsafe(x,y)
+			buf_visible[index] = native_raycasting.cells_get_by_id(cell.id):get_visibility() and VISIBLE_COLOR or TRANSPARENT_COLOR
 			--empty cell
 			if cell.wall.floor == -1 then
-				pixels = pixels ..  NO_WALLS_COLOR
+				buf[index] =  NO_WALLS_COLOR
 			else
-				if cell.blocked  then
-					pixels = pixels .. WALL_COLOR
-				else
-					pixels = pixels .. WHITE_COLOR
-				end
+				buf[index] = cell.blocked and WALL_COLOR or WHITE_COLOR
 			end
 		end
 	end
-	gui.set_texture_data("map", map_width, map_height, "rgba", pixels)
-	gui.set_texture_data("map_visibility", map_width, map_height, "rgba", pixels_visible)
+	gui.set_texture_data("map", map_width, map_height, "rgba", table.concat(buf),true)
+	gui.set_texture_data("map_visibility", map_width, map_height, "rgba", table.concat(buf_visible),true)
 	local scale = vmath.vector3(1)
 	if map_width<map_height then
 		scale.x = MIN_SIZE/map_width

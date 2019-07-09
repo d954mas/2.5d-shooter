@@ -135,6 +135,10 @@ function Level:map_get_cell(x,y)
 	assert(self:map_cell_in(x,y),"x:" .. x .. "y:" ..y)
 	return self.data.cells[y][x]
 end
+
+function Level:map_get_cell_unsafe(x,y)
+	return self.data.cells[y][x]
+end
 function Level:map_cell_in(x,y)
 	return x>=1 and x <= self:map_get_width() and y>=1 and y <=self:map_get_height()
 end
