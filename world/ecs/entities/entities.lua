@@ -40,7 +40,7 @@ local TAG = "ENTITIES"
 ---@field camera_bob_height number
 ---@field camera_bob_offset number
 ---@field weapon_bob_offset number
----@field weapon Entity
+---@field weapons Weapon[] map.key is number.For user 1-pistol,5-shotgun and etc.
 ---@field ammo Ammo
 ---@field hp number
 ---@field pickuped boolean pickup already get. Need because can have multiple responses

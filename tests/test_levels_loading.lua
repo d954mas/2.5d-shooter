@@ -30,7 +30,7 @@ return function()
 				asserts = 0
 				SM:show("GameScene",{level = level},{reload = true})
 				while SM.co do coroutine.yield() end
-				old_assert(asserts==0,"asserts:" .. asserts .. " happened while show scene")
+				assert_true(asserts==0,"asserts:" .. asserts .. " happened while show scene")
 			end
 			SM:back(nil,{to_init_collection = true})
 			while SM.co do coroutine.yield() end
