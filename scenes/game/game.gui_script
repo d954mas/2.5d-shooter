@@ -1,5 +1,6 @@
 local COMMON = require "libs.common"
 local GAME_CONTROLLER = require "scenes.game.model.game_controller"
+local WEAPON_PROTOTYPES = require "world.weapons.weapon_prototypes"
 
 local Script = COMMON.new_n28s()
 
@@ -17,7 +18,7 @@ end
 function Script:update(dt)
 	if GAME_CONTROLLER.level then
 		gui.set_text(self.vh.lbl_hp,GAME_CONTROLLER.level.player.hp )
-		gui.set_text(self.vh.lbl_ammo,GAME_CONTROLLER.level.player.ammo.pistol )
+		gui.set_text(self.vh.lbl_ammo,GAME_CONTROLLER.level.player.ammo[WEAPON_PROTOTYPES.AMMO_TYPES.PISTOL] )
 	end
 end
 

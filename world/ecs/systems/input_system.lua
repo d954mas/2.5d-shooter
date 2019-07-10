@@ -42,7 +42,11 @@ function System:check_input()
 end
 
 function System:make_shot(action_id, action)
-		self.world.game_controller:player_shoot()
+	local player = self.world.game_controller.level.player
+	local weapon = player.weapons[player.weapon_current_idx]
+	if action.pressed then weapon:on_pressed()
+	elseif action.released then weapon:on_released()
+	else weapon:pressed() end
 end
 
 function System:update_player_velocity()

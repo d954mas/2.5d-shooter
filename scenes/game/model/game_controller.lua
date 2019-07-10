@@ -101,36 +101,6 @@ end
 
 --endregion
 
---TODO MOVE TO ENTITY WEAPON
-function M:player_shoot()
-	if self.level.player.player_shooting then return end
-	self.level.player.player_shooting = true
-	local can_shoot = self.level.player.ammo.pistol > 0
-	SOUNDS:play_sound(can_shoot and SOUNDS.sounds.game.weapon_pistol_shoot or SOUNDS.sounds.game.weapon_pistol_empty)
-	if can_shoot then
-		self.level.player.ammo.pistol = self.level.player.ammo.pistol - 1
-		sprite.play_flipbook("/weapon#sprite",hash("pistol_shoot"),function ()
-			self.level.player.player_shooting = false
-		end)
-		local player = self.level.player
-		local start_point = vmath.vector3(self.level.player.position.x,0.5,-self.level.player.position.y)
-		local direction =  vmath.rotate(vmath.quat_rotation_y(player.angle.x),vmath.vector3(0,0,-1))
-		local end_point = start_point +  direction * 8
-		local raycast = physics.raycast(start_point,end_point,{hash("enemy")})
-		if raycast then
-			timer.delay(0.1,false,function ()
-				--kill enemy
-				---@type ENTITIES
-				local entities = requiref("world.ecs.entities.entities")
-				self.level.ecs_world.ecs:removeEntity(entities.get_entity_for_url(msg.url(raycast.id)))
-				SOUNDS:play_sound(SOUNDS.sounds.game.monster_blob_die)
-			end)
-		end
-	else
-		timer.delay(0.3,false,function ()self.level.player.player_shooting = false end)
-	end
-end
-
 function M:attack_player()
 	if self.level.player.ignore_damage or self.level.player.hp < 0 then return end
 	self.level.player.hp = self.level.player.hp - 10

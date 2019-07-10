@@ -1,5 +1,7 @@
 local COMMON = require "libs.common"
 local AI = require "world.ai.ai"
+local WeaponPrototypes = require "world.weapons.weapon_prototypes"
+local Weapon = require "world.weapons.weapon_base"
 local TAG = "ENTITIES"
 
 ---@class Ammo
@@ -41,6 +43,7 @@ local TAG = "ENTITIES"
 ---@field camera_bob_offset number
 ---@field weapon_bob_offset number
 ---@field weapons Weapon[] map.key is number.For user 1-pistol,5-shotgun and etc.
+---@field weapon_current_idx number
 ---@field ammo Ammo
 ---@field hp number
 ---@field pickuped boolean pickup already get. Need because can have multiple responses
@@ -152,8 +155,13 @@ function Entities.create_player(pos)
 	e.camera_bob_offset = 0
 	e.hp = 100
 	e.ammo = {
-		pistol = 20
+		[WeaponPrototypes.AMMO_TYPES.PISTOL] = 20
 	}
+	e.weapons = {
+		Weapon(WeaponPrototypes.prototypes.PISTOL,e,Entities.game_controller)
+	}
+	e.weapons[1]:equip()
+	e.weapon_current_idx = 1
 	return e
 end
 

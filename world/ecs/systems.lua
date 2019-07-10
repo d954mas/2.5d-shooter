@@ -23,6 +23,7 @@ function M.load()
 	M.DrawWallsSystem = require "world.ecs.systems.draw_walls_system"
 	M.UpdateObjectColorSystem = require "world.ecs.systems.update_object_color_system"
 	M.UpdateAISystem = require "world.ecs.systems.update_ai_system"
+	M.UpdateWeaponsSystem = require "world.ecs.systems.update_weapons_system"
 	M.CameraBobSystem = require "world.ecs.systems.camera_bob_system"
 end
 
