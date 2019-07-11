@@ -12,13 +12,19 @@ M.AMMO_TYPES = COMMON.read_only{
 }
 
 M.INPUT_TYPE = COMMON.read_only{
-	ON_CLICK = "ON_CLICK", --single shot for every click. Pistol
-	WHILE_PRESSED = "WHILE_PRESSED" --shooting while pressed. Machine gun
+	ON_PRESSED = "ON_PRESSED", --single shot for every click. Pistol
+	WHILE_PRESSED = "WHILE_PRESSED", --shooting while pressed. Machine gun
+	ON_RELEASED = "ON_RELEASED" --shooting when release. Some gun that charge it power.
 }
 
 M.TARGET = COMMON.read_only{
 	ENEMIES = "ENEMIES",
 	PLAYER = "PLAYER"
+}
+
+M.TARGET_HASHES = COMMON.read_only{
+	ENEMIES = {hash("enemy")},
+	PLAYER = {hash("player")}
 }
 
 ---@class PlayerWeaponSounds
@@ -40,6 +46,9 @@ M.TARGET = COMMON.read_only{
 ---@field player_weapon boolean|nil player_weapon should have icon, and animations for states.
 ---@field animations PlayerWeaponAnimations
 ---@field sounds PlayerWeaponSounds
+---@field first_shot_delay number after user click before first raycast/projectile send
+---@field shoot_time_delay number delay after raycast/projectile before next_shoot
+---@field damage number
 
 ---@param ptototype WeaponPrototype
 function M.check_prototype(ptototype)
@@ -63,15 +72,19 @@ function M.check_prototype(ptototype)
 		assert(ptototype.animations.idle,"should have idle animation")
 	end
 	assert(type(ptototype.sounds)=="table")
+	assert(ptototype.shoot_time_delay)
+	assert(ptototype.first_shot_delay)
+	assert(ptototype.damage)
 	return ptototype
 end
 
 M.prototypes = COMMON.read_only_recursive{
 	PISTOL = {attack_type = M.ATTACK_TYPES.RAYCASTING,ammo_type = M.AMMO_TYPES.PISTOL,target = M.TARGET.ENEMIES, raycast_max_dist = 10, reload_time = 0,
-	input_type = M.INPUT_TYPE.ON_CLICK, player_weapon = true, animations = {idle = hash("pistol_1")}, tag = "PISTOL",sounds = {
+	input_type = M.INPUT_TYPE.ON_PRESSED, player_weapon = true, animations = {idle = hash("pistol_1")}, tag = "PISTOL",sounds = {
 			shoot = SOUNDS.sounds.game.weapon_pistol_shoot,
 			empty = SOUNDS.sounds.game.weapon_pistol_empty
-		}}
+		},first_shot_delay = 0.1,shoot_time_delay = 0.4, damage = 25
+	}
 }
 
 return M

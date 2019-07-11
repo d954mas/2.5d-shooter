@@ -18,6 +18,7 @@ function M.load()
 	M.PhysicsResetCorrectionsSystem = require "world.ecs.systems.physics_reset_corrections_system"
 	M.RotationLookAtPlayerSystem = require "world.ecs.systems.rotation_look_at_player_system"
 	M.RotationGlobalSystem = require "world.ecs.systems.rotation_global_system"
+	M.DamageSystem = require "world.ecs.systems.damage_system"
 
 	M.DrawObjectsSystem = require "world.ecs.systems.draw_objects_system"
 	M.DrawWallsSystem = require "world.ecs.systems.draw_walls_system"

@@ -2,7 +2,9 @@ local COMMON = require "libs.common"
 local StatesBase = require "world.states_base"
 local WEAPON_PROTOTYPES = require "world.weapons.weapon_prototypes"
 local SOUNDS = require "libs.sounds"
-
+local EMPTY_SHOT_DELAY = 0.3 --try shot without ammo
+---@type ENTITIES
+local ENTITIES
 
 ---@class WeaponStates
 local WEAPON_STATES = {
@@ -19,21 +21,25 @@ local Weapon = COMMON.class("WeaponBase",StatesBase)
 ---@param e Entity
 ---@param game_controller GameController
 function Weapon:initialize(prototype,e,game_controller)
+	ENTITIES = ENTITIES or requiref ("world.ecs.entities.entities")
 	StatesBase.initialize(self,WEAPON_STATES,e,game_controller)
 	self.ptototype = WEAPON_PROTOTYPES.check_prototype(prototype)
 	self:change_state(WEAPON_STATES.HIDE)
 end
 
 function Weapon:on_pressed()
-	if self.ptototype.input_type == WEAPON_PROTOTYPES.INPUT_TYPE.ON_CLICK then
+	self.btn_pressed = true
+	if self.ptototype.input_type == WEAPON_PROTOTYPES.INPUT_TYPE.ON_PRESSED then
 		self:shoot()
 	end
 end
 function Weapon:pressed()
-
 end
 function Weapon:on_released()
-
+	self.btn_pressed = false
+	if self.ptototype.input_type == WEAPON_PROTOTYPES.INPUT_TYPE.ON_RELEASED then
+		self:shoot()
+	end
 end
 
 function Weapon:update(dt)
@@ -53,32 +59,38 @@ function Weapon:shoot()
 	COMMON.coroutine_resume(self.co,self)
 end
 
+function Weapon:_raycast()
+	local start_point = vmath.vector3(self.e.position.x,0.5,-self.e.position.y)
+	local direction =  vmath.rotate(vmath.quat_rotation_y(self.e.angle.x),vmath.vector3(0,0,-1))
+	local end_point = start_point +  direction * self.ptototype.raycast_max_dist
+	local raycast = physics.raycast(start_point,end_point,WEAPON_PROTOTYPES.TARGET_HASHES[self.ptototype.target])
+	if raycast then
+		self.game_controller.level.ecs_world:add_entity(
+				ENTITIES.create_raycast_damage_info(self.e,ENTITIES.get_entity_for_url(msg.url(raycast.id)),self.ptototype,raycast))
+	end
+	COMMON.coroutine_wait(self.ptototype.shoot_time_delay or 0)
+
+
+end
+
 function Weapon:shoot_co()
 	self:change_state(WEAPON_STATES.SHOOTING)
-	if not self:have_ammo() and self.ptototype.sounds.empty then
-		SOUNDS:play_sound(self.ptototype.sounds.empty)
-		COMMON.coroutine_wait(0.3)
+	if not self:have_ammo() then
+		if self.ptototype.sounds.empty then SOUNDS:play_sound(self.ptototype.sounds.empty) end
+		COMMON.coroutine_wait(EMPTY_SHOT_DELAY)
 		self:change_state(WEAPON_STATES.EQUIPPED)
 		return
 	end
+
 	if self.ptototype.sounds.shoot then
 		SOUNDS:play_sound(self.ptototype.sounds.shoot)
 	end
 	self.e.ammo[self.ptototype.ammo_type] = self.e.ammo[self.ptototype.ammo_type] - 1
 	sprite.play_flipbook("/weapon#sprite",hash("pistol_shoot"))
-	COMMON.coroutine_wait(0.1)
-	local player = self.e
-	local start_point = vmath.vector3(player.position.x,0.5,-player.position.y)
-	local direction =  vmath.rotate(vmath.quat_rotation_y(player.angle.x),vmath.vector3(0,0,-1))
-	local end_point = start_point +  direction * 8
-	local raycast = physics.raycast(start_point,end_point,{hash("enemy")})
-	if raycast then
-		---@type ENTITIES
-		local entities = requiref("world.ecs.entities.entities")
-		self.game_controller.level.ecs_world:remove_entity(entities.get_entity_for_url(msg.url(raycast.id)))
-		SOUNDS:play_sound(SOUNDS.sounds.game.monster_blob_die)
-	end
-	COMMON.coroutine_wait(0.4)
+
+	COMMON.coroutine_wait(self.ptototype.first_shot_delay)
+
+	if self.ptototype.attack_type == WEAPON_PROTOTYPES.ATTACK_TYPES.RAYCASTING then self:_raycast() end
 	self:change_state(WEAPON_STATES.EQUIPPED)
 end
 

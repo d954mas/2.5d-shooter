@@ -4,9 +4,12 @@ local WeaponPrototypes = require "world.weapons.weapon_prototypes"
 local Weapon = require "world.weapons.weapon_base"
 local TAG = "ENTITIES"
 
----@class Ammo
----@field pistol number
 
+---@class DamageInfo
+---@field source_e Entity
+---@field target_e Entity
+---@field raycast table|nil
+---@field weapon_prototype WeaponPrototype
 
 ---@class Entity
 ---@field tag string tag used for help when debug
@@ -28,6 +31,7 @@ local TAG = "ENTITIES"
 ---@field physics_message table
 ---@field physics_source hash
 ---@field physics_obstacles_correction vector3
+---@field damage_info DamageInfo
 ---@field rotation_look_at_player boolean
 ---@field rotation_global boolean for pickups they use one global angle
 ---@field culling boolean objects that need culling like walls
@@ -44,7 +48,7 @@ local TAG = "ENTITIES"
 ---@field weapon_bob_offset number
 ---@field weapons Weapon[] map.key is number.For user 1-pistol,5-shotgun and etc.
 ---@field weapon_current_idx number
----@field ammo Ammo
+---@field ammo table
 ---@field hp number
 ---@field pickuped boolean pickup already get. Need because can have multiple responses
 
@@ -198,6 +202,7 @@ function Entities.create_blob(pos,tile_object)
 	pos = pos or vmath.vector3(tile_object.cell_xf + 0.5, tile_object.cell_yf+0.5,0)
 	local e = Entities.create_enemy(pos,FACTORY_ENEMY_BLOB_URL)
 	e.ai = AI.Blob(e,Entities.game_controller)
+	e.hp = 20
 	return e
 end
 --endregion
@@ -269,6 +274,17 @@ function Entities.create_physics(message_id,message,source)
 	e.physics_message_id = assert(message_id)
 	e.physics_message = assert(message)
 	e.physics_source = assert(source)
+	return e
+end
+
+function Entities.create_raycast_damage_info(source_e,target_e,weapon_prototype,raycast)
+	local e = {}
+	e.damage_info = {
+		source_e = assert(source_e),
+		target_e = assert(target_e),
+		raycast = raycast,
+		weapon_prototype = assert(weapon_prototype)
+	}
 	return e
 end
 
