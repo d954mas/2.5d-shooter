@@ -407,7 +407,7 @@ embedded_instances {
   "    count: 3\\n"
   "  }\\n"
   "  data: 0.25\\n"
-  "  data: 0.25\\n"
+  "  data: 0.5\\n"
   "  data: 0.25\\n"
   "}\\n"
   "linear_damping: 0.0\\n"

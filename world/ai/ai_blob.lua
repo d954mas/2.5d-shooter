@@ -39,13 +39,7 @@ function AI:update(dt)
 		end
 		local dist_to_player = self:player_get_distance()
 		if dist_to_player < 1.1 then
-			self.attack = true
-			timer.delay(0.5,false,function()
-				self.attack = false
-				if self:player_get_distance() < 1.1 then
-					self.game_controller:attack_player()
-				end
-			end)
+			self.e.weapons[self.e.weapon_current_idx]:shoot()
 		end
 	end
 end

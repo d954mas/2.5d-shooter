@@ -203,6 +203,9 @@ function Entities.create_blob(pos,tile_object)
 	local e = Entities.create_enemy(pos,FACTORY_ENEMY_BLOB_URL)
 	e.ai = AI.Blob(e,Entities.game_controller)
 	e.hp = 20
+	e.weapons = {Weapon(WeaponPrototypes.prototypes.ENEMY_MELEE,e,Entities.game_controller)}
+	e.weapons[1]:equip()
+	e.weapon_current_idx = 1
 	return e
 end
 --endregion

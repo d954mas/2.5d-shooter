@@ -61,7 +61,7 @@ end
 
 function Weapon:_raycast()
 	local start_point = vmath.vector3(self.e.position.x,0.5,-self.e.position.y)
-	local direction =  vmath.rotate(vmath.quat_rotation_y(self.e.angle.x),vmath.vector3(0,0,-1))
+	local direction =  self:get_direction()
 	local end_point = start_point +  direction * self.ptototype.raycast_max_dist
 	local raycast = physics.raycast(start_point,end_point,WEAPON_PROTOTYPES.TARGET_HASHES[self.ptototype.target])
 	if raycast then
@@ -69,8 +69,17 @@ function Weapon:_raycast()
 				ENTITIES.create_raycast_damage_info(self.e,ENTITIES.get_entity_for_url(msg.url(raycast.id)),self.ptototype,raycast))
 	end
 	COMMON.coroutine_wait(self.ptototype.shoot_time_delay or 0)
+end
 
-
+function Weapon:get_direction()
+	if self.ptototype.player_weapon then
+		return vmath.rotate(vmath.quat_rotation_y(self.e.angle.x),vmath.vector3(0,0,-1))
+	else
+		local dist = vmath.normalize(self.game_controller.level.player.position - self.e.position)
+		dist.z = -dist.y
+		dist.y = 0
+		return dist
+	end
 end
 
 function Weapon:shoot_co()
@@ -85,8 +94,13 @@ function Weapon:shoot_co()
 	if self.ptototype.sounds.shoot then
 		SOUNDS:play_sound(self.ptototype.sounds.shoot)
 	end
-	self.e.ammo[self.ptototype.ammo_type] = self.e.ammo[self.ptototype.ammo_type] - 1
-	sprite.play_flipbook("/weapon#sprite",hash("pistol_shoot"))
+	if self.ptototype.ammo_type ~= WEAPON_PROTOTYPES.AMMO_TYPES.MELEE then
+		self.e.ammo[self.ptototype.ammo_type] = self.e.ammo[self.ptototype.ammo_type] - 1
+	end
+	--TODO FIX HARDCODE
+	if self.ptototype.player_weapon then
+		sprite.play_flipbook("/weapon#sprite",hash("pistol_shoot"))
+	end
 
 	COMMON.coroutine_wait(self.ptototype.first_shot_delay)
 
@@ -101,7 +115,7 @@ function Weapon:equip()
 end
 
 function Weapon:have_ammo()
-	return self.e.ammo[self.ptototype.ammo_type] > 0
+	return self.ptototype.ammo_type == WEAPON_PROTOTYPES.AMMO_TYPES.MELEE or self.e.ammo[self.ptototype.ammo_type] > 0
 end
 
 
@@ -112,10 +126,6 @@ end
 
 function Weapon:can_shoot_check_state()
 	return self.state == WEAPON_STATES.EQUIPPED
-end
-
-function Weapon:have_ammo()
-	return self.e.ammo[self.ptototype.ammo_type] > 0
 end
 
 

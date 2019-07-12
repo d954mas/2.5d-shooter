@@ -8,7 +8,8 @@ M.ATTACK_TYPES = COMMON.read_only{
 }
 
 M.AMMO_TYPES = COMMON.read_only{
-	PISTOL = "PISTOL"
+	PISTOL = "PISTOL",
+	MELEE = "MELEE" -- do not need ammo
 }
 
 M.INPUT_TYPE = COMMON.read_only{
@@ -80,10 +81,14 @@ end
 
 M.prototypes = COMMON.read_only_recursive{
 	PISTOL = {attack_type = M.ATTACK_TYPES.RAYCASTING,ammo_type = M.AMMO_TYPES.PISTOL,target = M.TARGET.ENEMIES, raycast_max_dist = 10, reload_time = 0,
-	input_type = M.INPUT_TYPE.ON_PRESSED, player_weapon = true, animations = {idle = hash("pistol_1")}, tag = "PISTOL",sounds = {
+			   input_type = M.INPUT_TYPE.ON_PRESSED, player_weapon = true, animations = {idle = hash("pistol_1")}, tag = "PISTOL",sounds = {
 			shoot = SOUNDS.sounds.game.weapon_pistol_shoot,
 			empty = SOUNDS.sounds.game.weapon_pistol_empty
 		},first_shot_delay = 0.1,shoot_time_delay = 0.4, damage = 25
+	},
+	ENEMY_MELEE = {attack_type = M.ATTACK_TYPES.RAYCASTING,ammo_type = M.AMMO_TYPES.MELEE,target = M.TARGET.PLAYER, raycast_max_dist = 1, reload_time = 0,
+			  input_type = M.INPUT_TYPE.ON_PRESSED, player_weapon = false, tag = "ENEMY MELEE",sounds = {},
+				   first_shot_delay = 0.1,shoot_time_delay = 0.4, damage = 15
 	}
 }
 
