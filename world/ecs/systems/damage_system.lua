@@ -1,8 +1,5 @@
 local ECS = require 'libs.ecs'
-local COMMON = require "libs.common"
-local ENTITIES = require "world.ecs.entities.entities"
 local SOUNDS = require "libs.sounds"
-local WEAPON_PROTOTYPES = require "world.weapons.weapon_prototypes"
 ---@class DamageSystem:ECSSystem
 local System = ECS.processingSystem()
 System.filter = ECS.requireAll("damage_info")

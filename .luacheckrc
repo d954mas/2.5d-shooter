@@ -3,8 +3,8 @@ files['.luacheckrc'].global = false
 unused_args = false
 cache = true
 jobs = 4
-max_line_length = 130
-max_code_line_length = 130
+max_line_length = 140
+max_code_line_length = 140
 --remove some imported libs
 exclude_files = {
 	"richtext/**",

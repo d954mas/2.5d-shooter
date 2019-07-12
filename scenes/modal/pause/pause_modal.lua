@@ -1,6 +1,4 @@
 local BaseScene = require "libs.sm.scene"
-local COMMON = require "libs.common"
-local GAME_CONTROLLER = require "scenes.game.model.game_controller"
 
 ---@class PauseModal:Scene
 local Scene = BaseScene:subclass("PauseModal")

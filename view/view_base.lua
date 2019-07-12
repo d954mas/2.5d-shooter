@@ -5,9 +5,10 @@ local RX = require "libs.rx"
 --Incapsulate logic for view.
 
 local STATES = {SHOW = "SHOW", HIDE = "HIDE", DISPOSED = "DISPOSED"}
-View.static.STATES = STATES
+
 ---@class Views
 local View = COMMON.class("View")
+View.static.STATES = STATES
 function View:initialize()
 	self.STATES = STATES
 	self.state = STATES.DISPOSED

@@ -1,5 +1,4 @@
 local ECS = require 'libs.ecs'
-local COMMON = require "libs.common"
 
 local FACTORY_EMPTY_URL = msg.url("game:/factories#factory_empty")
 local FACTORY_SPRITE_WALL_URL = msg.url("game:/factories#factory_sprite_wall")

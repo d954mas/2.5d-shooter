@@ -43,7 +43,7 @@ end
 	local normal, distance = physics_e.physics_message.normal, physics_e.physics_message.distance
 	local correction = e.physics_obstacles_correction
 	if not correction then
- 		--create correction vector
+		--create correction vector
 		e.physics_obstacles_correction = vmath.vector3()
 		correction = e.physics_obstacles_correction
 		self.world:addEntity(e)

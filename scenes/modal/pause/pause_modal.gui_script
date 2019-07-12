@@ -1,5 +1,4 @@
 local COMMON = require "libs.common"
-local GAME_CONTROLLER = require "scenes.game.model.game_controller"
 local GOOEY = require "gooey.themes.dirtylarry.dirtylarry"
 local SM = require "libs.sm.sm"
 local CURSOR_HELPER = require "libs.cursor_helper"
