@@ -21,6 +21,7 @@ high_dpi = 1
 fullscreen = 0
 update_frequency = 60
 display_profiles = /builtins/render/default.display_profilesc
+vsync = 1
 
 [physics]
 scale = 1.0

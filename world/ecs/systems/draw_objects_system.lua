@@ -12,22 +12,28 @@ System.filter = ECS.requireAll("culling","position")
 function System:process(e, dt)
 	local visible = native_raycasting.cells_get_by_coords(math.ceil(e.position.x),math.ceil(e.position.y)):get_visibility()
 	if e.drawing and not visible then
-		go.delete(e.url_sprite)
-		e.drawing = false
+		if e.culling_empty_go then
+			go.delete(e.url_go,true)
+			e.url_go = nil
+		else
+			go.delete(e.url_sprite)
+		end
+		e.drawing = nil
 		e.url_sprite = nil
 		self.world:addEntity(e)
 	end
 	if not e.drawing and visible then
 		assert(not e.url_sprite,"object already visible")
-		--create simple go with one sprite
-		if not e.url_go then
+		--create empty go when needed
+		if not e.url_go and e.culling_empty_go ~= false then
+			e.culling_empty_go = true
 			e.url_go = msg.url(factory.create(FACTORY_EMPTY_URL,vmath.vector3(e.position.x,0,-e.position.z+0.5), EMPTY_ROTATION))
 		end
+		--create sprites and add them to root go
 		e.url_sprite =  msg.url(factory.create(FACTORY_SPRITE_URL,nil,EMPTY_ROTATION))
 		e.url_sprite = msg.url(e.url_sprite.socket,e.url_sprite.path,HASH_SPRITE)
 		go.set_parent(e.url_sprite,e.url_go)
 		e.drawing = true
-		e.tile = self.world.game_controller.level:get_tile(e.tile_id)
 		self:sprite_set_image(e)
 		self.world:addEntity(e)
 	end

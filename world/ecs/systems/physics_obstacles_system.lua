@@ -19,7 +19,7 @@ end
 ---@param e Entity
 function System:handle_pickup(e)
 	if not e or  e.pickuped then return end
-	local tile = ENTITIES.game_controller.level:get_tile(e.tile_id)
+	local tile = e.tile
 	local key = tile.properties.pickup_key
 	local player = self.world.game_controller.level.player
 	if key == "hp" and player.hp < 100 then

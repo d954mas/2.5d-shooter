@@ -35,9 +35,10 @@ local TAG = "ENTITIES"
 ---@field rotation_look_at_player boolean
 ---@field rotation_global boolean for pickups they use one global angle
 ---@field culling boolean objects that need culling like walls
+---@field culling_empty_go boolean only if use empty go. Object will be deleted when not visible.
 ---@field draw_always boolean that object draw always. Used for enemies because of animations
 ---@field dynamic_color boolean
----@field tile_id number need for draw objects
+---@field tile table need for draw objects
 ---@field drawing boolean this frame visible entities
 ---@field cell_data NativeCellData
 ---@field ai AI
@@ -231,7 +232,7 @@ end
 function Entities.create_object_from_tiled(object)
 	if object.properties.culling then
 		local e = Entities.create_draw_object_base(vmath.vector3(object.cell_xf-0.5, object.cell_yf - 0.5, 0))
-		e.tile_id = object.tile_id
+		e.tile = Entities.game_controller.level:get_tile(object.tile_id)
 		if object.properties.look_at_player then
 			e.rotation_look_at_player = true
 		end
@@ -245,12 +246,10 @@ end
 function Entities.create_pickup(pos,tile_object)
 	pos = pos or vmath.vector3(tile_object.cell_xf + 0.5, tile_object.cell_yf+0.5,0)
 	local e = {}
-	e.tile_id = tile_object.tile_id
+	e.tile = Entities.game_controller.level:get_tile(tile_object.tile_id)
 	e.position= pos
-	local url = factory.create(FACTORY_PICKUP_URL,vmath.vector3(e.position.x,0.5,e.position.y),vmath.quat_rotation_z(0),nil,1/128)
+	local url = factory.create(FACTORY_PICKUP_URL,vmath.vector3(e.position.x,0.5,e.position.y),vmath.quat_rotation_z(0),nil)
 	e.url_go = msg.url(url)
-	e.url_sprite = msg.url(url)
-	e.url_sprite.fragment = HASH_SPRITE
 	if tile_object.properties.look_at_player then
 		e.rotation_look_at_player = true
 	end
@@ -258,8 +257,9 @@ function Entities.create_pickup(pos,tile_object)
 		e.rotation_global = true
 	end
 	e.rotation_global = true
-	local tile = Entities.game_controller.level:get_tile(e.tile_id)
-	sprite.play_flipbook(e.url_sprite,tile.image)
+	e.culling = true
+	e.culling_empty_go = false
+	e.dynamic_color = true
 	return e
 end
 
