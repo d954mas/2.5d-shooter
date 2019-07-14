@@ -77,7 +77,7 @@ function M:utils_get_random_spawn_position()
 	while true do
 		local x,y = math.random(1,w), math.random(1,h)
 		local map_cell = self.level:map_get_cell(x,y)
-		if not map_cell.blocked  and map_cell.wall.floor ~= -1 then
+		if not map_cell.blocked and map_cell.wall.floor then
 			return vmath.vector3(x,y,0)
 		end
 	end

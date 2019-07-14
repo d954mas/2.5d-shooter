@@ -16,16 +16,12 @@
           "x":1
         },
         "id":1,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":2,
           "blocked":true,
-          "west":2,
-          "east":2,
-          "north":2
-        }
+          "south":2,
+          "west":2
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -34,16 +30,12 @@
           "x":2
         },
         "id":2,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":2,
           "blocked":true,
-          "west":2,
-          "east":2,
+          "south":2,
           "north":2
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -52,16 +44,12 @@
           "x":3
         },
         "id":3,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":2,
           "blocked":true,
-          "west":2,
-          "east":2,
+          "south":2,
           "north":2
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -70,16 +58,12 @@
           "x":4
         },
         "id":4,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":2,
           "blocked":true,
-          "west":2,
-          "east":2,
+          "south":2,
           "north":2
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -88,16 +72,12 @@
           "x":5
         },
         "id":5,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":2,
           "blocked":true,
-          "west":2,
-          "east":2,
+          "south":2,
           "north":2
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -106,16 +86,12 @@
           "x":6
         },
         "id":6,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -124,16 +100,12 @@
           "x":7
         },
         "id":7,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -142,16 +114,12 @@
           "x":8
         },
         "id":8,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -160,16 +128,12 @@
           "x":9
         },
         "id":9,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -178,16 +142,12 @@
           "x":10
         },
         "id":10,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -196,16 +156,12 @@
           "x":11
         },
         "id":11,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -214,16 +170,12 @@
           "x":12
         },
         "id":12,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -232,16 +184,12 @@
           "x":13
         },
         "id":13,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -250,16 +198,12 @@
           "x":14
         },
         "id":14,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -268,16 +212,12 @@
           "x":15
         },
         "id":15,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -286,16 +226,12 @@
           "x":16
         },
         "id":16,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -304,16 +240,12 @@
           "x":17
         },
         "id":17,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -322,16 +254,12 @@
           "x":18
         },
         "id":18,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -340,16 +268,12 @@
           "x":19
         },
         "id":19,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -358,16 +282,12 @@
           "x":20
         },
         "id":20,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
-          "north":4
-        }
+          "south":4,
+          "east":4
+        },
+        "blocked":true
       }
     ],
     [
@@ -378,28 +298,19 @@
           "x":1
         },
         "id":21,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":3,
           "blocked":true,
           "west":3,
-          "east":3,
-          "north":3
-        }
+          "east":3
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":22,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":2,
@@ -407,16 +318,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":23,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":2,
@@ -424,16 +330,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":24,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":2,
@@ -441,16 +342,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":25,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":2,
@@ -458,16 +354,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":26,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":2,
@@ -475,16 +366,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":27,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":2,
@@ -492,16 +378,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":28,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":2,
@@ -509,16 +390,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":29,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":2,
@@ -526,16 +402,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":30,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":2,
@@ -543,16 +414,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":31,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":2,
@@ -560,16 +426,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":32,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":2,
@@ -577,16 +438,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":33,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":2,
@@ -594,16 +450,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":34,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":2,
@@ -611,16 +462,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":35,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":2,
@@ -628,16 +474,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":36,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":2,
@@ -645,16 +486,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":37,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":2,
@@ -662,16 +498,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":38,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":2,
@@ -679,16 +510,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":39,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":2,
@@ -702,16 +528,12 @@
           "x":20
         },
         "id":40,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       }
     ],
     [
@@ -722,28 +544,19 @@
           "x":1
         },
         "id":41,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":3,
           "blocked":true,
           "west":3,
-          "east":3,
-          "north":3
-        }
+          "east":3
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":42,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":3,
@@ -751,16 +564,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":43,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":3,
@@ -768,16 +576,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":44,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":3,
@@ -785,16 +588,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":45,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":3,
@@ -802,16 +600,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":46,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":3,
@@ -819,16 +612,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":47,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":3,
@@ -836,16 +624,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":48,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":3,
@@ -853,16 +636,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":49,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":3,
@@ -870,16 +648,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":50,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":3,
@@ -887,16 +660,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":51,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":3,
@@ -904,16 +672,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":52,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":3,
@@ -921,16 +684,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":53,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":3,
@@ -938,16 +696,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":54,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":3,
@@ -961,28 +714,21 @@
           "x":15
         },
         "id":55,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
+          "south":4,
           "west":4,
           "east":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":56,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":3,
@@ -990,16 +736,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":57,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":3,
@@ -1007,16 +748,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":58,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":3,
@@ -1024,16 +760,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":59,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":3,
@@ -1047,16 +778,12 @@
           "x":20
         },
         "id":60,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       }
     ],
     [
@@ -1067,28 +794,19 @@
           "x":1
         },
         "id":61,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":3,
           "blocked":true,
           "west":3,
-          "east":3,
-          "north":3
-        }
+          "east":3
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":62,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":4,
@@ -1096,16 +814,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":63,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":4,
@@ -1113,16 +826,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":64,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":4,
@@ -1130,16 +838,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":65,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":4,
@@ -1147,16 +850,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":66,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":4,
@@ -1170,16 +868,12 @@
           "x":7
         },
         "id":67,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":5,
           "blocked":true,
-          "west":5,
-          "east":5,
-          "north":5
-        }
+          "south":5,
+          "west":5
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -1188,28 +882,19 @@
           "x":8
         },
         "id":68,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":5,
           "blocked":true,
-          "west":5,
-          "east":5,
-          "north":5
-        }
+          "south":5,
+          "east":5
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":69,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":4,
@@ -1217,16 +902,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":70,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":4,
@@ -1234,16 +914,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":71,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":4,
@@ -1251,16 +926,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":72,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":4,
@@ -1268,16 +938,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":73,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":4,
@@ -1285,16 +950,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":74,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":4,
@@ -1302,16 +962,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":75,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":4,
@@ -1325,28 +980,20 @@
           "x":16
         },
         "id":76,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
+          "south":4,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":77,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":4,
@@ -1354,16 +1001,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":78,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":4,
@@ -1371,16 +1013,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":79,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":4,
@@ -1394,16 +1031,12 @@
           "x":20
         },
         "id":80,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       }
     ],
     [
@@ -1414,28 +1047,19 @@
           "x":1
         },
         "id":81,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":82,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":5,
@@ -1443,16 +1067,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":83,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":5,
@@ -1460,16 +1079,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":84,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":5,
@@ -1477,16 +1091,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":85,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":5,
@@ -1494,16 +1103,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":86,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":5,
@@ -1517,16 +1121,12 @@
           "x":7
         },
         "id":87,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":5,
           "blocked":true,
           "west":5,
-          "east":5,
           "north":5
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -1535,28 +1135,19 @@
           "x":8
         },
         "id":88,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":5,
           "blocked":true,
-          "west":5,
           "east":5,
           "north":5
-        }
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":89,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":5,
@@ -1570,16 +1161,12 @@
           "x":10
         },
         "id":90,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
-          "north":4
-        }
+          "south":4,
+          "west":4
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -1588,16 +1175,12 @@
           "x":11
         },
         "id":91,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -1606,16 +1189,12 @@
           "x":12
         },
         "id":92,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -1624,16 +1203,12 @@
           "x":13
         },
         "id":93,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -1642,16 +1217,12 @@
           "x":14
         },
         "id":94,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -1660,16 +1231,12 @@
           "x":15
         },
         "id":95,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -1678,16 +1245,10 @@
           "x":16
         },
         "id":96,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
-          "blocked":true,
-          "west":4,
-          "east":4,
-          "north":4
-        }
+          "blocked":true
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -1696,28 +1257,20 @@
           "x":17
         },
         "id":97,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
+          "south":4,
           "east":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":98,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":5,
@@ -1725,16 +1278,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":99,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":5,
@@ -1748,16 +1296,12 @@
           "x":20
         },
         "id":100,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       }
     ],
     [
@@ -1768,28 +1312,19 @@
           "x":1
         },
         "id":101,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":102,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":6,
@@ -1797,16 +1332,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":103,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":6,
@@ -1814,16 +1344,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":104,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":6,
@@ -1831,16 +1356,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":105,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":6,
@@ -1848,16 +1368,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":106,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":6,
@@ -1865,16 +1380,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":107,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":6,
@@ -1882,16 +1392,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":108,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":6,
@@ -1899,16 +1404,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":109,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":6,
@@ -1922,28 +1422,19 @@
           "x":10
         },
         "id":110,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":111,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":6,
@@ -1951,16 +1442,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":112,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":6,
@@ -1968,16 +1454,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":113,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":6,
@@ -1985,16 +1466,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":114,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":6,
@@ -2002,16 +1478,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":115,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":6,
@@ -2025,28 +1496,20 @@
           "x":16
         },
         "id":116,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
           "east":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":117,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":6,
@@ -2054,16 +1517,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":118,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":6,
@@ -2071,16 +1529,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":119,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":6,
@@ -2094,16 +1547,12 @@
           "x":20
         },
         "id":120,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       }
     ],
     [
@@ -2114,28 +1563,19 @@
           "x":1
         },
         "id":121,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":122,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":7,
@@ -2143,16 +1583,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":123,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":7,
@@ -2160,16 +1595,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":124,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":7,
@@ -2177,16 +1607,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":125,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":7,
@@ -2194,16 +1619,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":126,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":7,
@@ -2211,16 +1631,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":127,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":7,
@@ -2228,16 +1643,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":128,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":7,
@@ -2245,16 +1655,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":129,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":7,
@@ -2268,28 +1673,19 @@
           "x":10
         },
         "id":130,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":131,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":7,
@@ -2297,16 +1693,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":132,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":7,
@@ -2314,16 +1705,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":133,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":7,
@@ -2331,16 +1717,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":134,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":7,
@@ -2354,28 +1735,21 @@
           "x":15
         },
         "id":135,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
+          "south":4,
           "west":4,
           "east":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":136,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":7,
@@ -2383,16 +1757,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":137,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":7,
@@ -2400,16 +1769,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":138,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":7,
@@ -2417,16 +1781,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":139,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":7,
@@ -2440,16 +1799,12 @@
           "x":20
         },
         "id":140,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       }
     ],
     [
@@ -2460,28 +1815,19 @@
           "x":1
         },
         "id":141,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":142,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":8,
@@ -2489,16 +1835,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":143,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":8,
@@ -2506,16 +1847,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":144,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":8,
@@ -2523,16 +1859,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":145,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":8,
@@ -2540,16 +1871,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":146,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":8,
@@ -2557,16 +1883,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":147,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":8,
@@ -2574,16 +1895,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":148,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":8,
@@ -2591,16 +1907,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":149,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":8,
@@ -2614,28 +1925,19 @@
           "x":10
         },
         "id":150,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":151,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":8,
@@ -2643,16 +1945,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":152,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":8,
@@ -2660,16 +1957,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":153,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":8,
@@ -2677,16 +1969,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":154,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":8,
@@ -2694,16 +1981,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":155,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":8,
@@ -2711,16 +1993,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":156,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":8,
@@ -2728,16 +2005,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":157,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":8,
@@ -2745,16 +2017,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":158,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":8,
@@ -2762,16 +2029,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":159,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":8,
@@ -2785,16 +2047,12 @@
           "x":20
         },
         "id":160,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       }
     ],
     [
@@ -2805,28 +2063,19 @@
           "x":1
         },
         "id":161,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":162,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":9,
@@ -2834,16 +2083,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":163,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":9,
@@ -2851,16 +2095,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":164,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":9,
@@ -2868,16 +2107,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":165,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":9,
@@ -2885,16 +2119,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":166,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":9,
@@ -2902,16 +2131,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":167,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":9,
@@ -2919,16 +2143,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":168,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":9,
@@ -2936,16 +2155,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":169,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":9,
@@ -2959,28 +2173,19 @@
           "x":10
         },
         "id":170,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":171,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":9,
@@ -2988,16 +2193,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":172,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":9,
@@ -3005,16 +2205,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":173,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":9,
@@ -3022,16 +2217,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":174,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":9,
@@ -3039,16 +2229,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":175,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":9,
@@ -3056,16 +2241,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":176,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":9,
@@ -3073,16 +2253,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":177,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":9,
@@ -3090,16 +2265,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":178,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":9,
@@ -3107,16 +2277,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":179,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":9,
@@ -3130,16 +2295,12 @@
           "x":20
         },
         "id":180,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       }
     ],
     [
@@ -3150,28 +2311,19 @@
           "x":1
         },
         "id":181,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":182,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":10,
@@ -3179,16 +2331,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":183,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":10,
@@ -3196,16 +2343,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":184,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":10,
@@ -3213,16 +2355,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":185,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":10,
@@ -3230,16 +2367,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":186,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":10,
@@ -3247,16 +2379,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":187,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":10,
@@ -3270,28 +2397,21 @@
           "x":8
         },
         "id":188,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
+          "south":4,
           "west":4,
           "east":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":189,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":10,
@@ -3305,28 +2425,19 @@
           "x":10
         },
         "id":190,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":191,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":10,
@@ -3340,28 +2451,21 @@
           "x":12
         },
         "id":192,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
+          "south":4,
           "west":4,
           "east":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":193,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":10,
@@ -3369,16 +2473,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":194,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":10,
@@ -3386,16 +2485,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":195,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":10,
@@ -3403,16 +2497,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":196,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":10,
@@ -3420,16 +2509,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":197,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":10,
@@ -3437,16 +2521,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":198,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":10,
@@ -3454,16 +2533,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":199,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":10,
@@ -3477,16 +2551,12 @@
           "x":20
         },
         "id":200,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       }
     ],
     [
@@ -3497,28 +2567,19 @@
           "x":1
         },
         "id":201,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":202,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":11,
@@ -3526,16 +2587,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":203,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":11,
@@ -3543,16 +2599,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":204,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":11,
@@ -3560,16 +2611,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":205,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":11,
@@ -3577,16 +2623,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":206,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":11,
@@ -3594,16 +2635,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":207,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":11,
@@ -3611,16 +2647,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":208,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":11,
@@ -3634,16 +2665,12 @@
           "x":9
         },
         "id":209,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
-          "north":4
-        }
+          "south":4,
+          "west":4
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -3652,16 +2679,10 @@
           "x":10
         },
         "id":210,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
-          "blocked":true,
-          "west":4,
-          "east":4,
-          "north":4
-        }
+          "blocked":true
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -3670,28 +2691,19 @@
           "x":11
         },
         "id":211,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
-          "north":4
-        }
+          "south":4,
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":212,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":11,
@@ -3699,16 +2711,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":213,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":11,
@@ -3716,16 +2723,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":214,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":11,
@@ -3733,16 +2735,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":215,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":11,
@@ -3750,16 +2747,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":216,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":11,
@@ -3767,16 +2759,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":217,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":11,
@@ -3784,16 +2771,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":218,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":11,
@@ -3801,16 +2783,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":219,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":11,
@@ -3824,16 +2801,12 @@
           "x":20
         },
         "id":220,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       }
     ],
     [
@@ -3844,28 +2817,19 @@
           "x":1
         },
         "id":221,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":222,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":12,
@@ -3873,16 +2837,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":223,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":12,
@@ -3890,16 +2849,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":224,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":12,
@@ -3907,16 +2861,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":225,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":12,
@@ -3924,16 +2873,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":226,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":12,
@@ -3941,16 +2885,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":227,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":12,
@@ -3958,16 +2897,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":228,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":12,
@@ -3981,16 +2915,12 @@
           "x":9
         },
         "id":229,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -3999,16 +2929,10 @@
           "x":10
         },
         "id":230,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
-          "blocked":true,
-          "west":4,
-          "east":4,
-          "north":4
-        }
+          "blocked":true
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -4017,28 +2941,19 @@
           "x":11
         },
         "id":231,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
           "east":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":232,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":12,
@@ -4046,16 +2961,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":233,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":12,
@@ -4063,16 +2973,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":234,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":12,
@@ -4080,16 +2985,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":235,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":12,
@@ -4097,16 +2997,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":236,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":12,
@@ -4114,16 +3009,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":237,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":12,
@@ -4131,16 +3021,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":238,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":12,
@@ -4148,16 +3033,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":239,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":12,
@@ -4171,16 +3051,12 @@
           "x":20
         },
         "id":240,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       }
     ],
     [
@@ -4191,28 +3067,19 @@
           "x":1
         },
         "id":241,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":242,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":13,
@@ -4220,16 +3087,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":243,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":13,
@@ -4237,16 +3099,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":244,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":13,
@@ -4254,16 +3111,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":245,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":13,
@@ -4271,16 +3123,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":246,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":13,
@@ -4288,16 +3135,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":247,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":13,
@@ -4305,16 +3147,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":248,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":13,
@@ -4322,16 +3159,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":249,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":13,
@@ -4345,28 +3177,20 @@
           "x":10
         },
         "id":250,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
           "east":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":251,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":13,
@@ -4374,16 +3198,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":252,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":13,
@@ -4391,16 +3210,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":253,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":13,
@@ -4408,16 +3222,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":254,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":13,
@@ -4425,16 +3234,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":255,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":13,
@@ -4442,16 +3246,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":256,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":13,
@@ -4459,16 +3258,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":257,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":13,
@@ -4476,16 +3270,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":258,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":13,
@@ -4493,16 +3282,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":259,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":13,
@@ -4516,16 +3300,12 @@
           "x":20
         },
         "id":260,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       }
     ],
     [
@@ -4536,28 +3316,19 @@
           "x":1
         },
         "id":261,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":262,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":14,
@@ -4565,16 +3336,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":263,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":14,
@@ -4582,16 +3348,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":264,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":14,
@@ -4599,16 +3360,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":265,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":14,
@@ -4616,16 +3372,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":266,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":14,
@@ -4633,16 +3384,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":267,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":14,
@@ -4650,16 +3396,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":268,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":14,
@@ -4667,16 +3408,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":269,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":14,
@@ -4684,16 +3420,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":270,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":14,
@@ -4701,16 +3432,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":271,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":14,
@@ -4718,16 +3444,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":272,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":14,
@@ -4735,16 +3456,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":273,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":14,
@@ -4752,16 +3468,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":274,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":14,
@@ -4769,16 +3480,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":275,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":14,
@@ -4786,16 +3492,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":276,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":14,
@@ -4803,16 +3504,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":277,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":14,
@@ -4820,16 +3516,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":278,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":14,
@@ -4837,16 +3528,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":279,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":14,
@@ -4860,16 +3546,12 @@
           "x":20
         },
         "id":280,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       }
     ],
     [
@@ -4880,28 +3562,19 @@
           "x":1
         },
         "id":281,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":282,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":15,
@@ -4909,16 +3582,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":283,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":15,
@@ -4926,16 +3594,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":284,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":15,
@@ -4943,16 +3606,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":285,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":15,
@@ -4960,16 +3618,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":286,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":15,
@@ -4977,16 +3630,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":287,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":15,
@@ -4994,16 +3642,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":288,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":15,
@@ -5011,16 +3654,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":289,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":15,
@@ -5028,16 +3666,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":290,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":15,
@@ -5045,16 +3678,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":291,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":15,
@@ -5062,16 +3690,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":292,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":15,
@@ -5079,16 +3702,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":293,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":15,
@@ -5096,16 +3714,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":294,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":15,
@@ -5113,16 +3726,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":295,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":15,
@@ -5130,16 +3738,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":296,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":15,
@@ -5147,16 +3750,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":297,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":15,
@@ -5164,16 +3762,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":298,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":15,
@@ -5181,16 +3774,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":299,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":15,
@@ -5204,16 +3792,12 @@
           "x":20
         },
         "id":300,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       }
     ],
     [
@@ -5224,28 +3808,19 @@
           "x":1
         },
         "id":301,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":302,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":16,
@@ -5253,16 +3828,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":303,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":16,
@@ -5270,16 +3840,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":304,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":16,
@@ -5287,16 +3852,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":305,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":16,
@@ -5304,16 +3864,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":306,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":16,
@@ -5321,16 +3876,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":307,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":16,
@@ -5338,16 +3888,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":308,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":16,
@@ -5355,16 +3900,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":309,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":16,
@@ -5372,16 +3912,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":310,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":16,
@@ -5389,16 +3924,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":311,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":16,
@@ -5406,16 +3936,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":312,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":16,
@@ -5423,16 +3948,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":313,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":16,
@@ -5440,16 +3960,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":314,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":16,
@@ -5457,16 +3972,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":315,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":16,
@@ -5474,16 +3984,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":316,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":16,
@@ -5491,16 +3996,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":317,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":16,
@@ -5508,16 +4008,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":318,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":16,
@@ -5525,16 +4020,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":319,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":16,
@@ -5548,16 +4038,12 @@
           "x":20
         },
         "id":320,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       }
     ],
     [
@@ -5568,28 +4054,19 @@
           "x":1
         },
         "id":321,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":322,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":17,
@@ -5597,16 +4074,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":323,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":17,
@@ -5614,16 +4086,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":324,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":17,
@@ -5631,16 +4098,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":325,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":17,
@@ -5648,16 +4110,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":326,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":17,
@@ -5665,16 +4122,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":327,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":17,
@@ -5682,16 +4134,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":328,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":17,
@@ -5699,16 +4146,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":329,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":17,
@@ -5716,16 +4158,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":330,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":17,
@@ -5733,16 +4170,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":331,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":17,
@@ -5750,16 +4182,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":332,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":17,
@@ -5767,16 +4194,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":333,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":17,
@@ -5784,16 +4206,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":334,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":17,
@@ -5801,16 +4218,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":335,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":17,
@@ -5818,16 +4230,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":336,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":17,
@@ -5835,16 +4242,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":337,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":17,
@@ -5852,16 +4254,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":338,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":17,
@@ -5869,16 +4266,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":339,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":17,
@@ -5892,16 +4284,12 @@
           "x":20
         },
         "id":340,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       }
     ],
     [
@@ -5912,28 +4300,19 @@
           "x":1
         },
         "id":341,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":342,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":18,
@@ -5941,16 +4320,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":343,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":18,
@@ -5958,16 +4332,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":344,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":18,
@@ -5975,16 +4344,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":345,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":18,
@@ -5992,16 +4356,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":346,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":18,
@@ -6009,16 +4368,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":347,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":18,
@@ -6026,16 +4380,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":348,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":18,
@@ -6043,16 +4392,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":349,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":18,
@@ -6060,16 +4404,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":350,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":18,
@@ -6077,16 +4416,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":351,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":18,
@@ -6094,16 +4428,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":352,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":18,
@@ -6111,16 +4440,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":353,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":18,
@@ -6128,16 +4452,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":354,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":18,
@@ -6145,16 +4464,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":355,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":18,
@@ -6162,16 +4476,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":356,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":18,
@@ -6179,16 +4488,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":357,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":18,
@@ -6196,16 +4500,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":358,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":18,
@@ -6213,16 +4512,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":359,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":18,
@@ -6236,16 +4530,12 @@
           "x":20
         },
         "id":360,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       }
     ],
     [
@@ -6256,28 +4546,19 @@
           "x":1
         },
         "id":361,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":362,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":19,
@@ -6285,16 +4566,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":363,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":19,
@@ -6302,16 +4578,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":364,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":19,
@@ -6319,16 +4590,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":365,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":19,
@@ -6336,16 +4602,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":366,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":19,
@@ -6353,16 +4614,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":367,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":19,
@@ -6370,16 +4626,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":368,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":19,
@@ -6387,16 +4638,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":369,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":19,
@@ -6404,16 +4650,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":370,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":19,
@@ -6421,16 +4662,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":371,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":19,
@@ -6438,16 +4674,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":372,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":19,
@@ -6455,16 +4686,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":373,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":19,
@@ -6472,16 +4698,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":374,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":19,
@@ -6489,16 +4710,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":375,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":19,
@@ -6506,16 +4722,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":376,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":19,
@@ -6523,16 +4734,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":377,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":19,
@@ -6540,16 +4746,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":378,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":19,
@@ -6557,16 +4758,11 @@
         }
       },
       {
-        "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":-1,
-          "blocked":true,
-          "west":-1,
-          "east":-1,
-          "north":-1
-        },
         "id":379,
+        "wall":{
+          "floor":5,
+          "blocked":true
+        },
         "objects":        {},
         "position":{
           "y":19,
@@ -6580,16 +4776,12 @@
           "x":20
         },
         "id":380,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
-          "north":4
-        }
+          "east":4
+        },
+        "blocked":true
       }
     ],
     [
@@ -6600,16 +4792,12 @@
           "x":1
         },
         "id":381,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
           "west":4,
-          "east":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -6618,16 +4806,12 @@
           "x":2
         },
         "id":382,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -6636,16 +4820,12 @@
           "x":3
         },
         "id":383,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -6654,16 +4834,12 @@
           "x":4
         },
         "id":384,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -6672,16 +4848,12 @@
           "x":5
         },
         "id":385,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -6690,16 +4862,12 @@
           "x":6
         },
         "id":386,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -6708,16 +4876,12 @@
           "x":7
         },
         "id":387,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -6726,16 +4890,12 @@
           "x":8
         },
         "id":388,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -6744,16 +4904,12 @@
           "x":9
         },
         "id":389,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -6762,16 +4918,12 @@
           "x":10
         },
         "id":390,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -6780,16 +4932,12 @@
           "x":11
         },
         "id":391,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -6798,16 +4946,12 @@
           "x":12
         },
         "id":392,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -6816,16 +4960,12 @@
           "x":13
         },
         "id":393,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -6834,16 +4974,12 @@
           "x":14
         },
         "id":394,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -6852,16 +4988,12 @@
           "x":15
         },
         "id":395,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -6870,16 +5002,12 @@
           "x":16
         },
         "id":396,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -6888,16 +5016,12 @@
           "x":17
         },
         "id":397,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -6906,16 +5030,12 @@
           "x":18
         },
         "id":398,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -6924,16 +5044,12 @@
           "x":19
         },
         "id":399,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
-          "east":4,
+          "south":4,
           "north":4
-        }
+        },
+        "blocked":true
       },
       {
         "objects":        {},
@@ -6942,16 +5058,12 @@
           "x":20
         },
         "id":400,
-        "blocked":true,
         "wall":{
-          "ceil":-1,
-          "floor":5,
-          "south":4,
           "blocked":true,
-          "west":4,
           "east":4,
           "north":4
-        }
+        },
+        "blocked":true
       }
     ]
   ],

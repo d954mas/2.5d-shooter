@@ -40,13 +40,28 @@ cjson.decode_invalid_numbers(false)
 ---@field id_to_tile table
 ---@field spawn_point vector3
 ---@field enemies table[]
+---@field cells LevelDataCell[][]
 ---@field spawners table[]
 ---@field light_map number[]
+
+local function clone_deep(t)
+	local orig_type = type(t)
+	local copy
+	if orig_type == 'table' then
+		copy = {}
+		for orig_key, orig_value in next, t, nil do
+			copy[ clone_deep(orig_key)] =  clone_deep(orig_value)
+		end
+	else -- number, string, boolean, etc
+		copy = t
+	end
+	return copy
+end
 
 local function create_empty_cell(x,y)
 	local cell = {}
 	cell.position = {x=x or 0,y = y or y}
-	cell.wall ={ north = -1,south = -1,east = -1, west = -1, floor = -1, ceil = -1,blocked = true }
+	cell.wall ={ north = nil,south = nil,east = nil, west = nil, floor = nil, ceil = nil,blocked = true }
 	cell.objects = {}
 	return cell
 end
@@ -200,6 +215,57 @@ local function create_map_data(tiled)
 	return data
 end
 
+
+local function is_transparent(tile)
+	return not tile or TILESET[tile].properties.transparent
+end
+
+local function is_wall_transparent(wall)
+	return is_transparent(wall.north) or is_transparent(wall.south) or
+			 is_transparent(wall.west) or is_transparent(wall.east)
+end
+
+--remove not visible walls
+---@param map LevelData
+local function clean_map(map)
+	--remove floor and ceil
+	for y=1,map.size.y do
+		for x=1,map.size.x do
+			local wall = map.cells[y][x].wall
+			if not is_wall_transparent(wall) then
+				wall.ceil = nil
+				wall.floor = nil
+			end
+		end
+	end
+	--remove walls. That user can't see.
+	--for example [][] will be [  ]
+	--if wall have transparent is draw all parts
+	local data = {
+		{dx = 1,dy = 0,wall = "east",wall_2 = "west"},
+		{dx = 0,dy = 1,wall = "north",wall_2 = "south"}
+	}
+	---@type LevelData[][]
+	local cells_copy = clone_deep(map.cells)
+	for _,wall_data in ipairs(data)do
+		for y=1,map.size.y do
+			local next_row = map.cells[y+wall_data.dy]
+			if not next_row then break end
+			for x=1,map.size.x do
+				local wall = map.cells[y][x].wall
+				if not is_wall_transparent(wall) then
+					local next_wall = map.cells[y+wall_data.dy][x+wall_data.dx]
+					if next_wall and not is_transparent(next_wall.wall[wall_data.wall_2]) then
+						cells_copy[y][x].wall[wall_data.wall] = nil
+						cells_copy[y+wall_data.dy][x+wall_data.dx].wall[wall_data.wall_2] = nil
+					end
+				end
+			end
+		end
+	end
+	map.cells = cells_copy
+end
+
 local function parse_level(path,result_path)
 	local name = path:match("^.+\\(.+)....")
 	result_path = result_path .. "\\" .. name .. ".json"
@@ -242,6 +308,9 @@ local function parse_level(path,result_path)
 		assert(object.properties.pickup,"should be pickup:" .. object.tile_id)
 		table.insert(data.pickups,object)
 	end)
+
+	clean_map(data)
+
 	--region validations
 	assert(data.spawn_point,"no spawn point")
 	--endregion

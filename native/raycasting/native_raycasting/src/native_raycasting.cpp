@@ -32,11 +32,11 @@ void CastRays(bool blocking){
     }
 }
 
-void CellsUpdateVisible(){
+void CellsUpdateVisible(bool blocking){
 	NEED_LOAD_ZONES.clear();
 	NEED_UPDATE_ZONES.clear();
 	NEED_UNLOAD_ZONES.clear();
-	CastRays(true);
+	CastRays(blocking);
 	//reset prev raycasting
 	for(CellData *data : VISIBLE_ZONES)data->rayCasted = false;
 

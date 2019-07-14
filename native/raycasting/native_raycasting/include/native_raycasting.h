@@ -5,4 +5,4 @@
 #include "map.h"
 
 void MapSet(lua_State*);
-void CellsUpdateVisible();
+void CellsUpdateVisible(bool);

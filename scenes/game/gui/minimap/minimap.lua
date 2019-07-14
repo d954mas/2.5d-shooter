@@ -106,14 +106,10 @@ function Map:update_cells()
 		local visible = GAME_CONTROLLER.level:map_cell_in(cell.x,cell.y)
 		if visible then
 			local cell_level = GAME_CONTROLLER.level:map_get_cell(cell.x,cell.y)
-			if cell_level.wall.floor == -1 then
-				gui.set_color(cell.root_node, UNKNOWN_COLOR)
+			if cell_level.blocked then
+				gui.set_color(cell.root_node, BLOCKED_COLOR)
 			else
-				if cell_level.blocked then
-					gui.set_color(cell.root_node, BLOCKED_COLOR)
-				else
-					gui.set_color(cell.root_node, EMPTY_COLOR)
-				end
+				gui.set_color(cell.root_node, EMPTY_COLOR)
 			end
 		else
 			gui.set_color(cell.root_node, UNKNOWN_COLOR)

@@ -74,7 +74,8 @@ static int CellsGetByCoordsLua(lua_State* L){
 }
 
 static int CellsUpdateVisibleLua(lua_State* L){
-	CellsUpdateVisible();
+    bool blocking = lua_toboolean(L,1);
+	CellsUpdateVisible(blocking);
 	return 0;
 }
 //endregion
