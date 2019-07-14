@@ -2,7 +2,6 @@ local COMMON = require "libs.common"
 local RX = require "libs.rx"
 local LEVELS = require "scenes.game.model.levels"
 local EVENTS = require "libs.events"
-local SOUNDS = require "libs.sounds"
 local ENTITIES = require "world.ecs.entities.entities"
 local RENDER_CAM = require "rendercam.rendercam"
 
@@ -110,8 +109,6 @@ pickups_weights[hp_pickup] = 1
 pickups_weights[ammo_pickup] = 2
 function M:spawn_pickups()
 	timer.delay(8,true,function()
-		---@type ENTITIES
-		local ENTITIES = requiref "world.ecs.entities.entities"
 		local pickup = COMMON.LUME.weightedchoice(pickups_weights)
 		self.level.ecs_world.ecs:addEntity(ENTITIES.create_pickup(self:utils_get_random_spawn_position()-vmath.vector3(0.5,0.5,0),pickup))
 	end)

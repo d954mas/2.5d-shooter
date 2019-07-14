@@ -65,8 +65,11 @@ function Weapon:_raycast()
 	local end_point = start_point +  direction * self.ptototype.raycast_max_dist
 	local raycast = physics.raycast(start_point,end_point,WEAPON_PROTOTYPES.TARGET_HASHES[self.ptototype.target])
 	if raycast then
-		self.game_controller.level.ecs_world:add_entity(
-				ENTITIES.create_raycast_damage_info(self.e,ENTITIES.get_entity_for_url(msg.url(raycast.id)),self.ptototype,raycast))
+		local target = ENTITIES.get_entity_for_url(msg.url(raycast.id))
+		--target can be nil. That mean hit obstacle
+		if target then
+			self.game_controller.level.ecs_world:add_entity(ENTITIES.create_raycast_damage_info(self.e,target,self.ptototype,raycast))
+		end
 	end
 	COMMON.coroutine_wait(self.ptototype.shoot_time_delay or 0)
 end

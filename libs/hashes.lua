@@ -53,6 +53,10 @@ M.MSG_SM_RESUME = hash("msg_sm_resume")
 M.MSG_SM_TRANSITION = hash("msg_sm_transition")
 M.MSG_SM_LOAD = hash("msg_sm_load")
 
+M.MSG_PHYSICS_GROUP_OBSTACLE = hash("obstacle")
+M.MSG_PHYSICS_GROUP_PLAYER = hash("player")
+M.MSG_PHYSICS_GROUP_ENEMY = hash("enemy")
+
 
 M.EMPTY = hash("empty")
 M.NIL = hash("nil")
