@@ -38,6 +38,10 @@ key_trigger {
   input: KEY_ESC
   action: "escape"
 }
+key_trigger {
+  input: KEY_8
+  action: "toggle_physics"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_1
   action: "touch"

@@ -18,7 +18,6 @@ function Render:init()
     self:init_buffers()
     self:init_constants_buffers()
     self:register_messages()
-    self.need_draw_3d_debug = false
     COMMON.RENDER = self
 end
 
@@ -193,7 +192,7 @@ function Render:draw_3d()
     render.draw(self.predicates.sprite_3d,self.constants_buffers.light_map)
     render.draw(self.predicates.sprite_3d_object,self.constants_buffers.light_map)
     render.draw(self.predicates.sprite_3d_enemy,self.constants_buffers.light_map)
-    if self.need_draw_3d_debug then render.draw_debug3d() end
+     render.draw_debug3d()
     render.disable_state(render.STATE_DEPTH_TEST)
 end
 --endregion

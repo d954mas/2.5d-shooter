@@ -35,6 +35,7 @@ M.MSG_DISABLE = hash("disable")
 M.MSG_PLAY_ANIMATION = hash("play_animation")
 M.MSG_ACQUIRE_CAMERA_FOCUS = hash("acquire_camera_focus")
 M.MSG_SET_PARENT = hash("set_parent")
+M.MSG_TOGGLE_PHYSICS_DEBUG = hash("toggle_physics_debug")
 
 M.MSG_GUI_UPDATE_GO_POS = hash("msg_gui_update_go_pos")
 M.MSG_POST_UPDATE = hash("msg_post_update")

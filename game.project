@@ -56,6 +56,7 @@ push_field_text =
 texture_profiles = /render/my.texture_profiles
 default_texture_min_filter = nearest
 default_texture_mag_filter = nearest
+max_debug_vertices = 100000
 
 [sound]
 max_sound_buffers = 32
