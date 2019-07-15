@@ -157,6 +157,33 @@ local function show_new_scene(self, old_scene, new_scene, input,options)
     COMMON.i("time:" .. (os.clock() - start_time),TAG)
 end
 
+---@param self SceneManager
+local function unload_modals(self)
+    COMMON.i("start unload modals",TAG)
+    while(true)do
+        local co = self.co
+        local scene = self.stack:peek()
+        if not scene._config.modal then break end
+        show_new_scene(self, self.stack:pop(), self.stack:peek())
+        self.co = co
+    end
+    self.co = nil
+    COMMON.i("unload modal end",TAG)
+end
+
+local function reload_scene(self)
+    local co = self.co
+    unload_modals(self)
+    self.co = co
+    local scene_name, input  = self.stack:peek()._name, self.stack:peek()._input
+    local options = {reload = true}
+    local scene = assert(self:get_scene_by_name(scene_name))
+    local current_scene =  scene._config.modal and self.stack:peek() or self.stack:pop()
+    self.stack:push(scene)
+    show_new_scene(self, current_scene, scene, input, options)
+    self.co = nil
+end
+
 function M:show(scene_name, input, options)
     assert(not self.co, "work in progress.Can't show new scene")
     input = input or {}
@@ -186,8 +213,21 @@ function M:back(input, options)
     end
 end
 
+--reload top. It can be modal
 function M:reload()
    self:show(self.stack:peek()._name,self.stack:peek()._input, {reload = true})
+end
+
+function M:reload_scene()
+    assert(not self.co, "work in progress.Can't show new scene")
+    self.co = coroutine.create(reload_scene)
+    COMMON.coroutine_resume(self.co,self)
+end
+
+function M:close_modals()
+    assert(not self.co, "work in progress.Can't show new scene")
+    self.co = coroutine.create(unload_modals)
+    COMMON.coroutine_resume(self.co,self)
 end
 
 --region UTILS
@@ -230,6 +270,7 @@ function M:is_show_modal(name)
         end
     end
 end
+
 
 
 return M

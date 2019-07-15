@@ -13,6 +13,7 @@ local Script = COMMON.new_n28s()
 local scenes = {
     require "scenes.game.game_scene",
     require "scenes.modal.pause.pause_modal",
+    require "scenes.modal.game_over.game_over_modal",
 }
 
 function Script:scenes_register()
@@ -37,7 +38,7 @@ function Script:input_toggle_profile()
 end
 
 function Script:input_toggle_physics()
-    pprint("PHYU")
+    COMMON.i("toggle physics")
     msg.post("@system:", "toggle_physics_debug")
     return true
 end
@@ -59,9 +60,7 @@ function Script:update(dt)
     RX.MainScheduler:update(dt)
     SM:update(dt)
     SOUNDS:update(dt)
-    if self.test_runner then
-        self.test_runner.update(dt)
-    end
+    if self.test_runner then self.test_runner.update(dt) end
 end
 
 function Script:final()

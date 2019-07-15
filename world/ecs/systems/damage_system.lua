@@ -17,7 +17,8 @@ function System:process(e, dt)
 			timer.delay(2,false,function() info.target_e.ignore_damage  = false end)
 			SOUNDS:play_sound_player_hurt()
 			if info.target_e.hp == 0 then
-				require("libs.sm.sm"):reload()
+				require("libs.cursor_helper").unlock_cursor()
+				require("libs.sm.sm"):show("GameOverModal")
 			end
 		end
 	end
