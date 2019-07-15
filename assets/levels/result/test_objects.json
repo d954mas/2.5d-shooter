@@ -165,9 +165,7 @@
         },
         "id":1,
         "wall":{
-          "blocked":true,
-          "south":2,
-          "west":2
+          "blocked":true
         },
         "blocked":true
       },
@@ -180,7 +178,6 @@
         "id":2,
         "wall":{
           "blocked":true,
-          "south":2,
           "north":2
         },
         "blocked":true
@@ -194,7 +191,6 @@
         "id":3,
         "wall":{
           "blocked":true,
-          "south":2,
           "north":2
         },
         "blocked":true
@@ -208,7 +204,6 @@
         "id":4,
         "wall":{
           "blocked":true,
-          "south":2,
           "north":2
         },
         "blocked":true
@@ -222,7 +217,6 @@
         "id":5,
         "wall":{
           "blocked":true,
-          "south":2,
           "north":2
         },
         "blocked":true
@@ -236,7 +230,6 @@
         "id":6,
         "wall":{
           "blocked":true,
-          "south":4,
           "north":4
         },
         "blocked":true
@@ -250,7 +243,6 @@
         "id":7,
         "wall":{
           "blocked":true,
-          "south":4,
           "north":4
         },
         "blocked":true
@@ -264,7 +256,6 @@
         "id":8,
         "wall":{
           "blocked":true,
-          "south":4,
           "north":4
         },
         "blocked":true
@@ -278,7 +269,6 @@
         "id":9,
         "wall":{
           "blocked":true,
-          "south":4,
           "north":4
         },
         "blocked":true
@@ -292,7 +282,6 @@
         "id":10,
         "wall":{
           "blocked":true,
-          "south":4,
           "north":4
         },
         "blocked":true
@@ -306,7 +295,6 @@
         "id":11,
         "wall":{
           "blocked":true,
-          "south":4,
           "north":4
         },
         "blocked":true
@@ -320,7 +308,6 @@
         "id":12,
         "wall":{
           "blocked":true,
-          "south":4,
           "north":4
         },
         "blocked":true
@@ -334,7 +321,6 @@
         "id":13,
         "wall":{
           "blocked":true,
-          "south":4,
           "north":4
         },
         "blocked":true
@@ -348,7 +334,6 @@
         "id":14,
         "wall":{
           "blocked":true,
-          "south":4,
           "north":4
         },
         "blocked":true
@@ -362,7 +347,6 @@
         "id":15,
         "wall":{
           "blocked":true,
-          "south":4,
           "north":4
         },
         "blocked":true
@@ -376,7 +360,6 @@
         "id":16,
         "wall":{
           "blocked":true,
-          "south":4,
           "north":4
         },
         "blocked":true
@@ -390,7 +373,6 @@
         "id":17,
         "wall":{
           "blocked":true,
-          "south":4,
           "north":4
         },
         "blocked":true
@@ -404,7 +386,6 @@
         "id":18,
         "wall":{
           "blocked":true,
-          "south":4,
           "north":4
         },
         "blocked":true
@@ -418,7 +399,6 @@
         "id":19,
         "wall":{
           "blocked":true,
-          "south":4,
           "north":4
         },
         "blocked":true
@@ -431,9 +411,7 @@
         },
         "id":20,
         "wall":{
-          "blocked":true,
-          "south":4,
-          "east":4
+          "blocked":true
         },
         "blocked":true
       }
@@ -448,7 +426,6 @@
         "id":21,
         "wall":{
           "blocked":true,
-          "west":3,
           "east":3
         },
         "blocked":true
@@ -678,8 +655,7 @@
         "id":40,
         "wall":{
           "blocked":true,
-          "west":4,
-          "east":4
+          "west":4
         },
         "blocked":true
       }
@@ -694,7 +670,6 @@
         "id":41,
         "wall":{
           "blocked":true,
-          "west":3,
           "east":3
         },
         "blocked":true
@@ -924,8 +899,7 @@
         "id":60,
         "wall":{
           "blocked":true,
-          "west":4,
-          "east":4
+          "west":4
         },
         "blocked":true
       }
@@ -940,7 +914,6 @@
         "id":61,
         "wall":{
           "blocked":true,
-          "west":3,
           "east":3
         },
         "blocked":true
@@ -1170,8 +1143,7 @@
         "id":80,
         "wall":{
           "blocked":true,
-          "west":4,
-          "east":4
+          "west":4
         },
         "blocked":true
       }
@@ -1186,7 +1158,6 @@
         "id":81,
         "wall":{
           "blocked":true,
-          "west":4,
           "east":4
         },
         "blocked":true
@@ -1416,8 +1387,7 @@
         "id":100,
         "wall":{
           "blocked":true,
-          "west":4,
-          "east":4
+          "west":4
         },
         "blocked":true
       }
@@ -1432,7 +1402,6 @@
         "id":101,
         "wall":{
           "blocked":true,
-          "west":4,
           "east":4
         },
         "blocked":true
@@ -1662,8 +1631,7 @@
         "id":120,
         "wall":{
           "blocked":true,
-          "west":4,
-          "east":4
+          "west":4
         },
         "blocked":true
       }
@@ -1678,7 +1646,6 @@
         "id":121,
         "wall":{
           "blocked":true,
-          "west":4,
           "east":4
         },
         "blocked":true
@@ -1908,8 +1875,7 @@
         "id":140,
         "wall":{
           "blocked":true,
-          "west":4,
-          "east":4
+          "west":4
         },
         "blocked":true
       }
@@ -1924,7 +1890,6 @@
         "id":141,
         "wall":{
           "blocked":true,
-          "west":4,
           "east":4
         },
         "blocked":true
@@ -2154,8 +2119,7 @@
         "id":160,
         "wall":{
           "blocked":true,
-          "west":4,
-          "east":4
+          "west":4
         },
         "blocked":true
       }
@@ -2170,7 +2134,6 @@
         "id":161,
         "wall":{
           "blocked":true,
-          "west":4,
           "east":4
         },
         "blocked":true
@@ -2400,8 +2363,7 @@
         "id":180,
         "wall":{
           "blocked":true,
-          "west":4,
-          "east":4
+          "west":4
         },
         "blocked":true
       }
@@ -2416,7 +2378,6 @@
         "id":181,
         "wall":{
           "blocked":true,
-          "west":4,
           "east":4
         },
         "blocked":true
@@ -2646,8 +2607,7 @@
         "id":200,
         "wall":{
           "blocked":true,
-          "west":4,
-          "east":4
+          "west":4
         },
         "blocked":true
       }
@@ -2662,7 +2622,6 @@
         "id":201,
         "wall":{
           "blocked":true,
-          "west":4,
           "east":4
         },
         "blocked":true
@@ -2892,8 +2851,7 @@
         "id":220,
         "wall":{
           "blocked":true,
-          "west":4,
-          "east":4
+          "west":4
         },
         "blocked":true
       }
@@ -2908,7 +2866,6 @@
         "id":221,
         "wall":{
           "blocked":true,
-          "west":4,
           "east":4
         },
         "blocked":true
@@ -3138,8 +3095,7 @@
         "id":240,
         "wall":{
           "blocked":true,
-          "west":4,
-          "east":4
+          "west":4
         },
         "blocked":true
       }
@@ -3154,7 +3110,6 @@
         "id":241,
         "wall":{
           "blocked":true,
-          "west":4,
           "east":4
         },
         "blocked":true
@@ -3384,8 +3339,7 @@
         "id":260,
         "wall":{
           "blocked":true,
-          "west":4,
-          "east":4
+          "west":4
         },
         "blocked":true
       }
@@ -3400,7 +3354,6 @@
         "id":261,
         "wall":{
           "blocked":true,
-          "west":4,
           "east":4
         },
         "blocked":true
@@ -3630,8 +3583,7 @@
         "id":280,
         "wall":{
           "blocked":true,
-          "west":4,
-          "east":4
+          "west":4
         },
         "blocked":true
       }
@@ -3646,7 +3598,6 @@
         "id":281,
         "wall":{
           "blocked":true,
-          "west":4,
           "east":4
         },
         "blocked":true
@@ -3876,8 +3827,7 @@
         "id":300,
         "wall":{
           "blocked":true,
-          "west":4,
-          "east":4
+          "west":4
         },
         "blocked":true
       }
@@ -3892,7 +3842,6 @@
         "id":301,
         "wall":{
           "blocked":true,
-          "west":4,
           "east":4
         },
         "blocked":true
@@ -4122,8 +4071,7 @@
         "id":320,
         "wall":{
           "blocked":true,
-          "west":4,
-          "east":4
+          "west":4
         },
         "blocked":true
       }
@@ -4138,7 +4086,6 @@
         "id":321,
         "wall":{
           "blocked":true,
-          "west":4,
           "east":4
         },
         "blocked":true
@@ -4368,8 +4315,7 @@
         "id":340,
         "wall":{
           "blocked":true,
-          "west":4,
-          "east":4
+          "west":4
         },
         "blocked":true
       }
@@ -4384,7 +4330,6 @@
         "id":341,
         "wall":{
           "blocked":true,
-          "west":4,
           "east":4
         },
         "blocked":true
@@ -4614,8 +4559,7 @@
         "id":360,
         "wall":{
           "blocked":true,
-          "west":4,
-          "east":4
+          "west":4
         },
         "blocked":true
       }
@@ -4630,7 +4574,6 @@
         "id":361,
         "wall":{
           "blocked":true,
-          "west":4,
           "east":4
         },
         "blocked":true
@@ -4860,8 +4803,7 @@
         "id":380,
         "wall":{
           "blocked":true,
-          "west":4,
-          "east":4
+          "west":4
         },
         "blocked":true
       }
@@ -4875,9 +4817,7 @@
         },
         "id":381,
         "wall":{
-          "blocked":true,
-          "west":4,
-          "north":4
+          "blocked":true
         },
         "blocked":true
       },
@@ -4890,8 +4830,7 @@
         "id":382,
         "wall":{
           "blocked":true,
-          "south":4,
-          "north":4
+          "south":4
         },
         "blocked":true
       },
@@ -4904,8 +4843,7 @@
         "id":383,
         "wall":{
           "blocked":true,
-          "south":4,
-          "north":4
+          "south":4
         },
         "blocked":true
       },
@@ -4918,8 +4856,7 @@
         "id":384,
         "wall":{
           "blocked":true,
-          "south":4,
-          "north":4
+          "south":4
         },
         "blocked":true
       },
@@ -4932,8 +4869,7 @@
         "id":385,
         "wall":{
           "blocked":true,
-          "south":4,
-          "north":4
+          "south":4
         },
         "blocked":true
       },
@@ -4946,8 +4882,7 @@
         "id":386,
         "wall":{
           "blocked":true,
-          "south":4,
-          "north":4
+          "south":4
         },
         "blocked":true
       },
@@ -4960,8 +4895,7 @@
         "id":387,
         "wall":{
           "blocked":true,
-          "south":4,
-          "north":4
+          "south":4
         },
         "blocked":true
       },
@@ -4974,8 +4908,7 @@
         "id":388,
         "wall":{
           "blocked":true,
-          "south":4,
-          "north":4
+          "south":4
         },
         "blocked":true
       },
@@ -4988,8 +4921,7 @@
         "id":389,
         "wall":{
           "blocked":true,
-          "south":4,
-          "north":4
+          "south":4
         },
         "blocked":true
       },
@@ -5002,8 +4934,7 @@
         "id":390,
         "wall":{
           "blocked":true,
-          "south":4,
-          "north":4
+          "south":4
         },
         "blocked":true
       },
@@ -5016,8 +4947,7 @@
         "id":391,
         "wall":{
           "blocked":true,
-          "south":4,
-          "north":4
+          "south":4
         },
         "blocked":true
       },
@@ -5030,8 +4960,7 @@
         "id":392,
         "wall":{
           "blocked":true,
-          "south":4,
-          "north":4
+          "south":4
         },
         "blocked":true
       },
@@ -5044,8 +4973,7 @@
         "id":393,
         "wall":{
           "blocked":true,
-          "south":4,
-          "north":4
+          "south":4
         },
         "blocked":true
       },
@@ -5058,8 +4986,7 @@
         "id":394,
         "wall":{
           "blocked":true,
-          "south":4,
-          "north":4
+          "south":4
         },
         "blocked":true
       },
@@ -5072,8 +4999,7 @@
         "id":395,
         "wall":{
           "blocked":true,
-          "south":4,
-          "north":4
+          "south":4
         },
         "blocked":true
       },
@@ -5086,8 +5012,7 @@
         "id":396,
         "wall":{
           "blocked":true,
-          "south":4,
-          "north":4
+          "south":4
         },
         "blocked":true
       },
@@ -5100,8 +5025,7 @@
         "id":397,
         "wall":{
           "blocked":true,
-          "south":4,
-          "north":4
+          "south":4
         },
         "blocked":true
       },
@@ -5114,8 +5038,7 @@
         "id":398,
         "wall":{
           "blocked":true,
-          "south":4,
-          "north":4
+          "south":4
         },
         "blocked":true
       },
@@ -5128,8 +5051,7 @@
         "id":399,
         "wall":{
           "blocked":true,
-          "south":4,
-          "north":4
+          "south":4
         },
         "blocked":true
       },
@@ -5141,9 +5063,7 @@
         },
         "id":400,
         "wall":{
-          "blocked":true,
-          "east":4,
-          "north":4
+          "blocked":true
         },
         "blocked":true
       }

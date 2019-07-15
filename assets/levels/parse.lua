@@ -263,6 +263,42 @@ local function clean_map(map)
 			end
 		end
 	end
+	--region remove level edges
+	for y=1,map.size.y do
+		local remove_first = false
+		local last_cell
+		for x=1,map.size.x do
+			local wall = map.cells[y][x].wall
+			local wall_copy = cells_copy[y][x].wall
+			if not is_wall_transparent(wall) then
+				if not remove_first then
+					wall_copy.west = nil
+					remove_first = true
+				else
+					last_cell = wall_copy
+				end
+			end
+		end
+		if last_cell then last_cell.east = nil end
+	end
+	for x=1,map.size.x do
+		local remove_first = false
+		local last_cell
+		for y=1,map.size.y do
+			local wall = map.cells[y][x].wall
+			local wall_copy = cells_copy[y][x].wall
+			if not is_wall_transparent(wall) then
+				if not remove_first then
+					wall_copy.south = nil
+					remove_first = true
+				else
+					last_cell = wall_copy
+				end
+			end
+		end
+		if last_cell then last_cell.north = nil end
+	end
+	--endregion
 	map.cells = cells_copy
 end
 
