@@ -1,5 +1,7 @@
 local ECS = require 'libs.ecs'
 local SOUNDS = require "libs.sounds"
+local SM = require("libs.sm.sm")
+local CURSOR_HELPER = require "libs.cursor_helper"
 ---@class DamageSystem:ECSSystem
 local System = ECS.processingSystem()
 System.filter = ECS.requireAll("damage_info")
@@ -17,8 +19,8 @@ function System:process(e, dt)
 			timer.delay(2,false,function() info.target_e.ignore_damage  = false end)
 			SOUNDS:play_sound_player_hurt()
 			if info.target_e.hp == 0 then
-				require("libs.cursor_helper").unlock_cursor()
-				require("libs.sm.sm"):show("GameOverModal")
+				CURSOR_HELPER.unlock_cursor()
+				SM:show("GameOverModal")
 			end
 		end
 	end
