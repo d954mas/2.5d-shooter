@@ -55,7 +55,9 @@ M.MSG_SM_LOAD = hash("msg_sm_load")
 
 M.MSG_PHYSICS_GROUP_OBSTACLE = hash("obstacle")
 M.MSG_PHYSICS_GROUP_PLAYER = hash("player")
+M.MSG_PHYSICS_GROUP_PLAYER_DAMAGE = hash("player_damage")
 M.MSG_PHYSICS_GROUP_ENEMY = hash("enemy")
+M.MSG_PHYSICS_GROUP_ENEMY_DAMAGE = hash("enemy_damage")
 
 
 M.EMPTY = hash("empty")

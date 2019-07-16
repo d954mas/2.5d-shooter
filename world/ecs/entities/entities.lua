@@ -20,6 +20,7 @@ local TAG = "ENTITIES"
 ---@field velocity vector3
 ---@field speed number
 ---@field angle vector3 radians anticlockwise  x-horizontal y-vertical
+---@field url_collision_damage url collision always look at player
 ---@field url_go nil|url need update entity when changed or url_to_entity will be broken
 ---@field url_sprite url
 ---@field input boolean used for player input
@@ -57,6 +58,7 @@ local HASH_SPRITE = hash("sprite")
 local OBJECT_HASHES = {
 	root = hash("/root"),
 	sprite = hash("/sprite"),
+	collision_damage = hash("/collision_damage"),
 }
 
 local FACTORY_ENEMY_BLOB_URL = msg.url("game:/factories#factory_enemy_blob")
@@ -96,6 +98,9 @@ function Entities.on_entity_removed(e)
 		Entities.url_to_entity[url_to_key(e.url_go)] = nil
 		Entities.entity_to_url[e] = nil
 	end
+	if e.url_collision_damage then
+		Entities.url_to_entity[url_to_key(e.url_collision_damage)] = nil
+	end
 	--TODO fix performance
 	if e.enemy then
 		local idx = assert(COMMON.LUME.find(Entities.enemies,e),"unknown enemy")
@@ -113,6 +118,10 @@ function Entities.on_entity_added(e)
 		Entities.url_to_entity[url_to_key(e.url_go)] = e
 		Entities.entity_to_url[e] = e.url_go
 	end
+	if e.url_collision_damage then
+		Entities.url_to_entity[url_to_key(e.url_collision_damage)] = e
+	end
+	--TODO
 	if e.enemy then
 		local idx = COMMON.LUME.find(Entities.enemies,e)
 		if not idx then
@@ -130,6 +139,9 @@ function Entities.on_entity_updated(e)
 		if prev_url then Entities.url_to_entity[prev_url] = e end
 		if new_url then Entities.url_to_entity[new_url] = e end
 		Entities.entity_to_url[e] = e.url_go
+		if e.url_collision_damage then
+			Entities.url_to_entity[url_to_key(e.url_collision_damage)] = e
+		end
 	end
 end
 
@@ -167,6 +179,7 @@ function Entities.create_player(pos)
 	}
 	e.weapons[1]:equip()
 	e.weapon_current_idx = 1
+	e.url_collision_damage =  msg.url("/player/collision_damage")
 	return e
 end
 
@@ -196,6 +209,7 @@ function Entities.create_enemy(position,factory)
 	e.url_sprite.fragment = HASH_SPRITE
 	e.rotation_look_at_player = true
 	e.dynamic_color = true
+	e.url_collision_damage = msg.url(urls[OBJECT_HASHES.collision_damage])
 	return e
 end
 
