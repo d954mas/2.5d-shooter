@@ -59,9 +59,13 @@ void Map::findPath(int x, int y, int x2, int y2,  std::vector<CellData*>& cells_
 	void* endState = (void*)(CoordsToId(x2,y2));
 	std::vector< void* > path;
 	float totalCost = 0;
-	int result = pather->Solve( startState, endState, &path, &totalCost );
-    for(void* id: path){
-	    cells_result.push_back( &cells[(int)id]);
+	if (startState == endState){
+	    cells_result.push_back( &cells[(int)startState]);
+	}else{
+        int result = pather->Solve( startState, endState, &path, &totalCost );
+        for(void* id: path){
+            cells_result.push_back( &cells[(int)id]);
+        }
 	}
 //	pather->Reset();
 }

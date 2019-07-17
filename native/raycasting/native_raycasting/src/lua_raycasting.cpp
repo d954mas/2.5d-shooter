@@ -81,20 +81,27 @@ static int CellsUpdateVisibleLua(lua_State* L){
 //endregion
 //region Map
 static int MapFindPathLua(lua_State* L){
-	int x1 = lua_tonumber(L, 1) - 1;
-	int y1 = lua_tonumber(L, 2) - 1;
-	int x2 = lua_tonumber(L, 3) - 1;
-	int y2 = lua_tonumber(L, 4) - 1;
+	int x1 = ceil(lua_tonumber(L, 1)) - 1;
+	int y1 = ceil(lua_tonumber(L, 2)) - 1;
+	int x2 = ceil(lua_tonumber(L, 3)) - 1;
+	int y2 = ceil(lua_tonumber(L, 4)) - 1;
+	if (x1<0 || y1<0 || x2 <0 || y2 < 0){
+	    dmLogError("pathfinding bad coords");
+	    return 0;
+	}
 	std::vector<CellData*> path;
 	MapFindPath(x1, y1, x2, y2, path);
-	lua_newtable(L);
-    int i =0;
-    for(CellData *cell : path) {
-        CellDataPush(L,cell);
-        lua_rawseti(L, -2, i+1);
-        i++;
+	if (path.size()> 0){
+	    lua_newtable(L);
+        int i =0;
+        for(CellData *cell : path) {
+            CellDataPush(L,cell);
+            lua_rawseti(L, -2, i+1);
+            i++;
+        }
+        return 1;
     }
-	return 1;
+	return 0;
 }
 
 static int MapSetLua(lua_State* L){
