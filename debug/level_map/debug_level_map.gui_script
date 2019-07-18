@@ -56,9 +56,12 @@ function Script:update_map()
 		for x=1, map_width do
 			index = index+1
 			local cell = GAME_CONTROLLER.level:map_get_cell_unsafe(x,y)
+			if cell.empty then
+				buf[index] = NO_WALLS_COLOR
+			else
+				buf[index] = cell.blocked and WALL_COLOR or WHITE_COLOR
+			end
 			buf_visible[index] = native_raycasting.cells_get_by_id(cell.id):get_visibility() and VISIBLE_COLOR or TRANSPARENT_COLOR
-			--empty cell
-			buf[index] = cell.blocked and WALL_COLOR or WHITE_COLOR
 		end
 	end
 	gui.set_texture_data("map", map_width, map_height, "rgba", table.concat(buf),true)

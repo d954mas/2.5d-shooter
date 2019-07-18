@@ -61,7 +61,7 @@ end
 local function create_empty_cell(x,y)
 	local cell = {}
 	cell.position = {x=x or 0,y = y or y}
-	cell.wall ={ north = nil,south = nil,east = nil, west = nil, floor = nil, ceil = nil,blocked = true }
+	cell.wall ={ north = nil,south = nil,east = nil, west = nil, floor = nil, ceil = nil,blocked = true, empty = nil }
 	cell.objects = {}
 	return cell
 end
@@ -225,6 +225,10 @@ local function is_wall_transparent(wall)
 			 is_transparent(wall.west) or is_transparent(wall.east)
 end
 
+local function is_wall_empty(wall)
+	return not (wall.north or wall.south or wall.west or wall.east or wall.cell or wall.floor)
+end
+
 --remove not visible walls
 ---@param map LevelData
 local function clean_map(map)
@@ -318,6 +322,13 @@ local function parse_level(path,result_path)
 			cell.blocked = tile.properties.block;
 		end
 	end)
+	for y=1,data.size.y do
+		local row = assert(data.cells[y])
+		for x=1,data.size.x do
+			local cell = assert(row[x])
+			cell.empty = is_wall_empty(cell.wall)
+		end
+	end
 	data.light_map = {}
 	for k,v in ipairs(get_layer(tiled,"lights").data)do
 		data.light_map[k] = v == 0 and 0xFFFFFFFF or tonumber("0x"..string.sub(TILESET[v].properties.color,2))
