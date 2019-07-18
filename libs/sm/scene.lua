@@ -105,13 +105,13 @@ end
 function Scene:pause()
     assert(self._state == STATES.RUNNING)
     msg.post(self._controller_url, COMMON.HASHES.MSG_SM_PAUSE)
-    msg.post(self.url, "set_time_step", {factor = 0, mode = 0})
+    msg.post(self._url, "set_time_step", {factor = 0, mode = 0})
     self._state_subject:onNext(STATES.PAUSED)
 end
 function Scene:resume()
     assert(self._state == STATES.PAUSED)
     msg.post(self._controller_url, COMMON.HASHES.MSG_SM_RESUME)
-    msg.post(self.url, "set_time_step", {factor = 1, mode = 0})
+    msg.post(self._url, "set_time_step", {factor = 1, mode = 0})
     self._state_subject:onNext(STATES.RUNNING)
 end
 
