@@ -11,6 +11,12 @@ local TAG = "ENTITIES"
 ---@field raycast table|nil
 ---@field weapon_prototype WeaponPrototype
 
+---@class HitInfo
+---@field source_e Entity
+---@field target_e Entity|nil
+---@field raycast table|nil
+---@field weapon_prototype WeaponPrototype
+
 ---@class Entity
 ---@field tag string tag used for help when debug
 ---@field player boolean true if player entity
@@ -33,6 +39,7 @@ local TAG = "ENTITIES"
 ---@field physics_source hash
 ---@field physics_obstacles_correction vector3
 ---@field damage_info DamageInfo
+---@field hit_info HitInfo
 ---@field rotation_look_at_player boolean
 ---@field rotation_global boolean for pickups they use one global angle
 ---@field culling boolean objects that need culling like walls
@@ -299,6 +306,17 @@ function Entities.create_raycast_damage_info(source_e,target_e,weapon_prototype,
 	e.damage_info = {
 		source_e = assert(source_e),
 		target_e = assert(target_e),
+		raycast = raycast,
+		weapon_prototype = assert(weapon_prototype)
+	}
+	return e
+end
+
+function Entities.create_hit_info(source_e,target_e,weapon_prototype,raycast)
+	local e = {}
+	e.hit_info = {
+		source_e = assert(source_e),
+		target_e = target_e,
 		raycast = raycast,
 		weapon_prototype = assert(weapon_prototype)
 	}
