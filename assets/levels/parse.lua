@@ -33,6 +33,7 @@ cjson.decode_invalid_numbers(false)
 ---@field wall LevelDataCellWall
 ---@field objects LevelDataCellObjects[]
 ---@field blocked boolean
+---@field empty boolean
 
 --vector3 is not vector3 here. I use it only to autocomplete worked. It will be tables with x,y,z
 ---@class LevelData

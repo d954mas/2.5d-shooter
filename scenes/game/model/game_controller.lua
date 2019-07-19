@@ -76,7 +76,7 @@ function M:utils_get_random_spawn_position()
 	while true do
 		local x,y = math.random(1,w), math.random(1,h)
 		local map_cell = self.level:map_get_cell(x,y)
-		if not map_cell.blocked and map_cell.wall.floor then
+		if not map_cell.blocked and not map_cell.empty then
 			return vmath.vector3(x,y,0)
 		end
 	end
@@ -86,7 +86,7 @@ function M:utils_get_random_spawn_position_greater_than(distance,max_tries)
 	max_tries = max_tries or math.huge()
 	for _=1,max_tries do
 		local spawn_pos = self:utils_get_random_spawn_position()
-		if vmath.length(self.level.player.position-spawn_pos) >= distance then
+		if spawn_pos and vmath.length(self.level.player.position-spawn_pos) >= distance then
 			return spawn_pos
 		end
 	end

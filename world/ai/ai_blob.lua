@@ -19,7 +19,12 @@ end
 function AI:update(dt)
 	AIBase.update(self,dt)
 	if self.state == self.states.IDLE then
-		local next_cell = self:player_find_path()[2]
+		local path = self:player_find_path()
+		if not path then
+			COMMON.w("no path to player:" .. tostring(self:get_current_cell_position()) .. " " .. tostring(self.game_controller.level.player.position))
+			return
+		end
+		local next_cell = path[2]
 		if next_cell then
 			local current_pos = self:get_current_cell_position()
 			local dx,dy = next_cell:get_x() - current_pos.x,next_cell:get_y() - current_pos.y

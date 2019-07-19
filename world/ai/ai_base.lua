@@ -6,7 +6,7 @@ local AT_STATES = {
 	SPAWN = "SPAWN",
 	IDLE = "IDLE"
 }
----@class AI
+---@class AI:StatesBase
 local AI = COMMON.class("AIBase",StatesBase)
 
 ---@param e Entity
