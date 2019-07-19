@@ -221,7 +221,7 @@ function Entities.create_enemy(position,factory)
 end
 
 function Entities.create_blob(pos,tile_object)
-	pos = pos or vmath.vector3(tile_object.cell_xf + 0.5, tile_object.cell_yf+0.5,0)
+	pos = pos or vmath.vector3(tile_object.cell_xf + 0.5, tile_object.cell_yf + 0.5,0)
 	local e = Entities.create_enemy(pos,FACTORY_ENEMY_BLOB_URL)
 	e.ai = AI.Blob(e,Entities.game_controller)
 	e.hp = 20
@@ -252,7 +252,7 @@ end
 ---@return Entity
 function Entities.create_object_from_tiled(object)
 	if object.properties.culling then
-		local e = Entities.create_draw_object_base(vmath.vector3(object.cell_xf-0.5, object.cell_yf - 0.5, 0))
+		local e = Entities.create_draw_object_base(vmath.vector3(object.cell_xf + 0.5, object.cell_yf + 0.5, 0))
 		e.tile = Entities.game_controller.level:get_tile(object.tile_id)
 		if object.properties.look_at_player then
 			e.rotation_look_at_player = true
@@ -322,7 +322,7 @@ function Entities.create_hit_info(source_e,target_e,weapon_prototype,raycast)
 	}
 	return e
 end
-
+---@return Entity
 function Entities.create(name,...)
 	assert(name)
 	local f = Entities["create_" .. name]
