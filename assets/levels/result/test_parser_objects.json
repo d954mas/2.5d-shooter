@@ -4,9 +4,56 @@
     "y":5,
     "x":5
   },
-  "enemies":  {},
+  "enemies":[
+    {
+      "cell_xf":2.5,
+      "cell_id":33,
+      "tile_id":211,
+      "properties":{
+        "name":"blob",
+        "enemy":true
+      },
+      "cell_y":4,
+      "y":224,
+      "x":160,
+      "cell_yf":3.5,
+      "cell_x":3
+    },
+    {
+      "cell_xf":4.5,
+      "cell_id":55,
+      "tile_id":211,
+      "properties":{
+        "name":"blob",
+        "enemy":true
+      },
+      "cell_y":6,
+      "y":352,
+      "x":288,
+      "cell_yf":5.5,
+      "cell_x":5
+    }
+  ],
   "spawners":  {},
-  "objects":  {},
+  "objects":[
+    {
+      "cell_xf":5.5,
+      "cell_id":66,
+      "tile_id":40,
+      "properties":{
+        "look_at_player":true,
+        "culling":true,
+        "scale":0.5,
+        "global_rotation":false,
+        "size_for_scale":64
+      },
+      "cell_y":7,
+      "y":416,
+      "x":352,
+      "cell_yf":6.5,
+      "cell_x":6
+    }
+  ],
   "cells":[
     [
       {
@@ -31,7 +78,8 @@
         "id":2,
         "empty":false,
         "wall":{
-          "blocked":true
+          "blocked":true,
+          "north":4
         },
         "blocked":true
       },
@@ -157,7 +205,8 @@
         "id":11,
         "empty":false,
         "wall":{
-          "blocked":true
+          "blocked":true,
+          "east":4
         },
         "blocked":true
       },
@@ -170,11 +219,9 @@
         "id":12,
         "empty":false,
         "wall":{
-          "blocked":true,
-          "east":4,
-          "north":4
-        },
-        "blocked":true
+          "floor":5,
+          "blocked":true
+        }
       },
       {
         "objects":        {},
@@ -747,13 +794,9 @@
         "id":55,
         "empty":false,
         "wall":{
-          "west":4,
-          "south":4,
-          "blocked":true,
-          "east":4,
-          "north":4
-        },
-        "blocked":true
+          "floor":5,
+          "blocked":true
+        }
       },
       {
         "objects":        {},
@@ -803,12 +846,9 @@
         "id":59,
         "empty":false,
         "wall":{
-          "west":4,
-          "south":4,
-          "blocked":true,
-          "north":4
-        },
-        "blocked":true
+          "floor":5,
+          "blocked":true
+        }
       },
       {
         "objects":        {},
@@ -819,6 +859,7 @@
         "id":60,
         "empty":false,
         "wall":{
+          "west":4,
           "blocked":true
         },
         "blocked":true
@@ -900,13 +941,9 @@
         "id":66,
         "empty":false,
         "wall":{
-          "west":4,
-          "south":4,
-          "blocked":true,
-          "east":4,
-          "north":4
-        },
-        "blocked":true
+          "floor":5,
+          "blocked":true
+        }
       },
       {
         "objects":        {},
@@ -972,7 +1009,8 @@
         "id":71,
         "empty":false,
         "wall":{
-          "blocked":true
+          "blocked":true,
+          "east":4
         },
         "blocked":true
       },
@@ -985,11 +1023,9 @@
         "id":72,
         "empty":false,
         "wall":{
-          "south":4,
-          "blocked":true,
-          "north":4
-        },
-        "blocked":true
+          "floor":5,
+          "blocked":true
+        }
       },
       {
         "objects":        {},
@@ -1000,11 +1036,9 @@
         "id":73,
         "empty":false,
         "wall":{
-          "south":4,
-          "blocked":true,
-          "east":4
-        },
-        "blocked":true
+          "floor":5,
+          "blocked":true
+        }
       },
       {
         "objects":        {},
@@ -1054,13 +1088,9 @@
         "id":77,
         "empty":false,
         "wall":{
-          "west":4,
-          "south":4,
-          "blocked":true,
-          "east":4,
-          "north":4
-        },
-        "blocked":true
+          "floor":5,
+          "blocked":true
+        }
       },
       {
         "objects":        {},
@@ -1140,11 +1170,9 @@
         "id":83,
         "empty":false,
         "wall":{
-          "west":4,
-          "blocked":true,
-          "east":4
-        },
-        "blocked":true
+          "floor":5,
+          "blocked":true
+        }
       },
       {
         "objects":        {},
@@ -1207,12 +1235,9 @@
         "id":88,
         "empty":false,
         "wall":{
-          "west":4,
-          "south":4,
-          "blocked":true,
-          "east":4
-        },
-        "blocked":true
+          "floor":5,
+          "blocked":true
+        }
       },
       {
         "objects":        {},
@@ -1279,6 +1304,7 @@
         "id":93,
         "empty":false,
         "wall":{
+          "south":4,
           "blocked":true
         },
         "blocked":true
@@ -1348,6 +1374,7 @@
         "id":98,
         "empty":false,
         "wall":{
+          "south":4,
           "blocked":true
         },
         "blocked":true
@@ -1483,7 +1510,42 @@
     4294967295,
     4294967295
   ],
-  "pickups":  {},
+  "pickups":[
+    {
+      "cell_xf":7.5,
+      "cell_id":18,
+      "tile_id":215,
+      "properties":{
+        "look_at_player":false,
+        "pickup_key":"hp",
+        "pickup":true,
+        "global_rotation":true,
+        "scale":0.25
+      },
+      "cell_y":2,
+      "y":96,
+      "x":480,
+      "cell_yf":1.5,
+      "cell_x":8
+    },
+    {
+      "cell_xf":1.5,
+      "cell_id":82,
+      "tile_id":214,
+      "properties":{
+        "look_at_player":false,
+        "pickup_key":"ammo_pistol",
+        "pickup":true,
+        "global_rotation":true,
+        "scale":0.25
+      },
+      "cell_y":9,
+      "y":544,
+      "x":96,
+      "cell_yf":8.5,
+      "cell_x":2
+    }
+  ],
   "size":{
     "y":10,
     "x":10

@@ -77,7 +77,7 @@ function M:utils_get_random_spawn_position()
 		local x,y = math.random(1,w), math.random(1,h)
 		local map_cell = self.level:map_get_cell(x,y)
 		if not map_cell.blocked and not map_cell.empty then
-			return vmath.vector3(x,y,0)
+			return vmath.vector3(x-0.5,y-0.5,0)
 		end
 	end
 end
@@ -110,7 +110,7 @@ pickups_weights[ammo_pickup] = 2
 function M:spawn_pickups()
 	timer.delay(8,true,function()
 		local pickup = COMMON.LUME.weightedchoice(pickups_weights)
-		self.level.ecs_world.ecs:addEntity(ENTITIES.create_pickup(self:utils_get_random_spawn_position()-vmath.vector3(0.5,0.5,0),pickup))
+		self.level.ecs_world.ecs:addEntity(ENTITIES.create_pickup(self:utils_get_random_spawn_position(),pickup))
 	end)
 end
 

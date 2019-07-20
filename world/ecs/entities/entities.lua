@@ -210,7 +210,7 @@ function Entities.create_enemy(position,factory)
 	e.velocity = vmath.vector3(0,0,0)
 	e.speed = 0.9 + math.random()*0.25
 	e.enemy = true
-	local urls = collectionfactory.create(factory,vmath.vector3(e.position.x,0.5,-e.position.z+0.5),vmath.quat_rotation_z(0),nil)
+	local urls = collectionfactory.create(factory,vmath.vector3(e.position.x,0.5,-e.position.z),vmath.quat_rotation_z(0),nil)
 	e.url_go = msg.url(urls[OBJECT_HASHES.root])
 	e.url_sprite = msg.url(urls[OBJECT_HASHES.sprite])
 	e.url_sprite.fragment = HASH_SPRITE
@@ -221,7 +221,7 @@ function Entities.create_enemy(position,factory)
 end
 
 function Entities.create_blob(pos,tile_object)
-	pos = pos or vmath.vector3(tile_object.cell_xf + 0.5, tile_object.cell_yf + 0.5,0)
+	pos = pos or vmath.vector3(tile_object.cell_xf, tile_object.cell_yf,0)
 	local e = Entities.create_enemy(pos,FACTORY_ENEMY_BLOB_URL)
 	e.ai = AI.Blob(e,Entities.game_controller)
 	e.hp = 20
@@ -252,7 +252,7 @@ end
 ---@return Entity
 function Entities.create_object_from_tiled(object)
 	if object.properties.culling then
-		local e = Entities.create_draw_object_base(vmath.vector3(object.cell_xf + 0.5, object.cell_yf + 0.5, 0))
+		local e = Entities.create_draw_object_base(vmath.vector3(object.cell_xf, object.cell_yf, 0))
 		e.tile = Entities.game_controller.level:get_tile(object.tile_id)
 		if object.properties.look_at_player then
 			e.rotation_look_at_player = true
@@ -265,7 +265,7 @@ function Entities.create_object_from_tiled(object)
 end
 
 function Entities.create_pickup(pos,tile_object)
-	pos = pos or vmath.vector3(tile_object.cell_xf + 0.5, tile_object.cell_yf+0.5,0)
+	pos = pos or vmath.vector3(tile_object.cell_xf, tile_object.cell_yf,0)
 	local e = {}
 	e.tile = Entities.game_controller.level:get_tile(tile_object.tile_id)
 	e.position= pos

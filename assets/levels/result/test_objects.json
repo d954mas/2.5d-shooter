@@ -1,16 +1,15 @@
 {
   "properties":  {},
   "spawn_point":{
-    "y":2,
-    "x":2
+    "y":3,
+    "x":3
   },
   "enemies":  {},
   "spawners":  {},
   "objects":[
     {
-      "cell_xf":2,
-      "cell_id":82,
-      "cell_yf":5,
+      "cell_xf":2.5,
+      "cell_id":103,
       "tile_id":39,
       "properties":{
         "scale":0.5,
@@ -18,13 +17,15 @@
         "global_rotation":false,
         "culling":true
       },
-      "cell_y":5,
-      "cell_x":2
+      "cell_y":6,
+      "y":352,
+      "x":160,
+      "cell_yf":5.5,
+      "cell_x":3
     },
     {
-      "cell_xf":4,
-      "cell_id":84,
-      "cell_yf":5,
+      "cell_xf":4.5,
+      "cell_id":105,
       "tile_id":40,
       "properties":{
         "look_at_player":true,
@@ -33,13 +34,15 @@
         "global_rotation":false,
         "size_for_scale":64
       },
-      "cell_y":5,
-      "cell_x":4
+      "cell_y":6,
+      "y":352,
+      "x":288,
+      "cell_yf":5.5,
+      "cell_x":5
     },
     {
-      "cell_xf":6,
-      "cell_id":86,
-      "cell_yf":5,
+      "cell_xf":6.5,
+      "cell_id":107,
       "tile_id":41,
       "properties":{
         "scale":0.5,
@@ -47,13 +50,15 @@
         "global_rotation":false,
         "culling":true
       },
-      "cell_y":5,
-      "cell_x":6
+      "cell_y":6,
+      "y":352,
+      "x":416,
+      "cell_yf":5.5,
+      "cell_x":7
     },
     {
-      "cell_xf":2,
-      "cell_id":122,
-      "cell_yf":7,
+      "cell_xf":2.5,
+      "cell_id":143,
       "tile_id":43,
       "properties":{
         "size_for_scale":64,
@@ -63,13 +68,15 @@
         "global_rotation":false,
         "look_at_player":true
       },
-      "cell_y":7,
-      "cell_x":2
+      "cell_y":8,
+      "y":480,
+      "x":160,
+      "cell_yf":7.5,
+      "cell_x":3
     },
     {
-      "cell_xf":4,
-      "cell_id":124,
-      "cell_yf":7,
+      "cell_xf":4.5,
+      "cell_id":145,
       "tile_id":44,
       "properties":{
         "look_at_player":true,
@@ -78,13 +85,15 @@
         "global_rotation":false,
         "size_for_scale":64
       },
-      "cell_y":7,
-      "cell_x":4
+      "cell_y":8,
+      "y":480,
+      "x":288,
+      "cell_yf":7.5,
+      "cell_x":5
     },
     {
-      "cell_xf":6,
-      "cell_id":126,
-      "cell_yf":7,
+      "cell_xf":6.5,
+      "cell_id":147,
       "tile_id":45,
       "properties":{
         "look_at_player":true,
@@ -93,13 +102,15 @@
         "global_rotation":false,
         "size_for_scale":64
       },
-      "cell_y":7,
-      "cell_x":6
+      "cell_y":8,
+      "y":480,
+      "x":416,
+      "cell_yf":7.5,
+      "cell_x":7
     },
     {
-      "cell_xf":8,
-      "cell_id":128,
-      "cell_yf":7,
+      "cell_xf":8.5,
+      "cell_id":149,
       "tile_id":46,
       "properties":{
         "look_at_player":true,
@@ -108,13 +119,15 @@
         "global_rotation":false,
         "size_for_scale":64
       },
-      "cell_y":7,
-      "cell_x":8
+      "cell_y":8,
+      "y":480,
+      "x":544,
+      "cell_yf":7.5,
+      "cell_x":9
     },
     {
-      "cell_xf":8,
-      "cell_id":88,
-      "cell_yf":5,
+      "cell_xf":8.5,
+      "cell_id":109,
       "tile_id":47,
       "properties":{
         "scale":1,
@@ -122,13 +135,15 @@
         "global_rotation":false,
         "culling":true
       },
-      "cell_y":5,
-      "cell_x":8
+      "cell_y":6,
+      "y":352,
+      "x":544,
+      "cell_yf":5.5,
+      "cell_x":9
     },
     {
-      "cell_xf":2,
-      "cell_id":162,
-      "cell_yf":9,
+      "cell_xf":2.5,
+      "cell_id":183,
       "tile_id":42,
       "properties":{
         "culling":true,
@@ -136,13 +151,15 @@
         "global_rotation":true,
         "look_at_player":false
       },
-      "cell_y":9,
-      "cell_x":2
+      "cell_y":10,
+      "y":608,
+      "x":160,
+      "cell_yf":9.5,
+      "cell_x":3
     },
     {
-      "cell_xf":4,
-      "cell_id":164,
-      "cell_yf":9,
+      "cell_xf":4.5,
+      "cell_id":185,
       "tile_id":49,
       "properties":{
         "look_at_player":true,
@@ -151,8 +168,11 @@
         "global_rotation":false,
         "size_for_scale":64
       },
-      "cell_y":9,
-      "cell_x":4
+      "cell_y":10,
+      "y":608,
+      "x":288,
+      "cell_yf":9.5,
+      "cell_x":5
     }
   ],
   "cells":[

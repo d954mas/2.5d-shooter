@@ -50,7 +50,7 @@ end
 -- prepared to play. Call it after create and before play
 function Level:prepare()
 	assert(not self.player,"lvl already prepared to play")
-	self.player = ENTITIES.create_player(vmath.vector3(self.data.spawn_point.x+0.5,self.data.spawn_point.y+0.5,0.5))
+	self.player = ENTITIES.create_player(vmath.vector3(self.data.spawn_point.x,self.data.spawn_point.y,0.5))
 	self.ecs_world:add_entity(self.player)
 	self:light_map_build()
 	self:create_physics()

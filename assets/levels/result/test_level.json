@@ -1,112 +1,127 @@
 {
   "properties":  {},
   "spawn_point":{
-    "y":25,
-    "x":3
+    "y":26,
+    "x":4
   },
   "enemies":[
     {
-      "cell_xf":11,
-      "cell_id":715,
-      "cell_yf":23,
+      "cell_xf":11.5,
+      "cell_id":748,
       "tile_id":211,
       "properties":{
         "name":"blob",
         "enemy":true
       },
-      "cell_y":23,
-      "cell_x":11
+      "cell_y":24,
+      "y":1504,
+      "x":736,
+      "cell_yf":23.5,
+      "cell_x":12
     },
     {
-      "cell_xf":11,
-      "cell_id":875,
-      "cell_yf":28,
+      "cell_xf":11.5,
+      "cell_id":908,
       "tile_id":211,
       "properties":{
         "name":"blob",
         "enemy":true
       },
-      "cell_y":28,
-      "cell_x":11
+      "cell_y":29,
+      "y":1824,
+      "x":736,
+      "cell_yf":28.5,
+      "cell_x":12
     },
     {
-      "cell_xf":8,
-      "cell_id":424,
-      "cell_yf":14,
+      "cell_xf":8.5,
+      "cell_id":457,
       "tile_id":211,
       "properties":{
         "name":"blob",
         "enemy":true
       },
-      "cell_y":14,
-      "cell_x":8
+      "cell_y":15,
+      "y":928,
+      "x":544,
+      "cell_yf":14.5,
+      "cell_x":9
     },
     {
-      "cell_xf":19,
-      "cell_id":243,
-      "cell_yf":8,
+      "cell_xf":19.5,
+      "cell_id":276,
       "tile_id":211,
       "properties":{
         "name":"blob",
         "enemy":true
       },
-      "cell_y":8,
+      "cell_y":9,
+      "y":544,
+      "x":1248,
+      "cell_yf":8.5,
+      "cell_x":20
+    },
+    {
+      "cell_xf":29.5,
+      "cell_id":478,
+      "tile_id":211,
+      "properties":{
+        "name":"blob",
+        "enemy":true
+      },
+      "cell_y":15,
+      "y":928,
+      "x":1888,
+      "cell_yf":14.5,
+      "cell_x":30
+    },
+    {
+      "cell_xf":24.5,
+      "cell_id":633,
+      "tile_id":211,
+      "properties":{
+        "name":"blob",
+        "enemy":true
+      },
+      "cell_y":20,
+      "y":1248,
+      "x":1568,
+      "cell_yf":19.5,
+      "cell_x":25
+    },
+    {
+      "cell_xf":18.5,
+      "cell_id":627,
+      "tile_id":211,
+      "properties":{
+        "name":"blob",
+        "enemy":true
+      },
+      "cell_y":20,
+      "y":1248,
+      "x":1184,
+      "cell_yf":19.5,
       "cell_x":19
     },
     {
-      "cell_xf":29,
-      "cell_id":445,
-      "cell_yf":14,
+      "cell_xf":17.5,
+      "cell_id":850,
       "tile_id":211,
       "properties":{
         "name":"blob",
         "enemy":true
       },
-      "cell_y":14,
-      "cell_x":29
-    },
-    {
-      "cell_xf":24,
-      "cell_id":600,
-      "cell_yf":19,
-      "tile_id":211,
-      "properties":{
-        "name":"blob",
-        "enemy":true
-      },
-      "cell_y":19,
-      "cell_x":24
-    },
-    {
-      "cell_xf":18,
-      "cell_id":594,
-      "cell_yf":19,
-      "tile_id":211,
-      "properties":{
-        "name":"blob",
-        "enemy":true
-      },
-      "cell_y":19,
+      "cell_y":27,
+      "y":1696,
+      "x":1120,
+      "cell_yf":26.5,
       "cell_x":18
-    },
-    {
-      "cell_xf":17,
-      "cell_id":817,
-      "cell_yf":26,
-      "tile_id":211,
-      "properties":{
-        "name":"blob",
-        "enemy":true
-      },
-      "cell_y":26,
-      "cell_x":17
     }
   ],
   "spawners":[
     {
-      "cell_xf":0,
-      "cell_id":960,
-      "cell_yf":31,
+      "cell_xf":0.5,
+      "cell_id":993,
       "tile_id":212,
       "properties":{
         "spawner":true,
@@ -115,15 +130,53 @@
         "delay":2,
         "enemy":true
       },
-      "cell_y":31,
-      "cell_x":0
+      "cell_y":32,
+      "y":2016,
+      "x":32,
+      "cell_yf":31.5,
+      "cell_x":1
     }
   ],
   "objects":[
     {
-      "cell_xf":11,
-      "cell_id":811,
-      "cell_yf":26,
+      "cell_xf":11.5,
+      "cell_id":844,
+      "tile_id":43,
+      "properties":{
+        "size_for_scale":64,
+        "origin":"top",
+        "culling":true,
+        "scale":1,
+        "global_rotation":false,
+        "look_at_player":true
+      },
+      "cell_y":27,
+      "y":1696,
+      "x":736,
+      "cell_yf":26.5,
+      "cell_x":12
+    },
+    {
+      "cell_xf":11.5,
+      "cell_id":844,
+      "tile_id":43,
+      "properties":{
+        "size_for_scale":64,
+        "origin":"top",
+        "culling":true,
+        "scale":1,
+        "global_rotation":false,
+        "look_at_player":true
+      },
+      "cell_y":27,
+      "y":1696,
+      "x":736,
+      "cell_yf":26.5,
+      "cell_x":12
+    },
+    {
+      "cell_xf":11.5,
+      "cell_id":812,
       "tile_id":43,
       "properties":{
         "size_for_scale":64,
@@ -134,28 +187,14 @@
         "look_at_player":true
       },
       "cell_y":26,
-      "cell_x":11
+      "y":1632,
+      "x":736,
+      "cell_yf":25.5,
+      "cell_x":12
     },
     {
-      "cell_xf":11,
-      "cell_id":811,
-      "cell_yf":26,
-      "tile_id":43,
-      "properties":{
-        "size_for_scale":64,
-        "origin":"top",
-        "culling":true,
-        "scale":1,
-        "global_rotation":false,
-        "look_at_player":true
-      },
-      "cell_y":26,
-      "cell_x":11
-    },
-    {
-      "cell_xf":11,
+      "cell_xf":10.5,
       "cell_id":779,
-      "cell_yf":25,
       "tile_id":43,
       "properties":{
         "size_for_scale":64,
@@ -166,12 +205,14 @@
         "look_at_player":true
       },
       "cell_y":25,
+      "y":1568,
+      "x":672,
+      "cell_yf":24.5,
       "cell_x":11
     },
     {
-      "cell_xf":10,
-      "cell_id":746,
-      "cell_yf":24,
+      "cell_xf":7.5,
+      "cell_id":776,
       "tile_id":43,
       "properties":{
         "size_for_scale":64,
@@ -181,90 +222,15 @@
         "global_rotation":false,
         "look_at_player":true
       },
-      "cell_y":24,
-      "cell_x":10
-    },
-    {
-      "cell_xf":7,
-      "cell_id":743,
-      "cell_yf":24,
-      "tile_id":43,
-      "properties":{
-        "size_for_scale":64,
-        "origin":"top",
-        "culling":true,
-        "scale":1,
-        "global_rotation":false,
-        "look_at_player":true
-      },
-      "cell_y":24,
-      "cell_x":7
-    },
-    {
-      "cell_xf":4,
-      "cell_id":740,
-      "cell_yf":24,
-      "tile_id":43,
-      "properties":{
-        "size_for_scale":64,
-        "origin":"top",
-        "culling":true,
-        "scale":1,
-        "global_rotation":false,
-        "look_at_player":true
-      },
-      "cell_y":24,
-      "cell_x":4
-    },
-    {
-      "cell_xf":8,
-      "cell_id":648,
-      "cell_yf":21,
-      "tile_id":46,
-      "properties":{
-        "look_at_player":true,
-        "culling":true,
-        "scale":0.5,
-        "global_rotation":false,
-        "size_for_scale":64
-      },
-      "cell_y":21,
+      "cell_y":25,
+      "y":1568,
+      "x":480,
+      "cell_yf":24.5,
       "cell_x":8
     },
     {
-      "cell_xf":7,
-      "cell_id":647,
-      "cell_yf":21,
-      "tile_id":46,
-      "properties":{
-        "look_at_player":true,
-        "culling":true,
-        "scale":0.5,
-        "global_rotation":false,
-        "size_for_scale":64
-      },
-      "cell_y":21,
-      "cell_x":7
-    },
-    {
-      "cell_xf":6,
-      "cell_id":646,
-      "cell_yf":21,
-      "tile_id":46,
-      "properties":{
-        "look_at_player":true,
-        "culling":true,
-        "scale":0.5,
-        "global_rotation":false,
-        "size_for_scale":64
-      },
-      "cell_y":21,
-      "cell_x":6
-    },
-    {
-      "cell_xf":7,
-      "cell_id":615,
-      "cell_yf":20,
+      "cell_xf":4.5,
+      "cell_id":773,
       "tile_id":43,
       "properties":{
         "size_for_scale":64,
@@ -274,8 +240,80 @@
         "global_rotation":false,
         "look_at_player":true
       },
-      "cell_y":20,
+      "cell_y":25,
+      "y":1568,
+      "x":288,
+      "cell_yf":24.5,
+      "cell_x":5
+    },
+    {
+      "cell_xf":8.5,
+      "cell_id":681,
+      "tile_id":46,
+      "properties":{
+        "look_at_player":true,
+        "culling":true,
+        "scale":0.5,
+        "global_rotation":false,
+        "size_for_scale":64
+      },
+      "cell_y":22,
+      "y":1376,
+      "x":544,
+      "cell_yf":21.5,
+      "cell_x":9
+    },
+    {
+      "cell_xf":7.5,
+      "cell_id":680,
+      "tile_id":46,
+      "properties":{
+        "look_at_player":true,
+        "culling":true,
+        "scale":0.5,
+        "global_rotation":false,
+        "size_for_scale":64
+      },
+      "cell_y":22,
+      "y":1376,
+      "x":480,
+      "cell_yf":21.5,
+      "cell_x":8
+    },
+    {
+      "cell_xf":6.5,
+      "cell_id":679,
+      "tile_id":46,
+      "properties":{
+        "look_at_player":true,
+        "culling":true,
+        "scale":0.5,
+        "global_rotation":false,
+        "size_for_scale":64
+      },
+      "cell_y":22,
+      "y":1376,
+      "x":416,
+      "cell_yf":21.5,
       "cell_x":7
+    },
+    {
+      "cell_xf":7.5,
+      "cell_id":648,
+      "tile_id":43,
+      "properties":{
+        "size_for_scale":64,
+        "origin":"top",
+        "culling":true,
+        "scale":1,
+        "global_rotation":false,
+        "look_at_player":true
+      },
+      "cell_y":21,
+      "y":1312,
+      "x":480,
+      "cell_yf":20.5,
+      "cell_x":8
     }
   ],
   "cells":[
@@ -14506,9 +14544,8 @@
   ],
   "pickups":[
     {
-      "cell_xf":5,
-      "cell_id":901,
-      "cell_yf":29,
+      "cell_xf":5.5,
+      "cell_id":934,
       "tile_id":214,
       "properties":{
         "look_at_player":false,
@@ -14517,73 +14554,15 @@
         "global_rotation":true,
         "scale":0.25
       },
-      "cell_y":29,
-      "cell_x":5
-    },
-    {
-      "cell_xf":6,
-      "cell_id":902,
-      "cell_yf":29,
-      "tile_id":214,
-      "properties":{
-        "look_at_player":false,
-        "pickup_key":"ammo_pistol",
-        "pickup":true,
-        "global_rotation":true,
-        "scale":0.25
-      },
-      "cell_y":29,
+      "cell_y":30,
+      "y":1888,
+      "x":352,
+      "cell_yf":29.5,
       "cell_x":6
     },
     {
-      "cell_xf":8,
-      "cell_id":904,
-      "cell_yf":29,
-      "tile_id":215,
-      "properties":{
-        "look_at_player":false,
-        "pickup_key":"hp",
-        "pickup":true,
-        "global_rotation":true,
-        "scale":0.25
-      },
-      "cell_y":29,
-      "cell_x":8
-    },
-    {
-      "cell_xf":9,
-      "cell_id":905,
-      "cell_yf":29,
-      "tile_id":215,
-      "properties":{
-        "look_at_player":false,
-        "pickup_key":"hp",
-        "pickup":true,
-        "global_rotation":true,
-        "scale":0.25
-      },
-      "cell_y":29,
-      "cell_x":9
-    },
-    {
-      "cell_xf":11,
-      "cell_id":875,
-      "cell_yf":28,
-      "tile_id":215,
-      "properties":{
-        "look_at_player":false,
-        "pickup_key":"hp",
-        "pickup":true,
-        "global_rotation":true,
-        "scale":0.25
-      },
-      "cell_y":28,
-      "cell_x":11
-    },
-    {
-      "cell_xf":3,
-      "cell_id":867,
-      "cell_yf":28,
+      "cell_xf":6.5,
+      "cell_id":935,
       "tile_id":214,
       "properties":{
         "look_at_player":false,
@@ -14592,8 +14571,79 @@
         "global_rotation":true,
         "scale":0.25
       },
-      "cell_y":28,
-      "cell_x":3
+      "cell_y":30,
+      "y":1888,
+      "x":416,
+      "cell_yf":29.5,
+      "cell_x":7
+    },
+    {
+      "cell_xf":8.5,
+      "cell_id":937,
+      "tile_id":215,
+      "properties":{
+        "look_at_player":false,
+        "pickup_key":"hp",
+        "pickup":true,
+        "global_rotation":true,
+        "scale":0.25
+      },
+      "cell_y":30,
+      "y":1888,
+      "x":544,
+      "cell_yf":29.5,
+      "cell_x":9
+    },
+    {
+      "cell_xf":9.5,
+      "cell_id":938,
+      "tile_id":215,
+      "properties":{
+        "look_at_player":false,
+        "pickup_key":"hp",
+        "pickup":true,
+        "global_rotation":true,
+        "scale":0.25
+      },
+      "cell_y":30,
+      "y":1888,
+      "x":608,
+      "cell_yf":29.5,
+      "cell_x":10
+    },
+    {
+      "cell_xf":11.5,
+      "cell_id":908,
+      "tile_id":215,
+      "properties":{
+        "look_at_player":false,
+        "pickup_key":"hp",
+        "pickup":true,
+        "global_rotation":true,
+        "scale":0.25
+      },
+      "cell_y":29,
+      "y":1824,
+      "x":736,
+      "cell_yf":28.5,
+      "cell_x":12
+    },
+    {
+      "cell_xf":3.5,
+      "cell_id":900,
+      "tile_id":214,
+      "properties":{
+        "look_at_player":false,
+        "pickup_key":"ammo_pistol",
+        "pickup":true,
+        "global_rotation":true,
+        "scale":0.25
+      },
+      "cell_y":29,
+      "y":1824,
+      "x":224,
+      "cell_yf":28.5,
+      "cell_x":4
     }
   ],
   "size":{

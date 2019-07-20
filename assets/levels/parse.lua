@@ -82,25 +82,7 @@ local function process_layer(data,layer,fun)
 end
 local function process_objects(layer,fun)
 	for _,object in ipairs(layer.objects)do
-		if object.gid ~= 0 then
-			local object_data = {
-				tile_id = object.gid,
-				properties = object.properties,
-				cell_x = object.cell_x, cell_y = object.cell_y,
-				cell_xf = object.cell_xf, cell_yf = object.cell_yf,
-				cell_id = object.cell_id
-			}
-			--copy properties from tile.
-			local tile = TILESET[object_data.tile_id]
-			if tile then
-				for k,v in pairs(tile.properties)do
-					if not object_data.properties[k]	then
-						object_data.properties[k] = v
-					end
-				end
-			end
-			fun(object_data)
-		end
+		fun(object)
 	end
 end
 local function coords_to_id(tiled,x,y)
@@ -134,15 +116,31 @@ local function repack_objects(array,tiled)
 	assert(array)
 	assert(tiled)
 	local total_height = tiled.height*tiled.tileheight
-	for _,object in ipairs(array)do
+	for i,object in ipairs(array)do
 		local x,y = object.x, object.y
 		y = total_height-y
 		object.x, object.y = x,y
-		object.cell_xf = x/tiled.tilewidth
-		object.cell_yf = y/tiled.tileheight
-		object.cell_x = math.ceil(x/tiled.tilewidth)
-		object.cell_y = math.ceil(y/tiled.tileheight)
-		object.cell_id = coords_to_id(tiled,object.cell_x ,object.cell_y)
+		local object_data = { tile_id = object.gid, properties = object.properties,x = object.x, y = object.y }
+		--copy properties from tile.
+		local tile = TILESET[object_data.tile_id]
+		if tile then
+			for k,v in pairs(tile.properties)do
+				if object_data.properties[k] == nil	then
+					object_data.properties[k] = v
+				end
+			end
+		end
+		--objects use center of cell as it pos. By default
+		if not (object_data.properties.ignore_snap_to_grid) then
+			object_data.x = object_data.x + tiled.tilewidth/2
+			object_data.y = object_data.y + tiled.tileheight/2
+		end
+		object_data.cell_xf = object_data.x/tiled.tilewidth
+		object_data.cell_yf = object_data.y/tiled.tileheight
+		object_data.cell_x = math.ceil(object_data.x/tiled.tilewidth)
+		object_data.cell_y = math.ceil(object_data.y/tiled.tileheight)
+		object_data.cell_id = coords_to_id(tiled,object_data.cell_x ,object_data.cell_y)
+		array[i] = object_data
 	end
 end
 
@@ -345,7 +343,7 @@ local function parse_level(path,result_path)
 		end
 	end)
 	process_objects(assert(get_layer(tiled,"enemies"),"no enemies layer"),function(object)
-		assert(object.properties.enemy,"should be enemy:" .. object.tile_id)
+		assert(object.properties.enemy,"should be enemy:" .. tostring(object.tile_id))
 		if object.properties.spawner then
 			table.insert(data.spawners,object)
 		else
@@ -353,7 +351,7 @@ local function parse_level(path,result_path)
 		end
 	end)
 	process_objects(assert(get_layer(tiled,"pickups"),"no pickups layer"),function(object)
-		assert(object.properties.pickup,"should be pickup:" .. object.tile_id)
+		assert(object.properties.pickup,"should be pickup:" .. tostring(object.tile_id))
 		table.insert(data.pickups,object)
 	end)
 
