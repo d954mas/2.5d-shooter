@@ -42,6 +42,10 @@ key_trigger {
   input: KEY_8
   action: "toggle_physics"
 }
+key_trigger {
+  input: KEY_1
+  action: "toggle_1"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_1
   action: "touch"

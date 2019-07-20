@@ -23,8 +23,11 @@ local TAG = "ENTITIES"
 ---@field enemy boolean
 ---@field spawner boolean
 ---@field position vector3
----@field velocity vector3
----@field speed number
+---@field movement_velocity vector3
+---@field movement_direction vector3
+---@field movement_max_speed number
+---@field movement_accel number
+---@field movement_deaccel number
 ---@field angle vector3 radians anticlockwise  x-horizontal y-vertical
 ---@field url_collision_damage url collision always look at player
 ---@field url_go nil|url need update entity when changed or url_to_entity will be broken
@@ -169,8 +172,11 @@ function Entities.create_player(pos)
 	e.position= assert(pos)
 	e.angle = vmath.vector3(0,0,0)
 	e.input_direction = vmath.vector4(0,0,0,0)
-	e.velocity = vmath.vector3(0,0,0)
-	e.speed = 4
+	e.movement_velocity = vmath.vector3(0,0,0)
+	e.movement_direction = vmath.vector3(0,0,0)
+	e.movement_max_speed = 4
+	e.movement_accel = 3
+	e.movement_deaccel = 6
 	e.player = true
 	e.url_go =   msg.url("/player")
 	e.camera_bob = 0
@@ -207,8 +213,11 @@ function Entities.create_enemy(position,factory)
 	local e = {}
 	e.position= position
 	e.angle = vmath.vector3(0,0,0)
-	e.velocity = vmath.vector3(0,0,0)
-	e.speed = 0.9 + math.random()*0.25
+	e.movement_velocity = vmath.vector3(0,0,0)
+	e.movement_direction = vmath.vector3(0,0,0)
+	e.movement_accel = 3
+	e.movement_deaccel = 6
+	e.movement_max_speed = 1 + math.random()*0.25
 	e.enemy = true
 	local urls = collectionfactory.create(factory,vmath.vector3(e.position.x,0.5,-e.position.z),vmath.quat_rotation_z(0),nil)
 	e.url_go = msg.url(urls[OBJECT_HASHES.root])

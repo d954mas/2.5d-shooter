@@ -36,11 +36,11 @@ function AI:update(dt)
 				dx = 0
 				dy =  0.5 - cell_dy
 			end
-			self.e.velocity.x = dx
-			self.e.velocity.y = dy
+			self.e.movement_direction.x = dx
+			self.e.movement_direction.y = dy
 		else
-			self.e.velocity.x = 0
-			self.e.velocity.y = 0
+			self.e.movement_direction.x = 0
+			self.e.movement_direction.y = 0
 		end
 		local dist_to_player = self:player_get_distance()
 		if dist_to_player < 1.1 then

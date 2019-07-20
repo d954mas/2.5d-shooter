@@ -28,6 +28,7 @@ function Script:input_init()
     self.input.acquire()
     self.input:add(COMMON.HASHES.INPUT_TOGGLE_PROFILER,self.input_toggle_profile,true)
     self.input:add(COMMON.HASHES.INPUT_TOGGLE_PHYSICS,self.input_toggle_physics,true)
+    self.input:add(COMMON.HASHES.INPUT_TOGGLE_1,self.input_toggle_1,true)
 end
 
 function Script:input_toggle_profile()
@@ -40,6 +41,11 @@ end
 function Script:input_toggle_physics()
     COMMON.i("toggle physics")
     msg.post("@system:", "toggle_physics_debug")
+    return true
+end
+
+function Script:input_toggle_1()
+    toggle_1 = not toggle_1
     return true
 end
 
