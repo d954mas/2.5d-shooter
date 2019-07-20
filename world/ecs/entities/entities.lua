@@ -180,8 +180,8 @@ function Entities.create_player(pos)
 	e.player = true
 	e.url_go =   msg.url("/player")
 	e.camera_bob = 0
-	e.camera_bob_height = 0.012
-	e.camera_bob_speed = 4
+	e.camera_bob_height = 0.023
+	e.camera_bob_speed = 14
 	e.camera_bob_offset = 0
 	e.hp = 100
 	e.ammo = {
