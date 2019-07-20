@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/entities/entities.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/entities/entities.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/systems/camera_bob_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/camera_bob_system.lua" afterDir="false" />
-    </list>
+    <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,10 +28,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/world/ecs/entities/entities.lua">
+        <entry file="file://$PROJECT_DIR$/world/ecs/systems/update_object_color_system.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="182" column="31" selection-start-line="182" selection-start-column="31" selection-end-line="182" selection-end-column="31" />
+            <state relative-caret-position="272">
+              <caret line="17" column="28" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -342,12 +338,12 @@
       <workItem from="1563392753458" duration="6790000" />
       <workItem from="1563479307515" duration="3754000" />
       <workItem from="1563567579668" duration="4611000" />
-      <workItem from="1563613619236" duration="12747000" />
+      <workItem from="1563613619236" duration="13009000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="373256000" />
+    <option name="totallyTimeSpent" value="373518000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -524,13 +520,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/development/Defold/api1_2_151.zip!/api/base.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/ecs.lua">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -862,8 +851,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/world/ecs/entities/entities.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="182" column="31" selection-start-line="182" selection-start-column="31" selection-end-line="182" selection-end-column="31" />
+        <state relative-caret-position="298">
+          <caret line="187" column="26" selection-start-line="187" selection-start-column="26" selection-end-line="187" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/ecs/systems/update_object_color_system.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="28" />
         </state>
       </provider>
     </entry>

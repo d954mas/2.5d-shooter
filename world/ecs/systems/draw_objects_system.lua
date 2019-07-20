@@ -18,6 +18,7 @@ function System:process(e, dt)
 		else
 			go.delete(e.url_sprite)
 		end
+		e.dynamic_color_cell = nil -- reset dynamic color.If not reset, objects will not update collor on next appear
 		e.drawing = nil
 		e.url_sprite = nil
 		self.world:addEntity(e)
