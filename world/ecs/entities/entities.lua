@@ -175,8 +175,8 @@ function Entities.create_player(pos)
 	e.movement_velocity = vmath.vector3(0,0,0)
 	e.movement_direction = vmath.vector3(0,0,0)
 	e.movement_max_speed = 4
-	e.movement_accel = 3
-	e.movement_deaccel = 6
+	e.movement_accel = 2
+	e.movement_deaccel = 4
 	e.player = true
 	e.url_go =   msg.url("/player")
 	e.camera_bob = 0

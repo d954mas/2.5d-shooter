@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.2" tiledversion="1.2.4" name="main" tilewidth="64" tileheight="64" tilecount="35" columns="0">
+<tileset version="1.2" tiledversion="1.2.4" name="main" tilewidth="70" tileheight="70" tilecount="36" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="1">
   <properties>
@@ -211,5 +211,14 @@
    <property name="transparent" type="bool" value="true"/>
   </properties>
   <image width="64" height="64" source="../../images/game/walls/wall35.png"/>
+ </tile>
+ <tile id="36">
+  <properties>
+   <property name="acceleration_multiply" type="float" value="0.8"/>
+   <property name="block" type="bool" value="true"/>
+   <property name="deacceleration_multiply" type="float" value="0.2"/>
+   <property name="size_for_scale" type="int" value="70"/>
+  </properties>
+  <image width="70" height="70" source="../../images/game/walls/wall36.png"/>
  </tile>
 </tileset>

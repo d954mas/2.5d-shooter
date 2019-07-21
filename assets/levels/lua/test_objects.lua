@@ -16,8 +16,8 @@ return {
       name = "main",
       firstgid = 1,
       filename = "../tilesets/main.tsx",
-      tilewidth = 64,
-      tileheight = 64,
+      tilewidth = 70,
+      tileheight = 70,
       spacing = 0,
       margin = 0,
       columns = 0,
@@ -32,7 +32,7 @@ return {
       },
       properties = {},
       terrains = {},
-      tilecount = 35,
+      tilecount = 36,
       tiles = {
         {
           id = 1,
@@ -349,12 +349,24 @@ return {
           image = "../../images/game/walls/wall35.png",
           width = 64,
           height = 64
+        },
+        {
+          id = 36,
+          properties = {
+            ["acceleration_multiply"] = 0.8,
+            ["block"] = true,
+            ["deacceleration_multiply"] = 0.2,
+            ["size_for_scale"] = 70
+          },
+          image = "../../images/game/walls/wall36.png",
+          width = 70,
+          height = 70
         }
       }
     },
     {
       name = "objects",
-      firstgid = 37,
+      firstgid = 38,
       filename = "../tilesets/objects.tsx",
       tilewidth = 86,
       tileheight = 64,
@@ -527,7 +539,7 @@ return {
     },
     {
       name = "lights",
-      firstgid = 50,
+      firstgid = 51,
       filename = "../tilesets/lights.tsx",
       tilewidth = 64,
       tileheight = 64,
@@ -1514,7 +1526,7 @@ return {
     },
     {
       name = "enemies",
-      firstgid = 210,
+      firstgid = 211,
       filename = "../tilesets/enemies.tsx",
       tilewidth = 64,
       tileheight = 64,
@@ -1561,7 +1573,7 @@ return {
     },
     {
       name = "pickups",
-      firstgid = 213,
+      firstgid = 214,
       filename = "../tilesets/pickups.tsx",
       tilewidth = 32,
       tileheight = 32,
@@ -1706,7 +1718,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 38,
+          gid = 39,
           visible = true,
           properties = {
             ["spawn_point"] = true
@@ -1722,7 +1734,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 39,
+          gid = 40,
           visible = true,
           properties = {}
         },
@@ -1736,7 +1748,7 @@ return {
           width = 64,
           height = 62,
           rotation = 0,
-          gid = 40,
+          gid = 41,
           visible = true,
           properties = {}
         },
@@ -1750,7 +1762,7 @@ return {
           width = 46,
           height = 64,
           rotation = 0,
-          gid = 41,
+          gid = 42,
           visible = true,
           properties = {}
         },
@@ -1764,7 +1776,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 43,
+          gid = 44,
           visible = true,
           properties = {}
         },
@@ -1778,7 +1790,7 @@ return {
           width = 53,
           height = 63,
           rotation = 0,
-          gid = 44,
+          gid = 45,
           visible = true,
           properties = {}
         },
@@ -1792,7 +1804,7 @@ return {
           width = 56,
           height = 60,
           rotation = 0,
-          gid = 45,
+          gid = 46,
           visible = true,
           properties = {}
         },
@@ -1806,7 +1818,7 @@ return {
           width = 86,
           height = 25,
           rotation = 0,
-          gid = 46,
+          gid = 47,
           visible = true,
           properties = {}
         },
@@ -1820,7 +1832,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 47,
+          gid = 48,
           visible = true,
           properties = {}
         },
@@ -1834,7 +1846,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 42,
+          gid = 43,
           visible = true,
           properties = {
             ["look_at_player"] = false
@@ -1850,7 +1862,7 @@ return {
           width = 64,
           height = 54,
           rotation = 0,
-          gid = 49,
+          gid = 50,
           visible = true,
           properties = {}
         }

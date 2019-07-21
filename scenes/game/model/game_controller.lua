@@ -102,8 +102,8 @@ end
 
 
 --@TODO TMP
-local hp_pickup = {properties = {{global_rotation = true}},tile_id = 214}
-local ammo_pickup = {properties = {{global_rotation = true}},tile_id = 215}
+local hp_pickup = {properties = {{global_rotation = true}},tile_id = 215}
+local ammo_pickup = {properties = {{global_rotation = true}},tile_id = 216}
 local pickups_weights = {}
 pickups_weights[hp_pickup] = 1
 pickups_weights[ammo_pickup] = 2

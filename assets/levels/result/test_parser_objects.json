@@ -8,7 +8,7 @@
     {
       "cell_xf":2.5,
       "cell_id":33,
-      "tile_id":211,
+      "tile_id":212,
       "properties":{
         "name":"blob",
         "enemy":true
@@ -22,7 +22,7 @@
     {
       "cell_xf":4.5,
       "cell_id":55,
-      "tile_id":211,
+      "tile_id":212,
       "properties":{
         "name":"blob",
         "enemy":true
@@ -39,7 +39,7 @@
     {
       "cell_xf":5.5,
       "cell_id":66,
-      "tile_id":40,
+      "tile_id":41,
       "properties":{
         "look_at_player":true,
         "culling":true,
@@ -1514,7 +1514,7 @@
     {
       "cell_xf":7.5,
       "cell_id":18,
-      "tile_id":215,
+      "tile_id":216,
       "properties":{
         "look_at_player":false,
         "pickup_key":"hp",
@@ -1531,7 +1531,7 @@
     {
       "cell_xf":1.5,
       "cell_id":82,
-      "tile_id":214,
+      "tile_id":215,
       "properties":{
         "look_at_player":false,
         "pickup_key":"ammo_pistol",

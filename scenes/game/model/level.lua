@@ -143,6 +143,7 @@ function Level:map_cell_in(x,y)
 	return x>=1 and x <= self:map_get_width() and y>=1 and y <=self:map_get_height()
 end
 
+---@return LevelDataTile
 function Level:get_tile(id)
 	return assert(TILESET[id],"no tile with id:" .. id)
 end

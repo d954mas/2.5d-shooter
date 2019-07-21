@@ -115,6 +115,9 @@ images {
 images {
   image: "/assets/images/game/walls/wall35.png"
 }
+images {
+  image: "/assets/images/game/walls/wall36.png"
+}
 margin: 0
 extrude_borders: 0
 inner_padding: 0

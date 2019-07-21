@@ -11,6 +11,15 @@ cjson.decode_invalid_numbers(false)
 --In lua id start from 1 in cpp from 0
 --In lua pos start from 1 in cpp from 0
 
+---@class LevelDataTile
+---@field properties table
+---@field id number
+---@field width number
+---@field height number
+---@field atlas string
+---@field image string|hash
+---@field scale number
+
 ---@class LevelDataCellObjects
 ---@field north table
 ---@field south table

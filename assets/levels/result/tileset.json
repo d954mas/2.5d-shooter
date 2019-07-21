@@ -386,12 +386,26 @@
     "height":64,
     "width":64
   },
+  {
+    "image":"wall36",
+    "atlas":"walls",
+    "scale":0.014285714285714,
+    "id":37,
+    "properties":{
+      "size_for_scale":70,
+      "block":true,
+      "deacceleration_multiply":0.2,
+      "acceleration_multiply":0.8
+    },
+    "height":70,
+    "width":70
+  },
   null,
   {
     "image":"spawn_point",
     "atlas":"objects",
     "scale":0.015625,
-    "id":38,
+    "id":39,
     "properties":{
       "spawn_point":true
     },
@@ -402,7 +416,7 @@
     "image":"block",
     "atlas":"objects",
     "scale":0.0078125,
-    "id":39,
+    "id":40,
     "properties":{
       "culling":true,
       "scale":0.5,
@@ -416,7 +430,7 @@
     "image":"bot_crystal",
     "atlas":"objects",
     "scale":0.0078125,
-    "id":40,
+    "id":41,
     "properties":{
       "look_at_player":true,
       "culling":true,
@@ -431,7 +445,7 @@
     "image":"bot_crystal_2",
     "atlas":"objects",
     "scale":0.0078125,
-    "id":41,
+    "id":42,
     "properties":{
       "culling":true,
       "scale":0.5,
@@ -445,7 +459,7 @@
     "image":"box",
     "atlas":"objects",
     "scale":0.0078125,
-    "id":42,
+    "id":43,
     "properties":{
       "culling":true,
       "scale":0.5,
@@ -463,7 +477,7 @@
       "y":0.796875,
       "x":0
     },
-    "id":43,
+    "id":44,
     "properties":{
       "look_at_player":true,
       "origin":"top",
@@ -479,7 +493,7 @@
     "image":"mushroom_1",
     "atlas":"objects",
     "scale":0.0078125,
-    "id":44,
+    "id":45,
     "properties":{
       "look_at_player":true,
       "culling":true,
@@ -494,7 +508,7 @@
     "image":"mushroom_2",
     "atlas":"objects",
     "scale":0.0078125,
-    "id":45,
+    "id":46,
     "properties":{
       "look_at_player":true,
       "culling":true,
@@ -509,7 +523,7 @@
     "image":"skull",
     "atlas":"objects",
     "scale":0.0078125,
-    "id":46,
+    "id":47,
     "properties":{
       "look_at_player":true,
       "culling":true,
@@ -524,7 +538,7 @@
     "image":"table",
     "atlas":"objects",
     "scale":0.015625,
-    "id":47,
+    "id":48,
     "properties":{
       "culling":true,
       "scale":1,
@@ -538,7 +552,7 @@
     "image":"top_crystal_1",
     "atlas":"objects",
     "scale":0.0078125,
-    "id":48,
+    "id":49,
     "properties":{
       "look_at_player":true,
       "culling":true,
@@ -553,7 +567,7 @@
     "image":"top_crystal_2",
     "atlas":"objects",
     "scale":0.0078125,
-    "id":49,
+    "id":50,
     "properties":{
       "look_at_player":true,
       "culling":true,
@@ -570,7 +584,7 @@
     "properties":{
       "color":"#fffffbfb"
     },
-    "id":50,
+    "id":51,
     "width":64
   },
   {
@@ -579,7 +593,7 @@
     "properties":{
       "color":"#ffff1b00"
     },
-    "id":51,
+    "id":52,
     "width":64
   },
   {
@@ -588,7 +602,7 @@
     "properties":{
       "color":"#ffff7800"
     },
-    "id":52,
+    "id":53,
     "width":64
   },
   {
@@ -597,7 +611,7 @@
     "properties":{
       "color":"#ffffd900"
     },
-    "id":53,
+    "id":54,
     "width":64
   },
   {
@@ -606,7 +620,7 @@
     "properties":{
       "color":"#ffdfff00"
     },
-    "id":54,
+    "id":55,
     "width":64
   },
   {
@@ -615,7 +629,7 @@
     "properties":{
       "color":"#ff00ff4c"
     },
-    "id":55,
+    "id":56,
     "width":64
   },
   {
@@ -624,7 +638,7 @@
     "properties":{
       "color":"#ff00ffe7"
     },
-    "id":56,
+    "id":57,
     "width":64
   },
   {
@@ -633,7 +647,7 @@
     "properties":{
       "color":"#ff00deff"
     },
-    "id":57,
+    "id":58,
     "width":64
   },
   {
@@ -642,7 +656,7 @@
     "properties":{
       "color":"#ff007cff"
     },
-    "id":58,
+    "id":59,
     "width":64
   },
   {
@@ -651,7 +665,7 @@
     "properties":{
       "color":"#ff001eff"
     },
-    "id":59,
+    "id":60,
     "width":64
   },
   {
@@ -660,7 +674,7 @@
     "properties":{
       "color":"#ff2000ff"
     },
-    "id":60,
+    "id":61,
     "width":64
   },
   {
@@ -669,7 +683,7 @@
     "properties":{
       "color":"#ff8000ff"
     },
-    "id":61,
+    "id":62,
     "width":64
   },
   {
@@ -678,7 +692,7 @@
     "properties":{
       "color":"#ffe100ff"
     },
-    "id":62,
+    "id":63,
     "width":64
   },
   {
@@ -687,7 +701,7 @@
     "properties":{
       "color":"#ffff00df"
     },
-    "id":63,
+    "id":64,
     "width":64
   },
   {
@@ -696,7 +710,7 @@
     "properties":{
       "color":"#ffff007f"
     },
-    "id":64,
+    "id":65,
     "width":64
   },
   {
@@ -705,7 +719,7 @@
     "properties":{
       "color":"#ffff0020"
     },
-    "id":65,
+    "id":66,
     "width":64
   },
   {
@@ -714,7 +728,7 @@
     "properties":{
       "color":"#ffefebeb"
     },
-    "id":66,
+    "id":67,
     "width":64
   },
   {
@@ -723,7 +737,7 @@
     "properties":{
       "color":"#ffd81700"
     },
-    "id":67,
+    "id":68,
     "width":64
   },
   {
@@ -732,7 +746,7 @@
     "properties":{
       "color":"#ffd86600"
     },
-    "id":68,
+    "id":69,
     "width":64
   },
   {
@@ -741,7 +755,7 @@
     "properties":{
       "color":"#ffd8b800"
     },
-    "id":69,
+    "id":70,
     "width":64
   },
   {
@@ -750,7 +764,7 @@
     "properties":{
       "color":"#ffbdd800"
     },
-    "id":70,
+    "id":71,
     "width":64
   },
   {
@@ -759,7 +773,7 @@
     "properties":{
       "color":"#ff00d840"
     },
-    "id":71,
+    "id":72,
     "width":64
   },
   {
@@ -768,7 +782,7 @@
     "properties":{
       "color":"#ff00d8c4"
     },
-    "id":72,
+    "id":73,
     "width":64
   },
   {
@@ -777,7 +791,7 @@
     "properties":{
       "color":"#ff00bcd8"
     },
-    "id":73,
+    "id":74,
     "width":64
   },
   {
@@ -786,7 +800,7 @@
     "properties":{
       "color":"#ff0069d8"
     },
-    "id":74,
+    "id":75,
     "width":64
   },
   {
@@ -795,7 +809,7 @@
     "properties":{
       "color":"#ff0019d8"
     },
-    "id":75,
+    "id":76,
     "width":64
   },
   {
@@ -804,7 +818,7 @@
     "properties":{
       "color":"#ff1b00d8"
     },
-    "id":76,
+    "id":77,
     "width":64
   },
   {
@@ -813,7 +827,7 @@
     "properties":{
       "color":"#ff6d00d8"
     },
-    "id":77,
+    "id":78,
     "width":64
   },
   {
@@ -822,7 +836,7 @@
     "properties":{
       "color":"#ffbf00d8"
     },
-    "id":78,
+    "id":79,
     "width":64
   },
   {
@@ -831,7 +845,7 @@
     "properties":{
       "color":"#ffd800bd"
     },
-    "id":79,
+    "id":80,
     "width":64
   },
   {
@@ -840,7 +854,7 @@
     "properties":{
       "color":"#ffd8006c"
     },
-    "id":80,
+    "id":81,
     "width":64
   },
   {
@@ -849,7 +863,7 @@
     "properties":{
       "color":"#ffd8001b"
     },
-    "id":81,
+    "id":82,
     "width":64
   },
   {
@@ -858,7 +872,7 @@
     "properties":{
       "color":"#ffd8d5d5"
     },
-    "id":82,
+    "id":83,
     "width":64
   },
   {
@@ -867,7 +881,7 @@
     "properties":{
       "color":"#ffa01100"
     },
-    "id":83,
+    "id":84,
     "width":64
   },
   {
@@ -876,7 +890,7 @@
     "properties":{
       "color":"#ffa04b00"
     },
-    "id":84,
+    "id":85,
     "width":64
   },
   {
@@ -885,7 +899,7 @@
     "properties":{
       "color":"#ffa08700"
     },
-    "id":85,
+    "id":86,
     "width":64
   },
   {
@@ -894,7 +908,7 @@
     "properties":{
       "color":"#ff8c9f00"
     },
-    "id":86,
+    "id":87,
     "width":64
   },
   {
@@ -903,7 +917,7 @@
     "properties":{
       "color":"#ff019f2f"
     },
-    "id":87,
+    "id":88,
     "width":64
   },
   {
@@ -912,7 +926,7 @@
     "properties":{
       "color":"#ff019f90"
     },
-    "id":88,
+    "id":89,
     "width":64
   },
   {
@@ -921,7 +935,7 @@
     "properties":{
       "color":"#ff018a9f"
     },
-    "id":89,
+    "id":90,
     "width":64
   },
   {
@@ -930,7 +944,7 @@
     "properties":{
       "color":"#ff014d9f"
     },
-    "id":90,
+    "id":91,
     "width":64
   },
   {
@@ -939,7 +953,7 @@
     "properties":{
       "color":"#ff01139f"
     },
-    "id":91,
+    "id":92,
     "width":64
   },
   {
@@ -948,7 +962,7 @@
     "properties":{
       "color":"#ff15009f"
     },
-    "id":92,
+    "id":93,
     "width":64
   },
   {
@@ -957,7 +971,7 @@
     "properties":{
       "color":"#ff51009f"
     },
-    "id":93,
+    "id":94,
     "width":64
   },
   {
@@ -966,7 +980,7 @@
     "properties":{
       "color":"#ff8d009f"
     },
-    "id":94,
+    "id":95,
     "width":64
   },
   {
@@ -975,7 +989,7 @@
     "properties":{
       "color":"#ffa0008b"
     },
-    "id":95,
+    "id":96,
     "width":64
   },
   {
@@ -984,7 +998,7 @@
     "properties":{
       "color":"#ffa0004f"
     },
-    "id":96,
+    "id":97,
     "width":64
   },
   {
@@ -993,7 +1007,7 @@
     "properties":{
       "color":"#ffa00014"
     },
-    "id":97,
+    "id":98,
     "width":64
   },
   {
@@ -1002,7 +1016,7 @@
     "properties":{
       "color":"#ffbebaba"
     },
-    "id":98,
+    "id":99,
     "width":64
   },
   {
@@ -1011,7 +1025,7 @@
     "properties":{
       "color":"#ff610a00"
     },
-    "id":99,
+    "id":100,
     "width":64
   },
   {
@@ -1020,7 +1034,7 @@
     "properties":{
       "color":"#ff612d00"
     },
-    "id":100,
+    "id":101,
     "width":64
   },
   {
@@ -1029,7 +1043,7 @@
     "properties":{
       "color":"#ff615200"
     },
-    "id":101,
+    "id":102,
     "width":64
   },
   {
@@ -1038,7 +1052,7 @@
     "properties":{
       "color":"#ff556000"
     },
-    "id":102,
+    "id":103,
     "width":64
   },
   {
@@ -1047,7 +1061,7 @@
     "properties":{
       "color":"#ff01601d"
     },
-    "id":103,
+    "id":104,
     "width":64
   },
   {
@@ -1056,7 +1070,7 @@
     "properties":{
       "color":"#ff016057"
     },
-    "id":104,
+    "id":105,
     "width":64
   },
   {
@@ -1065,7 +1079,7 @@
     "properties":{
       "color":"#ff015460"
     },
-    "id":105,
+    "id":106,
     "width":64
   },
   {
@@ -1074,7 +1088,7 @@
     "properties":{
       "color":"#ff012f60"
     },
-    "id":106,
+    "id":107,
     "width":64
   },
   {
@@ -1083,7 +1097,7 @@
     "properties":{
       "color":"#ff010b60"
     },
-    "id":107,
+    "id":108,
     "width":64
   },
   {
@@ -1092,7 +1106,7 @@
     "properties":{
       "color":"#ff0d0060"
     },
-    "id":108,
+    "id":109,
     "width":64
   },
   {
@@ -1101,7 +1115,7 @@
     "properties":{
       "color":"#ff310060"
     },
-    "id":109,
+    "id":110,
     "width":64
   },
   {
@@ -1110,7 +1124,7 @@
     "properties":{
       "color":"#ff560060"
     },
-    "id":110,
+    "id":111,
     "width":64
   },
   {
@@ -1119,7 +1133,7 @@
     "properties":{
       "color":"#ff610054"
     },
-    "id":111,
+    "id":112,
     "width":64
   },
   {
@@ -1128,7 +1142,7 @@
     "properties":{
       "color":"#ff610030"
     },
-    "id":112,
+    "id":113,
     "width":64
   },
   {
@@ -1137,7 +1151,7 @@
     "properties":{
       "color":"#ff61000c"
     },
-    "id":113,
+    "id":114,
     "width":64
   },
   {
@@ -1146,7 +1160,7 @@
     "properties":{
       "color":"#ff908d8d"
     },
-    "id":114,
+    "id":115,
     "width":64
   },
   {
@@ -1155,7 +1169,7 @@
     "properties":{
       "color":"#ff3f0600"
     },
-    "id":115,
+    "id":116,
     "width":64
   },
   {
@@ -1164,7 +1178,7 @@
     "properties":{
       "color":"#ff3f1d00"
     },
-    "id":116,
+    "id":117,
     "width":64
   },
   {
@@ -1173,7 +1187,7 @@
     "properties":{
       "color":"#ff3f3500"
     },
-    "id":117,
+    "id":118,
     "width":64
   },
   {
@@ -1182,7 +1196,7 @@
     "properties":{
       "color":"#ff383e00"
     },
-    "id":118,
+    "id":119,
     "width":64
   },
   {
@@ -1191,7 +1205,7 @@
     "properties":{
       "color":"#ff023e13"
     },
-    "id":119,
+    "id":120,
     "width":64
   },
   {
@@ -1200,7 +1214,7 @@
     "properties":{
       "color":"#ff023e38"
     },
-    "id":120,
+    "id":121,
     "width":64
   },
   {
@@ -1209,7 +1223,7 @@
     "properties":{
       "color":"#ff02363e"
     },
-    "id":121,
+    "id":122,
     "width":64
   },
   {
@@ -1218,7 +1232,7 @@
     "properties":{
       "color":"#ff021e3e"
     },
-    "id":122,
+    "id":123,
     "width":64
   },
   {
@@ -1227,7 +1241,7 @@
     "properties":{
       "color":"#ff02073e"
     },
-    "id":123,
+    "id":124,
     "width":64
   },
   {
@@ -1236,7 +1250,7 @@
     "properties":{
       "color":"#ff09003e"
     },
-    "id":124,
+    "id":125,
     "width":64
   },
   {
@@ -1245,7 +1259,7 @@
     "properties":{
       "color":"#ff20003e"
     },
-    "id":125,
+    "id":126,
     "width":64
   },
   {
@@ -1254,7 +1268,7 @@
     "properties":{
       "color":"#ff38003e"
     },
-    "id":126,
+    "id":127,
     "width":64
   },
   {
@@ -1263,7 +1277,7 @@
     "properties":{
       "color":"#ff3f0036"
     },
-    "id":127,
+    "id":128,
     "width":64
   },
   {
@@ -1272,7 +1286,7 @@
     "properties":{
       "color":"#ff3f001f"
     },
-    "id":128,
+    "id":129,
     "width":64
   },
   {
@@ -1281,7 +1295,7 @@
     "properties":{
       "color":"#ff3f0008"
     },
-    "id":129,
+    "id":130,
     "width":64
   },
   {
@@ -1290,7 +1304,7 @@
     "properties":{
       "color":"#ff716e6e"
     },
-    "id":130,
+    "id":131,
     "width":64
   },
   {
@@ -1299,7 +1313,7 @@
     "properties":{
       "color":"#ffff7f7d"
     },
-    "id":131,
+    "id":132,
     "width":64
   },
   {
@@ -1308,7 +1322,7 @@
     "properties":{
       "color":"#ffffa17d"
     },
-    "id":132,
+    "id":133,
     "width":64
   },
   {
@@ -1317,7 +1331,7 @@
     "properties":{
       "color":"#ffffe17d"
     },
-    "id":133,
+    "id":134,
     "width":64
   },
   {
@@ -1326,7 +1340,7 @@
     "properties":{
       "color":"#ffe6ff7d"
     },
-    "id":134,
+    "id":135,
     "width":64
   },
   {
@@ -1335,7 +1349,7 @@
     "properties":{
       "color":"#ff7dff8c"
     },
-    "id":135,
+    "id":136,
     "width":64
   },
   {
@@ -1344,7 +1358,7 @@
     "properties":{
       "color":"#ff7dffec"
     },
-    "id":136,
+    "id":137,
     "width":64
   },
   {
@@ -1353,7 +1367,7 @@
     "properties":{
       "color":"#ff7de5ff"
     },
-    "id":137,
+    "id":138,
     "width":64
   },
   {
@@ -1362,7 +1376,7 @@
     "properties":{
       "color":"#ff7da3ff"
     },
-    "id":138,
+    "id":139,
     "width":64
   },
   {
@@ -1371,7 +1385,7 @@
     "properties":{
       "color":"#ff7d80ff"
     },
-    "id":139,
+    "id":140,
     "width":64
   },
   {
@@ -1380,7 +1394,7 @@
     "properties":{
       "color":"#ff807dff"
     },
-    "id":140,
+    "id":141,
     "width":64
   },
   {
@@ -1389,7 +1403,7 @@
     "properties":{
       "color":"#ffa57dff"
     },
-    "id":141,
+    "id":142,
     "width":64
   },
   {
@@ -1398,7 +1412,7 @@
     "properties":{
       "color":"#ffe87dff"
     },
-    "id":142,
+    "id":143,
     "width":64
   },
   {
@@ -1407,7 +1421,7 @@
     "properties":{
       "color":"#ffff7de6"
     },
-    "id":143,
+    "id":144,
     "width":64
   },
   {
@@ -1416,7 +1430,7 @@
     "properties":{
       "color":"#ffff7da4"
     },
-    "id":144,
+    "id":145,
     "width":64
   },
   {
@@ -1425,7 +1439,7 @@
     "properties":{
       "color":"#ffff7d80"
     },
-    "id":145,
+    "id":146,
     "width":64
   },
   {
@@ -1434,7 +1448,7 @@
     "properties":{
       "color":"#ff52504f"
     },
-    "id":146,
+    "id":147,
     "width":64
   },
   {
@@ -1443,7 +1457,7 @@
     "properties":{
       "color":"#ffd86b69"
     },
-    "id":147,
+    "id":148,
     "width":64
   },
   {
@@ -1452,7 +1466,7 @@
     "properties":{
       "color":"#ffd88869"
     },
-    "id":148,
+    "id":149,
     "width":64
   },
   {
@@ -1461,7 +1475,7 @@
     "properties":{
       "color":"#ffd8bf69"
     },
-    "id":149,
+    "id":150,
     "width":64
   },
   {
@@ -1470,7 +1484,7 @@
     "properties":{
       "color":"#ffc3d869"
     },
-    "id":150,
+    "id":151,
     "width":64
   },
   {
@@ -1479,7 +1493,7 @@
     "properties":{
       "color":"#ff69d876"
     },
-    "id":151,
+    "id":152,
     "width":64
   },
   {
@@ -1488,7 +1502,7 @@
     "properties":{
       "color":"#ff69d8c8"
     },
-    "id":152,
+    "id":153,
     "width":64
   },
   {
@@ -1497,7 +1511,7 @@
     "properties":{
       "color":"#ff69c2d8"
     },
-    "id":153,
+    "id":154,
     "width":64
   },
   {
@@ -1506,7 +1520,7 @@
     "properties":{
       "color":"#ff698ad8"
     },
-    "id":154,
+    "id":155,
     "width":64
   },
   {
@@ -1515,7 +1529,7 @@
     "properties":{
       "color":"#ff696cd8"
     },
-    "id":155,
+    "id":156,
     "width":64
   },
   {
@@ -1524,7 +1538,7 @@
     "properties":{
       "color":"#ff6c69d8"
     },
-    "id":156,
+    "id":157,
     "width":64
   },
   {
@@ -1533,7 +1547,7 @@
     "properties":{
       "color":"#ff8c69d8"
     },
-    "id":157,
+    "id":158,
     "width":64
   },
   {
@@ -1542,7 +1556,7 @@
     "properties":{
       "color":"#ffc469d8"
     },
-    "id":158,
+    "id":159,
     "width":64
   },
   {
@@ -1551,7 +1565,7 @@
     "properties":{
       "color":"#ffd869c3"
     },
-    "id":159,
+    "id":160,
     "width":64
   },
   {
@@ -1560,7 +1574,7 @@
     "properties":{
       "color":"#ffd8698b"
     },
-    "id":160,
+    "id":161,
     "width":64
   },
   {
@@ -1569,7 +1583,7 @@
     "properties":{
       "color":"#ffd8696c"
     },
-    "id":161,
+    "id":162,
     "width":64
   },
   {
@@ -1578,7 +1592,7 @@
     "properties":{
       "color":"#ff353333"
     },
-    "id":162,
+    "id":163,
     "width":64
   },
   {
@@ -1587,7 +1601,7 @@
     "properties":{
       "color":"#ffa04e4c"
     },
-    "id":163,
+    "id":164,
     "width":64
   },
   {
@@ -1596,7 +1610,7 @@
     "properties":{
       "color":"#ffa0644c"
     },
-    "id":164,
+    "id":165,
     "width":64
   },
   {
@@ -1605,7 +1619,7 @@
     "properties":{
       "color":"#ffa08d4c"
     },
-    "id":165,
+    "id":166,
     "width":64
   },
   {
@@ -1614,7 +1628,7 @@
     "properties":{
       "color":"#ff909f4b"
     },
-    "id":166,
+    "id":167,
     "width":64
   },
   {
@@ -1623,7 +1637,7 @@
     "properties":{
       "color":"#ff4c9f56"
     },
-    "id":167,
+    "id":168,
     "width":64
   },
   {
@@ -1632,7 +1646,7 @@
     "properties":{
       "color":"#ff4c9f93"
     },
-    "id":168,
+    "id":169,
     "width":64
   },
   {
@@ -1641,7 +1655,7 @@
     "properties":{
       "color":"#ff4c8f9f"
     },
-    "id":169,
+    "id":170,
     "width":64
   },
   {
@@ -1650,7 +1664,7 @@
     "properties":{
       "color":"#ff4c659f"
     },
-    "id":170,
+    "id":171,
     "width":64
   },
   {
@@ -1659,7 +1673,7 @@
     "properties":{
       "color":"#ff4c4e9f"
     },
-    "id":171,
+    "id":172,
     "width":64
   },
   {
@@ -1668,7 +1682,7 @@
     "properties":{
       "color":"#ff4e4b9f"
     },
-    "id":172,
+    "id":173,
     "width":64
   },
   {
@@ -1677,7 +1691,7 @@
     "properties":{
       "color":"#ff674b9f"
     },
-    "id":173,
+    "id":174,
     "width":64
   },
   {
@@ -1686,7 +1700,7 @@
     "properties":{
       "color":"#ff914b9f"
     },
-    "id":174,
+    "id":175,
     "width":64
   },
   {
@@ -1695,7 +1709,7 @@
     "properties":{
       "color":"#ffa04c90"
     },
-    "id":175,
+    "id":176,
     "width":64
   },
   {
@@ -1704,7 +1718,7 @@
     "properties":{
       "color":"#ffa04c66"
     },
-    "id":176,
+    "id":177,
     "width":64
   },
   {
@@ -1713,7 +1727,7 @@
     "properties":{
       "color":"#ffa04c4f"
     },
-    "id":177,
+    "id":178,
     "width":64
   },
   {
@@ -1722,7 +1736,7 @@
     "properties":{
       "color":"#ff1c1a1a"
     },
-    "id":178,
+    "id":179,
     "width":64
   },
   {
@@ -1731,7 +1745,7 @@
     "properties":{
       "color":"#ff612e2b"
     },
-    "id":179,
+    "id":180,
     "width":64
   },
   {
@@ -1740,7 +1754,7 @@
     "properties":{
       "color":"#ff613c2b"
     },
-    "id":180,
+    "id":181,
     "width":64
   },
   {
@@ -1749,7 +1763,7 @@
     "properties":{
       "color":"#ff61552b"
     },
-    "id":181,
+    "id":182,
     "width":64
   },
   {
@@ -1758,7 +1772,7 @@
     "properties":{
       "color":"#ff57602b"
     },
-    "id":182,
+    "id":183,
     "width":64
   },
   {
@@ -1767,7 +1781,7 @@
     "properties":{
       "color":"#ff2b6034"
     },
-    "id":183,
+    "id":184,
     "width":64
   },
   {
@@ -1776,7 +1790,7 @@
     "properties":{
       "color":"#ff2b6059"
     },
-    "id":184,
+    "id":185,
     "width":64
   },
   {
@@ -1785,7 +1799,7 @@
     "properties":{
       "color":"#ff2b5660"
     },
-    "id":185,
+    "id":186,
     "width":64
   },
   {
@@ -1794,7 +1808,7 @@
     "properties":{
       "color":"#ff2b3d60"
     },
-    "id":186,
+    "id":187,
     "width":64
   },
   {
@@ -1803,7 +1817,7 @@
     "properties":{
       "color":"#ff2b2e60"
     },
-    "id":187,
+    "id":188,
     "width":64
   },
   {
@@ -1812,7 +1826,7 @@
     "properties":{
       "color":"#ff2e2b60"
     },
-    "id":188,
+    "id":189,
     "width":64
   },
   {
@@ -1821,7 +1835,7 @@
     "properties":{
       "color":"#ff3e2b60"
     },
-    "id":189,
+    "id":190,
     "width":64
   },
   {
@@ -1830,7 +1844,7 @@
     "properties":{
       "color":"#ff582b60"
     },
-    "id":190,
+    "id":191,
     "width":64
   },
   {
@@ -1839,7 +1853,7 @@
     "properties":{
       "color":"#ff612b57"
     },
-    "id":191,
+    "id":192,
     "width":64
   },
   {
@@ -1848,7 +1862,7 @@
     "properties":{
       "color":"#ff612b3e"
     },
-    "id":192,
+    "id":193,
     "width":64
   },
   {
@@ -1857,7 +1871,7 @@
     "properties":{
       "color":"#ff612b2e"
     },
-    "id":193,
+    "id":194,
     "width":64
   },
   {
@@ -1866,7 +1880,7 @@
     "properties":{
       "color":"#ff0a0707"
     },
-    "id":194,
+    "id":195,
     "width":64
   },
   {
@@ -1875,7 +1889,7 @@
     "properties":{
       "color":"#ff3f1e1c"
     },
-    "id":195,
+    "id":196,
     "width":64
   },
   {
@@ -1884,7 +1898,7 @@
     "properties":{
       "color":"#ff3f281c"
     },
-    "id":196,
+    "id":197,
     "width":64
   },
   {
@@ -1893,7 +1907,7 @@
     "properties":{
       "color":"#ff3f381c"
     },
-    "id":197,
+    "id":198,
     "width":64
   },
   {
@@ -1902,7 +1916,7 @@
     "properties":{
       "color":"#ff393e1c"
     },
-    "id":198,
+    "id":199,
     "width":64
   },
   {
@@ -1911,7 +1925,7 @@
     "properties":{
       "color":"#ff1d3d23"
     },
-    "id":199,
+    "id":200,
     "width":64
   },
   {
@@ -1920,7 +1934,7 @@
     "properties":{
       "color":"#ff1d3d39"
     },
-    "id":200,
+    "id":201,
     "width":64
   },
   {
@@ -1929,7 +1943,7 @@
     "properties":{
       "color":"#ff1d383d"
     },
-    "id":201,
+    "id":202,
     "width":64
   },
   {
@@ -1938,7 +1952,7 @@
     "properties":{
       "color":"#ff1d283d"
     },
-    "id":202,
+    "id":203,
     "width":64
   },
   {
@@ -1947,7 +1961,7 @@
     "properties":{
       "color":"#ff1d1f3d"
     },
-    "id":203,
+    "id":204,
     "width":64
   },
   {
@@ -1956,7 +1970,7 @@
     "properties":{
       "color":"#ff1f1c3e"
     },
-    "id":204,
+    "id":205,
     "width":64
   },
   {
@@ -1965,7 +1979,7 @@
     "properties":{
       "color":"#ff291c3e"
     },
-    "id":205,
+    "id":206,
     "width":64
   },
   {
@@ -1974,7 +1988,7 @@
     "properties":{
       "color":"#ff391c3e"
     },
-    "id":206,
+    "id":207,
     "width":64
   },
   {
@@ -1983,7 +1997,7 @@
     "properties":{
       "color":"#ff3f1c38"
     },
-    "id":207,
+    "id":208,
     "width":64
   },
   {
@@ -1992,7 +2006,7 @@
     "properties":{
       "color":"#ff3f1c29"
     },
-    "id":208,
+    "id":209,
     "width":64
   },
   {
@@ -2001,7 +2015,7 @@
     "properties":{
       "color":"#ff3f1c1f"
     },
-    "id":209,
+    "id":210,
     "width":64
   },
   null,
@@ -2009,7 +2023,7 @@
     "image":"blob_idle_1",
     "atlas":"idle",
     "scale":0.015625,
-    "id":211,
+    "id":212,
     "properties":{
       "name":"blob",
       "enemy":true
@@ -2021,7 +2035,7 @@
     "image":"spawner",
     "atlas":"objects",
     "scale":0.015625,
-    "id":212,
+    "id":213,
     "properties":{
       "spawner":true,
       "name":"spawner_enemy",
@@ -2037,7 +2051,7 @@
     "image":"pickup_ammo_pistol",
     "atlas":"pickups",
     "scale":0.0078125,
-    "id":214,
+    "id":215,
     "properties":{
       "look_at_player":false,
       "pickup_key":"ammo_pistol",
@@ -2052,7 +2066,7 @@
     "image":"pickup_hp",
     "atlas":"pickups",
     "scale":0.0078125,
-    "id":215,
+    "id":216,
     "properties":{
       "look_at_player":false,
       "pickup_key":"hp",
