@@ -42,7 +42,7 @@ end
 --show pause modal if user unlock cursor. Press esc
 function Scene:check_pause_modal()
     if not CURSOR_HELPER:is_locked() and not SM:is_loading() and not SM:is_show_modal("PauseModal") then
-        SM:show("PauseModal",nil) --use delay of will see empty walls in html
+        SM:show("PauseModal",nil,{delay=0.01}) --use delay or will see dark pickups in html. Need at least 2 update frame.
     end
 end
 
