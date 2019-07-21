@@ -1,3 +1,5 @@
+local PERLIN = require "libs.perlin"
+PERLIN.init()
 
 local M = {}
 
@@ -23,7 +25,8 @@ local fallback_cam = {
 	abs_farZ = 1, lpos = vmath.vector3(), wpos = vmath.vector3(), wupVec = vmath.vector3(0, 1, 0),
 	wforwardVec = vmath.vector3(0, 0, -1), lupVec = vmath.vector3(0, 1, 0),
 	lforwardVec = vmath.vector3(0, 0, -1), lrightVec = vmath.vector3(1, 0, 0),
-	following = false, follows = {}, recoils = {}, shakes = {},rotations = {}
+	following = false, follows = {}, recoils = {}, shakes = {},rotations = {},
+	perlin_seeds = {}
 }
 
 M.view = vmath.matrix4() -- current view matrix

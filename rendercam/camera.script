@@ -4,6 +4,7 @@
 -- 1. It holds the properties so the user can set them in the editor.
 -- 2. It updates the camera's position and rotation with the rendercam module.
 
+local PERLIN = require "libs.perlin"
 local rendercam = require "rendercam.rendercam"
 
 go.property("active", true)
@@ -124,6 +125,7 @@ function init(self)
 		recoils = {},
 		follows = {},
 		rotations = {},
+		perlin_seeds = {math.random(),math.random(),math.random()},
 		following = false
 	}
 	rendercam.camera_init(self.id, self.data)
@@ -192,10 +194,12 @@ function on_message(self, message_id, message, sender)
 		--Camera Rotation
 		if self.data.rotations[1] then
 			if self.dt ~= 0 then
+				self.dt = self.dt
 				local rotation = self.data.rotations[1]
-				local up = rotation.value.x  * rotation.shake * (math.random()*2-1)
-				local right =rotation.value.y * rotation.shake * (math.random()*2-1)
-				local around = rotation.value.z * rotation.shake * (math.random()*2-1)
+				local time = os.clock()
+				local up = rotation.value.x  * rotation.shake * (PERLIN.noise(time*20,0,self.data.perlin_seeds[1])*2-1)
+				local right =rotation.value.y * rotation.shake * (PERLIN.noise(time*20,0,self.data.perlin_seeds[2])*2 -1)
+				local around = rotation.value.z * rotation.shake * (PERLIN.noise(time*20,0,self.data.perlin_seeds[3])*2-1)
 				rotation.t = rotation.t - self.dt
 				if rotation.t <= 0 then table.remove(self.data.rotations, 1) end
 
