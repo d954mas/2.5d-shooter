@@ -34,7 +34,7 @@ telescope.make_assertion(
 )
 
 telescope.make_assertion(
-	"equal",
+	"equal_all",
 	function(_, ...) return telescope.assertion_message_prefix .. "all values to be equal (using the equality operator)" end,
 	function(...) return check.equal(...) end
 )
@@ -105,12 +105,12 @@ function M.run(options)
 		os.exit(0)
 	end)
 	M.co = co
-	M.continue()
+	M.continue(0)
 end
 
-function M.continue()
+function M.continue(dt)
 	assert(M.co)
-	local ok, message = coroutine.resume(M.co)
+	local ok, message = coroutine.resume(M.co,dt)
 	if not ok then
 		print("Something went wrong while running tests" ..  message)
 		os.exit(1)
