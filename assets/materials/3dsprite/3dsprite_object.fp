@@ -6,7 +6,7 @@ uniform mediump vec4 fog_color;
 uniform mediump vec4 object_position;
 uniform mediump vec4 light_map;
 uniform mediump vec4 fog; //x start distance y end dist.
-
+uniform lowp vec4 flash;
 //Same as 3d sprite. But use object position. Used for sprites that can be in two cells
 void main()
 {    
@@ -21,5 +21,6 @@ void main()
     vec3 total_color  = (1.0-f) * fog_color.rgb +  f * color.rgb;
     total_color = mix(vec3(0.0),total_color, f);
     
-    gl_FragColor = vec4(total_color,spriteColor.a);
+    gl_FragColor.rgb = (vec3(1.0) * flash.x + total_color.rgb * (1.0 - flash.x))*spriteColor.a;
+    gl_FragColor.a = spriteColor.a;
 }

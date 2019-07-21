@@ -4,6 +4,11 @@ local WeaponPrototypes = require "world.weapons.weapon_prototypes"
 local Weapon = require "world.weapons.weapon_base"
 local TAG = "ENTITIES"
 
+---@class FlashInfo
+---@field current_time number
+---@field total_time number
+
+
 
 ---@class DamageInfo
 ---@field source_e Entity
@@ -63,6 +68,7 @@ local TAG = "ENTITIES"
 ---@field ammo table
 ---@field hp number
 ---@field pickuped boolean pickup already get. Need because can have multiple responses
+---@field flash_info FlashInfo flash sprite when take damage
 
 local HASH_SPRITE = hash("sprite")
 local OBJECT_HASHES = {
@@ -331,6 +337,16 @@ function Entities.create_hit_info(source_e,target_e,weapon_prototype,raycast)
 	}
 	return e
 end
+
+function Entities.create_flash_info(total_time,entity)
+	if not entity.flash_info then
+		entity.flash_info = {}
+		Entities.game_controller.level.ecs_world:add_entity(entity)
+	end
+	entity.flash_info.total_time = total_time
+	entity.flash_info.current_time = 0
+end
+
 ---@return Entity
 function Entities.create(name,...)
 	assert(name)

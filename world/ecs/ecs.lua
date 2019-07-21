@@ -31,6 +31,7 @@ function EcsWorld:_init_systems()
 
 	self.ecs:addSystem(SYSTEMS.DamageSystem)
 	self.ecs:addSystem(SYSTEMS.ObjectHitSystem)
+	self.ecs:addSystem(SYSTEMS.FlashSystem)
 
 
 	self.ecs:addSystem(SYSTEMS.UpdateGoSystem)

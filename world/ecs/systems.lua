@@ -20,6 +20,7 @@ function M.load()
 	M.RotationGlobalSystem = require "world.ecs.systems.rotation_global_system"
 	M.DamageSystem = require "world.ecs.systems.damage_system"
 	M.ObjectHitSystem = require "world.ecs.systems.object_hit_system"
+	M.FlashSystem = require "world.ecs.systems.flash_system"
 	M.CollisionDamageRotateSystem = require "world.ecs.systems.collision_damage_rotate_system"
 
 	M.DrawObjectsSystem = require "world.ecs.systems.draw_objects_system"
