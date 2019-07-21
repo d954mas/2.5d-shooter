@@ -125,7 +125,7 @@ function init(self)
 		recoils = {},
 		follows = {},
 		rotations = {},
-		perlin_seeds = {math.random(),math.random(),math.random()},
+		perlin_seeds = {math.random(256),math.random(256),math.random(256)},
 		following = false
 	}
 	rendercam.camera_init(self.id, self.data)
@@ -197,11 +197,13 @@ function on_message(self, message_id, message, sender)
 				self.dt = self.dt
 				local rotation = self.data.rotations[1]
 				local time = os.clock()
-				local up = rotation.value.x  * rotation.shake * (PERLIN.noise(time*20,0,self.data.perlin_seeds[1])*2-1)
-				local right =rotation.value.y * rotation.shake * (PERLIN.noise(time*20,0,self.data.perlin_seeds[2])*2 -1)
-				local around = rotation.value.z * rotation.shake * (PERLIN.noise(time*20,0,self.data.perlin_seeds[3])*2-1)
-				rotation.t = rotation.t - self.dt
-				if rotation.t <= 0 then table.remove(self.data.rotations, 1) end
+				local shake = rotation.trauma * rotation.trauma
+				local up = rotation.value.x  * shake * (PERLIN.noise(time*7,0,self.data.perlin_seeds[1]))
+				local right =rotation.value.y * shake * (PERLIN.noise(time*7,0,self.data.perlin_seeds[2]))
+				local around = rotation.value.z * shake * (PERLIN.noise(time*7,0,self.data.perlin_seeds[3]))
+
+				rotation.trauma = rotation.trauma - rotation.speed * self.dt
+				if rotation.trauma <= 0 then table.remove(self.data.rotations, 1) end
 
 				local rot_x = vmath.quat_rotation_x(up)
 				local rot_y = vmath.quat_rotation_y(right)

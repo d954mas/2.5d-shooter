@@ -69,7 +69,7 @@ function M:dispose()
 end
 
 function M:player_receive_damage()
-	RENDER_CAM.rotation(vmath.vector3(0.5,1,0.25),0.3,0.035)
+	RENDER_CAM.rotation(vmath.vector3(0.05,0.1,0.025)*10,0.5,0.8)
 end
 
 --region Utils

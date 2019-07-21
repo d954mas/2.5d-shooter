@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/sounds.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/sounds.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rendercam/camera.script" beforeDir="false" afterPath="$PROJECT_DIR$/rendercam/camera.script" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rendercam/rendercam.lua" beforeDir="false" afterPath="$PROJECT_DIR$/rendercam/rendercam.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/gui/debug/debug.gui_script" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/gui/debug/debug.gui_script" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/gui/minimap/minimap.gui_script" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/gui/minimap/minimap.gui_script" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenes/game/model/game_controller.lua" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/model/game_controller.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/systems/collision_damage_rotate_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/collision_damage_rotate_system.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/systems/damage_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/damage_system.lua" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rendercam/camera.script">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="192" column="38" lean-forward="true" selection-start-line="192" selection-start-column="38" selection-end-line="192" selection-end-column="38" />
+            <state relative-caret-position="211">
+              <caret line="128" column="25" lean-forward="true" selection-start-line="128" selection-start-column="25" selection-end-line="128" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -56,10 +53,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>velocity</find>
-      <find>movement_velocity</find>
-      <find>ai</find>
-      <find>input_toggle_1</find>
       <find>camera_bob_speed</find>
       <find>updateS</find>
       <find>equa</find>
@@ -86,6 +79,10 @@
       <find>calcul</find>
       <find>player_receive_damage</find>
       <find>se</find>
+      <find>time</find>
+      <find>rotations</find>
+      <find>trauma</find>
+      <find>perlin_seeds</find>
     </findStrings>
     <replaceStrings>
       <replace>cells</replace>
@@ -134,7 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/scenes/modal/game_over/game_over.gui_script" />
         <option value="$PROJECT_DIR$/scenes/modal/game_over/game_over_modal.lua" />
         <option value="$PROJECT_DIR$/libs/sm/scene_manager.lua" />
         <option value="$PROJECT_DIR$/world/weapons/weapon_prototypes.lua" />
@@ -182,8 +178,9 @@
         <option value="$PROJECT_DIR$/scenes/game/gui/debug/debug.gui_script" />
         <option value="$PROJECT_DIR$/scenes/game/gui/minimap/minimap.gui_script" />
         <option value="$PROJECT_DIR$/world/ecs/systems/damage_system.lua" />
-        <option value="$PROJECT_DIR$/scenes/game/model/game_controller.lua" />
+        <option value="$PROJECT_DIR$/libs/perlin.lua" />
         <option value="$PROJECT_DIR$/rendercam/rendercam.lua" />
+        <option value="$PROJECT_DIR$/scenes/game/model/game_controller.lua" />
         <option value="$PROJECT_DIR$/rendercam/camera.script" />
       </list>
     </option>
@@ -218,20 +215,7 @@
             <path>
               <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
               <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="materials" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="materials" type="462c0819:PsiDirectoryNode" />
-              <item name="3dsprite" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
@@ -380,12 +364,12 @@
       <workItem from="1563479307515" duration="3754000" />
       <workItem from="1563567579668" duration="4611000" />
       <workItem from="1563613619236" duration="24009000" />
-      <workItem from="1563701505654" duration="6976000" />
+      <workItem from="1563701505654" duration="13284000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="391494000" />
+    <option name="totallyTimeSpent" value="397802000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -416,10 +400,10 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4983028" weight="0.32112068" />
       <window_info anchor="bottom" id="LuaCheck" order="7" sideWeight="0.49307775" weight="0.33543637" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.46645367" visible="true" weight="0.33017877" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.46538872" visible="true" weight="0.33017877" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.471246" weight="0.17665616" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5335463" side_tool="true" visible="true" weight="0.33017877" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.47018105" weight="0.17665616" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5346113" side_tool="true" visible="true" weight="0.33017877" />
       <window_info anchor="bottom" id="TypeScript" order="13" sideWeight="0.49946752" weight="0.32912722" />
       <window_info anchor="bottom" id="Messages" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -568,38 +552,15 @@
           <line>9</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="lua-line">
+          <url>file://$PROJECT_DIR$/scenes/game/model/game_controller.lua</url>
+          <line>84</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/world/states_base.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/include/map.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/model/levels.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/levels/lua/test_parser_objects.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="1815" column="25" lean-forward="true" selection-start-line="1815" selection-start-column="25" selection-end-line="1815" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/levels/result/test_parser_objects.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -888,24 +849,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/model/game_controller.lua">
+    <entry file="jar://$USER_HOME$/development/Defold/api1_2_151.zip!/api/math.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+        <state relative-caret-position="286">
+          <caret line="109" column="14" selection-start-line="109" selection-start-column="14" selection-end-line="109" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/ecs/systems/update_camera_system.lua">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$USER_HOME$/development/Defold/api1_2_151.zip!/api/os.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/perlin.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="61" column="19" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rendercam/rendercam.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="219" column="18" selection-start-line="219" selection-start-column="16" selection-end-line="219" selection-end-column="18" />
+        <state relative-caret-position="212">
+          <caret line="207" column="11" selection-start-line="207" selection-start-column="11" selection-end-line="207" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/game/model/game_controller.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="75" column="24" lean-forward="true" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rendercam/camera.script">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="192" column="38" lean-forward="true" selection-start-line="192" selection-start-column="38" selection-end-line="192" selection-end-column="38" />
+        <state relative-caret-position="211">
+          <caret line="128" column="25" lean-forward="true" selection-start-line="128" selection-start-column="25" selection-end-line="128" selection-end-column="25" />
         </state>
       </provider>
     </entry>

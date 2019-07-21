@@ -205,9 +205,9 @@ end
 
 --use trauma value https://www.youtube.com/watch?v=tu-Qe66AvtY
 ---@param max_rotations vector3 x - up/down y - left/right z -
-function M.rotation(max_rotations,dur,shake,cam_id)
+function M.rotation(max_rotations,trauma,speed,cam_id)
 	local cam = cam_id and cameras[cam_id] or curCam
-	table.insert(cam.rotations, { value =assert(max_rotations), dur = assert(dur), t = assert(dur), shake = assert(shake) })
+	cam.rotations[1] = { value =assert(max_rotations), trauma = math.min(math.max(assert(trauma),0),1), speed = assert(speed) }
 end
 
 function M.stop_shaking(cam_id)
