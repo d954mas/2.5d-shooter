@@ -23,7 +23,7 @@ local fallback_cam = {
 	abs_farZ = 1, lpos = vmath.vector3(), wpos = vmath.vector3(), wupVec = vmath.vector3(0, 1, 0),
 	wforwardVec = vmath.vector3(0, 0, -1), lupVec = vmath.vector3(0, 1, 0),
 	lforwardVec = vmath.vector3(0, 0, -1), lrightVec = vmath.vector3(1, 0, 0),
-	following = false, follows = {}, recoils = {}, shakes = {},
+	following = false, follows = {}, recoils = {}, shakes = {},rotations = {}
 }
 
 M.view = vmath.matrix4() -- current view matrix
@@ -200,10 +200,18 @@ function M.recoil(vec, dur, cam_id)
 	table.insert(cam.recoils, { vec = vec, dur = dur, t = dur })
 end
 
+--use trauma value https://www.youtube.com/watch?v=tu-Qe66AvtY
+---@param max_rotations vector3 x - up/down y - left/right z -
+function M.rotation(max_rotations,dur,shake,cam_id)
+	local cam = cam_id and cameras[cam_id] or curCam
+	table.insert(cam.rotations, { value =assert(max_rotations), dur = assert(dur), t = assert(dur), shake = assert(shake) })
+end
+
 function M.stop_shaking(cam_id)
 	local cam = cam_id and cameras[cam_id] or curCam
 	cam.shakes = {}
 	cam.recoils = {}
+	cam.rotations = {}
 end
 
 function M.follow(target_id, allowMultiFollow, cam_id)

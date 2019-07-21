@@ -14,8 +14,9 @@ end
 function Script:update(dt)
 	self.minimap:update()
 	if GAME_CONTROLLER.level then
-		gui.set_text(self.vh.lbl_player_pos, string.format("Pos:%.2f %.2f",GAME_CONTROLLER.level.player.position.x,GAME_CONTROLLER.level.player.position.y))
-		gui.set_rotation(self.vh.player_pointer_node, vmath.quat_rotation_z(-GAME_CONTROLLER.level.player.angle.x))
+		local player = GAME_CONTROLLER.level.player
+		gui.set_text(self.vh.lbl_player_pos, string.format("Pos:%.2f %.2f",player.position.x,player.position.y))
+		gui.set_rotation(self.vh.player_pointer_node, vmath.quat_rotation_z(-player.angle.x))
 	end
 end
 

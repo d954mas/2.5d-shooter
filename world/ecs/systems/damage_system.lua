@@ -31,6 +31,8 @@ function System:process(e, dt)
 			if info.target_e.hp == 0 then
 				CURSOR_HELPER.unlock_cursor()
 				SM:show("GameOverModal")
+			else
+				self.world.game_controller:player_receive_damage()
 			end
 		end
 	end

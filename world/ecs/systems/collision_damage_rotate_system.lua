@@ -1,8 +1,6 @@
 local ECS = require 'libs.ecs'
 
 --collision should always look at player
-local HASH_COLLISION = hash("collision_damage")
-
 ---@class CollisionDamageRotateSystem:ECSSystem
 local System = ECS.processingSystem()
 System.filter = ECS.requireAll("url_collision_damage")

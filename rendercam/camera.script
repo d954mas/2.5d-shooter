@@ -123,6 +123,7 @@ function init(self)
 		shakes = {},
 		recoils = {},
 		follows = {},
+		rotations = {},
 		following = false
 	}
 	rendercam.camera_init(self.id, self.data)
@@ -186,9 +187,31 @@ function on_message(self, message_id, message, sender)
 			go.set_position(self.data.lpos)
 		end
 
+		self.wrot = go.get_world_rotation()
+
+		--Camera Rotation
+		if self.data.rotations[1] then
+			if self.dt ~= 0 then
+				local rotation = self.data.rotations[1]
+				local up = rotation.value.x  * rotation.shake * (math.random()*2-1)
+				local right =rotation.value.y * rotation.shake * (math.random()*2-1)
+				local around = rotation.value.z * rotation.shake * (math.random()*2-1)
+				rotation.t = rotation.t - self.dt
+				if rotation.t <= 0 then table.remove(self.data.rotations, 1) end
+
+				local rot_x = vmath.quat_rotation_x(up)
+				local rot_y = vmath.quat_rotation_y(right)
+				local rot_z = vmath.quat_rotation_z(around)
+				self.prev_rotation = rot_x * rot_y * rot_z
+			end
+
+			self.wrot = self.wrot * self.prev_rotation
+
+		end
+
 		-- Save world transform data for calculating view matrix
 		self.data.wpos = go.get_world_position()
-		self.wrot = go.get_world_rotation()
+
 		self.data.wforwardVec = vmath.rotate(self.wrot, FORWARDVEC)
 		self.data.wupVec = vmath.rotate(self.wrot, UPVEC)
 		-- Absolute/world near and far positions for screen-to-world transform

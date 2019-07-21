@@ -68,6 +68,10 @@ function M:dispose()
 	self.subscriptions = nil
 end
 
+function M:player_receive_damage()
+	RENDER_CAM.rotation(vmath.vector3(0.5,1,0.25),0.3,0.035)
+end
+
 --region Utils
 --TODO CAN LOOP INFINITY
 --TODO FIX PERFORMANCE
