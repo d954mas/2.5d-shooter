@@ -2,9 +2,10 @@ local COMMON = require "libs.common"
 local StatesBase = require "world.states_base"
 local WEAPON_PROTOTYPES = require "world.weapons.weapon_prototypes"
 local SOUNDS = require "libs.sounds"
-local EMPTY_SHOT_DELAY = 0.3 --try shot without ammo
 ---@type ENTITIES
 local ENTITIES
+
+local PLAYER_WEAPON_URL = msg.url("game:/weapon#sprite")
 
 ---@class WeaponStates
 local WEAPON_STATES = {
@@ -45,8 +46,8 @@ end
 function Weapon:update(dt)
 	StatesBase.update(self,dt)
 	if self.co then
-		COMMON.coroutine_resume(self.co,dt)
 		if coroutine.status(self.co) == "dead" then self.co = nil end
+		if self.co then COMMON.coroutine_resume(self.co,dt) end
 	end
 end
 
@@ -86,29 +87,36 @@ function Weapon:get_direction()
 	end
 end
 
+---@param anim WeaponAnimation
+function Weapon:play_animation(anim)
+	if self.ptototype.player_weapon and anim.animation then
+		sprite.play_flipbook(PLAYER_WEAPON_URL,anim.animation)
+	end
+	COMMON.coroutine_wait(anim.duration)
+
+end
+
 function Weapon:shoot_co()
 	self:change_state(WEAPON_STATES.SHOOTING)
+	local p = self.ptototype
 	if not self:have_ammo() then
 		if self.ptototype.sounds.empty then SOUNDS:play_sound(self.ptototype.sounds.empty) end
-		COMMON.coroutine_wait(EMPTY_SHOT_DELAY)
+		self:play_animation(p.animations.shoot_empty)
 		self:change_state(WEAPON_STATES.EQUIPPED)
 		return
 	end
 
-	if self.ptototype.sounds.shoot then
-		SOUNDS:play_sound(self.ptototype.sounds.shoot)
-	end
+	self:play_animation(p.animations.shoot_first_delay)
+	self:play_animation(p.animations.shoot_prepare)
+	if self.ptototype.sounds.shoot then SOUNDS:play_sound(self.ptototype.sounds.shoot) end
 	if self.ptototype.ammo_type ~= WEAPON_PROTOTYPES.AMMO_TYPES.MELEE then
 		self.e.ammo[self.ptototype.ammo_type] = self.e.ammo[self.ptototype.ammo_type] - 1
 	end
-	--TODO FIX HARDCODE
-	if self.ptototype.player_weapon then
-		sprite.play_flipbook("/weapon#sprite",hash("pistol_shoot"))
-	end
-
-	COMMON.coroutine_wait(self.ptototype.first_shot_delay)
-
 	if self.ptototype.attack_type == WEAPON_PROTOTYPES.ATTACK_TYPES.RAYCASTING then self:_raycast() end
+	self:play_animation(p.animations.shoot)
+	self:play_animation(p.animations.shoot_after)
+
+
 	self:change_state(WEAPON_STATES.EQUIPPED)
 end
 
