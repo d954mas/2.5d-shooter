@@ -7,6 +7,9 @@ images {
 images {
   image: "/assets/images/weapons/pistol/pistol_1.png"
 }
+images {
+  image: "/assets/images/weapons/chaingun/chaingun_1.png"
+}
 animations {
   id: "pistol_shoot"
   images {
@@ -26,6 +29,32 @@ animations {
   }
   playback: PLAYBACK_ONCE_FORWARD
   fps: 10
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "chaingun_prepare"
+  images {
+    image: "/assets/images/weapons/chaingun/chaingun_2.png"
+  }
+  playback: PLAYBACK_ONCE_FORWARD
+  fps: 10
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "chaingun_shoot"
+  images {
+    image: "/assets/images/weapons/chaingun/chaingun_2.png"
+  }
+  images {
+    image: "/assets/images/weapons/chaingun/chaingun_3.png"
+  }
+  images {
+    image: "/assets/images/weapons/chaingun/chaingun_4.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 20
   flip_horizontal: 0
   flip_vertical: 0
 }

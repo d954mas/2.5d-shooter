@@ -9,6 +9,7 @@ M.ATTACK_TYPES = COMMON.read_only{
 
 M.AMMO_TYPES = COMMON.read_only{
 	PISTOL = "PISTOL",
+	CHAINGUN = "CHAINGUN",
 	MELEE = "MELEE" -- do not need ammo
 }
 
@@ -107,11 +108,19 @@ end
 M.prototypes = COMMON.read_only_recursive{
 	PISTOL = { attack_type = M.ATTACK_TYPES.RAYCASTING, ammo_type = M.AMMO_TYPES.PISTOL, target = M.TARGET.ENEMIES,
 			   raycast_max_dist = 10, reload_time = 0, input_type = M.INPUT_TYPE.ON_PRESSED, player_weapon = true,
-			   animations = { idle = anim(0, "pistol_12"), shoot_prepare = anim(0.1), shoot = anim(0.4,"pistol_shoot"),
+			   animations = { idle = anim(0, "pistol_1"), shoot_prepare = anim(0.1), shoot = anim(0.4,"pistol_shoot"),
 							  shoot_after = anim(0), shoot_first_delay = anim(0),shoot_empty = anim(0.3) },
 			   tag = "PISTOL",
 			   sounds = { shoot = SOUNDS.sounds.game.weapon_pistol_shoot, empty = SOUNDS.sounds.game.weapon_pistol_empty },
 			   damage = 25
+	},
+	CHAINGUN = { attack_type = M.ATTACK_TYPES.RAYCASTING, ammo_type = M.AMMO_TYPES.CHAINGUN, target = M.TARGET.ENEMIES,
+			   raycast_max_dist = 10, reload_time = 0, input_type = M.INPUT_TYPE.WHILE_PRESSED, player_weapon = true,
+			   animations = { idle = anim(0, "chaingun_1"), shoot_prepare = anim(0.1,"chaingun_prepare"), shoot = anim(0.2,"chaingun_shoot"),
+							  shoot_after = anim(0), shoot_first_delay = anim(0),shoot_empty = anim(0.3) },
+			   tag = "CHAINGUN",
+			   sounds = { shoot = SOUNDS.sounds.game.weapon_pistol_shoot, empty = SOUNDS.sounds.game.weapon_pistol_empty },
+			   damage = 5
 	},
 	ENEMY_MELEE = {attack_type = M.ATTACK_TYPES.RAYCASTING,ammo_type = M.AMMO_TYPES.MELEE,target = M.TARGET.PLAYER,
 				   raycast_max_dist = 1, reload_time = 0, input_type = M.INPUT_TYPE.ON_PRESSED, player_weapon = false,

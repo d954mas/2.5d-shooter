@@ -191,13 +191,16 @@ function Entities.create_player(pos)
 	e.camera_bob_offset = 0
 	e.hp = 100
 	e.ammo = {
-		[WeaponPrototypes.AMMO_TYPES.PISTOL] = 20
+		[WeaponPrototypes.AMMO_TYPES.PISTOL] = 20,
+		[WeaponPrototypes.AMMO_TYPES.CHAINGUN] = 20000
 	}
 	e.weapons = {
-		Weapon(WeaponPrototypes.prototypes.PISTOL,e,Entities.game_controller)
+		Weapon(WeaponPrototypes.prototypes.PISTOL,e,Entities.game_controller),
+		Weapon(WeaponPrototypes.prototypes.CHAINGUN,e,Entities.game_controller)
 	}
-	e.weapons[1]:equip()
-	e.weapon_current_idx = 1
+	--e.weapons[1]:equip()
+	e.weapons[2]:equip()
+	e.weapon_current_idx = 2
 	e.url_collision_damage =  msg.url("/player/collision_damage")
 	return e
 end
