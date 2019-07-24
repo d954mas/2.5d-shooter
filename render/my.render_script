@@ -187,11 +187,13 @@ end
 function Render:draw_3d()
     render.enable_state(render.STATE_DEPTH_TEST)
     render.set_depth_mask(true)
+    render.set_depth_func(render.COMPARE_FUNC_LEQUAL)
     render.enable_texture(1, self.targets.light_map, render.BUFFER_COLOR_BIT)
     render.draw(self.predicates.model)
-    render.draw(self.predicates.sprite_3d,self.constants_buffers.light_map)
+
     render.draw(self.predicates.sprite_3d_object,self.constants_buffers.light_map)
     render.draw(self.predicates.sprite_3d_enemy,self.constants_buffers.light_map)
+    render.draw(self.predicates.sprite_3d,self.constants_buffers.light_map)
      render.draw_debug3d()
     render.disable_state(render.STATE_DEPTH_TEST)
 end

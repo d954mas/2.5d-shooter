@@ -39,6 +39,7 @@ function EcsWorld:_init_systems()
 	self.ecs:addSystem(SYSTEMS.CameraSystem)
 
 	self.ecs:addSystem(SYSTEMS.UpdateObjectColorSystem)
+	self.ecs:addSystem(SYSTEMS.AutoDestroySystem)
 
 
 end

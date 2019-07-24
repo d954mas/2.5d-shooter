@@ -8,8 +8,6 @@ local TAG = "ENTITIES"
 ---@field current_time number
 ---@field total_time number
 
-
-
 ---@class DamageInfo
 ---@field source_e Entity
 ---@field target_e Entity
@@ -69,6 +67,8 @@ local TAG = "ENTITIES"
 ---@field hp number
 ---@field pickuped boolean pickup already get. Need because can have multiple responses
 ---@field flash_info FlashInfo flash sprite when take damage
+---@field auto_destroy boolean if true will be destroyed
+---@field auto_destroy_delay number when auto_destroy false and delay nil or 0 then destroy entity
 
 local HASH_SPRITE = hash("sprite")
 local OBJECT_HASHES = {

@@ -363,6 +363,8 @@ the Software, and to permit persons to whom the Software is furnished to do so,
 
 ---@class ECSSystem
 ---@field world ECSWorld
+---@field active boolean
+---@field interval number
     -- Creates a new Processing System or Processing System class. Processing
     -- Systems process each entity individual, and are usually what is needed.
     -- Processing Systems have three extra callbacks besides those inheritted from

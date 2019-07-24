@@ -58,6 +58,58 @@ animations {
   flip_horizontal: 0
   flip_vertical: 0
 }
+animations {
+  id: "blood_particles"
+  images {
+    image: "/assets/images/effects/blood_particle/tile000.png"
+  }
+  images {
+    image: "/assets/images/effects/blood_particle/tile001.png"
+  }
+  images {
+    image: "/assets/images/effects/blood_particle/tile002.png"
+  }
+  images {
+    image: "/assets/images/effects/blood_particle/tile003.png"
+  }
+  images {
+    image: "/assets/images/effects/blood_particle/tile004.png"
+  }
+  images {
+    image: "/assets/images/effects/blood_particle/tile005.png"
+  }
+  images {
+    image: "/assets/images/effects/blood_particle/tile006.png"
+  }
+  images {
+    image: "/assets/images/effects/blood_particle/tile007.png"
+  }
+  images {
+    image: "/assets/images/effects/blood_particle/tile008.png"
+  }
+  images {
+    image: "/assets/images/effects/blood_particle/tile009.png"
+  }
+  images {
+    image: "/assets/images/effects/blood_particle/tile010.png"
+  }
+  images {
+    image: "/assets/images/effects/blood_particle/tile011.png"
+  }
+  images {
+    image: "/assets/images/effects/blood_particle/tile012.png"
+  }
+  images {
+    image: "/assets/images/effects/blood_particle/tile013.png"
+  }
+  images {
+    image: "/assets/images/effects/blood_particle/tile014.png"
+  }
+  playback: PLAYBACK_ONCE_FORWARD
+  fps: 20
+  flip_horizontal: 0
+  flip_vertical: 0
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0
