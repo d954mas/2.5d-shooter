@@ -1,5 +1,5 @@
 [project]
-title = DTFJam
+title = 2.5D Shooter
 version = 0.1.0
 dependencies = https://github.com/subsoap/defos/archive/master.zip,https://github.com/dapetcu21/defold-fmod/archive/v1.0.5.zip
 custom_resources = assets/levels/result/
