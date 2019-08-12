@@ -37,7 +37,7 @@ end
 
 function Weapon:on_pressed()
 	self.btn_pressed = true
-	if self.prototype.input_type == WEAPON_PROTOTYPES.INPUT_TYPE.ON_PRESSED  or self.prototype.input_type == WEAPON_PROTOTYPES.INPUT_TYPE.WHILE_PRESSED then
+	if self.prototype.input_type == WEAPON_PROTOTYPES.INPUT_TYPE.ON_PRESSED or self.prototype.input_type == WEAPON_PROTOTYPES.INPUT_TYPE.WHILE_PRESSED then
 		self:shoot()
 	end
 end

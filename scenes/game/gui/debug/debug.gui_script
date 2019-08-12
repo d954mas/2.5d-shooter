@@ -16,8 +16,7 @@ end
 
 function Script:update(dt)
 	gui.set_text(self.vh.lbl_enemies,"Enemies:" .. #ENTITIES.enemies )
-	gui.set_text(self.vh.lbl_player_velocity,"Type: Vel:" .. string.format("%s %.2f %.2f",
-																		   toggle_1 and 2 or 1,
+	gui.set_text(self.vh.lbl_player_velocity,"Vel:" .. string.format("%.2f %.2f",
 																		   GAME_CONTROLLER.level.player.movement_velocity.x,
 																		   GAME_CONTROLLER.level.player.movement_velocity.y))
 end

@@ -45,7 +45,6 @@ function Script:input_toggle_physics()
 end
 
 function Script:input_toggle_1()
-    toggle_1 = not toggle_1
     return true
 end
 
