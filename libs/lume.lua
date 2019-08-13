@@ -404,6 +404,11 @@ function lume.match(t, fn)
   return nil
 end
 
+function lume.countp(t)
+  local count = 0
+  for _,_ in pairs(t) do count = count + 1 end
+  return count
+end
 
 function lume.count(t, fn)
   local count = 0

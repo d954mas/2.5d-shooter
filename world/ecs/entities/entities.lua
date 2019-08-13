@@ -22,9 +22,8 @@ local TAG = "ENTITIES"
 
 ---@class Entity
 ---@field tag string tag used for help when debug
----@field player boolean true if player entity
+---@field player boolean true if it player entity
 ---@field enemy boolean
----@field spawner boolean
 ---@field position vector3
 ---@field movement_velocity vector3
 ---@field movement_direction vector3
@@ -133,6 +132,7 @@ function Entities.on_entity_added(e)
 	if e.url_go then
 		Entities.url_to_entity[url_to_key(e.url_go)] = e
 		Entities.entity_to_url[e] = e.url_go
+
 	end
 	if e.url_collision_damage then
 		Entities.url_to_entity[url_to_key(e.url_collision_damage)] = e
@@ -253,7 +253,6 @@ end
 --region spawners
 function Entities.create_spawner_enemy(object)
 	local e = {}
-	e.spawner = true
 	e.ai = AI.SpawnerEnemy(e,Entities.game_controller,object)
 	return e
 end
@@ -306,7 +305,7 @@ end
 --region entities utils
 ---@return Entity
 function Entities.create_input(action_id,action)
-	return {input = true,input_action_id = action_id,input_action = action }
+	return {input = {action_id = action_id, action = action },auto_destroy = true}
 end
 
 ---@return Entity

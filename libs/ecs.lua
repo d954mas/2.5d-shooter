@@ -429,6 +429,13 @@ the Software, and to permit persons to whom the Software is furnished to do so,
 
 ---@class ECSWorld
 ---@field game_controller GameController
+---@field entitiesToRemove table
+---@field entitiesToChange table
+---@field systemsToAdd table
+---@field systemsToRemove table
+---@field entities table
+---@field systems table
+
 local World = {}
 function World:add(...)
 end

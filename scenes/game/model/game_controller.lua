@@ -4,6 +4,7 @@ local LEVELS = require "scenes.game.model.levels"
 local EVENTS = require "libs.events"
 local ENTITIES = require "world.ecs.entities.entities"
 local RENDER_CAM = require "rendercam.rendercam"
+local DEBUG_INFO = require "debug.debug_info"
 
 local CAMERA_RAYS = 512
 local CAMERA_MAX_DIST = 50
@@ -28,6 +29,7 @@ function M:initialize()
 		--called from render context
 		self:camera_update_fov()
 	end)
+	DEBUG_INFO.init(self)
 end
 
 --region camera
@@ -60,6 +62,7 @@ function M:update(dt) end
 
 function M:post_update(dt)
 	if self.level then self.level:update(dt) end
+	DEBUG_INFO.update(dt)
 end
 
 function M:dispose()
@@ -119,7 +122,6 @@ function M:spawn_pickups()
 end
 
 function M:on_resume()
-	self.level.ecs_world:add_entity(ENTITIES.create_input(COMMON.HASHES.INPUT_NEED_CHECK,{}))
 end
 
 function M:on_input(action_id,action)

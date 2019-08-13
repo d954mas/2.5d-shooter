@@ -44,7 +44,7 @@ key_trigger {
 }
 key_trigger {
   input: KEY_1
-  action: "toggle_1"
+  action: "toggle_debug_game_info_gui"
 }
 mouse_trigger {
   input: MOUSE_BUTTON_1

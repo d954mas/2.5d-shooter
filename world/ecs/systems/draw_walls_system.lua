@@ -1,4 +1,5 @@
 local ECS = require 'libs.ecs'
+local DEBUG_INFO = require "debug.debug_info"
 
 local FACTORY_EMPTY_URL = msg.url("game:/factories#factory_empty")
 local FACTORY_SPRITE_WALL_URL = msg.url("game:/factories#factory_sprite_wall")
@@ -95,6 +96,7 @@ function System:update(dt)
 			end
 		end
 	end
+	DEBUG_INFO.update_draw_walls_system(self)
 end
 
 
