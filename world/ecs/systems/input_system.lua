@@ -5,7 +5,7 @@ local TAG = "InputSystem"
 
 ---@class InputSystem:ECSSystem
 local System = ECS.processingSystem()
-System.filter = ECS.requireAll("input")
+System.filter = ECS.requireAll("input_info")
 
 function System:input_mouse_move()
 	local player = self.world.game_controller.level.player
@@ -48,7 +48,7 @@ end
 
 ---@param e Entity
 function System:process(e, dt)
-	self.input_handler:on_input(self,e.input.action_id,e.input.action)
+	self.input_handler:on_input(self,e.input_info.action_id,e.input_info.action)
 end
 function System:postProcess(dt)
 	self:update_player_direction()

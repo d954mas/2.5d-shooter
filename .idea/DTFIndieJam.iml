@@ -7,8 +7,10 @@
       <excludeFolder url="file://$MODULE_DIR$/.helpeditor" />
       <excludeFolder url="file://$MODULE_DIR$/.idea" />
       <excludeFolder url="file://$MODULE_DIR$/.internal" />
-      <excludeFolder url="file://$MODULE_DIR$/assets/levels" />
       <excludeFolder url="file://$MODULE_DIR$/assets/levels/lua" />
+      <excludeFolder url="file://$MODULE_DIR$/assets/levels/result" />
+      <excludeFolder url="file://$MODULE_DIR$/assets/levels/sources" />
+      <excludeFolder url="file://$MODULE_DIR$/assets/levels/tilesets" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
     </content>
     <orderEntry type="inheritedJdk" />

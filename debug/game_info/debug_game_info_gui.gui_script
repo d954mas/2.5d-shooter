@@ -8,7 +8,7 @@ function Script:bind_vh()
 		node_root = gui.get_node("root"),
 		lbl_entities = gui.get_node("lbl_entities"),
 		lbl_enemies = gui.get_node("lbl_enemies"),
-		lbl_walls = gui.get_node("lbl_walls"),
+		lbl_walls = gui.get_node("lbl_walls")
 	}
 end
 
@@ -27,8 +27,6 @@ function Script:update(dt)
 		gui.set_text(self.vh.lbl_entities,"Entities:" .. DEBUG_INFO.entities)
 		gui.set_text(self.vh.lbl_enemies,"Enemies:" .. DEBUG_INFO.enemies)
 		gui.set_text(self.vh.lbl_walls,string.format("Walls:%s (%s + %s)",DEBUG_INFO.walls_total,DEBUG_INFO.walls,DEBUG_INFO.walls_transparent))
-	--	gui.set_text(self.vh.lbl_cpu, "Cpu:" .. string.format("%.2f", profiler.get_cpu_usage()))
-	--	gui.set_text(self.vh.lbl_memory, "Mem:" .. string.format("%.2f Mb", profiler.get_memory_usage()/1024/1024))
 	end
 end
 

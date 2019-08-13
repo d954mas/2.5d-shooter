@@ -20,6 +20,22 @@ local TAG = "ENTITIES"
 ---@field raycast table|nil
 ---@field weapon_prototype WeaponPrototype
 
+---@class InputInfo
+---@field action_id hash
+---@field action table
+
+---@class PhysicsInfo
+---@field message_id hash
+---@field physics_message table
+---@field physics_source hash
+
+---@class CameraBobInfo
+---@field value number
+---@field speed number
+---@field height number
+---@field offset number
+---@field offset_weapon number
+
 ---@class Entity
 ---@field tag string tag used for help when debug
 ---@field player boolean true if it player entity
@@ -34,14 +50,9 @@ local TAG = "ENTITIES"
 ---@field url_collision_damage url collision always look at player
 ---@field url_go nil|url need update entity when changed or url_to_entity will be broken
 ---@field url_sprite url
----@field input boolean used for player input
----@field input_action_id hash used for player input
----@field input_action table used for player input
+---@field input_info InputInfo used for player input
 ---@field input_direction vector4 up down left right. Used for player input
----@field physics boolean
----@field physics_message_id hash
----@field physics_message table
----@field physics_source hash
+---@field physics_info PhysicsInfo
 ---@field physics_obstacles_correction vector3
 ---@field damage_info DamageInfo
 ---@field hit_info HitInfo
@@ -49,17 +60,13 @@ local TAG = "ENTITIES"
 ---@field rotation_global boolean for pickups they use one global angle
 ---@field culling boolean objects that need culling like walls
 ---@field culling_empty_go boolean only if use empty go. Object will be deleted when not visible.
----@field draw_always boolean that object draw always. Used for enemies because of animations
----@field dynamic_color boolean
----@field tile table need for draw objects
----@field drawing boolean this frame visible entities
----@field cell_data NativeCellData
+---For example pickups use go with collider. Sprite go will be destroyed if not visible
+---but collider will be on the scene
+---@field dynamic_color boolean update color by sprite.set_constant instead of position in shader
+---@field tile LevelDataTile need for draw objects
+---@field drawing boolean entity is visible in current frame.
 ---@field ai AI
----@field camera_bob number
----@field camera_bob_speed number
----@field camera_bob_height number
----@field camera_bob_offset number
----@field weapon_bob_offset number
+---@field camera_bob_info CameraBobInfo
 ---@field weapons Weapon[] map.key is number.For user 1-pistol,5-shotgun and etc.
 ---@field weapon_current_idx number
 ---@field ammo table
@@ -185,10 +192,13 @@ function Entities.create_player(pos)
 	e.movement_deaccel = 4
 	e.player = true
 	e.url_go =   msg.url("/player")
-	e.camera_bob = 0
-	e.camera_bob_height = 0.023
-	e.camera_bob_speed = 14
-	e.camera_bob_offset = 0
+	e.camera_bob_info = {
+		value = 0,
+		height = 0.023,
+		speed = 14,
+		offset = 0,
+		offset_weapon = 0,
+	}
 	e.hp = 100
 	e.ammo = {
 		[WeaponPrototypes.AMMO_TYPES.PISTOL] = 20,
@@ -305,16 +315,14 @@ end
 --region entities utils
 ---@return Entity
 function Entities.create_input(action_id,action)
-	return {input = {action_id = action_id, action = action },auto_destroy = true}
+	return {input_info = {action_id = action_id, action = action },auto_destroy = true}
 end
 
 ---@return Entity
 function Entities.create_physics(message_id,message,source)
 	local e = {}
-	e.physics = true
-	e.physics_message_id = assert(message_id)
-	e.physics_message = assert(message)
-	e.physics_source = assert(source)
+	e.physics_info = {message_id = assert(message_id),message = assert(message),source = assert(source)}
+	e.auto_destroy = true
 	return e
 end
 
