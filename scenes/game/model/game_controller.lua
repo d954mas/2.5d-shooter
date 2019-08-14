@@ -117,7 +117,7 @@ pickups_weights[ammo_pickup] = 2
 function M:spawn_pickups()
 	timer.delay(8,true,function()
 		local pickup = COMMON.LUME.weightedchoice(pickups_weights)
-		self.level.ecs_world.ecs:addEntity(ENTITIES.create_pickup(self:utils_get_random_spawn_position(),pickup))
+		self.level.ecs_world.ecs:addEntity(ENTITIES.create_pickup(self:utils_get_random_spawn_position(),pickup.tile_id))
 	end)
 end
 

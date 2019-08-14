@@ -20,6 +20,18 @@ cjson.decode_invalid_numbers(false)
 ---@field image string|hash
 ---@field scale number
 
+---@class LevelDataObject
+---@field tile_id number
+---@field properties table
+---@field x number
+---@field y number
+---@field cell_xf number
+---@field cell_yf number
+---@field cell_x number
+---@field cell_y number
+---@field cell_id number
+
+
 ---@class LevelDataCellObjects
 ---@field north table
 ---@field south table

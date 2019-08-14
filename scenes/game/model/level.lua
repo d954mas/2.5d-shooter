@@ -66,14 +66,14 @@ end
 
 function Level:create_draw_objects()
 	for _,object in ipairs(self.data.objects)do
-		local e = ENTITIES.create_object_from_tiled(object)
+		local e = ENTITIES.create_draw_object_from_tiled(object)
 		if e then self.ecs_world:add_entity(e) end
 	end
 end
 
 function Level:create_enemies()
 	for _, enemy in ipairs(self.data.enemies) do
-		self.ecs_world:add_entity(ENTITIES.create(enemy.properties.name,nil,enemy))
+		self.ecs_world:add_entity(ENTITIES.create_from_object(enemy.properties.name,enemy))
 	end
 end
 
@@ -91,7 +91,7 @@ end
 
 function Level:create_pickups()
 	for _, pickup in ipairs(self.data.pickups) do
-		self.ecs_world:add_entity(ENTITIES.create_pickup(nil,pickup))
+		self.ecs_world:add_entity(ENTITIES.create_pickup_from_object(pickup))
 	end
 end
 

@@ -97,7 +97,7 @@ Entities.enemies = {}
 ---@param url url key that used for mapping entity to url_go
 local function url_to_key(url) return url.path end
 
----@param ignore_warning boolean pickup can try get entity while go is already removed. Something with physics
+---@param ignore_warning boolean Used when trying to find entity when hit wall.
 function Entities.get_entity_for_url(url,ignore_warning)
 	local e =  Entities.url_to_entity[url_to_key(url)]
 	if not e and not ignore_warning then
@@ -112,6 +112,10 @@ function Entities.clear()
 	Entities.enemies = {}
 end
 
+---@param game_controller GameController
+function Entities.set_game_controller(game_controller) Entities.game_controller = assert(game_controller) end
+
+--region ecs callbacks
 ---@param e Entity
 function Entities.on_entity_removed(e)
 	if e.url_go then
@@ -137,7 +141,6 @@ function Entities.on_entity_added(e)
 	if e.url_go then
 		Entities.url_to_entity[url_to_key(e.url_go)] = e
 		Entities.entity_to_url[e] = e.url_go
-
 	end
 	if e.url_collision_damage then
 		Entities.url_to_entity[url_to_key(e.url_collision_damage)] = e
@@ -165,11 +168,8 @@ function Entities.on_entity_updated(e)
 		end
 	end
 end
+--endregion
 
----@param game_controller GameController
-function Entities.set_game_controller(game_controller)
-	Entities.game_controller = assert(game_controller)
-end
 
 --endregion
 
@@ -213,17 +213,8 @@ function Entities.create_player(pos)
 	return e
 end
 
----@return Entity
-function Entities.create_draw_object_base(pos)
-	local e = {}
-	e.position= assert(pos)
-	e.culling = true
-	e.dynamic_color = true
-	return e
-end
-
-
 --region enemies
+---@return Entity
 function Entities.create_enemy(position,factory)
 	assert(position)
 	assert(factory)
@@ -239,16 +230,23 @@ function Entities.create_enemy(position,factory)
 	local urls = collectionfactory.create(factory,vmath.vector3(e.position.x,0.5,-e.position.z),vmath.quat_rotation_z(0),nil)
 	e.url_go = msg.url(urls[OBJECT_HASHES.root])
 	e.url_sprite = msg.url(urls[OBJECT_HASHES.sprite])
+	e.url_collision_damage = msg.url(urls[OBJECT_HASHES.collision_damage])
 	e.url_sprite.fragment = HASH_SPRITE
 	e.rotation_look_at_player = true
 	e.dynamic_color = true
-	e.url_collision_damage = msg.url(urls[OBJECT_HASHES.collision_damage])
 	return e
 end
 
-function Entities.create_blob(pos,tile_object)
-	pos = pos or vmath.vector3(tile_object.cell_xf, tile_object.cell_yf,0)
-	local e = Entities.create_enemy(pos,FACTORY_ENEMY_BLOB_URL)
+---@param object LevelDataObject
+---@return Entity
+function Entities.create_blob_from_object(object)
+	assert(object)
+	return Entities.create_blob(vmath.vector3(object.cell_xf, object.cell_yf,0))
+end
+
+---@return Entity
+function Entities.create_blob(pos)
+	local e = Entities.create_enemy(assert(pos),FACTORY_ENEMY_BLOB_URL)
 	e.ai = AI.Blob(e,Entities.game_controller)
 	e.hp = 20
 	e.weapons = {Weapon(WeaponPrototypes.prototypes.ENEMY_MELEE,e,Entities.game_controller)}
@@ -256,53 +254,52 @@ function Entities.create_blob(pos,tile_object)
 	e.weapon_current_idx = 1
 	return e
 end
---endregion
 
---region spawners
+---@return Entity
 function Entities.create_spawner_enemy(object)
 	local e = {}
 	e.ai = AI.SpawnerEnemy(e,Entities.game_controller,object)
 	return e
 end
-
 --endregion
 
-
+--region draw object
 ---@return Entity
-function Entities.create_floor(pos)
-	return Entities.create_draw_object_base(pos)
+function Entities.create_draw_object_base(pos)
+	local e = {}
+	e.position= assert(pos)
+	e.culling = true
+	e.dynamic_color = true
+	return e
 end
 
-
+---@param object LevelDataObject
 ---@return Entity
-function Entities.create_object_from_tiled(object)
+function Entities.create_draw_object_from_tiled(object)
 	if object.properties.culling then
 		local e = Entities.create_draw_object_base(vmath.vector3(object.cell_xf, object.cell_yf, 0))
 		e.tile = Entities.game_controller.level:get_tile(object.tile_id)
-		if object.properties.look_at_player then
-			e.rotation_look_at_player = true
-		end
-		if object.properties.global_rotation then
-			e.rotation_global = true
-		end
+		if object.properties.look_at_player then e.rotation_look_at_player = true end
+		if object.properties.global_rotation then e.rotation_global = true end
 		return e
 	end
 end
+--endregion
 
-function Entities.create_pickup(pos,tile_object)
-	pos = pos or vmath.vector3(tile_object.cell_xf, tile_object.cell_yf,0)
+---@param object LevelDataObject
+------@return Entity
+function Entities.create_pickup_from_object(object)
+	return Entities.create_pickup(vmath.vector3(object.cell_xf, object.cell_yf,0),object.tile_id)
+end
+---@return Entity
+function Entities.create_pickup(pos,tile_id)
 	local e = {}
-	e.tile = Entities.game_controller.level:get_tile(tile_object.tile_id)
+	e.tile = Entities.game_controller.level:get_tile(tile_id)
 	e.position= pos
 	local url = factory.create(FACTORY_PICKUP_URL,vmath.vector3(e.position.x,0.5,e.position.y),vmath.quat_rotation_z(0),nil)
 	e.url_go = msg.url(url)
-	if tile_object.properties.look_at_player then
-		e.rotation_look_at_player = true
-	end
-	if tile_object.properties.global_rotation then
-		e.rotation_global = true
-	end
-	e.rotation_global = true
+	if e.tile.properties.look_at_player then e.rotation_look_at_player = true end
+	if e.tile.properties.global_rotation then e.rotation_global = true end
 	e.culling = true
 	e.culling_empty_go = false
 	e.dynamic_color = true
@@ -318,10 +315,7 @@ end
 
 ---@return Entity
 function Entities.create_physics(message_id,message,source)
-	local e = {}
-	e.physics_info = {message_id = assert(message_id),message = assert(message),source = assert(source)}
-	e.auto_destroy = true
-	return e
+	return {physics_info = {message_id = assert(message_id),message = assert(message),source = assert(source)}, auto_destroy = true}
 end
 
 function Entities.create_raycast_damage_info(source_e,target_e,weapon_prototype,raycast)
@@ -363,6 +357,17 @@ function Entities.create(name,...)
 		COMMON.e("unknown entity:" .. tostring(name),TAG)
 	else
 		return f(...)
+	end
+end
+
+function Entities.create_from_object(name,object,...)
+	assert(name)
+	assert(object)
+	local f = Entities["create_" .. name .. "_from_object"]
+	if not f then
+		COMMON.e("unknown entity:" .. tostring(name),TAG)
+	else
+		return f(object,...)
 	end
 end
 --endregion
