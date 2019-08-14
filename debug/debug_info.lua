@@ -1,7 +1,5 @@
 local COMMON = require "libs.common"
 local ENTITIES = require "world.ecs.entities.entities"
-local PROFILER = require "defpro.defoldprofiler"
-local REPORTER = require "defpro.reporter"
 local M = {}
 
 M.entities = 0

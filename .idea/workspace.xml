@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/DTFIndieJam.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DTFIndieJam.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debug/debug_info.lua" beforeDir="false" afterPath="$PROJECT_DIR$/debug/debug_info.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug/game_info/debug_game_info_gui.gui" beforeDir="false" afterPath="$PROJECT_DIR$/debug/game_info/debug_game_info_gui.gui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug/game_info/debug_game_info_gui.gui_script" beforeDir="false" afterPath="$PROJECT_DIR$/debug/game_info/debug_game_info_gui.gui_script" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.project" beforeDir="false" afterPath="$PROJECT_DIR$/game.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ecs.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/ecs.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/ecs.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/ecs.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/world/ecs/entities/entities.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/entities/entities.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/systems/camera_bob_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/camera_bob_system.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/systems/input_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/input_system.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/auto_destroy_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/auto_destroy_system.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/world/ecs/systems/physics_obstacles_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/physics_obstacles_system.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/systems/update_camera_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/update_camera_system.lua" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,10 +36,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/debug/debug_info.lua">
+        <entry file="file://$PROJECT_DIR$/world/ecs/systems/physics_obstacles_system.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+            <state relative-caret-position="464">
+              <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -59,21 +55,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>url_collision_damage</find>
-      <find>enemies =</find>
-      <find>enemies</find>
-      <find>ENTITIES</find>
-      <find>input_direction</find>
-      <find>input = {</find>
-      <find>input&quot;</find>
-      <find>.physics_</find>
-      <find>physics_message_id</find>
-      <find>e.physics</find>
-      <find>physics_e.physics_</find>
-      <find>remove</find>
-      <find>phys</find>
-      <find>physics</find>
-      <find>hit_info</find>
       <find>rotation_look_at_player</find>
       <find>rotation_global</find>
       <find>culling</find>
@@ -89,6 +70,21 @@
       <find>camera_bob</find>
       <find>CameraBobInfo</find>
       <find>camera_bob_info</find>
+      <find>value = 0,</find>
+      <find>pickuped</find>
+      <find>handle_pickup</find>
+      <find>entitiesToRemove</find>
+      <find>e2r</find>
+      <find>remove</find>
+      <find>removeEntity</find>
+      <find>tiny_manageSystems</find>
+      <find>tiny_manageEntities</find>
+      <find>refresh</find>
+      <find>on_entity_removed</find>
+      <find>posI</find>
+      <find>post</find>
+      <find>postProcess</find>
+      <find>url_go</find>
     </findStrings>
     <replaceStrings>
       <replace>.</replace>
@@ -165,7 +161,6 @@
         <option value="$PROJECT_DIR$/rendercam/camera.script" />
         <option value="$PROJECT_DIR$/scenes/game/game_scene.lua" />
         <option value="$PROJECT_DIR$/world/weapons/weapon_prototypes.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/systems/auto_destroy_system.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems.lua" />
         <option value="$PROJECT_DIR$/render/my.render_script" />
         <option value="$PROJECT_DIR$/world/ecs/systems/object_hit_system.lua" />
@@ -175,19 +170,20 @@
         <option value="$PROJECT_DIR$/world/ecs/systems/movement_system.lua" />
         <option value="$PROJECT_DIR$/world/ai/ai_blob.lua" />
         <option value="$PROJECT_DIR$/world/weapons/weapon_base.lua" />
-        <option value="$PROJECT_DIR$/libs/ecs.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/ecs.lua" />
         <option value="$PROJECT_DIR$/libs/lume.lua" />
         <option value="$PROJECT_DIR$/scenes/game/model/game_controller.lua" />
         <option value="$PROJECT_DIR$/libs/hashes.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems/draw_walls_system.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems/input_system.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/systems/physics_obstacles_system.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems/update_camera_system.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/entities/entities.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems/camera_bob_system.lua" />
         <option value="$PROJECT_DIR$/debug/game_info/debug_game_info_gui.gui_script" />
         <option value="$PROJECT_DIR$/debug/debug_info.lua" />
+        <option value="$PROJECT_DIR$/world/ecs/ecs.lua" />
+        <option value="$PROJECT_DIR$/libs/ecs.lua" />
+        <option value="$PROJECT_DIR$/world/ecs/systems/auto_destroy_system.lua" />
+        <option value="$PROJECT_DIR$/world/ecs/entities/entities.lua" />
+        <option value="$PROJECT_DIR$/world/ecs/systems/physics_obstacles_system.lua" />
       </list>
     </option>
   </component>
@@ -197,9 +193,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="41" />
-    <option name="y" value="144" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="111" />
+    <option name="y" value="-14" />
     <option name="width" value="1426" />
     <option name="height" value="1039" />
   </component>
@@ -327,12 +323,13 @@
       <workItem from="1564220254310" duration="1034000" />
       <workItem from="1564221784883" duration="5411000" />
       <workItem from="1565640270128" duration="1334000" />
-      <workItem from="1565726021451" duration="7900000" />
+      <workItem from="1565726021451" duration="8533000" />
+      <workItem from="1565818419191" duration="1778000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="426947000" />
+    <option name="totallyTimeSpent" value="429358000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -344,10 +341,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="41" y="144" width="1426" height="1039" extended-state="1" />
+    <frame x="-7" y="-7" width="1934" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29124087" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21565495" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -363,10 +360,10 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4983028" weight="0.32112068" />
       <window_info anchor="bottom" id="LuaCheck" order="7" sideWeight="0.4914803" weight="0.33543637" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4591241" visible="true" weight="0.17021276" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4591241" weight="0.17021276" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.46485624" weight="0.1745531" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5408759" side_tool="true" visible="true" weight="0.17021276" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.46379128" visible="true" weight="0.17245005" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.53620875" side_tool="true" visible="true" weight="0.17245005" />
       <window_info anchor="bottom" id="TypeScript" order="13" sideWeight="0.49946752" weight="0.32912722" />
       <window_info anchor="bottom" id="Messages" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -442,12 +439,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="lua-line">
           <url>file://$PROJECT_DIR$/world/ecs/entities/entities.lua</url>
-          <line>177</line>
+          <line>175</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="lua-line">
           <url>file://$PROJECT_DIR$/world/ecs/entities/entities.lua</url>
-          <line>227</line>
+          <line>225</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="lua-line">
@@ -502,7 +499,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="lua-line">
           <url>file://$PROJECT_DIR$/world/ecs/entities/entities.lua</url>
-          <line>216</line>
+          <line>214</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="lua-line">
@@ -524,13 +521,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/libs/sm/scene_manager.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="186" column="11" selection-start-line="186" selection-start-column="11" selection-end-line="186" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-28/android.jar!/java/net/SocketImpl.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -614,13 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/auto_destroy_system.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/world/ecs/systems/object_hit_system.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
@@ -667,13 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="512">
           <caret line="32" column="37" lean-forward="true" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -733,20 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/ecs.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/ecs.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="437" selection-start-line="437" selection-end-line="437" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/common.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -761,9 +723,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/debug/game_info/debug_game_info_gui.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/debug/game_info/debug_game_info_gui.go" />
     <entry file="file://$PROJECT_DIR$/debug/game_info/debug_game_info_gui.gui">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -802,20 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/physics_obstacles_system.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/model/level.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="145" column="21" selection-start-line="145" selection-start-column="21" selection-end-line="145" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_headers/raycasting.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -826,24 +772,10 @@
     <entry file="file://$PROJECT_DIR$/world/ecs/systems/update_ai_system.lua">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/entities/entities.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="195" column="21" selection-start-line="195" selection-start-column="6" selection-end-line="195" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/world/ecs/systems/camera_bob_system.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="3" column="35" lean-forward="true" selection-start-line="2" selection-start-column="37" selection-end-line="3" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/debug/game_info/debug_game_info_gui.gui_script">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="28" column="78" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="80" />
         </state>
       </provider>
     </entry>
@@ -854,10 +786,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/debug/game_info/debug_game_info_gui.gui_script">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="28" column="78" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/ecs/systems.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/ecs/ecs.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/ecs/systems/auto_destroy_system.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/debug/debug_info.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+        <state relative-caret-position="240">
+          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/game/model/level.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="45" column="70" lean-forward="true" selection-start-line="45" selection-start-column="70" selection-end-line="45" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go_scripts/handle_physics.lua">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/ecs.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="754">
+          <caret line="374" column="38" selection-start-line="374" selection-start-column="27" selection-end-line="374" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/ecs/entities/entities.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="100" column="40" selection-start-line="100" selection-start-column="40" selection-end-line="100" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/ecs/systems/physics_obstacles_system.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
         </state>
       </provider>
     </entry>

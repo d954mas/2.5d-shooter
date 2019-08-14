@@ -95,9 +95,7 @@ Entities.enemies = {}
 
 --region utils
 ---@param url url key that used for mapping entity to url_go
-local function url_to_key(url)
-	return url.path
-end
+local function url_to_key(url) return url.path end
 
 ---@param ignore_warning boolean pickup can try get entity while go is already removed. Something with physics
 function Entities.get_entity_for_url(url,ignore_warning)

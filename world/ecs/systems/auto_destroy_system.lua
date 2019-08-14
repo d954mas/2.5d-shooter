@@ -18,4 +18,10 @@ function System:process(e, dt)
 	end
 end
 
+--delete all entities in current frame. By default entities cleared when update started.
+--without that defold go will be alive additional frame.
+function System:postProcess()
+	self.world:refresh()
+end
+
 return System

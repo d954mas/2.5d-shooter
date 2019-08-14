@@ -11,7 +11,7 @@ function System:process(e, dt)
 	if e.physics_info.message_id == COMMON.HASHES.MSG_PHYSICS_CONTACT and e.physics_info.message.group == hash("obstacle") then
 		self:handle_geometry(e,ENTITIES.get_entity_for_url(e.physics_info.source))
 	elseif e.physics_info.message_id == COMMON.HASHES.MSG_PHYSICS_COLLISION and  e.physics_info.message.group == hash("pickup") then
-		self:handle_pickup(ENTITIES.get_entity_for_url(msg.url(e.physics_info.message.other_id),true))
+		self:handle_pickup(ENTITIES.get_entity_for_url(msg.url(e.physics_info.message.other_id)))
 	end
 end
 
@@ -29,6 +29,9 @@ function System:handle_pickup(e)
 		player.ammo[WEAPON_PROTOTYPES.AMMO_TYPES.PISTOL] = player.ammo[WEAPON_PROTOTYPES.AMMO_TYPES.PISTOL] + 10
 		SOUNDS:play_sound(SOUNDS.sounds.game.object_ammo_pickup)
 	end
+	--disable because go will be deleted on next frame
+	msg.post(e.url_go,COMMON.HASHES.MSG_DISABLE)
+	self.world:removeEntity(e)
 end
 
 --https://www.defold.com/tutorials/runner/#_step_4_creating_a_hero_character

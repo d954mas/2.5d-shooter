@@ -435,7 +435,6 @@ the Software, and to permit persons to whom the Software is furnished to do so,
 ---@field systemsToRemove table
 ---@field entities table
 ---@field systems table
-
 local World = {}
 function World:add(...)
 end
@@ -449,7 +448,7 @@ function World:removeEntity(entity)
 end
 function World:removeSystem(system)
 end
-function World:refresh(system)
+function World:refresh()
 end
 function World:update(dt, filter)
 end
