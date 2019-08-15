@@ -8,9 +8,9 @@ local System = ECS.processingSystem()
 System.filter = ECS.requireAll("physics_info")
 ---@param e Entity
 function System:process(e, dt)
-	if e.physics_info.message_id == COMMON.HASHES.MSG_PHYSICS_CONTACT and e.physics_info.message.group == hash("obstacle") then
+	if e.physics_info.message_id == COMMON.HASHES.MSG_PHYSICS_CONTACT and e.physics_info.message.group == COMMON.HASHES.MSG_PHYSICS_GROUP_OBSTACLE then
 		self:handle_geometry(e,ENTITIES.get_entity_for_url(e.physics_info.source))
-	elseif e.physics_info.message_id == COMMON.HASHES.MSG_PHYSICS_COLLISION and  e.physics_info.message.group == hash("pickup") then
+	elseif e.physics_info.message_id == COMMON.HASHES.MSG_PHYSICS_COLLISION and  e.physics_info.message.group ==  COMMON.HASHES.MSG_PHYSICS_GROUP_PICKUP then
 		self:handle_pickup(ENTITIES.get_entity_for_url(msg.url(e.physics_info.message.other_id)))
 	end
 end
@@ -47,9 +47,7 @@ end
 		correction = e.physics_obstacles_correction
 		self.world:addEntity(e)
 	end
-	if(vmath.length(normal * distance)<=0)then
-		return
-	end
+	if(vmath.length(normal * distance)<=0)then return end
 	if distance > 0 then
 		local proj = vmath.project(correction, normal * distance)
 		if proj < 1 then

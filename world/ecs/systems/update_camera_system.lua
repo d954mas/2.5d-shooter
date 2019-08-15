@@ -13,6 +13,7 @@ function System:process(e, dt)
 	--self:top_view(e)
 end
 
+--debug top down view
 function System:top_view(e)
 	go.set_position(vmath.vector3(e.position.x,3,-e.position.y-2),CAMERA_URL)
 	go.set_rotation(vmath.quat_rotation_x(180), CAMERA_URL)

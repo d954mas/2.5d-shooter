@@ -11,15 +11,13 @@ function System:process(e, dt)
 	end
 	--Inertia when change camera direction
 	if  e.angle then e.movement_direction = vmath.rotate(vmath.quat_rotation_z(e.angle.x),e.movement_direction) end
-	local target = e.movement_direction * (e.movement_max_speed or 3)
-	local accel =  vmath.dot(target,e.movement_velocity) > 0 and (e.movement_accel or 3)
-		or (e.movement_deaccel or 6)
+	local target = e.movement_direction * (e.movement_max_speed)
+	local accel =  vmath.dot(target,e.movement_velocity) > 0 and e.movement_accel or e.movement_deaccel
 
-	e.movement_velocity = vmath.lerp(accel * dt, e.movement_velocity,target )
-	local vel = vmath.vector3(e.movement_velocity)
+	e.movement_velocity = vmath.lerp(accel * dt, e.movement_velocity, target)
 
-	e.position.x = e.position.x + vel.x*dt
-	e.position.y = e.position.y + vel.y*dt
+	e.position.x = e.position.x + e.movement_velocity.x*dt
+	e.position.y = e.position.y + e.movement_velocity.y*dt
 end
 
 

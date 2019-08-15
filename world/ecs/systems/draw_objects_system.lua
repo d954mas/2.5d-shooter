@@ -18,7 +18,7 @@ function System:process(e, dt)
 		else
 			go.delete(e.url_sprite)
 		end
-		e.dynamic_color_cell = nil -- reset dynamic color.If not reset, objects will not update collor on next appear
+		e.dynamic_color_cell = nil -- reset dynamic color.If not reset, objects will not update color on next appear
 		e.drawing = nil
 		e.url_sprite = nil
 		self.world:addEntity(e)
@@ -33,7 +33,7 @@ function System:process(e, dt)
 		--create sprites and add them to root go
 		e.url_sprite =  msg.url(factory.create(FACTORY_SPRITE_URL,nil,EMPTY_ROTATION))
 		e.url_sprite = msg.url(e.url_sprite.socket,e.url_sprite.path,HASH_SPRITE)
-		e.dynamic_color_cell = nil -- reset dynamic color.If not reset, objects will not update collor on next appear
+		e.dynamic_color_cell = nil -- reset dynamic color.If not reset, objects will not update color on next appear
 		go.set_parent(e.url_sprite,e.url_go)
 		e.drawing = true
 		self:sprite_set_image(e)
