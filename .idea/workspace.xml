@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/libs/hashes.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/hashes.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/systems/movement_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/movement_system.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/systems/physics_obstacles_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/physics_obstacles_system.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/systems/update_camera_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/update_camera_system.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,10 +30,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/world/ecs/systems.lua">
+        <entry file="file://$PROJECT_DIR$/debug/level_map/debug_level_map.gui_script">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+            <state relative-caret-position="310">
+              <caret line="60" column="16" lean-forward="true" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -124,7 +120,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="c6ee04d61150538e5a809e2e07caf53dc624f349" />
+        <entry key="$PROJECT_DIR$" value="lights_experiment" />
       </map>
     </option>
   </component>
@@ -213,31 +209,77 @@
             <path>
               <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
               <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
-              <item name="debug" type="462c0819:PsiDirectoryNode" />
+              <item name="go" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
               <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
-              <item name="debug" type="462c0819:PsiDirectoryNode" />
-              <item name="game_info" type="462c0819:PsiDirectoryNode" />
+              <item name="go_scripts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
               <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
-              <item name="debug" type="462c0819:PsiDirectoryNode" />
-              <item name="info" type="462c0819:PsiDirectoryNode" />
+              <item name="native_raycasting" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
+              <item name="native_raycasting" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
               <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
               <item name="scenes" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
+              <item name="world" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
+              <item name="world" type="462c0819:PsiDirectoryNode" />
+              <item name="ai" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
+              <item name="world" type="462c0819:PsiDirectoryNode" />
+              <item name="ecs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
+              <item name="world" type="462c0819:PsiDirectoryNode" />
+              <item name="ecs" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
+              <item name="world" type="462c0819:PsiDirectoryNode" />
+              <item name="ecs" type="462c0819:PsiDirectoryNode" />
+              <item name="systems" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
+              <item name="world" type="462c0819:PsiDirectoryNode" />
+              <item name="weapons" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -327,7 +369,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="432543000" />
+    <option name="totallyTimeSpent" value="433079000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -340,9 +382,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1934" height="1050" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21565495" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21778488" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -358,10 +399,10 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4983028" weight="0.32112068" />
       <window_info anchor="bottom" id="LuaCheck" order="7" sideWeight="0.4914803" weight="0.33543637" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.45793396" visible="true" weight="0.38906413" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.45793396" weight="0.38906413" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.46325877" weight="0.17245005" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.54206604" side_tool="true" visible="true" weight="0.38906413" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4627263" visible="true" weight="0.17245005" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5372737" side_tool="true" visible="true" weight="0.17245005" />
       <window_info anchor="bottom" id="TypeScript" order="13" sideWeight="0.49946752" weight="0.32912722" />
       <window_info anchor="bottom" id="Messages" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -416,6 +457,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="try simple-shadow-mapping. Not worked for that project" />
+    <option name="LAST_COMMIT_MESSAGE" value="try simple-shadow-mapping. Not worked for that project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

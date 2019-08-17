@@ -96,6 +96,37 @@ animations {
   flip_horizontal: 0
   flip_vertical: 0
 }
+animations {
+  id: "fire_skull_idle"
+  images {
+    image: "/assets/images/game/enemies/fire_skull/fire_skull_1.png"
+  }
+  images {
+    image: "/assets/images/game/enemies/fire_skull/fire_skull_2.png"
+  }
+  images {
+    image: "/assets/images/game/enemies/fire_skull/fire_skull_3.png"
+  }
+  images {
+    image: "/assets/images/game/enemies/fire_skull/fire_skull_4.png"
+  }
+  images {
+    image: "/assets/images/game/enemies/fire_skull/fire_skull_5.png"
+  }
+  images {
+    image: "/assets/images/game/enemies/fire_skull/fire_skull_6.png"
+  }
+  images {
+    image: "/assets/images/game/enemies/fire_skull/fire_skull_7.png"
+  }
+  images {
+    image: "/assets/images/game/enemies/fire_skull/fire_skull_8.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 8
+  flip_horizontal: 0
+  flip_vertical: 0
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0
