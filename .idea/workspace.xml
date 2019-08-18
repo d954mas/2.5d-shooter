@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/levels/lua/test_parser_objects.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/lua/test_parser_objects.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/objects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/tilesets/objects.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/model/levels.lua" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/model/levels.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_levels_loading.lua" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_levels_loading.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init_controller.script" beforeDir="false" afterPath="$PROJECT_DIR$/init_controller.script" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/init_controller.script">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+            <state relative-caret-position="256">
+              <caret line="55" column="55" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -369,12 +366,12 @@
       <workItem from="1565726021451" duration="8533000" />
       <workItem from="1565818419191" duration="4963000" />
       <workItem from="1566062247542" duration="599000" />
-      <workItem from="1566131312836" duration="5532000" />
+      <workItem from="1566131312836" duration="5724000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="439210000" />
+    <option name="totallyTimeSpent" value="439402000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -405,10 +402,10 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4983028" weight="0.32112068" />
       <window_info anchor="bottom" id="LuaCheck" order="7" sideWeight="0.4914803" weight="0.33543637" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.45740148" weight="0.43007362" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.45633653" visible="true" weight="0.43007362" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.46112886" visible="true" weight="0.43533123" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.53887117" side_tool="true" visible="true" weight="0.43533123" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.46059638" weight="0.43533123" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.54366344" side_tool="true" visible="true" weight="0.43007362" />
       <window_info anchor="bottom" id="TypeScript" order="13" sideWeight="0.49946752" weight="0.32912722" />
       <window_info anchor="bottom" id="Messages" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -882,8 +879,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/init_controller.script">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+        <state relative-caret-position="256">
+          <caret line="55" column="55" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
         </state>
       </provider>
     </entry>
