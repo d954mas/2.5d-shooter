@@ -9,7 +9,7 @@ return {
   tilewidth = 64,
   tileheight = 64,
   nextlayerid = 10,
-  nextobjectid = 23,
+  nextobjectid = 33,
   properties = {},
   tilesets = {
     {
@@ -368,7 +368,7 @@ return {
       name = "objects",
       firstgid = 38,
       filename = "../tilesets/objects.tsx",
-      tilewidth = 86,
+      tilewidth = 64,
       tileheight = 64,
       spacing = 0,
       margin = 0,
@@ -384,162 +384,52 @@ return {
       },
       properties = {},
       terrains = {},
-      tilecount = 12,
+      tilecount = 4,
       tiles = {
         {
           id = 1,
           properties = {
             ["spawn_point"] = true
           },
-          image = "../tilesets/objects/spawn_point.png",
+          image = "../tilesets/objects/spawn_point_top.png",
           width = 64,
           height = 64
         },
         {
           id = 2,
           properties = {
-            ["culling"] = true,
-            ["global_rotation"] = false,
-            ["look_at_player"] = true,
-            ["scale"] = 0.5
+            ["rotation"] = 180,
+            ["spawn_point"] = true
           },
-          image = "../../images/game/objects/block.png",
+          image = "../tilesets/objects/spawn_point_bottom.png",
           width = 64,
           height = 64
         },
         {
           id = 3,
           properties = {
-            ["culling"] = true,
-            ["global_rotation"] = false,
-            ["look_at_player"] = true,
-            ["scale"] = 0.5,
-            ["size_for_scale"] = 64
+            ["rotation"] = 270,
+            ["spawn_point"] = true
           },
-          image = "../../images/game/objects/bot_crystal.png",
+          image = "../tilesets/objects/spawn_point_right.png",
           width = 64,
-          height = 62
+          height = 64
         },
         {
           id = 4,
           properties = {
-            ["culling"] = true,
-            ["global_rotation"] = false,
-            ["look_at_player"] = true,
-            ["scale"] = 0.5
+            ["rotation"] = 90,
+            ["spawn_point"] = true
           },
-          image = "../../images/game/objects/bot_crystal_2.png",
-          width = 46,
-          height = 64
-        },
-        {
-          id = 5,
-          properties = {
-            ["culling"] = true,
-            ["global_rotation"] = true,
-            ["look_at_player"] = false,
-            ["scale"] = 0.5
-          },
-          image = "../../images/game/objects/box.png",
+          image = "../tilesets/objects/spawn_point_left.png",
           width = 64,
           height = 64
-        },
-        {
-          id = 6,
-          properties = {
-            ["culling"] = true,
-            ["global_rotation"] = false,
-            ["look_at_player"] = true,
-            ["origin"] = "top",
-            ["scale"] = 1,
-            ["size_for_scale"] = 64
-          },
-          image = "../../images/game/objects/lamp.png",
-          width = 25,
-          height = 13
-        },
-        {
-          id = 7,
-          properties = {
-            ["culling"] = true,
-            ["global_rotation"] = false,
-            ["look_at_player"] = true,
-            ["scale"] = 0.5,
-            ["size_for_scale"] = 64
-          },
-          image = "../../images/game/objects/mushroom_1.png",
-          width = 53,
-          height = 63
-        },
-        {
-          id = 8,
-          properties = {
-            ["culling"] = true,
-            ["global_rotation"] = false,
-            ["look_at_player"] = true,
-            ["scale"] = 0.5,
-            ["size_for_scale"] = 64
-          },
-          image = "../../images/game/objects/mushroom_2.png",
-          width = 56,
-          height = 60
-        },
-        {
-          id = 9,
-          properties = {
-            ["culling"] = true,
-            ["global_rotation"] = false,
-            ["look_at_player"] = true,
-            ["scale"] = 0.5,
-            ["size_for_scale"] = 64
-          },
-          image = "../../images/game/objects/skull.png",
-          width = 86,
-          height = 25
-        },
-        {
-          id = 10,
-          properties = {
-            ["culling"] = true,
-            ["global_rotation"] = false,
-            ["look_at_player"] = true,
-            ["scale"] = 1
-          },
-          image = "../../images/game/objects/table.png",
-          width = 64,
-          height = 64
-        },
-        {
-          id = 11,
-          properties = {
-            ["culling"] = true,
-            ["global_rotation"] = false,
-            ["look_at_player"] = true,
-            ["scale"] = 0.5,
-            ["size_for_scale"] = 64
-          },
-          image = "../../images/game/objects/top_crystal_1.png",
-          width = 61,
-          height = 56
-        },
-        {
-          id = 12,
-          properties = {
-            ["culling"] = true,
-            ["global_rotation"] = false,
-            ["look_at_player"] = true,
-            ["scale"] = 0.5,
-            ["size_for_scale"] = 64
-          },
-          image = "../../images/game/objects/top_crystal_2.png",
-          width = 64,
-          height = 54
         }
       }
     },
     {
       name = "lights",
-      firstgid = 51,
+      firstgid = 43,
       filename = "../tilesets/lights.tsx",
       tilewidth = 64,
       tileheight = 64,
@@ -1526,7 +1416,7 @@ return {
     },
     {
       name = "enemies",
-      firstgid = 211,
+      firstgid = 203,
       filename = "../tilesets/enemies.tsx",
       tilewidth = 64,
       tileheight = 64,
@@ -1565,7 +1455,7 @@ return {
             ["spawn_enemy"] = "blob",
             ["spawner"] = true
           },
-          image = "../tilesets/objects/spawner.png",
+          image = "../tilesets/enemies/spawner.png",
           width = 64,
           height = 64
         }
@@ -1573,7 +1463,7 @@ return {
     },
     {
       name = "pickups",
-      firstgid = 214,
+      firstgid = 206,
       filename = "../tilesets/pickups.tsx",
       tilewidth = 32,
       tileheight = 32,
@@ -1618,6 +1508,170 @@ return {
           image = "../../images/game/pickups/pickup_hp.png",
           width = 32,
           height = 32
+        }
+      }
+    },
+    {
+      name = "game_objects",
+      firstgid = 209,
+      filename = "../tilesets/game_objects.tsx",
+      tilewidth = 86,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 0,
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 1,
+        height = 1
+      },
+      properties = {},
+      terrains = {},
+      tilecount = 11,
+      tiles = {
+        {
+          id = 2,
+          properties = {
+            ["culling"] = true,
+            ["global_rotation"] = false,
+            ["look_at_player"] = true,
+            ["scale"] = 0.5
+          },
+          image = "../../images/game/objects/block.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 3,
+          properties = {
+            ["culling"] = true,
+            ["global_rotation"] = false,
+            ["look_at_player"] = true,
+            ["scale"] = 0.5,
+            ["size_for_scale"] = 64
+          },
+          image = "../../images/game/objects/bot_crystal.png",
+          width = 64,
+          height = 62
+        },
+        {
+          id = 4,
+          properties = {
+            ["culling"] = true,
+            ["global_rotation"] = false,
+            ["look_at_player"] = true,
+            ["scale"] = 0.5
+          },
+          image = "../../images/game/objects/bot_crystal_2.png",
+          width = 46,
+          height = 64
+        },
+        {
+          id = 5,
+          properties = {
+            ["culling"] = true,
+            ["global_rotation"] = true,
+            ["look_at_player"] = false,
+            ["scale"] = 0.5
+          },
+          image = "../../images/game/objects/box.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 6,
+          properties = {
+            ["culling"] = true,
+            ["global_rotation"] = false,
+            ["look_at_player"] = true,
+            ["origin"] = "top",
+            ["scale"] = 1,
+            ["size_for_scale"] = 64
+          },
+          image = "../../images/game/objects/lamp.png",
+          width = 25,
+          height = 13
+        },
+        {
+          id = 7,
+          properties = {
+            ["culling"] = true,
+            ["global_rotation"] = false,
+            ["look_at_player"] = true,
+            ["scale"] = 0.5,
+            ["size_for_scale"] = 64
+          },
+          image = "../../images/game/objects/mushroom_1.png",
+          width = 53,
+          height = 63
+        },
+        {
+          id = 8,
+          properties = {
+            ["culling"] = true,
+            ["global_rotation"] = false,
+            ["look_at_player"] = true,
+            ["scale"] = 0.5,
+            ["size_for_scale"] = 64
+          },
+          image = "../../images/game/objects/mushroom_2.png",
+          width = 56,
+          height = 60
+        },
+        {
+          id = 9,
+          properties = {
+            ["culling"] = true,
+            ["global_rotation"] = false,
+            ["look_at_player"] = true,
+            ["scale"] = 0.5,
+            ["size_for_scale"] = 64
+          },
+          image = "../../images/game/objects/skull.png",
+          width = 86,
+          height = 25
+        },
+        {
+          id = 10,
+          properties = {
+            ["culling"] = true,
+            ["global_rotation"] = false,
+            ["look_at_player"] = true,
+            ["scale"] = 1
+          },
+          image = "../../images/game/objects/table.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 11,
+          properties = {
+            ["culling"] = true,
+            ["global_rotation"] = false,
+            ["look_at_player"] = true,
+            ["scale"] = 0.5,
+            ["size_for_scale"] = 64
+          },
+          image = "../../images/game/objects/top_crystal_1.png",
+          width = 61,
+          height = 56
+        },
+        {
+          id = 12,
+          properties = {
+            ["culling"] = true,
+            ["global_rotation"] = false,
+            ["look_at_player"] = true,
+            ["scale"] = 0.5,
+            ["size_for_scale"] = 64
+          },
+          image = "../../images/game/objects/top_crystal_2.png",
+          width = 64,
+          height = 54
         }
       }
     }
@@ -1725,144 +1779,142 @@ return {
           }
         },
         {
-          id = 9,
+          id = 23,
           name = "",
           type = "",
           shape = "rectangle",
           x = 128,
-          y = 960,
+          y = 704,
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 40,
+          gid = 211,
           visible = true,
           properties = {}
         },
         {
-          id = 10,
+          id = 24,
           name = "",
           type = "",
           shape = "rectangle",
           x = 256,
-          y = 960,
+          y = 704,
           width = 64,
           height = 62,
           rotation = 0,
-          gid = 41,
+          gid = 212,
           visible = true,
           properties = {}
         },
         {
-          id = 11,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 384,
-          y = 960,
-          width = 46,
-          height = 64,
-          rotation = 0,
-          gid = 42,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 14,
+          id = 25,
           name = "",
           type = "",
           shape = "rectangle",
           x = 128,
+          y = 832,
+          width = 46,
+          height = 64,
+          rotation = 0,
+          gid = 213,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 26,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 256,
+          y = 832,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 214,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 27,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 384,
           y = 832,
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 44,
+          gid = 215,
           visible = true,
           properties = {}
         },
         {
-          id = 16,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 256,
-          y = 832,
-          width = 53,
-          height = 63,
-          rotation = 0,
-          gid = 45,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 17,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 384,
-          y = 832,
-          width = 56,
-          height = 60,
-          rotation = 0,
-          gid = 46,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 18,
+          id = 28,
           name = "",
           type = "",
           shape = "rectangle",
           x = 512,
           y = 832,
-          width = 86,
-          height = 25,
+          width = 53,
+          height = 63,
           rotation = 0,
-          gid = 47,
+          gid = 216,
           visible = true,
           properties = {}
         },
         {
-          id = 19,
+          id = 29,
           name = "",
           type = "",
           shape = "rectangle",
           x = 512,
           y = 960,
-          width = 64,
-          height = 64,
+          width = 56,
+          height = 60,
           rotation = 0,
-          gid = 48,
+          gid = 217,
           visible = true,
           properties = {}
         },
         {
-          id = 20,
+          id = 30,
           name = "",
           type = "",
           shape = "rectangle",
-          x = 128,
-          y = 704,
-          width = 64,
-          height = 64,
+          x = 384,
+          y = 960,
+          width = 86,
+          height = 25,
           rotation = 0,
-          gid = 43,
+          gid = 218,
           visible = true,
-          properties = {
-            ["look_at_player"] = false
-          }
+          properties = {}
         },
         {
-          id = 21,
+          id = 31,
           name = "",
           type = "",
           shape = "rectangle",
           x = 256,
-          y = 704,
+          y = 960,
           width = 64,
-          height = 54,
+          height = 64,
           rotation = 0,
-          gid = 50,
+          gid = 219,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 32,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 128,
+          y = 960,
+          width = 61,
+          height = 56,
+          rotation = 0,
+          gid = 220,
           visible = true,
           properties = {}
         }

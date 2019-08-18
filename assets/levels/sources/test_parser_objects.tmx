@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-up" width="10" height="10" tilewidth="64" tileheight="64" infinite="0" nextlayerid="14" nextobjectid="12">
+<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-up" width="10" height="10" tilewidth="64" tileheight="64" infinite="0" nextlayerid="14" nextobjectid="15">
  <tileset firstgid="1" source="../tilesets/main.tsx"/>
- <tileset firstgid="37" source="../tilesets/objects.tsx"/>
- <tileset firstgid="50" source="../tilesets/lights.tsx"/>
- <tileset firstgid="210" source="../tilesets/enemies.tsx"/>
- <tileset firstgid="213" source="../tilesets/pickups.tsx"/>
+ <tileset firstgid="38" source="../tilesets/objects.tsx"/>
+ <tileset firstgid="43" source="../tilesets/lights.tsx"/>
+ <tileset firstgid="203" source="../tilesets/enemies.tsx"/>
+ <tileset firstgid="206" source="../tilesets/pickups.tsx"/>
+ <tileset firstgid="209" source="../tilesets/game_objects.tsx"/>
  <layer id="10" name="floor" width="10" height="10">
   <data encoding="csv">
 5,5,5,5,5,5,5,5,5,5,
@@ -48,20 +49,16 @@
 </data>
  </layer>
  <objectgroup id="9" name="pickups">
-  <object id="9" gid="215" x="448" y="576" width="32" height="32"/>
-  <object id="10" gid="214" x="64" y="128" width="32" height="32"/>
+  <object id="9" gid="208" x="448" y="576" width="32" height="32"/>
+  <object id="10" gid="207" x="64" y="128" width="32" height="32"/>
  </objectgroup>
  <objectgroup id="8" name="enemies">
-  <object id="7" gid="211" x="128" y="448" width="64" height="64"/>
-  <object id="8" gid="211" x="256" y="320" width="64" height="64"/>
+  <object id="7" gid="204" x="128" y="448" width="64" height="64"/>
+  <object id="8" gid="204" x="256" y="320" width="64" height="64"/>
  </objectgroup>
  <objectgroup id="5" name="objects">
-  <object id="5" gid="38" x="256" y="384" width="64" height="64">
-   <properties>
-    <property name="spawn_point" type="bool" value="true"/>
-   </properties>
-  </object>
-  <object id="6" gid="40" x="320" y="256" width="64" height="62"/>
+  <object id="12" gid="211" x="320" y="256" width="64" height="64"/>
+  <object id="14" gid="39" x="256" y="384" width="64" height="64"/>
  </objectgroup>
  <layer id="13" name="walls" width="10" height="10">
   <data encoding="csv">

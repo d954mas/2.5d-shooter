@@ -9,24 +9,24 @@
   "objects":[
     {
       "cell_xf":2.5,
-      "cell_id":103,
-      "tile_id":40,
+      "cell_id":183,
+      "tile_id":211,
       "properties":{
         "scale":0.5,
         "look_at_player":true,
         "global_rotation":false,
         "culling":true
       },
-      "cell_y":6,
-      "y":352,
+      "cell_y":10,
+      "y":608,
       "x":160,
-      "cell_yf":5.5,
+      "cell_yf":9.5,
       "cell_x":3
     },
     {
       "cell_xf":4.5,
-      "cell_id":105,
-      "tile_id":41,
+      "cell_id":185,
+      "tile_id":212,
       "properties":{
         "look_at_player":true,
         "culling":true,
@@ -34,39 +34,21 @@
         "global_rotation":false,
         "size_for_scale":64
       },
-      "cell_y":6,
-      "y":352,
+      "cell_y":10,
+      "y":608,
       "x":288,
-      "cell_yf":5.5,
+      "cell_yf":9.5,
       "cell_x":5
     },
     {
-      "cell_xf":6.5,
-      "cell_id":107,
-      "tile_id":42,
+      "cell_xf":2.5,
+      "cell_id":143,
+      "tile_id":213,
       "properties":{
         "scale":0.5,
         "look_at_player":true,
         "global_rotation":false,
         "culling":true
-      },
-      "cell_y":6,
-      "y":352,
-      "x":416,
-      "cell_yf":5.5,
-      "cell_x":7
-    },
-    {
-      "cell_xf":2.5,
-      "cell_id":143,
-      "tile_id":44,
-      "properties":{
-        "size_for_scale":64,
-        "origin":"top",
-        "culling":true,
-        "scale":1,
-        "global_rotation":false,
-        "look_at_player":true
       },
       "cell_y":8,
       "y":480,
@@ -77,13 +59,12 @@
     {
       "cell_xf":4.5,
       "cell_id":145,
-      "tile_id":45,
+      "tile_id":214,
       "properties":{
-        "look_at_player":true,
-        "culling":true,
         "scale":0.5,
-        "global_rotation":false,
-        "size_for_scale":64
+        "look_at_player":false,
+        "global_rotation":true,
+        "culling":true
       },
       "cell_y":8,
       "y":480,
@@ -94,13 +75,14 @@
     {
       "cell_xf":6.5,
       "cell_id":147,
-      "tile_id":46,
+      "tile_id":215,
       "properties":{
-        "look_at_player":true,
+        "size_for_scale":64,
+        "origin":"top",
         "culling":true,
-        "scale":0.5,
+        "scale":1,
         "global_rotation":false,
-        "size_for_scale":64
+        "look_at_player":true
       },
       "cell_y":8,
       "y":480,
@@ -111,7 +93,7 @@
     {
       "cell_xf":8.5,
       "cell_id":149,
-      "tile_id":47,
+      "tile_id":216,
       "properties":{
         "look_at_player":true,
         "culling":true,
@@ -128,12 +110,13 @@
     {
       "cell_xf":8.5,
       "cell_id":109,
-      "tile_id":48,
+      "tile_id":217,
       "properties":{
-        "scale":1,
         "look_at_player":true,
+        "culling":true,
+        "scale":0.5,
         "global_rotation":false,
-        "culling":true
+        "size_for_scale":64
       },
       "cell_y":6,
       "y":352,
@@ -142,25 +125,9 @@
       "cell_x":9
     },
     {
-      "cell_xf":2.5,
-      "cell_id":183,
-      "tile_id":43,
-      "properties":{
-        "culling":true,
-        "scale":0.5,
-        "global_rotation":true,
-        "look_at_player":false
-      },
-      "cell_y":10,
-      "y":608,
-      "x":160,
-      "cell_yf":9.5,
-      "cell_x":3
-    },
-    {
-      "cell_xf":4.5,
-      "cell_id":185,
-      "tile_id":50,
+      "cell_xf":6.5,
+      "cell_id":107,
+      "tile_id":218,
       "properties":{
         "look_at_player":true,
         "culling":true,
@@ -168,11 +135,44 @@
         "global_rotation":false,
         "size_for_scale":64
       },
-      "cell_y":10,
-      "y":608,
+      "cell_y":6,
+      "y":352,
+      "x":416,
+      "cell_yf":5.5,
+      "cell_x":7
+    },
+    {
+      "cell_xf":4.5,
+      "cell_id":105,
+      "tile_id":219,
+      "properties":{
+        "scale":1,
+        "look_at_player":true,
+        "global_rotation":false,
+        "culling":true
+      },
+      "cell_y":6,
+      "y":352,
       "x":288,
-      "cell_yf":9.5,
+      "cell_yf":5.5,
       "cell_x":5
+    },
+    {
+      "cell_xf":2.5,
+      "cell_id":103,
+      "tile_id":220,
+      "properties":{
+        "look_at_player":true,
+        "culling":true,
+        "scale":0.5,
+        "global_rotation":false,
+        "size_for_scale":64
+      },
+      "cell_y":6,
+      "y":352,
+      "x":160,
+      "cell_yf":5.5,
+      "cell_x":3
     }
   ],
   "cells":[

@@ -51,6 +51,7 @@ end
 function Level:prepare()
 	assert(not self.player,"lvl already prepared to play")
 	self.player = ENTITIES.create_player(vmath.vector3(self.data.spawn_point.x,self.data.spawn_point.y,0.5))
+	self.player.angle.x = math.rad(self.data.spawn_point.angle)
 	self.ecs_world:add_entity(self.player)
 	self:light_map_build()
 	self:create_physics()
@@ -145,7 +146,7 @@ end
 
 ---@return LevelDataTile
 function Level:get_tile(id)
-	return assert(TILESET[id],"no tile with id:" .. id)
+	return assert(TILESET.by_id[id],"no tile with id:" .. id)
 end
 --endregion
 

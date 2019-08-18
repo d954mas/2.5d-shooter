@@ -27,7 +27,7 @@ return function()
 				coroutine.yield()
 				assert_equal(player.hp,100- WEAPONS.prototypes.ENEMY_MELEE.damage)
 			end
-			COMMON.coroutine_wait(2)
+			COMMON.coroutine_wait(4)
 			GAME_CONTROLLER.level.ecs_world:add_entity(ENTITIES.create_raycast_damage_info(player,player,WEAPONS.prototypes.ENEMY_MELEE))
 			coroutine.yield()
 			assert_equal(player.hp,100- WEAPONS.prototypes.ENEMY_MELEE.damage*2)

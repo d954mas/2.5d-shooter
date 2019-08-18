@@ -2,9 +2,10 @@
 <map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-up" width="10" height="10" tilewidth="64" tileheight="64" infinite="0" nextlayerid="14" nextobjectid="6">
  <tileset firstgid="1" source="../tilesets/main.tsx"/>
  <tileset firstgid="38" source="../tilesets/objects.tsx"/>
- <tileset firstgid="51" source="../tilesets/lights.tsx"/>
- <tileset firstgid="211" source="../tilesets/enemies.tsx"/>
- <tileset firstgid="214" source="../tilesets/pickups.tsx"/>
+ <tileset firstgid="43" source="../tilesets/lights.tsx"/>
+ <tileset firstgid="203" source="../tilesets/enemies.tsx"/>
+ <tileset firstgid="206" source="../tilesets/pickups.tsx"/>
+ <tileset firstgid="209" source="../tilesets/game_objects.tsx"/>
  <layer id="10" name="floor" width="10" height="10">
   <data encoding="csv">
 5,5,5,5,5,5,5,5,5,5,

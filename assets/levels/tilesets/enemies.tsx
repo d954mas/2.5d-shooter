@@ -16,6 +16,6 @@
    <property name="spawn_enemy" value="blob"/>
    <property name="spawner" type="bool" value="true"/>
   </properties>
-  <image width="64" height="64" source="objects/spawner.png"/>
+  <image width="64" height="64" source="enemies/spawner.png"/>
  </tile>
 </tileset>

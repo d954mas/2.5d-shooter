@@ -143,7 +143,7 @@ local function repack_objects(array,tiled)
 		object.x, object.y = x,y
 		local object_data = { tile_id = object.gid, properties = object.properties,x = object.x, y = object.y }
 		--copy properties from tile.
-		local tile = TILESET[object_data.tile_id]
+		local tile = TILESET.by_id[object_data.tile_id]
 		if tile then
 			for k,v in pairs(tile.properties)do
 				if object_data.properties[k] == nil	then
@@ -174,45 +174,7 @@ end
 
 --endregion
 
-local function create_tileset(tiled)
-	local id_to_tile = {}
-	for _, tileset in ipairs(tiled.tilesets)do
-		for _,tile in ipairs(tileset.tiles) do
-			tile.properties = tile.properties or {}
-			id_to_tile[tile.id + tileset.firstgid] = tile
-			tile.id = tile.id + tileset.firstgid
-			tile.width = tile.width or tileset.tilewidth
-			tile.height = tile.height or tileset.tileheight
-			if tile.image then
-				local image_path = tile.image
-				local pathes = {}
-				for word in string.gmatch(image_path, "([^/]+)") do
-					table.insert(pathes,word)
-				end
-				tile.atlas = pathes[#pathes-1]
-				tile.image = string.sub(pathes[#pathes],1,string.find(pathes[#pathes],"%.")-1)
-			end
-			tile.scale = 1/(tile.properties.size_for_scale or tile.height)*(tile.properties.scale or 1)
-			local origin = tile.properties.origin
-			if origin then
-				local size = tile.properties.size_for_scale or tile.height
-				local dy = (size - tile.height)*tile.scale
-				if origin == "top" then tile.origin = {x=0,y=dy} end
-			end
-		end
-	end
-	if not TILESET then
-		TILESET = id_to_tile
-	else
-		local json_global_tileset = cjson.encode(TILESET)
-		local json_local_tileset = cjson.encode(id_to_tile)
-		if json_global_tileset ~= json_local_tileset then
-			print("GLOBAL:" .. json_global_tileset)
-			print("LOCAL:" .. json_local_tileset)
-			assert(nil,"tileset not equal")
-		end
-	end
-end
+
 
 local function create_map_data(tiled)
 	local data = {}
@@ -237,7 +199,7 @@ end
 
 
 local function is_transparent(tile)
-	return not tile or TILESET[tile].properties.transparent
+	return not tile or TILESET.by_id[tile].properties.transparent
 end
 
 local function is_wall_transparent(wall)
@@ -326,21 +288,115 @@ local function clean_map(map)
 	map.cells = cells_copy
 end
 
+
+
+
+
+--region tilesets
+local function create_tileset(tiled)
+	local id_to_tile = {}
+	local tilesets = {}
+	for _, tileset in ipairs(tiled.tilesets)do
+		assert(not tilesets[tileset.name],"tileset with name:" .. tileset.name .. " already created")
+		tilesets[tileset.name] = {first_gid = tileset.firstgid,end_gid = tileset.firstgid + tileset.tiles[#tileset.tiles].id}
+		for _,tile in ipairs(tileset.tiles) do
+			tile.properties = tile.properties or {}
+			id_to_tile[tile.id + tileset.firstgid] = tile
+			tile.id = tile.id + tileset.firstgid
+			tile.width = tile.width or tileset.tilewidth
+			tile.height = tile.height or tileset.tileheight
+			if tile.image then
+				local image_path = tile.image
+				local pathes = {}
+				for word in string.gmatch(image_path, "([^/]+)") do
+					table.insert(pathes,word)
+				end
+				tile.atlas = pathes[#pathes-1]
+				tile.image = string.sub(pathes[#pathes],1,string.find(pathes[#pathes],"%.")-1)
+			end
+			tile.scale = 1/(tile.properties.size_for_scale or tile.height)*(tile.properties.scale or 1)
+			local origin = tile.properties.origin
+			if origin then
+				local size = tile.properties.size_for_scale or tile.height
+				local dy = (size - tile.height)*tile.scale
+				if origin == "top" then tile.origin = {x=0,y=dy} end
+			end
+		end
+	end
+	assert(not TILESET,"tileset already loaded")
+	TILESET = {by_id = id_to_tile, tilesets = tilesets}
+end
+
+local function parse_tilesets(path,result_path)
+	print("parse tilesets")
+	local name = path:match("^.+\\(.+)....")
+	result_path = result_path .. "\\" .. name .. ".json"
+	local tiled = dofile(path)
+	create_tileset(tiled)
+end
+
+
+--Check that id same for cells
+--Use same id for cell in all maps
+local function check_tilesets(tiled)
+	local layers_new_data = {}
+	for _, tileset in ipairs(tiled.tilesets)do
+		if tileset.firstgid ~= TILESET.tilesets[tileset.name].first_gid then
+			print("    update tileset:" .. tileset.name)
+			local end_gid = tileset.firstgid + tileset.tiles[#tileset.tiles].id
+			for _,layer in ipairs(tiled.layers) do
+				local new_data = layers_new_data[layer] or {}
+				layers_new_data[layer] = new_data
+				local firstgid_delta = TILESET.tilesets[tileset.name].first_gid - tileset.firstgid
+				if layer.data then
+					for i,v in ipairs(layer.data)do
+						if v>=tileset.firstgid and v<= end_gid then
+							assert(not new_data[i],"cell already processed")
+							new_data[i] = layer.data[i]+firstgid_delta
+							layer.data[i] = -1 --processed cell
+						end
+					end
+				end
+				if layer.objects then
+					for _,obj in ipairs(layer.objects)do
+						if not obj.processed and obj.gid>=tileset.firstgid and obj.gid<= end_gid then
+							obj.gid = obj.gid + firstgid_delta
+							obj.processed = true
+						end
+					end
+				end
+			end
+		end
+	end
+	for _, tileset in ipairs(tiled.tilesets)do
+		local new_data = layers_new_data[tileset]
+		if new_data then
+			for idx,v in pairs(new_data)do
+				assert(tileset.data[idx]==-1,"can't set for unprocessed cell")
+				tileset.data[idx] = v
+			end
+		end
+	end
+end
+
+--endregion
+
 local function parse_level(path,result_path)
 	local name = path:match("^.+\\(.+)....")
 	result_path = result_path .. "\\" .. name .. ".json"
 	local tiled = dofile(path)
+	tiled.src = path
 	local data = create_map_data(tiled)
-	create_tileset(tiled)
+	check_tilesets(tiled)
 	repack_all(tiled)
 	process_layer(data,assert(get_layer(tiled,"floor")),function(cell,tiled_cell) cell.wall.floor = tiled_cell end)
 	process_layer(data,assert(get_layer(tiled,"ceil")),function(cell,tiled_cell) cell.wall.ceil = tiled_cell end)
 	local wall_keys = {"north","south","east","west"}
 	process_layer(data,assert(get_layer(tiled,"walls")),function(cell,tiled_cell) for _,v in pairs(wall_keys)do
-			cell.wall[v] = tiled_cell
-			local tile = TILESET[tiled_cell]
-			cell.blocked = tile.properties.block;
-		end
+		cell.wall[v] = tiled_cell
+		local tile = TILESET.by_id[tiled_cell]
+		cell.blocked = tile.properties.block;
+	end
 	end)
 	for y=1,data.size.y do
 		local row = assert(data.cells[y])
@@ -351,12 +407,12 @@ local function parse_level(path,result_path)
 	end
 	data.light_map = {}
 	for k,v in ipairs(get_layer(tiled,"lights").data)do
-		data.light_map[k] = v == 0 and 0xFFFFFFFF or tonumber("0x"..string.sub(TILESET[v].properties.color,2))
+		data.light_map[k] = v == 0 and 0xFFFFFFFF or tonumber("0x"..string.sub(TILESET.by_id[v].properties.color,2))
 	end
 	process_objects(assert(get_layer(tiled,"objects"),"no objects layer"),function(object)
 		if object.properties.spawn_point then
 			assert(not data.spawn_point,"spawn point already set")
-			data.spawn_point = {x=object.cell_x,y=object.cell_y}
+			data.spawn_point = {x=object.cell_x,y=object.cell_y, angle = object.properties.rotation}
 		else
 			assert(not object.properties.pickup,"pickup on objects layer")
 			assert(not object.properties.enemy,"enemy on objects layer")
@@ -390,10 +446,15 @@ end
 
 local LEVELS_PATH = "lua"
 local RESULT_PATH = "result"
+
+parse_tilesets(lfs.currentdir() .. "\\" .. LEVELS_PATH .. "\\" .. "_tilesets.lua" , lfs.currentdir() .. "\\" .. RESULT_PATH .. "\\")
+
 for file in lfs.dir( lfs.currentdir() .. "\\" .. LEVELS_PATH) do
 	if file ~= "." and file ~= ".." then
-		print("parse level:" .. file)
-		parse_level( lfs.currentdir() .. "\\" .. LEVELS_PATH .. "\\" .. file , lfs.currentdir() .. "\\" .. RESULT_PATH .. "\\")
+		if file ~= "_tilesets.lua" then
+			print("parse level:" .. file)
+			parse_level( lfs.currentdir() .. "\\" .. LEVELS_PATH .. "\\" .. file , lfs.currentdir() .. "\\" .. RESULT_PATH .. "\\")
+		end
 	end
 end
 

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-up" width="20" height="20" tilewidth="64" tileheight="64" infinite="0" nextlayerid="10" nextobjectid="23">
+<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-up" width="20" height="20" tilewidth="64" tileheight="64" infinite="0" nextlayerid="10" nextobjectid="33">
  <tileset firstgid="1" source="../tilesets/main.tsx"/>
- <tileset firstgid="37" source="../tilesets/objects.tsx"/>
- <tileset firstgid="50" source="../tilesets/lights.tsx"/>
- <tileset firstgid="210" source="../tilesets/enemies.tsx"/>
- <tileset firstgid="213" source="../tilesets/pickups.tsx"/>
+ <tileset firstgid="38" source="../tilesets/objects.tsx"/>
+ <tileset firstgid="43" source="../tilesets/lights.tsx"/>
+ <tileset firstgid="203" source="../tilesets/enemies.tsx"/>
+ <tileset firstgid="206" source="../tilesets/pickups.tsx"/>
+ <tileset firstgid="209" source="../tilesets/game_objects.tsx"/>
  <layer id="2" name="floor" width="20" height="20">
   <data encoding="csv">
 5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
@@ -54,25 +55,21 @@
 </data>
  </layer>
  <objectgroup id="5" name="objects">
-  <object id="5" gid="38" x="128" y="1152" width="64" height="64">
+  <object id="5" gid="39" x="128" y="1152" width="64" height="64">
    <properties>
     <property name="spawn_point" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="9" gid="39" x="128" y="960" width="64" height="64"/>
-  <object id="10" gid="40" x="256" y="960" width="64" height="62"/>
-  <object id="11" gid="41" x="384" y="960" width="46" height="64"/>
-  <object id="14" gid="43" x="128" y="832" width="25" height="13"/>
-  <object id="16" gid="44" x="256" y="832" width="53" height="63"/>
-  <object id="17" gid="45" x="384" y="832" width="56" height="60"/>
-  <object id="18" gid="46" x="512" y="832" width="86" height="25"/>
-  <object id="19" gid="47" x="512" y="960" width="64" height="64"/>
-  <object id="20" gid="42" x="128" y="704" width="64" height="64">
-   <properties>
-    <property name="look_at_player" type="bool" value="false"/>
-   </properties>
-  </object>
-  <object id="21" gid="49" x="256" y="704" width="64" height="54"/>
+  <object id="23" gid="211" x="128" y="704" width="64" height="64"/>
+  <object id="24" gid="212" x="256" y="704" width="64" height="62"/>
+  <object id="25" gid="213" x="128" y="832" width="46" height="64"/>
+  <object id="26" gid="214" x="256" y="832" width="64" height="64"/>
+  <object id="27" gid="215" x="384" y="832" width="25" height="13"/>
+  <object id="28" gid="216" x="512" y="832" width="53" height="63"/>
+  <object id="29" gid="217" x="512" y="960" width="56" height="60"/>
+  <object id="30" gid="218" x="384" y="960" width="86" height="25"/>
+  <object id="31" gid="219" x="256" y="960" width="64" height="64"/>
+  <object id="32" gid="220" x="128" y="960" width="61" height="56"/>
  </objectgroup>
  <objectgroup id="9" name="pickups"/>
  <objectgroup id="8" name="enemies"/>
