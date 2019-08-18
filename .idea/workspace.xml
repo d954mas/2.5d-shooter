@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/assets/levels/lua/test_parser_objects.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/lua/test_parser_objects.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/parse.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/parse.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/sources/prototype.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/sources/prototype.tmx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/init_controller.script" beforeDir="false" afterPath="$PROJECT_DIR$/init_controller.script" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,10 +33,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/init_controller.script">
+        <entry file="file://$PROJECT_DIR$/assets/levels/parse.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="55" column="55" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+            <state relative-caret-position="180">
+              <caret line="414" column="48" selection-start-line="414" selection-start-column="48" selection-end-line="414" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -49,8 +52,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tiny_manageEntities</find>
-      <find>refresh</find>
       <find>on_entity_removed</find>
       <find>posI</find>
       <find>post</find>
@@ -79,6 +80,8 @@
       <find>get_ti</find>
       <find>spawn_po</find>
       <find>s</find>
+      <find>spawn_</find>
+      <find>spawn_point</find>
     </findStrings>
     <replaceStrings>
       <replace>.</replace>
@@ -173,11 +176,11 @@
         <option value="$PROJECT_DIR$/libs/hashes.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems/physics_obstacles_system.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua" />
-        <option value="$PROJECT_DIR$/assets/levels/parse.lua" />
         <option value="$PROJECT_DIR$/scenes/game/model/level.lua" />
         <option value="$PROJECT_DIR$/scenes/game/model/levels.lua" />
         <option value="$PROJECT_DIR$/tests/test_levels_loading.lua" />
         <option value="$PROJECT_DIR$/init_controller.script" />
+        <option value="$PROJECT_DIR$/assets/levels/parse.lua" />
       </list>
     </option>
   </component>
@@ -366,12 +369,12 @@
       <workItem from="1565726021451" duration="8533000" />
       <workItem from="1565818419191" duration="4963000" />
       <workItem from="1566062247542" duration="599000" />
-      <workItem from="1566131312836" duration="5724000" />
+      <workItem from="1566131312836" duration="6018000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="439402000" />
+    <option name="totallyTimeSpent" value="439696000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -834,18 +837,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/levels/parse.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="371" column="49" lean-forward="true" selection-start-line="371" selection-start-column="49" selection-end-line="371" selection-end-column="49" />
-          <folding>
-            <element signature="e#6811#8746#0" />
-            <element signature="e#9994#11307#0" />
-            <element signature="e#9227#11543#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_parser.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -879,8 +870,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/init_controller.script">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="55" column="55" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+        <state relative-caret-position="432">
+          <caret line="66" column="21" lean-forward="true" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/levels/parse.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="414" column="48" selection-start-line="414" selection-start-column="48" selection-end-line="414" selection-end-column="48" />
         </state>
       </provider>
     </entry>

@@ -53,7 +53,7 @@ function Script:init()
     self:scenes_register()
     self:input_init()
     if not RUN_TEST then
-        SM:show("GameScene",{level = LEVELS.LEVELS.TEST })
+        SM:show("GameScene",{level = LEVELS.LEVELS.PROTOTYPE })
     else
         self.test_runner = require("tests.tests") -- run tests
         self.test_runner.run()

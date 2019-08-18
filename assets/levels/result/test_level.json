@@ -1,8 +1,8 @@
 {
   "properties":  {},
   "spawn_point":{
-    "y":26,
-    "x":4,
+    "y":25.5,
+    "x":3.5,
     "angle":0
   },
   "enemies":[
