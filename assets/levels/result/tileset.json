@@ -404,11 +404,12 @@
     {
       "image":"wall35",
       "atlas":"walls",
-      "scale":0.015625,
+      "scale":0.0078125,
       "id":36,
       "properties":{
-        "transparent":true,
-        "block":false
+        "scale":0.5,
+        "block":false,
+        "transparent":true
       },
       "height":64,
       "width":64
@@ -424,8 +425,8 @@
         "deacceleration_multiply":0.2,
         "acceleration_multiply":0.8
       },
-      "height":70,
-      "width":70
+      "height":64,
+      "width":64
     },
     null,
     {

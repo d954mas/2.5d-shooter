@@ -39,7 +39,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall1.png",
+          image = "../tilesets/walls/wall1.png",
           width = 64,
           height = 64
         },
@@ -48,7 +48,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall2.png",
+          image = "../tilesets/walls/wall2.png",
           width = 64,
           height = 64
         },
@@ -57,7 +57,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall3.png",
+          image = "../tilesets/walls/wall3.png",
           width = 64,
           height = 64
         },
@@ -66,7 +66,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall4.png",
+          image = "../tilesets/walls/wall4.png",
           width = 64,
           height = 64
         },
@@ -75,7 +75,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall5.png",
+          image = "../tilesets/walls/wall5.png",
           width = 64,
           height = 64
         },
@@ -84,7 +84,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall6.png",
+          image = "../tilesets/walls/wall6.png",
           width = 64,
           height = 64
         },
@@ -93,7 +93,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall7.png",
+          image = "../tilesets/walls/wall7.png",
           width = 64,
           height = 64
         },
@@ -102,7 +102,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall8.png",
+          image = "../tilesets/walls/wall8.png",
           width = 64,
           height = 64
         },
@@ -111,7 +111,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall9.png",
+          image = "../tilesets/walls/wall9.png",
           width = 64,
           height = 64
         },
@@ -120,7 +120,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall10.png",
+          image = "../tilesets/walls/wall10.png",
           width = 64,
           height = 64
         },
@@ -129,7 +129,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall11.png",
+          image = "../tilesets/walls/wall11.png",
           width = 64,
           height = 64
         },
@@ -138,7 +138,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall12.png",
+          image = "../tilesets/walls/wall12.png",
           width = 64,
           height = 64
         },
@@ -147,7 +147,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall13.png",
+          image = "../tilesets/walls/wall13.png",
           width = 64,
           height = 64
         },
@@ -156,7 +156,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall14.png",
+          image = "../tilesets/walls/wall14.png",
           width = 64,
           height = 64
         },
@@ -165,7 +165,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall15.png",
+          image = "../tilesets/walls/wall15.png",
           width = 64,
           height = 64
         },
@@ -174,7 +174,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall16.png",
+          image = "../tilesets/walls/wall16.png",
           width = 64,
           height = 64
         },
@@ -183,7 +183,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall17.png",
+          image = "../tilesets/walls/wall17.png",
           width = 64,
           height = 64
         },
@@ -192,7 +192,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall18.png",
+          image = "../tilesets/walls/wall18.png",
           width = 64,
           height = 64
         },
@@ -201,7 +201,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall19.png",
+          image = "../tilesets/walls/wall19.png",
           width = 64,
           height = 64
         },
@@ -210,7 +210,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall20.png",
+          image = "../tilesets/walls/wall20.png",
           width = 64,
           height = 64
         },
@@ -219,7 +219,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall21.png",
+          image = "../tilesets/walls/wall21.png",
           width = 64,
           height = 64
         },
@@ -228,7 +228,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall22.png",
+          image = "../tilesets/walls/wall22.png",
           width = 64,
           height = 64
         },
@@ -237,7 +237,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall23.png",
+          image = "../tilesets/walls/wall23.png",
           width = 64,
           height = 64
         },
@@ -246,7 +246,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall24.png",
+          image = "../tilesets/walls/wall24.png",
           width = 64,
           height = 64
         },
@@ -255,7 +255,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall25.png",
+          image = "../tilesets/walls/wall25.png",
           width = 64,
           height = 64
         },
@@ -264,7 +264,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall26.png",
+          image = "../tilesets/walls/wall26.png",
           width = 64,
           height = 64
         },
@@ -273,7 +273,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall27.png",
+          image = "../tilesets/walls/wall27.png",
           width = 64,
           height = 64
         },
@@ -282,7 +282,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall28.png",
+          image = "../tilesets/walls/wall28.png",
           width = 64,
           height = 64
         },
@@ -291,7 +291,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall29.png",
+          image = "../tilesets/walls/wall29.png",
           width = 64,
           height = 64
         },
@@ -300,7 +300,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall30.png",
+          image = "../tilesets/walls/wall30.png",
           width = 64,
           height = 64
         },
@@ -309,7 +309,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall31.png",
+          image = "../tilesets/walls/wall31.png",
           width = 64,
           height = 64
         },
@@ -318,7 +318,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall32.png",
+          image = "../tilesets/walls/wall32.png",
           width = 64,
           height = 64
         },
@@ -327,7 +327,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall33.png",
+          image = "../tilesets/walls/wall33.png",
           width = 64,
           height = 64
         },
@@ -336,7 +336,7 @@ return {
           properties = {
             ["block"] = true
           },
-          image = "../../images/game/walls/wall34.png",
+          image = "../tilesets/walls/wall34.png",
           width = 64,
           height = 64
         },
@@ -344,9 +344,10 @@ return {
           id = 35,
           properties = {
             ["block"] = false,
+            ["scale"] = 0.5,
             ["transparent"] = true
           },
-          image = "../../images/game/walls/wall35.png",
+          image = "../tilesets/walls/wall35.png",
           width = 64,
           height = 64
         },
@@ -358,9 +359,9 @@ return {
             ["deacceleration_multiply"] = 0.2,
             ["size_for_scale"] = 70
           },
-          image = "../../images/game/walls/wall36.png",
-          width = 70,
-          height = 70
+          image = "../tilesets/walls/wall36.png",
+          width = 64,
+          height = 64
         }
       }
     },
