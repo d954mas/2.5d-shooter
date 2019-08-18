@@ -16,6 +16,7 @@ return function()
 			SM:show("GameScene",{level = LEVELS.TESTS.MOVEMENT},{reload = true})
 			while SM.co do coroutine.yield() end
 			GAME_CONTROLLER.level.ecs_world.systems.UpdateAISystem.active = false
+			GAME_CONTROLLER.level.ecs_world.systems.InputSystem.active = false
 			local player = GAME_CONTROLLER.level.player
 			assert_equal(player.hp,100)
 			GAME_CONTROLLER.level.ecs_world:add_entity(ENTITIES.create_raycast_damage_info(player,player,WEAPONS.prototypes.ENEMY_MELEE))

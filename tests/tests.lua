@@ -15,6 +15,9 @@ DEFTEST.add(TEST_WEAPONS)
 
 local M = {}
 function M.run()
+	sys.set_error_handler(function (source,message,traceback)
+		assert(nil,"game error:" .. message)
+	end)
 	DEFTEST.run()
 end
 
