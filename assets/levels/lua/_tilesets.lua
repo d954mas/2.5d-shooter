@@ -389,6 +389,7 @@ return {
         {
           id = 1,
           properties = {
+            ["rotation"] = 0,
             ["spawn_point"] = true
           },
           image = "../tilesets/objects/spawn_point_top.png",

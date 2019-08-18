@@ -6,8 +6,12 @@ local TAG = "LEVEL"
 M.TESTS = {
 	MOVEMENT = "test_movement",
 	OBJECTS = "test_objects",
-	LEVEL = "test_level",
-	PARSER = "test_parser_objects"
+	PARSER = "test_parser_objects",
+}
+
+M.LEVELS = {
+	PROTOTYPE = "prototype",
+	TEST = "test_level"
 }
 
 

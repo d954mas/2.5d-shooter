@@ -434,6 +434,7 @@
       "scale":0.015625,
       "id":39,
       "properties":{
+        "rotation":0,
         "spawn_point":true
       },
       "height":64,

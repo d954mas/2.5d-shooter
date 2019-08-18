@@ -3,6 +3,7 @@
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="1">
   <properties>
+   <property name="rotation" type="float" value="0"/>
    <property name="spawn_point" type="bool" value="true"/>
   </properties>
   <image width="64" height="64" source="objects/spawn_point_top.png"/>
