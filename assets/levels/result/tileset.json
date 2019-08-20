@@ -407,12 +407,11 @@
       "scale":0.0078125,
       "id":36,
       "properties":{
-        "scale":0.5,
-        "block":false,
-        "transparent":true
+        "transparent":true,
+        "block":false
       },
-      "height":64,
-      "width":64
+      "height":128,
+      "width":128
     },
     {
       "image":"wall36",
@@ -425,8 +424,8 @@
         "deacceleration_multiply":0.2,
         "acceleration_multiply":0.8
       },
-      "height":64,
-      "width":64
+      "height":70,
+      "width":70
     },
     null,
     {

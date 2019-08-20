@@ -17,8 +17,43 @@ local RESULT_THIN_PATH = "\\tilesets\\thin_walls\\"
 local function process_image(path,result_path)
 	local name = path:match("^.+\\(.+)")
 	result_path = result_path .. "\\" .. name
-	local image = VIPS.Image.thumbnail(path, 64)
+	local img_base = VIPS.Image.new_from_file(path)
+	local size = math.min(64,img_base:width(),img_base:height())
+	local image = VIPS.Image.thumbnail(path, size)
+
+	if img_base:width() > 64 or img_base:height()>64 then
+		local img_total = VIPS.Image.black(img_base:width(), img_base:height())
+		if image:bands() == 3 then image = image:bandjoin(255) end
+		img_total = img_total:insert(image, 0, img_base:height()-image:height())
+		image = img_total
+	end
+
 	image:write_to_file(result_path)
+
+end
+
+
+
+local function process_thin_walls(path,result_path)
+	local name = path:match("^.+\\(.+)....")
+	local img_base = VIPS.Image.new_from_file(path)
+	if img_base:bands() == 3 then img_base = img_base:bandjoin(255) end
+	local size = 64
+
+	local image = VIPS.Image.thumbnail(path, size,{height  = size/2,size = 3 })
+	local image_top = image:copy()
+	if image_top:bands() == 3 then image_top = image_top:bandjoin(255) end
+	image_top = image_top:embed(0, 16, image_top:width(), 64)
+	image_top:write_to_file(result_path .. "" .. name .. "_top.png")
+
+
+	image = VIPS.Image.thumbnail(path, size,{height  = size/2,size = 3 })
+	local image_right = image:copy()
+	if image_right:bands() == 3 then image_right = image_right:bandjoin(255) end
+	image_right = image_right:embed(0, 16, image_right:width(), 64)
+	image_right = image_right:rot(math.rad(90))
+	image_right:write_to_file(result_path .. "" .. name .. "_right.png")
+
 
 end
 
@@ -34,7 +69,7 @@ print("Create thin walls thumbnail")
 for file in LFS.dir( LFS.currentdir() .. IMAGES_THIN_PATH) do
 	if file ~= "." and file ~= ".." then
 		print("image:" .. file)
-		process_image(LFS.currentdir() .. "\\" .. IMAGES_THIN_PATH .. "\\" .. file,LFS.currentdir() .. RESULT_THIN_PATH)
+		process_thin_walls(LFS.currentdir() .. "\\" .. IMAGES_THIN_PATH .. "\\" .. file,LFS.currentdir() .. RESULT_THIN_PATH)
 	end
 end
 

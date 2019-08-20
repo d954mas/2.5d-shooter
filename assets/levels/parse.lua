@@ -412,7 +412,7 @@ local function parse_level(path,result_path)
 	process_objects(assert(get_layer(tiled,"objects"),"no objects layer"),function(object)
 		if object.properties.spawn_point then
 			assert(not data.spawn_point,"spawn point already set")
-			data.spawn_point = {x=object.cell_x-0.5,y=object.cell_y-0.5, angle = object.properties.rotation}
+			data.spawn_point = {x=object.cell_xf,y=object.cell_yf, angle = object.properties.rotation}
 		else
 			assert(not object.properties.pickup,"pickup on objects layer")
 			assert(not object.properties.enemy,"enemy on objects layer")

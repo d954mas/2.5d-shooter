@@ -16,8 +16,8 @@ return {
       name = "main",
       firstgid = 1,
       filename = "../tilesets/main.tsx",
-      tilewidth = 70,
-      tileheight = 70,
+      tilewidth = 128,
+      tileheight = 128,
       spacing = 0,
       margin = 0,
       columns = 0,
@@ -344,12 +344,11 @@ return {
           id = 35,
           properties = {
             ["block"] = false,
-            ["scale"] = 0.5,
             ["transparent"] = true
           },
           image = "../tilesets/walls/wall35.png",
-          width = 64,
-          height = 64
+          width = 128,
+          height = 128
         },
         {
           id = 36,
@@ -360,8 +359,8 @@ return {
             ["size_for_scale"] = 70
           },
           image = "../tilesets/walls/wall36.png",
-          width = 64,
-          height = 64
+          width = 70,
+          height = 70
         }
       }
     },
