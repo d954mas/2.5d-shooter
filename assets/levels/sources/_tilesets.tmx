@@ -6,6 +6,7 @@
  <tileset firstgid="203" source="../tilesets/enemies.tsx"/>
  <tileset firstgid="206" source="../tilesets/pickups.tsx"/>
  <tileset firstgid="209" source="../tilesets/game_objects.tsx"/>
+ <tileset firstgid="222" source="../tilesets/thin_walls.tsx"/>
  <layer id="1" name="Слой тайлов 1" width="1" height="1">
   <data encoding="csv">
 0

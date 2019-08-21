@@ -305,6 +305,12 @@ local function create_tileset(tiled)
 			tile.id = tile.id + tileset.firstgid
 			tile.width = tile.width or tileset.tilewidth
 			tile.height = tile.height or tileset.tileheight
+			--copy tileset properties to tile properties
+			for k,v in pairs(tileset.properties) do
+				if tile.properties[k] == nil then
+					tile.properties[k] = v
+				end
+			end
 			if tile.image then
 				local image_path = tile.image
 				local pathes = {}
@@ -313,6 +319,15 @@ local function create_tileset(tiled)
 				end
 				tile.atlas = pathes[#pathes-1]
 				tile.image = string.sub(pathes[#pathes],1,string.find(pathes[#pathes],"%.")-1)
+				if tile.properties.thin_wall then
+					local idx = string.find(tile.image, "_[^_]*$")
+					local orientation =  string.sub(tile.image,idx+1)
+					if orientation == "horizontal" then tile.properties.thin_wall_horizontal = true
+					elseif orientation == "vertical" then tile.properties.thin_wall_horizontal = false
+					else assert(nil,"unknown thin wall orientation:" .. tostring(orientation)) end
+					tile.image =  string.sub(tile.image,1,idx - 1)
+					tile.atlas = "wall"
+				end
 			end
 			tile.scale = 1/(tile.properties.size_for_scale or tile.height)*(tile.properties.scale or 1)
 			local origin = tile.properties.origin

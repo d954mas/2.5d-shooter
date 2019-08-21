@@ -8,6 +8,10 @@
       "end_gid":37,
       "first_gid":1
     },
+    "thin_walls":{
+      "end_gid":225,
+      "first_gid":222
+    },
     "game_objects":{
       "end_gid":221,
       "first_gid":209
@@ -2141,6 +2145,58 @@
         "scale":0.5
       },
       "height":54,
+      "width":64
+    },
+    {
+      "image":"wall24",
+      "atlas":"wall",
+      "scale":0.015625,
+      "height":64,
+      "properties":{
+        "thin_wall_horizontal":true,
+        "thin_wall":true
+      },
+      "id":222,
+      "width":64
+    },
+    {
+      "image":"wall24",
+      "atlas":"wall",
+      "scale":0.015625,
+      "height":64,
+      "properties":{
+        "thin_wall_horizontal":false,
+        "thin_wall":true
+      },
+      "id":223,
+      "width":64
+    },
+    {
+      "image":"wall35",
+      "atlas":"wall",
+      "scale":0.0078125,
+      "id":224,
+      "properties":{
+        "scale":0.5,
+        "thin_wall":true,
+        "thin_wall_horizontal":true,
+        "transparent":true
+      },
+      "height":64,
+      "width":64
+    },
+    {
+      "image":"wall35",
+      "atlas":"wall",
+      "scale":0.0078125,
+      "id":225,
+      "properties":{
+        "scale":0.5,
+        "thin_wall":true,
+        "thin_wall_horizontal":false,
+        "transparent":true
+      },
+      "height":64,
       "width":64
     }
   ]

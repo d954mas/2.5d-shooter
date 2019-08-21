@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/lua/_tilesets.lua" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/levels/lua/prototype.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/lua/prototype.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/levels/lua/test_level.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/lua/test_level.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/levels/lua/test_movement.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/lua/test_movement.lua" afterDir="false" />
@@ -12,7 +11,8 @@
       <change beforePath="$PROJECT_DIR$/assets/levels/make_walls_thumbnail.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/make_walls_thumbnail.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/levels/parse.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/parse.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/levels/result/tileset.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/result/tileset.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/tilesets/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/sources/_tilesets.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/sources/_tilesets.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/thin_walls.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/tilesets/thin_walls.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,10 +40,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/levels/make_walls_thumbnail.lua">
+        <entry file="file://$PROJECT_DIR$/assets/levels/parse.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
+            <state relative-caret-position="425">
+              <caret line="335" column="58" lean-forward="true" selection-start-line="335" selection-start-column="58" selection-end-line="336" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -186,8 +186,8 @@
         <option value="$PROJECT_DIR$/tests/test_player.lua" />
         <option value="$PROJECT_DIR$/assets/levels/make_thin_walls_images.lua" />
         <option value="$PROJECT_DIR$/init_controller.script" />
-        <option value="$PROJECT_DIR$/assets/levels/parse.lua" />
         <option value="$PROJECT_DIR$/assets/levels/make_walls_thumbnail.lua" />
+        <option value="$PROJECT_DIR$/assets/levels/parse.lua" />
       </list>
     </option>
   </component>
@@ -198,8 +198,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="338" />
-    <option name="y" value="79" />
+    <option name="x" value="238" />
     <option name="width" value="1426" />
     <option name="height" value="1036" />
   </component>
@@ -209,8 +208,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -389,12 +388,13 @@
       <workItem from="1566062247542" duration="599000" />
       <workItem from="1566131312836" duration="9142000" />
       <workItem from="1566165165143" duration="2486000" />
-      <workItem from="1566333611348" duration="7296000" />
+      <workItem from="1566333611348" duration="7608000" />
+      <workItem from="1566424673761" duration="1475000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="452602000" />
+    <option name="totallyTimeSpent" value="454389000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -406,10 +406,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="338" y="79" width="1426" height="1036" extended-state="0" />
+    <frame x="238" y="0" width="1426" height="1036" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31167883" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3160584" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -425,10 +425,10 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4983028" weight="0.32112068" />
       <window_info anchor="bottom" id="LuaCheck" order="7" sideWeight="0.4914803" weight="0.33543637" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.45255473" visible="true" weight="0.43649948" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4518248" visible="true" weight="0.43649948" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.45839417" weight="0.434365" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.54744524" side_tool="true" visible="true" weight="0.43649948" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4569343" weight="0.434365" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="12" sideWeight="0.54817516" side_tool="true" visible="true" weight="0.43649948" />
       <window_info anchor="bottom" id="TypeScript" order="13" sideWeight="0.49946752" weight="0.32912722" />
       <window_info anchor="bottom" id="Messages" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -590,13 +590,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/debug/level_map/debug_level_map.gui">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="26" column="10" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/debug/game_info/debug_game_info_gui.go" />
     <entry file="file://$PROJECT_DIR$/debug/game_info/debug_game_info_gui.gui">
       <provider selected="true" editor-type-id="text-editor" />
@@ -882,17 +875,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/levels/parse.lua">
+    <entry file="jar://$APPLICATION_PLUGINS_DIR$/EmmyLua/lib/EmmyLua-1.2.10-IDEA182.jar!/std/Lua51/string.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="384" column="44" lean-forward="true" selection-start-line="384" selection-start-column="4" selection-end-line="384" selection-end-column="44" />
+        <state relative-caret-position="335">
+          <caret line="262" column="16" selection-start-line="262" selection-start-column="16" selection-end-line="262" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/levels/make_walls_thumbnail.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="128">
+          <caret line="46" column="69" selection-start-line="46" selection-start-column="69" selection-end-line="46" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/levels/parse.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="335" column="58" lean-forward="true" selection-start-line="335" selection-start-column="58" selection-end-line="336" selection-end-column="68" />
         </state>
       </provider>
     </entry>

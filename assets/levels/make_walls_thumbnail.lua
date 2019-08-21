@@ -44,7 +44,7 @@ local function process_thin_walls(path,result_path)
 	local image_top = image:copy()
 	if image_top:bands() == 3 then image_top = image_top:bandjoin(255) end
 	image_top = image_top:embed(0, 16, image_top:width(), 64)
-	image_top:write_to_file(result_path .. "" .. name .. "_top.png")
+	image_top:write_to_file(result_path .. "" .. name .. "_horizontal.png")
 
 
 	image = VIPS.Image.thumbnail(path, size,{height  = size/2,size = 3 })
@@ -52,7 +52,7 @@ local function process_thin_walls(path,result_path)
 	if image_right:bands() == 3 then image_right = image_right:bandjoin(255) end
 	image_right = image_right:embed(0, 16, image_right:width(), 64)
 	image_right = image_right:rot(math.rad(90))
-	image_right:write_to_file(result_path .. "" .. name .. "_right.png")
+	image_right:write_to_file(result_path .. "" .. name .. "_vertical.png")
 
 
 end
