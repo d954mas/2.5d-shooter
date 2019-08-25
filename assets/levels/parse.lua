@@ -322,11 +322,15 @@ local function create_tileset(tiled)
 				if tile.properties.thin_wall then
 					local idx = string.find(tile.image, "_[^_]*$")
 					local orientation =  string.sub(tile.image,idx+1)
-					if orientation == "horizontal" then tile.properties.thin_wall_horizontal = true
-					elseif orientation == "vertical" then tile.properties.thin_wall_horizontal = false
+					local angle = 0
+					if orientation == "horizontal" then angle = 0
+					elseif orientation == "vertical" then angle = 90
 					else assert(nil,"unknown thin wall orientation:" .. tostring(orientation)) end
 					tile.image =  string.sub(tile.image,1,idx - 1)
 					tile.atlas = "wall"
+					if not tile.properties.angle then
+						tile.properties.angle = angle
+					end
 				end
 			end
 			tile.scale = 1/(tile.properties.size_for_scale or tile.height)*(tile.properties.scale or 1)
@@ -407,11 +411,17 @@ local function parse_level(path,result_path)
 	process_layer(data,assert(get_layer(tiled,"floor")),function(cell,tiled_cell) cell.wall.floor = tiled_cell end)
 	process_layer(data,assert(get_layer(tiled,"ceil")),function(cell,tiled_cell) cell.wall.ceil = tiled_cell end)
 	local wall_keys = {"north","south","east","west"}
-	process_layer(data,assert(get_layer(tiled,"walls")),function(cell,tiled_cell) for _,v in pairs(wall_keys)do
-		cell.wall[v] = tiled_cell
+	process_layer(data,assert(get_layer(tiled,"walls")),function(cell,tiled_cell)
 		local tile = TILESET.by_id[tiled_cell]
+		if not tile.properties.thin_wall then
+			cell.wall["base"] = tiled_cell
+			for _,v in pairs(wall_keys)do
+				cell.wall[v] = tiled_cell
+			end
+		else
+			cell.wall["thin"] = tiled_cell
+		end
 		cell.blocked = tile.properties.block;
-	end
 	end)
 	for y=1,data.size.y do
 		local row = assert(data.cells[y])

@@ -2153,7 +2153,7 @@
       "scale":0.015625,
       "height":64,
       "properties":{
-        "thin_wall_horizontal":true,
+        "angle":0,
         "thin_wall":true
       },
       "id":222,
@@ -2165,7 +2165,7 @@
       "scale":0.015625,
       "height":64,
       "properties":{
-        "thin_wall_horizontal":false,
+        "angle":90,
         "thin_wall":true
       },
       "id":223,
@@ -2179,7 +2179,7 @@
       "properties":{
         "scale":0.5,
         "thin_wall":true,
-        "thin_wall_horizontal":true,
+        "angle":0,
         "transparent":true
       },
       "height":64,
@@ -2193,7 +2193,7 @@
       "properties":{
         "scale":0.5,
         "thin_wall":true,
-        "thin_wall_horizontal":false,
+        "angle":90,
         "transparent":true
       },
       "height":64,

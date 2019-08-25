@@ -9469,6 +9469,7 @@
         "id":673,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -9482,6 +9483,7 @@
         "id":674,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true,
           "north":27
         },
@@ -9496,6 +9498,7 @@
         "id":675,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true,
           "north":27
         },
@@ -9510,6 +9513,7 @@
         "id":676,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true,
           "north":27
         },
@@ -9524,6 +9528,7 @@
         "id":677,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true,
           "north":27
         },
@@ -9538,6 +9543,7 @@
         "id":678,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true,
           "north":27
         },
@@ -9552,6 +9558,7 @@
         "id":679,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true,
           "north":27
         },
@@ -9566,6 +9573,7 @@
         "id":680,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true,
           "north":27
         },
@@ -9580,6 +9588,7 @@
         "id":681,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true,
           "north":27
         },
@@ -9594,6 +9603,7 @@
         "id":682,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true,
           "north":27
         },
@@ -9608,6 +9618,7 @@
         "id":683,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -9917,6 +9928,7 @@
         "id":705,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true,
           "east":27
         },
@@ -10058,6 +10070,7 @@
         "empty":false,
         "wall":{
           "west":27,
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -10367,6 +10380,7 @@
         "id":737,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true,
           "east":27
         },
@@ -10508,6 +10522,7 @@
         "empty":false,
         "wall":{
           "west":27,
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -10817,6 +10832,7 @@
         "id":769,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true,
           "east":27
         },
@@ -10958,6 +10974,7 @@
         "empty":false,
         "wall":{
           "west":27,
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -11267,6 +11284,7 @@
         "id":801,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true,
           "east":27
         },
@@ -11408,6 +11426,7 @@
         "empty":false,
         "wall":{
           "west":27,
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -11717,6 +11736,7 @@
         "id":833,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -11731,6 +11751,7 @@
         "empty":false,
         "wall":{
           "south":27,
+          "base":27,
           "blocked":true,
           "north":27
         },
@@ -11746,6 +11767,7 @@
         "empty":false,
         "wall":{
           "south":17,
+          "base":17,
           "blocked":true,
           "north":17
         },
@@ -11761,6 +11783,7 @@
         "empty":false,
         "wall":{
           "south":27,
+          "base":27,
           "blocked":true,
           "north":27
         },
@@ -11776,6 +11799,7 @@
         "empty":false,
         "wall":{
           "south":27,
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -11790,6 +11814,7 @@
         "empty":false,
         "wall":{
           "south":27,
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -11804,6 +11829,7 @@
         "empty":false,
         "wall":{
           "south":27,
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -11818,6 +11844,7 @@
         "empty":false,
         "wall":{
           "south":27,
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -11832,6 +11859,7 @@
         "empty":false,
         "wall":{
           "south":27,
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -11846,6 +11874,7 @@
         "empty":false,
         "wall":{
           "south":27,
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -11859,6 +11888,7 @@
         "id":843,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -12168,6 +12198,7 @@
         "id":865,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true,
           "east":27
         },
@@ -12225,6 +12256,7 @@
         "empty":false,
         "wall":{
           "west":27,
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -12618,6 +12650,7 @@
         "id":897,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true,
           "east":27
         },
@@ -12675,6 +12708,7 @@
         "empty":false,
         "wall":{
           "west":27,
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -13068,6 +13102,7 @@
         "id":929,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true,
           "east":27
         },
@@ -13125,6 +13160,7 @@
         "empty":false,
         "wall":{
           "west":27,
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -13518,6 +13554,7 @@
         "id":961,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true,
           "east":27
         },
@@ -13575,6 +13612,7 @@
         "empty":false,
         "wall":{
           "west":27,
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -13968,6 +14006,7 @@
         "id":993,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -13982,6 +14021,7 @@
         "empty":false,
         "wall":{
           "south":27,
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -13996,6 +14036,7 @@
         "empty":false,
         "wall":{
           "south":27,
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -14010,6 +14051,7 @@
         "empty":false,
         "wall":{
           "south":27,
+          "base":27,
           "blocked":true
         },
         "blocked":true
@@ -14023,6 +14065,7 @@
         "id":997,
         "empty":false,
         "wall":{
+          "base":27,
           "blocked":true
         },
         "blocked":true

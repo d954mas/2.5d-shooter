@@ -65,6 +65,7 @@
         "id":1,
         "empty":false,
         "wall":{
+          "base":4,
           "blocked":true
         },
         "blocked":true
@@ -78,6 +79,7 @@
         "id":2,
         "empty":false,
         "wall":{
+          "base":4,
           "blocked":true,
           "north":4
         },
@@ -92,6 +94,7 @@
         "id":3,
         "empty":false,
         "wall":{
+          "base":4,
           "blocked":true,
           "north":4
         },
@@ -106,6 +109,7 @@
         "id":4,
         "empty":false,
         "wall":{
+          "base":4,
           "blocked":true,
           "north":4
         },
@@ -120,6 +124,7 @@
         "id":5,
         "empty":false,
         "wall":{
+          "base":4,
           "blocked":true,
           "north":4
         },
@@ -134,6 +139,7 @@
         "id":6,
         "empty":false,
         "wall":{
+          "base":4,
           "blocked":true,
           "north":4
         },
@@ -148,6 +154,7 @@
         "id":7,
         "empty":false,
         "wall":{
+          "base":4,
           "blocked":true,
           "north":4
         },
@@ -162,6 +169,7 @@
         "id":8,
         "empty":false,
         "wall":{
+          "base":4,
           "blocked":true,
           "north":4
         },
@@ -176,6 +184,7 @@
         "id":9,
         "empty":false,
         "wall":{
+          "base":4,
           "blocked":true,
           "north":4
         },
@@ -190,6 +199,7 @@
         "id":10,
         "empty":false,
         "wall":{
+          "base":4,
           "blocked":true
         },
         "blocked":true
@@ -205,6 +215,7 @@
         "id":11,
         "empty":false,
         "wall":{
+          "base":4,
           "blocked":true,
           "east":4
         },
@@ -324,6 +335,7 @@
         "empty":false,
         "wall":{
           "west":4,
+          "base":4,
           "blocked":true
         },
         "blocked":true
@@ -339,6 +351,7 @@
         "id":21,
         "empty":false,
         "wall":{
+          "base":4,
           "blocked":true,
           "east":4
         },
@@ -458,6 +471,7 @@
         "empty":false,
         "wall":{
           "west":4,
+          "base":4,
           "blocked":true
         },
         "blocked":true
@@ -473,6 +487,7 @@
         "id":31,
         "empty":false,
         "wall":{
+          "base":4,
           "blocked":true,
           "east":4
         },
@@ -592,6 +607,7 @@
         "empty":false,
         "wall":{
           "west":4,
+          "base":4,
           "blocked":true
         },
         "blocked":true
@@ -607,6 +623,7 @@
         "id":41,
         "empty":false,
         "wall":{
+          "base":4,
           "blocked":true,
           "east":4
         },
@@ -726,6 +743,7 @@
         "empty":false,
         "wall":{
           "west":4,
+          "base":4,
           "blocked":true
         },
         "blocked":true
@@ -741,6 +759,7 @@
         "id":51,
         "empty":false,
         "wall":{
+          "base":4,
           "blocked":true,
           "east":4
         },
@@ -860,6 +879,7 @@
         "empty":false,
         "wall":{
           "west":4,
+          "base":4,
           "blocked":true
         },
         "blocked":true
@@ -875,6 +895,7 @@
         "id":61,
         "empty":false,
         "wall":{
+          "base":4,
           "blocked":true,
           "east":4
         },
@@ -994,6 +1015,7 @@
         "empty":false,
         "wall":{
           "west":4,
+          "base":4,
           "blocked":true
         },
         "blocked":true
@@ -1009,6 +1031,7 @@
         "id":71,
         "empty":false,
         "wall":{
+          "base":4,
           "blocked":true,
           "east":4
         },
@@ -1128,6 +1151,7 @@
         "empty":false,
         "wall":{
           "west":4,
+          "base":4,
           "blocked":true
         },
         "blocked":true
@@ -1143,6 +1167,7 @@
         "id":81,
         "empty":false,
         "wall":{
+          "base":4,
           "blocked":true,
           "east":4
         },
@@ -1262,6 +1287,7 @@
         "empty":false,
         "wall":{
           "west":4,
+          "base":4,
           "blocked":true
         },
         "blocked":true
@@ -1277,6 +1303,7 @@
         "id":91,
         "empty":false,
         "wall":{
+          "base":4,
           "blocked":true
         },
         "blocked":true
@@ -1291,6 +1318,7 @@
         "empty":false,
         "wall":{
           "south":4,
+          "base":4,
           "blocked":true
         },
         "blocked":true
@@ -1305,6 +1333,7 @@
         "empty":false,
         "wall":{
           "south":4,
+          "base":4,
           "blocked":true
         },
         "blocked":true
@@ -1319,6 +1348,7 @@
         "empty":false,
         "wall":{
           "south":4,
+          "base":4,
           "blocked":true
         },
         "blocked":true
@@ -1333,6 +1363,7 @@
         "empty":false,
         "wall":{
           "south":4,
+          "base":4,
           "blocked":true
         },
         "blocked":true
@@ -1347,6 +1378,7 @@
         "empty":false,
         "wall":{
           "south":4,
+          "base":4,
           "blocked":true
         },
         "blocked":true
@@ -1361,6 +1393,7 @@
         "empty":false,
         "wall":{
           "south":4,
+          "base":4,
           "blocked":true
         },
         "blocked":true
@@ -1375,6 +1408,7 @@
         "empty":false,
         "wall":{
           "south":4,
+          "base":4,
           "blocked":true
         },
         "blocked":true
@@ -1389,6 +1423,7 @@
         "empty":false,
         "wall":{
           "south":4,
+          "base":4,
           "blocked":true
         },
         "blocked":true
@@ -1402,6 +1437,7 @@
         "id":100,
         "empty":false,
         "wall":{
+          "base":4,
           "blocked":true
         },
         "blocked":true

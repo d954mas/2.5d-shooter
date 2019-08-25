@@ -41,6 +41,13 @@ function System:initialize()
 			rotation = vmath.quat_rotation_x(math.rad(90)),
 			position = vmath.vector3(0,1,0),
 			no_transparent = true
+		},
+		thin = {
+			rotation_f = function(tile)
+				return vmath.quat_rotation_y(math.rad(tile.properties.angle or 0))
+			end,
+			position = vmath.vector3(0,0.5,0),
+			no_transparent = true
 		}
 	}
 end
@@ -63,8 +70,9 @@ function System:create_wall_object(cell_data,x,y,transparent)
 			local tile = self.world.game_controller.level:get_tile(v)
 			have_transparent = have_transparent or tile.properties.transparent
 			if  not(transparent and config.no_transparent) then
+				local rotation = config.rotation_f and config.rotation_f(tile) or config.rotation
 				root_go = root_go or msg.url(factory.create(FACTORY_EMPTY_URL,vmath.vector3(x-0.5,0,-y+0.5),vmath.quat_rotation_z(0),nil,scale))
-				local sprite_go = msg.url(factory.create(FACTORY_SPRITE_WALL_URL,config.position,config.rotation,nil,tile.scale))
+				local sprite_go = msg.url(factory.create(FACTORY_SPRITE_WALL_URL,config.position,rotation,nil,tile.scale))
 				sprite.play_flipbook(sprite_go,tile.image)
 				go.set_parent(sprite_go,root_go)
 			end
