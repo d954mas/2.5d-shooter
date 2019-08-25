@@ -16,6 +16,7 @@ function Script:bind_vh()
 			bg = gui.get_node("btn_restart/bg"),
 			lbl = gui.get_node("btn_restart/label"),
 		},
+		btn_menu = { id = "btn_menu"},
 		lbl_game_over = gui.get_node("lbl_game_over")
 	}
 end
@@ -26,9 +27,8 @@ end
 
 
 function Script:on_input(action_id,action)
-	GOOEY.button(self.vh.btn_resume.id,action_id,action,function (button)
-		SM:reload_scene()
-	end)
+	GOOEY.button(self.vh.btn_resume.id,action_id,action,function (button) SM:reload_scene() end)
+	GOOEY.button(self.vh.btn_menu.id,action_id,action,function (button) SM:show("SelectLevelScene",nil,{close_modals = true}) end)
 end
 --endregion
 

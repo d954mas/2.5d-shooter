@@ -1,0 +1,50 @@
+local COMMON = require "libs.common"
+local GOOEY = require "gooey.themes.dirtylarry.dirtylarry"
+local LEVELS = require "scenes.game.model.levels"
+local SM = require "libs.sm.sm"
+
+local Script = COMMON.new_n28s()
+
+function Script:init()
+	self:bind_vh()
+	COMMON.INPUT.acquire()
+	self.data = {}
+	for _,v in COMMON.LUME.ordered_pairs(LEVELS.LEVELS)do
+		table.insert(self.data,v)
+	end
+	self:on_input(nil,{x=0,y=0})
+end
+
+function Script:bind_vh()
+	self.vh = {
+		list_levels = {
+			id = "list_levels"
+		}
+	}
+end
+
+function Script:final()
+	COMMON.INPUT.release()
+end
+
+
+local function update_list(list)
+	for i,item in ipairs(list.items) do
+		gui.set_text(item.nodes[hash("listitem/text")], item.data)
+	end
+end
+
+local function on_item_selected(list)
+	SM:show("GameScene",{level = list.items[list.selected_item].data})
+end
+
+
+function Script:on_input(action_id,action)
+	GOOEY.dynamic_list(self.vh.list_levels.id,self.data,action_id,action,on_item_selected,update_list)
+end
+--endregion
+
+
+COMMON.N28S.register(Script)
+
+

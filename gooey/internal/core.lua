@@ -4,8 +4,11 @@ local M = {}
 
 local EMPTY = hash("")
 
+local long_press_start = 0
+
 local function handle_action(component, action_id, action)
 	action.id = action.id or -1
+	component.long_pressed_time = component.long_pressed_time or 1.5
 	if not component.touch_id or component.touch_id == action.id then
 		local over = gui.pick_node(component.node, action.x, action.y)
 		component.over_now = over and not component.over
@@ -17,15 +20,18 @@ local function handle_action(component, action_id, action)
 		local released = touch and action.released
 		if pressed then
 			component.touch_id = action.id
+			long_press_start = socket.gettime()
 		elseif released then
-			component.touch_id = nil 
+			component.touch_id = nil
+			component.long_pressed = socket.gettime() - long_press_start > component.long_pressed_time
 		end
-		
+
 		component.pressed_now = pressed and not component.pressed
 		component.released_now = released and component.pressed
 		component.pressed = pressed or (component.pressed and not released)
 		component.consumed = component.pressed or (component.released_now and component.over)
 		component.clicked = component.released_now and component.over
+		component.long_pressed = component.long_pressed or false
 	end
 end
 
@@ -93,9 +99,9 @@ end
 function M.to_key(hsh)
 	local url = msg.url()
 	return hash_to_hex(url.socket or EMPTY)
-	.. hash_to_hex(url.path or empty)
-	.. hash_to_hex(url.fragment or empty)
-	.. hash_to_hex(hsh)
+			.. hash_to_hex(url.path or empty)
+			.. hash_to_hex(url.fragment or empty)
+			.. hash_to_hex(hsh)
 end
 
 --- Get an instance (table) for an id or create one if it doesn't
@@ -111,7 +117,11 @@ function M.instance(id, instances, functions)
 	-- empty instance
 	-- if the script instance has changed then we're certain that
 	-- it's reloaded
-	local script_instance = _G.__dm_script_instance__
+	-- NOTE: In Defold 1.2.151 __dm_script_instance__ has been
+	-- replaced by a numeric key
+	-- 3700146495 (Android, macOS etc)
+	-- -594820801 (HTML5)
+	local script_instance = _G[3700146495] or _G[-594820801]
 	if instance and instance.__script ~= script_instance then
 		instances[key] = nil
 	end

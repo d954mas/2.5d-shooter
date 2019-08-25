@@ -5,6 +5,8 @@ local TAG = "SM"
 ---@class SceneManager
 local M = COMMON.class("SceneManager")
 
+local unload_modals
+
 function M:initialize()
     self.stack = Stack()
     ---@type Scene[]
@@ -123,6 +125,11 @@ local function show_new_scene(self, old_scene, new_scene, input,options)
         end
     end
 
+    if not new_scene._config.modal then
+        local co = self.co
+        unload_modals(self)
+        self.co = co
+    end
     if old_scene then unload_scene(self,old_scene,new_scene) end
 
     if new_scene then
@@ -158,13 +165,15 @@ local function show_new_scene(self, old_scene, new_scene, input,options)
 end
 
 ---@param self SceneManager
-local function unload_modals(self)
+unload_modals = function(self)
     COMMON.i("start unload modals",TAG)
     while(true)do
         local co = self.co
         local scene = self.stack:peek()
-        if not scene._config.modal then break end
-        show_new_scene(self, self.stack:pop(), self.stack:peek())
+        if not scene or not scene._config.modal then break end
+        scene = self.stack:pop()
+        print("unload modal scene:" ..scene._name)
+        show_new_scene(self, scene, self.stack:peek())
         self.co = co
     end
     self.co = nil
@@ -189,11 +198,17 @@ function M:show(scene_name, input, options)
     input = input or {}
     options = options or {}
     local scene = assert(self:get_scene_by_name(scene_name))
-
-    local current_scene =  scene._config.modal and self.stack:peek() or self.stack:pop()
-    self.stack:push(scene)
-    self.co = coroutine.create(show_new_scene)
-    local ok, res = coroutine.resume(self.co, self, current_scene, scene, input, options)
+    self.co = coroutine.create(function()
+        if options.close_modals then
+            local co = self.co
+            unload_modals(self)
+            self.co = co
+        end
+        local current_scene =  scene._config.modal and self.stack:peek() or self.stack:pop()
+        show_new_scene( self, current_scene, scene, input, options)
+        self.stack:push(scene)
+    end)
+    local ok, res = coroutine.resume(self.co)
     if not ok then
         COMMON.e(res, TAG)
         self.co = nil
@@ -202,11 +217,17 @@ end
 
 function M:back(input, options)
     assert(not self.co, "work in progress.Can't show new scene")
-    local prev_scene =  self.stack:pop()
+    self.co = coroutine.create(function()
+        if options.close_modals then
+            local co = self.co
+            unload_modals(self)
+            self.co = co
+        end
+        local prev_scene =  self.stack:pop()
+        show_new_scene(self, prev_scene, self.stack:peek(), input, options)
+    end)
 
-    self.co = coroutine.create(show_new_scene)
-
-    local ok, res = coroutine.resume(self.co, self, prev_scene, self.stack:peek(), input, options)
+    local ok, res = coroutine.resume(self.co)
     if not ok then
         COMMON.e(res, TAG)
         self.co = nil

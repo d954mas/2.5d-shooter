@@ -12,6 +12,7 @@ local Script = COMMON.new_n28s()
 
 local scenes = {
     require "scenes.game.game_scene",
+    require "scenes.select_level.select_level_scene",
     require "scenes.modal.pause.pause_modal",
     require "scenes.modal.game_over.game_over_modal",
 }
@@ -53,7 +54,7 @@ function Script:init()
     self:scenes_register()
     self:input_init()
     if not RUN_TEST then
-        SM:show("GameScene",{level = LEVELS.LEVELS.TEST })
+        SM:show("SelectLevelScene")
     else
         self.test_runner = require("tests.tests") -- run tests
         self.test_runner.run()

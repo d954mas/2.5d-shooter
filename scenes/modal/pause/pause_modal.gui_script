@@ -17,6 +17,9 @@ function Script:bind_vh()
 			bg = gui.get_node("btn_resume/bg"),
 			lbl = gui.get_node("btn_resume/label"),
 		},
+		btn_menu = {
+			id = "btn_menu",
+		},
 		lbl_pause = gui.get_node("lbl_pause")
 	}
 end
@@ -34,9 +37,8 @@ function Script:input_resume()
 end
 
 function Script:on_input(action_id,action)
-	GOOEY.button(self.vh.btn_resume.id,action_id,action,function (button)
-		self:input_resume()
-	end)
+	GOOEY.button(self.vh.btn_resume.id,action_id,action,function (button) self:input_resume() end)
+	GOOEY.button(self.vh.btn_menu.id,action_id,action,function (button) SM:show("SelectLevelScene",nil,{close_modals = true}) end)
 end
 
 --endregion
