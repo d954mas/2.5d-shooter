@@ -218,7 +218,7 @@ end
 function M:back(input, options)
     assert(not self.co, "work in progress.Can't show new scene")
     self.co = coroutine.create(function()
-        if options.close_modals then
+        if options and options.close_modals then
             local co = self.co
             unload_modals(self)
             self.co = co

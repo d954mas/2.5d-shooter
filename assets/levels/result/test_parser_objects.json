@@ -40,7 +40,7 @@
     {
       "cell_xf":5.5,
       "cell_id":66,
-      "tile_id":211,
+      "tile_id":215,
       "properties":{
         "scale":0.5,
         "look_at_player":true,

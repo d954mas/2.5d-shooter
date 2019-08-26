@@ -109,15 +109,17 @@ end
 
 
 --@TODO TMP
-local hp_pickup = {properties = {{global_rotation = true}},tile_id = 215}
-local ammo_pickup = {properties = {{global_rotation = true}},tile_id = 216}
+local hp_pickup = {properties = {{global_rotation = true}},tile_id = 1,global_tile_id = nil}
+local ammo_pickup = {properties = {{global_rotation = true}},tile_id = 2,global_tile_id = nil}
 local pickups_weights = {}
 pickups_weights[hp_pickup] = 1
 pickups_weights[ammo_pickup] = 2
 function M:spawn_pickups()
 	timer.delay(8,true,function()
 		local pickup = COMMON.LUME.weightedchoice(pickups_weights)
-		self.level.ecs_world.ecs:addEntity(ENTITIES.create_pickup(self:utils_get_random_spawn_position(),pickup.tile_id))
+		local tile = self.level:get_tile_for_tileset("pickups",pickup.tile_id)
+		print("add")
+		self.level.ecs_world.ecs:addEntity(ENTITIES.create_pickup(self:utils_get_random_spawn_position(),tile.id))
 	end)
 end
 

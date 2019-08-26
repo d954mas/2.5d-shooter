@@ -148,6 +148,15 @@ end
 function Level:get_tile(id)
 	return assert(TILESET.by_id[id],"no tile with id:" .. id)
 end
+
+function Level:get_tile_for_tileset(tileset_name,id)
+	assert(tileset_name)
+	assert(id)
+	local tileset = assert(TILESET.tilesets[tileset_name], "no tileset with name:" .. tileset_name)
+	local tile_id = tileset.first_gid + id
+	assert(tile_id <= tileset.end_gid, "no tile:" .. tile_id .. " in tileset:" .. tileset_name .. " end:" .. tileset.end_gid)
+	return self:get_tile(tile_id), tile_id
+end
 --endregion
 
 

@@ -1466,8 +1466,8 @@ return {
       name = "pickups",
       firstgid = 206,
       filename = "../tilesets/pickups.tsx",
-      tilewidth = 32,
-      tileheight = 32,
+      tilewidth = 64,
+      tileheight = 64,
       spacing = 0,
       margin = 0,
       columns = 0,
@@ -1482,7 +1482,7 @@ return {
       },
       properties = {},
       terrains = {},
-      tilecount = 2,
+      tilecount = 6,
       tiles = {
         {
           id = 1,
@@ -1509,12 +1509,64 @@ return {
           image = "../../images/game/pickups/pickup_hp.png",
           width = 32,
           height = 32
+        },
+        {
+          id = 3,
+          properties = {
+            ["change_state"] = "keys.blue",
+            ["global_rotation"] = true,
+            ["look_at_player"] = false,
+            ["pickup"] = true,
+            ["scale"] = 0.25
+          },
+          image = "../../images/game/pickups/pickup_key_blue.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 4,
+          properties = {
+            ["change_state"] = "keys.green",
+            ["global_rotation"] = true,
+            ["look_at_player"] = false,
+            ["pickup"] = true,
+            ["scale"] = 0.25
+          },
+          image = "../../images/game/pickups/pickup_key_green.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 5,
+          properties = {
+            ["change_state"] = "keys.white",
+            ["global_rotation"] = true,
+            ["look_at_player"] = false,
+            ["pickup"] = true,
+            ["scale"] = 0.25
+          },
+          image = "../../images/game/pickups/pickup_key_white.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 6,
+          properties = {
+            ["change_state"] = "keys.yellow",
+            ["global_rotation"] = true,
+            ["look_at_player"] = false,
+            ["pickup"] = true,
+            ["scale"] = 0.25
+          },
+          image = "../../images/game/pickups/pickup_key_yellow.png",
+          width = 64,
+          height = 64
         }
       }
     },
     {
       name = "game_objects",
-      firstgid = 209,
+      firstgid = 213,
       filename = "../tilesets/game_objects.tsx",
       tilewidth = 86,
       tileheight = 64,
@@ -1789,7 +1841,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 211,
+          gid = 215,
           visible = true,
           properties = {}
         },
@@ -1803,7 +1855,7 @@ return {
           width = 64,
           height = 62,
           rotation = 0,
-          gid = 212,
+          gid = 216,
           visible = true,
           properties = {}
         },
@@ -1817,7 +1869,7 @@ return {
           width = 46,
           height = 64,
           rotation = 0,
-          gid = 213,
+          gid = 217,
           visible = true,
           properties = {}
         },
@@ -1831,7 +1883,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 214,
+          gid = 218,
           visible = true,
           properties = {}
         },
@@ -1845,7 +1897,7 @@ return {
           width = 25,
           height = 13,
           rotation = 0,
-          gid = 215,
+          gid = 219,
           visible = true,
           properties = {}
         },
@@ -1859,7 +1911,7 @@ return {
           width = 53,
           height = 63,
           rotation = 0,
-          gid = 216,
+          gid = 220,
           visible = true,
           properties = {}
         },
@@ -1873,7 +1925,7 @@ return {
           width = 56,
           height = 60,
           rotation = 0,
-          gid = 217,
+          gid = 221,
           visible = true,
           properties = {}
         },
@@ -1887,7 +1939,7 @@ return {
           width = 86,
           height = 25,
           rotation = 0,
-          gid = 218,
+          gid = 222,
           visible = true,
           properties = {}
         },
@@ -1901,7 +1953,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 219,
+          gid = 223,
           visible = true,
           properties = {}
         },
@@ -1915,7 +1967,7 @@ return {
           width = 61,
           height = 56,
           rotation = 0,
-          gid = 220,
+          gid = 224,
           visible = true,
           properties = {}
         }

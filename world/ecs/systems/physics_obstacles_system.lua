@@ -28,11 +28,15 @@ function System:handle_pickup(e)
 	elseif key == "ammo_pistol" then
 		player.ammo[WEAPON_PROTOTYPES.AMMO_TYPES.PISTOL] = player.ammo[WEAPON_PROTOTYPES.AMMO_TYPES.PISTOL] + 10
 		SOUNDS:play_sound(SOUNDS.sounds.game.object_ammo_pickup)
+	elseif tile.properties.change_state then
+
+	else
+		assert("unknown pickup:" .. e.tile.id .. " key:" .. tostring(key))
 	end
 	--disable because go will be deleted on next frame
 	msg.post(e.url_go,COMMON.HASHES.MSG_DISABLE)
-	self.world:removeEntity(e)
-end
+		self.world:removeEntity(e)
+	end
 
 --https://www.defold.com/tutorials/runner/#_step_4_creating_a_hero_character
  ---@param e Entity

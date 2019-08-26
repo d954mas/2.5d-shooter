@@ -1466,8 +1466,8 @@ return {
       name = "pickups",
       firstgid = 206,
       filename = "../tilesets/pickups.tsx",
-      tilewidth = 32,
-      tileheight = 32,
+      tilewidth = 64,
+      tileheight = 64,
       spacing = 0,
       margin = 0,
       columns = 0,
@@ -1482,7 +1482,7 @@ return {
       },
       properties = {},
       terrains = {},
-      tilecount = 2,
+      tilecount = 6,
       tiles = {
         {
           id = 1,
@@ -1509,12 +1509,64 @@ return {
           image = "../../images/game/pickups/pickup_hp.png",
           width = 32,
           height = 32
+        },
+        {
+          id = 3,
+          properties = {
+            ["change_state"] = "keys.blue",
+            ["global_rotation"] = true,
+            ["look_at_player"] = false,
+            ["pickup"] = true,
+            ["scale"] = 0.25
+          },
+          image = "../../images/game/pickups/pickup_key_blue.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 4,
+          properties = {
+            ["change_state"] = "keys.green",
+            ["global_rotation"] = true,
+            ["look_at_player"] = false,
+            ["pickup"] = true,
+            ["scale"] = 0.25
+          },
+          image = "../../images/game/pickups/pickup_key_green.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 5,
+          properties = {
+            ["change_state"] = "keys.white",
+            ["global_rotation"] = true,
+            ["look_at_player"] = false,
+            ["pickup"] = true,
+            ["scale"] = 0.25
+          },
+          image = "../../images/game/pickups/pickup_key_white.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 6,
+          properties = {
+            ["change_state"] = "keys.yellow",
+            ["global_rotation"] = true,
+            ["look_at_player"] = false,
+            ["pickup"] = true,
+            ["scale"] = 0.25
+          },
+          image = "../../images/game/pickups/pickup_key_yellow.png",
+          width = 64,
+          height = 64
         }
       }
     },
     {
       name = "game_objects",
-      firstgid = 209,
+      firstgid = 213,
       filename = "../tilesets/game_objects.tsx",
       tilewidth = 86,
       tileheight = 64,
@@ -1862,7 +1914,7 @@ return {
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 211,
+          gid = 215,
           visible = true,
           properties = {}
         },

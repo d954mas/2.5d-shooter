@@ -15476,7 +15476,76 @@
     4292400597,
     4292400597
   ],
-  "pickups":  {},
+  "pickups":[
+    {
+      "cell_xf":1.5,
+      "cell_id":962,
+      "tile_id":209,
+      "properties":{
+        "look_at_player":false,
+        "scale":0.25,
+        "pickup":true,
+        "global_rotation":true,
+        "change_state":"keys.blue"
+      },
+      "cell_y":31,
+      "y":1952,
+      "x":96,
+      "cell_yf":30.5,
+      "cell_x":2
+    },
+    {
+      "cell_xf":3.5,
+      "cell_id":964,
+      "tile_id":210,
+      "properties":{
+        "look_at_player":false,
+        "scale":0.25,
+        "pickup":true,
+        "global_rotation":true,
+        "change_state":"keys.green"
+      },
+      "cell_y":31,
+      "y":1952,
+      "x":224,
+      "cell_yf":30.5,
+      "cell_x":4
+    },
+    {
+      "cell_xf":1.5,
+      "cell_id":866,
+      "tile_id":212,
+      "properties":{
+        "look_at_player":false,
+        "scale":0.25,
+        "pickup":true,
+        "global_rotation":true,
+        "change_state":"keys.yellow"
+      },
+      "cell_y":28,
+      "y":1760,
+      "x":96,
+      "cell_yf":27.5,
+      "cell_x":2
+    },
+    {
+      "cell_xf":3.5,
+      "cell_id":868,
+      "tile_id":211,
+      "properties":{
+        "look_at_player":false,
+        "scale":0.25,
+        "pickup":true,
+        "global_rotation":true,
+        "change_state":"keys.white"
+      },
+      "cell_y":28,
+      "y":1760,
+      "x":224,
+      "cell_yf":27.5,
+      "cell_x":4
+    }
+  ],
   "size":{
     "y":32,
     "x":32

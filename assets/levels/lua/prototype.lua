@@ -9,7 +9,7 @@ return {
   tilewidth = 64,
   tileheight = 64,
   nextlayerid = 10,
-  nextobjectid = 92,
+  nextobjectid = 100,
   properties = {},
   tilesets = {
     {
@@ -1625,6 +1625,108 @@ return {
           height = 54
         }
       }
+    },
+    {
+      name = "pickups",
+      firstgid = 219,
+      filename = "../tilesets/pickups.tsx",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 0,
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 1,
+        height = 1
+      },
+      properties = {},
+      terrains = {},
+      tilecount = 6,
+      tiles = {
+        {
+          id = 1,
+          properties = {
+            ["global_rotation"] = true,
+            ["look_at_player"] = false,
+            ["pickup"] = true,
+            ["pickup_key"] = "ammo_pistol",
+            ["scale"] = 0.25
+          },
+          image = "../../images/game/pickups/pickup_ammo_pistol.png",
+          width = 32,
+          height = 32
+        },
+        {
+          id = 2,
+          properties = {
+            ["global_rotation"] = true,
+            ["look_at_player"] = false,
+            ["pickup"] = true,
+            ["pickup_key"] = "hp",
+            ["scale"] = 0.25
+          },
+          image = "../../images/game/pickups/pickup_hp.png",
+          width = 32,
+          height = 32
+        },
+        {
+          id = 3,
+          properties = {
+            ["change_state"] = "keys.blue",
+            ["global_rotation"] = true,
+            ["look_at_player"] = false,
+            ["pickup"] = true,
+            ["scale"] = 0.25
+          },
+          image = "../../images/game/pickups/pickup_key_blue.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 4,
+          properties = {
+            ["change_state"] = "keys.green",
+            ["global_rotation"] = true,
+            ["look_at_player"] = false,
+            ["pickup"] = true,
+            ["scale"] = 0.25
+          },
+          image = "../../images/game/pickups/pickup_key_green.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 5,
+          properties = {
+            ["change_state"] = "keys.white",
+            ["global_rotation"] = true,
+            ["look_at_player"] = false,
+            ["pickup"] = true,
+            ["scale"] = 0.25
+          },
+          image = "../../images/game/pickups/pickup_key_white.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 6,
+          properties = {
+            ["change_state"] = "keys.yellow",
+            ["global_rotation"] = true,
+            ["look_at_player"] = false,
+            ["pickup"] = true,
+            ["scale"] = 0.25
+          },
+          image = "../../images/game/pickups/pickup_key_yellow.png",
+          width = 64,
+          height = 64
+        }
+      }
     }
   },
   layers = {
@@ -1775,7 +1877,64 @@ return {
       offsety = 0,
       draworder = "topdown",
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 96,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 64,
+          y = 128,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 222,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 97,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 192,
+          y = 128,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 223,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 98,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 64,
+          y = 320,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 225,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 99,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 192,
+          y = 320,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 224,
+          visible = true,
+          properties = {}
+        }
+      }
     },
     {
       type = "tilelayer",

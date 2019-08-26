@@ -142,7 +142,7 @@
     {
       "cell_xf":6.5,
       "cell_id":679,
-      "tile_id":218,
+      "tile_id":222,
       "properties":{
         "look_at_player":true,
         "culling":true,
@@ -159,7 +159,7 @@
     {
       "cell_xf":7.5,
       "cell_id":680,
-      "tile_id":218,
+      "tile_id":222,
       "properties":{
         "look_at_player":true,
         "culling":true,
@@ -176,7 +176,7 @@
     {
       "cell_xf":8.5,
       "cell_id":681,
-      "tile_id":218,
+      "tile_id":222,
       "properties":{
         "look_at_player":true,
         "culling":true,
@@ -193,7 +193,7 @@
     {
       "cell_xf":11.5,
       "cell_id":844,
-      "tile_id":215,
+      "tile_id":219,
       "properties":{
         "size_for_scale":64,
         "origin":"top",
@@ -211,7 +211,7 @@
     {
       "cell_xf":11.5,
       "cell_id":812,
-      "tile_id":215,
+      "tile_id":219,
       "properties":{
         "size_for_scale":64,
         "origin":"top",
@@ -229,7 +229,7 @@
     {
       "cell_xf":10.5,
       "cell_id":779,
-      "tile_id":215,
+      "tile_id":219,
       "properties":{
         "size_for_scale":64,
         "origin":"top",
@@ -247,7 +247,7 @@
     {
       "cell_xf":7.5,
       "cell_id":776,
-      "tile_id":215,
+      "tile_id":219,
       "properties":{
         "size_for_scale":64,
         "origin":"top",
@@ -265,7 +265,7 @@
     {
       "cell_xf":4.5,
       "cell_id":773,
-      "tile_id":215,
+      "tile_id":219,
       "properties":{
         "size_for_scale":64,
         "origin":"top",
@@ -283,7 +283,7 @@
     {
       "cell_xf":7.5,
       "cell_id":648,
-      "tile_id":215,
+      "tile_id":219,
       "properties":{
         "size_for_scale":64,
         "origin":"top",
@@ -9997,7 +9997,7 @@
         "id":742,
         "empty":false,
         "wall":{
-          "thin":225,
+          "thin":229,
           "ceil":6,
           "floor":6,
           "blocked":true
@@ -10054,7 +10054,7 @@
         "id":746,
         "empty":false,
         "wall":{
-          "thin":225,
+          "thin":229,
           "ceil":6,
           "floor":6,
           "blocked":true
@@ -10422,7 +10422,7 @@
         "id":774,
         "empty":false,
         "wall":{
-          "thin":225,
+          "thin":229,
           "ceil":6,
           "floor":6,
           "blocked":true
@@ -10479,7 +10479,7 @@
         "id":778,
         "empty":false,
         "wall":{
-          "thin":225,
+          "thin":229,
           "ceil":6,
           "floor":6,
           "blocked":true
@@ -10884,7 +10884,7 @@
         "id":808,
         "empty":false,
         "wall":{
-          "thin":224,
+          "thin":228,
           "ceil":6,
           "floor":6,
           "blocked":true
@@ -11318,7 +11318,7 @@
         "id":840,
         "empty":false,
         "wall":{
-          "thin":224,
+          "thin":228,
           "ceil":6,
           "floor":6,
           "blocked":true
@@ -11732,7 +11732,7 @@
         "id":871,
         "empty":false,
         "wall":{
-          "thin":225,
+          "thin":229,
           "ceil":6,
           "floor":6,
           "blocked":true
@@ -11761,7 +11761,7 @@
         "id":873,
         "empty":false,
         "wall":{
-          "thin":225,
+          "thin":229,
           "ceil":6,
           "floor":6,
           "blocked":true
@@ -12160,7 +12160,7 @@
         "id":903,
         "empty":false,
         "wall":{
-          "thin":225,
+          "thin":229,
           "ceil":6,
           "floor":6,
           "blocked":true
@@ -12189,7 +12189,7 @@
         "id":905,
         "empty":false,
         "wall":{
-          "thin":225,
+          "thin":229,
           "ceil":6,
           "floor":6,
           "blocked":true
@@ -12572,7 +12572,7 @@
         "id":935,
         "empty":false,
         "wall":{
-          "thin":225,
+          "thin":229,
           "ceil":6,
           "floor":6,
           "blocked":true
@@ -12604,7 +12604,7 @@
         "id":937,
         "empty":false,
         "wall":{
-          "thin":225,
+          "thin":229,
           "ceil":6,
           "floor":6,
           "blocked":true
