@@ -370,10 +370,8 @@ local function create_tileset(tiled)
 	TILESET = {by_id = id_to_tile, tilesets = tilesets}
 end
 
-local function parse_tilesets(path,result_path)
+local function parse_tilesets(path)
 	print("parse tilesets")
-	local name = path:match("^.+\\(.+)....")
-	result_path = result_path .. "\\" .. name .. ".json"
 	local tiled = dofile(path)
 	create_tileset(tiled)
 end
@@ -503,7 +501,7 @@ end
 local LEVELS_PATH = "lua"
 local RESULT_PATH = "result"
 
-parse_tilesets(lfs.currentdir() .. "\\" .. LEVELS_PATH .. "\\" .. "_tilesets.lua" , lfs.currentdir() .. "\\" .. RESULT_PATH .. "\\")
+parse_tilesets(lfs.currentdir() .. "\\" .. LEVELS_PATH .. "\\" .. "_tilesets.lua")
 
 for file in lfs.dir( lfs.currentdir() .. "\\" .. LEVELS_PATH) do
 	if file ~= "." and file ~= ".." then

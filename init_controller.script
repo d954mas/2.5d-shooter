@@ -3,7 +3,6 @@ local COMMON = require "libs.common"
 local SM = require "libs.sm.sm"
 local RX = require "libs.rx"
 local SOUNDS = require "libs.sounds"
-local LEVELS = require "scenes.game.model.levels"
 
 local RUN_TEST = false
 

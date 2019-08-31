@@ -1,6 +1,5 @@
 local ECS = require 'libs.ecs'
 local DEBUG_INFO = require "debug.debug_info"
-local FACTORY = require "scenes.game.factories"
 local WallRenderObject = require "scenes.game.view.render_objects.wall_render_object"
 --Draw wall and floors
 

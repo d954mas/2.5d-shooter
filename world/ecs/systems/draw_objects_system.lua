@@ -1,5 +1,4 @@
 local ECS = require 'libs.ecs'
-local FACTORY = require "scenes.game.factories"
 local GameObjectRenderObject = require "scenes.game.view.render_objects.game_object_render_object"
 
 ---@class DrawObjectsSystem:ECSSystem
