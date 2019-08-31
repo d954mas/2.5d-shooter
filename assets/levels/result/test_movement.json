@@ -1,12 +1,13 @@
 {
   "properties":  {},
+  "doors":  {},
+  "enemies":  {},
+  "spawners":  {},
   "spawn_point":{
     "y":4.5,
     "x":4.5,
     "angle":0
   },
-  "enemies":  {},
-  "spawners":  {},
   "objects":  {},
   "cells":[
     [

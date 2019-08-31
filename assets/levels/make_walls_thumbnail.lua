@@ -9,6 +9,9 @@ local VIPS = requiref "vips"
 local IMAGES_WALL_PATH = "\\..\\images\\game\\walls\\"
 local RESULT_WALL_PATH = "\\tilesets\\walls\\"
 
+local IMAGES_DOOR_PATH = "\\..\\images\\game\\doors\\"
+local RESULT_DOOR_PATH = "\\tilesets\\doors\\"
+
 local IMAGES_THIN_PATH = "\\..\\images\\game\\thin_wall\\"
 local RESULT_THIN_PATH = "\\tilesets\\thin_walls\\"
 
@@ -62,6 +65,14 @@ for file in LFS.dir( LFS.currentdir() .. IMAGES_WALL_PATH) do
 	if file ~= "." and file ~= ".." then
 		print("image:" .. file)
 		process_image(LFS.currentdir() .. "\\" .. IMAGES_WALL_PATH .. "\\" .. file,LFS.currentdir() .. RESULT_WALL_PATH)
+	end
+end
+
+print("Create doors thumbnail")
+for file in LFS.dir( LFS.currentdir() .. IMAGES_DOOR_PATH) do
+	if file ~= "." and file ~= ".." then
+		print("image:" .. file)
+		process_image(LFS.currentdir() .. "\\" .. IMAGES_DOOR_PATH .. "\\" .. file,LFS.currentdir() .. RESULT_DOOR_PATH)
 	end
 end
 

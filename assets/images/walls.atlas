@@ -118,6 +118,21 @@ images {
 images {
   image: "/assets/images/game/walls/wall36.png"
 }
+images {
+  image: "/assets/images/game/doors/door1.png"
+}
+images {
+  image: "/assets/images/game/doors/door1_blue.png"
+}
+images {
+  image: "/assets/images/game/doors/door1_green.png"
+}
+images {
+  image: "/assets/images/game/doors/door1_white.png"
+}
+images {
+  image: "/assets/images/game/doors/door1_yellow.png"
+}
 margin: 0
 extrude_borders: 0
 inner_padding: 0

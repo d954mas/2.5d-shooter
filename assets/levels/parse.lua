@@ -87,6 +87,30 @@ local function create_empty_cell(x,y)
 	cell.objects = {}
 	return cell
 end
+
+local function coords_to_id(tiled,x,y)
+	return (y-1)* tiled.width + x
+end
+
+local function create_object_from_tile(tiled,tile_id,cell_x,cell_y)
+	assert(tile_id)
+	assert(TILESET.by_id[tile_id],"unknown tile" .. tile_id)
+	local object_data = { tile_id = tile_id, properties = {},x = cell_x*tiled.tilewidth, y = cell_y*tiled.tileheight}
+	--copy properties from tile.
+	local tile = TILESET.by_id[object_data.tile_id]
+	if tile then
+		for k,v in pairs(tile.properties)do
+			if object_data.properties[k] == nil	then object_data.properties[k] = v end
+		end
+	end
+	object_data.cell_xf = object_data.x/tiled.tilewidth
+	object_data.cell_yf = object_data.y/tiled.tileheight
+	object_data.cell_x = math.ceil(object_data.x/tiled.tilewidth)
+	object_data.cell_y = math.ceil(object_data.y/tiled.tileheight)
+	object_data.cell_id = coords_to_id(tiled,object_data.cell_x ,object_data.cell_y)
+	return object_data
+end
+
 local function get_layer(tiled, layer_name)
 	for _,l in ipairs(tiled.layers) do if l.name == layer_name then return l end end
 	return nil
@@ -97,7 +121,7 @@ local function process_layer(data,layer,fun)
 		for x=1,data.size.x do
 			local cell = assert(row[x])
 			local tiled_cell = assert(layer.data[(y-1)*data.size.x + x])
-			if tiled_cell ~= 0 then fun(cell,tiled_cell) end
+			if tiled_cell ~= 0 then fun(cell,tiled_cell,x,y) end
 		end
 	end
 end
@@ -106,9 +130,7 @@ local function process_objects(layer,fun)
 		fun(object)
 	end
 end
-local function coords_to_id(tiled,x,y)
-	return (y-1)* tiled.width + x
-end
+
 
 --region repack
 --change Y-down to Y-top
@@ -185,6 +207,7 @@ local function create_map_data(tiled)
 	data.pickups = {}
 	data.enemies = {}
 	data.spawners = {}
+	data.doors = {}
 	for y=1,data.size.y do
 		data.cells[y] = {}
 		local row = data.cells[y]
@@ -387,12 +410,12 @@ local function check_tilesets(tiled)
 			end
 		end
 	end
-	for _, tileset in ipairs(tiled.tilesets)do
-		local new_data = layers_new_data[tileset]
+	for _, layer in ipairs(tiled.layers)do
+		local new_data = layers_new_data[layer]
 		if new_data then
 			for idx,v in pairs(new_data)do
-				assert(tileset.data[idx]==-1,"can't set for unprocessed cell")
-				tileset.data[idx] = v
+				assert(layer.data[idx]==-1,"can't set for unprocessed cell")
+				layer.data[idx] = v
 			end
 		end
 	end
@@ -411,17 +434,24 @@ local function parse_level(path,result_path)
 	process_layer(data,assert(get_layer(tiled,"floor")),function(cell,tiled_cell) cell.wall.floor = tiled_cell end)
 	process_layer(data,assert(get_layer(tiled,"ceil")),function(cell,tiled_cell) cell.wall.ceil = tiled_cell end)
 	local wall_keys = {"north","south","east","west"}
-	process_layer(data,assert(get_layer(tiled,"walls")),function(cell,tiled_cell)
-		local tile = TILESET.by_id[tiled_cell]
-		if not tile.properties.thin_wall then
+	process_layer(data,assert(get_layer(tiled,"walls")),function(cell,tiled_cell,x,y)
+		local tile = assert(TILESET.by_id[tiled_cell],"unknown tile:" .. tiled_cell)
+		if tile.properties.wall then
 			cell.wall["base"] = tiled_cell
 			for _,v in pairs(wall_keys)do
 				cell.wall[v] = tiled_cell
 			end
-		else
+			cell.blocked = tile.properties.block;
+		elseif tile.properties.thin_wall then
 			cell.wall["thin"] = tiled_cell
+			cell.blocked = tile.properties.block;
+		elseif tile.properties.door then
+			--doors do not mark cell is blocked. It will be marked as blocked when load level
+			table.insert(data.doors,create_object_from_tile(tiled,tiled_cell,x+0.5,y+0.5))
+		else
+			assert(nil,"unknown tile:" .. tiled_cell)
 		end
-		cell.blocked = tile.properties.block;
+
 	end)
 	for y=1,data.size.y do
 		local row = assert(data.cells[y])

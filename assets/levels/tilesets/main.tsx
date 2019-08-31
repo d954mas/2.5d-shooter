@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.2" tiledversion="1.2.4" name="main" tilewidth="128" tileheight="128" tilecount="36" columns="0">
+<tileset version="1.2" tiledversion="1.2.4" name="walls" tilewidth="128" tileheight="128" tilecount="36" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
+ <properties>
+  <property name="wall" type="bool" value="true"/>
+ </properties>
  <tile id="1">
   <properties>
    <property name="block" type="bool" value="true"/>

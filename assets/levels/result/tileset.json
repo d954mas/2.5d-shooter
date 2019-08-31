@@ -4,17 +4,21 @@
       "end_gid":202,
       "first_gid":43
     },
-    "main":{
-      "end_gid":37,
-      "first_gid":1
+    "doors":{
+      "end_gid":234,
+      "first_gid":230
+    },
+    "game_objects":{
+      "end_gid":225,
+      "first_gid":213
     },
     "thin_walls":{
       "end_gid":229,
       "first_gid":226
     },
-    "game_objects":{
-      "end_gid":225,
-      "first_gid":213
+    "enemies":{
+      "end_gid":205,
+      "first_gid":203
     },
     "objects":{
       "end_gid":42,
@@ -24,9 +28,9 @@
       "end_gid":212,
       "first_gid":206
     },
-    "enemies":{
-      "end_gid":205,
-      "first_gid":203
+    "walls":{
+      "end_gid":37,
+      "first_gid":1
     }
   },
   "by_id":[
@@ -37,6 +41,7 @@
       "scale":0.015625,
       "id":2,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -48,6 +53,7 @@
       "scale":0.015625,
       "id":3,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -59,6 +65,7 @@
       "scale":0.015625,
       "id":4,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -70,6 +77,7 @@
       "scale":0.015625,
       "id":5,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -81,6 +89,7 @@
       "scale":0.015625,
       "id":6,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -92,6 +101,7 @@
       "scale":0.015625,
       "id":7,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -103,6 +113,7 @@
       "scale":0.015625,
       "id":8,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -114,6 +125,7 @@
       "scale":0.015625,
       "id":9,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -125,6 +137,7 @@
       "scale":0.015625,
       "id":10,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -136,6 +149,7 @@
       "scale":0.015625,
       "id":11,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -147,6 +161,7 @@
       "scale":0.015625,
       "id":12,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -158,6 +173,7 @@
       "scale":0.015625,
       "id":13,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -169,6 +185,7 @@
       "scale":0.015625,
       "id":14,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -180,6 +197,7 @@
       "scale":0.015625,
       "id":15,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -191,6 +209,7 @@
       "scale":0.015625,
       "id":16,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -202,6 +221,7 @@
       "scale":0.015625,
       "id":17,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -213,6 +233,7 @@
       "scale":0.015625,
       "id":18,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -224,6 +245,7 @@
       "scale":0.015625,
       "id":19,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -235,6 +257,7 @@
       "scale":0.015625,
       "id":20,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -246,6 +269,7 @@
       "scale":0.015625,
       "id":21,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -257,6 +281,7 @@
       "scale":0.015625,
       "id":22,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -268,6 +293,7 @@
       "scale":0.015625,
       "id":23,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -279,6 +305,7 @@
       "scale":0.015625,
       "id":24,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -290,6 +317,7 @@
       "scale":0.015625,
       "id":25,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -301,6 +329,7 @@
       "scale":0.015625,
       "id":26,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -312,6 +341,7 @@
       "scale":0.015625,
       "id":27,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -323,6 +353,7 @@
       "scale":0.015625,
       "id":28,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -334,6 +365,7 @@
       "scale":0.015625,
       "id":29,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -345,6 +377,7 @@
       "scale":0.015625,
       "id":30,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -356,6 +389,7 @@
       "scale":0.015625,
       "id":31,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -367,6 +401,7 @@
       "scale":0.015625,
       "id":32,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -378,6 +413,7 @@
       "scale":0.015625,
       "id":33,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -389,6 +425,7 @@
       "scale":0.015625,
       "id":34,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -400,6 +437,7 @@
       "scale":0.015625,
       "id":35,
       "properties":{
+        "wall":true,
         "block":true
       },
       "height":64,
@@ -411,8 +449,9 @@
       "scale":0.0078125,
       "id":36,
       "properties":{
-        "transparent":true,
-        "block":false
+        "wall":true,
+        "block":false,
+        "transparent":true
       },
       "height":128,
       "width":128
@@ -424,8 +463,9 @@
       "id":37,
       "properties":{
         "size_for_scale":70,
-        "block":true,
         "deacceleration_multiply":0.2,
+        "wall":true,
+        "block":true,
         "acceleration_multiply":0.8
       },
       "height":70,
@@ -2255,6 +2295,65 @@
         "thin_wall":true,
         "angle":90,
         "transparent":true
+      },
+      "height":64,
+      "width":64
+    },
+    {
+      "image":"door1",
+      "atlas":"doors",
+      "scale":0.015625,
+      "height":64,
+      "properties":{
+        "door":true
+      },
+      "id":230,
+      "width":64
+    },
+    {
+      "image":"door1_blue",
+      "atlas":"doors",
+      "scale":0.015625,
+      "id":231,
+      "properties":{
+        "key":"blue",
+        "door":true
+      },
+      "height":64,
+      "width":64
+    },
+    {
+      "image":"door1_green",
+      "atlas":"doors",
+      "scale":0.015625,
+      "id":232,
+      "properties":{
+        "key":"green",
+        "door":true
+      },
+      "height":64,
+      "width":64
+    },
+    {
+      "image":"door1_white",
+      "atlas":"doors",
+      "scale":0.015625,
+      "id":233,
+      "properties":{
+        "key":"white",
+        "door":true
+      },
+      "height":64,
+      "width":64
+    },
+    {
+      "image":"door1_yellow",
+      "atlas":"doors",
+      "scale":0.015625,
+      "id":234,
+      "properties":{
+        "key":"yellow",
+        "door":true
       },
       "height":64,
       "width":64

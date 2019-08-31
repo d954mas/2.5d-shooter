@@ -1,10 +1,6 @@
 {
   "properties":  {},
-  "spawn_point":{
-    "y":25.5,
-    "x":3.5,
-    "angle":0
-  },
+  "doors":  {},
   "enemies":[
     {
       "cell_xf":11.5,
@@ -138,6 +134,11 @@
       "cell_x":1
     }
   ],
+  "spawn_point":{
+    "y":25.5,
+    "x":3.5,
+    "angle":0
+  },
   "objects":[
     {
       "cell_xf":6.5,

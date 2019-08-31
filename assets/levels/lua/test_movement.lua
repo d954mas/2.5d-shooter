@@ -13,7 +13,7 @@ return {
   properties = {},
   tilesets = {
     {
-      name = "main",
+      name = "walls",
       firstgid = 1,
       filename = "../tilesets/main.tsx",
       tilewidth = 128,
@@ -30,7 +30,9 @@ return {
         width = 1,
         height = 1
       },
-      properties = {},
+      properties = {
+        ["wall"] = true
+      },
       terrains = {},
       tilecount = 36,
       tiles = {
