@@ -9,7 +9,7 @@ return {
   tilewidth = 64,
   tileheight = 64,
   nextlayerid = 10,
-  nextobjectid = 100,
+  nextobjectid = 101,
   properties = {},
   tilesets = {
     {
@@ -1908,7 +1908,22 @@ return {
       offsety = 0,
       draworder = "topdown",
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 100,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 512,
+          y = 192,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 204,
+          visible = true,
+          properties = {}
+        }
+      }
     },
     {
       type = "objectgroup",

@@ -46,6 +46,11 @@ class Map  : public Graph{
 		virtual float LeastCostEstimate( void* stateStart, void* stateEnd );
 		virtual void AdjacentCost( void* state, MP_VECTOR< micropather::StateCost > *neighbors );
 		virtual void PrintStateInfo(void* state);
+		virtual void changeCellBlocked(int x, int y, bool blocked);
+		virtual void changeCellTransparent(int x, int y, bool transparent);
 };
+
 void MapParse(lua_State*);
 void MapFindPath(int, int, int, int, std::vector<CellData*>&);
+void MapChangeCellBlocked(int x, int y, bool blocked);
+void MapChangeCellTransparent(int x, int y, bool transparent);

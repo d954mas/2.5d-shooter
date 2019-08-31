@@ -11,7 +11,7 @@ using namespace micropather;
 struct CellData{
 	//use prevValues to find if cellData was updated
 	bool top, right, raycastingTop,raycastingRight; //Mark which sides of wall we see
-	bool rayCasted, visibility,raycastingVisibility, blocked;
+	bool rayCasted, visibility,raycastingVisibility, blocked,transparent;
 	int x,y,id; //x,y,id starts from 0. In lua they will be start from 1
 	bool operator == ( const CellData& a ) const{
 		return id == a.id;

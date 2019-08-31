@@ -42,10 +42,16 @@ static int CellDataBindGetId(lua_State *L){
 	return 1;
 }
 
+static int CellDataBindGetTransparent(lua_State *L){
+	CellData *im = CellDataCheck(L, 1);
+	lua_pushboolean(L, im->transparent);
+	return 1;
+}
+
 static int CellDataToString(lua_State *L){
     CellData *im = CellDataCheck(L, 1);
     std::string str = "[id:" + std::to_string(im->id+1) + " x:" +  std::to_string(im->x+1) + " y:" +  std::to_string(im->y+1) + " visible:"
-    +  std::to_string(im->visibility) + " ]";
+    +  std::to_string(im->visibility) + " blocked:" +  std::to_string(im->blocked) + " transparent:" + std::to_string(im->transparent) + " ]";
     lua_pushstring(L,str.c_str());
 	return 1;
 }
@@ -56,6 +62,7 @@ void CellDataBind(lua_State * L){
         {"get_y",CellDataBindGetY},
         {"get_visibility",CellDataBindGetVisibility},
         {"get_id",CellDataBindGetId},
+        {"get_transparent",CellDataBindGetTransparent},
         {"__tostring",CellDataToString},
         { 0, 0 }
     };

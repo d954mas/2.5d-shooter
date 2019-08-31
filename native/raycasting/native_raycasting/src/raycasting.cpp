@@ -35,7 +35,7 @@ void castRay(Camera* camera, double rayAngle, Map* map, double maxDistance, std:
 			cell.raycastingTop = distanceY > 0;
 			cells.insert(cell);
 			if(blocking){
-				if(cell.blocked){
+				if(cell.blocked && !cell.transparent){
 					return;
 				}
 			}

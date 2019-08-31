@@ -65,6 +65,7 @@ cjson.decode_invalid_numbers(false)
 ---@field cells LevelDataCell[][]
 ---@field spawners table[]
 ---@field light_map number[]
+---@field doors LevelDataObject[]
 
 local function clone_deep(t)
 	local orig_type = type(t)
@@ -447,7 +448,7 @@ local function parse_level(path,result_path)
 			cell.blocked = tile.properties.block;
 		elseif tile.properties.door then
 			--doors do not mark cell is blocked. It will be marked as blocked when load level
-			table.insert(data.doors,create_object_from_tile(tiled,tiled_cell,x+0.5,y+0.5))
+			table.insert(data.doors,create_object_from_tile(tiled,tiled_cell,x-0.5,y-0.5))
 		else
 			assert(nil,"unknown tile:" .. tiled_cell)
 		end

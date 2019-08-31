@@ -2,76 +2,91 @@
   "properties":  {},
   "doors":[
     {
-      "cell_xf":5.5,
-      "cell_id":774,
+      "cell_xf":4.5,
+      "cell_id":741,
       "tile_id":232,
       "properties":{
         "key":"green",
         "door":true
       },
-      "cell_y":25,
-      "y":1568,
-      "x":352,
-      "cell_yf":24.5,
-      "cell_x":6
+      "cell_y":24,
+      "y":1504,
+      "x":288,
+      "cell_yf":23.5,
+      "cell_x":5
     },
     {
-      "cell_xf":3.5,
-      "cell_id":868,
+      "cell_xf":2.5,
+      "cell_id":835,
       "tile_id":230,
       "properties":{
         "door":true
       },
-      "cell_y":28,
-      "y":1760,
-      "x":224,
-      "cell_yf":27.5,
-      "cell_x":4
+      "cell_y":27,
+      "y":1696,
+      "x":160,
+      "cell_yf":26.5,
+      "cell_x":3
     },
     {
-      "cell_xf":8.5,
-      "cell_id":873,
+      "cell_xf":7.5,
+      "cell_id":840,
       "tile_id":233,
       "properties":{
         "key":"white",
         "door":true
       },
-      "cell_y":28,
-      "y":1760,
-      "x":544,
-      "cell_yf":27.5,
-      "cell_x":9
+      "cell_y":27,
+      "y":1696,
+      "x":480,
+      "cell_yf":26.5,
+      "cell_x":8
     },
     {
-      "cell_xf":5.5,
-      "cell_id":902,
+      "cell_xf":4.5,
+      "cell_id":869,
       "tile_id":231,
       "properties":{
         "key":"blue",
         "door":true
       },
-      "cell_y":29,
-      "y":1824,
-      "x":352,
-      "cell_yf":28.5,
-      "cell_x":6
+      "cell_y":28,
+      "y":1760,
+      "x":288,
+      "cell_yf":27.5,
+      "cell_x":5
     },
     {
-      "cell_xf":5.5,
-      "cell_id":966,
+      "cell_xf":4.5,
+      "cell_id":933,
       "tile_id":234,
       "properties":{
         "key":"yellow",
         "door":true
       },
-      "cell_y":31,
-      "y":1952,
-      "x":352,
-      "cell_yf":30.5,
-      "cell_x":6
+      "cell_y":30,
+      "y":1888,
+      "x":288,
+      "cell_yf":29.5,
+      "cell_x":5
     }
   ],
-  "enemies":  {},
+  "enemies":[
+    {
+      "cell_xf":8.5,
+      "cell_id":937,
+      "tile_id":204,
+      "properties":{
+        "name":"blob",
+        "enemy":true
+      },
+      "cell_y":30,
+      "y":1888,
+      "x":544,
+      "cell_yf":29.5,
+      "cell_x":9
+    }
+  ],
   "spawners":  {},
   "spawn_point":{
     "y":29.5,

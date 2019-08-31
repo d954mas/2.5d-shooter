@@ -70,9 +70,39 @@ void Map::findPath(int x, int y, int x2, int y2,  std::vector<CellData*>& cells_
 //	pather->Reset();
 }
 
+void Map::changeCellBlocked(int x, int y, bool blocked){
+    CellData startCell = cells[CoordsToId(x,y)];
+    if(startCell.blocked!=blocked){
+        pather->Reset();//reset path cache
+        startCell.blocked = blocked;
+        cells[CoordsToId(x,y)] = startCell;
+        printf("change cell blocked. x:%d y:%d blocked:%s\n",x,y,blocked?"true":"false");
+
+    }
+}
+
+void Map::changeCellTransparent(int x, int y, bool transparent){
+    CellData startCell = cells[CoordsToId(x,y)];
+    if(startCell.transparent!=transparent){
+        pather->Reset();//reset path cache
+        startCell.transparent = transparent;
+        cells[CoordsToId(x,y)] = startCell;
+        printf("change cell transparent. x:%d y:%d transparent:%s\n",x,y,transparent?"true":"false");
+    }
+}
+
+void MapChangeCellBlocked(int x, int y, bool blocked){
+	MAP.changeCellBlocked(x, y,blocked);
+}
+
+void MapChangeCellTransparent(int x, int y, bool transparent){
+	MAP.changeCellTransparent(x, y,transparent);
+}
+
 void MapFindPath(int x, int y, int x2, int y2, std::vector<CellData*>& cells){
 	MAP.findPath(x, y, x2, y2, cells);
 }
+
 
 void MapParse(lua_State* L){
 
@@ -115,6 +145,9 @@ void MapParse(lua_State* L){
 			data.id = id;
 			lua_getfield(L, -1, "blocked");
 			data.blocked = lua_toboolean(L, -1);
+			lua_pop(L, 1);
+			lua_getfield(L, -1, "transparent");
+            data.transparent = lua_toboolean(L, -1);
 			lua_pop(L, 2);
 		}
 		lua_pop(L, 1);

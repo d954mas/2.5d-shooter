@@ -54,11 +54,26 @@ function Level:prepare()
 	self.player.angle.x = math.rad(self.data.spawn_point.angle)
 	self.ecs_world:add_entity(self.player)
 	self:light_map_build()
+	--if call after doors it will create not needed colliders
 	self:create_physics()
+	self:create_doors()
 	self:create_draw_objects()
 	self:create_enemies()
 	self:create_spawners()
 	self:create_pickups()
+end
+
+function Level:create_doors()
+	for _,object in ipairs(self.data.doors)do
+		local cell = self:map_get_cell(object.cell_x,object.cell_y)
+		assert(not cell.blocked,"can't create door on blocked cell")
+		cell.blocked = true
+		cell.transparent = true
+		native_raycasting.map_cell_set_blocked(cell.position.x,cell.position.y,true)
+		native_raycasting.map_cell_set_transparent(cell.position.x,cell.position.y,true)
+		local block = msg.url(factory.create(FACTORY_GO_BLOCK,vmath.vector3(cell.position.x-0.5,0.5,-cell.position.y+0.5)))
+		go.set_parent(block,self.physics_go)
+	end
 end
 
 function Level:light_map_build()

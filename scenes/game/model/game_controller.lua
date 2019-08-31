@@ -118,7 +118,6 @@ function M:spawn_pickups()
 	timer.delay(8,true,function()
 		local pickup = COMMON.LUME.weightedchoice(pickups_weights)
 		local tile = self.level:get_tile_for_tileset("pickups",pickup.tile_id)
-		print("add")
 		self.level.ecs_world.ecs:addEntity(ENTITIES.create_pickup(self:utils_get_random_spawn_position(),tile.id))
 	end)
 end

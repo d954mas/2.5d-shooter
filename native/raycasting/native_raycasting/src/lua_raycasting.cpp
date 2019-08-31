@@ -108,6 +108,22 @@ static int MapSetLua(lua_State* L){
 	MapParse(L);
 	return 0;
 }
+
+static int MapChangeCellBlockedLua(lua_State* L){
+    int x = ceil(lua_tonumber(L, 1)) - 1;
+	int y = ceil(lua_tonumber(L, 2)) - 1;
+	bool blocking = lua_toboolean(L,1);
+	MapChangeCellBlocked(x,y,blocking);
+	return 0;
+}
+
+static int MapChangeCellTransparentLua(lua_State* L){
+    int x = ceil(lua_tonumber(L, 1)) - 1;
+	int y = ceil(lua_tonumber(L, 2)) - 1;
+	bool transparent = lua_toboolean(L,1);
+	MapChangeCellTransparent(x,y,transparent);
+	return 0;
+}
 //endregion
 
 
@@ -150,7 +166,9 @@ static const luaL_reg Module_methods[] =
 	
 	{"map_set", MapSetLua},
 	{"map_find_path", MapFindPathLua},
-	
+	{"map_cell_set_blocked", MapChangeCellBlockedLua},
+	{"map_cell_set_transparent", MapChangeCellTransparentLua},
+
 	{"cells_update_visible", CellsUpdateVisibleLua},
 	{"cells_get_visible",CellsGetVisibleLua},
 	{"cells_get_need_load",CellsGetNeedLoadLua},

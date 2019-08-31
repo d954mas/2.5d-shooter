@@ -21,7 +21,7 @@ function AI:update(dt)
 	if self.state == self.states.IDLE then
 		local path = self:player_find_path()
 		if not path then
-			COMMON.w(string.format("no path to player: %s %s" ,self:get_current_cell_position() ,self.game_controller.level.player.position))
+--			COMMON.w(string.format("no path to player: %s %s" ,self:get_current_cell_position() ,self.game_controller.level.player.position))
 			return
 		end
 		local next_cell = path[2]
