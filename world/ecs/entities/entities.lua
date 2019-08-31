@@ -77,6 +77,7 @@ local FACTORY = require "scenes.game.factories"
 ---@field flash_info FlashInfo flash sprite when take damage
 ---@field auto_destroy boolean if true will be destroyed
 ---@field auto_destroy_delay number when auto_destroy false and delay nil or 0 then destroy entity
+---@field render_object RenderObject
 
 
 ---@class ENTITIES
