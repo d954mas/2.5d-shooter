@@ -1,7 +1,5 @@
 local ECS = require 'libs.ecs'
-
-local BLOOD_FACTORY = msg.url("game:/factories#factory_particle_blood")
-local EMPTY_FACTORY = msg.url("game:/factories#factory_empty")
+local FACTORY = require "scenes.game.factories"
 local EMPTY_ROTATION = vmath.quat_rotation_z(0) -- without rotation object have strange rotation
 
 
@@ -22,8 +20,8 @@ function System:process(e, dt)
 		local dpos = info.target_e.position-info.source_e.position
 		dpos = vmath.normalize(dpos) * 0.1
 		blood_e.position = blood_e.position - dpos
-		blood_e.url_sprite = msg.url(factory.create(BLOOD_FACTORY,nil,EMPTY_ROTATION,nil,1/128*0.5))
-		blood_e.url_go = msg.url(factory.create(EMPTY_FACTORY,nil,EMPTY_ROTATION))
+		blood_e.url_sprite = msg.url(factory.create(FACTORY.FACTORY.blood_particle,nil,EMPTY_ROTATION,nil,1/128*0.5))
+		blood_e.url_go = msg.url(factory.create(FACTORY.FACTORY.empty,nil,EMPTY_ROTATION))
 		go.set_position(vmath.vector3(0,0.4,0),blood_e.url_sprite)
 		go.set_parent(blood_e.url_sprite,blood_e.url_go)
 		go.set_position(vmath.vector3(blood_e.position.x,0, - blood_e.position.y),blood_e.url_go)

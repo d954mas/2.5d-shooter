@@ -1,9 +1,7 @@
 local ECS = require 'libs.ecs'
-
-local HASH_SPRITE = hash("sprite")
+local FACTORY = require "scenes.game.factories"
 local EMPTY_ROTATION = vmath.quat_rotation_z(0) -- without rotation object have strange rotation
-local FACTORY_SPRITE_URL = msg.url("game:/factories#factory_sprite_object")
-local FACTORY_EMPTY_URL = msg.url("game:/factories#factory_empty")
+
 ---@class DrawObjectsSystem:ECSSystem
 local System = ECS.processingSystem()
 System.filter = ECS.requireAll("culling","position")
@@ -28,11 +26,11 @@ function System:process(e, dt)
 		--create empty go when needed
 		if not e.url_go and e.culling_empty_go ~= false then
 			e.culling_empty_go = true
-			e.url_go = msg.url(factory.create(FACTORY_EMPTY_URL,vmath.vector3(e.position.x,0,-e.position.z+0.5), EMPTY_ROTATION))
+			e.url_go = msg.url(factory.create(FACTORY.FACTORY.empty,vmath.vector3(e.position.x,0,-e.position.z+0.5), EMPTY_ROTATION))
 		end
 		--create sprites and add them to root go
-		e.url_sprite =  msg.url(factory.create(FACTORY_SPRITE_URL,nil,EMPTY_ROTATION))
-		e.url_sprite = msg.url(e.url_sprite.socket,e.url_sprite.path,HASH_SPRITE)
+		e.url_sprite =  msg.url(factory.create(FACTORY.FACTORY.sprite,nil,EMPTY_ROTATION))
+		e.url_sprite = msg.url(e.url_sprite.socket,e.url_sprite.path,FACTORY.COMPONENT_HASHES.sprite)
 		e.dynamic_color_cell = nil -- reset dynamic color.If not reset, objects will not update color on next appear
 		go.set_parent(e.url_sprite,e.url_go)
 		e.drawing = true

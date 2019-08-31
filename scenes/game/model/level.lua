@@ -1,11 +1,10 @@
 local COMMON = require "libs.common"
 local ENTITIES = require "world.ecs.entities.entities"
 local ECS_WORLD = require "world.ecs.ecs"
+local FACTORY = require "scenes.game.factories"
 
 local TILESET
 
-local FACTORY_GO_EMPTY = msg.url("game:/factories#factory_empty")
-local FACTORY_GO_BLOCK = msg.url("game:/factories#factory_block")
 
 --Cell used in cpp and in lua.
 --In lua id start from 1 in cpp from 0
@@ -71,7 +70,7 @@ function Level:create_doors()
 		cell.transparent = true
 		native_raycasting.map_cell_set_blocked(cell.position.x,cell.position.y,true)
 		native_raycasting.map_cell_set_transparent(cell.position.x,cell.position.y,true)
-		local block = msg.url(factory.create(FACTORY_GO_BLOCK,vmath.vector3(cell.position.x-0.5,0.5,-cell.position.y+0.5)))
+		local block = msg.url(factory.create(FACTORY.FACTORY.block,vmath.vector3(cell.position.x-0.5,0.5,-cell.position.y+0.5)))
 		go.set_parent(block,self.physics_go)
 	end
 end
@@ -113,16 +112,16 @@ end
 
 function Level:create_physics()
 	assert(not self.physics_go,"physics go already created")
-	self.physics_go = msg.url(factory.create(FACTORY_GO_EMPTY))
+	self.physics_go = msg.url(factory.create(FACTORY.FACTORY.empty))
 	local scale = math.max(self:map_get_width(),self:map_get_height())
 	--mb i do not need floor.Place it a little lower then need, to avoid useless collision responses
-	local floor = msg.url(factory.create(FACTORY_GO_BLOCK,vmath.vector3(scale/2,-scale/2+0.95,-scale/2),nil,nil,scale))
+	local floor = msg.url(factory.create(FACTORY.FACTORY.block,vmath.vector3(scale/2,-scale/2+0.95,-scale/2),nil,nil,scale))
 	go.set_parent(floor,self.physics_go)
 	for y=1,self:map_get_height() do
 		for x=1, self:map_get_width() do
 			local cell = self:map_get_cell(x,y)
 			if cell.blocked then
-				local block = msg.url(factory.create(FACTORY_GO_BLOCK,vmath.vector3(x-0.5,0.5,-y+0.5)))
+				local block = msg.url(factory.create(FACTORY.FACTORY.block,vmath.vector3(x-0.5,0.5,-y+0.5)))
 				go.set_parent(block,self.physics_go)
 			end
 		end

@@ -4,6 +4,8 @@ local WeaponPrototypes = require "world.weapons.weapon_prototypes"
 local Weapon = require "world.weapons.weapon_base"
 local TAG = "ENTITIES"
 
+local FACTORY = require "scenes.game.factories"
+
 ---@class FlashInfo
 ---@field current_time number
 ---@field total_time number
@@ -76,15 +78,6 @@ local TAG = "ENTITIES"
 ---@field auto_destroy boolean if true will be destroyed
 ---@field auto_destroy_delay number when auto_destroy false and delay nil or 0 then destroy entity
 
-local HASH_SPRITE = hash("sprite")
-local OBJECT_HASHES = {
-	root = hash("/root"),
-	sprite = hash("/sprite"),
-	collision_damage = hash("/collision_damage"),
-}
-
-local FACTORY_ENEMY_BLOB_URL = msg.url("game:/factories#factory_enemy_blob")
-local FACTORY_PICKUP_URL = msg.url("game:/factories#factory_pickup")
 
 ---@class ENTITIES
 local Entities = {}
@@ -228,10 +221,10 @@ function Entities.create_enemy(position,factory)
 	e.movement_max_speed = 1 + math.random()*0.25
 	e.enemy = true
 	local urls = collectionfactory.create(factory,vmath.vector3(e.position.x,0.5,-e.position.z),vmath.quat_rotation_z(0),nil)
-	e.url_go = msg.url(urls[OBJECT_HASHES.root])
-	e.url_sprite = msg.url(urls[OBJECT_HASHES.sprite])
-	e.url_collision_damage = msg.url(urls[OBJECT_HASHES.collision_damage])
-	e.url_sprite.fragment = HASH_SPRITE
+	e.url_go = msg.url(urls[FACTORY.OBJECT_HASHES.root])
+	e.url_sprite = msg.url(urls[FACTORY.OBJECT_HASHES.sprite])
+	e.url_collision_damage = msg.url(urls[FACTORY.OBJECT_HASHES.collision_damage])
+	e.url_sprite.fragment = FACTORY.COMPONENT_HASHES.sprite
 	e.rotation_look_at_player = true
 	e.dynamic_color = true
 	return e
@@ -246,7 +239,7 @@ end
 
 ---@return Entity
 function Entities.create_blob(pos)
-	local e = Entities.create_enemy(assert(pos),FACTORY_ENEMY_BLOB_URL)
+	local e = Entities.create_enemy(assert(pos),FACTORY.FACTORY.enemy_blob)
 	e.ai = AI.Blob(e,Entities.game_controller)
 	e.hp = 20
 	e.weapons = {Weapon(WeaponPrototypes.prototypes.ENEMY_MELEE,e,Entities.game_controller)}
@@ -296,7 +289,7 @@ function Entities.create_pickup(pos,tile_id)
 	local e = {}
 	e.tile = Entities.game_controller.level:get_tile(tile_id)
 	e.position= pos
-	local url = factory.create(FACTORY_PICKUP_URL,vmath.vector3(e.position.x,0.5,e.position.y),vmath.quat_rotation_z(0),nil)
+	local url = factory.create(FACTORY.FACTORY.pickup,vmath.vector3(e.position.x,0.5,e.position.y),vmath.quat_rotation_z(0),nil)
 	e.url_go = msg.url(url)
 	if e.tile.properties.look_at_player then e.rotation_look_at_player = true end
 	if e.tile.properties.global_rotation then e.rotation_global = true end

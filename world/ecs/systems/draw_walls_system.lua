@@ -1,9 +1,6 @@
 local ECS = require 'libs.ecs'
 local DEBUG_INFO = require "debug.debug_info"
-
-local FACTORY_EMPTY_URL = msg.url("game:/factories#factory_empty")
-local FACTORY_SPRITE_WALL_URL = msg.url("game:/factories#factory_sprite_wall")
-
+local FACTORY = require "scenes.game.factories"
 --Draw wall and floors
 
 ---@class DrawWallsSystem:ECSSystem
@@ -71,8 +68,8 @@ function System:create_wall_object(cell_data,x,y,transparent)
 			have_transparent = have_transparent or tile.properties.transparent
 			if  not(transparent and config.no_transparent) then
 				local rotation = config.rotation_f and config.rotation_f(tile) or config.rotation
-				root_go = root_go or msg.url(factory.create(FACTORY_EMPTY_URL,vmath.vector3(x-0.5,0,-y+0.5),vmath.quat_rotation_z(0),nil,scale))
-				local sprite_go = msg.url(factory.create(FACTORY_SPRITE_WALL_URL,config.position,rotation,nil,tile.scale))
+				root_go = root_go or msg.url(factory.create(FACTORY.FACTORY.empty,vmath.vector3(x-0.5,0,-y+0.5),vmath.quat_rotation_z(0),nil,scale))
+				local sprite_go = msg.url(factory.create(FACTORY.FACTORY.sprite_wall,config.position,rotation,nil,tile.scale))
 				sprite.play_flipbook(sprite_go,tile.image)
 				go.set_parent(sprite_go,root_go)
 			end
