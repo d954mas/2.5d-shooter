@@ -26,7 +26,7 @@ end
 ---@param system DrawWallsSystem
 function M.update_draw_walls_system(system)
 	M.walls = COMMON.LUME.countp(system.wall_objects)
-	M.walls_transparent = COMMON.LUME.countp(system.wall_transparent_objects)
+	M.walls_transparent = COMMON.LUME.count(system.wall_objects,function(v) return v.transparent_object end)
 	M.walls_total = M.walls + M.walls_transparent
 end
 

@@ -15,7 +15,7 @@ end
 
 function EcsWorld:_init_systems()
 	SYSTEMS.load()
-	self.ecs:addSystem(SYSTEMS.UpdateAISystem)
+	--self.ecs:addSystem(SYSTEMS.UpdateAISystem)
 	self.ecs:addSystem(SYSTEMS.UpdateWeaponsSystem)
 	self.ecs:addSystem(SYSTEMS.InputSystem)
 	self.ecs:addSystem(SYSTEMS.CollisionDamageRotateSystem)
