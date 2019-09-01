@@ -11,6 +11,7 @@ function System:process(e, dt)
 
 	if e.drawing and not visible then
 		if e.render_object then e.render_object:hide() end
+		e.drawing = false
 	end
 
 	if not e.drawing and visible then
@@ -20,6 +21,7 @@ function System:process(e, dt)
 			e.render_object:create()
 		end
 		e.render_object:show()
+		e.drawing = true
 		self.world:addEntity(e)
 	end
 end

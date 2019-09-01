@@ -13,7 +13,7 @@ function Object:initialize(config)
 	self.e = assert(config.e)
 	assert(not self.e.render_object)
 	self.e.render_object = self
-	self.position = vmath.vector3(self.e.position.x,0,-self.e.position.z+0.5)
+	self.position = vmath.vector3(self.e.position.x,0,-self.e.position.y)
 end
 
 

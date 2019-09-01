@@ -70,8 +70,8 @@ function Level:create_doors()
 		cell.transparent = true
 		native_raycasting.map_cell_set_blocked(cell.position.x,cell.position.y,true)
 		native_raycasting.map_cell_set_transparent(cell.position.x,cell.position.y,true)
-		local block = msg.url(factory.create(FACTORY.FACTORY.block,vmath.vector3(cell.position.x-0.5,0.5,-cell.position.y+0.5)))
-		go.set_parent(block,self.physics_go)
+		local door_e = ENTITIES.create_door(object)
+		self.ecs_world:add_entity(door_e)
 	end
 end
 

@@ -2,6 +2,8 @@ local COMMON = require "libs.common"
 local AI = require "world.ai.ai"
 local WeaponPrototypes = require "world.weapons.weapon_prototypes"
 local Weapon = require "world.weapons.weapon_base"
+local EntityRenderObject = require "scenes.game.view.render_objects.entity_render_object"
+local DoorRenderObject = require "scenes.game.view.render_objects.door_render_object"
 local TAG = "ENTITIES"
 
 local FACTORY = require "scenes.game.factories"
@@ -125,6 +127,9 @@ function Entities.on_entity_removed(e)
 		table.remove(Entities.enemies,idx)
 	end
 
+	if e.render_object and e.render_object.url_root then
+		e.render_object:dispose()
+	end
 	if e.url_go then
 		go.delete(e.url_go,true)
 	end
@@ -341,6 +346,16 @@ function Entities.create_flash_info(total_time,entity)
 	end
 	entity.flash_info.total_time = total_time
 	entity.flash_info.current_time = 0
+end
+
+---@param object LevelDataObject
+function Entities.create_door(object)
+	local e = {}
+	e.culling = true
+	e.position = vmath.vector3(object.cell_xf,object.cell_yf,0.5)
+	e.tile = Entities.game_controller.level:get_tile(object.tile_id)
+	e.render_object = DoorRenderObject({position = e.position, e = e,url_factory_root = FACTORY.FACTORY.block })
+	e.render_object:create()
 end
 
 ---@return Entity
