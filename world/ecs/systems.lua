@@ -30,6 +30,7 @@ function M.load()
 	M.UpdateWeaponsSystem = require "world.ecs.systems.update_weapons_system"
 	M.CameraBobSystem = require "world.ecs.systems.camera_bob_system"
 	M.AutoDestroySystem = require "world.ecs.systems.auto_destroy_system"
+	M.ActionSystem = require "world.ecs.systems.action_system"
 end
 
 M.load()

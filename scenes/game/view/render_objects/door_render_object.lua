@@ -29,7 +29,6 @@ end
 function Object:show()
 	EntityRenderObject.show(self)
 	self.door_wall_object:show()
-	print("show")
 end
 
 function Object:hide()

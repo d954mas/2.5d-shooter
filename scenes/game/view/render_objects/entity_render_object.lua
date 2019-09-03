@@ -21,7 +21,7 @@ function Object:create()
 	if self.e.url_go then
 		self.url_root = self.e.url_go
 	else
-		self.url_root = msg.url(factory.create(self.url_factory_root,self.position,self.rotation,nil,self.scale))
+		self.url_root = msg.url(factory.create(assert(self.url_factory_root),self.position,self.rotation,nil,self.scale))
 		self.e.url_go = self.url_root
 		self.game_controller.level.ecs_world:add_entity(self.e)
 	end

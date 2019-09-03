@@ -44,6 +44,7 @@ local FACTORY = require "scenes.game.factories"
 ---@field tag string tag used for help when debug
 ---@field player boolean true if it player entity
 ---@field enemy boolean
+---@field door boolean
 ---@field position vector3
 ---@field movement_velocity vector3
 ---@field movement_direction vector3
@@ -52,6 +53,7 @@ local FACTORY = require "scenes.game.factories"
 ---@field movement_deaccel number
 ---@field angle vector3 radians anticlockwise  x-horizontal y-vertical
 ---@field url_collision_damage url collision always look at player
+---@field url_collision_action action zone open door and etc
 ---@field url_go nil|url need update entity when changed or url_to_entity will be broken
 ---@field url_sprite url
 ---@field input_info InputInfo used for player input
@@ -85,6 +87,7 @@ local FACTORY = require "scenes.game.factories"
 ---@class ENTITIES
 local Entities = {}
 
+---@type Entity[]
 Entities.url_to_entity = {}
 Entities.entity_to_url = {}
 Entities.enemies = {}
@@ -121,6 +124,9 @@ function Entities.on_entity_removed(e)
 	if e.url_collision_damage then
 		Entities.url_to_entity[url_to_key(e.url_collision_damage)] = nil
 	end
+	if e.url_collision_action then
+		Entities.url_to_entity[url_to_key(e.url_collision_action)] = nil
+	end
 	--TODO fix performance
 	if e.enemy then
 		local idx = assert(COMMON.LUME.find(Entities.enemies,e),"unknown enemy")
@@ -144,6 +150,9 @@ function Entities.on_entity_added(e)
 	if e.url_collision_damage then
 		Entities.url_to_entity[url_to_key(e.url_collision_damage)] = e
 	end
+	if e.url_collision_action then
+		Entities.url_to_entity[url_to_key(e.url_collision_action)] = e
+	end
 	--TODO
 	if e.enemy then
 		local idx = COMMON.LUME.find(Entities.enemies,e)
@@ -164,6 +173,9 @@ function Entities.on_entity_updated(e)
 		Entities.entity_to_url[e] = e.url_go
 		if e.url_collision_damage then
 			Entities.url_to_entity[url_to_key(e.url_collision_damage)] = e
+		end
+		if e.url_collision_action then
+			Entities.url_to_entity[url_to_key(e.url_collision_action)] = e
 		end
 	end
 end
@@ -245,7 +257,7 @@ end
 
 ---@return Entity
 function Entities.create_blob(pos)
-	local e = Entities.create_enemy(assert(pos),FACTORY.FACTORY.enemy_blob)
+	local e = Entities.create_enemy(assert(pos),FACTORY.FACTORY_COLLECTION.enemy_blob)
 	e.ai = AI.Blob(e,Entities.game_controller)
 	e.hp = 20
 	e.weapons = {Weapon(WeaponPrototypes.prototypes.ENEMY_MELEE,e,Entities.game_controller)}
@@ -349,13 +361,21 @@ function Entities.create_flash_info(total_time,entity)
 end
 
 ---@param object LevelDataObject
+---@return Entity
 function Entities.create_door(object)
+	---@type Entity
 	local e = {}
 	e.culling = true
 	e.position = vmath.vector3(object.cell_xf,object.cell_yf,0.5)
 	e.tile = Entities.game_controller.level:get_tile(object.tile_id)
-	e.render_object = DoorRenderObject({position = e.position, e = e,url_factory_root = FACTORY.FACTORY.block })
+	assert(e.tile.properties.door)
+	local urls = collectionfactory.create(FACTORY.FACTORY_COLLECTION.door,nil, vmath.quat_rotation_z(0),nil)
+	e.url_go = assert(msg.url(urls[FACTORY.OBJECT_HASHES.root]))
+	e.url_collision_action = assert(msg.url(urls[FACTORY.OBJECT_HASHES.action_collider]))
+	e.render_object = DoorRenderObject({position = e.position, e = e, })
 	e.render_object:create()
+	e.door = true
+	return e
 end
 
 ---@return Entity
