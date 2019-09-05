@@ -63,6 +63,7 @@ function Level:prepare()
 end
 
 function Level:create_doors()
+	COMMON.i("create doors",TAG)
 	for _,object in ipairs(self.data.doors)do
 		local cell = self:map_get_cell(object.cell_x,object.cell_y)
 		assert(not cell.blocked,"can't create door on blocked cell")
@@ -73,6 +74,7 @@ function Level:create_doors()
 		local door_e = ENTITIES.create_door(object)
 		self.ecs_world:add_entity(door_e)
 	end
+	COMMON.i("create doors done",TAG)
 end
 
 function Level:light_map_build()

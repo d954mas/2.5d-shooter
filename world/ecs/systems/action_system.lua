@@ -21,7 +21,7 @@ function System:update(dt)
 	if raycast then
 		local e = ENTITIES.url_to_entity[raycast.id]
 		if e then
-			if e.door then self:gui_show() return end
+			if e.door then self:gui_show("Door. Press <color=1,0,0,1><b>E</b></color> to open") return end
 		end
 	end
 
@@ -32,17 +32,18 @@ end
 function System:gui_hide()
 	if self.gui_showing then
 		self.gui_showing = false
+		msg.post("/gui#game",COMMON.HASHES.MSG_GAME_GUI_HIDE_ACTION_LBL)
 	end
 end
 
-function System:gui_show()
-	if not self.gui_showing then
+function System:gui_show(text)
+	if not self.gui_showing or self.text_action ~= text then
 		self.gui_showing = true
+		self.text_action = text
+		msg.post("/gui#game",COMMON.HASHES.MSG_GAME_GUI_SHOW_ACTION_LBL,{text = self.text_action})
 	end
 end
 
-System.gui_showing = true
-
-System:gui_hide()
+System.gui_showing = false
 
 return System

@@ -8,6 +8,7 @@ local Script = COMMON.new_n28s()
 function Script:init()
 	self:bind_vh()
 	COMMON.INPUT.acquire()
+	gui.set_render_order(2)
 end
 
 function Script:bind_vh()

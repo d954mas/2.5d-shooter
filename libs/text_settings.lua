@@ -1,19 +1,20 @@
---local COMMON = require "libs.common"
---[[local RichText = require "richtext.richtext"
+local COMMON = require "libs.common"
+local RichText = require "richtext.richtext"
 
 local base ={
     fonts = {
         Roboto = {
-            regular = hash("Roboto-Regular"),
-            italic = hash("Roboto-Italic"),
-            bold = hash("Roboto-Bold"),
-            bold_italic = hash("Roboto-BoldItalic"),
+            regular = hash("roboto_regular"),
+            italic = hash("roboto_italic"),
+            bold = hash("roboto_bold"),
+            bold_italic = hash("roboto_bold_italic"),
         },
     },
     align = RichText.ALIGN_CENTER,
     width = 400,
-    color = vmath.vector4(0, 0, 0, 1.0),
-    position = vmath.vector3(0,18,0)
+    color = vmath.vector4(1, 1, 1, 1.0),
+    color_outline = vmath.vector4(0, 0, 0, 1.0),
+    position = vmath.vector3(0,0,0)
 }
 
 local base_left = COMMON.LUME.clone_deep(base)
@@ -43,4 +44,4 @@ function M.make_copy(root,vars)
 end
 
 
-return M--]]
+return M

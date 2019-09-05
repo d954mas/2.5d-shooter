@@ -76,7 +76,7 @@ void Map::changeCellBlocked(int x, int y, bool blocked){
         pather->Reset();//reset path cache
         startCell.blocked = blocked;
         cells[CoordsToId(x,y)] = startCell;
-        printf("change cell blocked. x:%d y:%d blocked:%s\n",x,y,blocked?"true":"false");
+        dmLogInfo("change cell blocked. x:%d y:%d blocked:%s",x,y,blocked?"true":"false");
 
     }
 }
@@ -87,7 +87,7 @@ void Map::changeCellTransparent(int x, int y, bool transparent){
         pather->Reset();//reset path cache
         startCell.transparent = transparent;
         cells[CoordsToId(x,y)] = startCell;
-        printf("change cell transparent. x:%d y:%d transparent:%s\n",x,y,transparent?"true":"false");
+        dmLogInfo("change cell transparent. x:%d y:%d transparent:%s",x,y,transparent?"true":"false");
     }
 }
 

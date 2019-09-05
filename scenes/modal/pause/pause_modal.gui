@@ -123,7 +123,7 @@ nodes {
   layer: ""
   inherit_alpha: true
   alpha: 1.0
-  outline_alpha: 1.0
+  outline_alpha: 0.0
   shadow_alpha: 1.0
   template_node_child: false
   text_leading: 1.0
@@ -280,7 +280,7 @@ nodes {
   layer: "text"
   inherit_alpha: true
   alpha: 1.0
-  outline_alpha: 1.0
+  outline_alpha: 0.0
   shadow_alpha: 1.0
   overridden_fields: 8
   template_node_child: true
@@ -438,7 +438,7 @@ nodes {
   layer: "text"
   inherit_alpha: true
   alpha: 1.0
-  outline_alpha: 1.0
+  outline_alpha: 0.0
   shadow_alpha: 1.0
   overridden_fields: 8
   template_node_child: true

@@ -2,18 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/world/ecs/systems/action_system.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/user.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/user.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go/door.collection" beforeDir="false" afterPath="$PROJECT_DIR$/go/door.collection" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/roboto_bold.font" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/roboto_bold.font" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/roboto_bold_italic.font" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/roboto_bold_italic.font" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/roboto_italic.font" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/roboto_italic.font" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/dirtylarry/components/button.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/dirtylarry/components/button.gui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/hashes.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/hashes.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/factories.lua" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/factories.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/text_settings.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/text_settings.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/src/map.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/native/raycasting/native_raycasting/src/map.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenes/game/game.collection" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/game.collection" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/view/render_objects/door_render_object.lua" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/view/render_objects/door_render_object.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/view/render_objects/entity_render_object.lua" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/view/render_objects/entity_render_object.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/ecs.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/ecs.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/entities/entities.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/entities/entities.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/systems.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/game.gui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/game.gui_script" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/model/level.lua" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/model/level.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/modal/game_over/game_over.gui" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/modal/game_over/game_over.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/modal/game_over/game_over.gui_script" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/modal/game_over/game_over.gui_script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/modal/pause/pause_modal.gui" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/modal/pause/pause_modal.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/modal/pause/pause_modal.gui_script" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/modal/pause/pause_modal.gui_script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/action_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/action_system.lua" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,10 +45,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/world/ecs/systems/action_system.lua">
+        <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/src/map.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="38" column="32" lean-forward="true" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+            <state relative-caret-position="150">
+              <caret line="76" column="36" lean-forward="true" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -61,14 +65,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tra</find>
-      <find>url_collision_damage =</find>
-      <find>FAC</find>
-      <find>OBJECT_HASHES</find>
-      <find>BLOB</find>
-      <find>FACTORY</find>
-      <find>PIC</find>
-      <find>FACTORY_</find>
       <find>all_objects</find>
       <find>url_sp</find>
       <find>draw</find>
@@ -87,10 +83,18 @@
       <find>len</find>
       <find>url_collision_action</find>
       <find>url_collision_damage</find>
-      <find>door</find>
       <find>cre</find>
       <find>create_b</find>
       <find>filter</find>
+      <find>img</find>
+      <find>dele</find>
+      <find>word.co</find>
+      <find>.color =</find>
+      <find>settings</find>
+      <find>color</find>
+      <find>create</find>
+      <find>create(</find>
+      <find>door</find>
     </findStrings>
     <replaceStrings>
       <replace>look_at_player</replace>
@@ -139,9 +143,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/debug/game_info/debug_game_info_gui.gui_script" />
-        <option value="$PROJECT_DIR$/libs/ecs.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/systems/auto_destroy_system.lua" />
         <option value="$PROJECT_DIR$/world/ai/ai_spawner_enemy.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems/update_camera_system.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems/movement_system.lua" />
@@ -156,15 +157,12 @@
         <option value="$PROJECT_DIR$/gooey/internal/core.lua" />
         <option value="$PROJECT_DIR$/scenes/modal/pause/pause_modal.lua" />
         <option value="$PROJECT_DIR$/libs/sm/scene_manager.lua" />
-        <option value="$PROJECT_DIR$/scenes/modal/pause/pause_modal.gui_script" />
-        <option value="$PROJECT_DIR$/scenes/modal/game_over/game_over.gui_script" />
         <option value="$PROJECT_DIR$/scenes/select_level/select_level.gui_script" />
         <option value="$PROJECT_DIR$/world/ecs/systems/physics_obstacles_system.lua" />
         <option value="$PROJECT_DIR$/assets/levels/make_walls_thumbnail.lua" />
         <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/include/cell_data.h" />
         <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/src/raycasting.cpp" />
         <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/src/cell_data.cpp" />
-        <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/src/map.cpp" />
         <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/include/map.h" />
         <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/src/lua_raycasting.cpp" />
         <option value="$PROJECT_DIR$/_headers/raycasting.lua" />
@@ -178,18 +176,24 @@
         <option value="$PROJECT_DIR$/assets/levels/parse.lua" />
         <option value="$PROJECT_DIR$/init_controller.script" />
         <option value="$PROJECT_DIR$/scenes/game/view/render_objects/game_object_render_object.lua" />
-        <option value="$PROJECT_DIR$/scenes/game/model/level.lua" />
         <option value="$PROJECT_DIR$/scenes/game/factories.lua" />
         <option value="$PROJECT_DIR$/libs/common.lua" />
         <option value="$PROJECT_DIR$/scenes/game/view/render_objects/entity_render_object.lua" />
         <option value="$PROJECT_DIR$/scenes/game/view/render_objects/door_render_object.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems/update_go_system.lua" />
         <option value="$PROJECT_DIR$/world/weapons/weapon_base.lua" />
-        <option value="$PROJECT_DIR$/libs/hashes.lua" />
         <option value="$PROJECT_DIR$/world/ecs/systems.lua" />
         <option value="$PROJECT_DIR$/world/ecs/ecs.lua" />
         <option value="$PROJECT_DIR$/world/ecs/entities/entities.lua" />
+        <option value="$PROJECT_DIR$/scenes/modal/game_over/game_over.gui_script" />
+        <option value="$PROJECT_DIR$/scenes/modal/pause/pause_modal.gui_script" />
+        <option value="$PROJECT_DIR$/libs/hashes.lua" />
+        <option value="$PROJECT_DIR$/libs/text_settings.lua" />
+        <option value="$PROJECT_DIR$/richtext/richtext.lua" />
+        <option value="$PROJECT_DIR$/scenes/game/gui/game/game.gui_script" />
         <option value="$PROJECT_DIR$/world/ecs/systems/action_system.lua" />
+        <option value="$PROJECT_DIR$/scenes/game/model/level.lua" />
+        <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/src/map.cpp" />
       </list>
     </option>
   </component>
@@ -199,7 +203,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="383" />
     <option name="y" value="28" />
     <option name="width" value="1426" />
@@ -211,7 +215,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -227,31 +230,30 @@
             <path>
               <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
               <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
-              <item name="world" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
               <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
-              <item name="world" type="462c0819:PsiDirectoryNode" />
-              <item name="ecs" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="fonts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
               <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
-              <item name="world" type="462c0819:PsiDirectoryNode" />
-              <item name="ecs" type="462c0819:PsiDirectoryNode" />
-              <item name="systems" type="462c0819:PsiDirectoryNode" />
+              <item name="native_raycasting" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DTFIndieJam" type="b2602c69:ProjectViewProjectNode" />
               <item name="DTFIndieJam" type="462c0819:PsiDirectoryNode" />
-              <item name="world" type="462c0819:PsiDirectoryNode" />
-              <item name="weapons" type="462c0819:PsiDirectoryNode" />
+              <item name="native_raycasting" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -347,11 +349,12 @@
       <workItem from="1566852895564" duration="841000" />
       <workItem from="1567328010078" duration="4178000" />
       <workItem from="1567541627011" duration="5341000" />
+      <workItem from="1567712047712" duration="5396000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="492890000" />
+    <option name="totallyTimeSpent" value="498286000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -363,10 +366,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="383" y="28" width="1426" height="1036" extended-state="0" />
+    <frame x="-7" y="-7" width="2574" height="1410" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33138686" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18268467" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -382,9 +385,9 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4983028" weight="0.32112068" />
       <window_info anchor="bottom" id="LuaCheck" order="7" sideWeight="0.4914803" weight="0.3348589" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.620438" visible="true" weight="0.31056562" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.620438" visible="true" weight="0.22196797" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4569343" weight="0.43329775" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4569343" weight="0.43325704" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.37956205" side_tool="true" weight="0.31163287" />
       <window_info anchor="bottom" id="TypeScript" order="13" sideWeight="0.49946752" weight="0.32912722" />
       <window_info anchor="bottom" id="Messages" order="14" />
@@ -485,7 +488,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="lua-line">
           <url>file://$PROJECT_DIR$/scenes/game/model/level.lua</url>
-          <line>94</line>
+          <line>96</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="lua-line">
@@ -542,51 +545,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scenes/modal/pause/pause_modal.lua">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/sm/scene_manager.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="187" column="35" lean-forward="true" selection-start-line="187" selection-start-column="35" selection-end-line="187" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/modal/pause/pause_modal.gui_script">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="40" column="130" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="130" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/modal/game_over/game_over.gui_script">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="30" column="130" selection-start-line="30" selection-start-column="130" selection-end-line="30" selection-end-column="130" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/select_level/select_level.gui_script">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/modal/pause/pause_modal.gui">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="35" column="13" lean-forward="true" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_player.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/include/native_raycasting.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -617,22 +575,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/src/cell_data.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="822">
-          <caret line="64" column="25" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_headers/fmod_headers.lua">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/src/map.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="97" column="29" selection-start-line="97" selection-start-column="9" selection-end-line="97" selection-end-column="29" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/include/cell_data.h">
       <provider selected="true" editor-type-id="text-editor">
@@ -645,13 +589,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="806">
           <caret line="56" column="29" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/src/lua_raycasting.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="169" column="57" selection-start-line="169" selection-start-column="57" selection-end-line="169" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -750,13 +687,6 @@
     <entry file="file://$PROJECT_DIR$/go/door.collection">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/common.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scenes/game/view/render_objects/render_object.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="592">
@@ -778,24 +708,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/view/render_objects/door_render_object.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/world/ecs/systems/update_go_system.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
           <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/model/level.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="72" column="32" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -810,13 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="592">
           <caret line="70" column="58" selection-start-line="70" selection-start-column="58" selection-end-line="70" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/hashes.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="59" column="26" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -847,17 +756,115 @@
     <entry file="file://$PROJECT_DIR$/world/ecs/systems/auto_destroy_system.lua">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/entities/entities.lua">
+    <entry file="file://$PROJECT_DIR$/scenes/modal/game_over/game_over.gui_script">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/modal/pause/pause_modal.gui_script">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/common.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/msg_receiver.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/hashes.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="66" column="13" lean-forward="true" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/text_settings.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
-          <caret line="359" column="38" lean-forward="true" selection-start-line="359" selection-start-column="38" selection-end-line="359" selection-end-column="38" />
+          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/game/gui/game/game.gui_script">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/world/ecs/systems/action_system.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="38" column="32" lean-forward="true" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+        <state relative-caret-position="432">
+          <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/richtext/parse.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="145" column="11" selection-start-line="145" selection-start-column="11" selection-end-line="145" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/game/view/render_objects/door_render_object.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/ecs/entities/entities.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="364" column="18" selection-start-line="364" selection-start-column="18" selection-end-line="364" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/richtext/richtext.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="360" column="19" lean-forward="true" selection-start-line="360" selection-start-column="19" selection-end-line="360" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/game/model/level.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="76" column="31" selection-start-line="76" selection-start-column="31" selection-end-line="76" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/src/cell_data.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1024">
+          <caret line="64" column="25" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/src/lua_raycasting.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="88" column="5" lean-forward="true" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/src/map.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="76" column="36" lean-forward="true" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
         </state>
       </provider>
     </entry>

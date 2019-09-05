@@ -63,6 +63,10 @@ M.MSG_PHYSICS_GROUP_PLAYER_DAMAGE = hash("player_damage")
 M.MSG_PHYSICS_GROUP_ENEMY = hash("enemy")
 M.MSG_PHYSICS_GROUP_ENEMY_DAMAGE = hash("enemy_damage")
 
+--region msg game
+M.MSG_GAME_GUI_HIDE_ACTION_LBL = hash("MSG_GAME_GUI_HIDE_ACTION_LBL")
+M.MSG_GAME_GUI_SHOW_ACTION_LBL = hash("MSG_GAME_GUI_SHOW_ACTION_LBL")
+
 
 M.EMPTY = hash("empty")
 M.NIL = hash("nil")
