@@ -21,7 +21,7 @@ function Level:initialize(data)
 		--load tileset once
 		TILESET = json.decode(assert(sys.load_resource("/assets/levels/result/tileset.json"),"no tileset"))
 		for k,v in pairs(TILESET)do
-			if v.image then v.image = hash(v.image) end
+			if v.image then v.image_hash =hash(v.image) end
 		end
 	end
 	self.data = assert(data)
@@ -165,6 +165,7 @@ function Level:get_tile(id)
 	return assert(TILESET.by_id[id],"no tile with id:" .. id)
 end
 
+---@return LevelDataTile
 function Level:get_tile_for_tileset(tileset_name,id)
 	assert(tileset_name)
 	assert(id)

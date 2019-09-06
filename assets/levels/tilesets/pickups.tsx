@@ -23,8 +23,9 @@
  </tile>
  <tile id="3">
   <properties>
-   <property name="change_state" value="keys.blue"/>
    <property name="global_rotation" type="bool" value="true"/>
+   <property name="key" type="bool" value="true"/>
+   <property name="key_type" value="blue"/>
    <property name="look_at_player" type="bool" value="false"/>
    <property name="pickup" type="bool" value="true"/>
    <property name="scale" type="float" value="0.25"/>
@@ -33,8 +34,9 @@
  </tile>
  <tile id="4">
   <properties>
-   <property name="change_state" value="keys.green"/>
    <property name="global_rotation" type="bool" value="true"/>
+   <property name="key" type="bool" value="true"/>
+   <property name="key_type" value="green"/>
    <property name="look_at_player" type="bool" value="false"/>
    <property name="pickup" type="bool" value="true"/>
    <property name="scale" type="float" value="0.25"/>
@@ -43,8 +45,9 @@
  </tile>
  <tile id="5">
   <properties>
-   <property name="change_state" value="keys.white"/>
    <property name="global_rotation" type="bool" value="true"/>
+   <property name="key" type="bool" value="true"/>
+   <property name="key_type" value="white"/>
    <property name="look_at_player" type="bool" value="false"/>
    <property name="pickup" type="bool" value="true"/>
    <property name="scale" type="float" value="0.25"/>
@@ -53,8 +56,9 @@
  </tile>
  <tile id="6">
   <properties>
-   <property name="change_state" value="keys.yellow"/>
    <property name="global_rotation" type="bool" value="true"/>
+   <property name="key" type="bool" value="true"/>
+   <property name="key_type" value="yellow"/>
    <property name="look_at_player" type="bool" value="false"/>
    <property name="pickup" type="bool" value="true"/>
    <property name="scale" type="float" value="0.25"/>

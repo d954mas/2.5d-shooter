@@ -15593,10 +15593,11 @@
       "tile_id":209,
       "properties":{
         "look_at_player":false,
-        "scale":0.25,
+        "key":true,
         "pickup":true,
+        "key_type":"blue",
         "global_rotation":true,
-        "change_state":"keys.blue"
+        "scale":0.25
       },
       "cell_y":31,
       "y":1952,
@@ -15610,10 +15611,11 @@
       "tile_id":210,
       "properties":{
         "look_at_player":false,
-        "scale":0.25,
+        "key":true,
         "pickup":true,
+        "key_type":"green",
         "global_rotation":true,
-        "change_state":"keys.green"
+        "scale":0.25
       },
       "cell_y":23,
       "y":1440,
@@ -15627,10 +15629,11 @@
       "tile_id":212,
       "properties":{
         "look_at_player":false,
-        "scale":0.25,
+        "key":true,
         "pickup":true,
+        "key_type":"yellow",
         "global_rotation":true,
-        "change_state":"keys.yellow"
+        "scale":0.25
       },
       "cell_y":28,
       "y":1760,
@@ -15644,10 +15647,11 @@
       "tile_id":211,
       "properties":{
         "look_at_player":false,
-        "scale":0.25,
+        "key":true,
         "pickup":true,
+        "key_type":"white",
         "global_rotation":true,
-        "change_state":"keys.white"
+        "scale":0.25
       },
       "cell_y":28,
       "y":1760,

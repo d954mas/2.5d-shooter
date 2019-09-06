@@ -1679,8 +1679,9 @@ return {
         {
           id = 3,
           properties = {
-            ["change_state"] = "keys.blue",
             ["global_rotation"] = true,
+            ["key"] = true,
+            ["key_type"] = "blue",
             ["look_at_player"] = false,
             ["pickup"] = true,
             ["scale"] = 0.25
@@ -1692,8 +1693,9 @@ return {
         {
           id = 4,
           properties = {
-            ["change_state"] = "keys.green",
             ["global_rotation"] = true,
+            ["key"] = true,
+            ["key_type"] = "green",
             ["look_at_player"] = false,
             ["pickup"] = true,
             ["scale"] = 0.25
@@ -1705,8 +1707,9 @@ return {
         {
           id = 5,
           properties = {
-            ["change_state"] = "keys.white",
             ["global_rotation"] = true,
+            ["key"] = true,
+            ["key_type"] = "white",
             ["look_at_player"] = false,
             ["pickup"] = true,
             ["scale"] = 0.25
@@ -1718,8 +1721,9 @@ return {
         {
           id = 6,
           properties = {
-            ["change_state"] = "keys.yellow",
             ["global_rotation"] = true,
+            ["key"] = true,
+            ["key_type"] = "yellow",
             ["look_at_player"] = false,
             ["pickup"] = true,
             ["scale"] = 0.25

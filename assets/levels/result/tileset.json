@@ -2026,10 +2026,11 @@
       "id":209,
       "properties":{
         "look_at_player":false,
+        "key":true,
         "pickup":true,
         "scale":0.25,
         "global_rotation":true,
-        "change_state":"keys.blue"
+        "key_type":"blue"
       },
       "height":64,
       "width":64
@@ -2041,10 +2042,11 @@
       "id":210,
       "properties":{
         "look_at_player":false,
+        "key":true,
         "pickup":true,
         "scale":0.25,
         "global_rotation":true,
-        "change_state":"keys.green"
+        "key_type":"green"
       },
       "height":64,
       "width":64
@@ -2056,10 +2058,11 @@
       "id":211,
       "properties":{
         "look_at_player":false,
+        "key":true,
         "pickup":true,
         "scale":0.25,
         "global_rotation":true,
-        "change_state":"keys.white"
+        "key_type":"white"
       },
       "height":64,
       "width":64
@@ -2071,10 +2074,11 @@
       "id":212,
       "properties":{
         "look_at_player":false,
+        "key":true,
         "pickup":true,
         "scale":0.25,
         "global_rotation":true,
-        "change_state":"keys.yellow"
+        "key_type":"yellow"
       },
       "height":64,
       "width":64

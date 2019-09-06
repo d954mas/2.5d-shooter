@@ -40,11 +40,17 @@ local FACTORY = require "scenes.game.factories"
 ---@field offset number
 ---@field offset_weapon number
 
+
+---@class PlayerInventory
+---@field keys table
+
+
 ---@class Entity
 ---@field tag string tag used for help when debug
 ---@field player boolean true if it player entity
 ---@field enemy boolean
 ---@field door boolean
+---@field inventory PlayerInventory
 ---@field position vector3
 ---@field movement_velocity vector3
 ---@field movement_direction vector3
@@ -200,6 +206,9 @@ function Entities.create_player(pos)
 	e.movement_accel = 2
 	e.movement_deaccel = 4
 	e.player = true
+	e.inventory = {
+		keys = {}
+	}
 	e.url_go =   msg.url("/player")
 	e.camera_bob_info = {
 		value = 0,

@@ -27,6 +27,10 @@ textures {
   name: "game"
   texture: "/assets/images/game/game.atlas"
 }
+textures {
+  name: "objects"
+  texture: "/assets/images/game/objects/objects.atlas"
+}
 background_color {
   x: 0.0
   y: 0.0

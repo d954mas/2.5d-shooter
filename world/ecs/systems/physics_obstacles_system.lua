@@ -28,8 +28,8 @@ function System:handle_pickup(e)
 	elseif key == "ammo_pistol" then
 		player.ammo[WEAPON_PROTOTYPES.AMMO_TYPES.PISTOL] = player.ammo[WEAPON_PROTOTYPES.AMMO_TYPES.PISTOL] + 10
 		SOUNDS:play_sound(SOUNDS.sounds.game.object_ammo_pickup)
-	elseif tile.properties.change_state then
-
+	elseif tile.properties.key then
+		player.inventory.keys[tile.properties.key_type] = true
 	else
 		assert("unknown pickup:" .. e.tile.id .. " key:" .. tostring(key))
 	end
