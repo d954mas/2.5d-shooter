@@ -11,13 +11,23 @@ cjson.decode_invalid_numbers(false)
 --In lua id start from 1 in cpp from 0
 --In lua pos start from 1 in cpp from 0
 
+---@class LevelTileset
+---@field first_gid number
+---@field end_gid number
+---@field name string
+
+---@class LevelTilesets
+---@field by_id LevelDataTile[]
+---@field tilesets LevelTileset[]
+
 ---@class LevelDataTile
 ---@field properties table
 ---@field id number
 ---@field width number
 ---@field height number
 ---@field atlas string
----@field image string|hash
+---@field image string
+---@field image_hash hash
 ---@field scale number
 
 ---@class LevelDataObject
@@ -322,7 +332,7 @@ local function create_tileset(tiled)
 	local tilesets = {}
 	for _, tileset in ipairs(tiled.tilesets)do
 		assert(not tilesets[tileset.name],"tileset with name:" .. tileset.name .. " already created")
-		tilesets[tileset.name] = {first_gid = tileset.firstgid,end_gid = tileset.firstgid + tileset.tiles[#tileset.tiles].id}
+		tilesets[tileset.name] = {first_gid = tileset.firstgid,end_gid = tileset.firstgid + tileset.tiles[#tileset.tiles].id, name = tileset.name}
 		for _,tile in ipairs(tileset.tiles) do
 			tile.properties = tile.properties or {}
 			id_to_tile[tile.id + tileset.firstgid] = tile

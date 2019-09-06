@@ -3,6 +3,7 @@ local ENTITIES = require "world.ecs.entities.entities"
 local ECS_WORLD = require "world.ecs.ecs"
 local FACTORY = require "scenes.game.factories"
 
+---@type LevelTilesets
 local TILESET
 
 
@@ -19,9 +20,10 @@ local Level = COMMON.class("Level")
 function Level:initialize(data)
 	if TILESET == nil then
 		--load tileset once
+
 		TILESET = json.decode(assert(sys.load_resource("/assets/levels/result/tileset.json"),"no tileset"))
-		for k,v in pairs(TILESET)do
-			if v.image then v.image_hash =hash(v.image) end
+		for k,v in pairs(TILESET.by_id)do
+			if v.image then v.image_hash = hash(v.image) end
 		end
 	end
 	self.data = assert(data)

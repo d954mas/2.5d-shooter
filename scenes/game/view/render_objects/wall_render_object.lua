@@ -81,7 +81,7 @@ function Object:show()
 			if  not(self.transparent and config.no_transparent) then
 				local rotation = config.rotation_f and config.rotation_f(tile) or config.rotation
 				local sprite_go = msg.url(factory.create(FACTORY.FACTORY.sprite_wall,config.position,rotation,nil,tile.scale))
-				sprite.play_flipbook(sprite_go,tile.image)
+				sprite.play_flipbook(sprite_go,tile.image_hash)
 				self:root_add_object(sprite_go)
 			end
 		end
