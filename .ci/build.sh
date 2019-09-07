@@ -14,11 +14,11 @@ echo "Using Defold version ${SHA1}"
 BOB_URL="http://d.defold.com/archive/${SHA1}/bob/bob.jar"
 
 echo "Downloading ${BOB_URL}"
-#curl -o bob.jar ${BOB_URL}
+curl -o bob.jar ${BOB_URL}
 
 echo "Build content"
-java -jar bob.jar --archive --email foo@bar.com -tc true --auth 12345 --brhtml ./.ci/report.html clean resolve build
+java -jar ./bob.jar --archive --email foo@bar.com -tc true --auth 12345 --brhtml ./.ci/report.html clean resolve build
 echo "Build headless"
-java -jar bob.jar --variant headless -p $PLATFORM  -bo ./.ci/bundle/headless bundle
+java -jar ./bob.jar --variant headless -p $PLATFORM  -bo ./.ci/bundle/headless bundle
 echo "Build html"
-java -jar bob.jar --variant release -p js-web -bo ./.ci/bundle/html bundle 
+java -jar ./bob.jar --variant release -p js-web -bo ./.ci/bundle/html bundle 
