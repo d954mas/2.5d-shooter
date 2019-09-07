@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/game.input_binding" beforeDir="false" afterPath="$PROJECT_DIR$/game.input_binding" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/hashes.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/hashes.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/model/level.lua" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/model/level.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/view/render_objects/door_render_object.lua" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/view/render_objects/door_render_object.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/view/render_objects/wall_render_object.lua" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/view/render_objects/wall_render_object.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/entities/entities.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/entities/entities.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/systems/action_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/action_system.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/systems/input_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/input_system.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/ecs/systems/update_go_system.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/ecs/systems/update_go_system.lua" afterDir="false" />
-    </list>
+    <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/world/ecs/systems/action_system.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+            <state relative-caret-position="16">
+              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -388,7 +378,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="504664000" />
+    <option name="totallyTimeSpent" value="504666000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -401,7 +391,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="60" y="63" width="1426" height="1037" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3379562" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -895,8 +884,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/world/ecs/systems/action_system.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+        <state relative-caret-position="16">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
         </state>
       </provider>
     </entry>
