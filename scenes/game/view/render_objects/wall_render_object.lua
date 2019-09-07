@@ -50,7 +50,7 @@ function Object:initialize(config)
 	self.scale = self.transparent and 0.9990 or 1.0001
 	---@type LevelDataCell
 	self.cell_data = assert(config.cell_data)
-	self.position = vmath.vector3(self.cell_data.position.x-0.5,0,-self.cell_data.position.y+0.5)
+	self.position = vmath.vector3(self.cell_data.position.x-0.5,self.position.y,-self.cell_data.position.y+0.5)
 end
 
 function Object:create()

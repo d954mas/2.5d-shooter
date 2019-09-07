@@ -67,12 +67,6 @@ end
 function Level:create_doors()
 	COMMON.i("create doors",TAG)
 	for _,object in ipairs(self.data.doors)do
-		local cell = self:map_get_cell(object.cell_x,object.cell_y)
-		assert(not cell.blocked,"can't create door on blocked cell")
-		cell.blocked = true
-		cell.transparent = true
-		native_raycasting.map_cell_set_blocked(cell.position.x,cell.position.y,true)
-		native_raycasting.map_cell_set_transparent(cell.position.x,cell.position.y,true)
 		local door_e = ENTITIES.create_door(object)
 		self.ecs_world:add_entity(door_e)
 	end

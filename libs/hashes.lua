@@ -15,6 +15,7 @@ M.INPUT_DOWN = hash("down")
 M.INPUT_SPACE = hash("space")
 M.INPUT_ESC = hash("escape")
 M.INPUT_TOUCH = hash("touch")
+M.INPUT_ACTION = hash("action")
 M.INPUT_RIGHT_CLICK = hash("right_click")
 M.INPUT_TOGGLE_1 = hash("toggle_1")
 --after resume paused scene. While paused scene do not received pressed,release, so current state may be wrong

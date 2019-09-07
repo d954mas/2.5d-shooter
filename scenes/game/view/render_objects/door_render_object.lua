@@ -16,7 +16,7 @@ function Object:initialize(config)
 		 floor = -1, ceil = -1,
 	},position = vmath.vector3(0.5,0.5,0)}
 
-	self.door_wall_object = WallRenderObject({position = vmath.vector3(0),cell_data = cell_data,transparent = true})
+	self.door_wall_object = WallRenderObject({position = vmath.vector3(0,-0.5,0),cell_data = cell_data,transparent = true})
 end
 
 function Object:create()

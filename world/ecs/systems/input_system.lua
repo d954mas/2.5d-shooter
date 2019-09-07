@@ -17,6 +17,7 @@ function System:init_input()
 	self.input_handler = COMMON.INPUT()
 	self.input_handler:add_mouse(self.input_mouse_move)
 	self.input_handler:add(COMMON.HASHES.INPUT_TOUCH,self.make_shot)
+	self.input_handler:add(COMMON.HASHES.INPUT_ACTION,self.action_pressed,true)
 end
 
 function System:check_movement_input()
@@ -32,6 +33,10 @@ function System:make_shot(action_id, action)
 	if action.pressed then weapon:on_pressed()
 	elseif action.released then weapon:on_released()
 	else weapon:pressed() end
+end
+
+function System:action_pressed()
+	self.world.game_controller.level.player.key_action_pressed = true
 end
 
 function System:update_player_direction()

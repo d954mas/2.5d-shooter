@@ -1,6 +1,7 @@
 local ECS = require 'libs.ecs'
 local COMMON = require "libs.common"
 local ENTITIES = require "world.ecs.entities.entities"
+local TAG = "ActionSystem"
 
 ---@class ActionSystem:ECSSystem
 local System = ECS.system()
@@ -23,6 +24,32 @@ function System:onAddToWorld(world)
 	}
 end
 
+---@param e Entity
+function System:open_door(e)
+	if e.door_opened then
+		COMMON.w("door already opened",TAG)
+		return
+	end
+	if e.tile.properties.key then
+		assert(self.world.game_controller.level.player.inventory.keys[e.tile.properties.key],"no key:" .. tostring(e.tile.properties.key))
+	end
+	e.door_opened = true
+	e.go_do_not_update_position = true
+	local current_pos = go.get_position(e.url_go)
+	go.animate(e.url_go,"position.y",go.PLAYBACK_ONCE_FORWARD,current_pos.y + 1,go.EASING_INOUTSINE,1,0)
+	timer.delay(0.5,false,function()
+		msg.post(e.url_collision_action,COMMON.HASHES.MSG_DISABLE)
+		msg.post(e.url_collision_obstacle,COMMON.HASHES.MSG_DISABLE)
+		local cell = self.world.game_controller.level:map_get_cell(math.ceil(e.position.x),math.ceil(e.position.y))
+		cell.blocked = false
+		cell.transparent = true
+		native_raycasting.map_cell_set_blocked(cell.position.x,cell.position.y,false)
+		native_raycasting.map_cell_set_transparent(cell.position.x,cell.position.y,true)
+	end)
+
+
+
+end
 
 ---@param e Entity
 function System:update(dt)
@@ -31,27 +58,36 @@ function System:update(dt)
 	local direction =  vmath.rotate(vmath.quat_rotation_y(self.world.game_controller.level.player.angle.x),vmath.vector3(0,0,-1))
 	local end_point = start_point +  direction * 1
 	local raycast = physics.raycast(start_point,end_point,TARGET_HASHES)
+	local key_action_pressed = self.world.game_controller.level.player.key_action_pressed
+	self.world.game_controller.level.player.key_action_pressed = nil
+	self:gui_hide()
 	if raycast then
 		local e = ENTITIES.url_to_entity[raycast.id]
+		local can_opened = false
 		if e then
-			if e.door then
+			if e.door and not e.door_opened then
 				if e.tile.properties.key then
 					local key_tile = assert(self.keys[e.tile.properties.key])
 					if self.world.game_controller.level.player.inventory.keys[e.tile.properties.key] then
-						self:gui_show(TEXT_DOOR_OPEN)
+						can_opened = true
 					else
 						self:gui_show(string.format(TEXT_DOOR_NEED_KEY,key_tile.image))
 					end
-					return
 				else
-					if e.door then self:gui_show(TEXT_DOOR_OPEN) return end
+					can_opened = true
+				end
+			end
+			if can_opened then
+				self:gui_show(TEXT_DOOR_OPEN)
+				if key_action_pressed then
+					self:open_door(e)
 				end
 			end
 		end
 	end
 
 	--If not found action hide gui
-	self:gui_hide()
+
 end
 
 function System:gui_hide()

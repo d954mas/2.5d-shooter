@@ -59,7 +59,8 @@ local FACTORY = require "scenes.game.factories"
 ---@field movement_deaccel number
 ---@field angle vector3 radians anticlockwise  x-horizontal y-vertical
 ---@field url_collision_damage url collision always look at player
----@field url_collision_action action zone open door and etc
+---@field url_collision_action url zone open door and etc
+---@field url_collision_obstacle url
 ---@field url_go nil|url need update entity when changed or url_to_entity will be broken
 ---@field url_sprite url
 ---@field input_info InputInfo used for player input
@@ -88,6 +89,8 @@ local FACTORY = require "scenes.game.factories"
 ---@field auto_destroy boolean if true will be destroyed
 ---@field auto_destroy_delay number when auto_destroy false and delay nil or 0 then destroy entity
 ---@field render_object RenderObject
+---@field key_action_pressed boolean key action(E) pressed
+---@field go_do_not_update_position boolean used for opened doors. They update pos by go animations
 
 
 ---@class ENTITIES
@@ -133,6 +136,9 @@ function Entities.on_entity_removed(e)
 	if e.url_collision_action then
 		Entities.url_to_entity[url_to_key(e.url_collision_action)] = nil
 	end
+	if e.url_collision_obstacle then
+		Entities.url_to_entity[url_to_key(e.url_collision_obstacle)] = nil
+	end
 	--TODO fix performance
 	if e.enemy then
 		local idx = assert(COMMON.LUME.find(Entities.enemies,e),"unknown enemy")
@@ -159,6 +165,9 @@ function Entities.on_entity_added(e)
 	if e.url_collision_action then
 		Entities.url_to_entity[url_to_key(e.url_collision_action)] = e
 	end
+	if e.url_collision_obstacle then
+		Entities.url_to_entity[url_to_key(e.url_collision_obstacle)] = e
+	end
 	--TODO
 	if e.enemy then
 		local idx = COMMON.LUME.find(Entities.enemies,e)
@@ -182,6 +191,9 @@ function Entities.on_entity_updated(e)
 		end
 		if e.url_collision_action then
 			Entities.url_to_entity[url_to_key(e.url_collision_action)] = e
+		end
+		if e.url_collision_obstacle then
+			Entities.url_to_entity[url_to_key(e.url_collision_obstacle)] = e
 		end
 	end
 end
@@ -381,9 +393,18 @@ function Entities.create_door(object)
 	local urls = collectionfactory.create(FACTORY.FACTORY_COLLECTION.door,nil, vmath.quat_rotation_z(0),nil)
 	e.url_go = assert(msg.url(urls[FACTORY.OBJECT_HASHES.root]))
 	e.url_collision_action = assert(msg.url(urls[FACTORY.OBJECT_HASHES.action_collider]))
+	e.url_collision_obstacle = assert(msg.url(urls[FACTORY.OBJECT_HASHES.block_collider]))
+	go.set_parent(e.url_collision_obstacle,e.url_go)
 	e.render_object = DoorRenderObject({position = e.position, e = e, })
 	e.render_object:create()
 	e.door = true
+
+	local cell = Entities.game_controller.level:map_get_cell(object.cell_x,object.cell_y)
+	assert(not cell.blocked,"can't create door on blocked cell")
+	cell.blocked = true
+	cell.transparent = true
+	native_raycasting.map_cell_set_blocked(cell.position.x,cell.position.y,true)
+	native_raycasting.map_cell_set_transparent(cell.position.x,cell.position.y,true)
 	return e
 end
 
