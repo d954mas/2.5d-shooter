@@ -13,7 +13,10 @@ platforms:
             flags:      ["-std=c++11"]
     x86-win32:
         context:
-            use-clang: true
+            flags:      ["-std=c++11"]
     x86_64-win32:
         context:
-            use-clang: true
+            flags:      ["-std=c++11"]
+    x86_64-linux:
+        context:
+            flags:      ["-std=c++11"]

@@ -24,10 +24,11 @@ Map::Map(){
 }
 Map::~Map() {delete pather;}
 
+//(int)((size_t)id) fixed loses precision error
 //Return the least possible cost between 2 states.
 float Map::LeastCostEstimate( void* stateStart, void* stateEnd ){
-	CellData start = cells[(int)stateStart];
-	CellData end = cells[(int)stateEnd];
+	CellData start = cells[(int)((size_t)stateStart)];
+	CellData end = cells[(int)((size_t)stateEnd)];
 	return  pow(end.x - start.x,2) + pow(end.y - start.y,2);
 }
 
@@ -36,7 +37,7 @@ static const int dy[8] = { 0, 1, 1, 1, 0, -1, -1, -1 };
 static const float cost[8] = { 1.0f, 1.41f, 1.0f, 1.41f, 1.0f, 1.41f, 1.0f, 1.41f };
 //TODO запретить ходить по диагонали рядом со стенами иначе застревают
 void Map::AdjacentCost( void* state, MP_VECTOR< micropather::StateCost > *neighbors  ){
-	CellData cellData = cells[(int)state];
+	CellData cellData = cells[(int)((size_t)state)];
     for( int i=0; i<8; ++i ) {
         int nx = cellData.x  + dx[i];
         int ny = cellData.y + dy[i];
@@ -60,11 +61,11 @@ void Map::findPath(int x, int y, int x2, int y2,  std::vector<CellData*>& cells_
 	std::vector< void* > path;
 	float totalCost = 0;
 	if (startState == endState){
-	    cells_result.push_back( &cells[(int)startState]);
+		cells_result.push_back( &cells[(int)((size_t)startState)]);
 	}else{
         int result = pather->Solve( startState, endState, &path, &totalCost );
         for(void* id: path){
-            cells_result.push_back( &cells[(int)id]);
+			cells_result.push_back( &cells[(int)((size_t)id)]);
         }
 	}
 //	pather->Reset();
