@@ -29,6 +29,31 @@ M.TARGET_HASHES = COMMON.read_only{
 	PLAYER = {COMMON.HASHES.MSG_PHYSICS_GROUP_PLAYER_DAMAGE,COMMON.HASHES.MSG_PHYSICS_GROUP_OBSTACLE},
 }
 
+---@class WeaponData
+---@field ammo_type string
+---@field clip number|nil
+---@field damage number
+---@field update function args (weapon_base)
+
+---@class WeaponView
+
+
+---@field target hash[]
+---@field raycast_max_dist number
+---@field reload_time number|nil
+
+---@field input_type string
+---@field player_weapon boolean|nil player_weapon should have icon, and animations for states.
+---@field sounds PlayerWeaponSounds
+---@field damage number
+
+--WeaponBase
+local WeaponBase = COMMON.class("WeaponBase")
+
+function WeaponBase:initialize()
+
+end
+
 ---@class WeaponAnimation
 ---@field animation hash used only when player use that weapon
 ---@field duration number|nil

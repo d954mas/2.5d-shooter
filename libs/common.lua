@@ -186,10 +186,13 @@ function M.new_n28s()
 end
 --endregion
 
+---@return coroutine|nil return coroutine if it can be resumed(no errors and not dead)
 function M.coroutine_resume(cor,...)
 	local ok, res = coroutine.resume(cor,...)
 	if not ok then
 		M.e(res, "COROUTINE")
+	else
+		return not (coroutine.status(cor) == "dead") and cor
 	end
 end
 

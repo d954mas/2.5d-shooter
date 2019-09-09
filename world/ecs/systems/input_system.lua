@@ -30,9 +30,10 @@ end
 function System:make_shot(action_id, action)
 	local player = self.world.game_controller.level.player
 	local weapon = player.weapons[player.weapon_current_idx]
-	if action.pressed then weapon:on_pressed()
-	elseif action.released then weapon:on_released()
-	else weapon:pressed() end
+	if action.pressed then weapon:on_pressed() end
+	--weapon check pressed and on_releases by itself
+	--elseif action.released then weapon:on_released()
+--	else weapon:pressed() end
 end
 
 function System:action_pressed()
