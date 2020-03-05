@@ -2,354 +2,565 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.ci/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/.ci/build.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_headers/lua_script_instance.lua" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_headers/utf8.lua" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ci/build.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.helpeditor/fmod/res/armv7-android/lib/armeabi-v7a/libfmod.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.helpeditor/fmod/res/armv7-android/lib/armeabi-v7a/libfmodstudio.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.helpeditor/fmod/res/x86-win32/fmod.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.helpeditor/fmod/res/x86-win32/fmodstudio.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.helpeditor/fmod/res/x86_64-linux/libfmod.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.helpeditor/fmod/res/x86_64-linux/libfmodstudio.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.helpeditor/fmod/res/x86_64-osx/Contents/MacOS/libfmod.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.helpeditor/fmod/res/x86_64-osx/Contents/MacOS/libfmodstudio.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.helpeditor/fmod/res/x86_64-win32/fmod64.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.helpeditor/fmod/res/x86_64-win32/fmodstudio64.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DTFIndieJam.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/user.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/api.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.luacheckrc" beforeDir="false" afterPath="$PROJECT_DIR$/.luacheckrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/Fmod tooltip.odt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_headers/fmod_headers.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_headers/raycasting.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/adb_install.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_manifest_debug.appmanifest" beforeDir="false" afterPath="$PROJECT_DIR$/app_manifest_debug.appmanifest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_manifest_release.appmanifest" beforeDir="false" afterPath="$PROJECT_DIR$/app_manifest_release.appmanifest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/credits.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/press_start_2_play_regular.font" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/roboto_bold.font" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/roboto_bold.font" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/roboto_bold_italic.font" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/roboto_bold_italic.font" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/roboto_italic.font" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/roboto_italic.font" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/roboto_regular.font" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/roboto_regular.font" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/ttf/PressStart2P-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/effects/blood_particle/tile000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/effects/blood_particle/tile001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/effects/blood_particle/tile002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/effects/blood_particle/tile003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/effects/blood_particle/tile004.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/effects/blood_particle/tile005.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/effects/blood_particle/tile006.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/effects/blood_particle/tile007.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/effects/blood_particle/tile008.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/effects/blood_particle/tile009.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/effects/blood_particle/tile010.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/effects/blood_particle/tile011.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/effects/blood_particle/tile012.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/effects/blood_particle/tile013.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/effects/blood_particle/tile014.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/effects/blood_particle/tile015.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/empty.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/empty.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/debug/wall_e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/debug/wall_n.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/debug/wall_s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/debug/wall_w.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/doors/door1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/doors/door1_blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/doors/door1_green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/doors/door1_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/doors/door1_yellow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/idle/blob_idle_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/idle/blob_idle_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/idle/blob_idle_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/idle/blob_idle_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/idle/blob_idle_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/idle/blob_idle_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile004.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile005.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile006.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile007.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile008.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile009.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile010.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile011.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile012.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile013.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile014.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile015.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile016.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile017.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile018.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile020.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/blob/spawn/tile021.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/enemies.atlas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/fire_skull/fire_skull_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/fire_skull/fire_skull_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/fire_skull/fire_skull_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/fire_skull/fire_skull_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/fire_skull/fire_skull_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/fire_skull/fire_skull_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/fire_skull/fire_skull_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/enemies/fire_skull/fire_skull_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/game.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/game/game.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/objects/block.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/objects/bot_crystal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/objects/bot_crystal_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/objects/box.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/objects/lamp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/objects/mushroom_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/objects/mushroom_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/objects/objects.atlas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/objects/skull.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/objects/table.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/objects/top_crystal_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/objects/top_crystal_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/pickups/pickup_ammo_pistol.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/pickups/pickup_hp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/pickups/pickup_key_blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/pickups/pickup_key_green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/pickups/pickup_key_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/pickups/pickup_key_yellow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/thin_wall/wall24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/thin_wall/wall35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game/walls/wall9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/gui/ammo_pistol_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/gui/gui.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/gui/gui.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/gui/hp_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/gui/sight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/walls.atlas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/weapons/chaingun/chaingun_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/weapons/chaingun/chaingun_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/weapons/chaingun/chaingun_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/weapons/chaingun/chaingun_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/weapons/chaingun/chaingun_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/weapons/pistol/pistol_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/weapons/pistol/pistol_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/weapons/pistol/pistol_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/weapons/pistol/pistol_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/white.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/lua/_tilesets.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/lua/prototype.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/lua/test_level.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/lua/test_movement.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/lua/test_objects.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/lua/test_parser_objects.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/make_walls_thumbnail.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/make_walls_thumbnail.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/parse.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/resave_tiled_maps.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/result/prototype.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/result/test_level.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/result/test_movement.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/result/test_objects.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/result/test_parser_objects.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/result/tileset.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/sources/_tilesets.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/sources/prototype.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/sources/test_level.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/sources/test_movement.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/sources/test_objects.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/sources/test_parser_objects.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/doors.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/doors/door1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/doors/door1_blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/doors/door1_green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/doors/door1_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/doors/door1_yellow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/enemies.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/enemies/spawner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/game_objects.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/lights-64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/lights.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/main.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/objects.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/objects/spawn_point_bottom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/objects/spawn_point_left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/objects/spawn_point_right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/objects/spawn_point_top.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/pickups.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/thin_walls.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/thin_walls/wall24_horizontal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/thin_walls/wall24_vertical.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/thin_walls/wall35_horizontal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/thin_walls/wall35_vertical.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/walls/wall9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/update_levels.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/localization/localization.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/localization/localization.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/materials/3dsprite/3dsprite.fp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/materials/3dsprite/3dsprite.material" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/materials/3dsprite/3dsprite.vp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/materials/3dsprite/3dsprite_enemy.material" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/materials/3dsprite/3dsprite_object.fp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/materials/3dsprite/3dsprite_object.material" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/materials/font_nearest.material" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/materials/sprite_nearest.material" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/materials/tile_map_nearest.material" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/app_icons/icon_114.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/app_icons/icon_120.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/app_icons/icon_144.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/app_icons/icon_152.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/app_icons/icon_167.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/app_icons/icon_180.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/app_icons/icon_192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/app_icons/icon_36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/app_icons/icon_48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/app_icons/icon_57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/app_icons/icon_72.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/app_icons/icon_76.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/app_icons/icon_96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/launch_images/ios_launch_1024x768.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/launch_images/ios_launch_1125x2436.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/launch_images/ios_launch_1242x2208.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/launch_images/ios_launch_1334x750.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/launch_images/ios_launch_1536x2048.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/launch_images/ios_launch_2048x1536.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/launch_images/ios_launch_2048x2732.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/launch_images/ios_launch_2208x1242.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/launch_images/ios_launch_2436x1125.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/launch_images/ios_launch_2732x2048.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/launch_images/ios_launch_320x480.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/launch_images/ios_launch_640x1136.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/launch_images/ios_launch_640x960.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/launch_images/ios_launch_750x1334.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mobile/launch_images/ios_launch_768x1024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/monster_blob_die.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/object_ammo_pickup.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/object_health_pickup.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/player_hurt_1.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/player_hurt_2.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/player_hurt_3.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/weapon_pistol_empty.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/weapon_pistol_shoot.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/texture/runtime_replaced/light_map.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build_assets.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/debug_info.lua" beforeDir="false" afterPath="$PROJECT_DIR$/debug/debug_info.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/game_info/debug_game_info_gui.gui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/game_info/debug_game_info_gui.gui_script" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/info/debug_game_gui.gui" beforeDir="false" afterPath="$PROJECT_DIR$/debug/info/debug_game_gui.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/info/debug_game_gui.gui_script" beforeDir="false" afterPath="$PROJECT_DIR$/debug/info/debug_game_gui.gui_script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/info/debug_gui.go" beforeDir="false" afterPath="$PROJECT_DIR$/debug/info/debug_gui.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/level_map/debug_level_map.gui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/level_map/debug_level_map.gui_script" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/resizer/gui/resize-corner.gui" beforeDir="false" afterPath="$PROJECT_DIR$/debug/resizer/gui/resize-corner.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/resizer/mnu/src/mnu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/debug/resizer/mnu/src/mnu.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/resizer/resizer.gui_script" beforeDir="false" afterPath="$PROJECT_DIR$/debug/resizer/resizer.gui_script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.input_binding" beforeDir="false" afterPath="$PROJECT_DIR$/game.input_binding" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.project" beforeDir="false" afterPath="$PROJECT_DIR$/game.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/block.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/blood_particle.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/door.collection" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/empty.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/enemies/blob_enemy.collection" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/enemies/file_skull_enemy.collection" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/light_map/light_map.fp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/light_map/light_map.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/light_map/light_map.script" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/light_map/light_map_model.material" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/pickup.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/sprite_objects.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/sprite_wall.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go_scripts/handle_physics.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go_scripts/handle_physics.script" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/actions.lua" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/actions.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/gooey.lua" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/gooey.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/image_cache.lua" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/image_cache.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/internal/button.lua" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/internal/button.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/internal/checkbox.lua" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/internal/checkbox.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/internal/core.lua" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/internal/core.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/internal/input.lua" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/internal/input.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/internal/list.lua" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/internal/list.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/internal/radio.lua" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/internal/radio.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/internal/scrollbar.lua" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/internal/scrollbar.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/dirtylarry/components/button.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/dirtylarry/components/button.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/dirtylarry/components/checkbox.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/dirtylarry/components/checkbox.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/dirtylarry/components/dynamiclist.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/dirtylarry/components/dynamiclist.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/dirtylarry/components/input.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/dirtylarry/components/input.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/dirtylarry/components/listitem.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/dirtylarry/components/listitem.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/dirtylarry/components/radio.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/dirtylarry/components/radio.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/dirtylarry/components/staticlist.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/dirtylarry/components/staticlist.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/dirtylarry/dirtylarry.lua" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/dirtylarry/dirtylarry.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/dirtylarry/fonts/dirtylarry.font" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/dirtylarry/fonts/dirtylarry.font" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/dirtylarry/images/dirtylarry.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/dirtylarry/images/dirtylarry.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/kenneyblue/components/button.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/kenneyblue/components/button.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/kenneyblue/components/checkbox.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/kenneyblue/components/checkbox.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/kenneyblue/components/dynamiclist.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/kenneyblue/components/dynamiclist.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/kenneyblue/components/input.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/kenneyblue/components/input.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/kenneyblue/components/listitem.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/kenneyblue/components/listitem.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/kenneyblue/components/radiobutton.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/kenneyblue/components/radiobutton.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/kenneyblue/components/scrollbar.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/kenneyblue/components/scrollbar.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/kenneyblue/components/staticlist.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/kenneyblue/components/staticlist.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/kenneyblue/fonts/kenneyblue.font" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/kenneyblue/fonts/kenneyblue.font" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/kenneyblue/images/kenneyblue.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/kenneyblue/images/kenneyblue.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/kenneyblue/kenneyblue.lua" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/kenneyblue/kenneyblue.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/my/gooey.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/rpg/components/button.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/rpg/components/button.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/rpg/components/checkbox.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/rpg/components/checkbox.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/rpg/components/dynamiclist.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/rpg/components/dynamiclist.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/rpg/components/input.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/rpg/components/input.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/rpg/components/listitem.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/rpg/components/listitem.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/rpg/components/radiobutton.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/rpg/components/radiobutton.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/rpg/components/staticlist.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/rpg/components/staticlist.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/rpg/fonts/rpg.font" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/rpg/fonts/rpg.font" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/rpg/images/rpg.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/rpg/images/rpg.atlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/rpg/rpg.lua" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/rpg/rpg.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gooey/themes/utils.lua" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/utils.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/gui.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/progress_bar.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/project/inventory_list_adapter.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/recycler_list.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/recycler_list_adapter.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/updated_label.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.collection" beforeDir="false" afterPath="$PROJECT_DIR$/init.collection" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init_controller.script" beforeDir="false" afterPath="$PROJECT_DIR$/init_controller.script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/atlases_data/atlases.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/atlases_data/game.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/atlases_data/gui.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/checks.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/checks.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/common.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/common.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/constants.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/cursor_helper.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ecs.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/ecs.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/event_bus.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/event_bus.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/events.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/hashes.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/hashes.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/input_receiver.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/input_receiver.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/log.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/log.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/lume.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/lume.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/msg_receiver.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/msg_receiver.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/n28s.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/n28s.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/rx.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/rx.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/scripts/gui_follow_go.script" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/scripts/gui_follow_go_go_script.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/scripts/gui_follow_go_gui_script.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/sm/go/scene_controller.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/sm/go/scene_controller.script" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/sm/go/scene_loader.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/sm/go/scene_loader.script" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/sm/loader.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/sm/scene.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/sm/scene.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/sm/scene_manager.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/sm/scene_manager.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/sm/sm.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/sm/stack.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/sounds.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/sounds.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/text_settings.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/ext.manifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/include/camera.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/include/cell_data.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/include/map.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/include/micropather.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/include/native_raycasting.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/include/raycasting.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/src/camera.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/src/cell_data.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/src/lua_raycasting.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/src/map.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/src/micropather.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/src/native_raycasting.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/native/raycasting/native_raycasting/src/raycasting.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/optimize_textures.bat" beforeDir="false" afterPath="$PROJECT_DIR$/optimize_textures.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packer.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/my.render_script" beforeDir="false" afterPath="$PROJECT_DIR$/render/my.render_script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/my.texture_profiles" beforeDir="false" afterPath="$PROJECT_DIR$/render/my.texture_profiles" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rendercam/camera.script" beforeDir="false" afterPath="$PROJECT_DIR$/rendercam/camera.script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rendercam/rendercam.lua" beforeDir="false" afterPath="$PROJECT_DIR$/rendercam/rendercam.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/richtext/color.lua" beforeDir="false" afterPath="$PROJECT_DIR$/richtext/color.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/richtext/parse.lua" beforeDir="false" afterPath="$PROJECT_DIR$/richtext/parse.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/richtext/richtext.lua" beforeDir="false" afterPath="$PROJECT_DIR$/richtext/richtext.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/factories.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/game.collection" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/game_scene.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/gui/debug/debug.gui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/gui/debug/debug.gui_script" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/gui/game/game.gui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/gui/game/game.gui_script" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/gui/minimap/minimap.gui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/gui/minimap/minimap.gui_script" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/gui/minimap/minimap.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/model/game_controller.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/model/level.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/model/levels.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/view/render_objects/door_render_object.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/view/render_objects/entity_render_object.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/view/render_objects/game_object_render_object.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/view/render_objects/render_object.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/view/render_objects/wall_render_object.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/modal/game_over/game_over.collection" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/modal/game_over/game_over.gui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/modal/game_over/game_over.gui_script" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/modal/game_over/game_over_modal.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/modal/pause/pause_modal.collection" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/modal/pause/pause_modal.gui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/modal/pause/pause_modal.gui_script" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/modal/pause/pause_modal.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/select_level/select_level.collection" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/select_level/select_level.gui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/select_level/select_level.gui_script" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/select_level/select_level_scene.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_levels_loading.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_parser.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_pathfinding.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_player.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_weapons.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests.lua" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/update_textures.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/view_base.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/views.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ai/ai.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ai/ai_base.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ai/ai_blob.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ai/ai_spawner_enemy.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/ecs.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/entities/entities.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/action_system.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/auto_destroy_system.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/camera_bob_system.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/collision_damage_rotate_system.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/damage_system.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/draw_walls_system.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/flash_system.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/input_system.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/movement_system.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/object_hit_system.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/physics_obstacles_system.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/physics_reset_corrections_system.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/rotation_global_system.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/rotation_look_at_player_system.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/update_ai_system.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/update_camera_system.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/update_go_system.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/update_object_color_system.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/ecs/systems/update_weapons_system.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/state/state.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/states_base.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/weapons/weapon_base.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/weapons/weapon_prototypes.lua" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/world/ecs/systems/action_system.lua">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="NewLua" />
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>url_collision_damage</find>
-      <find>cre</find>
-      <find>create_b</find>
-      <find>img</find>
-      <find>dele</find>
-      <find>word.co</find>
-      <find>.color =</find>
-      <find>settings</find>
-      <find>color</find>
-      <find>create</find>
-      <find>create(</find>
-      <find>sys</find>
-      <find>image</find>
-      <find>Play</find>
-      <find>image_h</find>
-      <find>TileS</find>
-      <find>by_id</find>
-      <find>by_id =</find>
-      <find>end_gid</find>
-      <find>tilesets</find>
-      <find>key_pressed_action</find>
-      <find>key_action_pressed</find>
-      <find>filt</find>
-      <find>filter</find>
-      <find>tiny.reject</find>
-      <find>door</find>
-      <find>door(</find>
-      <find>position</find>
-      <find>create_do</find>
-      <find>url_collision_action</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>global_rotation</replace>
-      <replace>url_go</replace>
-      <replace>url_sprite</replace>
-      <replace>input_direction</replace>
-      <replace>position</replace>
-      <replace>.position.</replace>
-      <replace>&quot;position&quot;</replace>
-      <replace>rotation_look_at_player</replace>
-      <replace>rotation_global</replace>
-      <replace>dynamic_color</replace>
-      <replace>self.world.world.level</replace>
-      <replace>require &quot;tests.luacov</replace>
-      <replace>require(&quot;tests.luacov</replace>
-      <replace>require &quot;tests.deftest</replace>
-      <replace>go/</replace>
-      <replace>scenes.game.model.levels</replace>
-      <replace>scenes.game.model.game_controller</replace>
-      <replace>world.level:get_tile(</replace>
-      <replace>GAME_CONTROLLER</replace>
-      <replace>world.game_controller</replace>
-      <replace>TILESET</replace>
-      <replace>.game_controller</replace>
-      <replace>ENTITIES.game_controller</replace>
-      <replace>map_get_tile</replace>
-      <replace />
-      <replace>end --</replace>
-      <replace>prototype</replace>
-      <replace>physics_e.physics.</replace>
-      <replace>FACTORY.OBJECT_HASHES</replace>
-      <replace>key_action_pressed</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>C:\Users\user\DefoldProjects\DTFIndieJam</dir>
-    </dirStrings>
+  <component name="Git.Rebase.Settings">
+    <option name="ONTO" value="HEAD~2" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="lights_experiment" />
-      </map>
-    </option>
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/world/ecs/systems/update_camera_system.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/systems/movement_system.lua" />
-        <option value="$PROJECT_DIR$/scenes/game/model/levels.lua" />
-        <option value="$PROJECT_DIR$/tests/test_levels_loading.lua" />
-        <option value="$PROJECT_DIR$/tests/tests.lua" />
-        <option value="$PROJECT_DIR$/tests/test_player.lua" />
-        <option value="$PROJECT_DIR$/assets/levels/make_thin_walls_images.lua" />
-        <option value="$PROJECT_DIR$/scenes/select_level/select_level_scene.lua" />
-        <option value="$PROJECT_DIR$/scenes/select_level/select_level.collection" />
-        <option value="$PROJECT_DIR$/libs/lume.lua" />
-        <option value="$PROJECT_DIR$/gooey/internal/core.lua" />
-        <option value="$PROJECT_DIR$/scenes/modal/pause/pause_modal.lua" />
-        <option value="$PROJECT_DIR$/libs/sm/scene_manager.lua" />
-        <option value="$PROJECT_DIR$/scenes/select_level/select_level.gui_script" />
-        <option value="$PROJECT_DIR$/assets/levels/make_walls_thumbnail.lua" />
-        <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/include/cell_data.h" />
-        <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/src/raycasting.cpp" />
-        <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/src/cell_data.cpp" />
-        <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/include/map.h" />
-        <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/src/lua_raycasting.cpp" />
-        <option value="$PROJECT_DIR$/_headers/raycasting.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/systems/object_hit_system.lua" />
-        <option value="$PROJECT_DIR$/debug/debug_info.lua" />
-        <option value="$PROJECT_DIR$/scenes/game/view/render_objects/render_object.lua" />
-        <option value="$PROJECT_DIR$/scenes/game/model/game_controller.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/systems/draw_walls_system.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua" />
-        <option value="$PROJECT_DIR$/init_controller.script" />
-        <option value="$PROJECT_DIR$/scenes/game/factories.lua" />
-        <option value="$PROJECT_DIR$/libs/common.lua" />
-        <option value="$PROJECT_DIR$/scenes/game/view/render_objects/entity_render_object.lua" />
-        <option value="$PROJECT_DIR$/world/weapons/weapon_base.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/systems.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/ecs.lua" />
-        <option value="$PROJECT_DIR$/scenes/modal/game_over/game_over.gui_script" />
-        <option value="$PROJECT_DIR$/scenes/modal/pause/pause_modal.gui_script" />
-        <option value="$PROJECT_DIR$/libs/text_settings.lua" />
-        <option value="$PROJECT_DIR$/richtext/richtext.lua" />
-        <option value="$PROJECT_DIR$/scenes/game/gui/game/game.gui_script" />
-        <option value="$PROJECT_DIR$/native/raycasting/native_raycasting/src/map.cpp" />
-        <option value="$PROJECT_DIR$/world/ecs/systems/physics_obstacles_system.lua" />
-        <option value="$PROJECT_DIR$/scenes/game/view/render_objects/game_object_render_object.lua" />
-        <option value="$PROJECT_DIR$/assets/levels/parse.lua" />
-        <option value="$PROJECT_DIR$/libs/hashes.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/systems/input_system.lua" />
-        <option value="$PROJECT_DIR$/scenes/game/view/render_objects/wall_render_object.lua" />
-        <option value="$PROJECT_DIR$/scenes/game/view/render_objects/door_render_object.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/systems/update_go_system.lua" />
-        <option value="$PROJECT_DIR$/scenes/game/model/level.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/entities/entities.lua" />
-        <option value="$PROJECT_DIR$/world/ecs/systems/action_system.lua" />
-      </list>
-    </option>
-  </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand />
-      <select />
-    </treeState>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="60" />
-    <option name="y" value="63" />
-    <option name="width" value="1426" />
-    <option name="height" value="1037" />
-  </component>
+  <component name="ProjectId" id="1YWU9usbptbKgYbHFqC5YYw636A" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561298820353" />
-    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/world/ecs/systems" />
+    <property name="TODO_SCOPE" value="All Places" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Lua" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\user\DefoldProjects\DTFIndieJam\world\ecs\systems" />
-      <recent name="C:\Users\user\DefoldProjects\DTFIndieJam\scenes\game\view\render_objects" />
-      <recent name="C:\Users\user\DefoldProjects\DTFIndieJam\debug" />
-      <recent name="C:\Users\user\DefoldProjects\DTFIndieJam\tests" />
-      <recent name="C:\Users\user\DefoldProjects\DTFIndieJam\world\weapons" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\user\DefoldProjects\DTFIndieJam\scenes\game\model" />
-      <recent name="C:\Users\user\DefoldProjects\DTFIndieJam\world\ecs" />
-      <recent name="C:\Users\user\DefoldProjects\DTFIndieJam\world\model" />
+      <recent name="C:\Users\d954m\IdeaProjects\app\libs_project" />
+      <recent name="C:\Users\d954m\IdeaProjects\app\libs" />
+      <recent name="C:\Users\d954m\IdeaProjects\app\libs\gui" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="" />
-      <created>1558881018344</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1558881018344</updated>
-      <workItem from="1558881019867" duration="11867000" />
-      <workItem from="1559078983032" duration="61364000" />
-      <workItem from="1560009443315" duration="37847000" />
-      <workItem from="1560367592621" duration="7275000" />
-      <workItem from="1560456698212" duration="863000" />
-      <workItem from="1560803197909" duration="43188000" />
-      <workItem from="1561302877562" duration="1696000" />
-      <workItem from="1561313162804" duration="3704000" />
-      <workItem from="1561318671631" duration="7124000" />
-      <workItem from="1561409274796" duration="16410000" />
-      <workItem from="1561833548442" duration="31468000" />
-      <workItem from="1562163346874" duration="3134000" />
-      <workItem from="1562167095037" duration="851000" />
-      <workItem from="1562170013554" duration="1187000" />
-      <workItem from="1562171221528" duration="9743000" />
-      <workItem from="1562268368532" duration="5351000" />
-      <workItem from="1562352885346" duration="10847000" />
-      <workItem from="1562431896969" duration="17943000" />
-      <workItem from="1562618605445" duration="18942000" />
-      <workItem from="1562787346742" duration="25428000" />
-      <workItem from="1563036317611" duration="12530000" />
-      <workItem from="1563302664619" duration="5859000" />
-      <workItem from="1563392753458" duration="6790000" />
-      <workItem from="1563479307515" duration="3754000" />
-      <workItem from="1563567579668" duration="4611000" />
-      <workItem from="1563613619236" duration="24009000" />
-      <workItem from="1563701505654" duration="14981000" />
-      <workItem from="1563829840975" duration="6169000" />
-      <workItem from="1563999696832" duration="5600000" />
-      <workItem from="1564220254310" duration="1034000" />
-      <workItem from="1564221784883" duration="5411000" />
-      <workItem from="1565640270128" duration="1334000" />
-      <workItem from="1565726021451" duration="8533000" />
-      <workItem from="1565818419191" duration="4963000" />
-      <workItem from="1566062247542" duration="599000" />
-      <workItem from="1566131312836" duration="9142000" />
-      <workItem from="1566165165143" duration="2486000" />
-      <workItem from="1566333611348" duration="7608000" />
-      <workItem from="1566424673761" duration="1475000" />
-      <workItem from="1566737331263" duration="10935000" />
-      <workItem from="1566852895564" duration="841000" />
-      <workItem from="1567328010078" duration="4178000" />
-      <workItem from="1567541627011" duration="5341000" />
-      <workItem from="1567712047712" duration="5721000" />
-      <workItem from="1567804612983" duration="6053000" />
-    </task>
-    <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="505938000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="60" y="63" width="1426" height="1037" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3379562" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info id="Learn" order="6" weight="0.32927653" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49945235" weight="0.32924107" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4983028" weight="0.32112068" />
-      <window_info anchor="bottom" id="LuaCheck" order="7" sideWeight="0.4914803" weight="0.3348589" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.620438" weight="0.31023455" />
-      <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4569343" visible="true" weight="0.2217484" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.37956205" side_tool="true" weight="0.31163287" />
-      <window_info anchor="bottom" id="TypeScript" order="13" sideWeight="0.49946752" weight="0.32912722" />
-      <window_info anchor="bottom" id="Messages" order="14" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Maven" order="4" weight="0.32998455" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Database" order="7" weight="0.3299389" />
-    </layout>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\d954m\IdeaProjects\app\libs\actions" />
+      <recent name="C:\Users\d954m\IdeaProjects\app\libs\sm2" />
+    </key>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -360,550 +571,105 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
+              <option name="COLUMN_ORDER" />
             </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="try simple-shadow-mapping. Not worked for that project" />
-    <option name="LAST_COMMIT_MESSAGE" value="try simple-shadow-mapping. Not worked for that project" />
+    <MESSAGE value="wip" />
+    <MESSAGE value="speed up tween" />
+    <option name="LAST_COMMIT_MESSAGE" value="speed up tween" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="755" y="359" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582717681355">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="755" y="359" key="#com.intellij.fileTypes.FileTypeChooser/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1582717681355" />
+    <state x="755" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583060915433">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="755" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583060915433" />
+    <state x="680" y="151" key="CommitChangelistDialog2" timestamp="1583435155090">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="680" y="151" key="CommitChangelistDialog2/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583435155090" />
+    <state x="21" y="108" width="1628" height="800" key="DiffContextDialog" timestamp="1583436351764">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="21" y="108" width="1628" height="800" key="DiffContextDialog/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583436351764" />
+    <state x="766" y="298" key="FileChooserDialogImpl" timestamp="1583435649240">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="766" y="298" key="FileChooserDialogImpl/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583435649240" />
+    <state x="505" y="131" key="SettingsEditor" timestamp="1582722676630">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="505" y="131" key="SettingsEditor/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1582722676630" />
+    <state x="484" y="261" key="VCS.ChangeListViewerDialog" timestamp="1582736954705">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="484" y="261" key="VCS.ChangeListViewerDialog/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1582736954705" />
+    <state x="617" y="289" key="Vcs.Push.Dialog.v2" timestamp="1583435157642">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="617" y="289" key="Vcs.Push.Dialog.v2/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583435157642" />
+    <state x="778" y="200" width="762" height="804" key="find.popup" timestamp="1583264006507">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="778" y="200" width="762" height="804" key="find.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583264006507" />
+    <state x="854" y="421" key="git4idea.rebase.GitRebaseDialog" timestamp="1582738298386">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="854" y="421" key="git4idea.rebase.GitRebaseDialog/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1582738298386" />
+    <state x="766" y="298" key="git4idea.rebase.GitRebaseEditor" timestamp="1582738301913">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="766" y="298" key="git4idea.rebase.GitRebaseEditor/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1582738301913" />
+    <state x="890" y="230" key="git4idea.rebase.GitUnstructuredEditor" timestamp="1582738306728">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="890" y="230" key="git4idea.rebase.GitUnstructuredEditor/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1582738306728" />
+    <state x="681" y="261" key="run.anything.popup" timestamp="1583263384409">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="681" y="261" key="run.anything.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583263384409" />
+    <state x="687" y="275" width="672" height="678" key="search.everywhere.popup" timestamp="1583435010816">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="687" y="275" width="672" height="678" key="search.everywhere.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583435010816" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="lua-line">
-          <url>file://$PROJECT_DIR$/world/ecs/systems/physics_obstacles_system.lua</url>
-          <line>11</line>
+          <url>file://$PROJECT_DIR$/render/my.render_script</url>
+          <line>109</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="lua-line">
-          <url>file://$PROJECT_DIR$/scenes/game/game_scene.lua</url>
-          <line>53</line>
+          <url>file://$PROJECT_DIR$/render/my.render_script</url>
+          <line>122</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="lua-line">
-          <url>file://$PROJECT_DIR$/render/my.render_script</url>
-          <line>222</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/assets/templates/gui_templates.lua</url>
+          <line>26</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="lua-line">
-          <url>file://$PROJECT_DIR$/world/ecs/entities/entities.lua</url>
-          <line>204</line>
-          <option name="timeStamp" value="10" />
+          <url>file://$PROJECT_DIR$/libs/sm/scene.lua</url>
+          <line>74</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="lua-line">
-          <url>file://$PROJECT_DIR$/world/ecs/entities/entities.lua</url>
-          <line>247</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="lua-line">
-          <url>file://$PROJECT_DIR$/libs/cursor_helper.lua</url>
-          <line>48</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="lua-line">
-          <url>file://$PROJECT_DIR$/scenes/game/model/game_controller.lua</url>
-          <line>42</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="lua-line">
-          <url>file://$PROJECT_DIR$/scenes/game/model/level.lua</url>
-          <line>92</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="lua-line">
-          <url>file://$PROJECT_DIR$/scenes/game/model/level.lua</url>
-          <line>34</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="lua-line">
-          <url>file://$PROJECT_DIR$/scenes/game/model/game_controller.lua</url>
-          <line>41</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="lua-line">
-          <url>file://$PROJECT_DIR$/libs/sm/loader.lua</url>
-          <line>21</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="lua-line">
-          <url>file://$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua</url>
-          <line>7</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="lua-line">
-          <url>file://$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua</url>
-          <line>8</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="lua-line">
-          <url>file://$PROJECT_DIR$/world/ecs/entities/entities.lua</url>
-          <line>246</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="lua-line">
-          <url>file://$PROJECT_DIR$/tests/deftest/telescope.lua</url>
-          <line>133</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="lua-line">
-          <url>file://$PROJECT_DIR$/tests/deftest/util/check.lua</url>
-          <line>9</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="lua-line">
-          <url>file://$PROJECT_DIR$/scenes/game/model/game_controller.lua</url>
-          <line>87</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="lua-line">
-          <url>file://$PROJECT_DIR$/libs/sm/scene_manager.lua</url>
-          <line>237</line>
-          <option name="timeStamp" value="30" />
+          <url>file://$PROJECT_DIR$/libs/actions/tween_action.lua</url>
+          <line>137</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/include/map.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="806">
-          <caret line="56" column="29" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_headers/raycasting.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/object_hit_system.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/view/render_objects/render_object.java" />
-    <entry file="file://$PROJECT_DIR$/libs/lume.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="412" column="14" selection-start-line="412" selection-start-column="14" selection-end-line="412" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/development/Defold/api1_2_151.zip!/api/game_object.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="203" column="12" selection-start-line="203" selection-start-column="12" selection-end-line="203" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/debug/debug_info.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/levels/make_walls_thumbnail.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="49" column="51" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/init_controller.script">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="46" column="21" lean-forward="true" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/draw_walls_system.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="45" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/draw_objects_system.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" selection-start-column="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go/door.collection">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/view/render_objects/render_object.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/view/render_objects/entity_render_object.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/world/weapons/weapon_prototypes.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="70" column="58" selection-start-line="70" selection-start-column="58" selection-end-line="70" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems.lua">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/model/game_controller.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="68" column="16" lean-forward="true" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/ecs.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
-          <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/world/weapons/weapon_base.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/modal/game_over/game_over.gui_script">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/modal/pause/pause_modal.gui_script">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/common.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/msg_receiver.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/text_settings.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/gui/game/game.gui_script">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/richtext/richtext.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="360" column="19" lean-forward="true" selection-start-line="360" selection-start-column="19" selection-end-line="360" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/src/cell_data.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1024">
-          <caret line="64" column="25" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/src/lua_raycasting.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="88" column="5" lean-forward="true" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/native/raycasting/native_raycasting/src/map.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="88" column="43" lean-forward="true" selection-start-line="88" selection-start-column="43" selection-end-line="88" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/test/ActivityUnitTestCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#13328#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/collision_damage_rotate_system.lua">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/physics_obstacles_system.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/game.collection">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/view/render_objects/game_object_render_object.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="54" column="59" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/richtext/parse.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="145" column="11" selection-start-line="145" selection-start-column="11" selection-end-line="145" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/levels/parse.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/fonts/roboto_italic.font">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/fonts/roboto_regular.font">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/auto_destroy_system.lua">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/movement_system.lua">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/hashes.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/input_system.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="38" column="57" lean-forward="true" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/ecs.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="185" lean-forward="true" selection-start-line="185" selection-end-line="185" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/view/render_objects/wall_render_object.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="937">
-          <caret line="79" column="63" lean-forward="true" selection-start-line="79" selection-start-column="63" selection-end-line="79" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/view/render_objects/door_render_object.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/update_go_system.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/model/level.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="75" column="32" selection-start-line="75" selection-start-column="32" selection-end-line="75" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/development/Defold/api1_2_151.zip!/api/math.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/factories.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/entities/entities.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="375" column="33" lean-forward="true" selection-start-line="375" selection-start-column="33" selection-end-line="375" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/world/ecs/systems/action_system.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>defold_api</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>Android API 29 Platform</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>DTFIndieJam</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>api</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

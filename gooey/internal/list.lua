@@ -9,15 +9,25 @@ local dynamic_lists = {}
 
 -- update the positions of the list items and set their data indices
 local function update_dynamic_listitem_positions(list)
-	local top_i = list.scroll_pos.y / list.item_size.y
-	local top_y = list.scroll_pos.y % list.item_size.y
+	local top_i, top_y, top_x
+	if list.horizontal then
+		top_i = list.scroll_pos.x / list.item_size.x
+		top_x = list.scroll_pos.x % list.item_size.x
+	else
+		top_i = list.scroll_pos.y / list.item_size.y
+		top_y = list.scroll_pos.y % list.item_size.y
+	end
 	local first_index = 1 + math.floor(top_i)
 	for i=1,#list.items do
 		local item = list.items[i]
 		local item_pos = gui.get_position(item.root)
 		local index = first_index + i - 1
-		item.index = index
-		item_pos.y = list.first_item_pos.y - (list.item_size.y * (i - 1)) + top_y
+		item.index = ((index - 1) % #list.data) + 1
+		if list.horizontal then
+			item_pos.x = list.first_item_pos.x - (list.item_size.x * (i - 1)) + top_x
+		else
+			item_pos.y = list.first_item_pos.y - (list.item_size.y * (i - 1)) + top_y
+		end
 		gui.set_position(item.root, item_pos)
 	end
 end
@@ -30,13 +40,19 @@ local function update_dynamic_listitem_data(list)
 	end
 end
 
-local function update_static_listitems(items, start)
+local function update_static_listitems(items, start, horizontal)
 	local item_pos = start
 	for i=1,#items do
 		local item = items[i]
-		item_pos.y = item_pos.y - item.size.y / 2
-		gui.set_position(item.root, item_pos)
-		item_pos.y = item_pos.y - item.size.y / 2
+		if horizontal then
+			item_pos.x = item_pos.x - item.size.x / 2
+			gui.set_position(item.root, item_pos)
+			item_pos.x = item_pos.x - item.size.x / 2
+		else
+			item_pos.y = item_pos.y - item.size.y / 2
+			gui.set_position(item.root, item_pos)
+			item_pos.y = item_pos.y - item.size.y / 2
+		end
 	end
 end
 
@@ -52,16 +68,27 @@ end
 function LIST.scroll_to(list, x, y)
 	list.consumed = true
 	list.scrolling = true
-	list.scroll_pos.y = list.min_y + (list.max_y - list.min_y) * y
-	list.scroll.y = y
+
+	if list.horizontal then
+		list.scroll_pos.x = list.min_x + (list.max_x - list.min_x) * x
+		list.scroll.x = x
+	else
+		list.scroll_pos.y = list.min_y + (list.max_y - list.min_y) * y
+		list.scroll.y = y
+	end
 	if list.static then
-		update_static_listitems(list.items, vmath.vector3(list.scroll_pos))
+		update_static_listitems(list.items, vmath.vector3(list.scroll_pos), list.horizontal)
 	elseif list.dynamic then
 		update_dynamic_listitem_positions(list)
-		update_dynamic_listitem_data(list, data)
+		update_dynamic_listitem_data(list)
 	end
 end
-
+function LIST.set_long_pressed_time(list, time)
+	list.long_pressed_time = time
+end
+function LIST.set_carousel(list)
+	list.carousel = true
+end
 
 -- get a list instance and set up some basics of a list on the instance
 local function get_instance(list_id, stencil_id, refresh_fn, lists)
@@ -90,6 +117,7 @@ local function handle_input(list, action_id, action, click_fn)
 		list.pressed_pos = action_pos
 		list.action_pos = action_pos
 		list.pressed = true
+		list.have_scrolled = false
 	elseif released then
 		list.pressed = false
 	end
@@ -108,24 +136,40 @@ local function handle_input(list, action_id, action, click_fn)
 		list.scroll_speed = list.scroll_speed or 0
 		list.scroll_speed = math.min(list.scroll_speed + 0.25, 10)
 		list.scroll_time = time
-		list.scroll_pos.y = list.scroll_pos.y + ((scroll_up and 1 or -1) * list.scroll_speed)
+		if list.horizontal then
+			list.scroll_pos.x = list.scroll_pos.x + ((scroll_up and 1 or -1) * list.scroll_speed)
+		else
+			list.scroll_pos.y = list.scroll_pos.y + ((scroll_up and 1 or -1) * list.scroll_speed)
+		end
+		list.have_scrolled = true
 		if action.released then
 			list.scrolling = false
 		end
 	-- handle touch and drag scrolling
 	elseif list.pressed and vmath.length(list.pressed_pos - action_pos) > 10 then
+		list.have_scrolled = true
 		list.consumed = true
 		list.scrolling = true
-		list.scroll_pos.y = list.scroll_pos.y + (action_pos.y - list.action_pos.y)
+		if list.horizontal then
+			list.scroll_pos.x = list.scroll_pos.x + (action_pos.x - list.action_pos.x)
+		else
+			list.scroll_pos.y = list.scroll_pos.y + (action_pos.y - list.action_pos.y)
+		end
 		list.action_pos = action_pos
 	else
 		list.scrolling = false
 	end
-	-- limit to scroll bounds
-	if list.scrolling then
-		list.scroll_pos.y = math.min(list.scroll_pos.y, list.max_y)
-		list.scroll_pos.y = math.max(list.scroll_pos.y, list.min_y)
-		list.scroll.y = (list.scroll_pos.y / list.max_y)
+	-- limit to scroll bounds unlss this is a carousel list
+	if list.scrolling and not list.carousel then
+		if list.horizontal then
+			list.scroll_pos.x = math.min(list.scroll_pos.x, list.max_x)
+			list.scroll_pos.x = math.max(list.scroll_pos.x, list.min_x)
+			list.scroll.x = (list.scroll_pos.x / list.max_x)
+		else
+			list.scroll_pos.y = math.min(list.scroll_pos.y, list.max_y)
+			list.scroll_pos.y = math.max(list.scroll_pos.y, list.min_y)
+			list.scroll.y = (list.scroll_pos.y / list.max_y)
+		end
 	end
 
 	-- find which item (if any) that the touch event is over
@@ -158,19 +202,22 @@ local function handle_input(list, action_id, action, click_fn)
 		list.pressed_item_now = nil
 	end
 	if list.released_item_now then
-		if not list.scrolling and list.released_item_now == over_item then
+		if not list.have_scrolled and list.released_item_now == over_item then
 			list.selected_item = list.released_item_now
 			click_fn(list)
 		end
-		list.scrolling = false
 	end
 end
 
 
 -- A static list where the list item nodes are already created
-function M.static(list_id, stencil_id, item_ids, action_id, action, fn, refresh_fn)
+function M.static(list_id, stencil_id, item_ids, action_id, action, config, fn, refresh_fn)
 	local list = get_instance(list_id, stencil_id, refresh_fn, static_lists)
 	list.static = true
+	list.horizontal = config and config.horizontal
+	list.carousel = config and config.carousel
+	assert(not list.carousel, "You cannot create a carousel from a static list")
+
 	-- populate list items (once!)
 	if not list.items then
 		list.items = {}
@@ -184,15 +231,23 @@ function M.static(list_id, stencil_id, item_ids, action_id, action, fn, refresh_
 			}
 			gui.set_parent(node, list.stencil)
 		end
-		update_static_listitems(list.items, vmath.vector3(0))
+		update_static_listitems(list.items, vmath.vector3(0), list.horizontal)
 
 		local last_item = list.items[#list.items].root
-		local total_height = last_item and (math.abs(gui.get_position(last_item).y) + gui.get_size(last_item).y / 2) or 0
-		local list_height = gui.get_size(list.stencil).y
+		local total_dimension, list_dimension
+		if list.horizontal then
+			total_dimension = last_item and (math.abs(gui.get_position(last_item).x) + gui.get_size(last_item).x / 2) or 0
+			list_dimension = gui.get_size(list.stencil).x
+			list.min_x = 0
+			list.max_x = total_dimension - list_dimension
+		else
+			total_dimension = last_item and (math.abs(gui.get_position(last_item).y) + gui.get_size(last_item).y / 2) or 0
+			list_dimension = gui.get_size(list.stencil).y
+			list.min_y = 0
+			list.max_y = total_dimension - list_dimension
+		end
 
 		list.scroll_pos = vmath.vector3(0)
-		list.min_y = 0
-		list.max_y = total_height - list_height
 	end
 
 	if #list.items == 0 then
@@ -210,17 +265,21 @@ function M.static(list_id, stencil_id, item_ids, action_id, action, fn, refresh_
 
 		-- re-position the list items if we're scrolling
 		if list.scrolling then
-			update_static_listitems(list.items, vmath.vector3(list.scroll_pos))
+			update_static_listitems(list.items, vmath.vector3(list.scroll_pos), list.horizontal)
 		end
 	end
 	if refresh_fn then refresh_fn(list) end
 	return list
 end
 
+
 --- A dynamic list where the nodes are reused to present a large list of items
-function M.dynamic(list_id, stencil_id, item_id, data, action_id, action, fn, refresh_fn, set_parent)
+function M.dynamic(list_id, stencil_id, item_id, data, action_id, action, config, fn, refresh_fn)
+
 	local list = get_instance(list_id, stencil_id, refresh_fn, dynamic_lists)
 	list.dynamic = true
+	list.horizontal = config and config.horizontal
+	list.carousel = config and config.carousel
 	list.data = data
 
 	-- create list items (once!)
@@ -235,7 +294,12 @@ function M.dynamic(list_id, stencil_id, item_id, data, action_id, action, fn, re
 		list.first_item_pos = vmath.vector3(item_pos)
 		list.data_size = nil
 
-		local item_count = math.ceil(list.stencil_size.y / item_size.y) + 1
+		local item_count
+		if list.horizontal then
+			item_count = (math.ceil(list.stencil_size.x / item_size.x) + 1)
+		else
+			item_count = (math.ceil(list.stencil_size.y / item_size.y) + 1)
+		end
 		for i=1,item_count do
 			local nodes = gui.clone_tree(item_node)
 			list.items[i] = {
@@ -245,8 +309,12 @@ function M.dynamic(list_id, stencil_id, item_id, data, action_id, action, fn, re
 				size = gui.get_size(nodes[item_id]),
 				data = data[i] or ""
 			}
-			if set_parent then gui.set_parent(list.items[i].root,list.stencil) end
-			local pos = item_pos - vmath.vector3(0, item_size.y * (i - 1), 0)
+			local pos
+			if list.horizontal then
+				pos = (item_pos - vmath.vector3(item_size.x * (i - 1), 0, 0))
+			else
+				pos = (item_pos - vmath.vector3(0, item_size.y * (i - 1), 0))
+			end
 			gui.set_position(list.items[i].root, pos)
 		end
 		gui.delete_node(item_node)
@@ -258,7 +326,9 @@ function M.dynamic(list_id, stencil_id, item_id, data, action_id, action, fn, re
 	if not list.data_size or data_size_changed then
 		list.data_size = #data
 		list.min_y = 0
+		list.min_x = 0
 		list.max_y = (#data * list.item_size.y) - list.stencil_size.y
+		list.max_x = (#data * list.item_size.x) - list.stencil_size.x
 		list.selected_item = nil
 		-- fewer items in the list than visible
 		-- assign indices and disable list items
@@ -269,6 +339,7 @@ function M.dynamic(list_id, stencil_id, item_id, data, action_id, action, fn, re
 				gui.set_enabled(item.root, (i <= #data))
 			end
 			list.scroll_pos.y = 0
+			list.scroll_pos.x = 0
 			update_dynamic_listitem_positions(list)
 		-- more items in list than visible
 		-- assign indices and enable list items
@@ -300,7 +371,7 @@ function M.dynamic(list_id, stencil_id, item_id, data, action_id, action, fn, re
 		end
 	end
 
-	update_dynamic_listitem_data(list, data)
+	update_dynamic_listitem_data(list)
 
 	if refresh_fn then refresh_fn(list) end
 

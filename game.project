@@ -1,10 +1,10 @@
 [project]
-title = 2.5D Shooter
+title = Template
 version = 0.1.0
-dependencies = https://github.com/subsoap/defos/archive/master.zip,https://github.com/dapetcu21/defold-fmod/archive/v1.0.5.zip
-custom_resources = assets/levels/result/
+dependencies = https://github.com/Melsoft-Games/defold-cjson/archive/master.zip,https://github.com/DanEngelbrecht/LuaScriptInstance/archive/master.zip,https://github.com/subsoap/defos/archive/master.zip,https://github.com/d954mas/defold-utf8/archive/master.zip
+custom_resources = 
 bundle_exclude_resources = 
-bundle_resources = 
+bundle_resources = assets/bundle
 
 [bootstrap]
 main_collection = /init.collectionc
@@ -25,7 +25,7 @@ vsync = 1
 
 [physics]
 scale = 1.0
-type = 3D
+type = 2D
 debug = 0
 debug_alpha = 0.5
 gravity_z = 0.0
@@ -43,70 +43,31 @@ include_dirs =
 app_manifest = /app_manifest_debug.appmanifest
 
 [android]
-package = com.d954mas.dtfjam
-app_icon_36x36 = /assets/mobile/app_icons/icon_36.png
-app_icon_48x48 = /assets/mobile/app_icons/icon_48.png
-app_icon_72x72 = /assets/mobile/app_icons/icon_72.png
-app_icon_96x96 = /assets/mobile/app_icons/icon_96.png
-app_icon_144x144 = /assets/mobile/app_icons/icon_144.png
-app_icon_192x192 = /assets/mobile/app_icons/icon_192.png
 gcm_sender_id = 
 push_field_text = 
 
 [graphics]
-texture_profiles = /render/my.texture_profiles
-default_texture_min_filter = nearest
-default_texture_mag_filter = nearest
-max_debug_vertices = 100000
+texture_profiles = /render/fast.texture_profiles
+default_texture_min_filter = linear
+default_texture_mag_filter = linear
 
 [sound]
 max_sound_buffers = 32
 
 [sprite]
-max_count = 4096
+max_count = 512
 
 [resource]
-max_resources = 1024
+max_resources = 512
 
 [collection]
-max_instances = 2048
+max_instances = 256
 
 [factory]
-max_count = 128
+max_count = 16
 
 [spine]
-max_count = 1024
-
-[ios]
-app_icon_57x57 = /assets/mobile/app_icons/icon_57.png
-app_icon_72x72 = /assets/mobile/app_icons/icon_72.png
-app_icon_76x76 = /assets/mobile/app_icons/icon_76.png
-app_icon_114x114 = /assets/mobile/app_icons/icon_114.png
-app_icon_120x120 = /assets/mobile/app_icons/icon_120.png
-app_icon_144x144 = /assets/mobile/app_icons/icon_144.png
-app_icon_152x152 = /assets/mobile/app_icons/icon_152.png
-app_icon_167x167 = /assets/mobile/app_icons/icon_167.png
-app_icon_180x180 = /assets/mobile/app_icons/icon_180.png
-launch_image_320x480 = /assets/mobile/launch_images/ios_launch_320x480.png
-launch_image_640x960 = /assets/mobile/launch_images/ios_launch_640x960.png
-launch_image_640x1136 = /assets/mobile/launch_images/ios_launch_640x1136.png
-launch_image_750x1334 = /assets/mobile/launch_images/ios_launch_750x1334.png
-launch_image_1334x750 = /assets/mobile/launch_images/ios_launch_1334x750.png
-launch_image_768x1024 = /assets/mobile/launch_images/ios_launch_768x1024.png
-launch_image_1536x2048 = /assets/mobile/launch_images/ios_launch_1536x2048.png
-launch_image_1024x768 = /assets/mobile/launch_images/ios_launch_1024x768.png
-launch_image_1242x2208 = /assets/mobile/launch_images/ios_launch_1242x2208.png
-launch_image_2208x1242 = /assets/mobile/launch_images/ios_launch_2208x1242.png
-launch_image_2048x1536 = /assets/mobile/launch_images/ios_launch_2048x1536.png
-launch_image_2048x2732 = /assets/mobile/launch_images/ios_launch_2048x2732.png
-launch_image_2732x2048 = /assets/mobile/launch_images/ios_launch_2732x2048.png
-launch_image_1125x2436 = /assets/mobile/launch_images/ios_launch_1125x2436.png
-launch_image_2436x1125 = /assets/mobile/launch_images/ios_launch_2436x1125.png
-bundle_identifier = com.d954mas.idleherochronicles
-infoplist = /builtins/manifests/ios/Info.plist
-
-[osx]
-bundle_identifier = com.d954mas.dtfjam
+max_count = 8
 
 [profiler]
 track_cpu = 1
@@ -114,11 +75,27 @@ track_cpu = 1
 [windows]
 iap_provider = 
 
-[html5]
-archive_location_prefix = archive
-htmlfile = /builtins/manifests/web/engine_template.html
+[model]
+max_count = 8
 
-[fmod]
-speaker_mode = stereo
-lib_path = .helpeditor/fmod/res
+[particle_fx]
+max_particle_count = 4096
+max_count = 8
+
+[gui]
+max_count = 32
+
+[label]
+max_count = 0
+
+[collectionfactory]
+max_count = 16
+
+[tilemap]
+max_count = 0
+
+[googleanalytics]
+dispatch_period = 300
+queue_save_period = 30
+verbose = 0
 

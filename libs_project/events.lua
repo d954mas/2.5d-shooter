@@ -1,0 +1,5 @@
+local M = {}
+M.WINDOW_RESIZED = "WINDOW_RESIZED"
+M.ERROR = "ERROR"
+
+return M

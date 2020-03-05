@@ -1,7 +1,7 @@
 --
 -- lume
 --
--- Copyright (c) 2018 rxi
+-- Copyright (c) 2020 rxi
 --
 -- Permission is hereby granted, free of charge, to any person obtaining a copy of
 -- this software and associated documentation files (the "Software"), to deal in
@@ -158,7 +158,7 @@ end
 
 
 function lume.isarray(x)
-  return (type(x) == "table" and x[1] ~= nil) and true or false
+  return type(x) == "table" and x[1] ~= nil
 end
 
 
@@ -187,14 +187,6 @@ function lume.remove(t, x)
   return x
 end
 
-
-function lume.clear(t)
-  local iter = getiter(t)
-  for k in iter(t) do
-    t[k] = nil
-  end
-  return t
-end
 
 function lume.clearp(t)
   for k,v in pairs(t) do
@@ -299,8 +291,8 @@ end
 
 
 function lume.reduce(t, fn, first)
+  local started = first ~= nil
   local acc = first
-  local started = first and true or false
   local iter = getiter(t)
   for _, v in iter(t) do
     if started then
@@ -386,14 +378,21 @@ function lume.concat(...)
 end
 
 
-function lume.find(t, value)
-  local iter = getiter(t)
+function lume.findi(t, value)
+  local iter = ipairs
   for k, v in iter(t) do
     if v == value then return k end
   end
   return nil
 end
 
+function lume.findp(t, value)
+  local iter = pairs
+  for k, v in iter(t) do
+    if v == value then return k end
+  end
+  return nil
+end
 
 function lume.match(t, fn)
   fn = iteratee(fn)
@@ -407,23 +406,6 @@ end
 function lume.countp(t)
   local count = 0
   for _,_ in pairs(t) do count = count + 1 end
-  return count
-end
-
-function lume.count(t, fn)
-  local count = 0
-  local iter = getiter(t)
-  if fn then
-    fn = iteratee(fn)
-    for _, v in iter(t) do
-      if fn(v) then count = count + 1 end
-    end
-  else
-    if lume.isarray(t) then
-      return #t
-    end
-    for _ in iter(t) do count = count + 1 end
-  end
   return count
 end
 
@@ -480,13 +462,6 @@ function lume.clone_shallow(t)
   local rtn = {}
   for k, v in pairs(t) do rtn[k] = v end
   return rtn
-end
-
----@generic T
----@param t T
----@return T
-function lume.clone(t)
- return lume.clone_shallow(t)
 end
 
 function lume.clone_deep(t)
@@ -610,10 +585,12 @@ local serialize_map = {
     local rtn = {}
     stk[t] = true
     for k, v in pairs(t) do
-      rtn[#rtn + 1] = "[" .. serialize(k, stk) .. "]=" .. serialize(v, stk)
+      if k~= "__fields__" then
+        rtn[#rtn + 1] = " [" .. serialize(k, stk) .. "]=" .. serialize(v, stk)
+      end
     end
     stk[t] = nil
-    return "{" .. table.concat(rtn, ",") .. "}"
+    return " {" .. table.concat(rtn, ", ") .. "}"
   end
 }
 
@@ -762,7 +739,9 @@ end
 local ripairs_iter = function(t, i)
   i = i - 1
   local v = t[i]
-  if v then return i, v end
+  if v ~= nil then
+    return i, v
+  end
 end
 
 function lume.ripairs(t)
@@ -792,18 +771,18 @@ function lume.color(str, mul)
 end
 
 function lume.merge_table(t1,t2)
-    for k,v in pairs(t2) do
-      if type(v) == "table" then
-        if type(t1[k] or false) == "table" then
-          lume.merge_table(t1[k] or {}, t2[k] or {})
-        else
-          t1[k] = v
-        end
+  for k,v in pairs(t2) do
+    if type(v) == "table" then
+      if type(t1[k] or false) == "table" then
+        lume.merge_table(t1[k] or {}, t2[k] or {})
       else
         t1[k] = v
       end
+    else
+      t1[k] = v
     end
-    return t1
+  end
+  return t1
 end
 
 
@@ -859,7 +838,7 @@ local function orderedNext(t, state)
     key = t.__orderedIndex[1]
   else
     -- fetch the next value
-    for i = 1,table.getn(t.__orderedIndex) do
+    for i = 1,#t.__orderedIndex do
       if t.__orderedIndex[i] == state then
         key = t.__orderedIndex[i+1]
       end

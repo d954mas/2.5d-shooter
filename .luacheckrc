@@ -7,16 +7,20 @@ max_line_length = 140
 max_code_line_length = 140
 --remove some imported libs
 exclude_files = {
+	"debug/bunnymark/**",
 	"richtext/**",
 	"gooey/**",
+	"libs/rx.lua",
 	"libs/rx.lua",
 	"libs/log.lua",
 	"libs/ecs.lua",
 	"libs/checks.lua",
 	"libs/i18n/**",
+	"libs_project/shared.lua",
 	"_headers/**",
 	"tests/**",
 	"rendercam/**",
+	"jstodef/**",
 	"assets/levels/lua/**",
 }
 
@@ -63,15 +67,20 @@ read_globals = {
   "defos",
   "mnu",
   "native_raycasting",
-  "requiref"
+  "lua_script_instance",
+  "lottie_web",
 }
 
 globals = {
   "init",
+  "cjson",
+  "jstodef",
   "final",
   "update",
   "on_input",
   "on_message",
   "on_reload",
+  "interactive_canvas",
+  "requiref",
   "__dm_script_instance__"
 }

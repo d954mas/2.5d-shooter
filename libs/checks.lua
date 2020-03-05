@@ -8,6 +8,14 @@ local _qualifiers_cache = {
 	-- },
 }
 
+local function is_subclass(t, name)
+	if type(t) ~= "table" then return false end
+	local class = t.class
+	return class and
+			(class.name == name or (class.super and
+			(class.super.name == name or is_subclass(class.super, name))))
+end
+
 local function check_string_type(value, expected_type)
 	-- 1. Check any value.
 	if expected_type == '?' then
@@ -20,7 +28,7 @@ local function check_string_type(value, expected_type)
 		qualifier = { optional = false }
 
 		for typ in expected_type:gmatch('[^|]+') do
-			if typ:startswith('?') then
+			if typ:sub(1,1) == '?' then
 				qualifier.optional = true
 				typ = typ:sub(2)
 			end
@@ -48,6 +56,11 @@ local function check_string_type(value, expected_type)
 			return true
 		end
 
+		--check class
+		if (is_subclass(value, typ)) then
+			return true
+		end
+
 		local checker = _G.checkers[typ]
 		if type(checker) == 'function' and checker(value) == true then
 			return true
@@ -58,7 +71,7 @@ local function check_string_type(value, expected_type)
 	return nil, string.format(
 			'bad argument %s to %s (%s expected, got %s)',
 	-- argname and function name are formatted by the caller
-			'%s', '%s', expected_type, type(value)
+			'%s', '%s', expected_type, value.class and value.class.name or type(value)
 	)
 end
 
@@ -83,12 +96,12 @@ local function check_table_type(tbl, expected_fields)
 		if type(expected_type) == 'string' then
 			local ok, efmt = check_string_type(value, expected_type)
 			if not ok then
-				return nil, string.format(efmt, '%s'..keyname_fmt(expected_key), '%s')
+				return nil, string.format(efmt, '%s' .. keyname_fmt(expected_key), '%s')
 			end
 		elseif type(expected_type) == 'table' then
 			local ok, efmt = check_string_type(value, '?table')
 			if not ok then
-				return nil, string.format(efmt, '%s'..keyname_fmt(expected_key), '%s')
+				return nil, string.format(efmt, '%s' .. keyname_fmt(expected_key), '%s')
 			end
 
 			if _G._checks_v2_compatible and value == nil then
@@ -98,7 +111,7 @@ local function check_table_type(tbl, expected_fields)
 
 			local ok, efmt = check_table_type(value, expected_type)
 			if not ok then
-				return nil, string.format(efmt, '%s'..keyname_fmt(expected_key), '%s')
+				return nil, string.format(efmt, '%s' .. keyname_fmt(expected_key), '%s')
 			end
 		else
 			return nil, string.format(
@@ -118,7 +131,7 @@ local function check_table_type(tbl, expected_fields)
 					'unexpected argument %s to %s',
 			-- argname and function name
 			-- are formatted by the caller
-					'%s'..keyname_fmt(key), '%s'
+					'%s' .. keyname_fmt(key), '%s'
 			)
 		end
 	end
@@ -155,7 +168,7 @@ local function checks(...)
 			local ok, efmt = check_string_type(value, expected_type)
 			if not ok then
 				local info = debug.getinfo(level, 'nl')
-				local err = string.format(efmt, '#'..tostring(i), info.name)
+				local err = string.format(efmt, '#' .. tostring(i), info.name)
 				error(err, level)
 			end
 
@@ -163,7 +176,7 @@ local function checks(...)
 			local ok, efmt = check_string_type(value, '?table')
 			if not ok then
 				local info = debug.getinfo(level, 'nl')
-				local err = string.format(efmt, '#'..tostring(i), info.name)
+				local err = string.format(efmt, '#' .. tostring(i), info.name)
 				error(err, level)
 			end
 
@@ -188,9 +201,13 @@ local function checks(...)
 	end
 end
 
+
 _G.checks = checks
 _G.checkers = rawget(_G, 'checkers') or {}
 
 
+function checkers.url(p)
+	return type(p) == "userdata" and p.fragment and p.path and p.socket
+end
 
 return checks

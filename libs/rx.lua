@@ -32,7 +32,7 @@ local Subscription = Class.class("Subsription")
 ---@param action function action function  The action to run when the subscription is unsubscribed. It will only be run once.
 ---@return Subscription
 function Subscription:initialize(action)
-	self.action = action
+	self.action = action or util.noop
 	self.unsubscribed = false
 end
 
@@ -269,12 +269,16 @@ end
 ---@param factory function A function that returns an Observable.
 ---@return Observable
 function Observable.defer(fn)
+	if not fn or type(fn) ~= 'function' then
+		error('Expected a function')
+	end
+
 	return setmetatable({
-							subscribe = function(_, ...)
-								local observable = fn()
-								return observable:subscribe(...)
-							end
-						}, Observable)
+		subscribe = function(_, ...)
+			local observable = fn()
+			return observable:subscribe(...)
+		end
+	}, Observable)
 end
 
 --- Returns an Observable that repeats a value a specified number of times.
@@ -415,6 +419,10 @@ end
 ---Returns an Observable that buffers values from the original and produces them as multiple values.
 ---@param size number  The size of the buffer.
 function Observable:buffer(size)
+	if not size or type(size) ~= 'number' then
+		error('Expected a number')
+	end
+
 	return Observable.create(function(observer)
 		local buffer = {}
 
@@ -856,6 +864,10 @@ end
 ---@param index number  The index of the item, with an index of 1 representing the first.
 ---@return Observable
 function Observable:elementAt(index)
+	if not index or type(index) ~= 'number' then
+		error('Expected a number')
+	end
+
 	return Observable.create(function(observer)
 		local subscription
 		local i = 1
@@ -1002,8 +1014,18 @@ end
 ---@return Observable
 function Observable:flatten()
 	return Observable.create(function(observer)
+		local subscriptions = {}
+		local remaining = 1
+
 		local function onError(message)
 			return observer:onError(message)
+		end
+
+		local function onCompleted()
+			remaining = remaining - 1
+			if remaining == 0 then
+				return observer:onCompleted()
+			end
 		end
 
 		local function onNext(observable)
@@ -1011,14 +1033,17 @@ function Observable:flatten()
 				observer:onNext(...)
 			end
 
-			observable:subscribe(innerOnNext, onError, util.noop)
+			remaining = remaining + 1
+			local subscription = observable:subscribe(innerOnNext, onError, onCompleted)
+			subscriptions[#subscriptions + 1] = subscription
 		end
 
-		local function onCompleted()
-			return observer:onCompleted()
-		end
-
-		return self:subscribe(onNext, onError, onCompleted)
+		subscriptions[#subscriptions + 1] = self:subscribe(onNext, onError, onCompleted)
+		return Subscription.create(function ()
+			for i = 1, #subscriptions do
+				subscriptions[i]:unsubscribe()
+			end
+		end)
 	end)
 end
 
@@ -1393,6 +1418,10 @@ end
 ---@param count number  The number of items to omit from the end.
 ---@return Observable
 function Observable:skipLast(count)
+	if not count or type(count) ~= 'number' then
+		error('Expected a number')
+	end
+
 	local buffer = {}
 	return Observable.create(function(observer)
 		local function emit()
@@ -1588,6 +1617,10 @@ end
 ---@param count number  The number of elements to produce.
 ---@return Observable
 function Observable:takeLast(count)
+	if not count or type(count) ~= 'number' then
+		error('Expected a number')
+	end
+
 	return Observable.create(function(observer)
 		local buffer = {}
 
@@ -1746,6 +1779,10 @@ end
 ---                      of the most recent values as multiple arguments to onNext.
 ---@return Observable
 function Observable:window(size)
+	if not size or type(size) ~= 'number' then
+		error('Expected a number')
+	end
+
 	return Observable.create(function(observer)
 		local window = {}
 
@@ -1827,6 +1864,7 @@ function Observable.zip(...)
 	return Observable.create(function(observer)
 		local values = {}
 		local active = {}
+		local subscriptions = {}
 		for i = 1, count do
 			values[i] = {n = 0}
 			active[i] = true
@@ -1872,8 +1910,14 @@ function Observable.zip(...)
 		end
 
 		for i = 1, count do
-			sources[i]:subscribe(onNext(i), onError, onCompleted(i))
+			subscriptions[i] = sources[i]:subscribe(onNext(i), onError, onCompleted(i))
 		end
+
+		return Subscription.create(function()
+			for i = 1, count do
+				if subscriptions[i] then subscriptions[i]:unsubscribe() end
+			end
+		end)
 	end)
 end
 
@@ -1969,7 +2013,7 @@ function CooperativeScheduler:update(delta)
 			end
 
 			if not success then
-				error(delay)
+				error(debug.traceback(task.thread,"Error in coroutine:" .. tostring(delay) ,1))
 			end
 		else
 			i = i + 1
@@ -2146,6 +2190,7 @@ function Subject:onError(message)
 		for i = #self.observers, 1, -1 do
 			self.observers[i]:onError(message)
 		end
+
 		self.stopped = true
 	end
 end
@@ -2259,11 +2304,11 @@ end
 
 AsyncSubject.__call = AsyncSubject.onNext
 
---- @class BehaviorSubject:Observable
+--- @class BehaviorSubject:Subject
 ---@field value number
 ---  A Subject that tracks its current value. Provides an accessor to retrieve the most
 --- recent pushed value, and all subscribers immediately receive the latest value.
-local BehaviorSubject = Class.class("BehaviorSubject",Observable)
+local BehaviorSubject = Class.class("BehaviorSubject",Subject)
 
 --- Creates a new BehaviorSubject.
 ---@vararg any
@@ -2389,19 +2434,19 @@ Observable['repeat'] = Observable.replicate
 ---storage for subscription
 ---can unsubscribe all
 
-local SubscriptionsStorage = Class("SubscriptionsStorage")
+local CompositeSubscription = Class("CompositeSubscription")
 
-function SubscriptionsStorage:initialize()
+function CompositeSubscription:initialize()
 	self.subscriptions = {}
 end
 
-function SubscriptionsStorage:add(subscription)
+function CompositeSubscription:add(subscription)
 	assert(subscription)
 	assert(subscription.unsubscribe)
 	table.insert(self.subscriptions, subscription)
 end
 
-function SubscriptionsStorage:unsubscribe()
+function CompositeSubscription:unsubscribe()
 	for _, subscription in ipairs(self.subscriptions) do
 		subscription:unsubscribe()
 	end
@@ -2423,6 +2468,6 @@ return {
 	BehaviorSubject = BehaviorSubject,
 	ReplaySubject = ReplaySubject,
 	MainScheduler = CooperativeScheduler.create(), -- Application thread.update in bootstrap collection.
-	SubscriptionsStorage = SubscriptionsStorage,
+	CompositeSubscription = CompositeSubscription,
 	MsgScheduler = MsgScheduler
 }

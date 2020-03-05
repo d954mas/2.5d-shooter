@@ -1,5 +1,5 @@
-/.internal
-/build
+.internal
+build
 .externalToolBuilders
 .DS_Store
 Thumbs.db
@@ -9,3 +9,13 @@ Thumbs.db
 .cproject
 builtins
 .luacheckcache
+node_modules/
+bob.jar
+.firebaserc
+package-lock.json
+yarn.lock
+.firebase
+*.log
+/haxe/bin
+bin
+.idea/workspace.xml

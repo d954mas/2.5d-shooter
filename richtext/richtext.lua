@@ -8,6 +8,9 @@ M.ALIGN_LEFT = hash("ALIGN_LEFT")
 M.ALIGN_RIGHT = hash("ALIGN_RIGHT")
 
 
+local V4_ZERO = vmath.vector4(0)
+local V4_ONE = vmath.vector4(1)
+
 local V3_ZERO = vmath.vector3(0)
 local V3_ONE = vmath.vector3(1)
 
@@ -88,7 +91,13 @@ end
 
 -- compare two words and check that they have the same size, color, font and tags
 local function compare_words(one, two)
-	if one == nil or two == nil or one.size ~= two.size or one.color ~= two.color or one.font ~= two.font then
+	if one == nil
+	or two == nil
+	or one.size ~= two.size
+	or one.color ~= two.color
+	or one.shadow ~= two.shadow
+	or one.outline ~= two.outline
+	or one.font ~= two.font then
 		return false
 	end
 	local one_tags, two_tags = one.tags, two.tags
@@ -226,7 +235,8 @@ local function create_text_node(word, font, metrics)
 	gui.set_id(node, new_id("textnode"))
 	gui.set_font(node, font)
 	gui.set_color(node, word.color)
-	gui.set_outline(node, word.color_outline or word.color)
+	if word.shadow then gui.set_shadow(node, word.shadow) end
+	if word.outline then gui.set_outline(node, word.outline) end
 	gui.set_scale(node, V3_ONE * word.size)
 
 	metrics = metrics or get_text_metrics(word, font)
@@ -298,7 +308,9 @@ function M.create(text, font, settings)
 	settings.layers.fonts = settings.layers.fonts or {}
 	settings.layers.images = settings.layers.images or {}
 	settings.layers.spinescenes = settings.layers.spinescenes or {}
-	settings.color = settings.color or V3_ONE
+	settings.color = settings.color or V4_ONE
+	settings.shadow = settings.shadow or V4_ZERO
+	settings.outline = settings.outline or V4_ZERO
 	settings.position = settings.position or V3_ZERO
 	settings.line_spacing = settings.line_spacing or 1
 	settings.image_pixel_grid_snap = settings.image_pixel_grid_snap or false
@@ -308,7 +320,8 @@ function M.create(text, font, settings)
 	-- will be assigned to each word unless tags override the values
 	local word_settings = {
 		color = settings.color,
-		color_outline = settings.color_outline,
+		shadow = settings.shadow,
+		outline = settings.outline,
 		font = font,
 		size = 1
 	}
@@ -316,7 +329,7 @@ function M.create(text, font, settings)
 	local text_metrics = {
 		width = 0,
 		height = 0,
-		char_count = parser.length(text),
+		char_count = 0,
 	}
 	local line_words = {}
 	local line_width = 0
@@ -325,6 +338,7 @@ function M.create(text, font, settings)
 	local word_count = #words
 	for i = 1, word_count do
 		local word = words[i]
+		text_metrics.char_count = text_metrics.char_count + parser.length(word.text)
 		--print("word: [" .. word.text .. "]")
 
 		-- get font to use based on word tags
@@ -477,29 +491,45 @@ end
 -- and images are visible
 -- @param words List of words to truncate
 -- @param length Maximum number of characters to show
-function M.truncate(words, length)
+-- @param options Optional table with truncate options. Available options are: words
+-- @return Last visible word
+function M.truncate(words, length, options)
 	assert(words)
 	assert(length)
-	local count = 0
 	local last_visible_word = nil
-	for i=1, #words do
-		local word = words[i]
-		local is_text_node = not word.image and not word.spine
-		local word_length = is_text_node and utf8.len(word.text) or 1
-		local visible = count < length
-		last_visible_word = visible and word or last_visible_word
-		gui.set_enabled(word.node, visible)
-		if count < length and is_text_node then
-			local text = word.text
-			-- partial word?
-			if count + word_length > length then
-				local overflow = (count + word_length) - length
-				text = utf8.sub(word.text, 1, word_length - overflow)
+	if options and options.words then
+		for i=1, #words do
+			local word = words[i]
+			local visible = i <= length
+			if visible then
+				last_visible_word = word
 			end
-			gui.set_text(word.node, text)
-			word.metrics = get_text_metrics(word, word.font, text)
+			gui.set_enabled(word.node, visible)
 		end
-		count = count + word_length
+	else
+		local count = 0
+		for i=1, #words do
+			local word = words[i]
+			local is_text_node = not word.image and not word.spine
+			local word_length = is_text_node and utf8.len(word.text) or 1
+			local visible = count < length
+			if visible then
+				last_visible_word = word
+			end
+			gui.set_enabled(word.node, visible)
+			if count < length and is_text_node then
+				local text = word.text
+				-- partial word?
+				if count + word_length > length then
+					-- remove overflowing characters from word
+					local overflow = (count + word_length) - length
+					text = utf8.sub(word.text, 1, word_length - overflow)
+				end
+				gui.set_text(word.node, text)
+				word.metrics = get_text_metrics(word, word.font, text)
+			end
+			count = count + word_length
+		end
 	end
 	return last_visible_word
 end

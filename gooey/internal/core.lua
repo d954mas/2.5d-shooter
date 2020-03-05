@@ -25,7 +25,7 @@ local function handle_action(component, action_id, action)
 			component.touch_id = nil
 			component.long_pressed = socket.gettime() - long_press_start > component.long_pressed_time
 		end
-
+		
 		component.pressed_now = pressed and not component.pressed
 		component.released_now = released and component.pressed
 		component.pressed = pressed or (component.pressed and not released)
@@ -99,9 +99,9 @@ end
 function M.to_key(hsh)
 	local url = msg.url()
 	return hash_to_hex(url.socket or EMPTY)
-			.. hash_to_hex(url.path or empty)
-			.. hash_to_hex(url.fragment or empty)
-			.. hash_to_hex(hsh)
+	.. hash_to_hex(url.path or empty)
+	.. hash_to_hex(url.fragment or empty)
+	.. hash_to_hex(hsh)
 end
 
 --- Get an instance (table) for an id or create one if it doesn't

@@ -30,8 +30,11 @@ function SCROLLBAR.scroll_to(scrollbar, x, y)
 	gui.set_position(scrollbar.node, handle_pos)
 	scrollbar.scroll.y = y
 end
-function SCROLLBAR.set_visible(button, visible)
+function SCROLLBAR.set_visible(scrollbar, visible)
 	gui.set_enabled(scrollbar.node, visible)
+end
+function SCROLLBAR.set_long_pressed_time(scrollbar, time)
+	scrollbar.long_pressed_time = time
 end
 
 

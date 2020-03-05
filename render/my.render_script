@@ -1,6 +1,6 @@
 local COMMON = require "libs.common"
 local RENDERCAM = require "rendercam.rendercam"
-local RENDERCAM_VIEWPORT = RENDERCAM.viewport
+local EVENTS = require "libs_project.events"
 
 --draw all ambient light of level to texture
 --if level bigger then LIGHT_MAP_SIZE there will be problems
@@ -11,214 +11,148 @@ local TAG = "Render"
 local Render = COMMON.new_n28s()
 --region init
 function Render:init()
-    self.clear_color = vmath.vector4(0)
-    self:init_predicates()
-    self:init_rendercam()
-    self:init_render_targets()
-    self:init_buffers()
-    self:init_constants_buffers()
-    self:register_messages()
-    COMMON.RENDER = self
+	self.clear_color = vmath.vector4(1, 1, 1, 0)
+	self.screen_size = {
+		w = render.get_window_width(),
+		h = render.get_window_height(),
+	}
+	self:init_predicates()
+	self:init_rendercam()
+	self:init_render_targets()
+	self:init_buffers()
+	self:init_constants_buffers()
+	self:register_messages()
+
+	COMMON.RENDER = self
 end
 
-function Render:create_render_target(name,params)
-    -- render target buffer parameters
-    local color_params = { format = params.format or render.FORMAT_RGBA,
-                           width = assert(params.w),
-                           height = assert(params.h),
-                           min_filter = params.min_filter or render.FILTER_LINEAR,
-                           mag_filter = params.mag_filter or render.FILTER_LINEAR,
-                           u_wrap = params.u_wrap or render.WRAP_CLAMP_TO_EDGE,
-                           v_wrap = params.v_wrap or render.WRAP_CLAMP_TO_EDGE }
-    local depth_params = { format = render.FORMAT_DEPTH,
-                           width = params.w,
-                           height = params.h,
-                           u_wrap = params.u_wrap or render.WRAP_CLAMP_TO_EDGE,
-                           v_wrap = params.v_wrap or render.WRAP_CLAMP_TO_EDGE }
-    return render.render_target(assert(name), {[render.BUFFER_COLOR_BIT] = color_params, [render.BUFFER_DEPTH_BIT] = depth_params })
+function Render:create_render_target(name, params)
+	-- render target buffer parameters
+	local color_params = { format = params.format or render.FORMAT_RGBA,
+						   width = assert(params.w),
+						   height = assert(params.h),
+						   min_filter = params.min_filter or render.FILTER_LINEAR,
+						   mag_filter = params.mag_filter or render.FILTER_LINEAR,
+						   u_wrap = params.u_wrap or render.WRAP_CLAMP_TO_EDGE,
+						   v_wrap = params.v_wrap or render.WRAP_CLAMP_TO_EDGE }
+	local depth_params = { format = render.FORMAT_DEPTH,
+						   width = params.w,
+						   height = params.h,
+						   u_wrap = params.u_wrap or render.WRAP_CLAMP_TO_EDGE,
+						   v_wrap = params.v_wrap or render.WRAP_CLAMP_TO_EDGE }
+	return render.render_target(assert(name), { [render.BUFFER_COLOR_BIT] = color_params, [render.BUFFER_DEPTH_BIT] = depth_params })
 end
 
 function Render:init_render_targets()
-    self.targets = {
-        light_map = self:create_render_target("light_map",{w=LIGHT_MAP_SIZE,h=LIGHT_MAP_SIZE})
-    }
+	self.targets = {}
 end
 
 function Render:init_buffers()
-    self.buffers = {
-        light_map =  buffer.create( LIGHT_MAP_SIZE * LIGHT_MAP_SIZE, {
-            {name=hash("light_map"), type=buffer.VALUE_TYPE_UINT8, count=3 } })
-    }
+	self.buffers = {}
 end
 
 function Render:init_predicates()
-    self.predicates = {
-        tile = render.predicate({"tile"}),
-        gui = render.predicate({"gui"}),
-        text = render.predicate({"text"}),
-        model = render.predicate({"model"}),
-        particle = render.predicate({"particle"}),
-        sprite_3d = render.predicate({"sprite_3d"}),
-        sprite_3d_object = render.predicate({"sprite_3d_object"}),
-        sprite_3d_enemy = render.predicate({"sprite_3d_enemy"}),
-        light_map = render.predicate({"light_map"}),
-    }
+	self.predicates = {
+		tile = render.predicate({ "tile" }),
+		gui = render.predicate({ "gui" }),
+		text = render.predicate({ "text" }),
+		model = render.predicate({ "model" }),
+		particle = render.predicate({ "particle" }),
+	}
 end
 
 function Render:init_rendercam()
-    RENDERCAM.configWin.x = render.get_width();
-    RENDERCAM.configWin.y = render.get_height()
-    RENDERCAM.update_window_size(render.get_window_width(), render.get_window_height())
-    self:window_size_changed()
+	RENDERCAM.configWin.x = render.get_width();
+	RENDERCAM.configWin.y = render.get_height()
+	RENDERCAM.update_window_size(self.screen_size.w, self.screen_size.h)
+	self:window_size_changed()
 end
 
 function Render:init_constants_buffers()
-    self.constants_buffers = {
-        light_map = render.constant_buffer(),
-    }
-    self.constants_buffers.light_map.light_map = vmath.vector4(LIGHT_MAP_SIZE,LIGHT_MAP_SIZE,0,0)
-    self.constants_buffers.light_map.fog_color = vmath.vector4(0.15)
-    self.constants_buffers.light_map.fog = vmath.vector4(2,0,0.1,0) -- //x start distance y end dist. z exp
+	self.constants_buffers = {
+		light_map = render.constant_buffer(),
+	}
+	self.constants_buffers.light_map.light_map = vmath.vector4(LIGHT_MAP_SIZE, LIGHT_MAP_SIZE, 0, 0)
+	self.constants_buffers.light_map.fog_color = vmath.vector4(0.15)
+	self.constants_buffers.light_map.fog = vmath.vector4(2, 0, 0.1, 0) -- //x start distance y end dist. z exp
 
 end
 
 function Render:register_messages()
-    self.msg_receiver = COMMON.MSG()
-    self.msg_receiver:add("clear_color",function(_,_,message)  self.clear_color = message.color end)
-    -- sent by rendercam when a camera is activated ("window_resized" engine message requires data)
-    self.msg_receiver:add("update window",self.window_size_changed)
-    self.msg_receiver:add("window_resized",function (...)
-        self.window_size_changed(...)
-        COMMON.EVENT_BUS:event(COMMON.EVENTS.WINDOW_RESIZED)
-    end)
+	self.msg_receiver = COMMON.MSG()
+	self.msg_receiver:add(COMMON.HASHES.MSG.RENDER.CLEAR_COLOR, function(_, _, message)
+		self.clear_color = message.color
+	end)
+	-- sent by rendercam when a camera is activated ("window_resized" engine message requires data)
+	self.msg_receiver:add("update window", self.window_size_changed)
+	self.msg_receiver:add(COMMON.HASHES.MSG.RENDER.WINDOW_RESIZED, function(...)
+		local prev_w = self.screen_size.w
+		local prev_h = self.screen_size.h
+		self.screen_size.w = render.get_window_width()
+		self.screen_size.h = render.get_window_height()
+		if (prev_w ~= self.screen_size.w or prev_h ~= self.screen_size.h) then
+			self:window_size_changed()
+			COMMON.EVENT_BUS:event(EVENTS.WINDOW_RESIZED, { width = self.screen_size.w, height = self.screen_size.h,
+															prev_width = prev_w, prev_height = prev_h })
+		end
+
+	end)
 end
 --endregion
 
 
 function Render:window_size_changed()
-    RENDERCAM.update_window(render.get_window_width(), render.get_window_height())
-    self.gui_proj = vmath.matrix4_orthographic(0, render.get_window_width(), 0, render.get_window_height(), -1, 1)
+	RENDERCAM.update_window(self.screen_size.w, self.screen_size.h)
+	self.gui_proj = vmath.matrix4_orthographic(0, self.screen_size.w, 0, self.screen_size.h, -1, 1)
 end
 
-function Render:update_light_map(data,w,h)
-    COMMON.EVENT_BUS:event(COMMON.EVENTS.GAME_LIGHT_MAP_CHANGED)
-    local stream = buffer.get_stream(self.buffers.light_map, hash("light_map"))
-    local arshift = bit.arshift
-    local band = bit.band
-    for y=LIGHT_MAP_SIZE-1,0,-1 do
-        local index = y * LIGHT_MAP_SIZE * 3 + 1
-        for x=0,LIGHT_MAP_SIZE-1 do
-            local color = data[(LIGHT_MAP_SIZE-y-1)*w + x + 1] or 0xFFFF0000
-            stream[index] = arshift(band(color, 0x00FF0000),16)
-            stream[index + 1] =  arshift(band(color, 0x0000FF00),8)
-            stream[index + 2] =  arshift(band(color, 0x000000ff),0)
-            index = index + 3
-            if x > w then break end
-        end
-        if (LIGHT_MAP_SIZE-y+1) > h then break end
-    end
-end
 
 --region draw
-function Render:draw_light_map(debug)
-    render.disable_state(render.STATE_DEPTH_TEST)
-    render.disable_state(render.STATE_STENCIL_TEST)
-    render.disable_state(render.STATE_CULL_FACE)
-    if debug then
-        render.set_viewport(0, 0, LIGHT_MAP_SIZE, LIGHT_MAP_SIZE)
-    else
-        render.set_viewport(0, 0, LIGHT_MAP_SIZE, LIGHT_MAP_SIZE)
-    end
-    render.set_view(vmath.matrix4())
-    render.set_projection(vmath.matrix4_orthographic(-0.01, 0.01, -0.01, 0.01, -1, 1))
-    if not debug then
-        render.enable_render_target(self.targets.light_map)
-        render.clear({[render.BUFFER_COLOR_BIT] = vmath.vector4(1,1,1,1), [render.BUFFER_DEPTH_BIT] = 1, [render.BUFFER_STENCIL_BIT] = 0})
-    end
-    render.draw(self.predicates.light_map)
-    if not debug then render.disable_render_target(self.targets.light_map) end
+function Render:render_gui()
+	-- GUI Rendering
+	render.set_viewport(0, 0, RENDERCAM.window.x, RENDERCAM.window.y)
+	render.set_view(vmath.matrix4())
+	render.set_projection(vmath.matrix4_orthographic(0, render.get_window_width(), 0, render.get_window_height(), -1, 1))
+
+	render.enable_state(render.STATE_STENCIL_TEST)
+	render.draw(self.predicates.gui)
+	render.draw(self.predicates.text)
+	render.disable_state(render.STATE_STENCIL_TEST)
 end
 
-function Render:draw_gui()
-    -- GUI Rendering
-    render.set_viewport(0, 0, RENDERCAM.window.x, RENDERCAM.window.y)
-    render.set_view(vmath.matrix4())
-    render.set_projection(vmath.matrix4_orthographic(0, render.get_window_width(), 0, render.get_window_height(), -1, 1))
+function Render:render_sprites()
+	render.set_viewport(RENDERCAM.viewport.x, RENDERCAM.viewport.y, RENDERCAM.viewport.width, RENDERCAM.viewport.height)
+	render.set_view(RENDERCAM.calculate_view())
+	render.set_projection(RENDERCAM.calculate_proj())
 
-    render.enable_state(render.STATE_STENCIL_TEST)
-    render.draw(self.predicates.gui)
-    render.draw(self.predicates.text)
-    render.disable_state(render.STATE_STENCIL_TEST)
+	render.set_depth_mask(false)
+	render.disable_state(render.STATE_DEPTH_TEST)
+	render.disable_state(render.STATE_STENCIL_TEST)
+	render.disable_state(render.STATE_CULL_FACE)
+	render.enable_state(render.STATE_BLEND)
+	render.set_blend_func(render.BLEND_SRC_ALPHA, render.BLEND_ONE_MINUS_SRC_ALPHA)
+
+	render.draw(self.predicates.tile)
+	render.draw(self.predicates.particle)
 end
 
-function Render:draw_sprites()
-    render.set_viewport(0, 0, RENDERCAM.window.x, RENDERCAM.window.y)
-    render.set_view(vmath.matrix4())
-
-    --try keep weapon art same on different resolutions
-    local width = render.get_width()
-    local height = render.get_height()
-    local aspect = width/height
-    local window_width = render.get_window_width()
-    local window_height = render.get_window_height()
-    local window_aspect = window_width/window_height
-    local zoom
-    if window_aspect > aspect then
-        zoom = math.min(window_width / width, window_height / height)
-    else
-        zoom = math.max(window_width / width, window_height / height)
-    end
-    local projected_width = window_width / (zoom or 1)
-    local projected_height = window_height / (zoom or 1)
-    local xoffset = -(projected_width - width) / 2
-
-    render.set_projection(vmath.matrix4_orthographic(xoffset, xoffset + projected_width, 0,  projected_height, -1, 1))
-    render.set_depth_mask(false)
-
-    render.disable_state(render.STATE_DEPTH_TEST)
-    render.disable_state(render.STATE_STENCIL_TEST)
-    render.disable_state(render.STATE_CULL_FACE)
-    render.enable_state(render.STATE_BLEND)
-    render.set_blend_func(render.BLEND_SRC_ALPHA, render.BLEND_ONE_MINUS_SRC_ALPHA)
-
-    render.draw(self.predicates.tile)
-end
-
-function Render:draw_3d()
-    render.enable_state(render.STATE_DEPTH_TEST)
-    render.set_depth_mask(true)
-    render.set_depth_func(render.COMPARE_FUNC_LEQUAL)
-    render.enable_texture(1, self.targets.light_map, render.BUFFER_COLOR_BIT)
-    render.draw(self.predicates.model)
-
-    render.draw(self.predicates.sprite_3d_object,self.constants_buffers.light_map)
-    render.draw(self.predicates.sprite_3d_enemy,self.constants_buffers.light_map)
-    render.draw(self.predicates.sprite_3d,self.constants_buffers.light_map)
-     render.draw_debug3d()
-    render.disable_state(render.STATE_DEPTH_TEST)
-end
 --endregion
 
+function Render:render_clear()
+	render.set_depth_mask(true)
+	render.set_stencil_mask(0xff)
+	render.clear({ [render.BUFFER_COLOR_BIT] = self.clear_color, [render.BUFFER_DEPTH_BIT] = 1, [render.BUFFER_STENCIL_BIT] = 0 })
+end
+
 function Render:update(dt)
-    render.set_depth_mask(true)
-    render.set_stencil_mask(0xff)
-    render.clear({[render.BUFFER_COLOR_BIT] = self.clear_color, [render.BUFFER_DEPTH_BIT] = 1, [render.BUFFER_STENCIL_BIT] = 0})
+	self:render_clear()
+	self:render_sprites()
+	self:render_gui()
 
-    self:draw_light_map()
-
-    render.set_viewport(RENDERCAM_VIEWPORT.x, RENDERCAM_VIEWPORT.y, RENDERCAM_VIEWPORT.width, RENDERCAM_VIEWPORT.height)
-    render.set_view(RENDERCAM.calculate_view())
-    render.set_projection(RENDERCAM.calculate_proj())
-
-
-    self:draw_3d()
-    self:draw_sprites()
-   -- self:draw_light_map(true)
-    self:draw_gui()
 end
 
 function Render:on_message(message_id, message)
-    self.msg_receiver:on_message(self,message_id,message)
+	self.msg_receiver:on_message(self, message_id, message)
 end
 
-COMMON.N28S.register(Render)
+COMMON.N28S.register(Render())

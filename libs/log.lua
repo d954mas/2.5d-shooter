@@ -15,8 +15,7 @@ M.delete_old_logs_days = 10
 M.__ID = "subsoap/log" -- this is so sister modules can identify a global log
 M.__VERSION = 1 -- if this number changes it means there was a breaking change
 
-M.tag_whitelist =
-{
+M.tag_whitelist = {
 	["none"] = true
 }
 
@@ -33,8 +32,7 @@ M.ERROR = 50
 M.CRITICAL = 60
 M.logging_level = M.DEBUG
 
-M.log_level_names =
-	{
+M.log_level_names = {
 	[0] = "NONE ",
 	[10] = "TRACE ",
 	[20] = "DEBUG ",
@@ -42,7 +40,7 @@ M.log_level_names =
 	[40] = "WARN ",
 	[50] = "ERROR ",
 	[60] = "CRIT "
-	}
+}
 
 function M.add_to_whitelist(tag, state)
 	M.tag_whitelist[tag] = state
@@ -63,66 +61,66 @@ function M.set_level(level)
 end
 
 -- TRACE
-function M.t(message, tag,debug_level)
+function M.t(message, tag, debug_level)
 	local level = M.TRACE
 	debug_level = debug_level or 1
 	M.save_log_line(message, level, tag, debug_level)
 end
 
-function M.trace(message, tag,debug_level)
+function M.trace(message, tag, debug_level)
 	local level = M.TRACE
 	debug_level = debug_level or 1
 	M.save_log_line(message, level, tag, debug_level)
 end
 
 -- DEBUG
-function M.d(message, tag,debug_level)
+function M.d(message, tag, debug_level)
 	local level = M.DEBUG
 	debug_level = debug_level or 1
 	M.save_log_line(message, level, tag, debug_level)
 end
 
-function M.debug(message, tag,debug_level)
+function M.debug(message, tag, debug_level)
 	local level = M.DEBUG
 	debug_level = debug_level or 1
 	M.save_log_line(message, level, tag, debug_level)
 end
 
 -- INFO
-function M.i(message, tag,debug_level)
+function M.i(message, tag, debug_level)
 	local level = M.INFO
 	debug_level = debug_level or 1
 	M.save_log_line(message, level, tag, debug_level)
 end
 
-function M.info(message, tag,debug_level)
+function M.info(message, tag, debug_level)
 	local level = M.INFO
 	debug_level = debug_level or 1
 	M.save_log_line(message, level, tag, debug_level)
 end
 
 -- WARNING
-function M.w(message, tag,debug_level)
+function M.w(message, tag, debug_level)
 	local level = M.WARNING
 	debug_level = debug_level or 1
 	M.save_log_line(message, level, tag, debug_level)
 end
 
-function M.warning(message, tag,debug_level)
+function M.warning(message, tag, debug_level)
 	local level = M.WARNING
 	debug_level = debug_level or 1
 	M.save_log_line(message, level, tag, debug_level)
 end
 
 -- ERROR
-function M.e(message, tag,debug_level)
+function M.e(message, tag, debug_level)
 	local level = M.ERROR
 	debug_level = debug_level or 1
 	M.save_log_line(message, level, tag, debug_level)
 	error(message)
 end
 
-function M.error(message, tag,debug_level)
+function M.error(message, tag, debug_level)
 	local level = M.ERROR
 	debug_level = debug_level or 1
 	M.save_log_line(message, level, tag, debug_level)
@@ -130,13 +128,13 @@ function M.error(message, tag,debug_level)
 end
 
 -- CRITICAL
-function M.c(message, tag,debug_level)
+function M.c(message, tag, debug_level)
 	local level = M.CRITICAL
 	debug_level = debug_level or 1
 	M.save_log_line(message, level, tag, debug_level)
 end
 
-function M.critical(message, tag,debug_level)
+function M.critical(message, tag, debug_level)
 	local level = M.CRITICAL
 	debug_level = debug_level or 1
 	M.save_log_line(message, level, tag, debug_level)
@@ -199,7 +197,7 @@ end
 function M.set_appname(appname)
 	-- if you don't want appname filtered then set it directly
 	-- log.appname = "whatever"
-	appname = appname:gsub('%S%W','')
+	appname = appname:gsub('%S%W', '')
 	M.appname = appname
 end
 
@@ -258,8 +256,14 @@ function M.get_logging_dir_path()
 end
 
 function M.delete_old_logs(days)
-	if not lfs then print("Log: LFS is required (for now) to use log.prune_old_logs(). Check the readme!"); return false end
-	if not M.use_date_for_filename then print("Log: log.use_date_for_filename must be true to use log.prune_old_logs()!"); return false end
+	if not lfs then
+		print("Log: LFS is required (for now) to use log.prune_old_logs(). Check the readme!");
+		return false
+	end
+	if not M.use_date_for_filename then
+		print("Log: log.use_date_for_filename must be true to use log.prune_old_logs()!");
+		return false
+	end
 
 	local days_to_log_expire = days or M.delete_old_logs_days
 	local time_now = os.time()
@@ -305,7 +309,7 @@ function M.delete_old_logs(days)
 					end
 
 				end
-				local timestamp = os.time({year = xyear, month = xmonth, day = xday, hour = 0, min = 0, sec = 0, isdst=false})
+				local timestamp = os.time({ year = xyear, month = xmonth, day = xday, hour = 0, min = 0, sec = 0, isdst = false })
 				if timestamp ~= nil and delete_file_ok then
 					if time_now - timestamp >= max_time_difference then
 						if M.verbose then print("Log: log.delete_old_logs " .. file .. " is old - deleted!") end

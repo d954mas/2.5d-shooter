@@ -98,29 +98,44 @@ function M.radio(node_id, group_id, action_id, action, fn, refresh_fn)
 	return r
 end
 
-
-function M.static_list(list_id, stencil_id, item_ids, action_id, action, fn, refresh_fn)
-	local l = list.static(list_id, stencil_id, item_ids, action_id, action, fn, refresh_fn)
-	if current_group then
-		current_group.components[#current_group.components + 1] = l
-	end
-	return l
-end
-function M.list(...)
-	print("WARN! gooey.list() is deprecated. Use gooey.static_list()")
-	return M.static_list(...)
-end
-function M.dynamic_list(list_id, stencil_id, item_id, data, action_id, action, fn, refresh_fn, set_parent)
-	local l = list.dynamic(list_id, stencil_id, item_id, data, action_id, action, fn, refresh_fn, set_parent)
+function M.static_list(list_id, stencil_id, item_ids, action_id, action, config, fn, refresh_fn)
+	local l = list.static(list_id, stencil_id, item_ids, action_id, action, config, fn, refresh_fn)
 	if current_group then
 		current_group.components[#current_group.components + 1] = l
 	end
 	return l
 end
 
+function M.horizontal_static_list(list_id, stencil_id, item_ids, action_id, action, config, fn, refresh_fn)
+	config = config or {}
+	config.horizontal = true
+	return M.static_list(list_id, stencil_id, item_ids, action_id, action, config, fn, refresh_fn)
+end
 
-function M.vertical_scrollbar(handle_id, bounds_id, action_id, action, fn, refresh_fn)
-	local sb = scrollbar.vertical(handle_id, bounds_id, action_id, action, fn, refresh_fn)
+function M.vertical_static_list(list_id, stencil_id, item_ids, action_id, action, config, fn, refresh_fn)
+	return M.static_list(list_id, stencil_id, item_ids, action_id, action, config, fn, refresh_fn)
+end
+
+function M.dynamic_list(list_id, stencil_id, item_id, data, action_id, action, config, fn, refresh_fn)
+	local l = list.dynamic(list_id, stencil_id, item_id, data, action_id, action, config, fn, refresh_fn)
+	if current_group then
+		current_group.components[#current_group.components + 1] = l
+	end
+	return l
+end
+
+function M.horizontal_dynamic_list(list_id, stencil_id, item_id, data, action_id, action, config, fn, refresh_fn)
+	config = config or {}
+	config.horizontal = true
+	return M.dynamic_list(list_id, stencil_id, item_id, data, action_id, action, config, fn, refresh_fn)
+end
+
+function M.vertical_dynamic_list(list_id, stencil_id, item_id, data, action_id, action, config, fn, refresh_fn)
+	return M.dynamic_list(list_id, stencil_id, item_id, data, action_id, action, config, fn, refresh_fn)
+end
+
+function M.vertical_scrollbar(handle_id, bounds_id, action_id, action, config, fn, refresh_fn)
+	local sb = scrollbar.vertical(handle_id, bounds_id, action_id, action, config, fn, refresh_fn)
 	if current_group then
 		current_group.components[#current_group.components + 1] = sb
 	end

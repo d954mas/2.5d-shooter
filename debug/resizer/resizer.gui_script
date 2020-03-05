@@ -1,13 +1,13 @@
 local COMMON = require "libs.common"
 local WIDTH = 1920
 local HEIGHT = 1080
-local HORIZONTAL = false
-local RESOLUTION_SCALE = 0.5
+local HORIZONTAL = true
+local RESOLUTION_SCALE = 0.8
 local INIT_SIZE = 2
 local TAG = "RESIZER"
 local resolutions = {
 	{19.5,9},
-	{16,9},
+	{1920,1080},
 	{4,3},
 }
 local sizes = {}
@@ -17,7 +17,7 @@ for _,size in ipairs(resolutions) do
 	if HORIZONTAL then w = WIDTH h = WIDTH / aspect
 	else w = HEIGHT *aspect  h = HEIGHT end
 
-	local tag = string.format("%dx%d %dx%d",size[1],size[2],w,h)
+	local tag = string.format("%.1fx%.1f %dx%d",size[1],size[2],w,h)
 	table.insert(sizes,{math.floor(w),math.floor(h),tag=tag})
 end
 
@@ -30,7 +30,7 @@ function Script:init()
 	self.resize_node = gui.get_node("resize_node")
 	local os = sys.get_sys_info().system_name
 	if os ~= "Windows" and os ~= "Darwin" then
-		msg.post(".", COMMON.HASHES.MSG_DISABLE)
+		msg.post(".", COMMON.HASHES.MSG.DISABLE)
 	end
 	self:change_size(INIT_SIZE)
 end
@@ -42,7 +42,7 @@ function Script:change_size(idx)
 end
 
 function Script:on_input(action_id, action)
-	if action_id == COMMON.HASHES.INPUT_RIGHT_CLICK and action.released and
+	if action_id == COMMON.HASHES.INPUT.RIGHT_CLICK and action.released and
 			gui.pick_node(self.resize_node, action.x, action.y) then
 		mnu.begin()
 		for i,size in ipairs(sizes) do
@@ -57,4 +57,4 @@ function Script:on_input(action_id, action)
 	end
 end
 
-COMMON.N28S.register(Script)
+COMMON.N28S.register(Script())

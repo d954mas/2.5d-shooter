@@ -1,12 +1,10 @@
 local COMMON = require "libs.common"
+local DEBUG_INFO = require "debug.debug_info"
 
 local Script = COMMON.new_n28s()
 
 function Script:bind_vh()
 	self.vh = {
-		node_root = gui.get_node("root"),
-		lbl_cpu = gui.get_node("lbl_cpu"),
-		lbl_memory = gui.get_node("lbl_memory"),
 		lbl_version = gui.get_node("lbl_version"),
 	}
 end
@@ -15,18 +13,17 @@ function Script:init()
 	gui.set_render_order(15)
 	self:bind_vh()
 	self.input = COMMON.INPUT()
-	self.input.acquire()
-	self.input:add(COMMON.HASHES.INPUT_TOGGLE_DEBUG_GUI,self.input_toggle_gui_visible,true)
+	--self.input.acquire()
+--	self.input:add(COMMON.HASHES.INPUT_TOGGLE_DEBUG_GUI,self.input_toggle_gui_visible,true)
 	self.show = true
 	self:input_toggle_gui_visible()
-	gui.set_text(self.vh.lbl_version,"Version: " .. sys.get_config("project.version"))
 end
 
 function Script:update(dt)
 	if self.show then
-		gui.set_text(self.vh.lbl_cpu, "Cpu:" .. string.format("%.2f", profiler.get_cpu_usage()))
-		gui.set_text(self.vh.lbl_memory, "Mem:" .. string.format("%.2f Mb", profiler.get_memory_usage()/1024/1024))
+		
 	end
+--	gui.set_text(self.vh.lbl_version,"version: " .. sys.get_config("project.version") .. " (" .. DEBUG_INFO.version_time .. " )")
 end
 
 function Script:final()
@@ -35,11 +32,12 @@ end
 
 function Script:input_toggle_gui_visible()
 	self.show = not self.show
-	gui.set_enabled(self.vh.node_root, self.show)
+	--gui.set_enabled(self.vh.node_root, self.show)
+	return true
 end
 
 function Script:on_input(action_id, action)
 	return self.input:on_input(self,action_id,action)
 end
 
-COMMON.N28S.register(Script)
+COMMON.N28S.register(Script())

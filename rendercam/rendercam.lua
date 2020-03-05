@@ -5,7 +5,7 @@ local M = {}
 
 -- Check if 'shared_state' setting is on
 if sys.get_config("script.shared_state") ~= "1" then
-	error("ERROR - rendercam - 'shared_state' setting in game.project must be enabled for rendercam to work.", 0)
+	error("ERROR - rendercam - 'shared_state' setting in main_menu.project must be enabled for rendercam to work.", 0)
 end
 
 local SCALEMODE_EXPANDVIEW = hash("expandView")
@@ -77,11 +77,12 @@ local function get_target_worldViewSize(cam, lastX, lastY, lastWinX, lastWinY, w
 			local z = math.max(lastX / lastWinX, lastY / lastWinY)
 			x, y = winX * z, winY * z
 		elseif cam.scaleMode == SCALEMODE_FIXEDAREA then
-			if not cam.fixedAspectRatio then -- x, y stay at lastX, lastY with fixed aspect ratio
-				local lastArea = lastX * lastY
-				local windowArea = winX * winY
-				local axisScale = math.sqrt(lastArea / windowArea)
-				x, y = winX * axisScale, winY * axisScale
+			local aspect = winX/winY
+			local view_area_aspect = cam.viewAreaInitial.x/cam.viewAreaInitial.y
+			if aspect >= view_area_aspect then
+				x, y = cam.viewAreaInitial.y* aspect, cam.viewAreaInitial.y
+			else
+				x, y = cam.viewAreaInitial.x, cam.viewAreaInitial.x / aspect
 			end
 		elseif cam.scaleMode == SCALEMODE_FIXEDWIDTH then
 			local ratio = winX / winY
@@ -137,7 +138,7 @@ function M.activate_camera(cam_id)
 			msg.post("@render:", "update window")
 		end
 	else
-		print("WARNING: rendercam.activate_camera() - camera ".. cam_id .. " not found. ")
+		print("WARNING: rendercam.activate_camera() - camera ".. tostring(cam_id) .. " not found. ")
 	end
 end
 
@@ -157,6 +158,10 @@ function M.camera_final(cam_id)
 		msg.post("@render:", "update window")
 	end
 	cameras[cam_id] = nil
+end
+
+function M.camera_have(cam_id)
+	return cameras[cam_id] and true or false
 end
 
 function M.zoom(z, cam_id)

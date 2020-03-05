@@ -1,5 +1,6 @@
 local core = require "gooey.internal.core"
 local actions = require "gooey.actions"
+local utf8 = require "gooey.internal.utf8"
 
 local M = {}
 
@@ -33,9 +34,10 @@ local function get_text_width(node, text)
 end
 
 
-function M.utf8_gfind(text)
-	return text:gfind("([%z\1-\127\194-\244][\128-\191]*)")
+function M.utf8_gfind(text, regex)
+	return utf8.gmatch(text, regex)
 end
+
 
 --- Mask text by replacing every character with a mask
 -- character
@@ -45,7 +47,7 @@ end
 function M.mask_text(text, mask)
 	mask = mask or "*"
 	local masked_text = ""
-	for uchar in M.utf8_gfind(text) do
+	for uchar in M.utf8_gfind(text, ".") do
 		masked_text = masked_text .. mask
 	end
 	return masked_text
@@ -83,14 +85,16 @@ function INPUT.set_text(input, text)
 		input.empty = #text == 0 and #marked_text == 0
 
 		-- measure it
-		input.text_width = get_text_width(input.node, text)		
+		input.text_width = get_text_width(input.node, text)
 		input.marked_text_width = get_text_width(input.node, marked_text)
 		input.total_width = input.text_width + input.marked_text_width
 
 		gui.set_text(input.node, text .. marked_text)
 	end
 end
-
+function INPUT.set_long_pressed_time(input, time)
+	input.long_pressed_time = time
+end
 
 function M.input(node_id, keyboard_type, action_id, action, config, refresh_fn)
 	node_id = core.to_hash(node_id)
@@ -101,8 +105,9 @@ function M.input(node_id, keyboard_type, action_id, action, config, refresh_fn)
 	input.enabled = core.is_enabled(node)
 	input.node = node
 	input.refresh_fn = refresh_fn
-
-	input.text = input.text or ""
+	
+	local use_marked_text = (config and config.use_marked_text == nil) and true or (config and config.use_marked_text)
+	input.text = input.text or "" .. (not use_marked_text and input.marked_text or "")
 	input.marked_text = input.marked_text or ""
 	input.keyboard_type = keyboard_type
 	
@@ -123,6 +128,8 @@ function M.input(node_id, keyboard_type, action_id, action, config, refresh_fn)
 			gui.show_keyboard(keyboard_type, true)
 		elseif input.selected and action.pressed and action_id == actions.TOUCH and not input.over then
 			input.selected = false
+			input.text = input.text .. (not use_marked_text and input.marked_text or "")
+			input.marked_text = ""
 			gui.hide_keyboard()
 		end
 
@@ -143,7 +150,7 @@ function M.input(node_id, keyboard_type, action_id, action, config, refresh_fn)
 					if not config or not config.allowed_characters or action.text:match(config.allowed_characters) then
 						input.text = input.text .. action.text
 						if config and config.max_length then
-							input.text = input.text:sub(1, config.max_length)
+							input.text = utf8.sub(input.text, 1, config.max_length)
 						end
 					end
 					input.marked_text = ""
@@ -152,14 +159,13 @@ function M.input(node_id, keyboard_type, action_id, action, config, refresh_fn)
 			elseif action_id == actions.MARKED_TEXT then
 				input.consumed = true
 				input.marked_text = action.text or ""
+				if config and config.max_length then
+					input.marked_text = utf8.sub(input.marked_text, 1, config.max_length)
+				end
 			-- input deletion
 			elseif action_id == actions.BACKSPACE and (action.pressed or action.repeated) then
 				input.consumed = true
-				local last_s = 0
-				for uchar in M.utf8_gfind(input.text) do
-					last_s = string.len(uchar)
-				end
-				input.text = string.sub(input.text, 1, string.len(input.text) - last_s)
+				input.text = utf8.sub(input.text, 1, -2)
 			end
 		end
 

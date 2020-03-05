@@ -1,81 +1,103 @@
 requiref = require -- to fix cyclic dependencies
+local _ = require "libs.checks"
 local COMMON = require "libs.common"
-local SM = require "libs.sm.sm"
+local SM = require "libs_project.sm"
 local RX = require "libs.rx"
 local SOUNDS = require "libs.sounds"
-
+local DEBUG_INFO = require "debug.debug_info"
+local GA = require "libs.google_analytics"
+local JSON = require "libs.json"
+local EVENTS = require "libs_project.events"
 local RUN_TEST = false
 
 COMMON.empty_ne("defos")
+
+---@class ScriptMain
 local Script = COMMON.new_n28s()
 
 local scenes = {
-    require "scenes.game.game_scene",
-    require "scenes.select_level.select_level_scene",
-    require "scenes.modal.pause.pause_modal",
-    require "scenes.modal.game_over.game_over_modal",
+
 }
 
 function Script:scenes_register()
-    local reg_scenes = {}
-    for i, v in ipairs(scenes) do reg_scenes[i] = v() end --create instances
-    SM:register(reg_scenes)
+	local reg_scenes = {}
+	for i, v in ipairs(scenes) do
+		reg_scenes[i] = v()
+	end --create instances
+	SM:register(reg_scenes)
 end
 
-function Script:input_init()
-    self.show_profiler = false
-    self.input = COMMON.INPUT()
-    self.input.acquire()
-    self.input:add(COMMON.HASHES.INPUT_TOGGLE_PROFILER,self.input_toggle_profile,true)
-    self.input:add(COMMON.HASHES.INPUT_TOGGLE_PHYSICS,self.input_toggle_physics,true)
-    self.input:add(COMMON.HASHES.INPUT_TOGGLE_1,self.input_toggle_1,true)
+function Script:init_input()
+	self.input = COMMON.INPUT()
+	self.input.acquire()
 end
 
-function Script:input_toggle_profile()
-    self.show_profiler = not self.show_profiler
-    profiler.enable_ui(self.show_profiler)
-    profiler.set_ui_vsync_wait_visible(false)
-    return true
+function Script:init_msg()
+	self.msg = COMMON.MSG()
+	self.msg:add(COMMON.HASHES.MSG.LOADING.PROXY_LOADED, function(_, _, _, sender)
+		SCENE_LOADER.load_done(sender)
+	end)
 end
 
-function Script:input_toggle_physics()
-    COMMON.i("toggle physics")
-    msg.post("@system:", "toggle_physics_debug")
-    return true
-end
-
-function Script:input_toggle_1()
-    return true
+function Script:init_random()
+	math.randomseed(os.time())
+	math.random()
+	math.random()
+	math.random()
+	math.random()
 end
 
 function Script:init()
-    math.randomseed(os.time())
-    self:scenes_register()
-    self:input_init()
-    if not RUN_TEST then
-        SM:show("SelectLevelScene")
-    else
-        self.test_runner = require("tests.tests") -- run tests
-        self.test_runner.run()
-    end
+	print("init")
+	self:init_random()
+	self:init_input()
+	self:init_msg()
+
+	self.subscriptions = RX.CompositeSubscription()
+	COMMON.CONTEXT:register(COMMON.CONTEXT.NAMES.MAIN, self)
+	sys.set_error_handler(function(source, message, traceback)
+		COMMON.CONTEXT:clear()    --close all contexts on error. Or engine can be broken
+		COMMON.EVENT_BUS:event(EVENTS.ERROR, { source = source, message = message, traceback = traceback })
+	end)
+
+	COMMON.EVENT_BUS:subscribe(EVENTS.WINDOW_RESIZED):subscribe(function(data)
+		COMMON.i("screen size changed. from " .. "w:" .. data.prev_width .. " h:" .. data.prev_height .. " to w:" .. data.width .. " h:" .. data.height)
+	end)
+	--self:scenes_register()
+
+	if not RUN_TEST then
+
+	else
+		self.test_runner = require("tests.tests") -- run tests
+		self.test_runner.run()
+	end
 
 end
 
 function Script:update(dt)
-    RX.MainScheduler:update(dt)
-    SM:update(dt)
-    SOUNDS:update(dt)
-    if self.test_runner then self.test_runner.update(dt) end
+	dt = dt * COMMON.GLOBAL.speed_game
+	RX.MainScheduler:update(dt)
+	COMMON.APPLICATION.THREAD:update(dt)
+	SM:update(dt)
+	SOUNDS:update(dt)
+	GA.update(dt)
+	DEBUG_INFO.update(dt)
+	if self.test_runner then
+		self.test_runner.update(dt)
+	end
 end
 
 function Script:final()
-    COMMON.INPUT.clear()
-    self.input.release()
+	self.subscriptions:unsubscribe()
+	COMMON.INPUT.clear()
+	self.input.release()
+	COMMON.CONTEXT:unregister(COMMON.CONTEXT.NAMES.MAIN)
 end
 
 function Script:on_input(action_id, action)
-    COMMON.INPUT.handle_pressed_keys(action_id,action)
-    return self.input:on_input(self,action_id,action)
+	COMMON.INPUT.handle_pressed_keys(action_id, action)
+	if self.input:on_input(self, action_id, action) then return true end
+	return SM:on_input(action_id, action)
 end
 
-COMMON.N28S.register(Script)
+COMMON.N28S.register(Script())

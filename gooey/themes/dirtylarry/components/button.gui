@@ -1,7 +1,7 @@
 script: ""
 fonts {
-  name: "roboto_bold"
-  font: "/assets/fonts/roboto_bold.font"
+  name: "dirtylarry"
+  font: "/gooey/themes/dirtylarry/fonts/dirtylarry.font"
 }
 textures {
   name: "dirtylarry"
@@ -101,7 +101,7 @@ nodes {
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
   text: "LABEL"
-  font: "roboto_bold"
+  font: "dirtylarry"
   id: "label"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -124,7 +124,7 @@ nodes {
   layer: "text"
   inherit_alpha: true
   alpha: 1.0
-  outline_alpha: 0.0
+  outline_alpha: 1.0
   shadow_alpha: 1.0
   template_node_child: false
   text_leading: 1.0

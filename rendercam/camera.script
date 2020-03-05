@@ -39,6 +39,7 @@ function init(self)
 	for i, v in ipairs({ "expandView", "fixedArea", "fixedWidth", "fixedHeight" }) do
 		self[v] = self[v] and hash(v)
 	end
+	self.viewAreaInitial = vmath.vector3(self.viewArea)
 	self.scaleMode = self.expandView or self.fixedArea or self.fixedWidth or self.fixedHeight -- get first checked
 	if not self.scaleMode then self.scaleMode = hash("fixedArea") end
 
@@ -113,6 +114,7 @@ function init(self)
 		scaleMode = self.scaleMode,
 		useViewArea = self.useViewArea,
 		viewArea = self.viewArea,
+		viewAreaInitial = self.viewAreaInitial,
 		halfViewArea = vmath.vector3(self.viewArea) * 0.5,
 		wpos = self.wpos,
 		wforwardVec = self.wforwardVec, -- for calculating view matrix

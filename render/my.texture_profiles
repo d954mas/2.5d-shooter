@@ -1,6 +1,18 @@
 path_settings {
+  path: "/assets/images/bg/**/*.atlas"
+  profile: "RGB BG"
+}
+path_settings {
+  path: "/assets/map/images/bg/*.atlas"
+  profile: "RGB BG"
+}
+path_settings {
+  path: "/assets/map/images/**/*.atlas"
+  profile: "Default No MipMaps"
+}
+path_settings {
   path: "**"
-  profile: "Default"
+  profile: "Default No MipMaps"
 }
 profiles {
   name: "Default"
@@ -11,7 +23,35 @@ profiles {
       compression_level: BEST
       compression_type: COMPRESSION_TYPE_WEBP_LOSSY
     }
-    mipmaps: true
+    mipmaps: false
+    max_texture_size: 2048
+    premultiply_alpha: true
+  }
+}
+profiles {
+  name: "RGB BG"
+  platforms {
+    os: OS_ID_GENERIC
+    formats {
+      format: TEXTURE_FORMAT_RGB
+      compression_level: BEST
+      compression_type: COMPRESSION_TYPE_WEBP_LOSSY
+    }
+    mipmaps: false
+    max_texture_size: 1024
+    premultiply_alpha: true
+  }
+}
+profiles {
+  name: "Default No MipMaps"
+  platforms {
+    os: OS_ID_GENERIC
+    formats {
+      format: TEXTURE_FORMAT_RGBA
+      compression_level: BEST
+      compression_type: COMPRESSION_TYPE_WEBP_LOSSY
+    }
+    mipmaps: false
     max_texture_size: 2048
     premultiply_alpha: true
   }
