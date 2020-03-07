@@ -36,7 +36,7 @@ local function parse_tilesets(path)
 			tile.width = tile.width or tile.size or tileset.tilewidth
 			tile.height = tile.height or tile.size or tileset.tileheight
 			--copy tileset properties to tile properties
-			setmetatable(tile.properties,tileset.properties)
+			setmetatable(tile.properties, { __index = tileset.properties })
 			--[[if tile.image then
 				local image_path = tile.image
 				local pathes = {}
@@ -160,18 +160,9 @@ local function repack_objects(array, tiled, map)
 		y = total_height - y
 		object.x, object.y = x, y
 		local object_data = { tile_id = object.gid, properties = object.properties or {}, x = object.x, y = object.y }
-		--copy properties from tile.Not need.Use metatable in game to check tile properties
-		--[[local tile = TILESETS.by_id[object_data.tile_id]
-		if tile then
-			for k,v in pairs(tile.properties)do
-				if object_data.properties[k] == nil	then
-					object_data.properties[k] = v
-				end
-			end
-		end--]]
 		local tile = TILESETS.by_id[object_data.tile_id]
 		if tile then
-			setmetatable(object_data.properties, tile.properties)
+			setmetatable(object_data.properties, { __index = tile.properties })
 		end
 		--objects use center of cell as it pos. By default
 		if not (object_data.properties.ignore_snap_to_grid) then
@@ -195,8 +186,64 @@ local function repack_all(tiled, map)
 end
 
 local function get_layer(tiled, layer_name)
-	for _,l in ipairs(tiled.layers) do if l.name == layer_name then return l end end
+	for _, l in ipairs(tiled.layers) do if l.name == layer_name then return l end end
 	return nil
+end
+
+---@param tilesets LevelTileset[]
+local function check_layer_tilesets(layer, tilesets, no_empty)
+	if layer.data then
+		for _, tile in ipairs(layer.data) do
+			local success = false
+			if (tile == 0 and no_empty) then
+				assert("bad tile:0")
+			else
+				success = true
+			end
+
+			for _, tileset in ipairs(tilesets) do
+				if (tile >= tileset.first_gid and tile <= tileset.end_gid) then
+					success = true
+					break
+				end
+			end
+
+			assert(success, "bad tile:" .. tile)
+		end
+	end
+
+	if layer.objects then
+		for _, object in ipairs(layer.objects) do
+			local success = false
+			for _, tileset in ipairs(tilesets) do
+				if (object.tile_id >= tileset.first_gid and object.tile_id <= tileset.end_gid) then
+					success = true
+					break
+				end
+			end
+			assert(success, "bad object:" .. object.tile_id)
+		end
+	end
+end
+
+---@param map LevelData
+local function parse_floor(map, layer)
+	check_layer_tilesets(layer, { assert(TILESETS.tilesets["walls"]) })
+	local result = {}
+	for i, tile in ipairs(layer.data) do
+		result[i] = { tile_id = tile }
+	end
+	return result
+end
+
+---@param map LevelData
+local function parse_walls(map, layer)
+	check_layer_tilesets(layer, { assert(TILESETS.tilesets["walls"]) })
+	local result = {}
+	for i, tile in ipairs(layer.data) do
+		result[i] = { base = tile }
+	end
+	return result
 end
 
 local function parse_level(path, result_path)
@@ -207,68 +254,69 @@ local function parse_level(path, result_path)
 	local data = create_map_data(tiled)
 	check_tilesets(tiled)
 	repack_all(tiled, data)
-	data.walls = get_layer(tiled,"walls")
-	--[[process_layer(data, assert(get_layer(tiled, "floor")), function(cell, tiled_cell) cell.wall.floor = tiled_cell end)
-	process_layer(data, assert(get_layer(tiled, "ceil")), function(cell, tiled_cell) cell.wall.ceil = tiled_cell end)
-	local wall_keys = { "north", "south", "east", "west" }
-	process_layer(data, assert(get_layer(tiled, "walls")), function(cell, tiled_cell, x, y)
-		local tile = assert(TILESET.by_id[tiled_cell], "unknown tile:" .. tiled_cell)
-		if tile.properties.wall then
-			cell.wall["base"] = tiled_cell
-			for _, v in pairs(wall_keys) do
-				cell.wall[v] = tiled_cell
+	data.floor = parse_floor(data, assert(get_layer(tiled, "floor")))
+	data.ceil = parse_floor(data, assert(get_layer(tiled, "ceil")))
+	data.walls = parse_walls(data, assert(get_layer(tiled, "walls")))
+	--[[
+		local wall_keys = { "north", "south", "east", "west" }
+		process_layer(data, assert(get_layer(tiled, "walls")), function(cell, tiled_cell, x, y)
+			local tile = assert(TILESET.by_id[tiled_cell], "unknown tile:" .. tiled_cell)
+			if tile.properties.wall then
+				cell.wall["base"] = tiled_cell
+				for _, v in pairs(wall_keys) do
+					cell.wall[v] = tiled_cell
+				end
+				cell.blocked = tile.properties.block;
+			elseif tile.properties.thin_wall then
+				cell.wall["thin"] = tiled_cell
+				cell.blocked = tile.properties.block;
+			elseif tile.properties.door then
+				--doors do not mark cell is blocked. It will be marked as blocked when load level
+				table.insert(data.doors, create_object_from_tile(tiled, tiled_cell, x - 0.5, y - 0.5))
+			else
+				assert(nil, "unknown tile:" .. tiled_cell)
 			end
-			cell.blocked = tile.properties.block;
-		elseif tile.properties.thin_wall then
-			cell.wall["thin"] = tiled_cell
-			cell.blocked = tile.properties.block;
-		elseif tile.properties.door then
-			--doors do not mark cell is blocked. It will be marked as blocked when load level
-			table.insert(data.doors, create_object_from_tile(tiled, tiled_cell, x - 0.5, y - 0.5))
-		else
-			assert(nil, "unknown tile:" .. tiled_cell)
-		end
 
-	end)
-	for y = 1, data.size.y do
-		local row = assert(data.cells[y])
-		for x = 1, data.size.x do
-			local cell = assert(row[x])
-			cell.empty = is_wall_empty(cell.wall)
+		end)
+		for y = 1, data.size.y do
+			local row = assert(data.cells[y])
+			for x = 1, data.size.x do
+				local cell = assert(row[x])
+				cell.empty = is_wall_empty(cell.wall)
+			end
 		end
-	end
-	data.light_map = {}
-	for k, v in ipairs(get_layer(tiled, "lights").data) do
-		data.light_map[k] = v == 0 and 0xFFFFFFFF or tonumber("0x" .. string.sub(TILESET.by_id[v].properties.color, 2))
-	end
-	process_objects(assert(get_layer(tiled, "objects"), "no objects layer"), function(object)
-		if object.properties.spawn_point then
-			assert(not data.spawn_point, "spawn point already set")
-			data.spawn_point = { x = object.cell_xf, y = object.cell_yf, angle = object.properties.rotation }
-		else
-			assert(not object.properties.pickup, "pickup on objects layer")
-			assert(not object.properties.enemy, "enemy on objects layer")
-			table.insert(data.objects, object)
+		data.light_map = {}
+		for k, v in ipairs(get_layer(tiled, "lights").data) do
+			data.light_map[k] = v == 0 and 0xFFFFFFFF or tonumber("0x" .. string.sub(TILESET.by_id[v].properties.color, 2))
 		end
-	end)
-	process_objects(assert(get_layer(tiled, "enemies"), "no enemies layer"), function(object)
-		assert(object.properties.enemy, "should be enemy:" .. tostring(object.tile_id))
-		if object.properties.spawner then
-			table.insert(data.spawners, object)
-		else
-			table.insert(data.enemies, object)
-		end
-	end)
-	process_objects(assert(get_layer(tiled, "pickups"), "no pickups layer"), function(object)
-		assert(object.properties.pickup, "should be pickup:" .. tostring(object.tile_id))
-		table.insert(data.pickups, object)
-	end)
+		process_objects(assert(get_layer(tiled, "objects"), "no objects layer"), function(object)
+			if object.properties.spawn_point then
+				assert(not data.spawn_point, "spawn point already set")
+				data.spawn_point = { x = object.cell_xf, y = object.cell_yf, angle = object.properties.rotation }
+			else
+				assert(not object.properties.pickup, "pickup on objects layer")
+				assert(not object.properties.enemy, "enemy on objects layer")
+				table.insert(data.objects, object)
+			end
+		end)
+		process_objects(assert(get_layer(tiled, "enemies"), "no enemies layer"), function(object)
+			assert(object.properties.enemy, "should be enemy:" .. tostring(object.tile_id))
+			if object.properties.spawner then
+				table.insert(data.spawners, object)
+			else
+				table.insert(data.enemies, object)
+			end
+		end)
+		process_objects(assert(get_layer(tiled, "pickups"), "no pickups layer"), function(object)
+			assert(object.properties.pickup, "should be pickup:" .. tostring(object.tile_id))
+			table.insert(data.pickups, object)
+		end)
 
-	clean_map(data)
+		clean_map(data)
 
-	--region validations
-	assert(data.spawn_point, "no spawn point")
-	--endregion--]]
+		--region validations
+		assert(data.spawn_point, "no spawn point")
+		--endregion--]]
 
 	local json = NEED_PRETTY and pretty(data, nil, "  ", "") or cjson.encode(data)
 	local file = assert(io.open(result_path, "w+"))
