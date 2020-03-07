@@ -77,6 +77,7 @@ end
 function Scene:show_done() end
 
 function Scene:pause()
+	msg.post(self._url, COMMON.HASHES.INPUT.RELEASE_FOCUS)
 	assert(self._state == SCENE_ENUMS.STATES.RUNNING)
 	msg.post(self._url, COMMON.HASHES.MSG.SET_TIME_STEP, { factor = 0, mode = 0 })
 	self:pause_done()
@@ -87,6 +88,7 @@ end
 function Scene:pause_done() end
 
 function Scene:resume()
+	msg.post(self._url, COMMON.HASHES.INPUT.ACQUIRE_FOCUS)
 	assert(self._state == SCENE_ENUMS.STATES.PAUSED)
 	msg.post(self._url, COMMON.HASHES.MSG.SET_TIME_STEP, { factor = COMMON.GLOBAL.speed_game, mode = 0 })
 	self:resume_done()

@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug/top_panel/debug_top_panel.gui" beforeDir="false" afterPath="$PROJECT_DIR$/debug/top_panel/debug_top_panel.gui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug/top_panel/debug_top_panel.gui_script" beforeDir="false" afterPath="$PROJECT_DIR$/debug/top_panel/debug_top_panel.gui_script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/templates/gui_templates.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/templates/gui_templates.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/sm/scene.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/sm/scene.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/sm/scene_manager.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/sm/scene_manager.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/my.render_script" beforeDir="false" afterPath="$PROJECT_DIR$/render/my.render_script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/main_menu/main_menu_scene.gui" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/main_menu/main_menu_scene.gui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,10 +93,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="755" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583060915433" />
-    <state x="680" y="151" key="CommitChangelistDialog2" timestamp="1583588146738">
+    <state x="680" y="151" key="CommitChangelistDialog2" timestamp="1583616132264">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="680" y="151" key="CommitChangelistDialog2/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583588146738" />
+    <state x="680" y="151" key="CommitChangelistDialog2/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583616132264" />
     <state x="21" y="108" width="1628" height="800" key="DiffContextDialog" timestamp="1583436351764">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -114,10 +117,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="617" y="289" key="Vcs.Push.Dialog.v2/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583588148829" />
-    <state x="778" y="200" width="762" height="804" key="find.popup" timestamp="1583581680970">
+    <state x="778" y="200" width="805" height="804" key="find.popup" timestamp="1583615830540">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="778" y="200" width="762" height="804" key="find.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583581680970" />
+    <state x="778" y="200" width="805" height="804" key="find.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583615830540" />
     <state x="854" y="421" key="git4idea.rebase.GitRebaseDialog" timestamp="1582738298386">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -134,10 +137,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="682" y="261" key="run.anything.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583582071081" />
-    <state x="686" y="274" width="672" height="678" key="search.everywhere.popup" timestamp="1583592691173">
+    <state x="686" y="274" width="672" height="678" key="search.everywhere.popup" timestamp="1583615959063">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="686" y="274" width="672" height="678" key="search.everywhere.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583592691173" />
+    <state x="686" y="274" width="672" height="678" key="search.everywhere.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583615959063" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -154,7 +157,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="lua-line">
           <url>file://$PROJECT_DIR$/assets/templates/gui_templates.lua</url>
-          <line>26</line>
+          <line>28</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="lua-line">

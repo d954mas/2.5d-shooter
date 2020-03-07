@@ -1,0 +1,42 @@
+local COMMON = require "libs.common"
+local GUI = require "assets.templates.gui_templates"
+
+local Script = COMMON.new_n28s()
+
+function Script:bind_vh()
+	self.view = {
+		btn_play = GUI.Button("btn_play"),
+		btn_tests = GUI.Button("btn_tests")
+	}
+end
+
+function Script:init_gui()
+	self.view.btn_play:set_input_listener(function ()
+		print("play")
+	end)
+	self.view.btn_tests:set_input_listener(function ()
+		print("tests")
+	end)
+end
+
+function Script:init()
+	self:bind_vh()
+	self:init_gui()
+	COMMON.input_acquire()
+end
+
+function Script:update(dt)end
+
+function Script:final()
+	COMMON.input_release()
+end
+
+
+function Script:on_input(action_id, action)
+	if(self.view.btn_play:on_input(action_id,action).consumed) then return true end
+	if(self.view.btn_tests:on_input(action_id,action).consumed) then return true end
+end
+
+
+
+COMMON.N28S.register(Script())

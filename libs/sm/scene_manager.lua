@@ -116,8 +116,6 @@ function M:_unload_scene_f(scene, config)
 	})
 	config = config or {}
 
-	COMMON.i("release input for scene:" .. scene._name, TAG)
-	msg.post(scene._url, COMMON.HASHES.INPUT_RELEASE_FOCUS)
 
 	if scene._state == SCENE_ENUMS.RUNNING then
 		--if !config.skip_transition then scene_transition(self,scene,scene.STATIC.TRANSITIONS.ON_HIDE) end

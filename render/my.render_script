@@ -11,7 +11,7 @@ local TAG = "Render"
 local Render = COMMON.new_n28s()
 --region init
 function Render:init()
-	self.clear_color = vmath.vector4(1, 1, 1, 0)
+	self.clear_color = vmath.vector4(0, 0, 0, 0)
 	self.screen_size = {
 		w = render.get_window_width(),
 		h = render.get_window_height(),

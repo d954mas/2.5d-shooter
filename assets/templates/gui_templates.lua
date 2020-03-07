@@ -1,6 +1,8 @@
 local GOOEY = require "gooey.gooey"
 local M = {}
 
+M.Button = require "assets.templates.button"
+
 local btn_scale_refresh = function(button)
 	if not button.scale_default then
 		button.scale_default = gui.get_scale(button.node)
