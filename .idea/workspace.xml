@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scenes/main_menu/main_menu_scene.collection" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/main_menu/main_menu_scene.gui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/main_menu/main_menu_scene.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init.collection" beforeDir="false" afterPath="$PROJECT_DIR$/init.collection" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init_controller.script" beforeDir="false" afterPath="$PROJECT_DIR$/init_controller.script" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/checks.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/checks.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/common.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/common.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/google_analytics.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/google_analytics.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/sm/scene.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/sm/scene.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/sm/scene_loader.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/sm/scene_loader.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/sm/scene_manager.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/sm/scene_manager.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs_project/sm.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs_project/sm.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/top_panel/debug_top_panel.gui" beforeDir="false" afterPath="$PROJECT_DIR$/debug/top_panel/debug_top_panel.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/top_panel/debug_top_panel.gui_script" beforeDir="false" afterPath="$PROJECT_DIR$/debug/top_panel/debug_top_panel.gui_script" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +78,8 @@
     <MESSAGE value="speed up tween" />
     <MESSAGE value="clean" />
     <MESSAGE value="add scene with analytics" />
-    <option name="LAST_COMMIT_MESSAGE" value="add scene with analytics" />
+    <MESSAGE value="scene manager fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="scene manager fixes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="755" y="359" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582717681355">
@@ -99,10 +90,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="755" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583060915433" />
-    <state x="680" y="151" key="CommitChangelistDialog2" timestamp="1583584237743">
+    <state x="680" y="151" key="CommitChangelistDialog2" timestamp="1583588146738">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="680" y="151" key="CommitChangelistDialog2/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583584237743" />
+    <state x="680" y="151" key="CommitChangelistDialog2/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583588146738" />
     <state x="21" y="108" width="1628" height="800" key="DiffContextDialog" timestamp="1583436351764">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -119,10 +110,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="484" y="261" key="VCS.ChangeListViewerDialog/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1582736954705" />
-    <state x="617" y="289" key="Vcs.Push.Dialog.v2" timestamp="1583584244013">
+    <state x="617" y="289" key="Vcs.Push.Dialog.v2" timestamp="1583588148829">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="617" y="289" key="Vcs.Push.Dialog.v2/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583584244013" />
+    <state x="617" y="289" key="Vcs.Push.Dialog.v2/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583588148829" />
     <state x="778" y="200" width="762" height="804" key="find.popup" timestamp="1583581680970">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -143,10 +134,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="682" y="261" key="run.anything.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583582071081" />
-    <state x="686" y="274" width="672" height="678" key="search.everywhere.popup" timestamp="1583587778523">
+    <state x="686" y="274" width="672" height="678" key="search.everywhere.popup" timestamp="1583592691173">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="686" y="274" width="672" height="678" key="search.everywhere.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583587778523" />
+    <state x="686" y="274" width="672" height="678" key="search.everywhere.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583592691173" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

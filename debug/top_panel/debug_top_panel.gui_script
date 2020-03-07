@@ -3,6 +3,7 @@ local DEBUG_INFO = require "debug.debug_info"
 local GUI = require "libs.gui.gui"
 local GOOEY = require "gooey.gooey"
 local SM = require "libs_project.sm"
+local SceneDebugView = require "debug.view.scene_debug_view"
 
 local Script = COMMON.new_n28s()
 
@@ -16,15 +17,23 @@ function Script:bind_vh()
 	self.views = {
 		btn_top_panel_show = GUI.ButtonIconTest("btn_top_panel_show"),
 		btn_profiler = GUI.ButtonIconTest("btn_profiler"),
+		btn_scene = GUI.ButtonIconTest("btn_scene"),
 		btn_time_up = GUI.ButtonIconTest("game_speed/btn_up"),
 		btn_time_down = GUI.ButtonIconTest("game_speed/btn_down"),
+		btn_time_down = GUI.ButtonIconTest("game_speed/btn_down"),
+		scene_debug_view = SceneDebugView("scene_debug_view"),
 	}
+
+	self.views.scene_debug_view:set_enabled(false)
 	self.views.btn_top_panel_show:set_input_listener(function()
 		self:input_toggle_gui_visible()
 	end)
 	self.views.btn_profiler:set_input_listener(function()
 		self.views.btn_profiler.show_profiler = not self.views.btn_profiler.show_profiler
 		profiler.enable_ui(self.views.btn_profiler.show_profiler)
+	end)
+	self.views.btn_scene:set_input_listener(function()
+		self.views.scene_debug_view:set_enabled(not gui.is_enabled(self.views.scene_debug_view.vh.root))
 	end)
 	self.views.btn_time_up:set_input_listener(function()
 		self:speed_game_set(1)
@@ -59,6 +68,7 @@ function Script:update(dt)
 		gui.set_text(self.vh.lbl_game_speed, string.format("Speed:%.2f", COMMON.GLOBAL.speed_game))
 		gui.set_text(self.vh.lbl_cpu, "Cpu:" .. string.format("%.2f", profiler.get_cpu_usage()))
 		gui.set_text(self.vh.lbl_memory, "Mem:" .. string.format("%.2f Mb", profiler.get_memory_usage()/1024/1024))
+		self.views.scene_debug_view:update(dt)
 	end
 
 	local scene = SM.stack:peek()
@@ -85,6 +95,7 @@ function Script:on_input(action_id, action)
 	if (self.views.btn_top_panel_show:on_input(action_id, action).consumed) then return true end
 	if(self.show) then
 		if(self.views.btn_profiler:on_input(action_id, action).consumed) then return true end
+		if(self.views.btn_scene:on_input(action_id, action).consumed) then return true end
 		if(self.views.btn_time_up:on_input(action_id, action).consumed) then return true end
 		if(self.views.btn_time_down:on_input(action_id, action).consumed) then return true end
 	end
