@@ -3,7 +3,6 @@ local lfs = requiref "lfs"
 local cjson = requiref "cjson"
 local pretty = requiref "resty.prettycjson"
 
-
 cjson.encode_sparse_array(true)
 cjson.decode_invalid_numbers(false)
 
@@ -44,7 +43,6 @@ cjson.decode_invalid_numbers(false)
 --vector3 is not vector3 here. I use it only to autocomplete worked. It will be tables with x,y,z
 ---@class LevelData
 ---@field size vector3
----@field wall LevelDataCellWall[][]
----@field floor LevelDataCellFloor[][]
----@field ceil LevelDataCellFloor[][]
+---@field floor LevelDataCellFloor[]
+---@field ceil LevelDataCellFloor[]
 

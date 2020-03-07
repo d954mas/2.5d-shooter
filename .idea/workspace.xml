@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/parser/typedefs.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/parser/typedefs.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/sources/test_level.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/sources/test_level.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/levels/tilesets/tilesets.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/tilesets/tilesets.tmx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +43,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Lua" />
+    <property name="settings.editor.selected.configurable" value="preferences.Lua" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -96,10 +99,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="766" y="298" key="FileChooserDialogImpl/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583435649240" />
-    <state x="505" y="131" key="SettingsEditor" timestamp="1582722676630">
+    <state x="505" y="131" key="SettingsEditor" timestamp="1583577801946">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="505" y="131" key="SettingsEditor/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1582722676630" />
+    <state x="505" y="131" key="SettingsEditor/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583577801946" />
     <state x="484" y="261" key="VCS.ChangeListViewerDialog" timestamp="1582736954705">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -108,10 +111,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="617" y="289" key="Vcs.Push.Dialog.v2/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583435157642" />
-    <state x="778" y="200" width="762" height="804" key="find.popup" timestamp="1583264006507">
+    <state x="778" y="200" width="762" height="804" key="find.popup" timestamp="1583577777151">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="778" y="200" width="762" height="804" key="find.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583264006507" />
+    <state x="778" y="200" width="762" height="804" key="find.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583577777151" />
     <state x="854" y="421" key="git4idea.rebase.GitRebaseDialog" timestamp="1582738298386">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
