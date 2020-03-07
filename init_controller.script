@@ -8,6 +8,7 @@ local DEBUG_INFO = require "debug.debug_info"
 local GA = require "libs.google_analytics"
 local JSON = require "libs.json"
 local EVENTS = require "libs_project.events"
+
 local RUN_TEST = false
 
 COMMON.empty_ne("defos")
@@ -48,10 +49,10 @@ function Script:init_random()
 end
 
 function Script:init()
-	print("init")
 	self:init_random()
 	self:init_input()
 	self:init_msg()
+	GA.init("UA-93117606-2")
 
 	self.subscriptions = RX.CompositeSubscription()
 	COMMON.CONTEXT:register(COMMON.CONTEXT.NAMES.MAIN, self)

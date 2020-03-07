@@ -11,9 +11,8 @@ local TAG = "GOOGLE ANALYTICS"
 
 local M = {}
 
-function M.init(tracking_id, uuid)
+function M.init(tracking_id)
 	assert(tracking_id)
-	assert(uuid)
 	assert(not M.tracker, "already inited")
 	GA_QUEUE.log = function(s, ...)
 		if (s == "") then
@@ -25,7 +24,7 @@ function M.init(tracking_id, uuid)
 			LOG.i(s, TAG, 2)
 		end
 	end
-	M.tracker = GA.get_default_tracker(tracking_id, uuid)
+	M.tracker = GA.get_default_tracker(tracking_id)
 
 	local handle = crash.load_previous()
 	if handle then

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
+    <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="clean">
+      <change afterPath="$PROJECT_DIR$/libs/sm/scene_with_ga.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/parser/parser.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/parser/parser.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/parser/typedefs.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/parser/typedefs.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/result/test_level.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/result/test_level.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/result/tileset.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/result/tileset.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.project" beforeDir="false" afterPath="$PROJECT_DIR$/game.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/googleanalytics/ga.lua" beforeDir="false" afterPath="$PROJECT_DIR$/googleanalytics/ga.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init_controller.script" beforeDir="false" afterPath="$PROJECT_DIR$/init_controller.script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/google_analytics.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/google_analytics.lua" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +38,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/sm" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -53,6 +54,7 @@
       <recent name="C:\Users\d954m\IdeaProjects\app\libs\gui" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\d954m\IdeaProjects\2.5d-shooter_new\libs\sm" />
       <recent name="C:\Users\d954m\IdeaProjects\app\libs\actions" />
       <recent name="C:\Users\d954m\IdeaProjects\app\libs\sm2" />
     </key>
@@ -88,10 +90,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="755" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583060915433" />
-    <state x="680" y="151" key="CommitChangelistDialog2" timestamp="1583436424218">
+    <state x="680" y="151" key="CommitChangelistDialog2" timestamp="1583583018628">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="680" y="151" key="CommitChangelistDialog2/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583436424218" />
+    <state x="680" y="151" key="CommitChangelistDialog2/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583583018628" />
     <state x="21" y="108" width="1628" height="800" key="DiffContextDialog" timestamp="1583436351764">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -132,10 +134,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="682" y="261" key="run.anything.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583582071081" />
-    <state x="687" y="275" width="672" height="678" key="search.everywhere.popup" timestamp="1583435010816">
+    <state x="686" y="274" width="672" height="678" key="search.everywhere.popup" timestamp="1583583896516">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="687" y="275" width="672" height="678" key="search.everywhere.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583435010816" />
+    <state x="686" y="274" width="672" height="678" key="search.everywhere.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583583896516" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
