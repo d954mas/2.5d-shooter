@@ -41,6 +41,10 @@ function M.init(tracking_id)
 			M.exception_prev_time = os.time()
 		end
 	end)
+
+	--send event when game start. To track retention.
+	M.event("base","start")
+	M.flush()
 end
 
 function M.flush()
