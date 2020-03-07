@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/google_analytics.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/google_analytics.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/view/scene_debug_view.lua" beforeDir="false" afterPath="$PROJECT_DIR$/debug/view/scene_debug_view.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.collection" beforeDir="false" afterPath="$PROJECT_DIR$/init.collection" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/sm/scene.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/sm/scene.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/sm/scene_manager.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/sm/scene_manager.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs_project/sm.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs_project/sm.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/main_menu/main_menu_scene.collection" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/main_menu/main_menu_scene.collection" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/main_menu/main_menu_scene.gui_script" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/main_menu/main_menu_scene.gui_script" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +85,8 @@
     <MESSAGE value="add scene with analytics" />
     <MESSAGE value="scene manager fixes" />
     <MESSAGE value="scene manager fixes. Add main menu buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="scene manager fixes. Add main menu buttons" />
+    <MESSAGE value="send event when game start, to track retention" />
+    <option name="LAST_COMMIT_MESSAGE" value="send event when game start, to track retention" />
   </component>
   <component name="WindowStateProjectService">
     <state x="755" y="359" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582717681355">
@@ -90,10 +97,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="755" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583060915433" />
-    <state x="680" y="151" key="CommitChangelistDialog2" timestamp="1583616189542">
+    <state x="680" y="151" key="CommitChangelistDialog2" timestamp="1583616764226">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="680" y="151" key="CommitChangelistDialog2/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583616189542" />
+    <state x="680" y="151" key="CommitChangelistDialog2/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583616764226" />
     <state x="21" y="108" width="1628" height="800" key="DiffContextDialog" timestamp="1583616163422">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -134,10 +141,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="682" y="261" key="run.anything.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583582071081" />
-    <state x="686" y="274" width="672" height="678" key="search.everywhere.popup" timestamp="1583616508854">
+    <state x="686" y="274" width="672" height="678" key="search.everywhere.popup" timestamp="1583617439653">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="686" y="274" width="672" height="678" key="search.everywhere.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583616508854" />
+    <state x="686" y="274" width="672" height="678" key="search.everywhere.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583617439653" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

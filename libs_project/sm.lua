@@ -4,10 +4,12 @@ local sm = SM()
 
 local scenes = {
 	require "scenes.main_menu.main_menu_scene",
+	require "scenes.tests_list.tests_list_scene",
 }
 
 sm.SCENES = {
-	MAIN_MENU = "MainMenuScene"
+	MAIN_MENU = "MainMenuScene",
+	TESTS_LIST = "TestsListScene"
 }
 
 

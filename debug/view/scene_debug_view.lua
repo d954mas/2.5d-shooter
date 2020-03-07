@@ -21,7 +21,7 @@ function View:get_scene_string()
 	local s = ""
 	for _, scene in pairs(SM.scenes) do
 		s = s .. "[" .. (scene._config.modal and "M]" or "S]")
-		s = s .. " " .. scene._name .. " " .. scene._state
+		s = s .. " " .. scene._name .. " " .. scene._state .. "\n"
 	end
 	return s
 end
@@ -32,7 +32,7 @@ function View:get_scene_stack_string()
 	for i=1, len, 1 do
 		local scene = SM.stack.stack[len-i+1]
 		s = s .. "[" .. (scene._config.modal and "M]" or "S]")
-		s = s .. " " .. scene._name .. " " .. scene._state
+		s = s .. " " .. scene._name .. " " .. scene._state .. "\n"
 	end
 	return s
 end

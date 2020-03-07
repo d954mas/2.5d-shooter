@@ -73,7 +73,12 @@ function M:replace(name)
 	end)
 end
 
-function M:back() end
+function M:back()
+	assert(not self:is_working())
+	self.co = coroutine.create(function()
+		self:_back_scene_f()
+	end)
+end
 
 function M:back_to() end
 
@@ -117,7 +122,7 @@ function M:_unload_scene_f(scene, config)
 	config = config or {}
 
 
-	if scene._state == SCENE_ENUMS.RUNNING then
+	if scene._state == SCENE_ENUMS.STATES.RUNNING then
 		--if !config.skip_transition then scene_transition(self,scene,scene.STATIC.TRANSITIONS.ON_HIDE) end
 		scene:pause()
 	end
@@ -141,7 +146,7 @@ function M:_close_modals_f()
 		local scene = self.stack:peek()
 		if not scene or not scene._config.modal then break end
 		print("unload modal scene:" .. scene._name)
-		self:_unload_scene_f(scene)
+		self:_unload_scene_f(self.stack:pop())
 	end
 	self.co = nil
 end
@@ -189,6 +194,23 @@ function M:_replace_scene_f(scene)
 	self:_unload_scene_f(self.stack:pop(), unload_config)
 	self:_load_scene_f(scene)
 	self.stack:push(scene)
+end
+
+function M:_back_scene_f()
+	assert(#self.stack.stack>1,"can't go back.")
+	local current_scene = self.stack:peek()
+	local prev_scene = self.stack:peek(1)
+
+	--start loading new scene.Before old was unloaded.
+	if prev_scene._state == SCENE_ENUMS.STATES.UNLOADED then prev_scene:load(true) end
+
+	---@type SceneUnloadConfig
+	local unload_config = {}
+	unload_config.new_scene = prev_scene
+
+
+	if (current_scene) then self:_unload_scene_f(self.stack:pop(), unload_config) end
+	self:_load_scene_f(prev_scene)
 end
 
 ---@return Scene

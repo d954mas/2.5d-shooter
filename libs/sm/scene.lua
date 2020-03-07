@@ -46,7 +46,7 @@ end
 function Scene:load_done() end
 
 function Scene:unload()
-	assert(self._state == SCENE_ENUMS.STATES.STATES.HIDE)
+	assert(self._state == SCENE_ENUMS.STATES.HIDE)
 	SCENE_LOADER.unload(self)
 	self:unload_done()
 	self._state = SCENE_ENUMS.STATES.UNLOADED
