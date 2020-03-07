@@ -33,11 +33,7 @@ function M:is_working() return self.co end
 
 function M:update(dt)
 	if self.co then
-		local ok, res = coroutine.resume(self.co, dt)
-		if not ok then
-			COMMON.e(res, TAG)
-			self.co = nil
-		end
+		self.co = COMMON.coroutine_resume(self.co)
 	end
 
 	local scenes_updated = {}
@@ -64,6 +60,17 @@ function M:reload() end
 function M:show(name)
 	checks("?", "string")
 	assert(not self:is_working())
+	self.co = coroutine.create(function()
+		self:_show_scene_f(self:get_scene_by_name(name))
+	end)
+end
+
+function M:replace(name)
+	checks("?", "string")
+	assert(not self:is_working())
+	self.co = coroutine.create(function()
+		self:_replace_scene_f(self:get_scene_by_name(name))
+	end)
 end
 
 function M:back() end
@@ -82,21 +89,14 @@ end
 ---@field skip_transition boolean|nil
 ---@field keep_show boolean|nil
 
----@param stack SceneStack
-local function unload_top_f(stack)
-	local scene = stack:pop()
-	if not scene then return end
-end
-
 ---@param scene Scene
-local function load_scene_f(scene)
-	checks("Scene")
+function M:_load_scene_f(scene)
+	checks("?", "Scene")
 	if scene._state == SCENE_ENUMS.STATES.UNLOADED then
 		scene:load()
 	end
 	--wait next scene loaded
 	while scene._state == SCENE_ENUMS.STATES.LOADING do coroutine.yield() end
-
 	if scene._state == SCENE_ENUMS.STATES.HIDE then
 		scene:show()
 	end
@@ -107,8 +107,9 @@ local function load_scene_f(scene)
 	end
 end
 
-local function unload_scene_f(scene, config)
-	checks("Scene", {
+---@param config SceneUnloadConfig
+function M:_unload_scene_f(scene, config)
+	checks("?", "Scene", {
 		new_scene = "?Scene",
 		skip_transition = "?boolean",
 		keep_show = "?boolean",
@@ -137,39 +138,59 @@ local function unload_scene_f(scene, config)
 end
 
 ---@param stack SceneStack
-local function close_modals_f(stack)
-	checks("SceneStack")
+function M:_close_modals_f()
 	while (true) do
-		local scene = stack:peek()
+		local scene = self.stack:peek()
 		if not scene or not scene._config.modal then break end
 		print("unload modal scene:" .. scene._name)
-		unload_scene_f(scene)
+		self:_unload_scene_f(scene)
 	end
 	self.co = nil
 end
 
----@param stack SceneStack
 ---@param scene Scene
-local function show_scene_f(stack, scene)
-	checks("SceneStack", "Scene")
+function M:_show_scene_f(scene)
+	checks("?", "Scene")
+
+	local current_scene = self.stack:peek()
 
 	--start loading new scene.Before old was unloaded.
-	if scene._state == SCENE_ENUMS.STATES.UNLOADED then
-		scene:load(true)
-	end
+	if scene._state == SCENE_ENUMS.STATES.UNLOADED then scene:load(true) end
 
 	---@type SceneUnloadConfig
 	local unload_config = {}
 	unload_config.new_scene = scene
 	if (scene._config.modal) then
-		local prev_modal = stack:peek() and stack:peek()._config.modal
+		assert(current_scene, "modal can't be first scene")
+		local current_modal = current_scene._config.modal
 		--show current scene when show new modal
-		unload_config.keep_show = not prev_modal
+		unload_config.keep_show = not current_modal
 	else
-		close_modals_f(stack)
+		self:_close_modals_f()
 	end
-	unload_scene_f(stack:pop(), unload_config)
-	load_scene_f(scene)
+	if (current_scene) then self:_unload_scene_f(current_scene, unload_config) end
+	self:_load_scene_f(scene)
+	self.stack:push(scene)
+end
+
+---@param scene Scene
+function M:_replace_scene_f(scene)
+	checks("?", "Scene")
+
+	local current_scene = self.stack:peek()
+	assert(current_scene, "can't replace. No current scene")
+	--start loading new scene.Before old was unloaded.
+	if scene._state == SCENE_ENUMS.STATES.UNLOADED then scene:load(true) end
+
+	---@type SceneUnloadConfig
+	local unload_config = {}
+	unload_config.new_scene = scene
+
+	assert(scene._config.modal ~= current_scene._config.modal, "modal can't replace scene and vice versa")
+
+	self:_unload_scene_f(self.stack:pop(), unload_config)
+	self:_load_scene_f(scene)
+	self.stack:push(scene)
 end
 
 ---@return Scene

@@ -8,6 +8,7 @@ local DEBUG_INFO = require "debug.debug_info"
 local GA = require "libs.google_analytics"
 local JSON = require "libs.json"
 local EVENTS = require "libs_project.events"
+local SCENE_LOADER = require "libs.sm.scene_loader"
 
 local RUN_TEST = false
 
@@ -53,6 +54,7 @@ function Script:init()
 	self:init_input()
 	self:init_msg()
 	GA.init("UA-93117606-2")
+	SM:register_scenes()
 
 	self.subscriptions = RX.CompositeSubscription()
 	COMMON.CONTEXT:register(COMMON.CONTEXT.NAMES.MAIN, self)
@@ -67,7 +69,7 @@ function Script:init()
 	--self:scenes_register()
 
 	if not RUN_TEST then
-
+		SM:show(SM.SCENES.MAIN_MENU)
 	else
 		self.test_runner = require("tests.tests") -- run tests
 		self.test_runner.run()
@@ -86,6 +88,10 @@ function Script:update(dt)
 	if self.test_runner then
 		self.test_runner.update(dt)
 	end
+end
+
+function Script:on_message(message_id, message, sender)
+	self.msg:on_message(self, message_id, message, sender)
 end
 
 function Script:final()

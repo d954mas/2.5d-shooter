@@ -34,11 +34,11 @@ function M.init(tracking_id)
 
 	M.subscription = COMMON.EVENT_BUS:subscribe(EVENTS.ERROR):subscribe(function (data)
 		--do not send same message
-		self.exception_prev_time = self.exception_prev_time or 0
-		if self.exception_prev ~= data.message or (os.time() - self.exception_prev_time) > 60 * 1 then
+		M.exception_prev_time = M.exception_prev_time or 0
+		if M.exception_prev ~= data.message or (os.time() - M.exception_prev_time) > 60 * 1 then
 			GA.exception(JSON.encode(data, false));
-			self.exception_prev = data.message
-			self.exception_prev_time = os.time()
+			M.exception_prev = data.message
+			M.exception_prev_time = os.time()
 		end
 	end)
 end

@@ -19,8 +19,8 @@ function M.load(scene)
 		return
 	end
 	M.scene_load[tostring(scene._url.path)] = s
-	COMMON.i("start load:" .. scene._url, TAG)
-	msg.post(scene._url.url, COMMON.HASHES.MSG.LOADING.ASYNC_LOAD)
+	COMMON.i("start load:" .. scene._url, "SCENE")
+	msg.post(scene._url, COMMON.HASHES.MSG.LOADING.ASYNC_LOAD)
 	--msg.post("main:/scene_loader", COMMON.HASHES.MSG_SM_LOAD, { url = scene._url})
 	return s
 end
@@ -31,7 +31,6 @@ function M.is_loaded(scene)
 end
 
 function M.load_done(url)
-	checks("url")
 	local subject = M.scene_load[tostring(url.path)]
 	if subject then
 		M.scene_load[tostring(url.path)] = nil

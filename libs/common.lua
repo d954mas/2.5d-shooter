@@ -216,7 +216,7 @@ end
 
 ---@return coroutine|nil return coroutine if it can be resumed(no errors and not dead)
 function M.coroutine_resume(cor, ...)
-    M.COROUTINES.coroutine_resume(cor, ...)
+    return M.COROUTINES.coroutine_resume(cor, ...)
 end
 
 function M.coroutine_wait(time)

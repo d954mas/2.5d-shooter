@@ -71,7 +71,7 @@ local function check_string_type(value, expected_type)
 	return nil, string.format(
 			'bad argument %s to %s (%s expected, got %s)',
 	-- argname and function name are formatted by the caller
-			'%s', '%s', expected_type, value.class and value.class.name or type(value)
+			'%s', '%s', expected_type, type(value) ~="userdata" and value and value.class and value.class.name or type(value)
 	)
 end
 

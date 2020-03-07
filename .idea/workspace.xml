@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="clean">
-      <change afterPath="$PROJECT_DIR$/libs/sm/scene_with_ga.lua" afterDir="false" />
+    <list default="true" id="c538386c-cb7e-48f9-aa3e-c0edb99bfdc3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/scenes/main_menu/main_menu_scene.collection" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scenes/main_menu/main_menu_scene.gui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scenes/main_menu/main_menu_scene.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.project" beforeDir="false" afterPath="$PROJECT_DIR$/game.project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/googleanalytics/ga.lua" beforeDir="false" afterPath="$PROJECT_DIR$/googleanalytics/ga.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.collection" beforeDir="false" afterPath="$PROJECT_DIR$/init.collection" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/init_controller.script" beforeDir="false" afterPath="$PROJECT_DIR$/init_controller.script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/checks.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/checks.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/common.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/common.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/google_analytics.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/google_analytics.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/sm/scene.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/sm/scene.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/sm/scene_loader.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/sm/scene_loader.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/sm/scene_manager.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/sm/scene_manager.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs_project/sm.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs_project/sm.lua" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +45,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/sm" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/scenes/menu" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -54,6 +61,7 @@
       <recent name="C:\Users\d954m\IdeaProjects\app\libs\gui" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\d954m\IdeaProjects\2.5d-shooter_new\scenes\menu" />
       <recent name="C:\Users\d954m\IdeaProjects\2.5d-shooter_new\libs\sm" />
       <recent name="C:\Users\d954m\IdeaProjects\app\libs\actions" />
       <recent name="C:\Users\d954m\IdeaProjects\app\libs\sm2" />
@@ -79,7 +87,8 @@
     <MESSAGE value="wip" />
     <MESSAGE value="speed up tween" />
     <MESSAGE value="clean" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean" />
+    <MESSAGE value="add scene with analytics" />
+    <option name="LAST_COMMIT_MESSAGE" value="add scene with analytics" />
   </component>
   <component name="WindowStateProjectService">
     <state x="755" y="359" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582717681355">
@@ -90,10 +99,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="755" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583060915433" />
-    <state x="680" y="151" key="CommitChangelistDialog2" timestamp="1583583018628">
+    <state x="680" y="151" key="CommitChangelistDialog2" timestamp="1583584237743">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="680" y="151" key="CommitChangelistDialog2/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583583018628" />
+    <state x="680" y="151" key="CommitChangelistDialog2/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583584237743" />
     <state x="21" y="108" width="1628" height="800" key="DiffContextDialog" timestamp="1583436351764">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -110,10 +119,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="484" y="261" key="VCS.ChangeListViewerDialog/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1582736954705" />
-    <state x="617" y="289" key="Vcs.Push.Dialog.v2" timestamp="1583435157642">
+    <state x="617" y="289" key="Vcs.Push.Dialog.v2" timestamp="1583584244013">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="617" y="289" key="Vcs.Push.Dialog.v2/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583435157642" />
+    <state x="617" y="289" key="Vcs.Push.Dialog.v2/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583584244013" />
     <state x="778" y="200" width="762" height="804" key="find.popup" timestamp="1583581680970">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -134,10 +143,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="682" y="261" key="run.anything.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583582071081" />
-    <state x="686" y="274" width="672" height="678" key="search.everywhere.popup" timestamp="1583583896516">
+    <state x="686" y="274" width="672" height="678" key="search.everywhere.popup" timestamp="1583587778523">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="686" y="274" width="672" height="678" key="search.everywhere.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583583896516" />
+    <state x="686" y="274" width="672" height="678" key="search.everywhere.popup/-2560.-13.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583587778523" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -159,7 +168,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="lua-line">
           <url>file://$PROJECT_DIR$/libs/sm/scene.lua</url>
-          <line>74</line>
+          <line>78</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="lua-line">
