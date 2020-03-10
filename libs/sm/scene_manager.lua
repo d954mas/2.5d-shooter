@@ -57,11 +57,12 @@ end
 
 function M:reload() end
 
-function M:show(name)
-	checks("?", "string")
+---@param input nil|table
+function M:show(name, input)
+	checks("?", "string", "?")
 	assert(not self:is_working())
 	self.co = coroutine.create(function()
-		self:_show_scene_f(self:get_scene_by_name(name))
+		self:_show_scene_f(self:get_scene_by_name(name), input)
 	end)
 end
 
@@ -121,7 +122,6 @@ function M:_unload_scene_f(scene, config)
 	})
 	config = config or {}
 
-
 	if scene._state == SCENE_ENUMS.STATES.RUNNING then
 		--if !config.skip_transition then scene_transition(self,scene,scene.STATIC.TRANSITIONS.ON_HIDE) end
 		scene:pause()
@@ -152,12 +152,13 @@ function M:_close_modals_f()
 end
 
 ---@param scene Scene
-function M:_show_scene_f(scene)
-	checks("?", "Scene")
+function M:_show_scene_f(scene, input)
+	checks("?", "Scene", "?")
 
 	local current_scene = self.stack:peek()
 
 	--start loading new scene.Before old was unloaded.
+	scene._input = input
 	if scene._state == SCENE_ENUMS.STATES.UNLOADED then scene:load(true) end
 
 	---@type SceneUnloadConfig
@@ -177,12 +178,13 @@ function M:_show_scene_f(scene)
 end
 
 ---@param scene Scene
-function M:_replace_scene_f(scene)
-	checks("?", "Scene")
+function M:_replace_scene_f(scene, input)
+	checks("?", "Scene", "?")
 
 	local current_scene = self.stack:peek()
 	assert(current_scene, "can't replace. No current scene")
 	--start loading new scene.Before old was unloaded.
+	scene._input = input
 	if scene._state == SCENE_ENUMS.STATES.UNLOADED then scene:load(true) end
 
 	---@type SceneUnloadConfig
@@ -197,7 +199,7 @@ function M:_replace_scene_f(scene)
 end
 
 function M:_back_scene_f()
-	assert(#self.stack.stack>1,"can't go back.")
+	assert(#self.stack.stack > 1, "can't go back.")
 	local current_scene = self.stack:peek()
 	local prev_scene = self.stack:peek(1)
 
@@ -207,7 +209,6 @@ function M:_back_scene_f()
 	---@type SceneUnloadConfig
 	local unload_config = {}
 	unload_config.new_scene = prev_scene
-
 
 	if (current_scene) then self:_unload_scene_f(self.stack:pop(), unload_config) end
 	self:_load_scene_f(prev_scene)

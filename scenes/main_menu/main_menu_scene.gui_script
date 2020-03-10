@@ -1,6 +1,7 @@
 local COMMON = require "libs.common"
 local GUI = require "assets.templates.gui_templates"
 local SM = require "libs_project.sm"
+local LEVELS = require "scenes.game.levels.levels"
 
 local Script = COMMON.new_n28s()
 
@@ -12,10 +13,10 @@ function Script:bind_vh()
 end
 
 function Script:init_gui()
-	self.view.btn_play:set_input_listener(function ()
-		print("play")
+	self.view.btn_play:set_input_listener(function()
+		SM:show(SM.SCENES.GAME_SCENE, { level_id = LEVELS.LEVELS.TEST })
 	end)
-	self.view.btn_tests:set_input_listener(function ()
+	self.view.btn_tests:set_input_listener(function()
 		SM:show(SM.SCENES.TESTS_LIST)
 	end)
 end
@@ -26,18 +27,15 @@ function Script:init()
 	COMMON.input_acquire()
 end
 
-function Script:update(dt)end
+function Script:update(dt) end
 
 function Script:final()
 	COMMON.input_release()
 end
 
-
 function Script:on_input(action_id, action)
-	if(self.view.btn_play:on_input(action_id,action).consumed) then return true end
-	if(self.view.btn_tests:on_input(action_id,action).consumed) then return true end
+	if (self.view.btn_play:on_input(action_id, action).consumed) then return true end
+	if (self.view.btn_tests:on_input(action_id, action).consumed) then return true end
 end
-
-
 
 COMMON.N28S.register(Script())

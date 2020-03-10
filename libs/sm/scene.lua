@@ -24,6 +24,7 @@ function Scene:initialize(name, url, config)
 	})
 	self._name = name
 	self._url = msg.url(url)
+	self._input = nil
 	---@type SceneConfig
 	self._config = config or COMMON.LUME.clone_deep(SCENE_CONFIG_DEFAULT)
 	self._state = SCENE_ENUMS.STATES.UNLOADED
@@ -49,6 +50,7 @@ function Scene:unload()
 	assert(self._state == SCENE_ENUMS.STATES.HIDE)
 	SCENE_LOADER.unload(self)
 	self:unload_done()
+	self._input = nil
 	self._state = SCENE_ENUMS.STATES.UNLOADED
 	COMMON.i(string.format("%s unloaded", self._name), TAG)
 end

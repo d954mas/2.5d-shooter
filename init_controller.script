@@ -9,6 +9,7 @@ local GA = require "libs.google_analytics"
 local JSON = require "libs.json"
 local EVENTS = require "libs_project.events"
 local SCENE_LOADER = require "libs.sm.scene_loader"
+local WORLD = require "model.world"
 
 local RUN_TEST = false
 
@@ -66,7 +67,6 @@ function Script:init()
 	COMMON.EVENT_BUS:subscribe(EVENTS.WINDOW_RESIZED):subscribe(function(data)
 		COMMON.i("screen size changed. from " .. "w:" .. data.prev_width .. " h:" .. data.prev_height .. " to w:" .. data.width .. " h:" .. data.height)
 	end)
-	--self:scenes_register()
 
 	if not RUN_TEST then
 		SM:show(SM.SCENES.MAIN_MENU)
@@ -84,6 +84,7 @@ function Script:update(dt)
 	SM:update(dt)
 	SOUNDS:update(dt)
 	GA.update(dt)
+	WORLD:update()
 	DEBUG_INFO.update(dt)
 	if self.test_runner then
 		self.test_runner.update(dt)
@@ -95,9 +96,10 @@ function Script:on_message(message_id, message, sender)
 end
 
 function Script:final()
-	self.subscriptions:unsubscribe()
-	COMMON.INPUT.clear()
 	self.input.release()
+	self.subscriptions:unsubscribe()
+	WORLD:final()
+	COMMON.INPUT.clear()
 	COMMON.CONTEXT:unregister(COMMON.CONTEXT.NAMES.MAIN)
 end
 

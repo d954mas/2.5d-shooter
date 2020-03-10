@@ -15,6 +15,10 @@ local function clear_null(t)
 end
 
 function M.decode(str)
+	return cjson.decode(str)
+end
+
+function M.decode_clear_null(str)
 	return clear_null(cjson.decode(str))
 end
 

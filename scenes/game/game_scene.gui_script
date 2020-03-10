@@ -1,0 +1,38 @@
+local COMMON = require "libs.common"
+local GUI = require "assets.templates.gui_templates"
+local SM = require "libs_project.sm"
+
+local Script = COMMON.new_n28s()
+
+function Script:bind_vh()
+	self.view = {
+		btn_back = GUI.Button("btn_back"),
+	}
+end
+
+function Script:init_gui()
+	self.view.btn_back:set_input_listener(function ()
+		SM:back()
+	end)
+end
+
+function Script:init()
+	COMMON.input_acquire()
+	self:bind_vh()
+	self:init_gui()
+end
+
+function Script:update(dt)end
+
+function Script:final()
+	COMMON.input_release()
+end
+
+
+function Script:on_input(action_id, action)
+	if(self.view.btn_back:on_input(action_id,action).consumed) then return true end
+end
+
+
+
+COMMON.N28S.register(Script())
