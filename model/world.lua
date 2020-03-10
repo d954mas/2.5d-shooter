@@ -24,6 +24,8 @@ function World:battle_set_level(level)
 	self.battle_model = BattleModel(level)
 end
 
+
+
 function World:battle_model_final()
 	if self.battle_model then
 		self.battle_model:final()
