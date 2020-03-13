@@ -5,4 +5,8 @@ M.GAME_SIZE = {
 	height = 1080
 }
 
+M.DEBUG = {
+	draw_light_map = false
+}
+
 return M

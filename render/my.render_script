@@ -1,10 +1,9 @@
 local COMMON = require "libs.common"
 local RENDERCAM = require "rendercam.rendercam"
 local EVENTS = require "libs_project.events"
+local WORLD = require "model.world"
+local CONSTANTS = require "libs_project.constants"
 
---draw all ambient light of level to texture
---if level bigger then LIGHT_MAP_SIZE there will be problems
-local LIGHT_MAP_SIZE = 128
 local TAG = "Render"
 
 ---@class Render
@@ -22,7 +21,7 @@ function Render:init()
 	self:init_buffers()
 	self:init_constants_buffers()
 	self:register_messages()
-
+	COMMON.CONTEXT:register(COMMON.CONTEXT.NAMES.RENDER)
 	COMMON.RENDER = self
 end
 
@@ -44,7 +43,9 @@ function Render:create_render_target(name, params)
 end
 
 function Render:init_render_targets()
-	self.targets = {}
+	self.targets = {
+		light_map = nil
+	}
 end
 
 function Render:init_buffers()
@@ -58,6 +59,10 @@ function Render:init_predicates()
 		text = render.predicate({ "text" }),
 		model = render.predicate({ "model" }),
 		particle = render.predicate({ "particle" }),
+		sprite_3d = render.predicate({ "sprite_3d" }),
+		sprite_3d_object = render.predicate({ "sprite_3d_object" }),
+		sprite_3d_enemy = render.predicate({ "sprite_3d_enemy" }),
+		light_map = render.predicate({ "light_map" }),
 	}
 end
 
@@ -72,10 +77,6 @@ function Render:init_constants_buffers()
 	self.constants_buffers = {
 		light_map = render.constant_buffer(),
 	}
-	self.constants_buffers.light_map.light_map = vmath.vector4(LIGHT_MAP_SIZE, LIGHT_MAP_SIZE, 0, 0)
-	self.constants_buffers.light_map.fog_color = vmath.vector4(0.15)
-	self.constants_buffers.light_map.fog = vmath.vector4(2, 0, 0.1, 0) -- //x start distance y end dist. z exp
-
 end
 
 function Render:register_messages()
@@ -136,6 +137,21 @@ function Render:render_sprites()
 	render.draw(self.predicates.particle)
 end
 
+function Render:render_3d()
+	if (not self.targets.light_map) then return end
+	render.enable_state(render.STATE_DEPTH_TEST)
+	render.set_depth_mask(true)
+	render.set_depth_func(render.COMPARE_FUNC_LEQUAL)
+	render.enable_texture(1, self.targets.light_map, render.BUFFER_COLOR_BIT)
+	render.draw(self.predicates.model)
+
+	render.draw(self.predicates.sprite_3d_object, self.constants_buffers.light_map)
+	render.draw(self.predicates.sprite_3d_enemy, self.constants_buffers.light_map)
+	render.draw(self.predicates.sprite_3d, self.constants_buffers.light_map)
+	render.draw_debug3d()
+	render.disable_state(render.STATE_DEPTH_TEST)
+end
+
 --endregion
 
 function Render:render_clear()
@@ -144,11 +160,21 @@ function Render:render_clear()
 	render.clear({ [render.BUFFER_COLOR_BIT] = self.clear_color, [render.BUFFER_DEPTH_BIT] = 1, [render.BUFFER_STENCIL_BIT] = 0 })
 end
 
+function Render:render_light_map(debug)
+	if (WORLD.battle_model and WORLD.battle_model.light_map) then
+		if (not debug or CONSTANTS.DEBUG.draw_light_map) then
+			WORLD.battle_model.light_map:draw_light_map(debug)
+		end
+	end
+end
+
 function Render:update(dt)
 	self:render_clear()
-	self:render_sprites()
-	self:render_gui()
 
+	self:render_light_map()
+	self:render_sprites()
+	self:render_light_map(true)
+	self:render_gui()
 end
 
 function Render:on_message(message_id, message)

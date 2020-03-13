@@ -6,6 +6,8 @@ local Manager = CLASS.class("ContextManagerProject", ContextManager)
 
 Manager.NAMES = {
 	MAIN = "MAIN",
+	RENDER = "RENDER",
+	LIGHT_MAP_SCRIPT = "LIGHT_MAP_SCRIPT",
 }
 
 ---@class ContextStackWrapperMain:ContextStackWrapper

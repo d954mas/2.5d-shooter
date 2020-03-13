@@ -1,0 +1,12 @@
+local COMMON = require "libs.common"
+local Script = COMMON.new_n28s()
+
+function Script:init()
+	COMMON.CONTEXT:register(COMMON.CONTEXT.NAMES.LIGHT_MAP_SCRIPT)
+end
+
+function Script:final()
+	COMMON.CONTEXT:unregister(COMMON.CONTEXT.NAMES.LIGHT_MAP_SCRIPT)
+end
+
+COMMON.N28S.register(Script())

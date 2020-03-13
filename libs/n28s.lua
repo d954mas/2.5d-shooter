@@ -95,6 +95,7 @@ function Script:init()
 
 end
 
+
 function M.register(script)
 	local registrator = Registrator()
 	registrator:add_script(assert(script))

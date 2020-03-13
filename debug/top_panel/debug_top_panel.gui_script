@@ -1,9 +1,11 @@
 local COMMON = require "libs.common"
+local CONSTANTS = require "libs_project.constants"
 local DEBUG_INFO = require "debug.debug_info"
 local GUI = require "libs.gui.gui"
 local GOOEY = require "gooey.gooey"
 local SM = require "libs_project.sm"
 local SceneDebugView = require "debug.view.scene_debug_view"
+local WORLD = require "model.world"
 
 local Script = COMMON.new_n28s()
 
@@ -17,13 +19,24 @@ function Script:bind_vh()
 	self.views = {
 		btn_top_panel_show = GUI.ButtonIconTest("btn_top_panel_show"),
 		btn_profiler = GUI.ButtonIconTest("btn_profiler"),
+
 		btn_scene = GUI.ButtonIconTest("btn_scene"),
 		btn_time_up = GUI.ButtonIconTest("game_speed/btn_up"),
 		btn_time_down = GUI.ButtonIconTest("game_speed/btn_down"),
-		btn_time_down = GUI.ButtonIconTest("game_speed/btn_down"),
 		scene_debug_view = SceneDebugView("scene_debug_view"),
+		panels = {
+			render = {
+				root = gui.get_node("panel_render"),
+				btn_activate = GUI.ButtonIconTest("btn_render"),
+				childs = {
+					btn_light_map = GUI.ButtonIconTest("panel_render/btn_light_map")
+				}
+			}
+		}
 	}
+end
 
+function Script:init_gui()
 	self.views.scene_debug_view:set_enabled(false)
 	self.views.btn_top_panel_show:set_input_listener(function()
 		self:input_toggle_gui_visible()
@@ -41,20 +54,56 @@ function Script:bind_vh()
 	self.views.btn_time_down:set_input_listener(function()
 		self:speed_game_set(-1)
 	end)
+
+	self.views.panels.render.btn_activate:set_input_listener(function()
+		self:panel_show(self.views.panels.render)
+	end)
+
+	self.views.panels.render.childs.btn_light_map:set_input_listener(function()
+		CONSTANTS.DEBUG.draw_light_map = not CONSTANTS.DEBUG.draw_light_map
+	end)
+
+	self:panel_hide_all()
+end
+
+function Script:panel_hide_all()
+	for _, panel in pairs(self.views.panels) do
+		gui.set_enabled(panel.root, false)
+	end
+end
+
+function Script:panel_show(panel)
+	self:panel_hide_all()
+	gui.set_enabled(panel.root, true)
+end
+
+function Script:panel_input(action_id, action)
+	for _, panel in pairs(self.views.panels) do
+		if (panel.btn_activate:on_input(action_id, action)) then return true end
+	end
+
+	for _, panel in pairs(self.views.panels) do
+		if (gui.is_enabled(panel.root)) then
+			for _, child in pairs(panel.childs) do
+				if (child:on_input(action_id, action)) then return true end
+			end
+		end
+	end
 end
 
 function Script:speed_game_set(value)
 	local scale = 0.1 * value
-	if (value > 0 and COMMON.GLOBAL.speed_game >= 0.999999999)  or (value < 0 and COMMON.GLOBAL.speed_game > 1) then
+	if (value > 0 and COMMON.GLOBAL.speed_game >= 0.999999999) or (value < 0 and COMMON.GLOBAL.speed_game > 1) then
 		scale = 0.25 * value
 	end
-	COMMON.GLOBAL.speed_game = COMMON.LUME.clamp(COMMON.GLOBAL.speed_game + scale,0.1,10)
+	COMMON.GLOBAL.speed_game = COMMON.LUME.clamp(COMMON.GLOBAL.speed_game + scale, 0.1, 10)
 	self.speed_game_changed = true
 end
 
 function Script:init()
 	gui.set_render_order(15)
 	self:bind_vh()
+	self:init_gui()
 	self.input = COMMON.INPUT()
 	self.input.acquire()
 	self.input:add(hash("toggle_top_panel_show_btn"), self.input_toggle_gui_visible, true)
@@ -67,7 +116,7 @@ function Script:update(dt)
 	if self.show then
 		gui.set_text(self.vh.lbl_game_speed, string.format("Speed:%.2f", COMMON.GLOBAL.speed_game))
 		gui.set_text(self.vh.lbl_cpu, "Cpu:" .. string.format("%.2f", profiler.get_cpu_usage()))
-		gui.set_text(self.vh.lbl_memory, "Mem:" .. string.format("%.2f Mb", profiler.get_memory_usage()/1024/1024))
+		gui.set_text(self.vh.lbl_memory, "Mem:" .. string.format("%.2f Mb", profiler.get_memory_usage() / 1024 / 1024))
 		self.views.scene_debug_view:update(dt)
 	end
 
@@ -92,12 +141,14 @@ end
 
 function Script:on_input(action_id, action)
 	if (self.input:on_input(self, action_id, action)) then return true end
-	if (self.views.btn_top_panel_show:on_input(action_id, action).consumed) then return true end
-	if(self.show) then
-		if(self.views.btn_profiler:on_input(action_id, action).consumed) then return true end
-		if(self.views.btn_scene:on_input(action_id, action).consumed) then return true end
-		if(self.views.btn_time_up:on_input(action_id, action).consumed) then return true end
-		if(self.views.btn_time_down:on_input(action_id, action).consumed) then return true end
+	if (self.views.btn_top_panel_show:on_input(action_id, action)) then return true end
+	if (self.show) then
+		if (self.views.btn_profiler:on_input(action_id, action)) then return true end
+		if (self.views.btn_scene:on_input(action_id, action)) then return true end
+		if (self.views.btn_time_up:on_input(action_id, action)) then return true end
+		if (self.views.btn_time_down:on_input(action_id, action)) then return true end
+
+		if (self:panel_input(action_id, action)) then return true end
 	end
 end
 

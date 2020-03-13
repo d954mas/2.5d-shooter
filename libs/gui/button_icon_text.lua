@@ -30,7 +30,7 @@ function Btn:set_input_listener(listener)
 end
 
 function Btn:on_input(action_id,action)
-	return GOOEY.button(self.root_name,action_id,action,self.gooey_listener,self.btn_refresh_f)
+	return GOOEY.button(self.root_name,action_id,action,self.gooey_listener,self.btn_refresh_f).consumed
 end
 
 return Btn
