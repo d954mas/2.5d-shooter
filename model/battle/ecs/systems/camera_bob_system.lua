@@ -4,7 +4,7 @@ local URL_WEAPON = msg.url("/weapon")
 ---@class CameraBobSystem:ECSSystem
 local System = ECS.processingSystem()
 System.filter = ECS.requireAll("camera_bob_info")
-
+System.name = "CameraBobSystem"
 
 ---@param e Entity
 function System:process(e, dt)

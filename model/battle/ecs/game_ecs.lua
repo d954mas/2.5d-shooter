@@ -44,7 +44,7 @@ function EcsWorld:clear()
 end
 
 function EcsWorld:add(...)
-	self.ecs:add()
+	self.ecs:add(...)
 end
 
 function EcsWorld:add_entity(e)

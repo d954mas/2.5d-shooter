@@ -6,6 +6,7 @@ local TAG = "InputSystem"
 ---@class InputSystem:ECSSystem
 local System = ECS.processingSystem()
 System.filter = ECS.requireAll("input_info")
+System.name = "InputSystem"
 
 function System:input_mouse_move()
 	local player = self.world.game_controller.level.player

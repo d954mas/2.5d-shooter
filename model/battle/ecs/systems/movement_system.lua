@@ -2,6 +2,7 @@ local ECS = require 'libs.ecs'
 ---@class MovementSystem:ECSSystem
 local System = ECS.processingSystem()
 System.filter = ECS.requireAll("position","movement_direction","movement_velocity")
+System.name = "MovementSystem"
 
 ---@param e Entity
 function System:process(e, dt)

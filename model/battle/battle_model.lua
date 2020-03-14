@@ -12,9 +12,12 @@ function Model:initialize(world, level)
 	self.world = assert(world)
 	self.level = assert(level)
 	self.time = 0
+	self.inited = false
 end
 
 function Model:on_scene_show()
+	assert(not self.inited)
+	self.inited = true
 	self.native_camera = NativeCamera(512, 50)
 	self.light_map = LightMap(128)
 	self.light_map:set_level(self.level)
@@ -23,6 +26,9 @@ end
 
 function Model:update(dt)
 	self.time = self.time + dt
+	if (self.inited) then
+		self.ecs:update(dt)
+	end
 end
 
 function Model:on_input(action, action_id) end
@@ -32,6 +38,7 @@ function Model:final()
 	if self.light_map then self.light_map:final() end
 	if self.ecs then self.ecs:clear() end
 	self.native_camera = nil
+	self.inited = false
 	self.light_map = nil
 	self.ecs = nil
 	self.level = nil

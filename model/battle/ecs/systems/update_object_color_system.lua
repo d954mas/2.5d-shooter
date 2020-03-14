@@ -3,7 +3,7 @@ local HASH_OBJECT_POSITION = hash("object_position")
 ---@class UpdateObjectColorSystem:ECSSystem
 local System = ECS.processingSystem()
 System.filter = ECS.requireAll("dynamic_color","url_sprite")
-
+ System.name = "UpdateObjectColorSystem"
 
 --it break batching.Maybe store center position in coordinates.Storing in coordinates break physics.
 --set color only for visible.Invisible use same cell.Reduces draw calls

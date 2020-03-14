@@ -3,7 +3,7 @@ local ECS = require 'libs.ecs'
 ---@class AutoDestroySystem:ECSSystem
 local System = ECS.processingSystem()
 System.filter = ECS.requireAll("auto_destroy")
-
+System.name = "AutoDestroySystem"
 
 ---@param e Entity
 function System:process(e, dt)
