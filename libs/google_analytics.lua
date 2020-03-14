@@ -36,7 +36,7 @@ function M.init(tracking_id)
 		--do not send same message
 		M.exception_prev_time = M.exception_prev_time or 0
 		if M.exception_prev ~= data.message or (os.time() - M.exception_prev_time) > 60 * 1 then
-			GA.exception(JSON.encode(data, false));
+			M.tracker.exception(JSON.encode(data, false));
 			M.exception_prev = data.message
 			M.exception_prev_time = os.time()
 		end
