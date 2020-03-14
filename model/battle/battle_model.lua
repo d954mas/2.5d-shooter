@@ -11,18 +11,19 @@ local Model = COMMON.class("BattleModel")
 function Model:initialize(world, level)
 	self.world = assert(world)
 	self.level = assert(level)
+	self.time = 0
 end
 
 function Model:on_scene_show()
-	if (not self.native_camera) then
-		self.native_camera = NativeCamera(512, 50)
-		self.light_map = LightMap(128)
-		self.light_map:set_level(self.level)
-		self.ecs = GameEcs(self.world)
-	end
+	self.native_camera = NativeCamera(512, 50)
+	self.light_map = LightMap(128)
+	self.light_map:set_level(self.level)
+	self.ecs = GameEcs(self.world)
 end
 
-function Model:update(dt) end
+function Model:update(dt)
+	self.time = self.time + dt
+end
 
 function Model:on_input(action, action_id) end
 

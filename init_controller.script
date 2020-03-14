@@ -84,7 +84,7 @@ function Script:update(dt)
 	SM:update(dt)
 	SOUNDS:update(dt)
 	GA.update(dt)
-	WORLD:update()
+	WORLD:update(dt)
 	DEBUG_INFO.update(dt)
 	if self.test_runner then
 		self.test_runner.update(dt)
