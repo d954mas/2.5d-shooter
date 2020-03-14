@@ -20,11 +20,6 @@ function LightMap:initialize(size)
 	self:set_fog_color(vmath.vector4(0.15))
 	self:set_fog(2, 0, 0.1)
 	ctx:remove()
-
-	ctx = COMMON.CONTEXT:set_context_top_by_name(COMMON.CONTEXT.NAMES.LIGHT_MAP_SCRIPT)
-	self.go_resource_path = go.get("#model", "texture0")
-	self.go_header = { width = self.size, height = self.size, type = resource.TEXTURE_TYPE_2D, format = resource.TEXTURE_FORMAT_RGB, num_mip_maps = 1 }
-	ctx:remove()
 end
 
 function LightMap:set_fog_color(color)
@@ -46,8 +41,8 @@ function LightMap:set_level(level)
 	local w = level.data.size.x
 	local h = level.data.size.y
 	--@TODO MOVE TO NE.LUA SO SLOW OR NOT?
-	--local time = os.time()
-	for i=1,10 do
+	--local time = os.clock()
+	--for i=1,10 do
 		for y = self.size - 1, 0, -1 do
 			local index = y * self.size * 3 + 1
 			for x = 0, self.size - 1 do
@@ -60,10 +55,18 @@ function LightMap:set_level(level)
 			end
 			if (self.size - y + 1) > h then break end
 		end
-	end
-	--print("time:" .. (os.time()-time))
+--	end
+--	print("time:" .. (os.clock()-time))
+	self:on_changed()
 
+end
+
+function LightMap:on_changed()
 	local ctx = COMMON.CONTEXT:set_context_top_by_name(COMMON.CONTEXT.NAMES.LIGHT_MAP_SCRIPT)
+	if(not self.go_resource_path)then
+		self.go_resource_path = go.get("#model", "texture0")
+		self.go_header = { width = self.size, height = self.size, type = resource.TEXTURE_TYPE_2D, format = resource.TEXTURE_FORMAT_RGB, num_mip_maps = 1 }
+	end
 	resource.set_texture(self.go_resource_path, self.go_header, self.buffer)
 	ctx:remove()
 end

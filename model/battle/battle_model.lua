@@ -12,16 +12,19 @@ function Model:initialize(world, level)
 	self.world = assert(world)
 	self.level = assert(level)
 	self.time = 0
-	self.inited = false
+
+	self.light_map = LightMap(128)
+
+	self.ecs = GameEcs(self.world)
 end
 
 function Model:on_scene_show()
-	assert(not self.inited)
-	self.inited = true
-	self.native_camera = NativeCamera(512, 50)
-	self.light_map = LightMap(128)
-	self.light_map:set_level(self.level)
-	self.ecs = GameEcs(self.world)
+	if (not self.inited) then
+		self.inited = true
+		self.native_camera = NativeCamera(512, 50)
+		self.light_map:set_level(self.level)
+	end
+
 end
 
 function Model:update(dt)
