@@ -170,7 +170,6 @@ end
 
 function Render:update(dt)
 	self:render_clear()
-
 	self:render_light_map()
 	self:render_sprites()
 	self:render_light_map(true)

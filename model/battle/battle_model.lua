@@ -14,6 +14,7 @@ function Model:on_scene_show()
 	if (not self.native_camera) then
 		self.native_camera = NativeCamera(512, 50)
 		self.light_map = LightMap(128)
+		self.light_map:set_level(self.level)
 	end
 end
 

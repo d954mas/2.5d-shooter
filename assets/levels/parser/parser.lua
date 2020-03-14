@@ -246,6 +246,16 @@ local function parse_walls(map, layer)
 	return result
 end
 
+local function parse_light_map(map,layer)
+	check_layer_tilesets(layer, { assert(TILESETS.tilesets["lights"]) })
+	local result = {}
+	for i,v in ipairs(layer.data)do
+		result[i] = v == 0 and 0xFFFFFFFF or tonumber("0x"..string.sub(TILESETS.by_id[v].properties.color,2))
+	end
+	return result
+end
+
+
 local function parse_level(path, result_path)
 	local name = path:match("^.+\\(.+)....")
 	result_path = result_path .. "\\" .. name .. ".json"
@@ -257,6 +267,7 @@ local function parse_level(path, result_path)
 	data.floor = parse_floor(data, assert(get_layer(tiled, "floor")))
 	data.ceil = parse_floor(data, assert(get_layer(tiled, "ceil")))
 	data.walls = parse_walls(data, assert(get_layer(tiled, "walls")))
+	data.light_map = parse_light_map(data, assert(get_layer(tiled, "light_map")))
 	--[[
 		local wall_keys = { "north", "south", "east", "west" }
 		process_layer(data, assert(get_layer(tiled, "walls")), function(cell, tiled_cell, x, y)

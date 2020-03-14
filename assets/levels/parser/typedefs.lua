@@ -62,4 +62,5 @@ cjson.decode_invalid_numbers(false)
 ---@field size vector3
 ---@field floor LevelDataCellFloor[]
 ---@field ceil LevelDataCellFloor[]
+---@field light_map number[]
 

@@ -25,8 +25,6 @@ function LightMap:initialize(size)
 	self.go_resource_path = go.get("#model", "texture0")
 	self.go_header = { width = self.size, height = self.size, type = resource.TEXTURE_TYPE_2D, format = resource.TEXTURE_FORMAT_RGB, num_mip_maps = 1 }
 	ctx:remove()
-
-	self:update_light_map({}, 128, 128)
 end
 
 function LightMap:set_fog_color(color)
@@ -41,23 +39,29 @@ function LightMap:set_fog(start_dist, end_dist, exp)
 	ctx:remove()
 end
 
-function LightMap:update_light_map(data, w, h)
-	--COMMON.EVENT_BUS:event(COMMON.EVENTS.GAME_LIGHT_MAP_CHANGED)
+---@param level Level
+function LightMap:set_level(level)
 	local stream = buffer.get_stream(self.buffer, HASH_LIGHT_MAP)
-
-	--@TODO MOVE TO NE.LUA SO SLOW
-	for y = self.size - 1, 0, -1 do
-		local index = y * self.size * 3 + 1
-		for x = 0, self.size - 1 do
-			local color = data[(self.size - y - 1) * w + x + 1] or 0xFFFF0000
-			stream[index] = arshift(band(color, 0x00FF0000), 16)
-			stream[index + 1] = arshift(band(color, 0x0000FF00), 8)
-			stream[index + 2] = arshift(band(color, 0x000000ff), 0)
-			index = index + 3
-			if x > w then break end
+	local data = level.data.light_map
+	local w = level.data.size.x
+	local h = level.data.size.y
+	--@TODO MOVE TO NE.LUA SO SLOW OR NOT?
+	--local time = os.time()
+	for i=1,10 do
+		for y = self.size - 1, 0, -1 do
+			local index = y * self.size * 3 + 1
+			for x = 0, self.size - 1 do
+				local color = data[(self.size - y - 1) * w + x + 1] or 0xFFFF0000
+				stream[index] = arshift(band(color, 0x00FF0000), 16)
+				stream[index + 1] = arshift(band(color, 0x0000FF00), 8)
+				stream[index + 2] = arshift(band(color, 0x000000ff), 0)
+				index = index + 3
+				if x > w then break end
+			end
+			if (self.size - y + 1) > h then break end
 		end
-		if (self.size - y + 1) > h then break end
 	end
+	--print("time:" .. (os.time()-time))
 
 	local ctx = COMMON.CONTEXT:set_context_top_by_name(COMMON.CONTEXT.NAMES.LIGHT_MAP_SCRIPT)
 	resource.set_texture(self.go_resource_path, self.go_header, self.buffer)
@@ -70,7 +74,8 @@ function LightMap:draw_light_map(debug)
 	render.disable_state(render.STATE_STENCIL_TEST)
 	render.disable_state(render.STATE_CULL_FACE)
 	if debug then
-		render.set_viewport(0, 0, self.size, self.size)
+		local size = math.max(512,self.size)
+		render.set_viewport(20, 20, size, size)
 	else
 		render.set_viewport(0, 0, self.size, self.size)
 	end
