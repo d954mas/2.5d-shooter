@@ -21,7 +21,7 @@ end
 function World:battle_set_level(level)
 	checks("?", "Level")
 	assert(not self.battle_model, "battle model already created")
-	self.battle_model = BattleModel(level)
+	self.battle_model = BattleModel(self,level)
 end
 
 
