@@ -358,6 +358,13 @@ function tiny.system(table)
     return table
 end
 
+
+
+
+---@class ECSSystem
+---@field world ECSWorld
+---@field active boolean
+---@field interval number
 --- Creates a new Processing System or Processing System class. Processing
 -- Systems process each entity individual, and are usually what is needed.
 -- Processing Systems have three extra callbacks besides those inheritted from
@@ -370,6 +377,7 @@ end
 -- Processing Systems have their own `update` method, so don't implement a
 -- a custom `update` callback for Processing Systems.
 -- @see system
+---@return ECSSystem
 function tiny.processingSystem(table)
     table = table or {}
     table[systemTableKey] = true
@@ -384,6 +392,7 @@ end
 -- careful if defining a custom callback. However, for processing the sorted
 -- entities, consider `tiny.sortedProcessingSystem(table)`.
 -- @see system
+---@return ECSSystem
 function tiny.sortedSystem(table)
     table = table or {}
     table[systemTableKey] = true
@@ -397,6 +406,7 @@ end
 -- @see system
 -- @see processingSystem
 -- @see sortedSystem
+---@return ECSSystem
 function tiny.sortedProcessingSystem(table)
     table = table or {}
     table[systemTableKey] = true
@@ -417,9 +427,57 @@ end
 -- Forward declaration
 local worldMetaTable
 
+---@class ECSWorld
+---@field entitiesToRemove table
+---@field entitiesToChange table
+---@field systemsToAdd table
+---@field systemsToRemove table
+---@field entities table
+---@field systems table
+local World = {}
+function World:add(...)
+end
+function World:addEntity(entity)
+end
+function World:addSystem(system)
+end
+function World:remove(...)
+end
+function World:removeEntity(entity)
+end
+function World:removeSystem(system)
+end
+function World:refresh()
+end
+function World:update(dt, filter)
+end
+function World:clearEntities()
+end
+function World:clearSystems(system)
+end
+function World:getEntityCount(system)
+end
+function World:getSystemCount(system)
+end
+function World:setSystemIndex(system)
+end
+function World:clear()
+end
+
+function World:on_entity_removed(e)
+end
+
+function World:on_entity_updated(e)
+end
+
+function World:on_entity_added(e)
+end
+
+
 --- Creates a new World.
 -- Can optionally add default Systems and Entities. Returns the new World along
 -- with default Entities and Systems.
+---@return ECSWorld
 function tiny.world(...)
     local ret = setmetatable({
 
@@ -634,6 +692,9 @@ function tiny_manageEntities(world)
             local index = #entities + 1
             entities[entity] = index
             entities[index] = entity
+            world:on_entity_added(entity)
+        else
+            world:on_entity_updated(entity)
         end
         for j = 1, #systems do
             local system = systems[j]
@@ -682,6 +743,7 @@ function tiny_manageEntities(world)
             entities[entity] = nil
             entities[listIndex] = lastEntity
             entities[#entities] = nil
+            world:on_entity_removed(entity)
             -- Remove from cached systems
             for j = 1, #systems do
                 local system = systems[j]
@@ -807,6 +869,14 @@ function tiny.clearSystems(world)
     end
 end
 
+function tiny.clear(world)
+    tiny.clearEntities(world)
+    tiny.clearSystems(world)
+    tiny.refresh(world)
+end
+
+
+
 --- Gets number of Entities in the World.
 function tiny.getEntityCount(world)
     return #world.entities
@@ -838,6 +908,7 @@ function tiny.setSystemIndex(world, system, index)
     return oldIndex
 end
 
+local function empty() end
 -- Construct world metatable.
 worldMetaTable = {
     __index = {
@@ -853,7 +924,11 @@ worldMetaTable = {
         clearSystems = tiny.clearSystems,
         getEntityCount = tiny.getEntityCount,
         getSystemCount = tiny.getSystemCount,
-        setSystemIndex = tiny.setSystemIndex
+        setSystemIndex = tiny.setSystemIndex,
+        on_entity_added = empty,
+        on_entity_updated = empty,
+        on_entity_removed = empty,
+        clear = tiny.clear
     },
     __tostring = function()
         return "<tiny-ecs_World>"
