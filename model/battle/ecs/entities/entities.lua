@@ -60,7 +60,6 @@ function Entities:initialize()
 
 end
 
-
 --region ecs callbacks
 ---@param e Entity
 function Entities:on_entity_removed(e)
@@ -75,6 +74,36 @@ function Entities:on_entity_updated(e)
 end
 
 --endregion
+
+
+--region Entities
+
+---@param pos vector3
+---@return Entity
+function Entities:create_player(pos)
+	assert(pos)
+	local e = {}
+	e.tag = "player"
+	e.position = vmath.vector3(pos.x, pos.y, pos.z)
+	e.angle = vmath.vector3(0, 0, 0)
+	e.input_direction = vmath.vector4(0, 0, 0, 0)
+	e.movement_velocity = vmath.vector3(0, 0, 0)
+	e.movement_direction = vmath.vector3(0, 0, 0)
+	e.movement_max_speed = 4
+	e.movement_accel = 2
+	e.movement_deaccel = 4
+	e.player = true
+	e.url_go = msg.url("/player")
+	e.camera_bob_info = {
+		value = 0,
+		height = 0.023,
+		speed = 14,
+		offset = 0,
+		offset_weapon = 0,
+	}
+	e.hp = 100
+	return e
+end
 
 return Entities
 

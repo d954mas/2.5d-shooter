@@ -6,6 +6,7 @@ local GOOEY = require "gooey.gooey"
 local SM = require "libs_project.sm"
 local SceneDebugView = require "debug.view.scene_debug_view"
 local WORLD = require "model.world"
+local LEVEL_MAP = require "debug.level_map.debug_level_map_view"
 
 local Script = COMMON.new_n28s()
 
@@ -38,9 +39,11 @@ function Script:bind_vh()
 				btn_activate = GUI.ButtonIconTest("btn_game"),
 				childs = {
 					btn_ecs_systems = GUI.ButtonIconTest("panel_game/btn_ecs_systems"),
-					lbl_ecs_systems = gui.get_node("panel_game/lbl_ecs_systems")
+					btn_level_map = GUI.ButtonIconTest("panel_game/btn_level_map"),
+					lbl_ecs_systems = gui.get_node("panel_game/lbl_ecs_systems"),
+					level_map = LEVEL_MAP("panel_game/level_map")
 				},
-				config = { show_systems = false }
+				config = { show_systems = false, show_level_map = false }
 			}
 		}
 	}
@@ -82,25 +85,36 @@ function Script:init_gui()
 		gui.set_enabled(game.childs.lbl_ecs_systems, game.config.show_systems)
 	end)
 
-	self.views.panels.game.update = function()
+	self.views.panels.game.childs.btn_level_map:set_input_listener(function()
+		local game = self.views.panels.game
+		game.config.show_level_map = not game.config.show_level_map
+		gui.set_enabled(game.childs.level_map.vh.map_node, game.config.show_level_map)
+	end)
+
+	self.views.panels.game.update = function(dt)
 		local game = self.views.panels.game
 		local config = self.views.panels.game.config
 
 		if config.show_systems then
 			local text = ""
-			if(WORLD.battle_model and WORLD.battle_model.ecs) then
-				text = text .. string.format("%-30s %-7s %-9s %s \n","Name", "Active", "Entities", "Time")
-				for _, sys in ipairs(WORLD.battle_model.ecs.ecs.systems)do
+			if (WORLD.battle_model and WORLD.battle_model.ecs) then
+				text = text .. string.format("%-30s %-7s %-9s %s \n", "Name", "Active", "Entities", "Time")
+				for _, sys in ipairs(WORLD.battle_model.ecs.ecs.systems) do
 					local count = 0
-					for _,_ in pairs(sys.entities)do
+					for _, _ in pairs(sys.entities) do
 						count = count + 1
 					end
-					text = text .. string.format("%-30s %-7s %-9d %.2f \n",sys.name, sys.active, count, 0)
+					text = text .. string.format("%-30s %-7s %-9d %.2f \n", sys.name, sys.active, count, 0)
 				end
 			end
 			gui.set_text(game.childs.lbl_ecs_systems, text)
 		end
+		if config.show_level_map then
+			game.childs.level_map:update(dt)
+		end
 	end
+	pprint(self.views.panels.game.childs.level_map)
+	gui.set_enabled(self.views.panels.game.childs.level_map.vh.map_node, false)
 
 	self:panel_hide_all()
 end

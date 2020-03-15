@@ -13,7 +13,7 @@ local function clear_null(t)
 	end
 	return t
 end
-
+---@return table
 function M.decode(str)
 	return cjson.decode(str)
 end

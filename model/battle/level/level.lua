@@ -24,14 +24,23 @@ local Level = COMMON.class("Level")
 function Level:initialize(data)
 	TILESET_LOAD()
 	self.data = assert(data)
+	self.cell_max_id = self.data.size.x * self.data.size.y - 1
 end
 
 --region MAP
 function Level:map_get_width() return self.data.size.x end
 function Level:map_get_height() return self.data.size.y end
 
-function Level:map_cell_in(x, y)
-	return x >= 1 and x <= self:map_get_width() and y >= 1 and y <= self:map_get_height()
+function Level:map_get_wall_by_id(id)
+	assert(self:map_cell_id_in(id), "id:" .. id)
+	return self.data.walls[id]
+end
+function Level:map_get_wall_unsafe_by_id(id)
+	return self.data.walls[id]
+end
+
+function Level:map_cell_id_in(id)
+	return id >= 0 and id <= self.cell_max_id
 end
 --endregion
 

@@ -17,7 +17,7 @@ end
 function System:weapon_set_bob_offset(offset)
 	offset = offset * 150 - 15 -- -10 is dy to hide weapon bottom edge
 	local pos = vmath.vector3(960,offset,0)
-	go.set_position(pos,URL_WEAPON)
+--	go.set_position(pos,URL_WEAPON)
 end
 
 return System

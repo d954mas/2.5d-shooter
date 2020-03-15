@@ -35,6 +35,18 @@ function EcsWorld:_init_systems()
 	self.ecs:addSystem(SYSTEMS.AutoDestroySystem)
 end
 
+function EcsWorld:load_level()
+	assert(not self.level_loaded)
+	self.level_loaded = true
+	self.level = self.world.battle_model.level
+	self:_load_player()
+end
+
+function EcsWorld:_load_player()
+	self.player = self.entities:create_player(vmath.vector3(0.5, 0.5, 0))
+	self:add_entity(self.player)
+end
+
 function EcsWorld:update(dt)
 	self.ecs:update(dt)
 end
