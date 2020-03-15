@@ -6,6 +6,7 @@
 // include the Defold SDK
 #include <dmsdk/sdk.h>
 #include "native_raycasting.h"
+#include "lua_helper.h"
 #include <set>
 #include <unordered_set>
 #include <vector>
@@ -49,7 +50,7 @@ static int CellsGetNeedUpdateLua(lua_State* L){
 }
 
 static int CellsGetByIdLua(lua_State* L){
-    int id = lua_tonumber(L, 1) - 1;
+    int id = LuaCheckNumber(L,1,"bad id");
     if(id>=0 && id <= MAP.CoordsToId(MAP.width-1,MAP.height-1)){
         CellDataPush(L,&MAP.cells[id]);
         return 1;
@@ -60,8 +61,8 @@ static int CellsGetByIdLua(lua_State* L){
 }
 
 static int CellsGetByCoordsLua(lua_State* L){
-    int x = lua_tonumber(L, 1) - 1;
-    int y = lua_tonumber(L, 2) - 1;
+    int x = lua_tonumber(L, 1);
+    int y = lua_tonumber(L, 2);
     int id = MAP.CoordsToId(x,y);
     if(id>=0 && id <= MAP.CoordsToId(MAP.width-1,MAP.height-1)){
         CellDataPush(L,&MAP.cells[id]);
@@ -81,10 +82,10 @@ static int CellsUpdateVisibleLua(lua_State* L){
 //endregion
 //region Map
 static int MapFindPathLua(lua_State* L){
-	int x1 = ceil(lua_tonumber(L, 1)) - 1;
-	int y1 = ceil(lua_tonumber(L, 2)) - 1;
-	int x2 = ceil(lua_tonumber(L, 3)) - 1;
-	int y2 = ceil(lua_tonumber(L, 4)) - 1;
+	int x1 = ceil(lua_tonumber(L, 1));
+	int y1 = ceil(lua_tonumber(L, 2));
+	int x2 = ceil(lua_tonumber(L, 3));
+	int y2 = ceil(lua_tonumber(L, 4));
 	if (x1<0 || y1<0 || x2 <0 || y2 < 0){
 	    dmLogError("pathfinding bad coords");
 	    return 0;
@@ -110,16 +111,16 @@ static int MapSetLua(lua_State* L){
 }
 
 static int MapChangeCellBlockedLua(lua_State* L){
-    int x = ceil(lua_tonumber(L, 1)) - 1;
-	int y = ceil(lua_tonumber(L, 2)) - 1;
+    int x = ceil(lua_tonumber(L, 1));
+	int y = ceil(lua_tonumber(L, 2));
 	bool blocking = lua_toboolean(L,1);
 	MapChangeCellBlocked(x,y,blocking);
 	return 0;
 }
 
 static int MapChangeCellTransparentLua(lua_State* L){
-    int x = ceil(lua_tonumber(L, 1)) - 1;
-	int y = ceil(lua_tonumber(L, 2)) - 1;
+    int x = ceil(lua_tonumber(L, 1));
+	int y = ceil(lua_tonumber(L, 2));
 	bool transparent = lua_toboolean(L,1);
 	MapChangeCellTransparent(x,y,transparent);
 	return 0;

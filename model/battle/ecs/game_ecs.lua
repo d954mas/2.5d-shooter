@@ -43,7 +43,7 @@ function EcsWorld:load_level()
 end
 
 function EcsWorld:_load_player()
-	self.player = self.entities:create_player(vmath.vector3(0.5, 0.5, 0))
+	self.player = self.entities:create_player(vmath.vector3(1.5, 1.5, 0))
 	self:add_entity(self.player)
 end
 
