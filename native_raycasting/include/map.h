@@ -17,7 +17,11 @@ class Map  : public Graph{
 		CellData* cells;
 		Map();
 		virtual ~Map();
-		inline int CoordsToId(int x,int y){return  y * width + x;}
+		inline int CoordsToId(const int x,const int y){return  y * width + x;}
+		inline void IdToCoords(const int id,int *y, int *x){
+		    *y = id / width;
+		    *x = id % width;
+		};
 		inline bool Passable(int startX, int startY, int endX, int endY) {
 			if (startX >= 0 && startX < width && startY >= 0 && startY < height
 			&& endX >= 0 && endX < width && endY >= 0 && endY < height){

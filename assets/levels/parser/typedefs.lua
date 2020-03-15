@@ -34,8 +34,12 @@ cjson.decode_invalid_numbers(false)
 ---@field by_id LevelMapTile[]
 ---@field tilesets LevelTileset[]
 
+---@class LevelMapTileProperties
+---@field blocked boolean
+---@field transparent boolean
+
 ---@class LevelMapTile
----@field properties table
+---@field properties LevelMapTileProperties
 ---@field id number
 ---@field width number
 ---@field height number

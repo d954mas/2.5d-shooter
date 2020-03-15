@@ -1540,14 +1540,18 @@
   ],
   "tilesets":{
     "lights":{
+      "name":"lights",
       "end_gid":196,
       "first_gid":37,
-      "name":"lights"
+      "properties":      {}
     },
     "walls":{
+      "name":"walls",
       "end_gid":36,
       "first_gid":1,
-      "name":"walls"
+      "properties":{
+        "blocked":true
+      }
     }
   }
 }

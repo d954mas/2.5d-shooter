@@ -48,16 +48,17 @@ function View:textures_update()
 	local buf = {}
 	for i = 0, level.cell_max_id do
 		local cell = assert(level:map_get_wall_unsafe_by_id(i))
-		if cell.empty then
-			buf[i] = NO_WALLS_COLOR
+		local tile = cell.base ~= 0 and level:get_tile(cell.base)
+		if cell.base == 0 then
+			buf[i + 1] = WHITE_COLOR
 		else
-			buf[i] = cell.blocked and WALL_COLOR or WHITE_COLOR
+			buf[i + 1] = tile.properties.blocked and WALL_COLOR or WHITE_COLOR
 		end
-		--buf_visible[index] = native_raycasting.cells_get_by_id(cell.id):get_visibility() and VISIBLE_COLOR or TRANSPARENT_COLOR
+		buf_visible[i + 1] = TRANSPARENT_COLOR --or native_raycasting.cells_get_by_id(cell.id):get_visibility() and VISIBLE_COLOR or TRANSPARENT_COLOR
 	end
 
-	--gui.set_texture_data("map", map_width, map_height, "rgba", table.concat(buf), true)
-	--gui.set_texture_data("map_visibility", map_width, map_height, "rgba", table.concat(buf_visible), true)
+	gui.set_texture_data("map", map_width, map_height, "rgba", table.concat(buf), true)
+	gui.set_texture_data("map_visibility", map_width, map_height, "rgba", table.concat(buf_visible), true)
 	local scale = vmath.vector3(1)
 	if map_width < map_height then
 		scale.x = MIN_SIZE / map_width
@@ -66,7 +67,7 @@ function View:textures_update()
 	end
 	scale.y = scale.x
 	gui.set_scale(self.vh.map_node, scale)
-	gui.set_position(self.vh.player_node, vmath.vector3(WORLD.battle_model.ecs.player.position.x, WORLD.battle_model.ecs.player.position.y-map_height, 0))
+	gui.set_position(self.vh.player_node, vmath.vector3(WORLD.battle_model.ecs.player.position.x, WORLD.battle_model.ecs.player.position.y - map_height, 0))
 end
 
 function View:initialize(root_name)

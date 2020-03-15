@@ -14,7 +14,7 @@ function Model:initialize(world, level)
 	self.time = 0
 
 	self.light_map = LightMap(128)
-
+	native_raycasting.map_set(self.level.data)
 	self.ecs = GameEcs(self.world)
 end
 

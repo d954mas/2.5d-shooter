@@ -20,6 +20,8 @@ local function array_to_zero(array)
 	end
 end
 
+
+
 function M.load_level(name)
 	local time = os.clock()
 	local data = assert(sys.load_resource("/assets/levels/result/" .. name .. ".json", "no lvl:" .. name))

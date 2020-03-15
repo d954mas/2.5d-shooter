@@ -133,25 +133,22 @@ void MapParse(lua_State* L){
 	free(MAP.cells);
 	MAP.cells = (CellData*)malloc(sizeof(CellData)*width*height);
 	memset(MAP.cells, 0, sizeof(CellData)*width*height);
-	lua_pushstring(L, "cells");
+	lua_pushstring(L, "walls");
 	lua_gettable(L, -2);
-	lua_pushnil(L);
-	for(int y = 0;lua_next(L, -2) != 0;y++){
-		lua_pushnil(L);
-		for(int x = 0;lua_next(L, -2) != 0;x++){
-			int id = MAP.CoordsToId(x,y);
-			CellData &data = MAP.cells[id];
-			data.x = x;
-			data.y = y;
-			data.id = id;
-			lua_getfield(L, -1, "blocked");
-			data.blocked = lua_toboolean(L, -1);
-			lua_pop(L, 1);
-			lua_getfield(L, -1, "transparent");
-            data.transparent = lua_toboolean(L, -1);
-			lua_pop(L, 2);
-		}
-		lua_pop(L, 1);
+	dmLogInfo("start cycle");
+    for(int id=0;id<MAP.width*MAP.height;id++){
+        lua_pushnumber(L, id);
+        dmLogInfo("start cycle:%d",id);
+        lua_gettable(L, -2);
+	    CellData &data = MAP.cells[id];
+	    MAP.IdToCoords(id, &data.x, &data.y);
+        data.id = id;
+        lua_getfield(L, -1, "blocked");
+        data.blocked = lua_toboolean(L, -1);
+        lua_pop(L, 1);
+        lua_getfield(L, -1, "transparent");
+        data.transparent = lua_toboolean(L, -1);
+        lua_pop(L, 2);
 	}
 	lua_pop(L, 1);
 }

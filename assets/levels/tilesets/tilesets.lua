@@ -30,7 +30,9 @@ return {
         width = 1,
         height = 1
       },
-      properties = {},
+      properties = {
+        ["blocked"] = true
+      },
       terrains = {},
       tilecount = 36,
       tiles = {

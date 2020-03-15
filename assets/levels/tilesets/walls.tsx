@@ -4,6 +4,9 @@
   <export target="walls..lua" format="lua"/>
  </editorsettings>
  <grid orientation="orthogonal" width="1" height="1"/>
+ <properties>
+  <property name="blocked" type="bool" value="true"/>
+ </properties>
  <tile id="0">
   <image width="64" height="64" source="../tiles/walls/wall1.png"/>
  </tile>
@@ -117,6 +120,6 @@
   <properties>
    <property name="texture_size" type="int" value="70"/>
   </properties>
-  <image width="70" height="70" source="../tiles/walls/wall36.png"/>
+  <image width="64" height="64" source="../tiles/walls/wall36.png"/>
  </tile>
 </tileset>

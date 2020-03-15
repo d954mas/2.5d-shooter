@@ -28,7 +28,7 @@ local function parse_tilesets(path)
 	for _, tileset in ipairs(tiled.tilesets) do
 		print("parse tileset:" .. tileset.name)
 		assert(not tilesets[tileset.name], "tileset with name:" .. tileset.name .. " already created")
-		tilesets[tileset.name] = { first_gid = tileset.firstgid, end_gid = tileset.firstgid + tileset.tiles[#tileset.tiles].id, name = tileset.name }
+		tilesets[tileset.name] = { first_gid = tileset.firstgid, end_gid = tileset.firstgid + tileset.tiles[#tileset.tiles].id, name = tileset.name, properties = tileset.properties or {} }
 		for _, tile in ipairs(tileset.tiles) do
 			tile.properties = tile.properties or {}
 			id_to_tile[tile.id + tileset.firstgid] = tile
@@ -246,15 +246,14 @@ local function parse_walls(map, layer)
 	return result
 end
 
-local function parse_light_map(map,layer)
+local function parse_light_map(map, layer)
 	check_layer_tilesets(layer, { assert(TILESETS.tilesets["lights"]) })
 	local result = {}
-	for i,v in ipairs(layer.data)do
-		result[i] = v == 0 and 0xFFFFFFFF or tonumber("0x"..string.sub(TILESETS.by_id[v].properties.color,2))
+	for i, v in ipairs(layer.data) do
+		result[i] = v == 0 and 0xFFFFFFFF or tonumber("0x" .. string.sub(TILESETS.by_id[v].properties.color, 2))
 	end
 	return result
 end
-
 
 local function parse_level(path, result_path)
 	local name = path:match("^.+\\(.+)....")
