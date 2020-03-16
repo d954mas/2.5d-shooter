@@ -336,9 +336,9 @@ end
 
 parse_tilesets(lfs.currentdir() .. "\\" .. TILESETS_PATH .. "\\" .. "tilesets.lua")
 local json = NEED_PRETTY and pretty(TILESETS, nil, "  ", "") or cjson.encode(TILESETS)
-local file = assert(io.open(lfs.currentdir() .. "\\" .. RESULT_PATH .. "\\" .. "tileset.json", "w+"))
-file:write(json)
-file:close()
+local file_save = assert(io.open(lfs.currentdir() .. "\\" .. RESULT_PATH .. "\\" .. "tileset.json", "w+"))
+file_save:write(json)
+file_save:close()
 
 for file in lfs.dir(lfs.currentdir() .. "\\" .. LEVELS_PATH) do
 	if file ~= "." and file ~= ".." then

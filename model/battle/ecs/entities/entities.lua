@@ -1,5 +1,5 @@
 local COMMON = require "libs.common"
-local TAG = "ENTITIES"
+local TAG = "Entities"
 
 ---@class FlashInfo
 ---@field current_time number
@@ -50,8 +50,6 @@ local TAG = "ENTITIES"
 ---@field auto_destroy_delay number when auto_destroy false and delay nil or 0 then destroy entity
 
 
----@param url url key that used for mapping entity to url_go
-local function url_to_key(url) return url.path end
 
 ---@class ENTITIES
 local Entities = COMMON.class("Entities")

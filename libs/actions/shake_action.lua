@@ -1,12 +1,6 @@
 local COMMON = require "libs.common"
 local TweenAction = require "libs.actions.tween_action"
-local TWEEN = require "libs.tween"
 
-local OBJECT_TYPES = {
-	TABLE = "TABLE",
-	GO = "GO",
-	GUI = "GUI"
-}
 
 ---@class ShakeAction:SequenceAction
 local Action = COMMON.class("ShakeAction", TweenAction)

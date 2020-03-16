@@ -1,8 +1,6 @@
 local COMMON = require "libs.common"
 local CONSTANTS = require "libs_project.constants"
-local DEBUG_INFO = require "debug.debug_info"
 local GUI = require "libs.gui.gui"
-local GOOEY = require "gooey.gooey"
 local SM = require "libs_project.sm"
 local SceneDebugView = require "debug.view.scene_debug_view"
 local WORLD = require "model.world"

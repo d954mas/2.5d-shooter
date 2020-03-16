@@ -1,4 +1,3 @@
-local LUME = require "libs.lume"
 
 local M = {}
 

@@ -3,7 +3,6 @@ local SCENE_ENUMS = require "libs.sm.enums"
 
 local SceneStack = require "libs.sm.scene_stack"
 local Scene = require "libs.sm.scene"
-local TAG = "SM"
 
 ---@class SceneManager2
 local M = COMMON.class("SceneManager")

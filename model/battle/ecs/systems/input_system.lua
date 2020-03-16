@@ -1,7 +1,6 @@
 local ECS = require 'libs.ecs'
 local CURSOR_HELPER = require "libs_project.cursor_helper"
 local COMMON = require "libs.common"
-local TAG = "InputSystem"
 
 ---@class InputSystem:ECSSystem
 local System = ECS.processingSystem()

@@ -1,5 +1,4 @@
 local COMMON = require "libs.common"
-local DEBUG_INFO = require "debug.debug_info"
 
 local Script = COMMON.new_n28s()
 
@@ -14,16 +13,16 @@ function Script:init()
 	self:bind_vh()
 	self.input = COMMON.INPUT()
 	--self.input.acquire()
---	self.input:add(COMMON.HASHES.INPUT_TOGGLE_DEBUG_GUI,self.input_toggle_gui_visible,true)
+	--	self.input:add(COMMON.HASHES.INPUT_TOGGLE_DEBUG_GUI,self.input_toggle_gui_visible,true)
 	self.show = true
 	self:input_toggle_gui_visible()
 end
 
 function Script:update(dt)
-	if self.show then
-		
-	end
---	gui.set_text(self.vh.lbl_version,"version: " .. sys.get_config("project.version") .. " (" .. DEBUG_INFO.version_time .. " )")
+	--if self.show then
+
+	--end
+	--	gui.set_text(self.vh.lbl_version,"version: " .. sys.get_config("project.version") .. " (" .. DEBUG_INFO.version_time .. " )")
 end
 
 function Script:final()
@@ -37,7 +36,7 @@ function Script:input_toggle_gui_visible()
 end
 
 function Script:on_input(action_id, action)
-	return self.input:on_input(self,action_id,action)
+	return self.input:on_input(self, action_id, action)
 end
 
 COMMON.N28S.register(Script())

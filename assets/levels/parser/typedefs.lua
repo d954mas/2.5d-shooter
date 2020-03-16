@@ -1,11 +1,3 @@
-local requiref = require
-local lfs = requiref "lfs"
-local cjson = requiref "cjson"
-local pretty = requiref "resty.prettycjson"
-
-cjson.encode_sparse_array(true)
-cjson.decode_invalid_numbers(false)
-
 --Cell used in cpp and in lua.So id start from 0.
 
 ---@class TileProperties

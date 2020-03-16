@@ -128,9 +128,9 @@ function M.meta_getter(f)
 end
 
 --region READ_ONLY
-local function len(self)
-    return #self.__VALUE
-end
+--local function len(self)
+  --  return #self.__VALUE
+--end
 --[[
 --TODO CHECK PERFORMANCE OF OVERRIDE FN
 --http://lua-users.org/wiki/GeneralizedPairsAndIpairs
@@ -152,7 +152,7 @@ end
 function ipairs(t) return _ipairs, t, 0 end
 --]]
 -- remember mappings from original table to proxy table
-local proxies = setmetatable({}, { __mode = "k" })
+--local proxies = setmetatable({}, { __mode = "k" })
 
 --__VALUE use to work with debugger or pprint
 ---@generic T

@@ -53,7 +53,7 @@ function View:textures_update()
 		else
 			buf[i + 1] = cell.native_cell:get_blocked() and WALL_COLOR or WHITE_COLOR
 		end
-		buf_visible[i + 1] =  cell.native_cell:get_visibility() and VISIBLE_COLOR or TRANSPARENT_COLOR
+		buf_visible[i + 1] = cell.native_cell:get_visibility() and VISIBLE_COLOR or TRANSPARENT_COLOR
 	end
 
 	gui.set_texture_data("map", map_width, map_height, "rgba", table.concat(buf), true)
@@ -66,7 +66,8 @@ function View:textures_update()
 	end
 	scale.y = scale.x
 	gui.set_scale(self.vh.map_node, scale)
-	gui.set_position(self.vh.player_node, vmath.vector3(WORLD.battle_model.ecs.player.position.x, WORLD.battle_model.ecs.player.position.y - map_height, 0))
+	local player = WORLD.battle_model.ecs.player
+	gui.set_position(self.vh.player_node, vmath.vector3(player.position.x, player.position.y - map_height, 0))
 end
 
 function View:initialize(root_name)
@@ -77,7 +78,8 @@ function View:initialize(root_name)
 	self.scheduler = COMMON.RX.CooperativeScheduler.create()
 
 	self.subscriptions = COMMON.RX.CompositeSubscription()
-	self.subscriptions:add(COMMON.EVENT_BUS:subscribe(EVENTS.GAME_LEVEL_MAP_CHANGED):go_distinct(self.scheduler):subscribe(function(event) self:clear_textures() end))
+	self.subscriptions:add(COMMON.EVENT_BUS:subscribe(EVENTS.GAME_LEVEL_MAP_CHANGED)
+								 :go_distinct(self.scheduler):subscribe(function(event) self:clear_textures() end))
 end
 
 function View:update(dt)

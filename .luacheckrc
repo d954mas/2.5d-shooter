@@ -3,11 +3,13 @@ files['.luacheckrc'].global = false
 unused_args = false
 cache = true
 jobs = 4
-max_line_length = 140
-max_code_line_length = 140
+max_line_length = 150
+max_code_line_length = 150
 --remove some imported libs
 exclude_files = {
 	"debug/bunnymark/**",
+	"googleanalytics/internal/**",
+	"googleanalytics/tracker.lua",
 	"richtext/**",
 	"gooey/**",
 	"libs/rx.lua",
@@ -69,6 +71,7 @@ read_globals = {
   "native_raycasting",
   "lua_script_instance",
   "lottie_web",
+  "checks"
 }
 
 globals = {

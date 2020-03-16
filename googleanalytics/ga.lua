@@ -3,15 +3,12 @@
 --
 -- @usage
 -- local ga = require "googleanalytics.ga"
--- 
 -- function init(self)
 -- 	ga.get_default_tracker().screenview("my_cool_screen")
 -- end
--- 
 -- function update(self, dt)
 -- 	ga.update()
 -- end
--- 
 -- function on_input(self, action_id, action)
 -- 	if gui.pick_node(node, action.x, action.y) and action.pressed then
 -- 		go.get_default_tracker().event("category", "action"))
@@ -40,8 +37,6 @@ function M.get_default_tracker(id)
 	return default_tracker
 end
 
-
-
 --- Dispatch hits to Google Analytics
 function M.dispatch()
 	queue.dispatch()
@@ -60,6 +55,5 @@ function M.update()
 		M.dispatch()
 	end
 end
-
 
 return M

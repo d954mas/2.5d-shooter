@@ -1,5 +1,5 @@
 local ECS = require 'libs.ecs'
-local CAMERA_URL = msg.url("game:/camera")
+--local CAMERA_URL = msg.url("game:/camera")
 ---@class UpdateCameraSystem:ECSSystem
 local System = ECS.processingSystem()
 System.filter = ECS.requireAll("player","position","angle")

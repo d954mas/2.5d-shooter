@@ -31,7 +31,8 @@ function Action:add_action(action, to_end)
 		table_insert(self.childs, 1, action)
 	end
 end
---If actions do not now params before it should start. For example it need tween form current tween to new value. But current value can't be calculated when action created,
+--If actions do not now params before it should start. For example it need tween form current tween to new value.
+--But current value can't be calculated when action created,
 --because it can be changed after action creation but before it started
 function Action:add_create_action_function(fun, to_end)
 	assert(fun)

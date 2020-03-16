@@ -43,7 +43,7 @@ local t = setmetatable({ __VALUE = M, }, {
 	__index = function(_, k)
 		local result = M[k]
 		if not result then
-			COMMON.w("no key:" .. k, TAG)
+			LOG.w("no key:" .. k, TAG)
 			result = function() return k end
 			M[k] = result
 		end
