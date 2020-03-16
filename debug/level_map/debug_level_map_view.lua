@@ -46,16 +46,14 @@ function View:textures_update()
 	--fast string concat https://stackoverflow.com/questions/19138974/does-lua-optimize-the-operator
 	local buf_visible = {}
 	local buf = {}
-	print("*********************")
 	for i = 0, level.cell_max_id do
 		local cell = assert(level:map_get_wall_unsafe_by_id(i))
-		local tile = cell.base ~= 0 and level:get_tile(cell.base)
 		if cell.base == 0 then
 			buf[i + 1] = WHITE_COLOR
 		else
-			buf[i + 1] = tile.properties.blocked and WALL_COLOR or WHITE_COLOR
+			buf[i + 1] = cell.native_cell:get_blocked() and WALL_COLOR or WHITE_COLOR
 		end
-		buf_visible[i + 1] =  native_raycasting.cells_get_by_id(i):get_visibility() and VISIBLE_COLOR or TRANSPARENT_COLOR
+		buf_visible[i + 1] =  cell.native_cell:get_visibility() and VISIBLE_COLOR or TRANSPARENT_COLOR
 	end
 
 	gui.set_texture_data("map", map_width, map_height, "rgba", table.concat(buf), true)

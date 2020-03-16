@@ -45,7 +45,6 @@ void CellsUpdateVisible(bool blocking){
 	    CellData &data = MAP.cells[set_data.id];
 		data.rayCasted = true;
         if(!data.visibility){
-            printf("visible\n");
 			data.visibility = true;
 			data.right = data.raycastingRight;
             data.top = data.raycastingTop;

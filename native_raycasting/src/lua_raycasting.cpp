@@ -51,7 +51,7 @@ static int CellsGetNeedUpdateLua(lua_State* L){
 
 static int CellsGetByIdLua(lua_State* L){
     int id = LuaCheckNumber(L,1,"bad id");
-    if(id>=0 && id <= MAP.CoordsToId(MAP.width-1,MAP.height-1)){
+     if(id>=0 && id <= MAP.idMax){
         CellDataPush(L,&MAP.cells[id]);
         return 1;
     }else{
@@ -61,17 +61,16 @@ static int CellsGetByIdLua(lua_State* L){
 }
 
 static int CellsGetByCoordsLua(lua_State* L){
-    int x = lua_tonumber(L, 1);
-    int y = lua_tonumber(L, 2);
+    int x = LuaCheckNumber(L, 1,"bad x");
+    int y = LuaCheckNumber(L, 2,"bad y");
     int id = MAP.CoordsToId(x,y);
-    if(id>=0 && id <= MAP.CoordsToId(MAP.width-1,MAP.height-1)){
+   if(id>=0 && id <= MAP.idMax){
         CellDataPush(L,&MAP.cells[id]);
         return 1;
-    }else{
-        dmLogError("bad id:%d",id);
-        return 0;
-    }
-
+   }else{
+       dmLogError("bad id:%d",id);
+       return 0;
+   }
 }
 
 static int CellsUpdateVisibleLua(lua_State* L){
@@ -82,10 +81,10 @@ static int CellsUpdateVisibleLua(lua_State* L){
 //endregion
 //region Map
 static int MapFindPathLua(lua_State* L){
-	int x1 = ceil(lua_tonumber(L, 1));
-	int y1 = ceil(lua_tonumber(L, 2));
-	int x2 = ceil(lua_tonumber(L, 3));
-	int y2 = ceil(lua_tonumber(L, 4));
+	int x1 = LuaCheckNumber(L, 1,"bad x1");
+	int y1 = LuaCheckNumber(L, 2,"bad y1");
+	int x2 = LuaCheckNumber(L, 3,"bad x2");
+	int y2 = LuaCheckNumber(L, 4,"bad y2");
 	if (x1<0 || y1<0 || x2 <0 || y2 < 0){
 	    dmLogError("pathfinding bad coords");
 	    return 0;
@@ -111,16 +110,16 @@ static int MapSetLua(lua_State* L){
 }
 
 static int MapChangeCellBlockedLua(lua_State* L){
-    int x = ceil(lua_tonumber(L, 1));
-	int y = ceil(lua_tonumber(L, 2));
+    int x = LuaCheckNumber(L, 1,"bad x");
+	int y = LuaCheckNumber(L, 2,"bad y");
 	bool blocking = lua_toboolean(L,1);
 	MapChangeCellBlocked(x,y,blocking);
 	return 0;
 }
 
 static int MapChangeCellTransparentLua(lua_State* L){
-    int x = ceil(lua_tonumber(L, 1));
-	int y = ceil(lua_tonumber(L, 2));
+    int x = LuaCheckNumber(L, 1,"bad x");
+   	int y = LuaCheckNumber(L, 2,"bad y");
 	bool transparent = lua_toboolean(L,1);
 	MapChangeCellTransparent(x,y,transparent);
 	return 0;
@@ -130,27 +129,27 @@ static int MapChangeCellTransparentLua(lua_State* L){
 
 //region Camera
 static int CameraUpdateLua(lua_State* L){
-	double posX = lua_tonumber(L, 1);
-	double posY = lua_tonumber(L, 2);
-	double angle = lua_tonumber(L, 3);
+	double posX = LuaCheckNumberD(L, 1,"bad pos x");
+	double posY = LuaCheckNumberD(L, 2,"bad pos y");
+	double angle = LuaCheckNumberD(L, 3,"bad angle");
 	CameraUpdate(posX, posY, angle);
 	return 0;
 }
 
 static int CameraSetFovLua(lua_State* L){
-	double fov = lua_tonumber(L, 1);
+	double fov = LuaCheckNumberD(L, 1,"bad fov");
 	CameraSetFov(fov);
 	return 0;
 }
 
 static int CameraSetRaysLua(lua_State* L){
-	int rays = (int)lua_tonumber(L, 1);
+	int rays = LuaCheckNumber(L, 1,"bad rays");
 	CameraSetRays(rays);
 	return 0;
 }
 
 static int CameraSetMaxDistanceLua(lua_State* L){
-	double dist = lua_tonumber(L, 1);
+	double dist = LuaCheckNumber(L, 1,"bad dist");
 	CameraSetMaxDistance(dist);
 	return 0;
 }

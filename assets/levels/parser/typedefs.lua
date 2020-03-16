@@ -60,6 +60,7 @@ cjson.decode_invalid_numbers(false)
 ---@field west number|nil
 ---@field floor number|nil nil if no floor. Tile id if have
 ---@field ceil number|nil nil if no ceil. Tile id if have
+---@field native_cell NativeCellData set when load level
 
 --vector3 is not vector3 here. I use it only to autocomplete worked. It will be tables with x,y,z
 ---@class LevelData

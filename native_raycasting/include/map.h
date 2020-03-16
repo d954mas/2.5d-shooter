@@ -13,7 +13,7 @@ class Map  : public Graph{
 	private:
 		MicroPather* pather;
 	public:
-		int width, height;
+		int width, height, idMax;
 		CellData* cells;
 		Map();
 		virtual ~Map();
