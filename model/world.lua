@@ -21,10 +21,9 @@ end
 function World:battle_set_level(level)
 	checks("?", "Level")
 	assert(not self.battle_model, "battle model already created")
-	self.battle_model = BattleModel(self,level)
+	self.battle_model = BattleModel(self, level)
+	self.battle_model.ecs.entities:set_world(self)
 end
-
-
 
 function World:battle_model_final()
 	if self.battle_model then

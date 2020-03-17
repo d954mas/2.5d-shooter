@@ -7,7 +7,6 @@ local function TILESET_LOAD()
 	if TILESET == nil then
 		TILESET = json.decode(assert(sys.load_resource("/assets/levels/result/tileset.json"), "no tileset"))
 		for k, v in pairs(TILESET.tilesets) do
-			pprint(v)
 			v.properties = v.properties or {}
 			local meta = { __index = v.properties }
 			for i = v.first_gid, v.end_gid, 1 do
@@ -57,8 +56,8 @@ function Level:map_get_height() return self.data.size.y end
 
 ---@return LevelDataWallBlock
 function Level:map_get_wall_by_id(id)
-	assert(self:map_cell_id_in(id), "id:" .. id)
-	return self.data.walls[id]
+	--assert(self:map_cell_id_in(id), "id:" .. id)
+	return assert(self.data.walls[id])
 end
 ---@return LevelDataWallBlock
 function Level:map_get_wall_unsafe_by_id(id)
@@ -67,6 +66,10 @@ end
 
 function Level:map_cell_id_in(id)
 	return id >= 0 and id <= self.cell_max_id
+end
+
+function Level:map_id_to_coords(id)
+	return
 end
 
 --endregion

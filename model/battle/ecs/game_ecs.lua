@@ -9,7 +9,7 @@ local EcsWorld = COMMON.class("EcsWorld")
 function EcsWorld:initialize(world)
 	self.ecs = ECS.world()
 	self.world = assert(world)
-	self.entities = Entities()
+	self.entities = Entities(world)
 	self:_init_systems()
 	self.ecs.on_entity_added = function(...) self.entities:on_entity_added(...) end
 	self.ecs.on_entity_updated = function(...) self.entities:on_entity_updated(...) end
@@ -31,6 +31,9 @@ function EcsWorld:_init_systems()
 	self.ecs:addSystem(SYSTEMS.CameraBobSystem)
 	self.ecs:addSystem(SYSTEMS.UpdateCameraSystem)
 
+	self.ecs:addSystem(SYSTEMS.CheckVisibleSystem)
+	self.ecs:addSystem(SYSTEMS.DrawCeilSystem)
+	self.ecs:addSystem(SYSTEMS.DrawFloorSystem)
 	self.ecs:addSystem(SYSTEMS.UpdateObjectColorSystem)
 	self.ecs:addSystem(SYSTEMS.AutoDestroySystem)
 end

@@ -26,7 +26,15 @@ local TAG = "Entities"
 ---@field tag string tag used for help when debug
 ---@field player boolean true if it player entity
 ---@field enemy boolean
+---@field floor boolean
+---@field ceil boolean
+---@field wall boolean
+---@field floor_cell LevelDataCellFloor
+---@field wall_cell LevelDataWallBlock
+---@field ceil_cell LevelDataCellFloor
+---@field cell_id number
 ---@field door boolean
+---@field visible boolean
 ---@field inventory PlayerInventory
 ---@field position vector3
 ---@field movement_velocity vector3
@@ -56,6 +64,13 @@ local Entities = COMMON.class("Entities")
 
 function Entities:initialize()
 
+end
+---@param world World
+function Entities:set_world(world)
+	self.world = assert(world)
+	self.battle_model = assert(world.battle_model)
+	self.level = assert(world.battle_model.level)
+	self.ecs = assert(world.battle_model.ecs)
 end
 
 --region ecs callbacks
@@ -100,6 +115,32 @@ function Entities:create_player(pos)
 		offset_weapon = 0,
 	}
 	e.hp = 100
+	return e
+end
+
+---@param cell_id number
+function Entities:create_floor(cell_id)
+	assert(type(cell_id) == "number")
+	---@type Entity
+	local e = {}
+	e.visible = false
+	e.cell_id = cell_id
+	e.floor = true
+	e.wall_cell = self.level:map_get_wall_by_id(cell_id)
+	e.floor_cell = assert(self.level.data.floor[cell_id])
+	return e
+end
+
+---@param cell_id number
+function Entities:create_ceil(cell_id)
+	assert(type(cell_id) == "number")
+	---@type Entity
+	local e = {}
+	e.visible = false
+	e.cell_id = cell_id
+	e.ceil = true
+	e.wall_cell = self.level:map_get_wall_by_id(cell_id)
+	e.floor_cell = assert(self.level.data.floor[cell_id])
 	return e
 end
 

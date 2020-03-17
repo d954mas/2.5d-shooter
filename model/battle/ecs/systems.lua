@@ -20,6 +20,9 @@ function M.load()
 	M.UpdateCameraSystem = require "model.battle.ecs.systems.update_camera_system"
 	M.UpdateGoSystem = require "model.battle.ecs.systems.update_go_system"
 	M.UpdateObjectColorSystem = require "model.battle.ecs.systems.update_object_color_system"
+	M.CheckVisibleSystem = require "model.battle.ecs.systems.check_visible_system"
+	M.DrawFloorSystem = require "model.battle.ecs.systems.draw_floor_system"
+	M.DrawCeilSystem = require "model.battle.ecs.systems.draw_ceil_system"
 end
 
 return M

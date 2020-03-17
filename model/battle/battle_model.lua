@@ -2,6 +2,7 @@ local COMMON = require "libs.common"
 local NativeCamera = require "model.battle.native_camera"
 local LightMap = require "model.battle.light_map"
 local GameEcs = require "model.battle.ecs.game_ecs"
+local LevelCreator = require "model.battle.level_creator"
 
 ---@class BattleModel
 local Model = COMMON.class("BattleModel")
@@ -24,7 +25,7 @@ function Model:on_scene_show()
 		self.native_camera = NativeCamera(512, 50)
 		self.light_map:set_level(self.level)
 		self.ecs:load_level()
-
+		LevelCreator(self.world):create()
 	end
 
 end

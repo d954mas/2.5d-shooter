@@ -96,13 +96,13 @@ function Script:init_gui()
 		if config.show_systems then
 			local text = ""
 			if (WORLD.battle_model and WORLD.battle_model.ecs) then
-				text = text .. string.format("%-30s %-7s %-9s %s \n", "Name", "Active", "Entities", "Time")
+				text = text .. string.format("%-30s %-7s %-9s %-6s %-6s %-6s \n", "Name", "Active", "Entities", "T", "TAvg", "TMax")
 				for _, sys in ipairs(WORLD.battle_model.ecs.ecs.systems) do
 					local count = 0
 					for _, _ in pairs(sys.entities) do
 						count = count + 1
 					end
-					text = text .. string.format("%-30s %-7s %-9d %.2f \n", sys.name, sys.active, count, 0)
+					text = text .. string.format("%-30s %-7s %-9d %-6.2f %-6.2f %-6.2f\n", sys.name, sys.active, count, sys._time.current*1000, sys._time.average*1000, sys._time.max*1000)
 				end
 			end
 			gui.set_text(game.childs.lbl_ecs_systems, text)
