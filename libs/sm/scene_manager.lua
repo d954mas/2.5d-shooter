@@ -36,9 +36,9 @@ function M:update(dt)
 	end
 
 	local scenes_updated = {}
-	for i = #self.stack, 1, -1 do
+	for i = #self.stack.stack, 1, -1 do
 		---@type Scene
-		local scene = self.stack[i]
+		local scene = self.stack.stack[i]
 		--can have multiple instance of same scene in stack
 		if (scene._state == SCENE_ENUMS.STATES.RUNNING and not scenes_updated[scene]) then
 			scene:update(dt)

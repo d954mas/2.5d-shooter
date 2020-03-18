@@ -3,11 +3,13 @@ local ECS = require "libs.ecs"
 local SYSTEMS = require "model.battle.ecs.systems"
 local Entities = require "model.battle.ecs.entities.entities"
 
+---@class GameEcsWorld
 local EcsWorld = COMMON.class("EcsWorld")
 
 ---@param world World
 function EcsWorld:initialize(world)
 	self.ecs = ECS.world()
+	self.ecs.game = self
 	self.world = assert(world)
 	self.entities = Entities(world)
 	self:_init_systems()

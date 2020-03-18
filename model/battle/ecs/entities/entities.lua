@@ -130,7 +130,7 @@ function Entities:create_floor(cell_id)
 	e.floor = true
 	e.wall_cell = self.level:map_get_wall_by_id(cell_id)
 	e.floor_cell = assert(self.level.data.floor[cell_id])
-	local x,y = e.wall_cell.native_cell:get_x()+0.5, e.wall_cell.native_cell:get_y() + 0.5
+	local x,y = e.wall_cell.native_cell:get_x()+0.5, e.wall_cell.native_cell:get_y()+0.5
 	e.position = vmath.vector3(x,y,0)
 	return e
 end
@@ -145,9 +145,14 @@ function Entities:create_ceil(cell_id)
 	e.ceil = true
 	e.wall_cell = self.level:map_get_wall_by_id(cell_id)
 	e.floor_cell = assert(self.level.data.floor[cell_id])
-	local x,y = e.wall_cell.native_cell:get_x()+0.5, e.wall_cell.native_cell:get_y() + 0.5
+	local x,y = e.wall_cell.native_cell:get_x()+0.5, e.wall_cell.native_cell:get_y()+0.5
 	e.position = vmath.vector3(x,y,1)
 	return e
+end
+
+---@return Entity
+function Entities:create_input(action_id,action)
+	return {input_info = {action_id = action_id, action = action },auto_destroy = true}
 end
 
 return Entities

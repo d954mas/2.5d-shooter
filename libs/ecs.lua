@@ -445,6 +445,7 @@ local worldMetaTable
 ---@field systemsToRemove table
 ---@field entities table
 ---@field systems ECSSystem[]
+---@field game GameEcsWorld
 local World = {}
 function World:add(...)
 end

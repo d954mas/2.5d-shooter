@@ -11,7 +11,7 @@ function System:process(e, dt)
 		e.ceil_go = FACTORIES.create_ceil(vmath.vector3(e.position.x, e.position.z, -e.position.y), e.floor_cell.tile_id)
 	elseif (not e.visible and e.ceil_go) then
 		go.delete(e.ceil_go.root)
-		e.ceil_go.root = nil
+		e.ceil_go = nil
 	end
 end
 

@@ -6,6 +6,11 @@ M.INPUT = {
 	BACK = hash("back"),
 	TOUCH = hash("touch"),
 	RIGHT_CLICK = hash("right_click"),
+	ESK = hash("esk"),
+	UP = hash("up"),
+	DOWN = hash("down"),
+	LEFT = hash("left"),
+	RIGHT = hash("right")
 }
 
 M.MSG = {

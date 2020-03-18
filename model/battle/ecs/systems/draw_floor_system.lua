@@ -13,7 +13,7 @@ function System:process(e, dt)
 		e.floor_go = FACTORIES.create_floor(vmath.vector3(e.position.x, e.position.z, -e.position.y), e.floor_cell.tile_id)
 	elseif (not e.visible and e.floor_go) then
 		go.delete(e.floor_go.root)
-		e.floor_goroot = nil
+		e.floor_go = nil
 	end
 end
 

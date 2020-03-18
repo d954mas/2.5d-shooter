@@ -112,8 +112,6 @@ function Scene:on_input(action_id, action)
 end
 
 function Scene:update(dt)
-	checks("?", "number")
-	assert(self._state == SCENE_ENUMS.STATES.RUNNING)
 end
 
 return Scene

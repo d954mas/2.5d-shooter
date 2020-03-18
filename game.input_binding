@@ -6,6 +6,26 @@ key_trigger {
   input: KEY_BACKSPACE
   action: "backspace"
 }
+key_trigger {
+  input: KEY_ESC
+  action: "esk"
+}
+key_trigger {
+  input: KEY_W
+  action: "up"
+}
+key_trigger {
+  input: KEY_A
+  action: "down"
+}
+key_trigger {
+  input: KEY_S
+  action: "left"
+}
+key_trigger {
+  input: KEY_D
+  action: "right"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_1
   action: "touch"

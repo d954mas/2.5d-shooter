@@ -1,6 +1,7 @@
 local BaseScene = require "libs.sm.scene"
 local Levels = require "scenes.game.levels.levels"
 local WORLD = require "model.world"
+local CURSOR_HELPER = require "libs_project.cursor_helper"
 
 ---@class GameScene:Scene
 local Scene = BaseScene:subclass("GameScene")
@@ -17,6 +18,21 @@ end
 
 function Scene:show_done()
 	WORLD.battle_model:on_scene_show()
+	CURSOR_HELPER.lock_cursor()
+	CURSOR_HELPER.register_listeners()
+end
+
+function Scene:hide_done()
+	CURSOR_HELPER.unregister_listener()
+	CURSOR_HELPER.unlock_cursor()
+end
+
+function Scene:update(dt)
+	CURSOR_HELPER.update_cursor_movement()
+end
+
+function Scene:on_input(action_id, action)
+	CURSOR_HELPER.on_input(action_id,action)
 end
 
 function Scene:unload_done()

@@ -10,7 +10,7 @@ local M = {}
 M.focus = true
 M.cursor_movement = vmath.vector3(0)
 function M.register_listeners()
-	window.set_listener(function (self,event,sss)
+	window.set_listener(function(self, event, sss)
 		--M.prev_state = not M.locked
 		if event == window.WINDOW_EVENT_FOCUS_LOST then
 			M.unlock_cursor()
@@ -24,7 +24,7 @@ function M.register_listeners()
 		end
 	end)
 	if IS_HTML then
-		defos.on_click(function ()
+		defos.on_click(function()
 			if M.locked then
 				defos.set_cursor_locked(true)
 			else
@@ -35,8 +35,8 @@ function M.register_listeners()
 end
 
 function M.unregister_listener()
-	window.set_listener(function () end)
-	if IS_HTML then defos.on_click(function () end) end
+	window.set_listener(function() end)
+	if IS_HTML then defos.on_click(function() end) end
 end
 
 function M.is_locked()
@@ -57,21 +57,23 @@ function M.lock_cursor()
 	end
 end
 
-function M.on_input(action_id,action)
+function M.on_input(action_id, action)
 	if IS_HTML then
 		if action_id == nil and defos:is_cursor_locked() then
 			M.cursor_movement.x = action.dx
 			M.cursor_movement.y = action.dy
 		end
 	else
-		if action_id == COMMON.HASHES.INPUT_ESC then
+		if action_id == COMMON.HASHES.INPUT.ESK and action.pressed then
 			if M.locked then
 				M.unlock_cursor()
 				M.wait_for_touch = true -- enable lock when user touch inside game window
+			else
+				M.lock_cursor()
+				M.wait_for_touch = false
 			end
-		elseif action_id == COMMON.HASHES.INPUT_TOUCH and action.pressed and M.wait_for_touch then
-			M.lock_cursor()
-			M.wait_for_touch = false
+		elseif action_id == COMMON.HASHES.INPUT.TOUCH and action.pressed and M.wait_for_touch then
+
 		end
 	end
 end
@@ -90,10 +92,11 @@ end
 function M.update_cursor_movement()
 	if not IS_HTML then
 		if M.locked then
-			local x,y = defos.get_cursor_pos_view()
-			M.cursor_movement.x = x-RENDERCAM.window.x/2
-			M.cursor_movement.y = y-RENDERCAM.window.y/2
-			defos.set_cursor_pos_view(RENDERCAM.window.x/2, RENDERCAM.window.y/2) -- In game view coordinates
+			local x, y = defos.get_cursor_pos_view()
+			M.cursor_movement.x = x - RENDERCAM.window.x / 2
+			M.cursor_movement.y = y - RENDERCAM.window.y / 2
+			defos.set_cursor_pos_view(RENDERCAM.window.x / 2, RENDERCAM.window.y / 2) -- In game view coordinates
+			x, y = defos.get_cursor_pos_view()
 		end
 	end
 end

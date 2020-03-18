@@ -28,6 +28,11 @@ function Script:update(dt)
 	WORLD.battle_model:update(dt)
 end
 
+function Script:on_input(action_id, action)
+	self.input:on_input(self, action_id, action)
+	WORLD.battle_model.ecs:add_entity(WORLD.battle_model.ecs.entities:create_input(action_id or COMMON.INPUT.HASH_NIL, action))
+end
+
 function Script:final()
 	COMMON.CONTEXT:unregister(COMMON.CONTEXT.NAMES.GAME)
 	self.input.release()

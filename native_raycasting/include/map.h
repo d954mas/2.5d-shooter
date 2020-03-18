@@ -18,7 +18,7 @@ class Map  : public Graph{
 		Map();
 		virtual ~Map();
 		inline int CoordsToId(const int x,const int y){return  y * width + x;}
-		inline void IdToCoords(const int id,int *y, int *x){
+		inline void IdToCoords(const int id,int *x, int *y){
 		    *y = id / width;
 		    *x = id % width;
 		};

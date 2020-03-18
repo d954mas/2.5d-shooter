@@ -16,12 +16,12 @@ function Creator:create()
 end
 
 function Creator:create_floor()
-	for id, _ in ipairs(self.level.data.floor) do
+	for id=0,#self.level.data.floor-1,1 do
 		self.ecs:add_entity(self.entities:create_floor(id))
 	end
 end
 function Creator:create_ceil()
-	for id, _ in ipairs(self.level.data.ceil) do
+	for id=0,#self.level.data.ceil-1,1 do
 		self.ecs:add_entity(self.entities:create_ceil(id))
 	end
 end
