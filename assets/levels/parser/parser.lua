@@ -37,15 +37,15 @@ local function parse_tilesets(path)
 			tile.height = tile.height or tile.size or tileset.tileheight
 			--copy tileset properties to tile properties
 			setmetatable(tile.properties, { __index = tileset.properties })
-			--[[if tile.image then
+			if tile.image then
 				local image_path = tile.image
 				local pathes = {}
 				for word in string.gmatch(image_path, "([^/]+)") do
-					table.insert(pathes,word)
+					table.insert(pathes, word)
 				end
-				tile.atlas = pathes[#pathes-1]
-				tile.image = string.sub(pathes[#pathes],1,string.find(pathes[#pathes],"%.")-1)
-				if tile.properties.thin_wall then
+				tile.atlas = pathes[#pathes - 1]
+				tile.image = string.sub(pathes[#pathes], 1, string.find(pathes[#pathes], "%.") - 1)
+				--[[if tile.properties.thin_wall then
 					local idx = string.find(tile.image, "_[^_]*$")
 					local orientation =  string.sub(tile.image,idx+1)
 					local angle = 0
@@ -57,10 +57,10 @@ local function parse_tilesets(path)
 					if not tile.properties.angle then
 						tile.properties.angle = angle
 					end
-				end
+				end--]]
 			end--]]
-			--[[tile.scale = 1/(tile.properties.size_for_scale or tile.height)*(tile.properties.scale or 1)
-			local origin = tile.properties.origin
+			tile.scale = 1 / (tile.properties.texture_size or tile.height) * (tile.properties.texture_scale or 1)
+			--[[local origin = tile.properties.origin
 			if origin then
 				local size = tile.properties.size_for_scale or tile.height
 				local dy = (size - tile.height)*tile.scale

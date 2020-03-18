@@ -17,17 +17,6 @@ COMMON.empty_ne("defos")
 ---@class ScriptMain
 local Script = COMMON.new_n28s()
 
-local scenes = {
-
-}
-
-function Script:scenes_register()
-	local reg_scenes = {}
-	for i, v in ipairs(scenes) do
-		reg_scenes[i] = v()
-	end --create instances
-	SM:register(reg_scenes)
-end
 
 function Script:init_input()
 	self.input = COMMON.INPUT()

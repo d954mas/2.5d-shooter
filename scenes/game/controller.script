@@ -1,0 +1,36 @@
+requiref = require -- to fix cyclic dependencies
+local COMMON = require "libs.common"
+local WORLD = require "model.world"
+---@class ScriptGameController
+local Script = COMMON.new_n28s()
+
+function Script:init_input()
+	self.input = COMMON.INPUT()
+	self.input.acquire()
+end
+
+function Script:init_msg()
+	self.msg = COMMON.MSG()
+end
+
+function Script:init()
+	self:init_input()
+	self:init_msg()
+	WORLD.battle_model:load_level()
+	COMMON.CONTEXT:register(COMMON.CONTEXT.NAMES.GAME, self)
+end
+
+function Script:on_message(message_id, message, sender)
+	self.msg:on_message(self, message_id, message, sender)
+end
+
+function Script:update(dt)
+	WORLD.battle_model:update(dt)
+end
+
+function Script:final()
+	COMMON.CONTEXT:unregister(COMMON.CONTEXT.NAMES.GAME)
+	self.input.release()
+end
+
+COMMON.N28S.register(Script())

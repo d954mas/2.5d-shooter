@@ -32,6 +32,8 @@ local TAG = "Entities"
 ---@field floor_cell LevelDataCellFloor
 ---@field wall_cell LevelDataWallBlock
 ---@field ceil_cell LevelDataCellFloor
+---@field floor_go FloorGO
+---@field ceil_go FloorGO
 ---@field cell_id number
 ---@field door boolean
 ---@field visible boolean
@@ -128,6 +130,8 @@ function Entities:create_floor(cell_id)
 	e.floor = true
 	e.wall_cell = self.level:map_get_wall_by_id(cell_id)
 	e.floor_cell = assert(self.level.data.floor[cell_id])
+	local x,y = e.wall_cell.native_cell:get_x()+0.5, e.wall_cell.native_cell:get_y() + 0.5
+	e.position = vmath.vector3(x,y,0)
 	return e
 end
 
@@ -141,6 +145,8 @@ function Entities:create_ceil(cell_id)
 	e.ceil = true
 	e.wall_cell = self.level:map_get_wall_by_id(cell_id)
 	e.floor_cell = assert(self.level.data.floor[cell_id])
+	local x,y = e.wall_cell.native_cell:get_x()+0.5, e.wall_cell.native_cell:get_y() + 0.5
+	e.position = vmath.vector3(x,y,1)
 	return e
 end
 

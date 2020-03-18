@@ -24,10 +24,12 @@ function Model:on_scene_show()
 		self.inited = true
 		self.native_camera = NativeCamera(512, 50)
 		self.light_map:set_level(self.level)
-		self.ecs:load_level()
-		LevelCreator(self.world):create()
 	end
+end
 
+function Model:load_level()
+	self.ecs:load_level()
+	LevelCreator(self.world):create()
 end
 
 function Model:update(dt)

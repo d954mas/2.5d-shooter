@@ -111,7 +111,6 @@ function Script:init_gui()
 			game.childs.level_map:update(dt)
 		end
 	end
-	pprint(self.views.panels.game.childs.level_map)
 	gui.set_enabled(self.views.panels.game.childs.level_map.vh.map_node, false)
 
 	self:panel_hide_all()

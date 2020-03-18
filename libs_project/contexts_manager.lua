@@ -6,6 +6,7 @@ local Manager = CLASS.class("ContextManagerProject", ContextManager)
 
 Manager.NAMES = {
 	MAIN = "MAIN",
+	GAME = "GAME",
 	RENDER = "RENDER",
 	LIGHT_MAP_SCRIPT = "LIGHT_MAP_SCRIPT",
 }

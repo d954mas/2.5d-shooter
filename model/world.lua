@@ -10,7 +10,7 @@ function World:initialize()
 end
 
 function World:update(dt)
-	if self.battle_model then self.battle_model:update(dt) end
+
 end
 
 function World:final()

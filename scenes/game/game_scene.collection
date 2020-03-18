@@ -1,4 +1,4 @@
-name: "tests_list"
+name: "game_scene"
 instances {
   id: "camera"
   prototype: "/rendercam/camera.go"
@@ -65,6 +65,46 @@ instances {
 instances {
   id: "light_map"
   prototype: "/go/light_map/light_map.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "factories"
+  prototype: "/model/battle/factories/factories.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "controller"
+  prototype: "/scenes/game/controller.go"
   position {
     x: 0.0
     y: 0.0
