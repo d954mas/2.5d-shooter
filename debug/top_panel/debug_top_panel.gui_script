@@ -2,6 +2,7 @@ local COMMON = require "libs.common"
 local CONSTANTS = require "libs_project.constants"
 local GUI = require "libs.gui.gui"
 local SM = require "libs_project.sm"
+local DEBUG_INFO = require "debug.debug_info"
 local SceneDebugView = require "debug.view.scene_debug_view"
 local WORLD = require "model.world"
 local LEVEL_MAP = require "debug.level_map.debug_level_map_view"
@@ -38,10 +39,12 @@ function Script:bind_vh()
 				childs = {
 					btn_ecs_systems = GUI.ButtonIconTest("panel_game/btn_ecs_systems"),
 					btn_level_map = GUI.ButtonIconTest("panel_game/btn_level_map"),
+					btn_game_info = GUI.ButtonIconTest("panel_game/btn_game_info"),
 					lbl_ecs_systems = gui.get_node("panel_game/lbl_ecs_systems"),
+					lbl_info_1 = gui.get_node("panel_game/info_1"),
 					level_map = LEVEL_MAP("panel_game/level_map")
 				},
-				config = { show_systems = false, show_level_map = false }
+				config = { show_systems = false, show_level_map = false, show_game_info = false }
 			}
 		}
 	}
@@ -89,6 +92,12 @@ function Script:init_gui()
 		gui.set_enabled(game.childs.level_map.vh.map_node, game.config.show_level_map)
 	end)
 
+	self.views.panels.game.childs.btn_game_info:set_input_listener(function()
+		local game = self.views.panels.game
+		game.config.show_game_info = not game.config.show_game_info
+		gui.set_enabled(game.childs.lbl_info_1, game.config.show_game_info)
+	end)
+
 	self.views.panels.game.update = function(dt)
 		local game = self.views.panels.game
 		local config = self.views.panels.game.config
@@ -102,13 +111,16 @@ function Script:init_gui()
 					for _, _ in pairs(sys.entities) do
 						count = count + 1
 					end
-					text = text .. string.format("%-30s %-7s %-9d %-6.2f %-6.2f %-6.2f\n", sys.name, sys.active, count, sys._time.current*1000, sys._time.average*1000, sys._time.max*1000)
+					text = text .. string.format("%-30s %-7s %-9d %-6.2f %-6.2f %-6.2f\n", sys.name, sys.active, count, sys._time.current * 1000, sys._time.average * 1000, sys._time.max * 1000)
 				end
 			end
 			gui.set_text(game.childs.lbl_ecs_systems, text)
 		end
 		if config.show_level_map then
 			game.childs.level_map:update(dt)
+		end
+		if config.show_game_info then
+			gui.set_text(game.childs.lbl_info_1, string.format("walls:%d\n ceils/floors:%d",DEBUG_INFO.walls,DEBUG_INFO.floors+DEBUG_INFO.ceils))
 		end
 	end
 	gui.set_enabled(self.views.panels.game.childs.level_map.vh.map_node, false)

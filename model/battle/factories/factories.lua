@@ -3,7 +3,7 @@ local TILESET = require "model.battle.level.tileset"
 local URLS = {
 	factory = {
 		ceil = msg.url("game_scene:/factories#ceil"),
-		floor = msg.url("game_scene:/factories#ceil")
+		floor = msg.url("game_scene:/factories#floor")
 	}
 }
 

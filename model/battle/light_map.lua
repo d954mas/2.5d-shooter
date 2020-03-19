@@ -16,6 +16,7 @@ function LightMap:initialize(size)
 	local ctx = COMMON.CONTEXT:set_context_top_by_name(COMMON.CONTEXT.NAMES.RENDER)
 	local render = COMMON.RENDER
 	self.render_target = render:create_render_target(HASH_LIGHT_MAP, { w = size, h = size })
+	render.targets.light_map = self.render_target
 	render.constants_buffers.light_map.light_map = vmath.vector4(self.size, self.size, 0, 0)
 	self:set_fog_color(vmath.vector4(0.15))
 	self:set_fog(2, 0, 0.1)

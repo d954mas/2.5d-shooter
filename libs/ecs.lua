@@ -373,6 +373,7 @@ end
 ---@field world ECSWorld
 ---@field active boolean
 ---@field interval number
+---@field entities Entity[]
 --- Creates a new Processing System or Processing System class. Processing
 -- Systems process each entity individual, and are usually what is needed.
 -- Processing Systems have three extra callbacks besides those inheritted from
@@ -443,7 +444,7 @@ local worldMetaTable
 ---@field entitiesToChange table
 ---@field systemsToAdd table
 ---@field systemsToRemove table
----@field entities table
+---@field entities Entity[]
 ---@field systems ECSSystem[]
 ---@field game GameEcsWorld
 local World = {}

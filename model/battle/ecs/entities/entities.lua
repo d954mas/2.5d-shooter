@@ -144,7 +144,7 @@ function Entities:create_ceil(cell_id)
 	e.cell_id = cell_id
 	e.ceil = true
 	e.wall_cell = self.level:map_get_wall_by_id(cell_id)
-	e.floor_cell = assert(self.level.data.floor[cell_id])
+	e.ceil_cell = assert(self.level.data.ceil[cell_id])
 	local x,y = e.wall_cell.native_cell:get_x()+0.5, e.wall_cell.native_cell:get_y()+0.5
 	e.position = vmath.vector3(x,y,1)
 	return e
