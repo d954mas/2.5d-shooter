@@ -1,4 +1,3 @@
-#!/usr/bin/env tarantool
 
 local _qualifiers_cache = {
 	-- ['?type1|type2'] = {

@@ -36,6 +36,7 @@ function EcsWorld:_init_systems()
 	self.ecs:addSystem(SYSTEMS.CheckVisibleSystem)
 	self.ecs:addSystem(SYSTEMS.DrawCeilSystem)
 	self.ecs:addSystem(SYSTEMS.DrawFloorSystem)
+	self.ecs:addSystem(SYSTEMS.DrawWallSystem)
 	self.ecs:addSystem(SYSTEMS.UpdateObjectColorSystem)
 	self.ecs:addSystem(SYSTEMS.AutoDestroySystem)
 end

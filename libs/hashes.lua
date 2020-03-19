@@ -57,5 +57,6 @@ M.MSG_SM_LOAD = hash("msg_sm_load")
 
 M.EMPTY = hash("empty")
 M.NIL = hash("nil")
+M.SPRITE = hash("sprite")
 
 return M

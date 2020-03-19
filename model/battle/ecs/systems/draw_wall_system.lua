@@ -2,10 +2,10 @@ local ECS = require 'libs.ecs'
 local FACTORIES = require "model.battle.factories.factories"
 local TILESET = require "model.battle.level.tileset"
 --local CAMERA_URL = msg.url("game:/camera")
----@class DrawFloorSystem:ECSSystem
+---@class DrawWallSystem:ECSSystem
 local System = ECS.processingSystem()
-System.filter = ECS.requireAll("floor")
-System.name = "DrawFloorSystem"
+System.filter = ECS.requireAll("wall")
+System.name = "DrawWallSystem"
 
 ---@param e Entity
 function System:preProcess()
@@ -13,17 +13,16 @@ function System:preProcess()
 	for _, cell in ipairs(need_load) do
 		local e = self.cells[cell:get_id()]
 		if e then
-			assert(not e.floor_go, "already loaded")
-			e.floor_go = FACTORIES.create_floor(vmath.vector3(e.position.x, e.position.z, -e.position.y), e.floor_cell.tile_id)
+			assert(not e.wall_go, "already loaded")
+			e.wall_go = FACTORIES.create_wall(vmath.vector3(e.position.x, e.position.z, -e.position.y), e.wall_cell)
 		end
 	end
 	local need_unload = native_raycasting.cells_get_need_unload()
 	for _, cell in ipairs(need_unload) do
 		local e = self.cells[cell:get_id()]
 		if e then
-			assert(e.floor_go, "already loaded")
-			go.delete(e.floor_go.root, true)
-			e.floor_go = nil
+			go.delete(e.wall_go.root,true)
+			e.wall_go = nil
 		end
 	end
 end

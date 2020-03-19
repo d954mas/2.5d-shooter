@@ -13,16 +13,32 @@ end
 function Creator:create()
 	self:create_floor()
 	self:create_ceil()
+	self:create_wall()
 end
 
 function Creator:create_floor()
-	for id=0,#self.level.data.floor-1,1 do
-		self.ecs:add_entity(self.entities:create_floor(id))
+	for id = 0, #self.level.data.floor - 1, 1 do
+		local floor = self.level.data.floor[id]
+		if (floor.tile_id ~= 0) then
+			self.ecs:add_entity(self.entities:create_floor(id))
+		end
 	end
 end
 function Creator:create_ceil()
-	for id=0,#self.level.data.ceil-1,1 do
-		self.ecs:add_entity(self.entities:create_ceil(id))
+	for id = 0, #self.level.data.ceil - 1, 1 do
+		local ceil = self.level.data.ceil[id]
+		if (ceil.tile_id ~= 0) then
+			self.ecs:add_entity(self.entities:create_ceil(id))
+		end
+	end
+end
+function Creator:create_wall()
+	for id = 0, #self.level.data.walls - 1, 1 do
+		local wall = self.level.data.walls[id]
+		if (wall.base ~= 0 or wall.south or wall.north or wall.west or wall.east) then
+			self.ecs:add_entity(self.entities:create_wall(id))
+		end
+
 	end
 end
 

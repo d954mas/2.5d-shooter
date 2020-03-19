@@ -34,6 +34,7 @@ local TAG = "Entities"
 ---@field ceil_cell LevelDataCellFloor
 ---@field floor_go FloorGO
 ---@field ceil_go FloorGO
+---@field wall_go WallGo
 ---@field cell_id number
 ---@field door boolean
 ---@field visible boolean
@@ -125,13 +126,12 @@ function Entities:create_floor(cell_id)
 	assert(type(cell_id) == "number")
 	---@type Entity
 	local e = {}
-	e.visible = false
 	e.cell_id = cell_id
 	e.floor = true
 	e.wall_cell = self.level:map_get_wall_by_id(cell_id)
 	e.floor_cell = assert(self.level.data.floor[cell_id])
-	local x,y = e.wall_cell.native_cell:get_x()+0.5, e.wall_cell.native_cell:get_y()+0.5
-	e.position = vmath.vector3(x,y,0)
+	local x, y = e.wall_cell.native_cell:get_x() + 0.5, e.wall_cell.native_cell:get_y() + 0.5
+	e.position = vmath.vector3(x, y, 0)
 	return e
 end
 
@@ -140,19 +140,31 @@ function Entities:create_ceil(cell_id)
 	assert(type(cell_id) == "number")
 	---@type Entity
 	local e = {}
-	e.visible = false
 	e.cell_id = cell_id
 	e.ceil = true
 	e.wall_cell = self.level:map_get_wall_by_id(cell_id)
 	e.ceil_cell = assert(self.level.data.ceil[cell_id])
-	local x,y = e.wall_cell.native_cell:get_x()+0.5, e.wall_cell.native_cell:get_y()+0.5
-	e.position = vmath.vector3(x,y,1)
+	local x, y = e.wall_cell.native_cell:get_x() + 0.5, e.wall_cell.native_cell:get_y() + 0.5
+	e.position = vmath.vector3(x, y, 1)
+	return e
+end
+
+---@param cell_id number
+function Entities:create_wall(cell_id)
+	assert(type(cell_id) == "number")
+	---@type Entity
+	local e = {}
+	e.cell_id = cell_id
+	e.wall = true
+	e.wall_cell = self.level:map_get_wall_by_id(cell_id)
+	local x, y = e.wall_cell.native_cell:get_x() + 0.5, e.wall_cell.native_cell:get_y() + 0.5
+	e.position = vmath.vector3(x, y, 0.5)
 	return e
 end
 
 ---@return Entity
-function Entities:create_input(action_id,action)
-	return {input_info = {action_id = action_id, action = action },auto_destroy = true}
+function Entities:create_input(action_id, action)
+	return { input_info = { action_id = action_id, action = action }, auto_destroy = true }
 end
 
 return Entities

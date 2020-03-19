@@ -23,6 +23,7 @@ function M.load()
 	M.CheckVisibleSystem = require "model.battle.ecs.systems.check_visible_system"
 	M.DrawFloorSystem = require "model.battle.ecs.systems.draw_floor_system"
 	M.DrawCeilSystem = require "model.battle.ecs.systems.draw_ceil_system"
+	M.DrawWallSystem = require "model.battle.ecs.systems.draw_wall_system"
 end
 
 return M
