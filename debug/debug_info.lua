@@ -15,7 +15,10 @@ end
 ---@param ecs GameEcsWorld
 local function count_walls(ecs)
 	local walls, floors, ceils = 0, 0, 0
-	for _, entity in ipairs(ecs.ecs.entities) do
+
+	local entities = ecs.ecs.entities
+	for i=1, #ecs.ecs.entities do
+		local entity = entities[i]
 		if (entity.floor_go) then floors = floors + 1 end
 		if (entity.ceil_go) then ceils = ceils + 1 end
 		if (entity.wall_go) then walls = walls + 1 end

@@ -11,7 +11,7 @@ profiles {
       compression_level: FAST
       compression_type: COMPRESSION_TYPE_WEBP_LOSSY
     }
-    mipmaps: false
+    mipmaps: true
     max_texture_size: 2048
     premultiply_alpha: true
   }

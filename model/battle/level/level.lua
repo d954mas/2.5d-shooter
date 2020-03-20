@@ -11,23 +11,26 @@ local TAG = "Level"
 local Level = COMMON.class("Level")
 
 ---@param walls LevelDataWallBlock[]
-local function walls_prepare_to_native(walls)
-	for i = 0, #walls do
+local function walls_prepare_to_native(walls, cell_max_id)
+	for i = 0, cell_max_id do
 		local wall = walls[i]
-		if (wall.base ~= 0) then
+		if (wall) then
 			local tile = TILESET.by_id[wall.base]
 			wall.blocked = tile.properties.blocked
 			wall.transparent = tile.properties.transparent
+		else
+			wall = { base = 0 }
+			walls[i] = wall
 		end
-
 	end
 end
 
 ---@param data LevelData
 function Level:initialize(data)
 	self.data = assert(data)
-	walls_prepare_to_native(self.data.walls)
 	self.cell_max_id = self.data.size.x * self.data.size.y - 1
+	walls_prepare_to_native(self.data.walls, self.cell_max_id)
+
 end
 
 --region MAP

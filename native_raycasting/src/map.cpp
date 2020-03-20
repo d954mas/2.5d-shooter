@@ -137,10 +137,8 @@ void MapParse(lua_State* L){
 	memset(MAP.cells, 0, sizeof(CellData)*width*height);
 	lua_pushstring(L, "walls");
 	lua_gettable(L, -2);
-	dmLogInfo("start cycle");
     for(int id=0;id<MAP.width*MAP.height;id++){
         lua_pushnumber(L, id);
-        dmLogInfo("start cycle:%d",id);
         lua_gettable(L, -2);
 	    CellData &data = MAP.cells[id];
 	    CellDataPush(L, &data);

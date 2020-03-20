@@ -9,7 +9,7 @@ local MAP_HELPER = requiref "assets.levels.parser.map_helper"
 local LEVELS_PATH = "lua"
 local TILESETS_PATH = "tilesets"
 local RESULT_PATH = "result"
-local NEED_PRETTY = true
+local NEED_PRETTY = false
 
 cjson.encode_sparse_array(true)
 cjson.decode_invalid_numbers(false)
@@ -231,7 +231,7 @@ local function parse_floor(map, layer)
 	check_layer_tilesets(layer, { assert(TILESETS.tilesets["walls"]) })
 	local result = {}
 	for i, tile in ipairs(layer.data) do
-		result[i] = { tile_id = tile }
+		if tile~=0  then result[i] = { tile_id = tile } end
 	end
 	return result
 end
@@ -241,7 +241,7 @@ local function parse_walls(map, layer)
 	check_layer_tilesets(layer, { assert(TILESETS.tilesets["walls"]) })
 	local result = {}
 	for i, tile in ipairs(layer.data) do
-		result[i] = { base = tile }
+		if(tile ~= 0) then result[i] = { base = tile } end
 	end
 	return result
 end

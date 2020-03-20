@@ -78,6 +78,7 @@ local function create_wall_sprites(wall)
 		local wall_config = WALL_SIDE_CONFIGS[side]
 		local sprite_go = msg.url(factory.create(URLS.factory.wall_part, wall_config.position, wall_config.rotation, nil, tile.scale))
 		sprite_go.fragment = COMMON.HASHES.SPRITE
+		sprite.play_flipbook(sprite_go, tile.image_hash)
 		go.set_parent(sprite_go,result.root)
 		result[side] = sprite_go
 	end
