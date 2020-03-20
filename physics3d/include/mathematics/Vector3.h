@@ -26,6 +26,7 @@
 #ifndef REACTPHYSICS3D_VECTOR3_H
 #define REACTPHYSICS3D_VECTOR3_H
 
+
 // Libraries
 #include <cassert>
 #include "mathematics_functions.h"
@@ -150,10 +151,10 @@ struct Vector3 {
         std::string to_string() const;
 
         /// Return a vector taking the minimum components of two vectors
-        static Vector3 min(const Vector3& vector1, const Vector3& vector2);
+       static Vector3 min(const Vector3& vector1, const Vector3& vector2);
 
-        /// Return a vector taking the maximum components of two vectors
-        static Vector3 max(const Vector3& vector1, const Vector3& vector2);
+       /// Return a vector taking the maximum components of two vectors
+       static Vector3 max(const Vector3& vector1, const Vector3& vector2);
 
         /// Return the zero vector
         static Vector3 zero();

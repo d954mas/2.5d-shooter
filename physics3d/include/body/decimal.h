@@ -26,6 +26,7 @@
 #ifndef REACTPHYSICS3D_DECIMAL_H
 #define	REACTPHYSICS3D_DECIMAL_H
 
+
 /// ReactPhysiscs3D namespace
 namespace reactphysics3d {
 

@@ -81,13 +81,13 @@ enum class ContactsPositionCorrectionTechnique {BAUMGARTE_CONTACTS, SPLIT_IMPULS
 // ------------------- Constants ------------------- //
 
 /// Smallest decimal value (negative)
-const decimal DECIMAL_SMALLEST = - std::numeric_limits<decimal>::max();
+const decimal DECIMAL_SMALLEST = - (std::numeric_limits<decimal>::max)();
 
 /// Maximum decimal value
-const decimal DECIMAL_LARGEST = std::numeric_limits<decimal>::max();
+const decimal DECIMAL_LARGEST = (std::numeric_limits<decimal>::max)();
 
 /// Machine epsilon
-const decimal MACHINE_EPSILON = std::numeric_limits<decimal>::epsilon();
+const decimal MACHINE_EPSILON = (std::numeric_limits<decimal>::epsilon)();
 
 /// Pi constant
 constexpr decimal PI = decimal(3.14159265);
