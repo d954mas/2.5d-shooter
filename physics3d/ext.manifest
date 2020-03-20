@@ -1,0 +1,28 @@
+name: "physics3d"
+platforms:
+    x86-osx:
+        context:
+            flags:      ["-std=c++11", "-stdlib=libc++"]
+            libs:       ["c++"]
+    x86_64-osx:
+        context:
+            flags:      ["-std=c++11", "-stdlib=libc++"]
+            libs:       ["c++"]
+    armv7-android:
+        context:
+            flags:      ["-std=c++11"]
+    x86-win32:
+        context:
+            flags:      ["-std=c++14"]
+    x86_64-win32:
+        context:
+            flags:      ["-std=c++14"]
+    x86_64-linux:
+        context:
+            flags:      ["-std=c++11"]
+    js-web:
+        context:
+            flags:      ["-std=c++11"]
+    wasm-web:
+        context:
+            flags:      ["-std=c++11"]
