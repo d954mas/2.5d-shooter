@@ -7,6 +7,7 @@ struct RectBody{
     rp3d::Vector3 position;
     rp3d::Vector3 halfSize;
     rp3d::CollisionBody* body;
+    rp3d::BoxShape* boxShape;
     rp3d::Quaternion rotation;
     float angle;
 };

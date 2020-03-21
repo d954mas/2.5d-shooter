@@ -25,12 +25,11 @@ class ContactManager : public rp3d::CollisionCallback {
 class Physics3d {
   public:
     rp3d::CollisionWorld* world = NULL;
-    ContactManager* contact = NULL;
+    ContactManager contact;
     Physics3d() {}
     void init(){
         clear();
         world = new rp3d::CollisionWorld(settings);
-        contact = new ContactManager();
     }
     void clear(){
         delete world;
@@ -54,26 +53,26 @@ class Physics3d {
         const rp3d::Vector3 halfSize(wh, hh, lh);
         body.halfSize = halfSize;
         
-        rp3d::BoxShape boxShape(body.halfSize);
+        body.boxShape = new rp3d::BoxShape(body.halfSize);
         
         // Add the collision shape to the rigid body
         // Place the shape at the origin of the body local-space 
         rp3d::ProxyShape* proxyShape;
-        proxyShape = body.body->addCollisionShape(&boxShape, rp3d::Transform::identity());
+        proxyShape = body.body->addCollisionShape(body.boxShape, rp3d::Transform::identity());
 
         return body;
     }
 
     void destroyBody(RectBody body){
         world->destroyCollisionBody(body.body);
+        delete body.boxShape;
     }
 
     void update(){
-        //world->testCollision(contact);
+        world->testCollision(&contact);
     }
     ~Physics3d(){
         delete world;
-        delete contact;
     }
 };
 
