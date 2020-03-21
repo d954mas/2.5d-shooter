@@ -37,6 +37,7 @@ function Model:update(dt)
 	self.time = self.time + dt
 	if (self.inited) then
 		self.ecs:update(dt)
+		physics3d.update()
 	end
 end
 

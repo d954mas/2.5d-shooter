@@ -19,10 +19,16 @@ static int InitLua(lua_State* L){
 	return 0;
 }
 
+static int UpdateLua(lua_State* L){
+	Physics3Update();
+	return 0;
+}
+
 // Functions exposed to Lua
 static const luaL_reg Module_methods[] ={
 	{"clear", ClearLua},
 	{"init", InitLua},
+	{"update", UpdateLua},
 	{0, 0}
 };
 
