@@ -31,6 +31,8 @@ function Model:load_level()
 	physics3d.init()
 	self.ecs:load_level()
 	LevelCreator(self.world):create()
+	print(physics3d.create_rect(1,1,1,1,1,1))
+	print(physics3d.create_rect(1,1,1,1,1,1))
 end
 
 function Model:update(dt)

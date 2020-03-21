@@ -1,5 +1,6 @@
 #pragma once
 #include "reactphysics3d.h"
+#include "rectbody.h"
 
 
 using namespace reactphysics3d;
@@ -9,12 +10,14 @@ rp3d::WorldSettings settings;
 //settings.isSleepingEnabled = false;
 
 
+
+
 // Contact manager
 class ContactManager : public rp3d::CollisionCallback {
    public:
         ContactManager() {}
         /// This method will be called for each reported contact point
-        virtual void notifyContact(const CollisionCallbackInfo& collisionCallbackInfo){
+        void notifyContact(const CollisionCallbackInfo& collisionCallbackInfo){
 
         }
 };
@@ -22,22 +25,55 @@ class ContactManager : public rp3d::CollisionCallback {
 class Physics3d {
   public:
     rp3d::CollisionWorld* world = NULL;
-    ContactManager contact;
+    ContactManager* contact = NULL;
     Physics3d() {}
     void init(){
         clear();
         world = new rp3d::CollisionWorld(settings);
+        contact = new ContactManager();
     }
     void clear(){
         delete world;
         world = NULL;
     }
 
+    RectBody createRectBody(float x, float y, float z,float wh,float hh, float lh){
+        RectBody body;
+        //create body
+        rp3d::Vector3 initPosition(x, y, z);
+        rp3d::Quaternion initOrientation = rp3d::Quaternion::identity();
+        rp3d::Transform transform(initPosition, initOrientation);
+        
+        body.position = initPosition;
+        body.angle = 0;
+        body.rotation = initOrientation;
+         
+        body.body = world->createCollisionBody(transform);
+
+        // Create the box shape
+        const rp3d::Vector3 halfSize(wh, hh, lh);
+        body.halfSize = halfSize;
+        
+        rp3d::BoxShape boxShape(body.halfSize);
+        
+        // Add the collision shape to the rigid body
+        // Place the shape at the origin of the body local-space 
+        rp3d::ProxyShape* proxyShape;
+        proxyShape = body.body->addCollisionShape(&boxShape, rp3d::Transform::identity());
+
+        return body;
+    }
+
+    void destroyBody(RectBody body){
+        world->destroyCollisionBody(body.body);
+    }
+
     void update(){
-        world->testCollision(&contact);
+        //world->testCollision(contact);
     }
     ~Physics3d(){
         delete world;
+        delete contact;
     }
 };
 
@@ -55,4 +91,8 @@ static void Physics3Update(){
 static void Physics3Clear(){
     printf("Physics3d clear\n");
     physics.clear();
+}
+
+static RectBody Physics3CreateRectBody(float x,float y, float z, float hw, float hh, float hl){
+    return physics.createRectBody(x,y,z,hw,hh,hl);
 }

@@ -922,7 +922,6 @@ void CollisionDetection::testCollision(CollisionBody* body, CollisionCallback* c
 
 // Test and report collisions between all shapes of the world
 void CollisionDetection::testCollision(CollisionCallback* callback) {
-
     assert(callback != nullptr);
 
     // Compute the broad-phase collision detection
@@ -931,7 +930,6 @@ void CollisionDetection::testCollision(CollisionCallback* callback) {
     // For each possible collision pair of bodies
     Map<Pair<uint, uint>, OverlappingPair*>::Iterator it;
     for (it = mOverlappingPairs.begin(); it != mOverlappingPairs.end(); ++it) {
-
         OverlappingPair* originalPair = it->second;
 
         // Create a new overlapping pair so that we do not work on the original one

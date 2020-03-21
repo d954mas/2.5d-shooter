@@ -154,7 +154,7 @@ void BroadPhaseAlgorithm::reportAllShapesOverlappingWithAABB(const AABB& aabb,
 
 // Compute all the overlapping pairs of collision shapes
 void BroadPhaseAlgorithm::computeOverlappingPairs(MemoryManager& memoryManager) {
-
+    printf("here\n");
     // TODO : Try to see if we can allocate potential pairs in single frame allocator
 
     // Reset the potential overlapping pairs

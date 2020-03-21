@@ -7,8 +7,6 @@
 #include "physics3.h"
 #include <dmsdk/sdk.h>
 
-
-
 static int ClearLua(lua_State* L){
 	Physics3Clear();
 	return 0;
@@ -24,11 +22,24 @@ static int UpdateLua(lua_State* L){
 	return 0;
 }
 
+static int CreateRectLua(lua_State* L){
+	float x = luaL_checknumber(L,1);
+	float y = luaL_checknumber(L,2);
+	float z = luaL_checknumber(L,3);
+	float hw = luaL_checknumber(L,4);
+	float hh = luaL_checknumber(L,5);
+	float hl = luaL_checknumber(L,6);
+	RectBody rect = Physics3CreateRectBody(x,y,z,hw,hh,hl);
+	RectBodyPush(L,&rect);
+	return 1;
+}
+
 // Functions exposed to Lua
 static const luaL_reg Module_methods[] ={
 	{"clear", ClearLua},
 	{"init", InitLua},
 	{"update", UpdateLua},
+	{"create_rect", CreateRectLua},
 	{0, 0}
 };
 
@@ -43,6 +54,7 @@ static void LuaInit(lua_State* L){
 static dmExtension::Result AppInitializeMyExtension(dmExtension::AppParams* params){return dmExtension::RESULT_OK;}
 static dmExtension::Result InitializeMyExtension(dmExtension::Params* params){
 	// Init Lua
+	RectBodyBind(params->m_L);
 	LuaInit(params->m_L);
 	printf("Registered %s Extension\n", MODULE_NAME);
 	return dmExtension::RESULT_OK;
