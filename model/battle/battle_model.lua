@@ -28,6 +28,7 @@ function Model:on_scene_show()
 end
 
 function Model:load_level()
+	physics3d.init()
 	self.ecs:load_level()
 	LevelCreator(self.world):create()
 end
@@ -45,6 +46,7 @@ function Model:final()
 	if self.native_camera then self.native_camera:final() end
 	if self.light_map then self.light_map:final() end
 	if self.ecs then self.ecs:clear() end
+	physics3d.clear()
 	self.native_camera = nil
 	self.inited = false
 	self.light_map = nil

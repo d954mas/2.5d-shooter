@@ -10,13 +10,19 @@
 
 
 static int ClearLua(lua_State* L){
-    Physics3Clear();
+	Physics3Clear();
+	return 0;
+}
+
+static int InitLua(lua_State* L){
+	Physics3Init();
 	return 0;
 }
 
 // Functions exposed to Lua
 static const luaL_reg Module_methods[] ={
 	{"clear", ClearLua},
+	{"init", InitLua},
 	{0, 0}
 };
 

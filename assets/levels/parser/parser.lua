@@ -326,7 +326,8 @@ local function parse_level(path, result_path)
 
 		--region validations
 		assert(data.spawn_point, "no spawn point")
-		--endregion--]]
+		--endregion
+		--]]
 
 	local json = NEED_PRETTY and pretty(data, nil, "  ", "") or cjson.encode(data)
 	local file = assert(io.open(result_path, "w+"))

@@ -11,7 +11,7 @@ void main()
     float dist = gl_FragCoord.z/gl_FragCoord.w;
     vec4 spriteColor = texture2D(DIFFUSE_TEXTURE, var_texcoord0.xy);
     if(spriteColor.a < 0.01){discard;}
-    vec4 lightColor = texture2D(LIGHT_MAP_TEXTURE, vec2((pos.x+0.00001)/light_map.x,(pos.z+0.00001)/light_map.y));// multiply to fix wall on cell borders
+    vec4 lightColor = texture2D(LIGHT_MAP_TEXTURE, vec2(pos.x/light_map.x,pos.z/light_map.y));
     vec3 color  = spriteColor.rgb * lightColor.rgb;
 
     float f = 1.0 /exp((dist-fog.x) * fog.z);
