@@ -5,6 +5,9 @@ local URLS = {
 		ceil = msg.url("game_scene:/factories#ceil"),
 		floor = msg.url("game_scene:/factories#floor"),
 		empty = msg.url("game_scene:/factories#empty"),
+		wall_part = msg.url("game_scene:/factories#wall_part"),
+		debug_physics_body_static = msg.url("game_scene:/factories#debug_physics_body_static"),
+		debug_physics_body_dynamic = msg.url("game_scene:/factories#debug_physics_body_dynamic"),
 		wall_part = msg.url("game_scene:/factories#wall_part")
 	}
 }
@@ -25,6 +28,10 @@ local URLS = {
 ---@field root url
 ---@field base WallGoSprites
 ---@field transparent WallGoSprites|nil transparent have two sprites for every side.Need it for correct understand light color
+
+
+---@class DebugPhysicsBodyGo
+---@field root url
 
 local M = {}
 
@@ -79,7 +86,7 @@ local function create_wall_sprites(wall)
 		local sprite_go = msg.url(factory.create(URLS.factory.wall_part, wall_config.position, wall_config.rotation, nil, tile.scale))
 		sprite_go.fragment = COMMON.HASHES.SPRITE
 		sprite.play_flipbook(sprite_go, tile.image_hash)
-		go.set_parent(sprite_go,result.root)
+		go.set_parent(sprite_go, result.root)
 		result[side] = sprite_go
 	end
 	return result
@@ -90,9 +97,18 @@ end
 function M.create_wall(position, wall)
 	local root = msg.url(factory.create(URLS.factory.empty, position))
 	local base = create_wall_sprites(wall)
-	go.set_scale( 1.0001, base.root)
+	go.set_scale(1.0001, base.root)
 	go.set_parent(base.root, root)
 	return { root = root, base = base }
+end
+
+---@param physics NativePhysicsRectBody
+function M.create_debug_physics_body(physics)
+	local x, y, z = physics:get_position()
+	local w, h, l = physics:get_size()
+	local root = msg.url(factory.create(physics:is_static() and URLS.factory.debug_physics_body_static or URLS.factory.debug_physics_body_dynamic,
+			vmath.vector3(x, z, -y), nil, nil, vmath.vector3(w / 64, l / 64, h / 64)*1.01))
+	return { root = root }
 end
 
 return M

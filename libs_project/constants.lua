@@ -6,7 +6,8 @@ M.GAME_SIZE = {
 }
 
 M.DEBUG = {
-	draw_light_map = false
+	draw_light_map = false,
+	draw_physics = false
 }
 
 return M

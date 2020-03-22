@@ -40,6 +40,7 @@ function Script:bind_vh()
 					btn_ecs_systems = GUI.ButtonIconTest("panel_game/btn_ecs_systems"),
 					btn_level_map = GUI.ButtonIconTest("panel_game/btn_level_map"),
 					btn_game_info = GUI.ButtonIconTest("panel_game/btn_game_info"),
+					btn_draw_physics = GUI.ButtonIconTest("panel_game/btn_draw_physics"),
 					lbl_ecs_systems = gui.get_node("panel_game/lbl_ecs_systems"),
 					lbl_info_1 = gui.get_node("panel_game/info_1"),
 					level_map = LEVEL_MAP("panel_game/level_map")
@@ -84,6 +85,10 @@ function Script:init_gui()
 		local game = self.views.panels.game
 		game.config.show_systems = not game.config.show_systems
 		gui.set_enabled(game.childs.lbl_ecs_systems, game.config.show_systems)
+	end)
+	self.views.panels.game.childs.btn_draw_physics:set_input_listener(function()
+		local game = self.views.panels.game
+		CONSTANTS.DEBUG.draw_physics = not CONSTANTS.DEBUG.draw_physics
 	end)
 
 	self.views.panels.game.childs.btn_level_map:set_input_listener(function()

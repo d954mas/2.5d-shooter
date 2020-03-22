@@ -63,6 +63,7 @@ function Render:init_predicates()
 		sprite_3d_object = render.predicate({ "sprite_3d_object" }),
 		sprite_3d_enemy = render.predicate({ "sprite_3d_enemy" }),
 		light_map = render.predicate({ "light_map" }),
+		debug_physics = render.predicate({ "debug_physics" }),
 	}
 end
 
@@ -153,6 +154,7 @@ function Render:render_3d()
 	render.draw(self.predicates.sprite_3d_object, self.constants_buffers.light_map)
 	render.draw(self.predicates.sprite_3d_enemy, self.constants_buffers.light_map)
 	render.draw(self.predicates.sprite_3d, self.constants_buffers.light_map)
+	if CONSTANTS.DEBUG.draw_physics then render.draw(self.predicates.debug_physics) end
 	render.draw_debug3d()
 
 	render.disable_state(render.STATE_DEPTH_TEST)

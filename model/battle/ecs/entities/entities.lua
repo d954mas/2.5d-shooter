@@ -42,9 +42,11 @@ local TAG = "Entities"
 ---@field floor_go FloorGO
 ---@field ceil_go FloorGO
 ---@field wall_go WallGo
+---@field debug_physics_body_go WallGo
 ---@field cell_id number
 ---@field visible boolean
 ---@field position vector3
+---@field position_z_center number position.z = 0 mean that entity bottom is on floor. use this to get correct position_z_center
 ---@field movement EntityMovement
 ---@field angle vector3 radians anticlockwise  x-horizontal y-vertical
 ---@field input_info InputInfo used for player input
@@ -105,6 +107,7 @@ function Entities:create_player(pos)
 	local e = {}
 	e.tag = "player"
 	e.position = vmath.vector3(pos.x, pos.y, pos.z)
+	e.position_z_center = 0.4
 	e.angle = vmath.vector3(0, 0, 0)
 	e.input_direction = vmath.vector4(0, 0, 0, 0)
 	e.movement = {
@@ -115,7 +118,8 @@ function Entities:create_player(pos)
 		deaccel = 4
 	}
 	e.player = true
-	e.physics_body = physics3d.create_rect(e.position.x, e.position.y, e.position.z, 1, 1, 1, false)
+	e.visible = true
+	e.physics_body = physics3d.create_rect(e.position.x, e.position.y, e.position_z_center, 0.5, 0.5, 0.8, false)
 	e.physics_dynamic = true
 	e.url_go = msg.url("/player")
 	e.camera_bob_info = {
@@ -167,6 +171,7 @@ function Entities:create_wall(cell_id)
 	e.wall_cell = self.level:map_get_wall_by_id(cell_id)
 	local x, y = e.wall_cell.native_cell:get_x() + 0.5, e.wall_cell.native_cell:get_y() + 0.5
 	e.position = vmath.vector3(x, y, 0.5)
+	e.visible = false
 
 	if (e.wall_cell.native_cell:get_blocked()) then
 		e.physics_body = physics3d.create_rect(e.position.x, e.position.y, e.position.z, 1, 1, 1, true)
