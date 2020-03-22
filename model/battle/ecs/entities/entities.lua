@@ -57,7 +57,7 @@ local TAG = "Entities"
 ---@field auto_destroy boolean if true will be destroyed
 ---@field auto_destroy_delay number when auto_destroy false and delay nil or 0 then destroy entity
 ---@field url_go nil|url
----@field physics_body NativePhysicsRectBody
+---@field physics_body NativePhysicsRectBody base collision. Not rotated.
 ---@field physics_static boolean|nil static bodies can't move.
 ---@field physics_dynamic boolean|nil dynamic bodies update their positions
 

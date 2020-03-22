@@ -107,7 +107,7 @@ function M.create_debug_physics_body(physics)
 	local x, y, z = physics:get_position()
 	local w, h, l = physics:get_size()
 	local root = msg.url(factory.create(physics:is_static() and URLS.factory.debug_physics_body_static or URLS.factory.debug_physics_body_dynamic,
-			vmath.vector3(x, z, -y), nil, nil, vmath.vector3(w / 64, l / 64, h / 64)*1.01))
+			vmath.vector3(x, z, -y), nil, nil, vmath.vector3(w / 64, l / 64, h / 64)*1.001))
 	return { root = root }
 end
 
