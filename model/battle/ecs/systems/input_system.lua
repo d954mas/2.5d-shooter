@@ -32,10 +32,10 @@ function System:update_player_direction()
 	local player = self.world.game.player
 	player.input_direction.x = self.movement.z - self.movement.w
 	player.input_direction.y = self.movement.x - self.movement.y
-	player.movement_direction.x = player.input_direction.x
-	player.movement_direction.y = player.input_direction.y
-	if player.movement_direction.x ~= 0 and player.movement_direction.y ~= 0 then
-		player.movement_direction = vmath.normalize(player.movement_direction)
+	player.movement.direction.x = player.input_direction.x
+	player.movement.direction.y = player.input_direction.y
+	if player.movement.direction.x ~= 0 and player.movement.direction.y ~= 0 then
+		player.movement.direction = vmath.normalize(player.movement.direction)
 	end
 end
 

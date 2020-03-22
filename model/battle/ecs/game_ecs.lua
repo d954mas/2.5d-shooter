@@ -59,6 +59,7 @@ end
 
 function EcsWorld:clear()
 	self.ecs:clear()
+	self.ecs:update(0)
 end
 
 function EcsWorld:add(...)

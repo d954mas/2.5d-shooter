@@ -17,6 +17,13 @@ local TAG = "Entities"
 ---@field offset number
 ---@field offset_weapon number
 
+---@class EntityMovement
+---@field velocity vector3
+---@field direction vector3
+---@field max_speed number
+---@field accel number
+---@field deaccel number
+
 
 ---@class PlayerInventory
 ---@field keys table
@@ -36,29 +43,22 @@ local TAG = "Entities"
 ---@field ceil_go FloorGO
 ---@field wall_go WallGo
 ---@field cell_id number
----@field door boolean
 ---@field visible boolean
----@field inventory PlayerInventory
 ---@field position vector3
----@field movement_velocity vector3
----@field movement_direction vector3
----@field movement_max_speed number
----@field movement_accel number
----@field movement_deaccel number
+---@field movement EntityMovement
 ---@field angle vector3 radians anticlockwise  x-horizontal y-vertical
----@field url_go nil|url need update entity when changed or url_to_entity will be broken
----@field url_sprite url
 ---@field input_info InputInfo used for player input
 ---@field input_direction vector4 up down left right. Used for player input
 ---@field rotation_look_at_player boolean
 ---@field rotation_global boolean for pickups they use one global angle
----@field culling boolean objects that need culling like walls
----@field dynamic_color boolean update color by sprite.set_constant instead of position in shader
----@field drawing boolean entity is visible in current frame.
 ---@field camera_bob_info CameraBobInfo
----@field hp number
 ---@field auto_destroy boolean if true will be destroyed
 ---@field auto_destroy_delay number when auto_destroy false and delay nil or 0 then destroy entity
+---@field url_go nil|url
+---@field physics_body NativePhysicsRectBody
+---@field physics_static boolean|nil static bodies can't move.
+---@field physics_dynamic boolean|nil dynamic bodies update their positions
+
 
 
 
@@ -79,6 +79,9 @@ end
 --region ecs callbacks
 ---@param e Entity
 function Entities:on_entity_removed(e)
+	if e.physics_body then
+		physics3d.destroy_rect(e.physics_body)
+	end
 end
 
 ---@param e Entity
@@ -98,17 +101,22 @@ end
 ---@return Entity
 function Entities:create_player(pos)
 	assert(pos)
+	---@type Entity
 	local e = {}
 	e.tag = "player"
 	e.position = vmath.vector3(pos.x, pos.y, pos.z)
 	e.angle = vmath.vector3(0, 0, 0)
 	e.input_direction = vmath.vector4(0, 0, 0, 0)
-	e.movement_velocity = vmath.vector3(0, 0, 0)
-	e.movement_direction = vmath.vector3(0, 0, 0)
-	e.movement_max_speed = 4
-	e.movement_accel = 2
-	e.movement_deaccel = 4
+	e.movement = {
+		velocity = vmath.vector3(0, 0, 0),
+		direction = vmath.vector3(0, 0, 0),
+		max_speed = 4,
+		accel = 2,
+		deaccel = 4
+	}
 	e.player = true
+	e.physics_body = physics3d.create_rect(e.position.x, e.position.y, e.position.z, 1, 1, 1, false)
+	e.physics_dynamic = true
 	e.url_go = msg.url("/player")
 	e.camera_bob_info = {
 		value = 0,
@@ -159,6 +167,11 @@ function Entities:create_wall(cell_id)
 	e.wall_cell = self.level:map_get_wall_by_id(cell_id)
 	local x, y = e.wall_cell.native_cell:get_x() + 0.5, e.wall_cell.native_cell:get_y() + 0.5
 	e.position = vmath.vector3(x, y, 0.5)
+
+	if (e.wall_cell.native_cell:get_blocked()) then
+		e.physics_body = physics3d.create_rect(e.position.x, e.position.y, e.position.z, 1, 1, 1, true)
+		e.physics_static = true
+	end
 	return e
 end
 

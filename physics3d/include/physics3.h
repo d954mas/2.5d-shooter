@@ -36,36 +36,38 @@ class Physics3d {
         world = NULL;
     }
 
-    RectBody createRectBody(float x, float y, float z,float wh,float hh, float lh){
-        RectBody body;
+    RectBody* createRectBody(float x, float y, float z,float w,float h, float l, bool mStatic){
+        RectBody* body = new RectBody();
         //create body
         rp3d::Vector3 initPosition(x, y, z);
         rp3d::Quaternion initOrientation = rp3d::Quaternion::identity();
         rp3d::Transform transform(initPosition, initOrientation);
         
-        body.position = initPosition;
-        body.angle = 0;
-        body.rotation = initOrientation;
+        body->position = initPosition;
+        body->rotation = initOrientation;
+        body->mStatic = mStatic;
          
-        body.body = world->createCollisionBody(transform);
+        body->body = world->createCollisionBody(transform);
 
         // Create the box shape
-        const rp3d::Vector3 halfSize(wh, hh, lh);
-        body.halfSize = halfSize;
+        const rp3d::Vector3 halfSize(w/2.0, h/2.0, l/2.0);
+        const rp3d::Vector3 size(w, h, l);
+        body->size = size;
         
-        body.boxShape = new rp3d::BoxShape(body.halfSize);
+        body->boxShape = new rp3d::BoxShape(halfSize);
         
         // Add the collision shape to the rigid body
         // Place the shape at the origin of the body local-space 
         rp3d::ProxyShape* proxyShape;
-        proxyShape = body.body->addCollisionShape(body.boxShape, rp3d::Transform::identity());
+        proxyShape = body->body->addCollisionShape(body->boxShape, rp3d::Transform::identity());
 
         return body;
     }
 
-    void destroyBody(RectBody body){
-        world->destroyCollisionBody(body.body);
-        delete body.boxShape;
+    void destroyRectBody(RectBody* body){
+        world->destroyCollisionBody(body->body);
+        delete body->boxShape;
+        delete body;
     }
 
     void update(){
@@ -92,6 +94,12 @@ static void Physics3Clear(){
     physics.clear();
 }
 
-static RectBody Physics3CreateRectBody(float x,float y, float z, float hw, float hh, float hl){
-    return physics.createRectBody(x,y,z,hw,hh,hl);
+
+
+static RectBody* Physics3CreateRectBody(float x,float y, float z, float w, float h, float l, bool mStatic){
+    return physics.createRectBody(x,y,z,w,h,l,mStatic);
+}
+
+static void Physics3DestroyRectBody(RectBody* rect){
+    physics.destroyRectBody(rect);
 }

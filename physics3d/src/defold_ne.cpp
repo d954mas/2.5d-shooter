@@ -29,9 +29,15 @@ static int CreateRectLua(lua_State* L){
 	float hw = luaL_checknumber(L,4);
 	float hh = luaL_checknumber(L,5);
 	float hl = luaL_checknumber(L,6);
-	RectBody rect = Physics3CreateRectBody(x,y,z,hw,hh,hl);
-	RectBodyPush(L,&rect);
+	float mStatic = lua_toboolean(L,7);
+	RectBody* rect = Physics3CreateRectBody(x,y,z,hw,hh,hl,mStatic);
+	RectBodyPush(L,rect);
 	return 1;
+}
+
+static int DestroyRectLua(lua_State* L){
+    RectBody *rect = RectBodyCheck(L, 1);
+	Physics3DestroyRectBody(rect);
 }
 
 // Functions exposed to Lua
@@ -40,6 +46,7 @@ static const luaL_reg Module_methods[] ={
 	{"init", InitLua},
 	{"update", UpdateLua},
 	{"create_rect", CreateRectLua},
+	{"destroy_rect", DestroyRectLua},
 	{0, 0}
 };
 
