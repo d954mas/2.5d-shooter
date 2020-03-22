@@ -28,7 +28,11 @@ function EcsWorld:_init_systems()
 	self.ecs:addSystem(SYSTEMS.RotationLookAtPlayerSystem)
 	self.ecs:addSystem(SYSTEMS.RotationGlobalSystem)
 
+	self.ecs:addSystem(SYSTEMS.UpdatePhysicsBodyPositionsSystem)
+	self.ecs:addSystem(SYSTEMS.PhysicsResetCorrectionSystem)
 	self.ecs:addSystem(SYSTEMS.UpdatePhysicsSystem)
+	self.ecs:addSystem(SYSTEMS.PhysicsCollisionWallSystem)
+
 	self.ecs:addSystem(SYSTEMS.UpdateGoSystem)
 
 	self.ecs:addSystem(SYSTEMS.CameraBobSystem)
@@ -61,7 +65,7 @@ end
 
 function EcsWorld:clear()
 	self.ecs:clear()
-	self.ecs:update(0)
+	self.ecs:refresh()
 end
 
 function EcsWorld:add(...)

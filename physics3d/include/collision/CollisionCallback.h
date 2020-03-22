@@ -45,7 +45,7 @@ class MemoryManager;
  * point is reported.
  */
 class CollisionCallback {
-
+    
     public:
 
         // Structure CollisionCallbackInfo

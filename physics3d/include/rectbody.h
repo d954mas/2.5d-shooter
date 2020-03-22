@@ -9,7 +9,10 @@ struct RectBody{
     rp3d::Quaternion rotation;
     rp3d::CollisionBody* body;
     rp3d::BoxShape* boxShape;
+    unsigned char group,mask;
     bool mStatic;
+    rp3d::ProxyShape* proxyShape;
+    int userDataRef=LUA_REFNIL;
 };
 
 RectBody* RectBodyCheck(lua_State *L, int index){
@@ -37,6 +40,11 @@ static int RectBodyGetPosition(lua_State *L){
      return 3;
 }
 
+static void RectBodyUpdateTransform(RectBody* rect){
+    rp3d::Transform newTransform(rect->position, rect->rotation);
+    rect->body->setTransform(newTransform);
+}
+
 static int RectBodySetPosition(lua_State *L){
      RectBody *im = RectBodyCheck(L, 1);
      if(im->mStatic){
@@ -46,8 +54,11 @@ static int RectBodySetPosition(lua_State *L){
      }
      float x = luaL_checknumber(L,2), y = luaL_checknumber(L,3), z = luaL_checknumber(L,4);
      im->position.x = x; im->position.y = y; im->position.z = z;
+     RectBodyUpdateTransform(im);
      return 0;
 }
+
+
 
 static int RectBodyGetSize(lua_State *L){
      RectBody *im = RectBodyCheck(L, 1);
@@ -66,12 +77,31 @@ static int RectBodyToString(lua_State *L){
 	return 1;
 }
 
+static int RectBodySetUserData(lua_State *L){
+    RectBody *im = RectBodyCheck(L, 1);
+    lua_istable(L,2);
+    luaL_unref(L, LUA_REGISTRYINDEX, im->userDataRef);
+    int id = luaL_ref(L,LUA_REGISTRYINDEX);
+    im->userDataRef = id;
+    return 0;
+}
+
+static int RectBodyGetUserData(lua_State *L){
+    RectBody *im = RectBodyCheck(L, 1);
+    lua_rawgeti(L,LUA_REGISTRYINDEX,im->userDataRef);
+    return 1;
+}
+
+
 void RectBodyBind(lua_State * L){
     luaL_Reg functions[] = {
         {"is_static",RectBodyIsStatic},
         {"get_position",RectBodyGetPosition},
-        {"get_size",RectBodyGetSize},
         {"set_position",RectBodySetPosition},
+        {"get_size",RectBodyGetSize},
+        {"get_user_data",RectBodyGetUserData},
+        {"set_user_data",RectBodySetUserData},
+
         {"__tostring",RectBodyToString},
         { 0, 0 }
     };

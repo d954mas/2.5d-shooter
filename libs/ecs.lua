@@ -301,7 +301,6 @@ end
 
 -- Update function for all Processing Systems.
 local function processingSystemUpdate(system, dt)
-	local start_time = os.clock()
 	local preProcess = system.preProcess
 	local process = system.process
 	local postProcess = system.postProcess
@@ -333,10 +332,7 @@ local function processingSystemUpdate(system, dt)
 	if postProcess then
 		postProcess(system, dt)
 	end
-	system._time.current = os.clock() - start_time
-	system._time.max = max(system._time.max, system._time.current)
-    --average bad. For 0,0,0,0,0,1 average will be 0.5
-	system._time.average = (system._time.average + system._time.current) / 2
+
 end
 
 -- Sorts Systems by a function system.sortDelegate(entity1, entity2) on modify.
@@ -362,7 +358,7 @@ end
 function tiny.system(table)
 	table = table or {}
 	table[systemTableKey] = true
-	table._time = {}
+	table._time = { current = 0, max = 0, average = 0 }
 	return table
 end
 
@@ -839,6 +835,7 @@ function tiny.update(world, dt, filter)
 			-- Update Systems that have an update method (most Systems)
 			local update = system.update
 			if update then
+				local start_time = os.clock()
 				local interval = system.interval
 				if interval then
 					local bufferedTime = (system.bufferedTime or 0) + dt
@@ -850,6 +847,10 @@ function tiny.update(world, dt, filter)
 				else
 					update(system, dt)
 				end
+				system._time.current = os.clock() - start_time
+				system._time.max = max(system._time.max, system._time.current)
+				--average bad. For 0,0,0,0,0,1 average will be 0.5
+				system._time.average = (system._time.average + system._time.current) / 2
 			end
 
 			system.modified = false
