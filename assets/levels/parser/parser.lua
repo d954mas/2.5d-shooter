@@ -14,6 +14,10 @@ local NEED_PRETTY = false
 cjson.encode_sparse_array(true)
 cjson.decode_invalid_numbers(false)
 
+local FLIPPED_HORIZONTALLY_FLAG = 0x80000000;
+local FLIPPED_VERTICALLY_FLAG = 0x40000000;
+local FLIPPED_DIAGONALLY_FLAG = 0x20000000;
+
 ---@type LevelTilesets
 local TILESETS
 
@@ -226,12 +230,26 @@ local function check_layer_tilesets(layer, tilesets, no_empty)
 	end
 end
 
+local function tile_to_data(tile_id)
+	local flipped_horizontally = bit.band(bit.tobit(tile_id), FLIPPED_HORIZONTALLY_FLAG) ~= 0;
+	local flipped_vertically = bit.band(bit.tobit(tile_id), FLIPPED_VERTICALLY_FLAG) ~= 0;
+	local flipped_diagonally = bit.band(bit.tobit(tile_id), FLIPPED_DIAGONALLY_FLAG) ~= 0;
+
+	if (not flipped_horizontally) then flipped_horizontally = nil end
+	if (not flipped_vertically) then flipped_vertically = nil end
+	if (not flipped_diagonally) then flipped_diagonally = nil end
+
+	tile_id = bit.band(tile_id, bit.bnot(bit.bor(FLIPPED_HORIZONTALLY_FLAG, FLIPPED_VERTICALLY_FLAG, FLIPPED_DIAGONALLY_FLAG)));
+	return { tile_id = tile_id, fh = flipped_horizontally, fv = flipped_vertically, fd = flipped_diagonally }
+end
+
 ---@param map LevelData
 local function parse_floor(map, layer)
 	check_layer_tilesets(layer, { assert(TILESETS.tilesets["walls"]) })
 	local result = {}
 	for i, tile in ipairs(layer.data) do
-		if tile~=0  then result[i] = { tile_id = tile } end
+
+		if tile ~= 0 then result[i] = tile_to_data(tile) end
 	end
 	return result
 end
@@ -241,7 +259,7 @@ local function parse_walls(map, layer)
 	check_layer_tilesets(layer, { assert(TILESETS.tilesets["walls"]) })
 	local result = {}
 	for i, tile in ipairs(layer.data) do
-		if(tile ~= 0) then result[i] = { base = tile } end
+		if (tile ~= 0) then result[i] = { base = tile_to_data(tile) } end
 	end
 	return result
 end

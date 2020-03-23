@@ -9,7 +9,7 @@ profiles {
     formats {
       format: TEXTURE_FORMAT_RGBA
       compression_level: FAST
-      compression_type: COMPRESSION_TYPE_WEBP_LOSSY
+      compression_type: COMPRESSION_TYPE_DEFAULT
     }
     mipmaps: true
     max_texture_size: 2048

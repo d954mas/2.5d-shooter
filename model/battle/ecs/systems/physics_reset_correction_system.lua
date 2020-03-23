@@ -3,6 +3,8 @@ local ECS = require 'libs.ecs'
 ---@class PhysicsResetCorrectionsSystem:ECSSystem
 local System = ECS.processingSystem()
 System.filter = ECS.requireAll("physics_obstacles_correction")
+System.name = "PhysicsResetCorrectionsSystem"
+
 ---@param e Entity
 function System:process(e, dt)
 	e.physics_obstacles_correction.x = 0

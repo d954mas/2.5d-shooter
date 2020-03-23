@@ -96,6 +96,7 @@ end
 function LightMap:final()
 	local ctx = COMMON.CONTEXT:set_context_top_by_name(COMMON.CONTEXT.NAMES.RENDER)
 	render.delete_render_target(self.render_target)
+	COMMON.RENDER.targets.light_map = nil
 	ctx:remove()
 	self.buffer = nil
 end

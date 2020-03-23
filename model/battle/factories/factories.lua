@@ -67,7 +67,7 @@ local WALL_SIDE_CONFIGS = {
 		position = vmath.vector3(0.5, 0, 0)
 	},
 	west = {
-		rotation = vmath.quat_rotation_y(math.rad(90)),
+		rotation = vmath.quat_rotation_y(math.rad(-90)),
 		position = vmath.vector3(-0.5, 0, 0)
 	},
 }
@@ -80,10 +80,23 @@ local wall_sides = {
 local function create_wall_sprites(wall)
 	local result = { root = msg.url(factory.create(URLS.factory.empty)) }
 	for _, side in ipairs(wall_sides) do
-		local tile_id = wall[side] or wall.base
+		local tile_data =(wall[side] or wall.base)
+		local tile_id = tile_data.tile_id
 		local tile = TILESET.by_id[tile_id]
 		local wall_config = WALL_SIDE_CONFIGS[side]
-		local sprite_go = msg.url(factory.create(URLS.factory.wall_part, wall_config.position, wall_config.rotation, nil, tile.scale))
+
+		local rotation = vmath.quat(wall_config.rotation)
+		local scale = vmath.vector3(tile.scale,tile.scale,tile.scale)
+		scale.x = tile_data.fh and -scale.x or scale.x
+		scale.y = tile_data.fv and -scale.y or scale.y
+		--diagonal flip https://discourse.mapeditor.org/t/can-i-rotate-tiles/703/5
+		if tile_data.fd then
+			scale.x = - scale.x
+			rotation = rotation * vmath.quat_rotation_z(math.rad(-90))
+		end
+
+
+		local sprite_go = msg.url(factory.create(URLS.factory.wall_part, wall_config.position, rotation, nil,scale))
 		sprite_go.fragment = COMMON.HASHES.SPRITE
 		sprite.play_flipbook(sprite_go, tile.image_hash)
 		go.set_parent(sprite_go, result.root)

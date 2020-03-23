@@ -15,7 +15,7 @@ local function walls_prepare_to_native(walls, cell_max_id)
 	for i = 0, cell_max_id do
 		local wall = walls[i]
 		if (wall) then
-			local tile = TILESET.by_id[wall.base]
+			local tile = TILESET.by_id[wall.base.tile_id]
 			wall.blocked = tile.properties.blocked
 			wall.transparent = tile.properties.transparent
 		else
