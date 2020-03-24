@@ -1,7 +1,0 @@
-mesh: "/assets/models/game/hero.dae"
-material: "/builtins/materials/model.material"
-textures: "/assets/models/pallete.png"
-skeleton: ""
-animations: ""
-default_animation: ""
-name: "unnamed"
