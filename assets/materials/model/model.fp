@@ -14,7 +14,6 @@ uniform lowp vec4 tint;
 void main()
 {
     float dist = gl_FragCoord.z/gl_FragCoord.w;
-    //vec4 lightColor = texture2D(LIGHT_MAP_TEXTURE, vec2(1/light_map.x,-3/light_map.y));
     vec4 lightColor = texture2D(LIGHT_MAP_TEXTURE, vec2(var_position.x/light_map.x,var_position.z/light_map.y));
     // Pre-multiply alpha since all runtime textures already are
     vec4 tint_pm = vec4(tint.xyz * tint.w, tint.w);
@@ -28,7 +27,6 @@ void main()
     total_color = mix(vec3(0.0),total_color, f);
 
     gl_FragColor.rgb = total_color.rgb*spriteColor.a;
-    gl_FragColor.rgb = lightColor.rgb;
     gl_FragColor.a = spriteColor.a;
     
 }
