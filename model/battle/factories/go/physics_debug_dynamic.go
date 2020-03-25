@@ -3,7 +3,7 @@ embedded_components {
   type: "sprite"
   data: "tile_set: \"/assets/images/debug/debug.atlas\"\n"
   "default_animation: \"body_static\"\n"
-  "material: \"/assets/materials/3dsprite/3dsprite_debug_physics.material\"\n"
+  "material: \"/assets/materials/3d/3dsprite_debug_physics.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {
@@ -23,7 +23,7 @@ embedded_components {
   type: "sprite"
   data: "tile_set: \"/assets/images/debug/debug.atlas\"\n"
   "default_animation: \"body_static\"\n"
-  "material: \"/assets/materials/3dsprite/3dsprite_debug_physics.material\"\n"
+  "material: \"/assets/materials/3d/3dsprite_debug_physics.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {
@@ -43,7 +43,7 @@ embedded_components {
   type: "sprite"
   data: "tile_set: \"/assets/images/debug/debug.atlas\"\n"
   "default_animation: \"body_static\"\n"
-  "material: \"/assets/materials/3dsprite/3dsprite_debug_physics.material\"\n"
+  "material: \"/assets/materials/3d/3dsprite_debug_physics.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {
@@ -63,7 +63,7 @@ embedded_components {
   type: "sprite"
   data: "tile_set: \"/assets/images/debug/debug.atlas\"\n"
   "default_animation: \"body_static\"\n"
-  "material: \"/assets/materials/3dsprite/3dsprite_debug_physics.material\"\n"
+  "material: \"/assets/materials/3d/3dsprite_debug_physics.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {
@@ -83,7 +83,7 @@ embedded_components {
   type: "sprite"
   data: "tile_set: \"/assets/images/debug/debug.atlas\"\n"
   "default_animation: \"body_static\"\n"
-  "material: \"/assets/materials/3dsprite/3dsprite_debug_physics.material\"\n"
+  "material: \"/assets/materials/3d/3dsprite_debug_physics.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {
@@ -103,7 +103,7 @@ embedded_components {
   type: "sprite"
   data: "tile_set: \"/assets/images/debug/debug.atlas\"\n"
   "default_animation: \"body_static\"\n"
-  "material: \"/assets/materials/3dsprite/3dsprite_debug_physics.material\"\n"
+  "material: \"/assets/materials/3d/3dsprite_debug_physics.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {

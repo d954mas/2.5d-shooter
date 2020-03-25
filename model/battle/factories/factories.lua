@@ -8,7 +8,8 @@ local URLS = {
 		wall_part = msg.url("game_scene:/factories#wall_part"),
 		debug_physics_body_static = msg.url("game_scene:/factories#debug_physics_body_static"),
 		debug_physics_body_dynamic = msg.url("game_scene:/factories#debug_physics_body_dynamic"),
-		wall_part = msg.url("game_scene:/factories#wall_part")
+		wall_part = msg.url("game_scene:/factories#wall_part"),
+		wall_part_transparent = msg.url("game_scene:/factories#wall_part_transparent")
 	}
 }
 
@@ -55,19 +56,19 @@ end
 
 local WALL_SIDE_CONFIGS = {
 	north = {
-		rotation = vmath.quat_rotation_y(math.rad(180)),
+		rotation = vmath.quat_rotation_y(math.rad(0)),
 		position = vmath.vector3(0, 0, -0.5)
 	},
 	south = {
-		rotation = vmath.quat_rotation_y(math.rad(0)),
+		rotation = vmath.quat_rotation_y(math.rad(180)),
 		position = vmath.vector3(0, 0, 0.5)
 	},
 	east = {
-		rotation = vmath.quat_rotation_y(math.rad(90)),
+		rotation = vmath.quat_rotation_y(math.rad(-90)),
 		position = vmath.vector3(0.5, 0, 0)
 	},
 	west = {
-		rotation = vmath.quat_rotation_y(math.rad(-90)),
+		rotation = vmath.quat_rotation_y(math.rad(90)),
 		position = vmath.vector3(-0.5, 0, 0)
 	},
 }
@@ -77,7 +78,7 @@ local wall_sides = {
 
 ---@param wall LevelDataWallBlock
 ---@return WallGoSprites
-local function create_wall_sprites(wall)
+local function create_wall_sprites(wall, transparent)
 	local result = { root = msg.url(factory.create(URLS.factory.empty)) }
 	for _, side in ipairs(wall_sides) do
 		local tile_data =(wall[side] or wall.base)
@@ -96,7 +97,7 @@ local function create_wall_sprites(wall)
 		end
 
 
-		local sprite_go = msg.url(factory.create(URLS.factory.wall_part, wall_config.position, rotation, nil,scale))
+		local sprite_go = msg.url(factory.create(transparent and URLS.factory.wall_part_transparent or URLS.factory.wall_part, wall_config.position, rotation, nil,scale))
 		sprite_go.fragment = COMMON.HASHES.SPRITE
 		sprite.play_flipbook(sprite_go, tile.image_hash)
 		go.set_parent(sprite_go, result.root)
@@ -109,10 +110,16 @@ end
 ---@param wall LevelDataWallBlock
 function M.create_wall(position, wall)
 	local root = msg.url(factory.create(URLS.factory.empty, position))
-	local base = create_wall_sprites(wall)
+	local base = create_wall_sprites(wall, wall.transparent)
+	local transparent
 	go.set_scale(1.0001, base.root)
 	go.set_parent(base.root, root)
-	return { root = root, base = base }
+	if(wall.transparent) then
+		transparent = create_wall_sprites(wall, wall.transparent)
+		go.set_scale(0.999,transparent.root)
+		go.set_parent(transparent.root, root)
+	end
+	return { root = root, base = base, transparent = transparent }
 end
 
 ---@param physics NativePhysicsRectBody

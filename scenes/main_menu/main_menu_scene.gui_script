@@ -14,7 +14,7 @@ end
 
 function Script:init_gui()
 	self.view.btn_play:set_input_listener(function()
-		SM:show(SM.SCENES.GAME_SCENE, { level_id = LEVELS.LEVELS.TEST })
+		SM:show(SM.SCENES.GAME_SCENE, { level_id = LEVELS.LEVELS.LEVEL_1 })
 	end)
 	self.view.btn_tests:set_input_listener(function()
 		SM:show(SM.SCENES.TESTS_LIST)

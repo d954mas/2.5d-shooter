@@ -55,7 +55,8 @@ function EcsWorld:load_level()
 end
 
 function EcsWorld:_load_player()
-	self.player = self.entities:create_player(vmath.vector3(1.5, 1.5, 0))
+	self.player = self.entities:create_player(vmath.vector3(self.level.data.player.position.x, self.level.data.player.position.y, 0))
+	self.player.angle.x = math.rad(self.level.data.player.angle)
 	self:add_entity(self.player)
 end
 

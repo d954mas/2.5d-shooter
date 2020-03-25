@@ -1,7 +1,7 @@
 name: "sprite3d"
 tags: "debug_physics"
 vertex_program: "/builtins/materials/sprite.vp"
-fragment_program: "/assets/materials/3dsprite/3dsprite_debug_physics.fp"
+fragment_program: "/assets/materials/3d/3dsprite_debug_physics.fp"
 vertex_space: VERTEX_SPACE_WORLD
 vertex_constants {
   name: "view_proj"

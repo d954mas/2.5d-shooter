@@ -111,6 +111,7 @@
  </tile>
  <tile id="34">
   <properties>
+   <property name="blocked" type="bool" value="false"/>
    <property name="texture_size" type="int" value="128"/>
    <property name="transparent" type="bool" value="true"/>
   </properties>

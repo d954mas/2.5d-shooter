@@ -1,7 +1,7 @@
 name: "sprite3d"
-tags: "sprite_3d"
-vertex_program: "/assets/materials/3dsprite/3dsprite.vp"
-fragment_program: "/assets/materials/3dsprite/3dsprite.fp"
+tags: "wall"
+vertex_program: "/assets/materials/3d/3d.vp"
+fragment_program: "/assets/materials/3d/wall.fp"
 vertex_space: VERTEX_SPACE_WORLD
 vertex_constants {
   name: "view_proj"

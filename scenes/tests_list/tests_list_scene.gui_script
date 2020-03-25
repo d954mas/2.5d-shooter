@@ -8,7 +8,8 @@ local Script = COMMON.new_n28s()
 function Script:bind_vh()
 	self.view = {
 		btn_back = GUI.Button("btn_back"),
-		btn_test_lvl_1 = GUI.Button("btn_test_lvl_1")
+		btn_test_lvl_1 = GUI.Button("btn_test_lvl_1"),
+		btn_test_lvl_2 = GUI.Button("btn_test_lvl_2")
 	}
 end
 
@@ -17,7 +18,11 @@ function Script:init_gui()
 		SM:back()
 	end)
 	self.view.btn_test_lvl_1:set_input_listener(function ()
-		SM:show(SM.SCENES.GAME_SCENE, {level_id = LEVELS.LEVELS.TEST_BIG_EMPTY})
+		SM:show(SM.SCENES.GAME_SCENE, {level_id = LEVELS.TESTS.TEST_BIG_EMPTY})
+	end)
+
+	self.view.btn_test_lvl_2:set_input_listener(function ()
+		SM:show(SM.SCENES.GAME_SCENE, {level_id = LEVELS.TESTS.TEST})
 	end)
 end
 
@@ -37,6 +42,7 @@ end
 function Script:on_input(action_id, action)
 	if(self.view.btn_back:on_input(action_id,action).consumed) then return true end
 	if(self.view.btn_test_lvl_1:on_input(action_id,action).consumed) then return true end
+	if(self.view.btn_test_lvl_2:on_input(action_id,action).consumed) then return true end
 end
 
 

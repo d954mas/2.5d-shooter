@@ -163,20 +163,26 @@ local function repack_objects(array, tiled, map)
 		local x, y = object.x, object.y
 		y = total_height - y
 		object.x, object.y = x, y
-		local object_data = { tile_id = object.gid, properties = object.properties or {}, x = object.x, y = object.y }
+		assert(object.rotation == 0,"object rotation should be 0.Use flip when need")
+		local object_data = { tile_id = object.gid, properties = object.properties or {}, x = object.x, y = object.y, w = object.width, h = object.height }
 		local tile = TILESETS.by_id[object_data.tile_id]
 		if tile then
 			setmetatable(object_data.properties, { __index = tile.properties })
 		end
 		--objects use center of cell as it pos. By default
-		if not (object_data.properties.ignore_snap_to_grid) then
+		if not (object_data.properties.ignore_center_default) then
 			object_data.x = object_data.x + tiled.tilewidth / 2
 			object_data.y = object_data.y + tiled.tileheight / 2
 		end
+
 		object_data.cell_xf = object_data.x / tiled.tilewidth
 		object_data.cell_yf = object_data.y / tiled.tileheight
+	--	object_data.cell_w = object_data.w / tiled.tilewidth
+		--object_data.cell_h = object_data.h / tiled.tileheight
 		object_data.cell_x = math.ceil(object_data.x / tiled.tilewidth)
 		object_data.cell_y = math.ceil(object_data.y / tiled.tileheight)
+		--object_data.cell_center_x = object_data.cell_xf + object_data.cell_w/2
+		--object_data.cell_center_y = object_data.cell_yf + object_data.cell_h/2
 		object_data.cell_id = MAP_HELPER.coords_to_id(map, object_data.cell_x, object_data.cell_y)
 		array[i] = object_data
 	end
@@ -273,6 +279,29 @@ local function parse_light_map(map, layer)
 	return result
 end
 
+---@param map LevelData
+local function parse_objects(map, layer)
+	assert(layer.objects)
+	---@type LevelMapObject[]
+	local objects = layer.objects
+	for _, obj in ipairs(objects) do
+		if (obj.properties.player) then
+			assert(not map.player, "player position already set")
+			map.player = {
+				position = {x = obj.cell_xf, y = obj.cell_yf},
+				angle = assert(obj.properties.angle)
+			}
+		else
+			error("unknown object")
+		end
+	end
+end
+
+---@param map LevelData
+local function check(map)
+	assert(map.player,"no player")
+end
+
 local function parse_level(path, result_path)
 	local name = path:match("^.+\\(.+)....")
 	result_path = result_path .. "\\" .. name .. ".json"
@@ -285,6 +314,7 @@ local function parse_level(path, result_path)
 	data.ceil = parse_floor(data, assert(get_layer(tiled, "ceil")))
 	data.walls = parse_walls(data, assert(get_layer(tiled, "walls")))
 	data.light_map = parse_light_map(data, assert(get_layer(tiled, "light_map")))
+	parse_objects(data,assert(get_layer(tiled, "objects")))
 	--[[
 		local wall_keys = { "north", "south", "east", "west" }
 		process_layer(data, assert(get_layer(tiled, "walls")), function(cell, tiled_cell, x, y)
@@ -352,6 +382,8 @@ local function parse_level(path, result_path)
 	file:write(json)
 	file:close()
 end
+
+
 
 parse_tilesets(lfs.currentdir() .. "\\" .. TILESETS_PATH .. "\\" .. "tilesets.lua")
 local json = NEED_PRETTY and pretty(TILESETS, nil, "  ", "") or cjson.encode(TILESETS)

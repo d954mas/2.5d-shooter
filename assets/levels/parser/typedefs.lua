@@ -16,6 +16,8 @@
 ---@field cell_xf number float
 ---@field cell_yf number float
 ---@field cell_id number int
+---@field cell_w number float
+---@field cell_h number float
 
 ---@class LevelTileset
 ---@field first_gid number
@@ -52,6 +54,11 @@
 ---@field west number|nil
 ---@field native_cell NativeCellData set when load level
 
+
+---@class LevelDataPlayer
+---@field position vector3
+---@field angle number
+
 --vector3 is not vector3 here. I use it only to autocomplete worked. It will be tables with x,y,z
 ---@class LevelData
 ---@field size vector3
@@ -59,4 +66,5 @@
 ---@field ceil LevelDataCellFloor[]
 ---@field walls LevelDataWallBlock[]
 ---@field light_map number[]
+---@field player LevelDataPlayer
 
