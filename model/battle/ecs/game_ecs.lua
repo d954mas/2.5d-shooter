@@ -20,6 +20,7 @@ end
 
 function EcsWorld:_init_systems()
 	SYSTEMS.load()
+	self.ecs:addSystem(SYSTEMS.UpdateCameraPositionSystem)
 	self.ecs:addSystem(SYSTEMS.InputSystem)
 	self.ecs:addSystem(SYSTEMS.UpdateAISystem)
 
@@ -36,8 +37,8 @@ function EcsWorld:_init_systems()
 	self.ecs:addSystem(SYSTEMS.UpdateGoSystem)
 
 	self.ecs:addSystem(SYSTEMS.CameraBobSystem)
-	self.ecs:addSystem(SYSTEMS.UpdateCameraSystem)
 
+	self.ecs:addSystem(SYSTEMS.UpdateCameraVisibleCellsSystem)
 	self.ecs:addSystem(SYSTEMS.CheckVisibleSystem)
 	self.ecs:addSystem(SYSTEMS.DrawCeilSystem)
 	self.ecs:addSystem(SYSTEMS.DrawFloorSystem)
