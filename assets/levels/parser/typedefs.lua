@@ -67,4 +67,5 @@
 ---@field walls LevelDataWallBlock[]
 ---@field light_map number[]
 ---@field player LevelDataPlayer
+---@field level_objects LevelMapObject[]
 

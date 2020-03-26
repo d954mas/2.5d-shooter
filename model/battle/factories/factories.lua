@@ -9,7 +9,8 @@ local URLS = {
 		debug_physics_body_static = msg.url("game_scene:/factories#debug_physics_body_static"),
 		debug_physics_body_dynamic = msg.url("game_scene:/factories#debug_physics_body_dynamic"),
 		wall_part = msg.url("game_scene:/factories#wall_part"),
-		wall_part_transparent = msg.url("game_scene:/factories#wall_part_transparent")
+		wall_part_transparent = msg.url("game_scene:/factories#wall_part_transparent"),
+		level_object = msg.url("game_scene:/factories#level_object")
 	}
 }
 
@@ -17,6 +18,9 @@ local URLS = {
 ---@field root url
 ---@field sprite url
 
+---@class LevelObjectGO
+---@field root url
+---@field sprite url
 
 ---@class WallGoSprites
 ---@field root url
@@ -49,6 +53,15 @@ end
 function M.create_ceil(position, tile_id)
 	local tile = TILESET.by_id[tile_id]
 	local ceil = msg.url(factory.create(URLS.factory.ceil, position, nil, nil, tile.scale))
+	local sprite_url = msg.url(ceil.socket, ceil.path, "sprite")
+	sprite.play_flipbook(sprite_url, tile.image_hash)
+	return { root = ceil, sprite = sprite_url }
+end
+
+---@return LevelObjectGO
+function M.create_level_object(position, tile_id)
+	local tile = TILESET.by_id[tile_id]
+	local ceil = msg.url(factory.create(URLS.factory.level_object, position, nil, nil, tile.scale))
 	local sprite_url = msg.url(ceil.socket, ceil.path, "sprite")
 	sprite.play_flipbook(sprite_url, tile.image_hash)
 	return { root = ceil, sprite = sprite_url }

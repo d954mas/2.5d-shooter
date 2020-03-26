@@ -163,7 +163,7 @@ local function repack_objects(array, tiled, map)
 		local x, y = object.x, object.y
 		y = total_height - y
 		object.x, object.y = x, y
-		assert(object.rotation == 0,"object rotation should be 0.Use flip when need")
+		assert(object.rotation == 0, "object rotation should be 0.Use flip when need")
 		local object_data = { tile_id = object.gid, properties = object.properties or {}, x = object.x, y = object.y, w = object.width, h = object.height }
 		local tile = TILESETS.by_id[object_data.tile_id]
 		if tile then
@@ -177,7 +177,7 @@ local function repack_objects(array, tiled, map)
 
 		object_data.cell_xf = object_data.x / tiled.tilewidth
 		object_data.cell_yf = object_data.y / tiled.tileheight
-	--	object_data.cell_w = object_data.w / tiled.tilewidth
+		--	object_data.cell_w = object_data.w / tiled.tilewidth
 		--object_data.cell_h = object_data.h / tiled.tileheight
 		object_data.cell_x = math.ceil(object_data.x / tiled.tilewidth)
 		object_data.cell_y = math.ceil(object_data.y / tiled.tileheight)
@@ -281,6 +281,7 @@ end
 
 ---@param map LevelData
 local function parse_objects(map, layer)
+	check_layer_tilesets(layer, { assert(TILESETS.tilesets["objects"]) })
 	assert(layer.objects)
 	---@type LevelMapObject[]
 	local objects = layer.objects
@@ -288,7 +289,7 @@ local function parse_objects(map, layer)
 		if (obj.properties.player) then
 			assert(not map.player, "player position already set")
 			map.player = {
-				position = {x = obj.cell_xf, y = obj.cell_yf},
+				position = { x = obj.cell_xf, y = obj.cell_yf },
 				angle = assert(obj.properties.angle)
 			}
 		else
@@ -297,9 +298,22 @@ local function parse_objects(map, layer)
 	end
 end
 
+local function parse_level_objects(map, layer)
+	check_layer_tilesets(layer, { assert(TILESETS.tilesets["level_objects"]) })
+	assert(layer.objects)
+	---@type LevelMapObject[]
+	local objects = layer.objects
+	local result = {}
+	for _, obj in ipairs(objects) do
+		table.insert(result, obj)
+	end
+	return result;
+end
+
 ---@param map LevelData
 local function check(map)
-	assert(map.player,"no player")
+	assert(map.player, "no player")
+	assert(map.level_objects, "no player")
 end
 
 local function parse_level(path, result_path)
@@ -314,7 +328,8 @@ local function parse_level(path, result_path)
 	data.ceil = parse_floor(data, assert(get_layer(tiled, "ceil")))
 	data.walls = parse_walls(data, assert(get_layer(tiled, "walls")))
 	data.light_map = parse_light_map(data, assert(get_layer(tiled, "light_map")))
-	parse_objects(data,assert(get_layer(tiled, "objects")))
+	parse_objects(data, assert(get_layer(tiled, "objects")))
+	data.level_objects = parse_level_objects(data, assert(get_layer(tiled, "level_objects")))
 	--[[
 		local wall_keys = { "north", "south", "east", "west" }
 		process_layer(data, assert(get_layer(tiled, "walls")), function(cell, tiled_cell, x, y)
@@ -382,8 +397,6 @@ local function parse_level(path, result_path)
 	file:write(json)
 	file:close()
 end
-
-
 
 parse_tilesets(lfs.currentdir() .. "\\" .. TILESETS_PATH .. "\\" .. "tilesets.lua")
 local json = NEED_PRETTY and pretty(TILESETS, nil, "  ", "") or cjson.encode(TILESETS)

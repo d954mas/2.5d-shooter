@@ -1314,6 +1314,141 @@ return {
           height = 64
         }
       }
+    },
+    {
+      name = "level_objects",
+      firstgid = 201,
+      filename = "level_objects.tsx",
+      tilewidth = 86,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 0,
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 1,
+        height = 1
+      },
+      properties = {},
+      terrains = {},
+      tilecount = 11,
+      tiles = {
+        {
+          id = 0,
+          properties = {
+            ["scale"] = 0.5,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/block.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 1,
+          properties = {
+            ["scale"] = 0.5,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/bot_crystal.png",
+          width = 64,
+          height = 62
+        },
+        {
+          id = 2,
+          properties = {
+            ["scale"] = 0.5,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/bot_crystal_2.png",
+          width = 46,
+          height = 64
+        },
+        {
+          id = 3,
+          properties = {
+            ["scale"] = 0.5,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/box.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 4,
+          properties = {
+            ["origin"] = "top",
+            ["scale"] = 0.5,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/lamp.png",
+          width = 25,
+          height = 13
+        },
+        {
+          id = 5,
+          properties = {
+            ["scale"] = 0.5,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/mushroom_1.png",
+          width = 53,
+          height = 63
+        },
+        {
+          id = 6,
+          properties = {
+            ["scale"] = 0.5,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/mushroom_2.png",
+          width = 56,
+          height = 60
+        },
+        {
+          id = 7,
+          properties = {
+            ["scale"] = 0.5,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/skull.png",
+          width = 86,
+          height = 25
+        },
+        {
+          id = 8,
+          properties = {
+            ["scale"] = 1,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/table.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 9,
+          properties = {
+            ["scale"] = 0.5,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/top_crystal_1.png",
+          width = 61,
+          height = 56
+        },
+        {
+          id = 10,
+          properties = {
+            ["scale"] = 0.5,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/top_crystal_2.png",
+          width = 64,
+          height = 54
+        }
+      }
     }
   },
   layers = {}

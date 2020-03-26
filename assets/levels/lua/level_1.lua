@@ -8,8 +8,8 @@ return {
   height = 32,
   tilewidth = 64,
   tileheight = 64,
-  nextlayerid = 17,
-  nextobjectid = 111,
+  nextlayerid = 18,
+  nextobjectid = 132,
   properties = {},
   tilesets = {
     {
@@ -1314,21 +1314,144 @@ return {
           height = 64
         }
       }
+    },
+    {
+      name = "level_objects",
+      firstgid = 201,
+      filename = "../tilesets/level_objects.tsx",
+      tilewidth = 86,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 0,
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 1,
+        height = 1
+      },
+      properties = {},
+      terrains = {},
+      tilecount = 11,
+      tiles = {
+        {
+          id = 0,
+          properties = {
+            ["scale"] = 0.5,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/block.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 1,
+          properties = {
+            ["scale"] = 0.5,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/bot_crystal.png",
+          width = 64,
+          height = 62
+        },
+        {
+          id = 2,
+          properties = {
+            ["scale"] = 0.5,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/bot_crystal_2.png",
+          width = 46,
+          height = 64
+        },
+        {
+          id = 3,
+          properties = {
+            ["scale"] = 0.5,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/box.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 4,
+          properties = {
+            ["origin"] = "top",
+            ["scale"] = 0.5,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/lamp.png",
+          width = 25,
+          height = 13
+        },
+        {
+          id = 5,
+          properties = {
+            ["scale"] = 0.5,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/mushroom_1.png",
+          width = 53,
+          height = 63
+        },
+        {
+          id = 6,
+          properties = {
+            ["scale"] = 0.5,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/mushroom_2.png",
+          width = 56,
+          height = 60
+        },
+        {
+          id = 7,
+          properties = {
+            ["scale"] = 0.5,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/skull.png",
+          width = 86,
+          height = 25
+        },
+        {
+          id = 8,
+          properties = {
+            ["scale"] = 1,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/table.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 9,
+          properties = {
+            ["scale"] = 0.5,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/top_crystal_1.png",
+          width = 61,
+          height = 56
+        },
+        {
+          id = 10,
+          properties = {
+            ["scale"] = 0.5,
+            ["texture_size"] = 64
+          },
+          image = "../tiles/level_objects/top_crystal_2.png",
+          width = 64,
+          height = 54
+        }
+      }
     }
   },
   layers = {
-    {
-      type = "objectgroup",
-      id = 10,
-      name = "geometry",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      draworder = "topdown",
-      properties = {},
-      objects = {}
-    },
     {
       type = "objectgroup",
       id = 16,
@@ -1403,6 +1526,201 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+      }
+    },
+    {
+      type = "objectgroup",
+      id = 17,
+      name = "level_objects",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      draworder = "topdown",
+      properties = {},
+      objects = {
+        {
+          id = 117,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 464,
+          y = 368,
+          width = 25,
+          height = 13,
+          rotation = 0,
+          gid = 205,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 118,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 464,
+          y = 400,
+          width = 25,
+          height = 13,
+          rotation = 0,
+          gid = 205,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 119,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 576,
+          y = 576,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 201,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 122,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 576,
+          y = 496,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 204,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 123,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 448,
+          y = 496,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 204,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 124,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 560,
+          width = 86,
+          height = 25,
+          rotation = 0,
+          gid = 208,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 125,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 496,
+          y = 272,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 209,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 126,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 688,
+          y = 576,
+          width = 64,
+          height = 54,
+          rotation = 0,
+          gid = 211,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 127,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 704,
+          y = 496,
+          width = 61,
+          height = 56,
+          rotation = 0,
+          gid = 210,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 128,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 224,
+          y = 352,
+          width = 64,
+          height = 62,
+          rotation = 0,
+          gid = 202,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 129,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 192,
+          y = 496,
+          width = 64,
+          height = 62,
+          rotation = 0,
+          gid = 202,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 130,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 368,
+          y = 272,
+          width = 46,
+          height = 64,
+          rotation = 0,
+          gid = 203,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 131,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = 288,
+          width = 46,
+          height = 64,
+          rotation = 0,
+          gid = 203,
+          visible = true,
+          properties = {}
+        }
       }
     },
     {

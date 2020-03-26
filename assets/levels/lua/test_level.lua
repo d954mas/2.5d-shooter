@@ -8,7 +8,7 @@ return {
   height = 8,
   tilewidth = 64,
   tileheight = 64,
-  nextlayerid = 16,
+  nextlayerid = 17,
   nextobjectid = 110,
   properties = {},
   tilesets = {
@@ -1319,9 +1319,21 @@ return {
   layers = {
     {
       type = "objectgroup",
-      id = 10,
-      name = "geometry",
-      visible = false,
+      id = 16,
+      name = "level_objects",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      draworder = "topdown",
+      properties = {},
+      objects = {}
+    },
+    {
+      type = "objectgroup",
+      id = 15,
+      name = "objects",
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -1329,54 +1341,16 @@ return {
       properties = {},
       objects = {
         {
-          id = 102,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 0,
-          y = 0,
-          width = 512,
-          height = 64,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 103,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 0,
-          y = 64,
-          width = 64,
-          height = 448,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 104,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 448,
-          y = 64,
-          width = 64,
-          height = 448,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 105,
+          id = 109,
           name = "",
           type = "",
           shape = "rectangle",
           x = 64,
-          y = 448,
-          width = 384,
+          y = 320,
+          width = 64,
           height = 64,
           rotation = 0,
+          gid = 197,
           visible = true,
           properties = {}
         }
@@ -1405,33 +1379,6 @@ return {
         85, 38, 186, 53, 53, 53, 69, 85,
         85, 181, 45, 183, 184, 185, 186, 85,
         85, 85, 85, 85, 85, 85, 85, 85
-      }
-    },
-    {
-      type = "objectgroup",
-      id = 15,
-      name = "objects",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      draworder = "topdown",
-      properties = {},
-      objects = {
-        {
-          id = 109,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 64,
-          y = 320,
-          width = 64,
-          height = 64,
-          rotation = 0,
-          gid = 197,
-          visible = true,
-          properties = {}
-        }
       }
     },
     {

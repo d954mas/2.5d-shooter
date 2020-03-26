@@ -14,6 +14,7 @@ function Creator:create()
 	self:create_floor()
 	self:create_ceil()
 	self:create_wall()
+	self:create_level_objects()
 end
 
 function Creator:create_floor()
@@ -39,6 +40,12 @@ function Creator:create_wall()
 			self.ecs:add_entity(self.entities:create_wall(id))
 		end
 
+	end
+end
+
+function Creator:create_level_objects()
+	for _, object in ipairs(self.level.data.level_objects)do
+		self.ecs:add(self.entities:create_level_object(object))
 	end
 end
 

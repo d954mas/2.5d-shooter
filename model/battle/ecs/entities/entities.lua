@@ -33,6 +33,7 @@ local TAG = "Entities"
 ---@field tag string tag used for help when debug
 ---@field player boolean true if it player entity
 ---@field enemy boolean
+---@field level_object boolean
 ---@field floor boolean
 ---@field ceil boolean
 ---@field wall boolean
@@ -42,6 +43,7 @@ local TAG = "Entities"
 ---@field floor_go FloorGO
 ---@field ceil_go FloorGO
 ---@field wall_go WallGo
+---@field level_object_go LevelObjectGO
 ---@field debug_physics_body_go WallGo
 ---@field cell_id number
 ---@field visible boolean
@@ -61,6 +63,7 @@ local TAG = "Entities"
 ---@field physics_static boolean|nil static bodies can't move.
 ---@field physics_dynamic boolean|nil dynamic bodies update their positions
 ---@field physics_obstacles_correction vector3
+---@field map_object LevelMapObject
 
 
 
@@ -184,6 +187,18 @@ function Entities:create_wall(cell_id)
 		e.physics_static = true
 		e.physics_body:set_user_data(e)
 	end
+	return e
+end
+
+---@param object LevelMapObject
+function Entities:create_level_object(object)
+	assert(object)
+	---@type Entity
+	local e = {}
+	e.level_object = true
+	e.map_object = object
+	e.position = vmath.vector3(object.cell_xf, object.cell_yf, 0)
+	e.visible = false
 	return e
 end
 
