@@ -20,7 +20,11 @@ end
 
 function EcsWorld:_init_systems()
 	SYSTEMS.load()
+	--new and deletion object will be in next from
+	--so prepare all for render. Then update positions.
 	self.ecs:addSystem(SYSTEMS.UpdateCameraPositionSystem)
+	self.ecs:addSystem(SYSTEMS.UpdateObjectColorSystem)
+
 	self.ecs:addSystem(SYSTEMS.InputSystem)
 	self.ecs:addSystem(SYSTEMS.UpdateAISystem)
 
@@ -45,7 +49,6 @@ function EcsWorld:_init_systems()
 	self.ecs:addSystem(SYSTEMS.DrawWallSystem)
 	self.ecs:addSystem(SYSTEMS.DrawLevelObjectSystem)
 	self.ecs:addSystem(SYSTEMS.DrawDebugPhysicsBodiesSystem)
-	self.ecs:addSystem(SYSTEMS.UpdateObjectColorSystem)
 	self.ecs:addSystem(SYSTEMS.AutoDestroySystem)
 end
 

@@ -65,6 +65,7 @@ local TAG = "Entities"
 ---@field physics_dynamic boolean|nil dynamic bodies update their positions
 ---@field physics_obstacles_correction vector3
 ---@field map_object LevelMapObject
+---@field dynamic_color boolean
 
 
 
@@ -200,6 +201,7 @@ function Entities:create_level_object(object)
 	e.map_object = object
 	e.position = vmath.vector3(object.cell_xf, object.cell_yf, object.properties.position_z or 0)
 	e.visible = false
+	e.dynamic_color = true
 	return e
 end
 

@@ -3,7 +3,7 @@ embedded_components {
   type: "sprite"
   data: "tile_set: \"/assets/images/game/level_objects/level_objects.atlas\"\n"
   "default_animation: \"block\"\n"
-  "material: \"/assets/materials/3d/3dsprite.material\"\n"
+  "material: \"/assets/materials/3d/3dsprite_object.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {
