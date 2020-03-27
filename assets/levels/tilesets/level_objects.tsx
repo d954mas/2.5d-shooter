@@ -27,7 +27,7 @@
  </tile>
  <tile id="3">
   <properties>
-   <property name="scale" type="float" value="0.5"/>
+   <property name="scale" type="float" value="1"/>
    <property name="sprite_origin_y" type="float" value="32"/>
    <property name="texture_size" type="int" value="64"/>
   </properties>
@@ -36,7 +36,7 @@
  <tile id="4">
   <properties>
    <property name="position_z" type="float" value="1"/>
-   <property name="scale" type="float" value="0.5"/>
+   <property name="scale" type="float" value="1"/>
    <property name="sprite_origin_y" type="float" value="-6.5"/>
    <property name="texture_size" type="int" value="64"/>
   </properties>
@@ -60,7 +60,7 @@
  </tile>
  <tile id="7">
   <properties>
-   <property name="scale" type="float" value="0.25"/>
+   <property name="scale" type="float" value="0.5"/>
    <property name="sprite_origin_y" type="float" value="12.5"/>
    <property name="texture_size" type="int" value="64"/>
   </properties>

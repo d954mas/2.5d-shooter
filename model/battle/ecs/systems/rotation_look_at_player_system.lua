@@ -2,18 +2,17 @@ local ECS = require 'libs.ecs'
 
 ---@class RotationLookAtPlayerSystem:ECSSystem
 local System = ECS.processingSystem()
-System.filter = ECS.requireAll("url_sprite","rotation_look_at_player")
+System.filter = ECS.requireAll("rotation_look_at_player")
 System.name = "RotationLookAtPlayerSystem"
 
 ---@param e Entity
 function System:process(e, dt)
-	go.set_rotation(self.quaternion,e.url_sprite)
+	e.rotation_look_at_player_quaternion = self.quaternion
 end
 
 ---@param e Entity
-function System:preProcess( dt)
---	self.quaternion = vmath.quat_rotation_y(self.world.game_controller.level.player.angle.x)
+function System:preProcess(dt)
+	self.quaternion = vmath.quat_rotation_y(self.world.game.player.angle.x)
 end
-
 
 return System

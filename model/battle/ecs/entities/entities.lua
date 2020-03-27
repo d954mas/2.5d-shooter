@@ -54,11 +54,12 @@ local TAG = "Entities"
 ---@field input_info InputInfo used for player input
 ---@field input_direction vector4 up down left right. Used for player input
 ---@field rotation_look_at_player boolean
+---@field rotation_look_at_player_quaternion quaternion
 ---@field rotation_global boolean for pickups they use one global angle
 ---@field camera_bob_info CameraBobInfo
 ---@field auto_destroy boolean if true will be destroyed
 ---@field auto_destroy_delay number when auto_destroy false and delay nil or 0 then destroy entity
----@field url_go nil|url
+---@field root_go nil|url
 ---@field physics_body NativePhysicsRectBody base collision. Not rotated.
 ---@field physics_static boolean|nil static bodies can't move.
 ---@field physics_dynamic boolean|nil dynamic bodies update their positions
@@ -128,7 +129,6 @@ function Entities:create_player(pos)
 	e.visible = true
 	e.physics_body = physics3d.create_rect(e.position.x, e.position.y, e.position_z_center, 0.5, 0.5, 0.8, false, physics3d.GROUPS.PLAYER, self.masks.PLAYER)
 	e.physics_dynamic = true
-	e.url_go = msg.url("/player")
 	e.physics_obstacles_correction = vmath.vector3()
 	e.camera_bob_info = {
 		value = 0,
@@ -195,6 +195,7 @@ function Entities:create_level_object(object)
 	assert(object)
 	---@type Entity
 	local e = {}
+	e.rotation_look_at_player = true
 	e.level_object = true
 	e.map_object = object
 	e.position = vmath.vector3(object.cell_xf, object.cell_yf, object.properties.position_z or 0)

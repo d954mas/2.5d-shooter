@@ -1373,7 +1373,7 @@ return {
         {
           id = 3,
           properties = {
-            ["scale"] = 0.5,
+            ["scale"] = 1,
             ["sprite_origin_y"] = 32,
             ["texture_size"] = 64
           },
@@ -1385,7 +1385,7 @@ return {
           id = 4,
           properties = {
             ["position_z"] = 1,
-            ["scale"] = 0.5,
+            ["scale"] = 1,
             ["sprite_origin_y"] = -6.5,
             ["texture_size"] = 64
           },
@@ -1418,7 +1418,7 @@ return {
         {
           id = 7,
           properties = {
-            ["scale"] = 0.25,
+            ["scale"] = 0.5,
             ["sprite_origin_y"] = 12.5,
             ["texture_size"] = 64
           },
