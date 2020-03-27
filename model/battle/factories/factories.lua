@@ -61,10 +61,19 @@ end
 ---@return LevelObjectGO
 function M.create_level_object(position, tile_id)
 	local tile = TILESET.by_id[tile_id]
-	local ceil = msg.url(factory.create(URLS.factory.level_object, position, nil, nil, tile.scale))
-	local sprite_url = msg.url(ceil.socket, ceil.path, "sprite")
+	local root_empty = tile.properties.sprite_origin_y
+	local root = msg.url(factory.create(root_empty and URLS.factory.empty or URLS.factory.level_object, position, nil, nil, tile.scale))
+	local sprite_go = root
+	if (root_empty) then
+		sprite_go = msg.url(factory.create(URLS.factory.level_object))
+		go.set_parent(sprite_go, root)
+		go.set_position(vmath.vector3(0,tile.properties.sprite_origin_y,0),sprite_go)
+	end
+
+	local sprite_url = msg.url(sprite_go.socket, sprite_go.path, "sprite")
+
 	sprite.play_flipbook(sprite_url, tile.image_hash)
-	return { root = ceil, sprite = sprite_url }
+	return { root = root, sprite = sprite_url }
 end
 
 local WALL_SIDE_CONFIGS = {
@@ -94,23 +103,22 @@ local wall_sides = {
 local function create_wall_sprites(wall, transparent)
 	local result = { root = msg.url(factory.create(URLS.factory.empty)) }
 	for _, side in ipairs(wall_sides) do
-		local tile_data =(wall[side] or wall.base)
+		local tile_data = (wall[side] or wall.base)
 		local tile_id = tile_data.tile_id
 		local tile = TILESET.by_id[tile_id]
 		local wall_config = WALL_SIDE_CONFIGS[side]
 
 		local rotation = vmath.quat(wall_config.rotation)
-		local scale = vmath.vector3(tile.scale,tile.scale,tile.scale)
+		local scale = vmath.vector3(tile.scale, tile.scale, tile.scale)
 		scale.x = tile_data.fh and -scale.x or scale.x
 		scale.y = tile_data.fv and -scale.y or scale.y
 		--diagonal flip https://discourse.mapeditor.org/t/can-i-rotate-tiles/703/5
 		if tile_data.fd then
-			scale.x = - scale.x
+			scale.x = -scale.x
 			rotation = rotation * vmath.quat_rotation_z(math.rad(-90))
 		end
 
-
-		local sprite_go = msg.url(factory.create(transparent and URLS.factory.wall_part_transparent or URLS.factory.wall_part, wall_config.position, rotation, nil,scale))
+		local sprite_go = msg.url(factory.create(transparent and URLS.factory.wall_part_transparent or URLS.factory.wall_part, wall_config.position, rotation, nil, scale))
 		sprite_go.fragment = COMMON.HASHES.SPRITE
 		sprite.play_flipbook(sprite_go, tile.image_hash)
 		go.set_parent(sprite_go, result.root)
@@ -127,9 +135,9 @@ function M.create_wall(position, wall)
 	local transparent
 	go.set_scale(1.0001, base.root)
 	go.set_parent(base.root, root)
-	if(wall.transparent) then
+	if (wall.transparent) then
 		transparent = create_wall_sprites(wall, wall.transparent)
-		go.set_scale(0.999,transparent.root)
+		go.set_scale(0.999, transparent.root)
 		go.set_parent(transparent.root, root)
 	end
 	return { root = root, base = base, transparent = transparent }
@@ -140,7 +148,7 @@ function M.create_debug_physics_body(physics)
 	local x, y, z = physics:get_position()
 	local w, h, l = physics:get_size()
 	local root = msg.url(factory.create(physics:is_static() and URLS.factory.debug_physics_body_static or URLS.factory.debug_physics_body_dynamic,
-			vmath.vector3(x, z, -y), nil, nil, vmath.vector3(w / 64, l / 64, h / 64)*1.001))
+			vmath.vector3(x, z, -y), nil, nil, vmath.vector3(w / 64, l / 64, h / 64) * 1.001))
 	return { root = root }
 end
 

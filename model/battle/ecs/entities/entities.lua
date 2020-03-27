@@ -197,7 +197,7 @@ function Entities:create_level_object(object)
 	local e = {}
 	e.level_object = true
 	e.map_object = object
-	e.position = vmath.vector3(object.cell_xf, object.cell_yf, 0)
+	e.position = vmath.vector3(object.cell_xf, object.cell_yf, object.properties.position_z or 0)
 	e.visible = false
 	return e
 end

@@ -63,7 +63,7 @@ local function parse_tilesets(path)
 					end
 				end--]]
 			end--]]
-			tile.scale = 1 / (tile.properties.texture_size or tile.height) * (tile.properties.texture_scale or 1)
+			tile.scale = 1 / (tile.properties.texture_size or tile.height) * (tile.properties.scale or 1)
 			--[[local origin = tile.properties.origin
 			if origin then
 				local size = tile.properties.size_for_scale or tile.height

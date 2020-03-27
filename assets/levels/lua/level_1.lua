@@ -1341,6 +1341,7 @@ return {
           id = 0,
           properties = {
             ["scale"] = 0.5,
+            ["sprite_origin_y"] = 32,
             ["texture_size"] = 64
           },
           image = "../tiles/level_objects/block.png",
@@ -1351,6 +1352,7 @@ return {
           id = 1,
           properties = {
             ["scale"] = 0.5,
+            ["sprite_origin_y"] = 32,
             ["texture_size"] = 64
           },
           image = "../tiles/level_objects/bot_crystal.png",
@@ -1361,6 +1363,7 @@ return {
           id = 2,
           properties = {
             ["scale"] = 0.5,
+            ["sprite_origin_y"] = 32,
             ["texture_size"] = 64
           },
           image = "../tiles/level_objects/bot_crystal_2.png",
@@ -1371,6 +1374,7 @@ return {
           id = 3,
           properties = {
             ["scale"] = 0.5,
+            ["sprite_origin_y"] = 32,
             ["texture_size"] = 64
           },
           image = "../tiles/level_objects/box.png",
@@ -1380,8 +1384,9 @@ return {
         {
           id = 4,
           properties = {
-            ["origin"] = "top",
+            ["position_z"] = 1,
             ["scale"] = 0.5,
+            ["sprite_origin_y"] = -6.5,
             ["texture_size"] = 64
           },
           image = "../tiles/level_objects/lamp.png",
@@ -1392,6 +1397,7 @@ return {
           id = 5,
           properties = {
             ["scale"] = 0.5,
+            ["sprite_origin_y"] = 32,
             ["texture_size"] = 64
           },
           image = "../tiles/level_objects/mushroom_1.png",
@@ -1402,6 +1408,7 @@ return {
           id = 6,
           properties = {
             ["scale"] = 0.5,
+            ["sprite_origin_y"] = 30,
             ["texture_size"] = 64
           },
           image = "../tiles/level_objects/mushroom_2.png",
@@ -1411,7 +1418,8 @@ return {
         {
           id = 7,
           properties = {
-            ["scale"] = 0.5,
+            ["scale"] = 0.25,
+            ["sprite_origin_y"] = 12.5,
             ["texture_size"] = 64
           },
           image = "../tiles/level_objects/skull.png",
@@ -1422,6 +1430,7 @@ return {
           id = 8,
           properties = {
             ["scale"] = 1,
+            ["sprite_origin_y"] = 32,
             ["texture_size"] = 64
           },
           image = "../tiles/level_objects/table.png",
@@ -1431,7 +1440,9 @@ return {
         {
           id = 9,
           properties = {
+            ["position_z"] = 1,
             ["scale"] = 0.5,
+            ["sprite_origin_y"] = -28,
             ["texture_size"] = 64
           },
           image = "../tiles/level_objects/top_crystal_1.png",
@@ -1441,7 +1452,9 @@ return {
         {
           id = 10,
           properties = {
+            ["position_z"] = 1,
             ["scale"] = 0.5,
+            ["sprite_origin_y"] = -28,
             ["texture_size"] = 64
           },
           image = "../tiles/level_objects/top_crystal_2.png",
@@ -1601,7 +1614,7 @@ return {
           type = "",
           shape = "rectangle",
           x = 448,
-          y = 496,
+          y = 512,
           width = 64,
           height = 64,
           rotation = 0,

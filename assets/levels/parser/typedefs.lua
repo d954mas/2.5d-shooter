@@ -5,6 +5,11 @@
 ---@field height number
 ---@field size number
 ---@field ignore_snap_to_grid boolean by default object place in tile center
+---@field texture_size number used to find scale of object.
+---@field sprite_origin_y number used to correctly set origin for sprite
+---@field position_z number default z position
+---@field blocked boolean
+---@field transparent boolean
 
 ---@class LevelMapObject
 ---@field tile_id number
@@ -28,12 +33,9 @@
 ---@field by_id LevelMapTile[]
 ---@field tilesets LevelTileset[]
 
----@class LevelMapTileProperties
----@field blocked boolean
----@field transparent boolean
 
 ---@class LevelMapTile
----@field properties LevelMapTileProperties
+---@field properties TileProperties
 ---@field id number
 ---@field width number
 ---@field height number

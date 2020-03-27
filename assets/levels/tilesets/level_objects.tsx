@@ -4,6 +4,7 @@
  <tile id="0">
   <properties>
    <property name="scale" type="float" value="0.5"/>
+   <property name="sprite_origin_y" type="float" value="32"/>
    <property name="texture_size" type="int" value="64"/>
   </properties>
   <image width="64" height="64" source="../tiles/level_objects/block.png"/>
@@ -11,6 +12,7 @@
  <tile id="1">
   <properties>
    <property name="scale" type="float" value="0.5"/>
+   <property name="sprite_origin_y" type="float" value="32"/>
    <property name="texture_size" type="int" value="64"/>
   </properties>
   <image width="64" height="62" source="../tiles/level_objects/bot_crystal.png"/>
@@ -18,6 +20,7 @@
  <tile id="2">
   <properties>
    <property name="scale" type="float" value="0.5"/>
+   <property name="sprite_origin_y" type="float" value="32"/>
    <property name="texture_size" type="int" value="64"/>
   </properties>
   <image width="46" height="64" source="../tiles/level_objects/bot_crystal_2.png"/>
@@ -25,14 +28,16 @@
  <tile id="3">
   <properties>
    <property name="scale" type="float" value="0.5"/>
+   <property name="sprite_origin_y" type="float" value="32"/>
    <property name="texture_size" type="int" value="64"/>
   </properties>
   <image width="64" height="64" source="../tiles/level_objects/box.png"/>
  </tile>
  <tile id="4">
   <properties>
-   <property name="origin" value="top"/>
+   <property name="position_z" type="float" value="1"/>
    <property name="scale" type="float" value="0.5"/>
+   <property name="sprite_origin_y" type="float" value="-6.5"/>
    <property name="texture_size" type="int" value="64"/>
   </properties>
   <image width="25" height="13" source="../tiles/level_objects/lamp.png"/>
@@ -40,6 +45,7 @@
  <tile id="5">
   <properties>
    <property name="scale" type="float" value="0.5"/>
+   <property name="sprite_origin_y" type="float" value="32"/>
    <property name="texture_size" type="int" value="64"/>
   </properties>
   <image width="53" height="63" source="../tiles/level_objects/mushroom_1.png"/>
@@ -47,13 +53,15 @@
  <tile id="6">
   <properties>
    <property name="scale" type="float" value="0.5"/>
+   <property name="sprite_origin_y" type="float" value="30"/>
    <property name="texture_size" type="int" value="64"/>
   </properties>
   <image width="56" height="60" source="../tiles/level_objects/mushroom_2.png"/>
  </tile>
  <tile id="7">
   <properties>
-   <property name="scale" type="float" value="0.5"/>
+   <property name="scale" type="float" value="0.25"/>
+   <property name="sprite_origin_y" type="float" value="12.5"/>
    <property name="texture_size" type="int" value="64"/>
   </properties>
   <image width="86" height="25" source="../tiles/level_objects/skull.png"/>
@@ -61,20 +69,25 @@
  <tile id="8">
   <properties>
    <property name="scale" type="float" value="1"/>
+   <property name="sprite_origin_y" type="float" value="32"/>
    <property name="texture_size" type="int" value="64"/>
   </properties>
   <image width="64" height="64" source="../tiles/level_objects/table.png"/>
  </tile>
  <tile id="9">
   <properties>
+   <property name="position_z" type="float" value="1"/>
    <property name="scale" type="float" value="0.5"/>
+   <property name="sprite_origin_y" type="float" value="-28"/>
    <property name="texture_size" type="int" value="64"/>
   </properties>
   <image width="61" height="56" source="../tiles/level_objects/top_crystal_1.png"/>
  </tile>
  <tile id="10">
   <properties>
+   <property name="position_z" type="float" value="1"/>
    <property name="scale" type="float" value="0.5"/>
+   <property name="sprite_origin_y" type="float" value="-28"/>
    <property name="texture_size" type="int" value="64"/>
   </properties>
   <image width="64" height="54" source="../tiles/level_objects/top_crystal_2.png"/>

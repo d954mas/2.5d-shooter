@@ -25,11 +25,19 @@ local function walls_prepare_to_native(walls, cell_max_id)
 	end
 end
 
+---@param objects LevelMapObject[]
+local function objects_set_meta(objects)
+	for _, object in pairs(objects) do
+		setmetatable(object.properties, { __index = TILESET.by_id[object.tile_id].properties })
+	end
+end
+
 ---@param data LevelData
 function Level:initialize(data)
 	self.data = assert(data)
 	self.cell_max_id = self.data.size.x * self.data.size.y - 1
 	walls_prepare_to_native(self.data.walls, self.cell_max_id)
+	objects_set_meta(data.level_objects)
 
 end
 
@@ -51,8 +59,8 @@ function Level:map_cell_id_in(id)
 	return id >= 0 and id <= self.cell_max_id
 end
 
-function Level:map_id_to_coords(id)
-	return
+function Level:coords_valid(x, y)
+	return x >= 0 and y >= 0 and x < self.data.size.x and y < self.data.size.y
 end
 
 --endregion

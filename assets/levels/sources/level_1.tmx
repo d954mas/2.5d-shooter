@@ -48,7 +48,7 @@
   <object id="118" gid="205" x="464" y="400" width="25" height="13"/>
   <object id="119" gid="201" x="576" y="576" width="64" height="64"/>
   <object id="122" gid="204" x="576" y="496" width="64" height="64"/>
-  <object id="123" gid="204" x="448" y="496" width="64" height="64"/>
+  <object id="123" gid="204" x="448" y="512" width="64" height="64"/>
   <object id="124" gid="208" x="320" y="560" width="86" height="25"/>
   <object id="125" gid="209" x="496" y="272" width="64" height="64"/>
   <object id="126" gid="211" x="688" y="576" width="64" height="54"/>
