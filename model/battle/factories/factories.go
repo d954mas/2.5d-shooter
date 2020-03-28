@@ -53,9 +53,9 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "empty"
+  id: "level_object_cup"
   type: "factory"
-  data: "prototype: \"/model/battle/factories/go/empty.go\"\n"
+  data: "prototype: \"/model/battle/factories/go/level_objects/cup.go\"\n"
   "load_dynamically: false\n"
   ""
   position {
@@ -128,6 +128,60 @@ embedded_components {
   id: "level_object"
   type: "factory"
   data: "prototype: \"/model/battle/factories/go/level_object.go\"\n"
+  "load_dynamically: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "level_object_human"
+  type: "factory"
+  data: "prototype: \"/model/battle/factories/go/level_objects/human.go\"\n"
+  "load_dynamically: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "level_object_teapot"
+  type: "factory"
+  data: "prototype: \"/model/battle/factories/go/level_objects/teapot.go\"\n"
+  "load_dynamically: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "empty"
+  type: "factory"
+  data: "prototype: \"/model/battle/factories/go/empty.go\"\n"
   "load_dynamically: false\n"
   ""
   position {

@@ -2,6 +2,7 @@
 
 ---@class TileProperties
 ---@field width number
+---@field tag string
 ---@field height number
 ---@field size number
 ---@field ignore_snap_to_grid boolean by default object place in tile center

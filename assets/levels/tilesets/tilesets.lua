@@ -1335,7 +1335,7 @@ return {
       },
       properties = {},
       terrains = {},
-      tilecount = 11,
+      tilecount = 14,
       tiles = {
         {
           id = 0,
@@ -1460,6 +1460,33 @@ return {
           image = "../tiles/level_objects/top_crystal_2.png",
           width = 64,
           height = 54
+        },
+        {
+          id = 11,
+          properties = {
+            ["tag"] = "cup"
+          },
+          image = "../tiles/level_objects/cup.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 12,
+          properties = {
+            ["tag"] = "human"
+          },
+          image = "../tiles/level_objects/human.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 13,
+          properties = {
+            ["tag"] = "teapot"
+          },
+          image = "../tiles/level_objects/teapot.png",
+          width = 64,
+          height = 64
         }
       }
     }

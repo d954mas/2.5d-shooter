@@ -10,7 +10,24 @@ local URLS = {
 		debug_physics_body_dynamic = msg.url("game_scene:/factories#debug_physics_body_dynamic"),
 		wall_part = msg.url("game_scene:/factories#wall_part"),
 		wall_part_transparent = msg.url("game_scene:/factories#wall_part_transparent"),
-		level_object = msg.url("game_scene:/factories#level_object")
+		level_object = msg.url("game_scene:/factories#level_object"),
+		level_object_cup = msg.url("game_scene:/factories#level_object_cup"),
+		level_object_human = msg.url("game_scene:/factories#level_object_human"),
+		level_object_teapot = msg.url("game_scene:/factories#level_object_teapot")
+	}
+}
+
+local OBJECTS_CONFIGS = {
+	LEVEL_OBJECTS = {
+		CUP = {
+			scale = 0.1
+		},
+		TEAPOT = {
+			scale = 0.05
+		},
+		HUMAN = {
+			scale = 0.34
+		}
 	}
 }
 
@@ -20,7 +37,8 @@ local URLS = {
 
 ---@class LevelObjectGO
 ---@field root url
----@field sprite url
+---@field sprite url it have sprite or model
+---@field model url
 
 ---@class WallGoSprites
 ---@field root url
@@ -59,7 +77,27 @@ function M.create_ceil(position, tile_id)
 end
 
 ---@return LevelObjectGO
-function M.create_level_object(position, tile_id)
+---@param map_object LevelMapObject
+function M.create_level_object(position, map_object)
+	local tag = map_object.properties.tag
+	if (tag == "teapot") then
+		return M.create_level_object_from_model(position, map_object, URLS.factory.level_object_teapot, OBJECTS_CONFIGS.LEVEL_OBJECTS.TEAPOT)
+	elseif (tag == "human") then
+		return M.create_level_object_from_model(position, map_object, URLS.factory.level_object_human, OBJECTS_CONFIGS.LEVEL_OBJECTS.HUMAN)
+	elseif (tag == "cup") then
+		return M.create_level_object_from_model(position, map_object, URLS.factory.level_object_cup, OBJECTS_CONFIGS.LEVEL_OBJECTS.CUP)
+	else
+		return M.create_level_object_from_tile(position, map_object.tile_id)
+	end
+end
+
+function M.create_level_object_from_model(position, map_object, factory_url, config)
+	local root = msg.url(factory.create(factory_url, position, nil, nil, config.scale))
+	local model_url = msg.url(root.socket, root.path, "sprite")
+	return { root = root, model = model_url }
+end
+
+function M.create_level_object_from_tile(position, tile_id)
 	local tile = TILESET.by_id[tile_id]
 	local root_empty = tile.properties.sprite_origin_y
 	local root = msg.url(factory.create(root_empty and URLS.factory.empty or URLS.factory.level_object, position, nil, nil, tile.scale))
@@ -67,7 +105,7 @@ function M.create_level_object(position, tile_id)
 	if (root_empty) then
 		sprite_go = msg.url(factory.create(URLS.factory.level_object))
 		go.set_parent(sprite_go, root)
-		go.set_position(vmath.vector3(0,tile.properties.sprite_origin_y,0),sprite_go)
+		go.set_position(vmath.vector3(0, tile.properties.sprite_origin_y, 0), sprite_go)
 	end
 
 	local sprite_url = msg.url(sprite_go.socket, sprite_go.path, "sprite")

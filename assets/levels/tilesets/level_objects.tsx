@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.2" tiledversion="1.3.3" name="level_objects" tilewidth="86" tileheight="64" tilecount="11" columns="0">
+<tileset version="1.2" tiledversion="1.3.3" name="level_objects" tilewidth="86" tileheight="64" tilecount="14" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <properties>
@@ -91,5 +91,23 @@
    <property name="texture_size" type="int" value="64"/>
   </properties>
   <image width="64" height="54" source="../tiles/level_objects/top_crystal_2.png"/>
+ </tile>
+ <tile id="11">
+  <properties>
+   <property name="tag" value="cup"/>
+  </properties>
+  <image width="64" height="64" source="../tiles/level_objects/cup.png"/>
+ </tile>
+ <tile id="12">
+  <properties>
+   <property name="tag" value="human"/>
+  </properties>
+  <image width="64" height="64" source="../tiles/level_objects/human.png"/>
+ </tile>
+ <tile id="13">
+  <properties>
+   <property name="tag" value="teapot"/>
+  </properties>
+  <image width="64" height="64" source="../tiles/level_objects/teapot.png"/>
  </tile>
 </tileset>

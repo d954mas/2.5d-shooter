@@ -34,7 +34,8 @@ void main()
     p.x += (step(0.99, x) - step(1.0, x))*0.1;
     p.z += (step(0.99, z) - step(1.0, z))*0.1;
 
-    var_light = mtx_view * vec4(light.xyz, 1.0);
+    //var_light = mtx_view * vec4(light.xyz, 1.0);
+    var_light = vec4(light.xyz, 1.0);
     var_position = p;
     var_texcoord0 = texcoord0;
     var_normal = normalize((mtx_normal * vec4(normal, 0.0)).xyz);
