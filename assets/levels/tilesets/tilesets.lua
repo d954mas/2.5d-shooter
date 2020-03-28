@@ -1340,6 +1340,7 @@ return {
         {
           id = 0,
           properties = {
+            ["rotation_look_at_player"] = true,
             ["scale"] = 0.5,
             ["sprite_origin_y"] = 32,
             ["texture_size"] = 64
@@ -1351,6 +1352,7 @@ return {
         {
           id = 1,
           properties = {
+            ["rotation_look_at_player"] = true,
             ["scale"] = 0.5,
             ["sprite_origin_y"] = 32,
             ["texture_size"] = 64
@@ -1362,6 +1364,7 @@ return {
         {
           id = 2,
           properties = {
+            ["rotation_look_at_player"] = true,
             ["scale"] = 0.5,
             ["sprite_origin_y"] = 32,
             ["texture_size"] = 64
@@ -1373,6 +1376,7 @@ return {
         {
           id = 3,
           properties = {
+            ["rotation_look_at_player"] = true,
             ["scale"] = 1,
             ["sprite_origin_y"] = 32,
             ["texture_size"] = 64
@@ -1385,6 +1389,7 @@ return {
           id = 4,
           properties = {
             ["position_z"] = 1,
+            ["rotation_look_at_player"] = true,
             ["scale"] = 1,
             ["sprite_origin_y"] = -6.5,
             ["texture_size"] = 64
@@ -1396,6 +1401,7 @@ return {
         {
           id = 5,
           properties = {
+            ["rotation_look_at_player"] = true,
             ["scale"] = 0.5,
             ["sprite_origin_y"] = 32,
             ["texture_size"] = 64
@@ -1407,6 +1413,7 @@ return {
         {
           id = 6,
           properties = {
+            ["rotation_look_at_player"] = true,
             ["scale"] = 0.5,
             ["sprite_origin_y"] = 30,
             ["texture_size"] = 64
@@ -1418,6 +1425,7 @@ return {
         {
           id = 7,
           properties = {
+            ["rotation_look_at_player"] = true,
             ["scale"] = 0.5,
             ["sprite_origin_y"] = 12.5,
             ["texture_size"] = 64
@@ -1429,6 +1437,7 @@ return {
         {
           id = 8,
           properties = {
+            ["rotation_look_at_player"] = true,
             ["scale"] = 1,
             ["sprite_origin_y"] = 32,
             ["texture_size"] = 64
@@ -1441,6 +1450,7 @@ return {
           id = 9,
           properties = {
             ["position_z"] = 1,
+            ["rotation_look_at_player"] = true,
             ["scale"] = 0.5,
             ["sprite_origin_y"] = -28,
             ["texture_size"] = 64
@@ -1453,6 +1463,7 @@ return {
           id = 10,
           properties = {
             ["position_z"] = 1,
+            ["rotation_look_at_player"] = true,
             ["scale"] = 0.5,
             ["sprite_origin_y"] = -28,
             ["texture_size"] = 64
@@ -1464,6 +1475,7 @@ return {
         {
           id = 11,
           properties = {
+            ["rotation_global"] = true,
             ["tag"] = "cup"
           },
           image = "../tiles/level_objects/cup.png",
@@ -1482,6 +1494,7 @@ return {
         {
           id = 13,
           properties = {
+            ["rotation_global"] = true,
             ["tag"] = "teapot"
           },
           image = "../tiles/level_objects/teapot.png",

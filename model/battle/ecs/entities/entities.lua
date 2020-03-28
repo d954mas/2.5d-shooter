@@ -196,7 +196,8 @@ function Entities:create_level_object(object)
 	assert(object)
 	---@type Entity
 	local e = {}
-	e.rotation_look_at_player = true
+	e.rotation_look_at_player = object.properties.rotation_look_at_player
+	e.rotation_global = object.properties.rotation_global
 	e.level_object = true
 	e.map_object = object
 	e.position = vmath.vector3(object.cell_xf, object.cell_yf, object.properties.position_z or 0)
