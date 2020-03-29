@@ -33,6 +33,15 @@ function M:is_empty()
 	return #self.stack == 0
 end
 
+function M:find_scene(scene)
+	for id = #self.stack,1,-1 do
+		local value = self.stack[id]
+		if value == scene then
+			return #self.stack - id
+		end
+	end
+end
+
 ---@return number
 function M:size() return #self.stack end
 

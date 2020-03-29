@@ -76,11 +76,20 @@ end
 function M:back()
 	assert(not self:is_working())
 	self.co = coroutine.create(function()
-		self:_back_scene_f()
+		self:_back_scene_f(1)
 	end)
 end
 
-function M:back_to() end
+function M:back_to(name)
+	checks("?", "string")
+	assert(not self:is_working())
+	self.co = coroutine.create(function()
+		local scene = self:get_scene_by_name(name)
+		local id = self.stack:find_scene(scene)
+		assert(id,"no scene:" .. name .. " in stack")
+		self:_back_scene_f(id)
+	end)
+end
 
 function M:close_modals()
 
@@ -197,20 +206,24 @@ function M:_replace_scene_f(scene, input)
 	self.stack:push(scene)
 end
 
-function M:_back_scene_f()
+function M:_back_scene_f(count)
+	assert(count > 0)
 	assert(#self.stack.stack > 1, "can't go back.")
-	local current_scene = self.stack:peek()
-	local prev_scene = self.stack:peek(1)
+	assert(#self.stack.stack - count >= 1, "not enough scenes")
 
+	local result_scene = self.stack:peek(count)
 	--start loading new scene.Before old was unloaded.
-	if prev_scene._state == SCENE_ENUMS.STATES.UNLOADED then prev_scene:load(true) end
+	if result_scene._state == SCENE_ENUMS.STATES.UNLOADED then result_scene:load(true) end
 
 	---@type SceneUnloadConfig
 	local unload_config = {}
-	unload_config.new_scene = prev_scene
+	unload_config.new_scene = result_scene
 
-	if (current_scene) then self:_unload_scene_f(self.stack:pop(), unload_config) end
-	self:_load_scene_f(prev_scene)
+	for i = 1, count do
+		self:_unload_scene_f(self.stack:pop(), unload_config)
+	end
+
+	self:_load_scene_f(result_scene)
 end
 
 ---@return Scene
