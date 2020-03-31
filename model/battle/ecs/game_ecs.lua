@@ -49,6 +49,7 @@ function EcsWorld:_init_systems()
 	self.ecs:addSystem(SYSTEMS.DrawWallSystem)
 	self.ecs:addSystem(SYSTEMS.DrawLevelObjectSystem)
 	self.ecs:addSystem(SYSTEMS.DrawDebugPhysicsBodiesSystem)
+	self.ecs:addSystem(SYSTEMS.DrawDebugLightsSystem)
 	self.ecs:addSystem(SYSTEMS.AutoDestroySystem)
 end
 

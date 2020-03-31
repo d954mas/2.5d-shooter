@@ -11,6 +11,7 @@ function Script:init()
 	COMMON.INPUT.acquire()
 	self:bind_vh()
 	self:init_gui()
+	CURSOR_HELPER.unlock_cursor()
 end
 
 function Script:bind_vh()
@@ -24,6 +25,7 @@ function Script:bind_vh()
 end
 
 function Script:init_gui()
+
 	self.views.btn_resume:set_input_listener(function ()
 		SM:back()
 	end)

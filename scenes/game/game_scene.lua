@@ -21,14 +21,21 @@ end
 
 function Scene:show_done()
 	WORLD.battle_model:on_scene_show()
-	CURSOR_HELPER.lock_cursor()
 	CURSOR_HELPER.register_listeners()
 end
 
 function Scene:hide_done()
 	CURSOR_HELPER.unregister_listener()
+end
+
+function Scene:pause_done()
 	CURSOR_HELPER.unlock_cursor()
 end
+
+function Scene:resume_done()
+	CURSOR_HELPER.lock_cursor()
+end
+
 
 function Scene:update(dt)
 	CURSOR_HELPER.update_cursor_movement()

@@ -196,3 +196,21 @@ embedded_components {
     w: 1.0
   }
 }
+embedded_components {
+  id: "light_debug"
+  type: "factory"
+  data: "prototype: \"/model/battle/factories/go/light_debug.go\"\n"
+  "load_dynamically: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}

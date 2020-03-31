@@ -28,6 +28,10 @@ local TAG = "Entities"
 ---@class PlayerInventory
 ---@field keys table
 
+---@class LightParams
+---@field dist number
+---@field start_light vector3 xyz hsv
+
 
 ---@class Entity
 ---@field tag string tag used for help when debug
@@ -37,6 +41,7 @@ local TAG = "Entities"
 ---@field floor boolean
 ---@field ceil boolean
 ---@field wall boolean
+---@field light boolean
 ---@field floor_cell LevelDataCellFloor
 ---@field wall_cell LevelDataWallBlock
 ---@field ceil_cell LevelDataCellFloor
@@ -45,6 +50,7 @@ local TAG = "Entities"
 ---@field wall_go WallGo
 ---@field level_object_go LevelObjectGO
 ---@field debug_physics_body_go WallGo
+---@field debug_light_go DebugLightGo
 ---@field cell_id number
 ---@field visible boolean
 ---@field position vector3
@@ -66,6 +72,7 @@ local TAG = "Entities"
 ---@field physics_obstacles_correction vector3
 ---@field map_object LevelMapObject
 ---@field dynamic_color boolean
+---@field light_params LightParams
 
 
 
@@ -203,6 +210,20 @@ function Entities:create_level_object(object)
 	e.position = vmath.vector3(object.cell_xf, object.cell_yf, object.properties.position_z or 0)
 	e.visible = false
 	e.dynamic_color = true
+	return e
+end
+
+function Entities:create_light(pos)
+	assert(pos)
+	---@type Entity
+	local e = {}
+	e.position = vmath.vector3(pos.x, pos.y, pos.z)
+	e.light = true
+	e.visible = false
+	e.light_params = {
+		dist = 1,
+		start_light = vmath.vector3(1, 1, 1)
+	}
 	return e
 end
 

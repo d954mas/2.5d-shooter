@@ -15,6 +15,11 @@ function Creator:create()
 	self:create_ceil()
 	self:create_wall()
 	self:create_level_objects()
+	self:create_lights()
+end
+
+function Creator:create_lights()
+	self.ecs:add_entity(self.entities:create_light(vmath.vector3(1.5, 1.5, 0.5)))
 end
 
 function Creator:create_floor()
@@ -44,7 +49,7 @@ function Creator:create_wall()
 end
 
 function Creator:create_level_objects()
-	for _, object in ipairs(self.level.data.level_objects)do
+	for _, object in ipairs(self.level.data.level_objects) do
 		self.ecs:add(self.entities:create_level_object(object))
 	end
 end

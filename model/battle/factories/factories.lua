@@ -13,7 +13,8 @@ local URLS = {
 		level_object = msg.url("game_scene:/factories#level_object"),
 		level_object_cup = msg.url("game_scene:/factories#level_object_cup"),
 		level_object_human = msg.url("game_scene:/factories#level_object_human"),
-		level_object_teapot = msg.url("game_scene:/factories#level_object_teapot")
+		level_object_teapot = msg.url("game_scene:/factories#level_object_teapot"),
+		light_debug = msg.url("game_scene:/factories#light_debug")
 	}
 }
 
@@ -54,6 +55,9 @@ local OBJECTS_CONFIGS = {
 
 
 ---@class DebugPhysicsBodyGo
+---@field root url
+
+---@class DebugLightGo
 ---@field root url
 
 local M = {}
@@ -182,11 +186,20 @@ function M.create_wall(position, wall)
 end
 
 ---@param physics NativePhysicsRectBody
+---@return DebugPhysicsBodyGo
 function M.create_debug_physics_body(physics)
 	local x, y, z = physics:get_position()
 	local w, h, l = physics:get_size()
 	local root = msg.url(factory.create(physics:is_static() and URLS.factory.debug_physics_body_static or URLS.factory.debug_physics_body_dynamic,
 			vmath.vector3(x, z, -y), nil, nil, vmath.vector3(w / 64, l / 64, h / 64) * 1.001))
+	return { root = root }
+end
+
+---@param e Entity
+---@return DebugLightGo
+function M.create_debug_light(e)
+	assert(e.light)
+	local root = msg.url(factory.create(URLS.factory.light_debug, vmath.vector3(e.position.x, 0.7, -e.position.y), nil, nil, vmath.vector3(0.15 / 64, 0.15 / 64, 0.15 / 64)))
 	return { root = root }
 end
 
