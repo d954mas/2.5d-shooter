@@ -37,34 +37,32 @@ end
 
 ---@param level Level
 function LightMap:set_level(level)
+	self:set_colors(level.data.light_map, level.data.size.x, level.data.size.y)
+end
+
+function LightMap:set_colors(colors, w, h)
 	local stream = buffer.get_stream(self.buffer, HASH_LIGHT_MAP)
-	local data = level.data.light_map
-	local w = level.data.size.x
-	local h = level.data.size.y
 	--@TODO MOVE TO NE.LUA SO SLOW OR NOT?
 	--local time = os.clock()
 	--for i=1,10 do
-		for y = self.size - 1, 0, -1 do
-			local index = y * self.size * 3 + 1
-			for x = 0, self.size - 1 do
-				local color = data[(self.size - y - 1) * w + x + 1] or 0xFFFF0000
-				stream[index] = arshift(band(color, 0x00FF0000), 16)
-				stream[index + 1] = arshift(band(color, 0x0000FF00), 8)
-				stream[index + 2] = arshift(band(color, 0x000000ff), 0)
-				index = index + 3
-				if x > w then break end
-			end
-			if (self.size - y + 1) > h then break end
+	for y = self.size - 1, 0, -1 do
+		local index = y * self.size * 3 + 1
+		for x = 0, self.size - 1 do
+			local color = colors[(self.size - y - 1) * w + x+1] or 0xFFFF0000
+			stream[index] = arshift(band(color, 0x00FF0000), 16)
+			stream[index + 1] = arshift(band(color, 0x0000FF00), 8)
+			stream[index + 2] = arshift(band(color, 0x000000ff), 0)
+			index = index + 3
+			if x > w then break end
 		end
---	end
---	print("time:" .. (os.clock()-time))
+		if (self.size - y + 1) > h then break end
+	end
 	self:on_changed()
-
 end
 
 function LightMap:on_changed()
 	local ctx = COMMON.CONTEXT:set_context_top_by_name(COMMON.CONTEXT.NAMES.LIGHT_MAP_SCRIPT)
-	if(not self.go_resource_path)then
+	if (not self.go_resource_path) then
 		self.go_resource_path = go.get("#model", "texture0")
 		self.go_header = { width = self.size, height = self.size, type = resource.TEXTURE_TYPE_2D, format = resource.TEXTURE_FORMAT_RGB, num_mip_maps = 1 }
 	end
@@ -78,7 +76,7 @@ function LightMap:draw_light_map(debug)
 	render.disable_state(render.STATE_STENCIL_TEST)
 	render.disable_state(render.STATE_CULL_FACE)
 	if debug then
-		local size = math.max(512,self.size)
+		local size = math.max(512, self.size)
 		render.set_viewport(20, 20, size, size)
 	else
 		render.set_viewport(0, 0, self.size, self.size)

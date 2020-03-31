@@ -24,6 +24,7 @@ function EcsWorld:_init_systems()
 	--so prepare all for render. Then update positions.
 	self.ecs:addSystem(SYSTEMS.UpdateCameraPositionSystem)
 	self.ecs:addSystem(SYSTEMS.UpdateObjectColorSystem)
+	self.ecs:addSystem(SYSTEMS.UpdateLightSystem)
 
 	self.ecs:addSystem(SYSTEMS.InputSystem)
 	self.ecs:addSystem(SYSTEMS.UpdateAISystem)
