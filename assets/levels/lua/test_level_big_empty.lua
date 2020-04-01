@@ -8,7 +8,7 @@ return {
   height = 256,
   tilewidth = 64,
   tileheight = 64,
-  nextlayerid = 17,
+  nextlayerid = 18,
   nextobjectid = 110,
   properties = {},
   tilesets = {
@@ -1317,6 +1317,18 @@ return {
     }
   },
   layers = {
+    {
+      type = "objectgroup",
+      id = 17,
+      name = "light_sources",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      draworder = "topdown",
+      properties = {},
+      objects = {}
+    },
     {
       type = "objectgroup",
       id = 15,

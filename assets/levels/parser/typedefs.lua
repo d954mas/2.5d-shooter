@@ -11,6 +11,8 @@
 ---@field position_z number default z position
 ---@field blocked boolean
 ---@field transparent boolean
+---@field light boolean
+---@field light_type string point
 
 ---@class LevelMapObject
 ---@field tile_id number
@@ -71,4 +73,5 @@
 ---@field light_map number[]
 ---@field player LevelDataPlayer
 ---@field level_objects LevelMapObject[]
+---@field light_sources LevelMapObject[]
 

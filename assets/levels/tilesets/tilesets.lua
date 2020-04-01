@@ -1502,6 +1502,40 @@ return {
           height = 64
         }
       }
+    },
+    {
+      name = "light_sources",
+      firstgid = 215,
+      filename = "light_sources.tsx",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 0,
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 1,
+        height = 1
+      },
+      properties = {},
+      terrains = {},
+      tilecount = 1,
+      tiles = {
+        {
+          id = 0,
+          properties = {
+            ["light"] = true,
+            ["light_type"] = "point"
+          },
+          image = "../tiles/light_sources/point.png",
+          width = 64,
+          height = 64
+        }
+      }
     }
   },
   layers = {}

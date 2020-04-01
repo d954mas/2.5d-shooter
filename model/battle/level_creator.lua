@@ -19,7 +19,10 @@ function Creator:create()
 end
 
 function Creator:create_lights()
-	self.ecs:add_entity(self.entities:create_light(vmath.vector3(1.5, 1.5, 0.5)))
+	for _, obj in ipairs(self.level.data.light_sources) do
+		self.ecs:add_entity(self.entities:create_light_source(vmath.vector3(obj.cell_xf, obj.cell_yf, 0.5)))
+	end
+
 end
 
 function Creator:create_floor()

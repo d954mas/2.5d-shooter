@@ -213,7 +213,7 @@ function Entities:create_level_object(object)
 	return e
 end
 
-function Entities:create_light(pos)
+function Entities:create_light_source(pos)
 	assert(pos)
 	---@type Entity
 	local e = {}

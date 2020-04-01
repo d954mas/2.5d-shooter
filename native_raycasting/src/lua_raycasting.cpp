@@ -7,6 +7,7 @@
 #include <dmsdk/sdk.h>
 #include "native_raycasting.h"
 #include "lua_helper.h"
+#include "colors.h"
 #include <set>
 #include <unordered_set>
 #include <vector>

@@ -1,12 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.3" orientation="orthogonal" renderorder="right-up" width="32" height="32" tilewidth="64" tileheight="64" infinite="0" nextlayerid="18" nextobjectid="137">
+<map version="1.2" tiledversion="1.3.3" orientation="orthogonal" renderorder="right-up" width="32" height="32" tilewidth="64" tileheight="64" infinite="0" nextlayerid="19" nextobjectid="145">
  <tileset firstgid="1" source="../tilesets/walls.tsx"/>
  <tileset firstgid="37" source="../tilesets/lights.tsx"/>
  <tileset firstgid="197" source="../tilesets/objects.tsx"/>
  <tileset firstgid="201" source="../tilesets/level_objects.tsx"/>
- <tileset firstgid="212" source="../tilesets/level_objects.tsx"/>
+ <tileset firstgid="215" source="../tilesets/light_sources.tsx"/>
  <objectgroup id="16" name="objects">
   <object id="110" gid="197" x="192" y="448" width="64" height="64"/>
+ </objectgroup>
+ <objectgroup id="17" name="level_objects">
+  <object id="117" gid="205" x="464" y="368" width="25" height="13"/>
+  <object id="118" gid="205" x="464" y="400" width="25" height="13"/>
+  <object id="119" gid="201" x="576" y="576" width="64" height="64"/>
+  <object id="122" gid="204" x="576" y="512" width="64" height="64"/>
+  <object id="123" gid="204" x="448" y="512" width="64" height="64"/>
+  <object id="124" gid="208" x="320" y="560" width="86" height="25"/>
+  <object id="125" gid="209" x="496" y="272" width="64" height="64"/>
+  <object id="126" gid="211" x="688" y="576" width="64" height="54"/>
+  <object id="127" gid="210" x="704" y="496" width="61" height="56"/>
+  <object id="128" gid="202" x="224" y="352" width="64" height="62"/>
+  <object id="129" gid="202" x="192" y="496" width="64" height="62"/>
+  <object id="130" gid="203" x="368" y="272" width="46" height="64"/>
+  <object id="131" gid="203" x="640" y="288" width="46" height="64"/>
+  <object id="132" gid="212" x="501" y="265" width="16" height="16">
+   <properties>
+    <property name="position_z" type="float" value="0.4"/>
+   </properties>
+  </object>
+  <object id="133" gid="213" x="512" y="192" width="64" height="64"/>
+  <object id="134" gid="213" x="576" y="192" width="64" height="64"/>
+  <object id="135" gid="214" x="768" y="384" width="64" height="64"/>
+  <object id="136" gid="214" x="768" y="448" width="64" height="64"/>
+ </objectgroup>
+ <objectgroup id="18" name="light_sources">
+  <object id="137" gid="215" x="384" y="320" width="64" height="64"/>
+  <object id="138" gid="215" x="512" y="320" width="64" height="64"/>
+  <object id="139" gid="215" x="384" y="512" width="64" height="64"/>
+  <object id="140" gid="215" x="512" y="512" width="64" height="64"/>
+  <object id="141" gid="215" x="704" y="256" width="64" height="64"/>
+  <object id="142" gid="215" x="192" y="256" width="64" height="64"/>
+  <object id="143" gid="215" x="192" y="576" width="64" height="64"/>
+  <object id="144" gid="215" x="704" y="576" width="64" height="64"/>
  </objectgroup>
  <layer id="14" name="light_map" width="32" height="32">
   <data encoding="csv">
@@ -44,30 +78,6 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="17" name="level_objects">
-  <object id="117" gid="205" x="464" y="368" width="25" height="13"/>
-  <object id="118" gid="205" x="464" y="400" width="25" height="13"/>
-  <object id="119" gid="201" x="576" y="576" width="64" height="64"/>
-  <object id="122" gid="204" x="576" y="512" width="64" height="64"/>
-  <object id="123" gid="204" x="448" y="512" width="64" height="64"/>
-  <object id="124" gid="208" x="320" y="560" width="86" height="25"/>
-  <object id="125" gid="209" x="496" y="272" width="64" height="64"/>
-  <object id="126" gid="211" x="688" y="576" width="64" height="54"/>
-  <object id="127" gid="210" x="704" y="496" width="61" height="56"/>
-  <object id="128" gid="202" x="224" y="352" width="64" height="62"/>
-  <object id="129" gid="202" x="192" y="496" width="64" height="62"/>
-  <object id="130" gid="203" x="368" y="272" width="46" height="64"/>
-  <object id="131" gid="203" x="640" y="288" width="46" height="64"/>
-  <object id="132" gid="223" x="501" y="265" width="16" height="16">
-   <properties>
-    <property name="position_z" type="float" value="0.4"/>
-   </properties>
-  </object>
-  <object id="133" gid="224" x="512" y="192" width="64" height="64"/>
-  <object id="134" gid="224" x="576" y="192" width="64" height="64"/>
-  <object id="135" gid="225" x="768" y="384" width="64" height="64"/>
-  <object id="136" gid="225" x="768" y="448" width="64" height="64"/>
- </objectgroup>
  <layer id="3" name="walls" width="32" height="32">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

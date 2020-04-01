@@ -310,6 +310,20 @@ local function parse_level_objects(map, layer)
 	return result;
 end
 
+local function parse_light_sources(map, layer)
+	check_layer_tilesets(layer, { assert(TILESETS.tilesets["light_sources"]) })
+	assert(layer.objects)
+	---@type LevelMapObject[]
+	local objects = layer.objects
+	local result = {}
+	for _, obj in ipairs(objects) do
+		local type = obj.properties.light_type
+		assert(type == "point","unknown light type:" .. tostring(type))
+		table.insert(result, obj)
+	end
+	return result;
+end
+
 ---@param map LevelData
 local function check(map)
 	assert(map.player, "no player")
@@ -330,6 +344,7 @@ local function parse_level(path, result_path)
 	data.light_map = parse_light_map(data, assert(get_layer(tiled, "light_map")))
 	parse_objects(data, assert(get_layer(tiled, "objects")))
 	data.level_objects = parse_level_objects(data, assert(get_layer(tiled, "level_objects")))
+	data.light_sources = parse_light_sources(data,assert(get_layer(tiled, "light_sources")))
 	--[[
 		local wall_keys = { "north", "south", "east", "west" }
 		process_layer(data, assert(get_layer(tiled, "walls")), function(cell, tiled_cell, x, y)

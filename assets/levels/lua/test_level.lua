@@ -8,8 +8,8 @@ return {
   height = 8,
   tilewidth = 64,
   tileheight = 64,
-  nextlayerid = 17,
-  nextobjectid = 110,
+  nextlayerid = 18,
+  nextobjectid = 117,
   properties = {},
   tilesets = {
     {
@@ -1314,9 +1314,154 @@ return {
           height = 64
         }
       }
+    },
+    {
+      name = "light_sources",
+      firstgid = 201,
+      filename = "../tilesets/light_sources.tsx",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 0,
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 1,
+        height = 1
+      },
+      properties = {},
+      terrains = {},
+      tilecount = 1,
+      tiles = {
+        {
+          id = 0,
+          properties = {
+            ["light"] = true,
+            ["light_type"] = "point"
+          },
+          image = "../tiles/light_sources/point.png",
+          width = 64,
+          height = 64
+        }
+      }
     }
   },
   layers = {
+    {
+      type = "objectgroup",
+      id = 17,
+      name = "light_sources",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      draworder = "topdown",
+      properties = {},
+      objects = {
+        {
+          id = 110,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 64,
+          y = 448,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 201,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 111,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 64,
+          y = 128,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 201,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 112,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 256,
+          y = 192,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 201,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 113,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 256,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 201,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 114,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 384,
+          y = 320,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 201,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 115,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 448,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 201,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 116,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 256,
+          y = 320,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 201,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
     {
       type = "objectgroup",
       id = 16,
