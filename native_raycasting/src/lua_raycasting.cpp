@@ -156,6 +156,24 @@ static int CameraSetMaxDistanceLua(lua_State* L){
 }
 //endregion
 
+static int ColorHSVToRGBLua(lua_State* L){
+    int h = luaL_checknumber(L,1);
+    int s = luaL_checknumber(L,2);
+    int v = luaL_checknumber(L,3);
+    int rgb = HSVToRGBInt(h,s,v);
+    lua_pushnumber(L,rgb);
+	return 1;
+}
+
+static int ColorRGBToHSVLua(lua_State* L){
+	int rgb = luaL_checknumber(L,1);
+	float h,s,v;
+	RGBIntToHSV(rgb,h,s,v);
+    lua_pushnumber(L,h);
+    lua_pushnumber(L,s);
+    lua_pushnumber(L,v);
+	return 3;
+}
 
 // Functions exposed to Lua
 static const luaL_reg Module_methods[] =
@@ -177,6 +195,10 @@ static const luaL_reg Module_methods[] =
 	{"cells_get_need_update",CellsGetNeedUpdateLua},
 	{"cells_get_by_id",CellsGetByIdLua},
 	{"cells_get_by_coords",CellsGetByCoordsLua},
+
+
+	{"color_hsv_to_rgb",ColorHSVToRGBLua},
+	{"color_rgb_to_hsv",ColorRGBToHSVLua},
 
 	{0, 0}
 };
