@@ -54,40 +54,70 @@ function M:on_input(action_id, action)
 	end
 end
 
-function M:reload() end
 
 ---@param input nil|table
-function M:show(name, input)
-	checks("?", "string", "?")
+function M:show(name, input, options)
+	checks("?", "string", "?", {
+		reload = "?boolean", --if scene already in top reload it
+	})
+	options = options or {}
+	assert(not self:is_working())
+
+	local new_scene = self:get_scene_by_name(name)
+	if (new_scene == self.stack:peek() and options.reload) then
+		self:reload(input)
+	else
+		self.co = coroutine.create(function()
+			self:_show_scene_f(new_scene, input)
+		end)
+	end
+
+
+end
+
+function M:reload(input)
 	assert(not self:is_working())
 	self.co = coroutine.create(function()
-		self:_show_scene_f(self:get_scene_by_name(name), input)
+		local scene = self.stack:peek()
+		self:_unload_scene_f(scene)
+		self.stack:pop()
+		self:_show_scene_f(scene, input)
 	end)
 end
 
-function M:replace(name)
-	checks("?", "string")
+function M:replace(name, input, options)
+	checks("?", "string", "?", {
+		reload = "?boolean", --if scene already in top reload it
+	})
+	options = options or {}
+	assert(not self:is_working())
+
+	local new_scene = self:get_scene_by_name(name)
+	if (new_scene == self.stack:peek() and options.reload) then
+		self:reload(input)
+	else
+		self.co = coroutine.create(function()
+			self:_replace_scene_f(new_scene,input)
+		end)
+	end
+
+end
+
+function M:back(options)
 	assert(not self:is_working())
 	self.co = coroutine.create(function()
-		self:_replace_scene_f(self:get_scene_by_name(name))
+		self:_back_scene_f(1,options)
 	end)
 end
 
-function M:back()
-	assert(not self:is_working())
-	self.co = coroutine.create(function()
-		self:_back_scene_f(1)
-	end)
-end
-
-function M:back_to(name)
+function M:back_to(name, options)
 	checks("?", "string")
 	assert(not self:is_working())
 	self.co = coroutine.create(function()
 		local scene = self:get_scene_by_name(name)
 		local id = self.stack:find_scene(scene)
-		assert(id,"no scene:" .. name .. " in stack")
-		self:_back_scene_f(id)
+		assert(id, "no scene:" .. name .. " in stack")
+		self:_back_scene_f(id,options)
 	end)
 end
 
@@ -164,6 +194,7 @@ function M:_show_scene_f(scene, input)
 	checks("?", "Scene", "?")
 
 	local current_scene = self.stack:peek()
+	assert(not(current_scene == scene), "already show that scene")
 
 	--start loading new scene.Before old was unloaded.
 	scene._input = input
@@ -191,6 +222,8 @@ function M:_replace_scene_f(scene, input)
 
 	local current_scene = self.stack:peek()
 	assert(current_scene, "can't replace. No current scene")
+	assert(not(current_scene == scene), "already show that scene")
+
 	--start loading new scene.Before old was unloaded.
 	scene._input = input
 	if scene._state == SCENE_ENUMS.STATES.UNLOADED then scene:load(true) end
@@ -206,14 +239,17 @@ function M:_replace_scene_f(scene, input)
 	self.stack:push(scene)
 end
 
-function M:_back_scene_f(count)
+function M:_back_scene_f(count,options)
+	options = options or {}
 	assert(count > 0)
-	assert(#self.stack.stack > 1, "can't go back.")
-	assert(#self.stack.stack - count >= 1, "not enough scenes")
+	assert(options.to_init_collection or #self.stack.stack > 1, "can't go back.")
+	assert(options.to_init_collection or #self.stack.stack - count >= 1, "not enough scenes")
 
 	local result_scene = self.stack:peek(count)
-	--start loading new scene.Before old was unloaded.
-	if result_scene._state == SCENE_ENUMS.STATES.UNLOADED then result_scene:load(true) end
+	if result_scene then
+		--start loading new scene.Before old was unloaded.
+		if result_scene._state == SCENE_ENUMS.STATES.UNLOADED then result_scene:load(true) end
+	end
 
 	---@type SceneUnloadConfig
 	local unload_config = {}
@@ -222,8 +258,9 @@ function M:_back_scene_f(count)
 	for i = 1, count do
 		self:_unload_scene_f(self.stack:pop(), unload_config)
 	end
-
-	self:_load_scene_f(result_scene)
+	if result_scene then
+		self:_load_scene_f(result_scene)
+	end
 end
 
 ---@return Scene

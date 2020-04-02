@@ -5,10 +5,6 @@ local M = {}
 local TAG = "LEVEL"
 
 M.TESTS = {
-	MOVEMENT = "test_movement",
-	OBJECTS = "test_objects",
-	PARSER = "test_parser_objects",
-
 	TEST = "test_level",
 	TEST_BIG_EMPTY = "test_level_big_empty"
 }
