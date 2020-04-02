@@ -33,12 +33,20 @@ local function objects_set_meta(objects)
 	end
 end
 
+local function set_default_color(light_map, default_color)
+	for id, color in ipairs(light_map) do
+		if(color == -1) then light_map[id] = default_color end
+		light_map[id] = bit.tobit(light_map[id])
+	end
+end
+
 ---@param data LevelData
 function Level:initialize(data)
 	self.data = assert(data)
 	self.cell_max_id = self.data.size.x * self.data.size.y - 1
 	walls_prepare_to_native(self.data.walls, self.cell_max_id)
 	objects_set_meta(data.level_objects)
+	set_default_color(data.light_map,0xFFFFFFFF)
 
 end
 

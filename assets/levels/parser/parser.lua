@@ -275,7 +275,7 @@ local function parse_light_map(map, layer)
 	check_layer_tilesets(layer, { assert(TILESETS.tilesets["lights"]) })
 	local result = {}
 	for i, v in ipairs(layer.data) do
-		result[i] = v == 0 and 0xFFFFFFFF or tonumber("0x" .. string.sub(TILESETS.by_id[v].properties.color, 2))
+		result[i] = v == 0 and -1 or tonumber("0x" .. string.sub(TILESETS.by_id[v].properties.color, 2))
 	end
 	return result
 end

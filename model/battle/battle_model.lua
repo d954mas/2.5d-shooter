@@ -14,7 +14,10 @@ function Model:initialize(world, level)
 	self.level = assert(level)
 	self.time = 0
 
-	self.light_map = LightMap(128)
+	local max_side = math.max(self.level.data.size.x,self.level.data.size.y)
+	--https://www.geeksforgeeks.org/smallest-power-of-2-greater-than-or-equal-to-n/
+	local smallest_pot = math.pow(2,math.ceil(math.log(max_side)/(math.log(2))))
+	self.light_map = LightMap(smallest_pot)
 	native_raycasting.map_set(self.level.data)
 	self.ecs = GameEcs(self.world)
 end

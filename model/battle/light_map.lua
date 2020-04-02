@@ -3,7 +3,8 @@ local COMMON = require "libs.common"
 local LightMap = COMMON.class("LightMap")
 
 local HASH_LIGHT_MAP = hash("light_map")
-
+local arshift = bit.arshift
+local band = bit.band
 
 
 --draw all ambient light of level to texture
@@ -36,28 +37,36 @@ end
 
 ---@param level Level
 function LightMap:set_level(level)
+	self.level = level
 	self:set_colors(level.data.light_map, level.data.size.x, level.data.size.y)
 end
 
-function LightMap:set_colors(colors, w, h)
+function LightMap:set_colors(colors, can_be_nil)
 	local stream = buffer.get_stream(self.buffer, HASH_LIGHT_MAP)
+	local w,h = self.level.data.size.x, self.level.data.size.y
 	--@TODO MOVE TO NE.LUA SO SLOW OR NOT?
 	--local time = os.clock()
-	--for i=1,10 do
-	for y = self.size - 1, 0, -1 do
-		local index = y * self.size * 3 + 1
-		for x = 0, self.size - 1 do
-			local color = colors[(self.size - y - 1) * w + x+1] or 0x333333
-			local r,g,b = native_raycasting.color_rgbi_to_rgb(color)
-			stream[index] = r
-			stream[index + 1] = g
-			stream[index + 2] = b
-			index = index + 3
-			if x > w then break end
+	for i=1,10 do
+		for y = 0, h-1 do
+			local index = (self.size-y-1)*self.size*3+1
+			for x = 0, w-1 do
+				local color = colors[y * w + x+1]
+				assert(color or can_be_nil)
+				if(color) then
+					local r,g,b = native_raycasting.color_rgbi_to_rgb(color)
+					stream[index] = r
+					stream[index + 1] = g
+					stream[index + 2] = b
+				end
+				index = index + 3
+			end
 		end
-		if (self.size - y + 1) > h then break end
 	end
 	self:on_changed()
+end
+
+function LightMap:set_colors_changed(colors)
+
 end
 
 function LightMap:on_changed()
