@@ -140,9 +140,9 @@
 	}
 
 	void RGBIntToHSV(int rgb, float& fH, float& fS, float& fV){
-		float r = ((rgb & 0x00FF0000) >> 16)/0xff;
-		float g = ((rgb & 0x0000FF00) >> 8)/0xff;
-		float b = ((rgb & 0x000000ff) >> 0)/0xff;
+		float r = ((rgb & 0x00FF0000) >> 16)/(float)0xff;
+		float g = ((rgb & 0x0000FF00) >> 8)/(float)0xff;
+		float b = ((rgb & 0x000000ff) >> 0)/(float)0xff;
 		RGBtoHSV(r,g,b,fH,fS,fV);
 	}
 

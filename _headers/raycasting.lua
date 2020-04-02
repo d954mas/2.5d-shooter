@@ -25,11 +25,19 @@ function native_raycasting.cells_get_by_id(id) end
 ---@return NativeCellData
 function native_raycasting.cells_get_by_coords(x, y) end
 
+function native_raycasting.color_hsv_to_rgb(h, s, v) end
+function native_raycasting.color_rgb_to_hsv(color) end
+
 ---@class NativeCellData
 local NativeCellData = {}
-function NativeCellData:get_x() end
-function NativeCellData:get_y() end
+function NativeCellData:get_x()
+end
+function NativeCellData:get_y()
+end
 function NativeCellData:get_visibility() end
-function NativeCellData:get_id() end
-function NativeCellData:get_transparent() end
-function NativeCellData:get_blocked() end
+function NativeCellData:get_id()
+end
+function NativeCellData:get_transparent()
+end
+function NativeCellData:get_blocked()
+end
