@@ -111,7 +111,7 @@ function M:back(options)
 end
 
 function M:back_to(name, options)
-	checks("?", "string")
+	checks("?", "string","?")
 	assert(not self:is_working())
 	self.co = coroutine.create(function()
 		local scene = self:get_scene_by_name(name)

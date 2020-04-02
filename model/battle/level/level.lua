@@ -2,7 +2,7 @@ local COMMON = require "libs.common"
 local TILESET = require "model.battle.level.tileset"
 local MAP_HELPER = require "assets.levels.parser.map_helper"
 
-
+local table_insert = table.insert
 --Cell used in cpp and in lua.
 --In lua id start from 1 in cpp from 0
 --In lua pos start from 1 in cpp from 0
@@ -46,6 +46,47 @@ end
 function Level:map_get_width() return self.data.size.x end
 function Level:map_get_height() return self.data.size.y end
 
+--[[
+Childs number when get all childs for X cell
+ _ _ _
+|1|2|3|
+ ‾ ‾ ‾
+ _ _ _
+|8|X|4|
+ ‾ ‾ ‾
+ _ _ _
+|7|6|5|
+ ‾ ‾ ‾
+--]]
+--zero value is always cell_id cell
+--todo add cache here
+---@return NativeCellData[]  list
+---@return NativeCellData[][] matrix
+function Level:map_get_neighbours(cell_id, dist)
+	assert(cell_id)
+	assert(self:map_cell_id_in(cell_id))
+	local cell = native_raycasting.cells_get_by_id(cell_id)
+	local cell_x, cell_y = cell:get_x(), cell:get_y()
+	local result_list = {}
+	local result_matrix = {}
+	result_list[0] = cell
+	for y = -dist, dist do
+		result_matrix[y] = {}
+		local new_y = cell_y + y
+		if new_y >= 0 and new_y < self.data.size.y then
+			for x = -dist, dist do
+				local new_x = cell_x + x
+				if new_x >= 0 and new_x < self.data.size.x then
+					cell = native_raycasting.cells_get_by_coords(new_x, new_y)
+					if (x ~= 0 or y ~= 0) then table_insert(result_list, cell) end
+					result_matrix[y][x] = cell
+				end
+			end
+		end
+	end
+	return result_list, result_matrix
+end
+
 ---@return LevelDataWallBlock
 function Level:map_get_wall_by_id(id)
 	--assert(self:map_cell_id_in(id), "id:" .. id)
@@ -66,7 +107,7 @@ end
 
 --some coords start from zero.Some starts from 1 =)
 function Level:coords_to_id(x, y)
-	return MAP_HELPER.coords_to_id(self.data,math.floor(x),math.floor(y))
+	return MAP_HELPER.coords_to_id(self.data, math.floor(x), math.floor(y))
 end
 
 --endregion

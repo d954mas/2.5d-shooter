@@ -10,7 +10,7 @@ local EVENTS = require "libs_project.events"
 local SCENE_LOADER = require "libs.sm.scene_loader"
 local WORLD = require "model.world"
 
-local RUN_TEST = true
+local RUN_TEST = false
 
 COMMON.empty_ne("defos")
 

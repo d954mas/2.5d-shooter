@@ -9,7 +9,8 @@ function Script:bind_vh()
 	self.view = {
 		btn_back = GUI.Button("btn_back"),
 		btn_test_lvl_1 = GUI.Button("btn_test_lvl_1"),
-		btn_test_lvl_2 = GUI.Button("btn_test_lvl_2")
+		btn_test_lvl_2 = GUI.Button("btn_test_lvl_2"),
+		btn_test_lvl_lights = GUI.Button("btn_test_lvl_lights")
 	}
 end
 
@@ -23,6 +24,10 @@ function Script:init_gui()
 
 	self.view.btn_test_lvl_2:set_input_listener(function ()
 		SM:show(SM.SCENES.GAME_SCENE, {level_id = LEVELS.TESTS.TEST})
+	end)
+
+	self.view.btn_test_lvl_lights:set_input_listener(function ()
+		SM:show(SM.SCENES.GAME_SCENE, {level_id = LEVELS.TESTS.TEST_LIGHTS})
 	end)
 end
 
@@ -40,9 +45,10 @@ end
 
 
 function Script:on_input(action_id, action)
-	if(self.view.btn_back:on_input(action_id,action).consumed) then return true end
-	if(self.view.btn_test_lvl_1:on_input(action_id,action).consumed) then return true end
-	if(self.view.btn_test_lvl_2:on_input(action_id,action).consumed) then return true end
+	if(self.view.btn_back:on_input(action_id,action)) then return true end
+	if(self.view.btn_test_lvl_1:on_input(action_id,action)) then return true end
+	if(self.view.btn_test_lvl_2:on_input(action_id,action)) then return true end
+	if(self.view.btn_test_lvl_lights:on_input(action_id,action)) then return true end
 end
 
 

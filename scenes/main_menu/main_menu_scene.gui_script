@@ -34,8 +34,8 @@ function Script:final()
 end
 
 function Script:on_input(action_id, action)
-	if (self.view.btn_play:on_input(action_id, action).consumed) then return true end
-	if (self.view.btn_tests:on_input(action_id, action).consumed) then return true end
+	if (self.view.btn_play:on_input(action_id, action)) then return true end
+	if (self.view.btn_tests:on_input(action_id, action)) then return true end
 end
 
 COMMON.N28S.register(Script())
