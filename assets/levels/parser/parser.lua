@@ -32,7 +32,8 @@ local function parse_tilesets(path)
 	for _, tileset in ipairs(tiled.tilesets) do
 		print("parse tileset:" .. tileset.name)
 		assert(not tilesets[tileset.name], "tileset with name:" .. tileset.name .. " already created")
-		tilesets[tileset.name] = { first_gid = tileset.firstgid, end_gid = tileset.firstgid + tileset.tiles[#tileset.tiles].id, name = tileset.name, properties = tileset.properties or {} }
+		tilesets[tileset.name] = { first_gid = tileset.firstgid, end_gid = tileset.firstgid + tileset.tiles[#tileset.tiles].id, name = tileset.name,
+								   properties = tileset.properties or {} }
 		for _, tile in ipairs(tileset.tiles) do
 			tile.properties = tile.properties or {}
 			id_to_tile[tile.id + tileset.firstgid] = tile
@@ -345,6 +346,9 @@ local function parse_level(path, result_path)
 	parse_objects(data, assert(get_layer(tiled, "objects")))
 	data.level_objects = parse_level_objects(data, assert(get_layer(tiled, "level_objects")))
 	data.light_sources = parse_light_sources(data,assert(get_layer(tiled, "light_sources")))
+
+
+	check(data)
 	--[[
 		local wall_keys = { "north", "south", "east", "west" }
 		process_layer(data, assert(get_layer(tiled, "walls")), function(cell, tiled_cell, x, y)

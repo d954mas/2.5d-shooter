@@ -135,7 +135,8 @@ function Entities:create_player(pos)
 	}
 	e.player = true
 	e.visible = true
-	e.physics_body = physics3d.create_rect(e.position.x, e.position.y, e.position_z_center, 0.5, 0.5, 0.8, false, physics3d.GROUPS.PLAYER, self.masks.PLAYER)
+	e.physics_body = physics3d.create_rect(e.position.x, e.position.y, e.position_z_center, 0.5, 0.5, 0.8,
+			false, physics3d.GROUPS.PLAYER, self.masks.PLAYER)
 	e.physics_dynamic = true
 	e.physics_obstacles_correction = vmath.vector3()
 	e.camera_bob_info = {

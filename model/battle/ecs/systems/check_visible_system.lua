@@ -1,5 +1,5 @@
 local ECS = require 'libs.ecs'
-local LOG = require "libs.log"
+
 --local CAMERA_URL = msg.url("game:/camera")
 ---@class CheckVisibleSystem:ECSSystem
 local System = ECS.processingSystem()

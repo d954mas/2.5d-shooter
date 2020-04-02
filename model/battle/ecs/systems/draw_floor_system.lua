@@ -1,7 +1,6 @@
 local ECS = require 'libs.ecs'
 local FACTORIES = require "model.battle.factories.factories"
-local TILESET = require "model.battle.level.tileset"
---local CAMERA_URL = msg.url("game:/camera")
+
 ---@class DrawFloorSystem:ECSSystem
 local System = ECS.processingSystem()
 System.filter = ECS.requireAll("floor")

@@ -71,7 +71,8 @@ read_globals = {
   "native_raycasting",
   "lua_script_instance",
   "lottie_web",
-  "checks"
+  "checks",
+  "physics3d"
 }
 
 globals = {

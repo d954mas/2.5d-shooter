@@ -8,7 +8,6 @@ local URLS = {
 		wall_part = msg.url("game_scene:/factories#wall_part"),
 		debug_physics_body_static = msg.url("game_scene:/factories#debug_physics_body_static"),
 		debug_physics_body_dynamic = msg.url("game_scene:/factories#debug_physics_body_dynamic"),
-		wall_part = msg.url("game_scene:/factories#wall_part"),
 		wall_part_transparent = msg.url("game_scene:/factories#wall_part_transparent"),
 		level_object = msg.url("game_scene:/factories#level_object"),
 		level_object_cup = msg.url("game_scene:/factories#level_object_cup"),
@@ -160,7 +159,8 @@ local function create_wall_sprites(wall, transparent)
 			rotation = rotation * vmath.quat_rotation_z(math.rad(-90))
 		end
 
-		local sprite_go = msg.url(factory.create(transparent and URLS.factory.wall_part_transparent or URLS.factory.wall_part, wall_config.position, rotation, nil, scale))
+		local sprite_go = msg.url(factory.create(transparent and URLS.factory.wall_part_transparent or URLS.factory.wall_part,
+				wall_config.position, rotation, nil, scale))
 		sprite_go.fragment = COMMON.HASHES.SPRITE
 		sprite.play_flipbook(sprite_go, tile.image_hash)
 		go.set_parent(sprite_go, result.root)
@@ -190,7 +190,8 @@ end
 function M.create_debug_physics_body(physics)
 	local x, y, z = physics:get_position()
 	local w, h, l = physics:get_size()
-	local root = msg.url(factory.create(physics:is_static() and URLS.factory.debug_physics_body_static or URLS.factory.debug_physics_body_dynamic,
+	local f = URLS.factory
+	local root = msg.url(factory.create(physics:is_static() and f.debug_physics_body_static or f.debug_physics_body_dynamic,
 			vmath.vector3(x, z, -y), nil, nil, vmath.vector3(w / 64, l / 64, h / 64) * 1.001))
 	return { root = root }
 end
@@ -199,7 +200,8 @@ end
 ---@return DebugLightGo
 function M.create_debug_light(e)
 	assert(e.light)
-	local root = msg.url(factory.create(URLS.factory.light_debug, vmath.vector3(e.position.x, 0.7, -e.position.y), nil, nil, vmath.vector3(0.15 / 64, 0.15 / 64, 0.15 / 64)))
+	local root = msg.url(factory.create(URLS.factory.light_debug, vmath.vector3(e.position.x, 0.7, -e.position.y), nil, nil,
+			vmath.vector3(0.15 / 64, 0.15 / 64, 0.15 / 64)))
 	return { root = root }
 end
 

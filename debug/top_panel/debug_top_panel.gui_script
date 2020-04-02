@@ -87,7 +87,6 @@ function Script:init_gui()
 		gui.set_enabled(game.childs.lbl_ecs_systems, game.config.show_systems)
 	end)
 	self.views.panels.game.childs.btn_draw_physics:set_input_listener(function()
-		local game = self.views.panels.game
 		CONSTANTS.DEBUG.draw_physics = not CONSTANTS.DEBUG.draw_physics
 	end)
 
@@ -116,7 +115,8 @@ function Script:init_gui()
 					for _, _ in pairs(sys.entities) do
 						count = count + 1
 					end
-					text = text .. string.format("%-30s %-7s %-9d %-6.2f %-6.2f %-6.2f\n", sys.name, tostring(sys.active), count, sys._time.current * 1000, sys._time.average * 1000, sys._time.max * 1000)
+					text = text .. string.format("%-30s %-7s %-9d %-6.2f %-6.2f %-6.2f\n", sys.name, tostring(sys.active), count,
+							sys._time.current * 1000, sys._time.average * 1000, sys._time.max * 1000)
 				end
 			end
 			gui.set_text(game.childs.lbl_ecs_systems, text)

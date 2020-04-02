@@ -65,13 +65,13 @@ function M.on_input(action_id, action)
 		end
 	else
 		if action_id == COMMON.HASHES.INPUT.ESK and action.pressed then
-			if M.locked then
+			--if M.locked then
 			--	M.unlock_cursor()
 			--	M.wait_for_touch = true -- enable lock when user touch inside game window
-			else
+			--else
 			--	M.lock_cursor()
 			--	M.wait_for_touch = false
-			end
+		--	end
 		elseif action_id == COMMON.HASHES.INPUT.TOUCH and action.pressed and M.wait_for_touch then
 
 		end
@@ -96,7 +96,7 @@ function M.update_cursor_movement()
 			M.cursor_movement.x = x - RENDERCAM.window.x / 2
 			M.cursor_movement.y = y - RENDERCAM.window.y / 2
 			defos.set_cursor_pos_view(RENDERCAM.window.x / 2, RENDERCAM.window.y / 2) -- In game view coordinates
-			x, y = defos.get_cursor_pos_view()
+		--	x, y = defos.get_cursor_pos_view()
 		end
 	end
 end
