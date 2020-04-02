@@ -176,6 +176,33 @@ static int ColorRGBToHSVLua(lua_State* L){
 	return 3;
 }
 
+static int ColorRGBToRGBInt(lua_State* L){
+    int r = luaL_checknumber(L,1);
+    int g = luaL_checknumber(L,2);
+    int b = luaL_checknumber(L,3);
+    int rgb = RGBToRGBInt(r,g,b);
+    lua_pushnumber(L,rgb);
+	return 1;
+}
+
+static int ColorRGBIntToRGB(lua_State* L){
+	int rgb = luaL_checknumber(L,1);
+	int r=0,g=0,b=0;
+	RGBIntToRGB(rgb,r,g,b);
+    lua_pushnumber(L,r);
+    lua_pushnumber(L,g);
+    lua_pushnumber(L,b);
+	return 3;
+}
+
+static int ColorRGBBlendAdditive(lua_State* L){
+	int rgb1 = luaL_checknumber(L,1);
+	int rgb2 = luaL_checknumber(L,2);
+    lua_pushnumber(L,RGBBlendAdditive(rgb1,rgb2));
+	return 1;
+}
+
+
 // Functions exposed to Lua
 static const luaL_reg Module_methods[] =
 {
@@ -200,6 +227,9 @@ static const luaL_reg Module_methods[] =
 
 	{"color_hsv_to_rgb",ColorHSVToRGBLua},
 	{"color_rgb_to_hsv",ColorRGBToHSVLua},
+	{"color_rgb_to_rgbi",ColorRGBToRGBInt},
+	{"color_rgbi_to_rgb",ColorRGBIntToRGB},
+	{"color_blend_additive",ColorRGBBlendAdditive},
 
 	{0, 0}
 };

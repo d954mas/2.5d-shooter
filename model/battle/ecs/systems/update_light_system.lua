@@ -15,7 +15,7 @@ function System:process(e, dt)
 		--for performance reason  update color only for visible cells
 		if(neigbour:get_visibility())then
 			local light = self:get_light(neigbour:get_id())
-			table.insert(light, 0xffffff)
+			table.insert(light, 0x333333)
 		end
 
 	end
@@ -44,7 +44,7 @@ function System:postProcess()
 		--for performance reason  update color only for visible cells
 		if(cell:get_visibility()) then
 			for _, color in ipairs(values) do
-				base_colors[id+1] = bit.bor(base_colors[id+1], color)
+				base_colors[id+1] = native_raycasting.color_blend_additive(base_colors[id+1] ,color)
 			end
 		end
 

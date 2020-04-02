@@ -139,15 +139,33 @@
 		fB += fM;
 	}
 
+	void RGBIntToRGB(int rgb,int& r, int& g, int& b){
+		r = ((rgb & 0x00FF0000) >> 16);
+		g = ((rgb & 0x0000FF00) >> 8);
+		b = ((rgb & 0x000000ff) >> 0);
+	}
+
+	int RGBToRGBInt(int r,int g, int b){
+		return (r << 16) | (g << 8) |(b << 0);
+	}
+
 	void RGBIntToHSV(int rgb, float& fH, float& fS, float& fV){
-		float r = ((rgb & 0x00FF0000) >> 16)/(float)0xff;
-		float g = ((rgb & 0x0000FF00) >> 8)/(float)0xff;
-		float b = ((rgb & 0x000000ff) >> 0)/(float)0xff;
-		RGBtoHSV(r,g,b,fH,fS,fV);
+		int r=0,g=0,b=0;
+		RGBIntToRGB(rgb,r,g,b);
+		RGBtoHSV(r/255.0,g/255.0,b/255.0,fH,fS,fV);
 	}
 
 	int HSVToRGBInt(float fH, float fS, float fV){
 		float r = 0, g = 0, b = 0;
 		HSVtoRGB(r,g,b,fH,fS,fV);
-		return ((int)(0xff*r) << 16) | ((int)(0xff*g) << 8) |((int)(0xff*b) << 0);
+		return RGBToRGBInt(0xff * r, 0xff *g, 0xff * b);
 	}
+
+	int RGBBlendAdditive(int rgb1, int rgb2){
+        int r1=0,g1=0,b1=0;
+        int r2=0,g2=0,b2=0;
+        RGBIntToRGB(rgb1,r1,g1,b1);
+        RGBIntToRGB(rgb2,r2,g2,b2);
+        return RGBToRGBInt(min(r1+r2,255),min(g1+g2,255),min(b1+b2,255));
+	}
+

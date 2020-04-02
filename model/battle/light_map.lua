@@ -3,8 +3,7 @@ local COMMON = require "libs.common"
 local LightMap = COMMON.class("LightMap")
 
 local HASH_LIGHT_MAP = hash("light_map")
-local arshift = bit.arshift
-local band = bit.band
+
 
 
 --draw all ambient light of level to texture
@@ -48,10 +47,11 @@ function LightMap:set_colors(colors, w, h)
 	for y = self.size - 1, 0, -1 do
 		local index = y * self.size * 3 + 1
 		for x = 0, self.size - 1 do
-			local color = colors[(self.size - y - 1) * w + x+1] or 0xFFFF0000
-			stream[index] = arshift(band(color, 0x00FF0000), 16)
-			stream[index + 1] = arshift(band(color, 0x0000FF00), 8)
-			stream[index + 2] = arshift(band(color, 0x000000ff), 0)
+			local color = colors[(self.size - y - 1) * w + x+1] or 0x333333
+			local r,g,b = native_raycasting.color_rgbi_to_rgb(color)
+			stream[index] = r
+			stream[index + 1] = g
+			stream[index + 2] = b
 			index = index + 3
 			if x > w then break end
 		end
