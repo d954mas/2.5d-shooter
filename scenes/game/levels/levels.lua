@@ -38,6 +38,7 @@ function M.load_level(name)
 	array_to_zero(level_data.walls,max_id)
 	array_to_zero(level_data.ceil,max_id)
 	array_to_zero(level_data.floor,max_id)
+	array_to_zero(level_data.light_map,max_id)
 	local level = Level(level_data)
 	COMMON.d("lvl:" .. name .. " loaded. Time:" .. (os.clock() - time), TAG)
 	return level

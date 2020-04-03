@@ -38,11 +38,11 @@ end
 
 function System:postProcess()
 	local level = self.world.game.level
-	local result = {}--base colors ids start from 1. But other id start from 0
+	local result =  {} --base colors ids start from 1. But other id start from 0
 	for id, values in pairs(self.lights) do
-		result[id+1] = level.data.light_map[id+1]
+		result[id] = level.data.light_map[id]
 		for _, color in ipairs(values) do
-			result[id+1] = native_raycasting.color_blend_additive(result[id+1] ,color)
+			result[id] = native_raycasting.color_blend_additive(result[id] ,color)
 		end
 	end
 

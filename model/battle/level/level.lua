@@ -40,6 +40,7 @@ local function set_default_color(light_map, default_color)
 	end
 end
 
+
 ---@param data LevelData
 function Level:initialize(data)
 	self.data = assert(data)

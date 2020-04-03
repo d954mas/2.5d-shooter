@@ -139,13 +139,13 @@
 		fB += fM;
 	}
 
-	void RGBIntToRGB(int rgb,int& r, int& g, int& b){
+	void inline RGBIntToRGB(int rgb,int& r, int& g, int& b){
 		r = ((rgb & 0x00FF0000) >> 16);
 		g = ((rgb & 0x0000FF00) >> 8);
 		b = ((rgb & 0x000000ff) >> 0);
 	}
 
-	int RGBToRGBInt(int r,int g, int b){
+	int inline RGBToRGBInt(int r,int g, int b){
 		return (r << 16) | (g << 8) |(b << 0);
 	}
 

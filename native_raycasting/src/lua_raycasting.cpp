@@ -8,6 +8,7 @@
 #include "native_raycasting.h"
 #include "lua_helper.h"
 #include "colors.h"
+#include "light_map.h"
 #include <set>
 #include <unordered_set>
 #include <vector>
@@ -202,6 +203,36 @@ static int ColorRGBBlendAdditive(lua_State* L){
 	return 1;
 }
 
+static int LightMapSetColorsLUA(lua_State* L){
+	dmScript::LuaHBuffer* buffer = dmScript::CheckBuffer(L, 1);
+	int size = luaL_checknumber(L,2);
+	int w = luaL_checknumber(L,3);
+	int h = luaL_checknumber(L,4);
+	dmBuffer::HBuffer hBuffer = buffer->m_Buffer;
+    int colors[w*h];
+    if(!lua_istable (L,5)){
+        lua_pushstring(L, "[5] should be table");
+        lua_error(L);
+        return 0;
+    }
+    for(int id=0;id<w*h;id++){
+        lua_rawgeti(L, -1, id);
+        int color=0;
+        if(lua_isnil(L,-1)){
+            color = 0xF0000000;
+        }else{
+            color = luaL_checknumber(L,-1);
+        }
+        lua_pop(L, 1);
+        colors[id] = color;
+    }
+
+
+	LightMapSetColors(hBuffer,size,w,h,colors);
+
+	return 0;
+}
+
 
 // Functions exposed to Lua
 static const luaL_reg Module_methods[] =
@@ -230,6 +261,8 @@ static const luaL_reg Module_methods[] =
 	{"color_rgb_to_rgbi",ColorRGBToRGBInt},
 	{"color_rgbi_to_rgb",ColorRGBIntToRGB},
 	{"color_blend_additive",ColorRGBBlendAdditive},
+
+	{"light_map_set_colors",LightMapSetColorsLUA},
 
 	{0, 0}
 };
