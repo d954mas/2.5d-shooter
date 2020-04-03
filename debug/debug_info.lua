@@ -26,12 +26,15 @@ local function count_walls(ecs)
 	return walls, floors, ceils
 end
 
+function M.update_entities()
+	local have_ecs = WORLD.battle_model and WORLD.battle_model.ecs and WORLD.battle_model.ecs
+	M.walls, M.floors, M.ceils = 0, 0, 0
+	if (have_ecs) then M.walls, M.floors, M.ceils = count_walls(have_ecs) end
+end
+
 function M.update(dt)
 	local have_ecs = WORLD.battle_model and WORLD.battle_model.ecs and WORLD.battle_model.ecs
 	M.entities = have_ecs and #have_ecs.ecs.entities or 0
-	M.walls, M.floors, M.ceils = 0, 0, 0
-	if (have_ecs) then M.walls, M.floors, M.ceils = count_walls(have_ecs) end
-
 end
 
 return M

@@ -106,6 +106,8 @@ function Script:init_gui()
 		local game = self.views.panels.game
 		local config = self.views.panels.game.config
 
+		DEBUG_INFO.update_entities()
+
 		if config.show_systems then
 			local text = ""
 			if (WORLD.battle_model and WORLD.battle_model.ecs) then
@@ -193,9 +195,10 @@ function Script:update(dt)
 		gui.set_text(self.vh.lbl_cpu, "Cpu:" .. string.format("%.2f", profiler.get_cpu_usage()))
 		gui.set_text(self.vh.lbl_memory, "Mem:" .. string.format("%.2f Mb", profiler.get_memory_usage() / 1024 / 1024))
 		self.views.scene_debug_view:update(dt)
+		self:panel_update(dt)
 	end
 
-	self:panel_update(dt)
+
 
 	local scene = SM.stack:peek()
 	if scene and (scene ~= self.scene_current or self.speed_game_changed) then
