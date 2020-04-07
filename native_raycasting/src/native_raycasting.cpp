@@ -14,6 +14,7 @@
 #include "camera.h"
 
 extern Camera MAIN_CAMERA;
+extern Camera LIGHT_SOURCE_CAMERA;
 extern Map MAP;
 
 std::vector<CellData*> VISIBLE_ZONES;
@@ -30,6 +31,9 @@ void CastRays(bool blocking){
         castRay(&MAIN_CAMERA, -rayAngle, &MAP, MAIN_CAMERA.maxDistance, ZONE_SET, blocking);
         castRay(&MAIN_CAMERA, rayAngle, &MAP, MAIN_CAMERA.maxDistance, ZONE_SET, blocking);
     }
+}
+
+void CastRaysLightsCamera(){
 }
 
 void CellsUpdateVisible(bool blocking){

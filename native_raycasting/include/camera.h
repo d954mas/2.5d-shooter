@@ -10,8 +10,8 @@ struct Camera {
 	std::vector<double> angles; //angle for every ray
 };
 
-void CameraUpdate(double, double, double);
-void CameraSetFov(double);
-void CameraSetRays(int);
-void CameraSetMaxDistance(double);
-void CameraViewDistanceUpdated();
+void CameraUpdate(Camera&, double, double, double);
+void CameraSetFov(Camera&, double);
+void CameraSetRays(Camera&, int);
+void CameraSetMaxDistance(Camera&, double);
+void CameraViewDistanceUpdated(Camera&);

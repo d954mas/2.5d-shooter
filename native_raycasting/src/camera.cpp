@@ -6,33 +6,34 @@
 #define DLIB_LOG_DOMAIN "CAMERA"
 Camera MAIN_CAMERA;
 
-void CameraSetFov(double fov){
-    if (MAIN_CAMERA.fov == fov)return;
-    dmLogInfo("fov changed:%.2f/%.2f",MAIN_CAMERA.fov, fov);
-	MAIN_CAMERA.fov = fov;
-	CameraViewDistanceUpdated();
+
+void CameraSetFov(Camera& camera, double fov){
+    if (camera.fov == fov)return;
+	dmLogInfo("fov changed:%.2f/%.2f",camera.fov, fov);
+	camera.fov = fov;
+	CameraViewDistanceUpdated(camera);
 
 }
-void CameraSetRays(int rays){
-    if (MAIN_CAMERA.rays == rays)return;
-    dmLogInfo("rays changed:%d/%d",MAIN_CAMERA.rays, rays);
-	MAIN_CAMERA.rays = (rays / 2) * 2; //make it even
-	CameraViewDistanceUpdated();
+void CameraSetRays(Camera& camera,int rays){
+    if (camera.rays == rays)return;
+    dmLogInfo("rays changed:%d/%d",camera.rays, rays);
+	camera.rays = (rays / 2) * 2; //make it even
+	CameraViewDistanceUpdated(camera);
 }
-void CameraSetMaxDistance(double distance){
-    dmLogInfo("max distance changed:%.2f/%.2f",MAIN_CAMERA.maxDistance, distance);
-	MAIN_CAMERA.maxDistance = distance;
+void CameraSetMaxDistance(Camera& camera,double distance){
+    dmLogInfo("max distance changed:%.2f/%.2f",camera.maxDistance, distance);
+	camera.maxDistance = distance;
 }
-void CameraViewDistanceUpdated(){
-	MAIN_CAMERA.viewDist = MAIN_CAMERA.rays/(2 * tan(MAIN_CAMERA.fov/2.0));
-	MAIN_CAMERA.angles.resize(MAIN_CAMERA.rays>>1);
-	MAIN_CAMERA.angles.clear();
-	for(int x=1;x<=MAIN_CAMERA.rays>>1;x++){
-		MAIN_CAMERA.angles.push_back(atan(x/MAIN_CAMERA.viewDist));
+void CameraViewDistanceUpdated(Camera& camera){
+	camera.viewDist = camera.rays/(2 * tan(camera.fov/2.0));
+	camera.angles.resize(MAIN_CAMERA.rays>>1);
+	camera.angles.clear();
+	for(int x=1;x<=camera.rays>>1;x++){
+		camera.angles.push_back(atan(x/camera.viewDist));
 	}
 }
-void CameraUpdate(double x, double y, double angle){
-	MAIN_CAMERA.x = x;
-	MAIN_CAMERA.y = y;
-	MAIN_CAMERA.angle = angle;
+void CameraUpdate(Camera& camera,double x, double y, double angle){
+	camera.x = x;
+	camera.y = y;
+	camera.angle = angle;
 }

@@ -31,6 +31,8 @@ local TAG = "Entities"
 ---@class LightParams
 ---@field dist number
 ---@field start_light vector3 xyz hsv
+---@field rays number Light use raycastion to find all cells that visible
+
 
 
 ---@class Entity

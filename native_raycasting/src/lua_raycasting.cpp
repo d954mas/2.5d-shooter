@@ -13,6 +13,7 @@
 #include <unordered_set>
 #include <vector>
 
+extern Camera MAIN_CAMERA;
 extern std::vector<CellData*> VISIBLE_ZONES;
 extern std::unordered_set <CellData> ZONE_SET;
 extern std::vector<CellData*> NEED_LOAD_ZONES;
@@ -134,25 +135,25 @@ static int CameraUpdateLua(lua_State* L){
 	double posX = LuaCheckNumberD(L, 1,"bad pos x");
 	double posY = LuaCheckNumberD(L, 2,"bad pos y");
 	double angle = LuaCheckNumberD(L, 3,"bad angle");
-	CameraUpdate(posX, posY, angle);
+	CameraUpdate(MAIN_CAMERA,posX, posY, angle);
 	return 0;
 }
 
 static int CameraSetFovLua(lua_State* L){
 	double fov = LuaCheckNumberD(L, 1,"bad fov");
-	CameraSetFov(fov);
+	CameraSetFov(MAIN_CAMERA,fov);
 	return 0;
 }
 
 static int CameraSetRaysLua(lua_State* L){
 	int rays = LuaCheckNumber(L, 1,"bad rays");
-	CameraSetRays(rays);
+	CameraSetRays(MAIN_CAMERA,rays);
 	return 0;
 }
 
 static int CameraSetMaxDistanceLua(lua_State* L){
 	double dist = LuaCheckNumber(L, 1,"bad dist");
-	CameraSetMaxDistance(dist);
+	CameraSetMaxDistance(MAIN_CAMERA,dist);
 	return 0;
 }
 //endregion
