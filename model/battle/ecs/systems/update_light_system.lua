@@ -3,14 +3,14 @@ local ECS = require 'libs.ecs'
 
 ---@class UpdateLightSystem:ECSSystem
 local System = ECS.processingSystem()
-System.filter = ECS.requireAll("light")
+System.filter = ECS.requireAll("light", "light_params")
 System.name = "UpdateLightSystem"
 
 ---@param e Entity
 function System:process(e, dt)
 	local id = self.world.game.level:coords_to_id(e.position.x, e.position.y)
-	local neigbours = self.world.game.level:map_get_neighbours(id,1)
-	for i=0,#neigbours do
+	local neigbours = native_raycasting.camera_cast_rays(e.light_params.camera,true)
+	for i=1,#neigbours do
 		local neigbour = neigbours[i]
 		--for performance reason  update color only for visible cells
 		--if(neigbour:get_visibility())then

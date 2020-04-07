@@ -23,23 +23,21 @@ std::vector<CellData*> NEED_LOAD_ZONES;
 std::vector<CellData*> NEED_UPDATE_ZONES;
 std::vector<CellData*> NEED_UNLOAD_ZONES;
 
-void CastRays(bool blocking){
-    ZONE_SET.clear();
-    for(int i=0; i<MAIN_CAMERA.rays>>1; i++){
-        double rayAngle = MAIN_CAMERA.angles[i];
-        castRay(&MAIN_CAMERA, -rayAngle, &MAP, MAIN_CAMERA.maxDistance, ZONE_SET, blocking);
-        castRay(&MAIN_CAMERA, rayAngle, &MAP, MAIN_CAMERA.maxDistance, ZONE_SET, blocking);
+void CastRays(Camera& camera,std::unordered_set<CellData>& set, bool blocking){
+	set.clear();
+    for(int i=0; i<camera.rays>>1; i++){
+        double rayAngle = camera.angles[i];
+        castRay(&camera, -rayAngle, &MAP, camera.maxDistance, set, blocking);
+        castRay(&camera, rayAngle, &MAP, camera.maxDistance, set, blocking);
     }
 }
 
-void CastRaysLightsCamera(){
-}
 
 void CellsUpdateVisible(bool blocking){
 	NEED_LOAD_ZONES.clear();
 	NEED_UPDATE_ZONES.clear();
 	NEED_UNLOAD_ZONES.clear();
-	CastRays(blocking);
+	CastRays(MAIN_CAMERA,ZONE_SET,blocking);
 	//reset prev raycasting
 	for(CellData *data : VISIBLE_ZONES)data->rayCasted = false;
 

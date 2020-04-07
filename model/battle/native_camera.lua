@@ -30,6 +30,7 @@ function Camera:camera_update_fov()
 	assert(v_fov,"no fov in camera")
 	local h_fov = 2 * math.atan(math.tan(v_fov / 2) * aspect);
 	self.camera:set_fov(h_fov * 1.2)
+	--self.camera:set_fov(math.pi)
 end
 
 return Camera

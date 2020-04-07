@@ -28,11 +28,15 @@ void CameraSetMaxDistance(Camera& camera,double distance){
 	camera.maxDistance = distance;
 }
 void CameraViewDistanceUpdated(Camera& camera){
+    //not remeber what is viewDist.Looks like vFo
 	camera.viewDist = camera.rays/(2 * tan(camera.fov/2.0));
-	camera.angles.resize(MAIN_CAMERA.rays>>1);
+	camera.angles.resize(camera.rays>>1);
 	camera.angles.clear();
 	for(int x=1;x<=camera.rays>>1;x++){
+	    //printf("1 %f\n", atan(x/camera.viewDist));
+	  //  printf("2 %f\n", camera.fov/camera.rays/2 * x);
 		camera.angles.push_back(atan(x/camera.viewDist));
+		//camera.angles.push_back(camera.fov/camera.rays/2 * x);
 	}
 }
 

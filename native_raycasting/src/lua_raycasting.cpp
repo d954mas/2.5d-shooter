@@ -149,6 +149,22 @@ static int CameraSetMainLua(lua_State* L){
     return 0;
 }
 
+static int CameraCastRaysLua(lua_State* L){
+    Camera* camera = CameraCheck(L,1);
+    std::unordered_set<CellData> zones;
+    bool blocking = lua_toboolean(L,2);
+    CastRays(*camera,zones,blocking);
+
+    std::vector<CellData*> vector;
+    for(const CellData &set_data : zones) {
+	    CellData &data = MAP.cells[set_data.id];
+	    vector.push_back(&data);
+	}
+
+    CellsPutVectorToLua(L,vector);
+    return 1;
+}
+
 
 //endregion
 
@@ -235,6 +251,7 @@ static const luaL_reg Module_methods[] =
 	{"camera_new", CameraNewLua},
 	{"camera_delete", CameraDeleteLua},
 	{"camera_set_main", CameraSetMainLua},
+	{"camera_cast_rays", CameraCastRaysLua},
 
 	{"map_set", MapSetLua},
 	{"map_find_path", MapFindPathLua},

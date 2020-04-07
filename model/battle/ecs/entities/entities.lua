@@ -102,6 +102,9 @@ function Entities:on_entity_removed(e)
 	if e.physics_body then
 		physics3d.destroy_rect(e.physics_body)
 	end
+	if(e.light_params) then
+		native_raycasting.camera_delete(e.light_params.camera)
+	end
 end
 
 ---@param e Entity
@@ -224,9 +227,15 @@ function Entities:create_light_source(pos)
 	e.light = true
 	e.visible = false
 	e.light_params = {
-		dist = 1,
-		start_light = vmath.vector3(1, 1, 1)
+		dist = 2,
+		start_light = vmath.vector3(1, 1, 1),
+		camera = native_raycasting.camera_new()
 	}
+	e.light_params.camera:set_pos(pos.x, pos.y)
+	e.light_params.camera:set_rays(16)
+	e.light_params.camera:set_fov(math.pi*2)
+	e.light_params.camera:set_max_dist(e.light_params.dist)
+	pprint(e.light_params)
 	return e
 end
 
