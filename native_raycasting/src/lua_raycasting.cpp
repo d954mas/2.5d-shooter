@@ -131,31 +131,25 @@ static int MapChangeCellTransparentLua(lua_State* L){
 
 
 //region Camera
-static int CameraUpdateLua(lua_State* L){
-	double posX = LuaCheckNumberD(L, 1,"bad pos x");
-	double posY = LuaCheckNumberD(L, 2,"bad pos y");
-	double angle = LuaCheckNumberD(L, 3,"bad angle");
-	CameraUpdate(MAIN_CAMERA,posX, posY, angle);
-	return 0;
+static int CameraNewLua(lua_State* L){
+	Camera* camera = new Camera();
+    CameraPush(L,camera);
+	return 1;
 }
 
-static int CameraSetFovLua(lua_State* L){
-	double fov = LuaCheckNumberD(L, 1,"bad fov");
-	CameraSetFov(MAIN_CAMERA,fov);
-	return 0;
+static int CameraDeleteLua(lua_State* L){
+    Camera* camera = CameraCheck(L,1);
+    delete camera;
+    return 0;
 }
 
-static int CameraSetRaysLua(lua_State* L){
-	int rays = LuaCheckNumber(L, 1,"bad rays");
-	CameraSetRays(MAIN_CAMERA,rays);
-	return 0;
+static int CameraSetMainLua(lua_State* L){
+    Camera* camera = CameraCheck(L,1);
+    MAIN_CAMERA = *camera;
+    return 0;
 }
 
-static int CameraSetMaxDistanceLua(lua_State* L){
-	double dist = LuaCheckNumber(L, 1,"bad dist");
-	CameraSetMaxDistance(MAIN_CAMERA,dist);
-	return 0;
-}
+
 //endregion
 
 static int ColorHSVToRGBLua(lua_State* L){
@@ -238,11 +232,10 @@ static int LightMapSetColorsLUA(lua_State* L){
 // Functions exposed to Lua
 static const luaL_reg Module_methods[] =
 {
-	{"camera_update", CameraUpdateLua},
-	{"camera_set_fov", CameraSetFovLua},
-	{"camera_set_rays", CameraSetRaysLua},
-	{"camera_set_max_distance", CameraSetMaxDistanceLua},
-	
+	{"camera_new", CameraNewLua},
+	{"camera_delete", CameraDeleteLua},
+	{"camera_set_main", CameraSetMainLua},
+
 	{"map_set", MapSetLua},
 	{"map_find_path", MapFindPathLua},
 	{"map_cell_set_blocked", MapChangeCellBlockedLua},
@@ -273,6 +266,7 @@ static void LuaInit(lua_State* L)
 	int top = lua_gettop(L);
 	// Register lua names
 	CellDataBind(L);
+	CameraBind(L);
 	luaL_register(L, MODULE_NAME, Module_methods);
 	lua_pop(L, 1);
 	assert(top == lua_gettop(L));

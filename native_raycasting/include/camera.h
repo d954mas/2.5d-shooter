@@ -15,3 +15,8 @@ void CameraSetFov(Camera&, double);
 void CameraSetRays(Camera&, int);
 void CameraSetMaxDistance(Camera&, double);
 void CameraViewDistanceUpdated(Camera&);
+
+
+void CameraBind(lua_State*);
+Camera* CameraCheck(lua_State*, int);
+void CameraPush(lua_State *, Camera *);

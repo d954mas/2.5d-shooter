@@ -14,7 +14,6 @@
 #include "camera.h"
 
 extern Camera MAIN_CAMERA;
-extern Camera LIGHT_SOURCE_CAMERA;
 extern Map MAP;
 
 std::vector<CellData*> VISIBLE_ZONES;

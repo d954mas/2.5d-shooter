@@ -8,7 +8,9 @@ System.name = "UpdateCameraVisibleCellsSystem"
 
 ---@param e Entity
 function System:process(e, dt)
-	native_raycasting.camera_update(e.position.x,e.position.y,-e.angle.x)
+	self.world.game.world.battle_model.native_camera.camera:set_pos(e.position.x, e.position.y)
+	self.world.game.world.battle_model.native_camera.camera:set_angle(-e.angle.x)
+	native_raycasting.camera_set_main(self.world.game.world.battle_model.native_camera.camera)
 	native_raycasting.cells_update_visible(true)
 end
 
