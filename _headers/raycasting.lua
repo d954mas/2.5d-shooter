@@ -4,7 +4,7 @@ native_raycasting = {}
 function native_raycasting.camera_new() end
 function native_raycasting.camera_delete(camera) end
 function native_raycasting.camera_set_main(camera) end
-function native_raycasting.camera_cast_rays(camera, blocking) end
+function native_raycasting.camera_cast_rays(camera, blocking, remove_blocked) end
 
 ---@param level_data LevelData
 function native_raycasting.map_set(level_data) end

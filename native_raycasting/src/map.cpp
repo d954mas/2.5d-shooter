@@ -79,7 +79,6 @@ void Map::changeCellBlocked(int x, int y, bool blocked){
         startCell.blocked = blocked;
         cells[CoordsToId(x,y)] = startCell;
         dmLogInfo("change cell blocked. x:%d y:%d blocked:%s",x,y,blocked?"true":"false");
-
     }
 }
 

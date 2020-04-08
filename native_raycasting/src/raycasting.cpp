@@ -29,7 +29,7 @@ void castRay(Camera* camera, double rayAngle, Map* map, double maxDistance, std:
 		double distanceY = mapY - (int)camera->y;
 		double distX = fabs(distanceX);
 		double distY = fabs(distanceY);
-		if(mapX >= 0 && mapY >= 0 && mapX < map->width && mapY < map->height && distX < maxDistance && distY < maxDistance){
+		if(mapX >= 0 && mapY >= 0 && mapX < map->width && mapY < map->height && distX <= maxDistance && distY <= maxDistance){
 			CellData &cell = map->cells[map->CoordsToId(mapX,mapY)];
 			cell.raycastingRight = distanceX > 0;
 			cell.raycastingTop = distanceY > 0;

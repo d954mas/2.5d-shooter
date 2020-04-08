@@ -3,11 +3,15 @@ local TEST_PARSER = require "tests.test_parser"
 local TEST_LEVELS_LOADING = require "tests.test_levels_loading"
 local TEST_PATHFINDING = require "tests.test_pathfinding"
 local TEST_COLORS = require "tests.test_colors"
+local TEST_RAYCASTING = require "tests.test_raycasting"
+
 
 DEFTEST.add(TEST_PARSER)
 DEFTEST.add(TEST_LEVELS_LOADING)
 DEFTEST.add(TEST_PATHFINDING)
 DEFTEST.add(TEST_COLORS)
+DEFTEST.add(TEST_COLORS)
+DEFTEST.add(TEST_RAYCASTING)
 
 local M = {}
 function M.run()

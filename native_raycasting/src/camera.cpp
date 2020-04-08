@@ -19,7 +19,7 @@ void CameraSetFov(Camera& camera, double fov){
 }
 void CameraSetRays(Camera& camera,int rays){
     if (camera.rays == rays)return;
- //   dmLogInfo("rays changed:%d/%d",camera.rays, rays);
+   // dmLogInfo("rays changed:%d/%d",camera.rays, rays);
 	camera.rays = (rays / 2) * 2; //make it even
 	CameraViewDistanceUpdated(camera);
 }
@@ -28,15 +28,10 @@ void CameraSetMaxDistance(Camera& camera,double distance){
 	camera.maxDistance = distance;
 }
 void CameraViewDistanceUpdated(Camera& camera){
-    //not remeber what is viewDist.Looks like vFo
-	camera.viewDist = camera.rays/(2 * tan(camera.fov/2.0));
-	camera.angles.resize(camera.rays>>1);
+	camera.angles.resize(camera.rays);
 	camera.angles.clear();
-	for(int x=1;x<=camera.rays>>1;x++){
-	    //printf("1 %f\n", atan(x/camera.viewDist));
-	  //  printf("2 %f\n", camera.fov/camera.rays/2 * x);
-		camera.angles.push_back(atan(x/camera.viewDist));
-		//camera.angles.push_back(camera.fov/camera.rays/2 * x);
+	for(int x=0;x<camera.rays;x++){
+		camera.angles.push_back(camera.fov/camera.rays * x);
 	}
 }
 
@@ -88,12 +83,6 @@ static int CameraSetFov(lua_State *L){
 	return 0;
 }
 
-static int CameraSetViewDist(lua_State *L){
-	Camera *im = CameraCheck(L, 1);
-	float viewDist = luaL_checknumber(L,2);
-	im->viewDist = viewDist;
-	return 0;
-}
 
 static int CameraSetMaxDistance(lua_State *L){
 	Camera *im = CameraCheck(L, 1);
@@ -105,7 +94,7 @@ static int CameraSetMaxDistance(lua_State *L){
 static int CameraToString(lua_State *L){
     Camera *im = CameraCheck(L, 1);
     std::string str = "Camera[x:" +  std::to_string(im->x) + " y:" +  std::to_string(im->y) + " angle:" +  std::to_string(im->angle)
-        + " fov:" + std::to_string(im->fov) + " rays:" + std::to_string(im->rays)+ " viewDist:" + std::to_string(im->viewDist)
+        + " fov:" + std::to_string(im->fov) + " rays:" + std::to_string(im->rays) +
         + " maxDistance:" + std::to_string(im->maxDistance) + " ]";
     lua_pushstring(L,str.c_str());
 	return 1;
@@ -118,7 +107,6 @@ void CameraBind(lua_State * L){
         {"set_angle",CameraSetAngle},
         {"set_rays",CameraSetRays},
         {"set_fov",CameraSetFov},
-        {"set_view_dist",CameraSetViewDist},
         {"set_max_dist",CameraSetMaxDistance},
 
         {"__tostring",CameraToString},

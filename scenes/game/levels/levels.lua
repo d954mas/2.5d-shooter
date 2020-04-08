@@ -7,7 +7,8 @@ local TAG = "LEVEL"
 M.TESTS = {
 	TEST = "test_level",
 	TEST_BIG_EMPTY = "test_level_big_empty",
-	TEST_LIGHTS = "test_level_lights"
+	TEST_LIGHTS = "test_level_lights",
+	TEST_RAYCASTING = "test_level_raycasting"
 }
 
 M.LEVELS = {

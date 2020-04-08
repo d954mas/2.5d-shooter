@@ -153,11 +153,15 @@ static int CameraCastRaysLua(lua_State* L){
     Camera* camera = CameraCheck(L,1);
     std::unordered_set<CellData> zones;
     bool blocking = lua_toboolean(L,2);
+    bool removeBlocking = lua_toboolean(L,3);
     CastRays(*camera,zones,blocking);
 
     std::vector<CellData*> vector;
     for(const CellData &set_data : zones) {
 	    CellData &data = MAP.cells[set_data.id];
+	    if(removeBlocking && (data.blocked && !data.transparent)){
+	        continue;
+	    }
 	    vector.push_back(&data);
 	}
 

@@ -25,10 +25,10 @@ std::vector<CellData*> NEED_UNLOAD_ZONES;
 
 void CastRays(Camera& camera,std::unordered_set<CellData>& set, bool blocking){
 	set.clear();
-    for(int i=0; i<camera.rays>>1; i++){
+    for(int i=0; i<camera.rays; i++){
         double rayAngle = camera.angles[i];
-        castRay(&camera, -rayAngle, &MAP, camera.maxDistance, set, blocking);
-        castRay(&camera, rayAngle, &MAP, camera.maxDistance, set, blocking);
+        castRay(&camera, rayAngle-camera.fov/2, &MAP, camera.maxDistance, set, blocking);
+      //  castRay(&camera, rayAngle, &MAP, camera.maxDistance, set, blocking);
     }
 }
 
