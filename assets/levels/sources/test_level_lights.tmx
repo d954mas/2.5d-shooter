@@ -279,6 +279,14 @@
   <object id="282" gid="215" x="1152" y="256" width="64" height="64"/>
   <object id="283" gid="215" x="1216" y="256" width="64" height="64"/>
   <object id="284" gid="215" x="384" y="512" width="64" height="64"/>
-  <object id="285" gid="215" x="192" y="256" width="64" height="64"/>
+  <object id="285" gid="215" x="192" y="256" width="64" height="64">
+   <properties>
+    <property name="light_color_s" type="float" value="0.9"/>
+    <property name="light_color_v" type="float" value="0.9"/>
+    <property name="light_distance" type="float" value="5"/>
+    <property name="light_power" type="float" value="0.7"/>
+    <property name="rays" type="int" value="32"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

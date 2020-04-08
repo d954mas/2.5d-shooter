@@ -1528,8 +1528,16 @@ return {
         {
           id = 0,
           properties = {
+            ["angle"] = 0,
+            ["fov"] = -1,
             ["light"] = true,
-            ["light_type"] = "point"
+            ["light_color_h"] = 0,
+            ["light_color_s"] = 0,
+            ["light_color_v"] = 0.2,
+            ["light_distance"] = 1,
+            ["light_power"] = 0.5,
+            ["light_type"] = "point",
+            ["rays"] = -1
           },
           image = "../tiles/light_sources/point.png",
           width = 64,
@@ -3547,7 +3555,13 @@ return {
           rotation = 0,
           gid = 215,
           visible = true,
-          properties = {}
+          properties = {
+            ["light_color_s"] = 0.9,
+            ["light_color_v"] = 0.9,
+            ["light_distance"] = 5,
+            ["light_power"] = 0.7,
+            ["rays"] = 32
+          }
         }
       }
     }

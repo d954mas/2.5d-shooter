@@ -13,6 +13,13 @@
 ---@field transparent boolean
 ---@field light boolean
 ---@field light_type string point
+---@field light_distance number
+---@field light_color_h number
+---@field light_color_s number
+---@field light_color_v number
+---@field rays number
+---@field fov number
+---@field angle number
 
 ---@class LevelMapObject
 ---@field tile_id number

@@ -29,8 +29,8 @@ local TAG = "Entities"
 ---@field keys table
 
 ---@class LightParams
----@field dist number
----@field start_light vector3 xyz hsv
+---@field start_light vector3 xyz h(0-360) s(0-1) v(0-1)
+---@field light_power number decrease value per distance
 ---@field camera NativeCamera
 
 
@@ -219,23 +219,24 @@ function Entities:create_level_object(object)
 	return e
 end
 
-function Entities:create_light_source(pos)
+---@param properties TileProperties
+function Entities:create_light_source(pos, properties)
 	assert(pos)
+	properties = properties or {}
 	---@type Entity
 	local e = {}
 	e.position = vmath.vector3(pos.x, pos.y, pos.z)
 	e.light = true
 	e.visible = false
 	e.light_params = {
-		dist = 2,
-		start_light = vmath.vector3(1, 1, 1),
+		light_power = properties.light_power or 1,
+		start_light = vmath.vector3(properties.light_color_h, properties.light_color_s, properties.light_color_v),
 		camera = native_raycasting.camera_new()
 	}
 	e.light_params.camera:set_pos(pos.x, pos.y)
-	e.light_params.camera:set_rays(16)
-	e.light_params.camera:set_fov(math.pi*2)
-	e.light_params.camera:set_max_dist(e.light_params.dist)
-	pprint(e.light_params)
+	e.light_params.camera:set_rays(properties.rays~=-1 and properties.rays or 16)
+	e.light_params.camera:set_fov(properties.fov~=-1 and properties.fov or math.pi*2)
+	e.light_params.camera:set_max_dist(properties.light_distance or 1)
 	return e
 end
 

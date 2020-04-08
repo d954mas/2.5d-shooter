@@ -47,6 +47,7 @@ function Level:initialize(data)
 	self.cell_max_id = self.data.size.x * self.data.size.y - 1
 	walls_prepare_to_native(self.data.walls, self.cell_max_id)
 	objects_set_meta(data.level_objects)
+	objects_set_meta(data.light_sources)
 	set_default_color(data.light_map,0xFFFFFFFF)
 
 end

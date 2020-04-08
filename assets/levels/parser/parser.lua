@@ -320,6 +320,9 @@ local function parse_light_sources(map, layer)
 	for _, obj in ipairs(objects) do
 		local type = obj.properties.light_type
 		assert(type == "point","unknown light type:" .. tostring(type))
+		assert(obj.properties.light_color_h>=0 and obj.properties.light_color_h<=360)
+		assert(obj.properties.light_color_s>=0 and obj.properties.light_color_s<=1)
+		assert(obj.properties.light_color_v>=0 and obj.properties.light_color_v<=1)
 		table.insert(result, obj)
 	end
 	return result;
