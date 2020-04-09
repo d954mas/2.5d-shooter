@@ -9,7 +9,7 @@ return {
   tilewidth = 64,
   tileheight = 64,
   nextlayerid = 19,
-  nextobjectid = 286,
+  nextobjectid = 287,
   properties = {},
   tilesets = {
     {
@@ -3320,74 +3320,21 @@ return {
           properties = {}
         },
         {
-          id = 268,
+          id = 272,
           name = "",
           type = "",
           shape = "rectangle",
-          x = 1216,
-          y = 768,
-          width = 64,
-          height = 64,
-          rotation = 0,
-          gid = 215,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 269,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1216,
-          y = 704,
-          width = 64,
-          height = 64,
-          rotation = 0,
-          gid = 215,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 270,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1216,
-          y = 640,
-          width = 64,
-          height = 64,
-          rotation = 0,
-          gid = 215,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 271,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1216,
+          x = 896,
           y = 832,
           width = 64,
           height = 64,
           rotation = 0,
           gid = 215,
           visible = true,
-          properties = {}
-        },
-        {
-          id = 272,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 832,
-          y = 768,
-          width = 64,
-          height = 64,
-          rotation = 0,
-          gid = 215,
-          visible = true,
-          properties = {}
+          properties = {
+            ["angle"] = 45,
+            ["fov"] = 3.14
+          }
         },
         {
           id = 273,
@@ -3561,6 +3508,23 @@ return {
             ["light_distance"] = 5,
             ["light_power"] = 0.7,
             ["rays"] = 32
+          }
+        },
+        {
+          id = 286,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1088,
+          y = 832,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 215,
+          visible = true,
+          properties = {
+            ["angle"] = 0,
+            ["fov"] = 0.01
           }
         }
       }

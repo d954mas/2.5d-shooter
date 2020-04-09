@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.3" orientation="orthogonal" renderorder="right-up" width="32" height="32" tilewidth="64" tileheight="64" infinite="0" nextlayerid="19" nextobjectid="286">
+<map version="1.2" tiledversion="1.3.3" orientation="orthogonal" renderorder="right-up" width="32" height="32" tilewidth="64" tileheight="64" infinite="0" nextlayerid="19" nextobjectid="287">
  <tileset firstgid="1" source="../tilesets/walls.tsx"/>
  <tileset firstgid="37" source="../tilesets/lights.tsx"/>
  <tileset firstgid="197" source="../tilesets/objects.tsx"/>
@@ -263,11 +263,12 @@
   <object id="265" gid="215" x="1280" y="768" width="64" height="64"/>
   <object id="266" gid="215" x="1344" y="832" width="64" height="64"/>
   <object id="267" gid="215" x="1280" y="832" width="64" height="64"/>
-  <object id="268" gid="215" x="1216" y="768" width="64" height="64"/>
-  <object id="269" gid="215" x="1216" y="704" width="64" height="64"/>
-  <object id="270" gid="215" x="1216" y="640" width="64" height="64"/>
-  <object id="271" gid="215" x="1216" y="832" width="64" height="64"/>
-  <object id="272" gid="215" x="832" y="768" width="64" height="64"/>
+  <object id="272" gid="215" x="896" y="832" width="64" height="64">
+   <properties>
+    <property name="angle" type="float" value="45"/>
+    <property name="fov" type="float" value="3.14"/>
+   </properties>
+  </object>
   <object id="273" gid="215" x="1408" y="128" width="64" height="64"/>
   <object id="274" gid="215" x="448" y="128" width="64" height="64"/>
   <object id="275" gid="215" x="512" y="384" width="64" height="64"/>
@@ -286,6 +287,12 @@
     <property name="light_distance" type="float" value="5"/>
     <property name="light_power" type="float" value="0.7"/>
     <property name="rays" type="int" value="32"/>
+   </properties>
+  </object>
+  <object id="286" gid="215" x="1088" y="832" width="64" height="64">
+   <properties>
+    <property name="angle" type="float" value="0"/>
+    <property name="fov" type="float" value="0.01"/>
    </properties>
   </object>
  </objectgroup>

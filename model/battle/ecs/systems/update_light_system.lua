@@ -12,7 +12,7 @@ local time = 0
 function System:process(e, dt)
 	time = time + dt
 	local id = self.world.game.level:coords_to_id(e.position.x, e.position.y)
-
+	e.light_params.camera:set_angle(-e.angle.x)
 	local neigbours = native_raycasting.camera_cast_rays(e.light_params.camera, true)
 	local start_x = math.floor(e.position.x)
 	local start_y = math.floor(e.position.y)

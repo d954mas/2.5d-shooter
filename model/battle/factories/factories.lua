@@ -213,7 +213,7 @@ end
 ---@return DebugLightGo
 function M.create_debug_light(e)
 	assert(e.light)
-	local root = msg.url(factory.create(URLS.factory.light_debug, vmath.vector3(e.position.x, 0.7, -e.position.y), nil, nil,
+	local root = msg.url(factory.create(URLS.factory.light_debug, vmath.vector3(e.position.x, e.position.z, -e.position.y), nil, nil,
 			vmath.vector3(0.15 / 64, 0.15 / 64, 0.15 / 64)))
 	return { root = root,
 			 north = msg.url(root.socket, root.path, HASH_NORTH), south = msg.url(root.socket, root.path, HASH_SOUTH),

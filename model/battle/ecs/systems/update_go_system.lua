@@ -1,12 +1,14 @@
 local ECS = require 'libs.ecs'
 ---@class UpdateGoSystem:ECSSystem
 local System = ECS.processingSystem()
-System.filter = ECS.requireAll("level_object_go")
+System.filter = ECS.filter("level_object_go|debug_light_go")
 System.name = "UpdateGoSystem"
 
 ---@param e Entity
 function System:process(e, dt)
 	local url_go = e.level_object_go and e.level_object_go.root
+	url_go = e.debug_light_go and e.debug_light_go.root or url_go
+
 	if (not url_go) then return end
 	if e.position then
 		local current_pos = vmath.vector3(e.position.x, e.position.z, -e.position.y)
