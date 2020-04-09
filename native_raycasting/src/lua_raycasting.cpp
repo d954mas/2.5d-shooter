@@ -172,13 +172,26 @@ static int CameraCastRaysLua(lua_State* L){
 
 //endregion
 
-static int ColorHSVToRGBLua(lua_State* L){
+static int ColorHSVToRGBILua(lua_State* L){
     float h = luaL_checknumber(L,1);
     float s = luaL_checknumber(L,2);
     float v = luaL_checknumber(L,3);
     int rgb = HSVToRGBInt(h,s,v);
     lua_pushnumber(L,rgb);
 	return 1;
+}
+
+static int ColorHSVToRGBLua(lua_State* L){
+    float h = luaL_checknumber(L,1);
+    float s = luaL_checknumber(L,2);
+    float v = luaL_checknumber(L,3);
+    int rgb = HSVToRGBInt(h,s,v);
+    int r=0,g=0,b=0;
+    RGBIntToRGB(rgb,r,g,b);
+    lua_pushnumber(L,r);
+    lua_pushnumber(L,g);
+    lua_pushnumber(L,b);
+	return 3;
 }
 
 static int ColorRGBToHSVLua(lua_State* L){
@@ -271,6 +284,7 @@ static const luaL_reg Module_methods[] =
 	{"cells_get_by_coords",CellsGetByCoordsLua},
 
 
+	{"color_hsv_to_rgbi",ColorHSVToRGBILua},
 	{"color_hsv_to_rgb",ColorHSVToRGBLua},
 	{"color_rgb_to_hsv",ColorRGBToHSVLua},
 	{"color_rgb_to_rgbi",ColorRGBToRGBInt},

@@ -17,6 +17,13 @@ local URLS = {
 	}
 }
 
+local HASH_NORTH = hash("north")
+local HASH_SOUTH = hash("south")
+local HASH_EAST = hash("east")
+local HASH_WEST = hash("west")
+local HASH_TOP = hash("top")
+local HASH_BOTTOM = hash("bottom")
+
 local OBJECTS_CONFIGS = {
 	LEVEL_OBJECTS = {
 		CUP = {
@@ -58,6 +65,12 @@ local OBJECTS_CONFIGS = {
 
 ---@class DebugLightGo
 ---@field root url
+---@field east url
+---@field west url
+---@field south url
+---@field north url
+---@field top url
+---@field bottom url
 
 local M = {}
 
@@ -202,7 +215,11 @@ function M.create_debug_light(e)
 	assert(e.light)
 	local root = msg.url(factory.create(URLS.factory.light_debug, vmath.vector3(e.position.x, 0.7, -e.position.y), nil, nil,
 			vmath.vector3(0.15 / 64, 0.15 / 64, 0.15 / 64)))
-	return { root = root }
+	return { root = root,
+			 north = msg.url(root.socket, root.path, HASH_NORTH), south = msg.url(root.socket, root.path, HASH_SOUTH),
+			 east = msg.url(root.socket, root.path, HASH_EAST), west = msg.url(root.socket, root.path, HASH_WEST),
+			 top = msg.url(root.socket, root.path, HASH_TOP), bottom = msg.url(root.socket, root.path, HASH_BOTTOM)
+	}
 end
 
 return M

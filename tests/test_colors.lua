@@ -29,10 +29,10 @@ return function()
 		end)
 
 		test("test hsv to rgb", function()
-			assert_equal(0xffffff, native_raycasting.color_hsv_to_rgb(0, 0, 1))
-			assert_equal(0x000000, native_raycasting.color_hsv_to_rgb(0, 0, 0))
-			assert_equal(0x2342ff, native_raycasting.color_hsv_to_rgb(231.5, 0.8627, 1))
-			assert_equal(0xDE3721, native_raycasting.color_hsv_to_rgb(7, 0.851, 0.871))
+			assert_equal(0xffffff, native_raycasting.color_hsv_to_rgbi(0, 0, 1))
+			assert_equal(0x000000, native_raycasting.color_hsv_to_rgbi(0, 0, 0))
+			assert_equal(0x2342ff, native_raycasting.color_hsv_to_rgbi(231.5, 0.8627, 1))
+			assert_equal(0xDE3721, native_raycasting.color_hsv_to_rgbi(7, 0.851, 0.871))
 		end)
 
 		test("test rgb to hsv and back", function()
@@ -47,22 +47,22 @@ return function()
 
 			local color = 0xffffff
 			local h, s, v = native_raycasting.color_rgb_to_hsv(color)
-			local new_color = native_raycasting.color_hsv_to_rgb(h, s, v)
+			local new_color = native_raycasting.color_hsv_to_rgbi(h, s, v)
 			check_color(color, new_color)
 
 			color = 0x000000
 			h, s, v = native_raycasting.color_rgb_to_hsv(color)
-			new_color = native_raycasting.color_hsv_to_rgb(h, s, v)
+			new_color = native_raycasting.color_hsv_to_rgbi(h, s, v)
 			check_color(color, new_color)
 
 			color = 0x2342ff
 			h, s, v = native_raycasting.color_rgb_to_hsv(color)
-			new_color = native_raycasting.color_hsv_to_rgb(h, s, v)
+			new_color = native_raycasting.color_hsv_to_rgbi(h, s, v)
 			check_color(color, new_color)
 
 			color = 0xDE3721
 			h, s, v = native_raycasting.color_rgb_to_hsv(color)
-			new_color = native_raycasting.color_hsv_to_rgb(h, s, v)
+			new_color = native_raycasting.color_hsv_to_rgbi(h, s, v)
 			check_color(color, new_color)
 		end)
 

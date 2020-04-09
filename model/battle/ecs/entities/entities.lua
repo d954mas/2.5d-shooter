@@ -231,6 +231,7 @@ function Entities:create_light_source(pos, properties)
 	e.light_params = {
 		light_power = properties.light_power or 1,
 		start_light = vmath.vector3(properties.light_color_h, properties.light_color_s, properties.light_color_v),
+		current_light = vmath.vector3(properties.light_color_h, properties.light_color_s, properties.light_color_v),
 		camera = native_raycasting.camera_new()
 	}
 	e.light_params.camera:set_pos(pos.x, pos.y)

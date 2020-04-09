@@ -27,6 +27,7 @@ function native_raycasting.cells_get_by_id(id) end
 ---@return NativeCellData
 function native_raycasting.cells_get_by_coords(x, y) end
 
+function native_raycasting.color_hsv_to_rgbi(h, s, v) end
 function native_raycasting.color_hsv_to_rgb(h, s, v) end
 function native_raycasting.color_rgb_to_hsv(color) end
 function native_raycasting.color_rgb_to_rgbi(r, g, b) end

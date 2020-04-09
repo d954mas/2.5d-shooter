@@ -25,14 +25,20 @@ function System:process(e, dt)
 		tmpVec.y = (start_y - neigbour:get_y())
 		local dist = vmath.length(tmpVec)
 
-		local v = e.light_params.start_light.z
-		--debug tested light pulse
-		--if(v>0.3)then
-		--	v = COMMON.LUME.clamp(v + math.sin(time/60)*v*0.8,0,1)
-		--end
+		e.light_params.current_light.x = e.light_params.start_light.x
+		e.light_params.current_light.y = e.light_params.start_light.y
+		e.light_params.current_light.z = e.light_params.start_light.z
 
-		table.insert(light, native_raycasting.color_hsv_to_rgb(e.light_params.start_light.x, e.light_params.start_light.y,
-				v * math.pow(e.light_params.light_power, dist)))
+		local v = e.light_params.current_light.z
+		--debug tested light pulse
+		if(v>0.3)then
+			v = COMMON.LUME.clamp(v + math.sin(time/60)*v*0.8,0,1)
+		end
+		e.light_params.current_light.z = v * math.pow(e.light_params.light_power, dist)
+
+
+		table.insert(light, native_raycasting.color_hsv_to_rgbi(e.light_params.current_light.x, e.light_params.current_light.y,
+				e.light_params.current_light.z))
 		--end
 
 	end
