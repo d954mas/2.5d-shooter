@@ -9,7 +9,7 @@ return {
   tilewidth = 64,
   tileheight = 64,
   nextlayerid = 19,
-  nextobjectid = 287,
+  nextobjectid = 290,
   properties = {},
   tilesets = {
     {
@@ -3525,6 +3525,52 @@ return {
           properties = {
             ["angle"] = 0,
             ["fov"] = 0.01
+          }
+        },
+        {
+          id = 287,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = 768,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 215,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 288,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = 768,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 215,
+          visible = true,
+          properties = {
+            ["angle"] = -45
+          }
+        },
+        {
+          id = 289,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = 768,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 215,
+          visible = true,
+          properties = {
+            ["angle"] = 45
           }
         }
       }
