@@ -3,8 +3,6 @@ local COMMON = require "libs.common"
 local LightMap = COMMON.class("LightMap")
 
 local HASH_LIGHT_MAP = hash("light_map")
-local arshift = bit.arshift
-local band = bit.band
 
 
 --draw all ambient light of level to texture

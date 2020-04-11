@@ -1,17 +1,15 @@
 local COMMON = require "libs.common"
-local GUI = require "assets.templates.gui_templates"
-local SM = require "libs_project.sm"
 
 local Script = COMMON.new_n28s()
 
 function Script:bind_vh()
 	self.view = {
-		
+
 	}
 end
 
 function Script:init_gui()
-	
+
 end
 
 function Script:init()
@@ -20,17 +18,14 @@ function Script:init()
 	self:init_gui()
 end
 
-function Script:update(dt)end
+function Script:update(dt) end
 
 function Script:final()
 	COMMON.input_release()
 end
 
-
 function Script:on_input(action_id, action)
-	
+
 end
-
-
 
 COMMON.N28S.register(Script())
