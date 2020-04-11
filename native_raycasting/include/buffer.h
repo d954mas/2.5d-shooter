@@ -15,6 +15,6 @@ Buffer* BufferCreate(dmBuffer::HBuffer&, int, int, int);
 void BufferDestroy(Buffer*);
 
 
-//void BufferBind(lua_State*);
+void BufferBind(lua_State* L);
 Buffer* BufferCheck(lua_State*, int);
 void BufferPush(lua_State *, Buffer *);

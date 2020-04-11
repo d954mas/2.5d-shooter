@@ -271,14 +271,30 @@ static int LightMapSetColorsLUA(lua_State* L){
 	return 0;
 }
 
+static int BufferCreate(lua_State* L){
+    dmScript::LuaHBuffer* bufferLua = dmScript::CheckBuffer(L, 1);
+	int w = luaL_checknumber(L,2);
+	int h = luaL_checknumber(L,3);
+	int channels = luaL_checknumber(L,4);
+    Buffer* buffer = BufferCreate(bufferLua->m_Buffer,w,h,channels);
+    BufferPush(L,buffer);
+	return 1;
+}
+static int BufferDestroy(lua_State* L){
+	Buffer* buffer = BufferCheck(L,1);
+	BufferDestroy(buffer);
+	return 0;
+}
 
 // Functions exposed to Lua
-static const luaL_reg Module_methods[] =
-{
+static const luaL_reg Module_methods[] ={
 	{"camera_new", CameraNewLua},
 	{"camera_delete", CameraDeleteLua},
 	{"camera_set_main", CameraSetMainLua},
 	{"camera_cast_rays", CameraCastRaysLua},
+
+	{"buffer_new", BufferCreate},
+	{"buffer_delete", BufferDestroy},
 
 	{"map_set", MapSetLua},
 	{"map_find_path", MapFindPathLua},
@@ -306,38 +322,27 @@ static const luaL_reg Module_methods[] =
 	{0, 0}
 };
 
-static void LuaInit(lua_State* L)
-{
+static void LuaInit(lua_State* L){
 	int top = lua_gettop(L);
 	// Register lua names
 	CellDataBind(L);
 	CameraBind(L);
+	BufferBind(L);
 	luaL_register(L, MODULE_NAME, Module_methods);
 	lua_pop(L, 1);
 	assert(top == lua_gettop(L));
 }
 
-static dmExtension::Result AppInitializeMyExtension(dmExtension::AppParams* params)
-{
-	return dmExtension::RESULT_OK;
-}
-
-static dmExtension::Result InitializeMyExtension(dmExtension::Params* params)
-{
+static dmExtension::Result AppInitializeMyExtension(dmExtension::AppParams* params){return dmExtension::RESULT_OK;}
+static dmExtension::Result InitializeMyExtension(dmExtension::Params* params){
 	// Init Lua
 	LuaInit(params->m_L);
 	printf("Registered %s Extension\n", MODULE_NAME);
 	return dmExtension::RESULT_OK;
 }
 
-static dmExtension::Result AppFinalizeMyExtension(dmExtension::AppParams* params)
-{
-	return dmExtension::RESULT_OK;
-}
+static dmExtension::Result AppFinalizeMyExtension(dmExtension::AppParams* params){return dmExtension::RESULT_OK;}
 
-static dmExtension::Result FinalizeMyExtension(dmExtension::Params* params)
-{
-	return dmExtension::RESULT_OK;
-}
+static dmExtension::Result FinalizeMyExtension(dmExtension::Params* params){	return dmExtension::RESULT_OK;}
 
 DM_DECLARE_EXTENSION(EXTENSION_NAME, LIB_NAME, AppInitializeMyExtension, AppFinalizeMyExtension, InitializeMyExtension, 0, 0, FinalizeMyExtension)

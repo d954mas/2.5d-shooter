@@ -10,7 +10,8 @@ local HASH_LIGHT_MAP = hash("light_map")
 function LightMap:initialize(size)
 	checks("?", "number")
 	self.size = size
-	self.buffer = buffer.create(self.size * self.size, { { name = HASH_LIGHT_MAP, type = buffer.VALUE_TYPE_UINT8, count = 3 } })
+	self.buffer_lua = buffer.create(self.size * self.size, { { name = HASH_LIGHT_MAP, type = buffer.VALUE_TYPE_UINT8, count = 3 } })
+	self.buffer = native_raycasting.buffer_new(self.buffer_lua, self.size, self.size, 3)
 	local ctx = COMMON.CONTEXT:set_context_top_by_name(COMMON.CONTEXT.NAMES.RENDER)
 	local render = COMMON.RENDER
 	self.render_target = render:create_render_target(HASH_LIGHT_MAP, { w = size, h = size })
@@ -41,7 +42,7 @@ end
 
 function LightMap:set_colors(colors, base_colors)
 	local w, h = self.level.data.size.x, self.level.data.size.y
-	native_raycasting.light_map_set_colors(self.buffer, self.size, w, h, colors, base_colors or {})
+	native_raycasting.light_map_set_colors(self.buffer_lua, self.size, w, h, colors, base_colors or {})
 	self:on_changed()
 end
 
@@ -51,7 +52,7 @@ function LightMap:on_changed()
 		self.go_resource_path = go.get("#model", "texture0")
 		self.go_header = { width = self.size, height = self.size, type = resource.TEXTURE_TYPE_2D, format = resource.TEXTURE_FORMAT_RGB, num_mip_maps = 1 }
 	end
-	resource.set_texture(self.go_resource_path, self.go_header, self.buffer)
+	resource.set_texture(self.go_resource_path, self.go_header, self.buffer_lua)
 	ctx:remove()
 end
 
@@ -81,7 +82,9 @@ function LightMap:final()
 	render.delete_render_target(self.render_target)
 	COMMON.RENDER.targets.light_map = nil
 	ctx:remove()
+	native_raycasting.buffer_delete(self.buffer)
 	self.buffer = nil
+	self.buffer_lua = nil
 end
 
 return LightMap

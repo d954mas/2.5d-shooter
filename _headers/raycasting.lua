@@ -36,6 +36,9 @@ function native_raycasting.color_blend_additive(color1, color2) end
 
 function native_raycasting.light_map_set_colors(buffer, size, w, h, colors, base_colors) end
 
+function native_raycasting.buffer_new(buffer,w,h,channels) end
+function native_raycasting.buffer_delete(buffer) end
+
 ---@class NativeCellData
 local NativeCellData = {}
 function NativeCellData:get_x() end
@@ -54,3 +57,9 @@ function NativeCamera:set_rays(rays) end
 function NativeCamera:set_fov(fov) end
 function NativeCamera:set_view_dist(view_dist) end
 function NativeCamera:set_max_dist(max_dist) end
+
+---@class NativeBuffer
+local Buffer = {}
+function Buffer:clear() end
+function Buffer:set_color() end
+function Buffer:set_colors() end

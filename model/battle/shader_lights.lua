@@ -12,7 +12,7 @@ local ShaderLightsConfig = {
 
 ---@param config ShaderLightsConfig
 function ShaderLights:initialize(config)
-	checks("?", "string", ShaderLightsConfig)
+	checks("?", ShaderLightsConfig)
 	self.config = config
 	self.buffer = buffer.create(self.config.size * self.config.size*self.config.pixel_per_cell, { { name = HASH_SHADER_LIGHTS, type = buffer.VALUE_TYPE_UINT8, count = 3 } })
 	---@type World
