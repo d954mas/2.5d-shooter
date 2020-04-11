@@ -9,7 +9,7 @@ return {
   tilewidth = 64,
   tileheight = 64,
   nextlayerid = 19,
-  nextobjectid = 290,
+  nextobjectid = 294,
   properties = {},
   tilesets = {
     {
@@ -3335,144 +3335,24 @@ return {
           }
         },
         {
-          id = 273,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1408,
-          y = 128,
-          width = 64,
-          height = 64,
-          rotation = 0,
-          gid = 215,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 274,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 448,
-          y = 128,
-          width = 64,
-          height = 64,
-          rotation = 0,
-          gid = 215,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 275,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 512,
-          y = 384,
-          width = 64,
-          height = 64,
-          rotation = 0,
-          gid = 215,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 276,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 832,
-          y = 512,
-          width = 64,
-          height = 64,
-          rotation = 0,
-          gid = 215,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 278,
           name = "",
           type = "",
           shape = "rectangle",
-          x = 1088,
-          y = 512,
+          x = 704,
+          y = 448,
           width = 64,
           height = 64,
           rotation = 0,
           gid = 215,
           visible = true,
-          properties = {}
-        },
-        {
-          id = 279,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 960,
-          y = 256,
-          width = 64,
-          height = 64,
-          rotation = 0,
-          gid = 215,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 280,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1024,
-          y = 256,
-          width = 64,
-          height = 64,
-          rotation = 0,
-          gid = 215,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 281,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1088,
-          y = 256,
-          width = 64,
-          height = 64,
-          rotation = 0,
-          gid = 215,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 282,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1152,
-          y = 256,
-          width = 64,
-          height = 64,
-          rotation = 0,
-          gid = 215,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 283,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1216,
-          y = 256,
-          width = 64,
-          height = 64,
-          rotation = 0,
-          gid = 215,
-          visible = true,
-          properties = {}
+          properties = {
+            ["angle"] = -90,
+            ["fov"] = 45,
+            ["light_color"] = "0;0.8;0.8",
+            ["light_distance"] = 2,
+            ["rotation_speed"] = -90
+          }
         },
         {
           id = 284,
@@ -3568,6 +3448,86 @@ return {
           visible = true,
           properties = {
             ["angle"] = 45
+          }
+        },
+        {
+          id = 290,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 704,
+          y = 192,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 215,
+          visible = true,
+          properties = {
+            ["angle"] = -90,
+            ["fov"] = 45,
+            ["light_color"] = "0;0.8;0.8",
+            ["light_distance"] = 2,
+            ["rotation_speed"] = -90
+          }
+        },
+        {
+          id = 291,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 832,
+          y = 320,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 215,
+          visible = true,
+          properties = {
+            ["angle"] = 0,
+            ["fov"] = 180,
+            ["light_color"] = "180;0.8;0.4",
+            ["light_distance"] = 1,
+            ["rotation_speed"] = 360
+          }
+        },
+        {
+          id = 292,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 960,
+          y = 192,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 215,
+          visible = true,
+          properties = {
+            ["angle"] = 90,
+            ["fov"] = 45,
+            ["light_color"] = "0;0.8;0.8",
+            ["light_distance"] = 2,
+            ["rotation_speed"] = 90
+          }
+        },
+        {
+          id = 293,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 960,
+          y = 448,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 215,
+          visible = true,
+          properties = {
+            ["angle"] = 90,
+            ["fov"] = 45,
+            ["light_color"] = "0;0.8;0.8",
+            ["light_distance"] = 2,
+            ["rotation_speed"] = 90
           }
         }
       }

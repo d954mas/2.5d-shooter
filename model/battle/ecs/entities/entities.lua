@@ -219,6 +219,14 @@ function Entities:create_level_object(object)
 	return e
 end
 
+---@param e Entity
+---@param properties TileProperties
+function Entities:add_base_properties(e, properties)
+	if (properties.rotation_speed) then
+		e.rotation_speed = properties.rotation_speed
+	end
+end
+
 ---@param properties TileProperties
 function Entities:create_light_source(pos, properties)
 	assert(pos)
@@ -226,7 +234,7 @@ function Entities:create_light_source(pos, properties)
 	---@type Entity
 	local e = {}
 	e.position = vmath.vector3(pos.x, pos.y, pos.z)
-	e.angle = vmath.vector3(math.rad(properties.angle), 0, 0)
+	e.angle = vmath.vector3(properties.angle, 0, 0)
 	e.light = true
 	e.visible = false
 	e.light_params = {
@@ -239,6 +247,7 @@ function Entities:create_light_source(pos, properties)
 	e.light_params.camera:set_rays(properties.rays ~= -1 and properties.rays or 16)
 	e.light_params.camera:set_fov(properties.fov ~= -1 and properties.fov or math.pi * 2)
 	e.light_params.camera:set_max_dist(properties.light_distance or 1)
+	self:add_base_properties(e,properties)
 	return e
 end
 

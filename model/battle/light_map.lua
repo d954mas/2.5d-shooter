@@ -36,17 +36,13 @@ end
 ---@param level Level
 function LightMap:set_level(level)
 	self.level = level
-	self:set_colors(level.data.light_map, level.data.size.x, level.data.size.y)
+	self:set_colors(level.data.light_map)
 end
 
-function LightMap:set_colors(colors, can_be_nil)
-	local w,h = self.level.data.size.x, self.level.data.size.y
-	native_raycasting.light_map_set_colors(self.buffer,self.size,w,h,colors)
+function LightMap:set_colors(colors, base_colors)
+	local w, h = self.level.data.size.x, self.level.data.size.y
+	native_raycasting.light_map_set_colors(self.buffer, self.size, w, h, colors, base_colors or {})
 	self:on_changed()
-end
-
-function LightMap:set_colors_changed(colors)
-
 end
 
 function LightMap:on_changed()

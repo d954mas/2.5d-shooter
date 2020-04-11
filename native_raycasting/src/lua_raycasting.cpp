@@ -243,21 +243,30 @@ static int LightMapSetColorsLUA(lua_State* L){
         lua_error(L);
         return 0;
     }
+    if(!lua_istable (L,6)){
+            lua_pushstring(L, "[6] should be table");
+            lua_error(L);
+            return 0;
+    }
+
     for(int id=0;id<w*h;id++){
-        lua_rawgeti(L, -1, id);
+        lua_rawgeti(L, -2, id);
         int color=0;
         if(lua_isnil(L,-1)){
-            color = 0xF0000000;
+            lua_pop(L, 1);
+            lua_rawgeti(L, -1, id);
+            if(lua_isnil(L,-1)){
+                color = 0xF0000000;
+            }else{
+                color = luaL_checknumber(L,-1);
+            }
         }else{
             color = luaL_checknumber(L,-1);
         }
         lua_pop(L, 1);
         colors[id] = color;
     }
-
-
 	LightMapSetColors(hBuffer,size,w,h,colors);
-
 	return 0;
 }
 

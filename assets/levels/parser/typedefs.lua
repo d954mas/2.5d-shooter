@@ -23,6 +23,7 @@
 ---@field rays number
 ---@field fov number
 ---@field angle number
+---@field rotation_speed number per second
 
 ---@class LevelMapObject
 ---@field tile_id number

@@ -41,6 +41,9 @@ local function parse_tilesets(path)
 			tile.id = tile.id + tileset.firstgid
 			tile.width = tile.width or tile.size or tileset.tilewidth
 			tile.height = tile.height or tile.size or tileset.tileheight
+			if (tile.angle) then tile.angle = math.rad(tile.angle) end
+			if (tile.rotation_speed) then tile.rotation_speed = math.rad(tile.rotation_speed) end
+			if (tile.fov) then tile.fov = math.rad(tile.fov) end
 			--copy tileset properties to tile properties
 			setmetatable(tile.properties, { __index = tileset.properties })
 			if tile.image then
@@ -186,6 +189,10 @@ local function repack_objects(array, tiled, map)
 		--object_data.cell_center_x = object_data.cell_xf + object_data.cell_w/2
 		--object_data.cell_center_y = object_data.cell_yf + object_data.cell_h/2
 		object_data.cell_id = MAP_HELPER.coords_to_id(map, object_data.cell_x, object_data.cell_y)
+		if (rawget(object_data.properties, "angle")) then object_data.properties.angle = math.rad(object_data.properties.angle) end
+		if (rawget(object_data.properties, "rotation_speed")) then object_data.properties.rotation_speed = math.rad(object_data.properties.rotation_speed) end
+		if (rawget(object_data.properties, "fov")) then object_data.properties.fov = math.rad(object_data.properties.fov) end
+
 		array[i] = object_data
 	end
 end
@@ -328,7 +335,7 @@ local function parse_light_sources(map, layer)
 		assert(h >= 0 and h <= 360)
 		assert(s >= 0 and s <= 1)
 		assert(v >= 0 and v <= 1)
-		obj.properties.light_color = {h=h,s=s,v=v}
+		obj.properties.light_color = { h = h, s = s, v = v }
 		table.insert(result, obj)
 	end
 	return result;

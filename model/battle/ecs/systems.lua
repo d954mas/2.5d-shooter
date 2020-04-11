@@ -17,6 +17,7 @@ function M.load()
 	M.MovementSystem = require "model.battle.ecs.systems.movement_system"
 	M.RotationGlobalSystem = require "model.battle.ecs.systems.rotation_global_system"
 	M.RotationLookAtPlayerSystem = require "model.battle.ecs.systems.rotation_look_at_player_system"
+	M.RotationSpeedSystem = require "model.battle.ecs.systems.rotation_speed_system"
 	M.UpdateAISystem = require "model.battle.ecs.systems.update_ai_system"
 	M.UpdateCameraPositionSystem = require "model.battle.ecs.systems.update_camera_position_system"
 	M.UpdateCameraVisibleCellsSystem = require "model.battle.ecs.systems.update_camera_visible_cells_system"

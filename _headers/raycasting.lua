@@ -34,7 +34,7 @@ function native_raycasting.color_rgb_to_rgbi(r, g, b) end
 function native_raycasting.color_rgbi_to_rgb(color) end
 function native_raycasting.color_blend_additive(color1, color2) end
 
-function native_raycasting.light_map_set_colors(buffer, size, w, h, colors) end
+function native_raycasting.light_map_set_colors(buffer, size, w, h, colors, base_colors) end
 
 ---@class NativeCellData
 local NativeCellData = {}

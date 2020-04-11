@@ -30,9 +30,9 @@ function System:process(e, dt)
 
 		local v = e.light_params.current_light.z
 		--debug tested light pulse
-		if(v>0.3)then
-			v = COMMON.LUME.clamp(v + math.sin(time/60)*v*0.8,0,1)
-		end
+		--if(v>0.3)then
+		--	v = COMMON.LUME.clamp(v + math.sin(time/60)*v*0.8,0,1)
+		--end
 		e.light_params.current_light.z = v * math.pow(e.light_params.light_power, dist)
 
 
@@ -59,7 +59,7 @@ end
 
 function System:postProcess()
 	local level = self.world.game.level
-	local result = {} --base colors ids start from 1. But other id start from 0
+	local result = {}
 	for id, values in pairs(self.lights) do
 		result[id] = level.data.light_map[id]
 		for _, color in ipairs(values) do
@@ -67,7 +67,7 @@ function System:postProcess()
 		end
 	end
 
-	self.world.game.world.battle_model.light_map:set_colors(result, true)
+	self.world.game.world.battle_model.light_map:set_colors(result, self.world.game.level.data.light_map)
 end
 
 return System
