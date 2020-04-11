@@ -33,11 +33,9 @@ function System:process(e, dt)
 		--if(v>0.3)then
 		--	v = COMMON.LUME.clamp(v + math.sin(time/60)*v*0.8,0,1)
 		--end
-		e.light_params.current_light.z = v * math.pow(e.light_params.light_power, dist)
-
-
-		table.insert(light, native_raycasting.color_hsv_to_rgbi(e.light_params.current_light.x, e.light_params.current_light.y,
-				e.light_params.current_light.z))
+		local h, s = e.light_params.current_light.x, e.light_params.current_light.y
+		v = v * math.pow(e.light_params.light_power, dist)
+		table.insert(light, native_raycasting.color_hsv_to_rgbi(h,s,v))
 		--end
 
 	end
