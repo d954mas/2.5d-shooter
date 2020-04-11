@@ -273,8 +273,8 @@
    <properties>
     <property name="angle" type="float" value="-90"/>
     <property name="fov" type="float" value="45"/>
-    <property name="light_color" value="0;0.8;0.8"/>
-    <property name="light_distance" type="float" value="2"/>
+    <property name="light_color" value="0;0.8;0.5"/>
+    <property name="light_distance" type="float" value="3"/>
     <property name="rotation_speed" type="float" value="-90"/>
    </properties>
   </object>
@@ -309,7 +309,7 @@
     <property name="angle" type="float" value="-90"/>
     <property name="fov" type="float" value="45"/>
     <property name="light_color" value="0;0.8;0.8"/>
-    <property name="light_distance" type="float" value="2"/>
+    <property name="light_distance" type="float" value="3"/>
     <property name="rotation_speed" type="float" value="-90"/>
    </properties>
   </object>
@@ -319,15 +319,15 @@
     <property name="fov" type="float" value="180"/>
     <property name="light_color" value="180;0.8;0.4"/>
     <property name="light_distance" type="float" value="1"/>
-    <property name="rotation_speed" type="float" value="360"/>
+    <property name="rotation_speed" type="float" value="720"/>
    </properties>
   </object>
   <object id="292" gid="215" x="960" y="192" width="64" height="64">
    <properties>
     <property name="angle" type="float" value="90"/>
     <property name="fov" type="float" value="45"/>
-    <property name="light_color" value="0;0.8;0.8"/>
-    <property name="light_distance" type="float" value="2"/>
+    <property name="light_color" value="0;0.8;0.5"/>
+    <property name="light_distance" type="float" value="3"/>
     <property name="rotation_speed" type="float" value="90"/>
    </properties>
   </object>
@@ -336,7 +336,7 @@
     <property name="angle" type="float" value="90"/>
     <property name="fov" type="float" value="45"/>
     <property name="light_color" value="0;0.8;0.8"/>
-    <property name="light_distance" type="float" value="2"/>
+    <property name="light_distance" type="float" value="3"/>
     <property name="rotation_speed" type="float" value="90"/>
    </properties>
   </object>

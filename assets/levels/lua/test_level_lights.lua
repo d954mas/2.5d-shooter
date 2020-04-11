@@ -3349,8 +3349,8 @@ return {
           properties = {
             ["angle"] = -90,
             ["fov"] = 45,
-            ["light_color"] = "0;0.8;0.8",
-            ["light_distance"] = 2,
+            ["light_color"] = "0;0.8;0.5",
+            ["light_distance"] = 3,
             ["rotation_speed"] = -90
           }
         },
@@ -3466,7 +3466,7 @@ return {
             ["angle"] = -90,
             ["fov"] = 45,
             ["light_color"] = "0;0.8;0.8",
-            ["light_distance"] = 2,
+            ["light_distance"] = 3,
             ["rotation_speed"] = -90
           }
         },
@@ -3487,7 +3487,7 @@ return {
             ["fov"] = 180,
             ["light_color"] = "180;0.8;0.4",
             ["light_distance"] = 1,
-            ["rotation_speed"] = 360
+            ["rotation_speed"] = 720
           }
         },
         {
@@ -3505,8 +3505,8 @@ return {
           properties = {
             ["angle"] = 90,
             ["fov"] = 45,
-            ["light_color"] = "0;0.8;0.8",
-            ["light_distance"] = 2,
+            ["light_color"] = "0;0.8;0.5",
+            ["light_distance"] = 3,
             ["rotation_speed"] = 90
           }
         },
@@ -3526,7 +3526,7 @@ return {
             ["angle"] = 90,
             ["fov"] = 45,
             ["light_color"] = "0;0.8;0.8",
-            ["light_distance"] = 2,
+            ["light_distance"] = 3,
             ["rotation_speed"] = 90
           }
         }
