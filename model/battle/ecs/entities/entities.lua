@@ -226,18 +226,18 @@ function Entities:create_light_source(pos, properties)
 	---@type Entity
 	local e = {}
 	e.position = vmath.vector3(pos.x, pos.y, pos.z)
-	e.angle = vmath.vector3(math.rad(properties.angle), 0,0)
+	e.angle = vmath.vector3(math.rad(properties.angle), 0, 0)
 	e.light = true
 	e.visible = false
 	e.light_params = {
-	light_power = properties.light_power or 1,
-	start_light = vmath.vector3(properties.light_color_h, properties.light_color_s, properties.light_color_v),
-	current_light = vmath.vector3(properties.light_color_h, properties.light_color_s, properties.light_color_v),
-	camera = native_raycasting.camera_new()
+		light_power = properties.light_power or 1,
+		start_light = vmath.vector3(properties.light_color.h, properties.light_color.s, properties.light_color.v),
+		current_light = vmath.vector3(properties.light_color.h, properties.light_color.s, properties.light_color.v),
+		camera = native_raycasting.camera_new()
 	}
 	e.light_params.camera:set_pos(pos.x, pos.y)
-	e.light_params.camera:set_rays(properties.rays~=-1 and properties.rays or 16)
-	e.light_params.camera:set_fov(properties.fov~=-1 and properties.fov or math.pi*2)
+	e.light_params.camera:set_rays(properties.rays ~= -1 and properties.rays or 16)
+	e.light_params.camera:set_fov(properties.fov ~= -1 and properties.fov or math.pi * 2)
 	e.light_params.camera:set_max_dist(properties.light_distance or 1)
 	return e
 end

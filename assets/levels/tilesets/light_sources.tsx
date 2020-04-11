@@ -6,9 +6,7 @@
    <property name="angle" type="float" value="0"/>
    <property name="fov" type="float" value="-1"/>
    <property name="light" type="bool" value="true"/>
-   <property name="light_color_h" type="float" value="0"/>
-   <property name="light_color_s" type="float" value="0"/>
-   <property name="light_color_v" type="float" value="0.2"/>
+   <property name="light_color" value="0;0;0.2"/>
    <property name="light_distance" type="float" value="1"/>
    <property name="light_power" type="float" value="0.5"/>
    <property name="light_type" value="point"/>

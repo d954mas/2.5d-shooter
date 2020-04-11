@@ -5,6 +5,7 @@ local lfs = requiref "lfs"
 local cjson = requiref "cjson"
 local pretty = requiref "resty.prettycjson"
 local MAP_HELPER = requiref "assets.levels.parser.map_helper"
+local LUME = requiref "libs.lume"
 
 local LEVELS_PATH = "lua"
 local TILESETS_PATH = "tilesets"
@@ -319,10 +320,15 @@ local function parse_light_sources(map, layer)
 	local result = {}
 	for _, obj in ipairs(objects) do
 		local type = obj.properties.light_type
-		assert(type == "point","unknown light type:" .. tostring(type))
-		assert(obj.properties.light_color_h>=0 and obj.properties.light_color_h<=360)
-		assert(obj.properties.light_color_s>=0 and obj.properties.light_color_s<=1)
-		assert(obj.properties.light_color_v>=0 and obj.properties.light_color_v<=1)
+		assert(type == "point", "unknown light type:" .. tostring(type))
+		assert(obj.properties.light_color)
+		local color = LUME.string_split(LUME.string_trim(obj.properties.light_color), ";")
+		assert(#color == 3, "bad color split:" .. obj.properties.light_color)
+		local h, s, v = tonumber(color[1]), tonumber(color[2]), tonumber(color[3])
+		assert(h >= 0 and h <= 360)
+		assert(s >= 0 and s <= 1)
+		assert(v >= 0 and v <= 1)
+		obj.properties.light_color = {h=h,s=s,v=v}
 		table.insert(result, obj)
 	end
 	return result;
@@ -348,8 +354,7 @@ local function parse_level(path, result_path)
 	data.light_map = parse_light_map(data, assert(get_layer(tiled, "light_map")))
 	parse_objects(data, assert(get_layer(tiled, "objects")))
 	data.level_objects = parse_level_objects(data, assert(get_layer(tiled, "level_objects")))
-	data.light_sources = parse_light_sources(data,assert(get_layer(tiled, "light_sources")))
-
+	data.light_sources = parse_light_sources(data, assert(get_layer(tiled, "light_sources")))
 
 	check(data)
 	--[[

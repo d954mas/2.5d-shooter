@@ -623,10 +623,21 @@ function lume.split(str, sep)
 end
 
 
-function lume.trim(str, chars)
+function lume.string_trim(str, chars)
   if not chars then return str:match("^[%s]*(.-)[%s]*$") end
   chars = patternescape(chars)
   return str:match("^[" .. chars .. "]*(.-)[" .. chars .. "]*$")
+end
+
+
+
+
+function lume:string_split(sep)
+  sep = sep or ":"
+  local fields = {}
+  local pattern = string.format("([^%s]+)", sep)
+  self:gsub(pattern, function(c) fields[#fields+1] = c end)
+  return fields
 end
 
 
@@ -715,7 +726,7 @@ function lume.hotswap(modname)
   local err = nil
   local function onerror(e)
     for k in pairs(_G) do _G[k] = oldglobal[k] end
-    err = lume.trim(e)
+    err = lume.string_trim(e)
   end
   local ok, oldmod = pcall(require, modname)
   oldmod = ok and oldmod or nil

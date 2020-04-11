@@ -1,5 +1,10 @@
 --Cell used in cpp and in lua.So id start from 0.
 
+---@class ColorHSV
+---@field h number
+---@field s number
+---@field v number
+
 ---@class TileProperties
 ---@field width number
 ---@field tag string
@@ -14,9 +19,7 @@
 ---@field light boolean
 ---@field light_type string point
 ---@field light_distance number
----@field light_color_h number
----@field light_color_s number
----@field light_color_v number
+---@field light_color ColorHSV
 ---@field rays number
 ---@field fov number
 ---@field angle number

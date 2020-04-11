@@ -1531,9 +1531,7 @@ return {
             ["angle"] = 0,
             ["fov"] = -1,
             ["light"] = true,
-            ["light_color_h"] = 0,
-            ["light_color_s"] = 0,
-            ["light_color_v"] = 0.2,
+            ["light_color"] = "0;0;0.2",
             ["light_distance"] = 1,
             ["light_power"] = 0.5,
             ["light_type"] = "point",
@@ -3503,8 +3501,7 @@ return {
           gid = 215,
           visible = true,
           properties = {
-            ["light_color_s"] = 0.9,
-            ["light_color_v"] = 0.9,
+            ["light_color"] = "0;0.9;0.9",
             ["light_distance"] = 5,
             ["light_power"] = 0.7,
             ["rays"] = 32
