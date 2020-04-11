@@ -233,41 +233,24 @@ static int ColorRGBBlendAdditive(lua_State* L){
 }
 
 static int LightMapSetColorsLUA(lua_State* L){
-	dmScript::LuaHBuffer* buffer = dmScript::CheckBuffer(L, 1);
-	int size = luaL_checknumber(L,2);
-	int w = luaL_checknumber(L,3);
-	int h = luaL_checknumber(L,4);
-	dmBuffer::HBuffer hBuffer = buffer->m_Buffer;
-    int colors[w*h];
-    if(!lua_istable (L,5)){
-        lua_pushstring(L, "[5] should be table");
+	Buffer* buffer = BufferCheck(L,1);
+    if(!lua_istable (L,2)){
+        lua_pushstring(L, "[2] should be table");
         lua_error(L);
         return 0;
     }
-    if(!lua_istable (L,6)){
-            lua_pushstring(L, "[6] should be table");
-            lua_error(L);
-            return 0;
-    }
-
-    for(int id=0;id<w*h;id++){
-        lua_rawgeti(L, -2, id);
+    for(int id=0;id<buffer->width*buffer->height;id++){
+        lua_rawgeti(L, -1, id);
         int color=0;
         if(lua_isnil(L,-1)){
-            lua_pop(L, 1);
-            lua_rawgeti(L, -1, id);
-            if(lua_isnil(L,-1)){
-                color = 0xF0000000;
-            }else{
-                color = luaL_checknumber(L,-1);
-            }
+            color = MAP.cells[id].color;
         }else{
             color = luaL_checknumber(L,-1);
         }
-        lua_pop(L, 1);
-        colors[id] = color;
+        int r,g,b;RGBIntToRGB(color, r,g,b);
+        BufferSetColorYTop(buffer,id,r,g,b);
+        lua_pop(L,1);
     }
-	LightMapSetColors(hBuffer,size,w,h,colors);
 	return 0;
 }
 

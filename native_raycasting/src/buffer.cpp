@@ -3,6 +3,7 @@
 #define META_NAME "Raycasting::BufferClass"
 
 #include <string>
+#include "colors.h"
 
 Buffer* BufferCreate(dmBuffer::HBuffer& buffer, int w, int h, int channels){
     Buffer* resultBuffer = new Buffer();
@@ -33,22 +34,44 @@ void BufferPush(lua_State *L, Buffer *buffer){
 	lua_setmetatable(L, -2);
 }
 
-static int BufferClear(lua_State *L){
+
+
+static int BufferBindClear(lua_State *L){
     Buffer *b = BufferCheck(L, 1);
     return 0;
 }
 
-static int BufferSetColor(lua_State *L){
-     Buffer *b = BufferCheck(L, 1);
+static int BufferBindSetColor(lua_State *L){
+    Buffer *b = BufferCheck(L, 1);
+    return 0;
+}
+
+static int BufferBindSetColors(lua_State *L){
+     Buffer *buffer = BufferCheck(L, 1);
+     if(!lua_istable (L,2)){
+         lua_pushstring(L, "[2] should be table");
+         lua_error(L);
+         return 0;
+     }
+     lua_pushnil(L);
+
+     while(lua_next(L,-2)){
+        //convert map id to buffer id
+        int id = lua_tonumber(L,-2);
+
+        int color = lua_tonumber(L,-1);
+        int r,g,b;
+        RGBIntToRGB(color, r,g,b);
+
+        assert(id<buffer->width*buffer->height);
+        BufferSetColorYTop(buffer,id,(uint8_t)r,(uint8_t)g,(uint8_t)b);
+        lua_pop(L,1);
+     }
+     lua_pop(L, 1); // THE FIX, pops the nil on the stack used to process the table
      return 0;
 }
 
-static int BufferSetColors(lua_State *L){
-     Buffer *b = BufferCheck(L, 1);
-     return 0;
-}
-
-static int BufferToString(lua_State *L){
+static int BufferBindToString(lua_State *L){
     Buffer *b = BufferCheck(L, 1);
     std::string str = "Buffer[buffer:" + std::to_string(b->buffer) +" w:" + std::to_string(b->width) + " h:" +  std::to_string(b->height) + " ]";
     lua_pushstring(L,str.c_str());
@@ -57,10 +80,10 @@ static int BufferToString(lua_State *L){
 
 void BufferBind(lua_State* L){
      luaL_Reg functions[] = {
-            {"clear",BufferClear},
-            {"set_color",BufferSetColor},
-            {"set_colors",BufferSetColors},
-            {"__tostring",BufferToString},
+            {"clear",BufferBindClear},
+            {"set_color",BufferBindSetColor},
+            {"set_colors",BufferBindSetColors},
+            {"__tostring",BufferBindToString},
             { 0, 0 }
     };
     luaL_newmetatable(L, META_NAME);

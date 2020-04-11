@@ -23,6 +23,7 @@ local function array_to_zero(array,max_id)
 			array[str] = nil
 		else
 			array[i - 1] = array[i]
+			array[i] = nil
 		end
 
 		if(array[i-1] == cjson.null) then array[i-1] = nil end

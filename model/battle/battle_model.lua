@@ -21,6 +21,9 @@ function Model:initialize(world, level)
 	self.light_map = LightMap(smallest_pot)
 	self.shader_lights = ShaderLights({ size = 64, pixel_per_cell = 1 })
 	native_raycasting.map_set(self.level.data)
+	for i = 0, self.level.cell_max_id do
+		native_raycasting.cells_get_by_id(i):set_color(self.level.data.light_map[i])
+	end
 	self.ecs = GameEcs(self.world)
 end
 

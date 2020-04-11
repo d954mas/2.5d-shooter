@@ -62,6 +62,19 @@ static int CellDataToString(lua_State *L){
 	return 1;
 }
 
+static int CellDataBindGetColor(lua_State *L){
+    CellData *im = CellDataCheck(L, 1);
+    lua_pushnumber(L, im->color);
+    return 1;
+}
+
+static int CellDataBindSetColor(lua_State *L){
+    CellData *im = CellDataCheck(L, 1);
+    int color = luaL_checknumber(L,2);
+    im->color = color;
+    return 0;
+}
+
 void CellDataBind(lua_State * L){
     luaL_Reg functions[] = {
         {"get_x",CellDataBindGetX},
@@ -70,6 +83,8 @@ void CellDataBind(lua_State * L){
         {"get_blocked",CellDataBindGetBlocked},
         {"get_id",CellDataBindGetId},
         {"get_transparent",CellDataBindGetTransparent},
+        {"set_color",CellDataBindSetColor},
+        {"get_color",CellDataBindGetColor},
         {"__tostring",CellDataToString},
         { 0, 0 }
     };

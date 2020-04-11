@@ -40,9 +40,8 @@ function LightMap:set_level(level)
 	self:set_colors(level.data.light_map)
 end
 
-function LightMap:set_colors(colors, base_colors)
-	local w, h = self.level.data.size.x, self.level.data.size.y
-	native_raycasting.light_map_set_colors(self.buffer_lua, self.size, w, h, colors, base_colors or {})
+function LightMap:set_colors(colors)
+	native_raycasting.light_map_set_colors(self.buffer,colors)
 	self:on_changed()
 end
 
@@ -50,7 +49,7 @@ function LightMap:on_changed()
 	local ctx = COMMON.CONTEXT:set_context_top_by_name(COMMON.CONTEXT.NAMES.LIGHT_MAP_SCRIPT)
 	if (not self.go_resource_path) then
 		self.go_resource_path = go.get("#model", "texture0")
-		self.go_header = { width = self.size, height = self.size, type = resource.TEXTURE_TYPE_2D, format = resource.TEXTURE_FORMAT_RGB, num_mip_maps = 1 }
+		self.go_header = { width = self.size, height = self.size, type = resource.TEXTURE_TYPE_2D, format = resource.TEXTURE_FORMAT_RGB, num_mip_maps = 0 }
 	end
 	resource.set_texture(self.go_resource_path, self.go_header, self.buffer_lua)
 	ctx:remove()
