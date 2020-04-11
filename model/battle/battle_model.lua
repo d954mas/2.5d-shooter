@@ -3,6 +3,7 @@ local NativeCamera = require "model.battle.native_camera"
 local LightMap = require "model.battle.light_map"
 local GameEcs = require "model.battle.ecs.game_ecs"
 local LevelCreator = require "model.battle.level_creator"
+local ShaderLights = require "model.battle.shader_lights"
 
 ---@class BattleModel
 local Model = COMMON.class("BattleModel")
@@ -18,6 +19,7 @@ function Model:initialize(world, level)
 	--https://www.geeksforgeeks.org/smallest-power-of-2-greater-than-or-equal-to-n/
 	local smallest_pot = math.pow(2, math.ceil(math.log(max_side) / (math.log(2))))
 	self.light_map = LightMap(smallest_pot)
+	self.shader_lights = ShaderLights({ size = 64, pixel_per_cell = 1 })
 	native_raycasting.map_set(self.level.data)
 	self.ecs = GameEcs(self.world)
 end
@@ -48,6 +50,7 @@ function Model:on_input(action, action_id) end
 function Model:final()
 	if self.native_camera then self.native_camera:final() end
 	if self.light_map then self.light_map:final() end
+	if self.shader_lights then self.shader_lights:final() end
 	if self.ecs then self.ecs:clear() end
 	physics3d.clear()
 

@@ -9,6 +9,7 @@
 #include "lua_helper.h"
 #include "colors.h"
 #include "light_map.h"
+#include "buffer.h"
 #include <set>
 #include <unordered_set>
 #include <vector>
