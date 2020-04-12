@@ -42,7 +42,14 @@ static int BufferBindClear(lua_State *L){
 }
 
 static int BufferBindSetColor(lua_State *L){
-    Buffer *b = BufferCheck(L, 1);
+    Buffer *buffer = BufferCheck(L, 1);
+
+    int id = lua_tonumber(L,2);
+    int color = lua_tonumber(L,3);
+    int r,g,b;
+    RGBIntToRGB(color, r,g,b);
+    BufferSetColorYTop(buffer,id,(uint8_t)r,(uint8_t)g,(uint8_t)b);
+    
     return 0;
 }
 
@@ -63,7 +70,7 @@ static int BufferBindSetColors(lua_State *L){
         int r,g,b;
         RGBIntToRGB(color, r,g,b);
 
-        assert(id<buffer->width*buffer->height);
+        //assert(id<buffer->width*buffer->height);
         BufferSetColorYTop(buffer,id,(uint8_t)r,(uint8_t)g,(uint8_t)b);
         lua_pop(L,1);
      }

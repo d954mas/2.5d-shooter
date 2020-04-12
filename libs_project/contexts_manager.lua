@@ -9,6 +9,7 @@ Manager.NAMES = {
 	GAME = "GAME",
 	RENDER = "RENDER",
 	LIGHT_MAP_SCRIPT = "LIGHT_MAP_SCRIPT",
+	DYNAMIC_LIGHT = "DYNAMIC_LIGHT",
 }
 
 ---@class ContextStackWrapperMain:ContextStackWrapper

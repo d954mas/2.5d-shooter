@@ -48,10 +48,9 @@ end
 function LightMap:on_changed()
 	local ctx = COMMON.CONTEXT:set_context_top_by_name(COMMON.CONTEXT.NAMES.LIGHT_MAP_SCRIPT)
 	if (not self.go_resource_path) then
-		self.go_resource_path = go.get("#model", "texture0")
 		self.go_header = { width = self.size, height = self.size, type = resource.TEXTURE_TYPE_2D, format = resource.TEXTURE_FORMAT_RGB, num_mip_maps = 0 }
 	end
-	resource.set_texture(self.go_resource_path, self.go_header, self.buffer_lua)
+	resource.set_texture(ctx.data.model0_texture_path, self.go_header, self.buffer_lua)
 	ctx:remove()
 end
 

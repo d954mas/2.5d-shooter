@@ -29,7 +29,8 @@ function Script:bind_vh()
 				root = gui.get_node("panel_render"),
 				btn_activate = GUI.ButtonIconTest("btn_render"),
 				childs = {
-					btn_light_map = GUI.ButtonIconTest("panel_render/btn_light_map")
+					btn_light_map = GUI.ButtonIconTest("panel_render/btn_light_map"),
+					btn_dynamic_light = GUI.ButtonIconTest("panel_render/btn_dynamic_light")
 				},
 				config = {}
 			},
@@ -79,6 +80,10 @@ function Script:init_gui()
 
 	self.views.panels.render.childs.btn_light_map:set_input_listener(function()
 		CONSTANTS.DEBUG.draw_light_map = not CONSTANTS.DEBUG.draw_light_map
+	end)
+
+	self.views.panels.render.childs.btn_dynamic_light:set_input_listener(function()
+		CONSTANTS.DEBUG.draw_light_dynamic = not CONSTANTS.DEBUG.draw_light_dynamic
 	end)
 
 	self.views.panels.game.childs.btn_ecs_systems:set_input_listener(function()

@@ -32,6 +32,7 @@ function Model:on_scene_show()
 		self.inited = true
 		self.native_camera = NativeCamera(512, 50)
 		self.light_map:set_level(self.level)
+		self.shader_lights:set_level(self.level)
 	end
 end
 

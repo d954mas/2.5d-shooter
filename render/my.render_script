@@ -66,6 +66,7 @@ function Render:init_predicates()
 		sprite_3d_object = render.predicate({ "sprite_3d_object" }),
 		sprite_3d_enemy = render.predicate({ "sprite_3d_enemy" }),
 		light_map = render.predicate({ "light_map" }),
+		dynamic_light_walls = render.predicate({ "dynamic_light_walls" }),
 		debug_physics = render.predicate({ "debug_physics" }),
 	}
 end
@@ -189,6 +190,12 @@ function Render:render_light_map(debug)
 	end
 end
 
+function Render:render_lights_dynamic()
+	if (WORLD.battle_model and WORLD.battle_model.shader_lights and CONSTANTS.DEBUG.draw_light_dynamic) then
+		WORLD.battle_model.shader_lights:draw_debug_walls()
+	end
+end
+
 function Render:update(dt)
 	self:render_clear()
 	self:render_light_map()
@@ -197,6 +204,8 @@ function Render:update(dt)
 	self:render_sprites()
 
 	self:render_light_map(true)
+	self:render_lights_dynamic()
+
 	self:render_gui()
 end
 

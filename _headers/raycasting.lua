@@ -64,5 +64,5 @@ function NativeCamera:set_max_dist(max_dist) end
 ---@class NativeBuffer
 local Buffer = {}
 function Buffer:clear() end
-function Buffer:set_color() end
+function Buffer:set_color(id,color) end
 function Buffer:set_colors(colors) end
