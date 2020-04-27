@@ -13,7 +13,7 @@ function Action:act(dt)
 			current = self.childs[i]
 			current:update(dt)
 			if current:is_finished() then
-				table.remove(self.childs)
+				table.remove(self.childs,i)
 			end
 		end
 		dt = coroutine.yield()
