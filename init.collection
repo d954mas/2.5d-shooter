@@ -1,4 +1,4 @@
-name: "main"
+name: "init"
 instances {
   id: "debug_gui"
   prototype: "/debug/info/debug_gui.go"
@@ -263,6 +263,127 @@ embedded_instances {
   "  type: \"collectionproxy\"\n"
   "  data: \"collection: \\\"/scenes/modals/pause/pause_modal.collection\\\"\\n"
   "exclude: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "assets"
+  children: "atlases"
+  data: ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "atlases"
+  data: "embedded_components {\n"
+  "  id: \"game_atlas\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/images/game/game.atlas\\\"\\n"
+  "default_animation: \\\"empty\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"walls_atlas\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/images/game/walls/walls.atlas\\\"\\n"
+  "default_animation: \\\"wall1\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"gui_atlas\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/images/gui/gui.atlas\\\"\\n"
+  "default_animation: \\\"empty\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"level_objects_atlas\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/images/game/level_objects/level_objects.atlas\\\"\\n"
+  "default_animation: \\\"block\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"

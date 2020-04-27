@@ -39,6 +39,7 @@ function Script:init_random()
 end
 
 function Script:init()
+	msg.post("init:/atlases",COMMON.HASHES.MSG.DISABLE)
 	self:init_random()
 	self:init_input()
 	self:init_msg()

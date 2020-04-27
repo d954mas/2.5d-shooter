@@ -214,6 +214,7 @@ function M:_show_scene_f(scene, input)
 	if (current_scene) then self:_unload_scene_f(current_scene, unload_config) end
 	self:_load_scene_f(scene)
 	self.stack:push(scene)
+	collectgarbage()
 end
 
 ---@param scene Scene
@@ -237,6 +238,7 @@ function M:_replace_scene_f(scene, input)
 	self:_unload_scene_f(self.stack:pop(), unload_config)
 	self:_load_scene_f(scene)
 	self.stack:push(scene)
+	collectgarbage()
 end
 
 function M:_back_scene_f(count,options)
@@ -261,6 +263,7 @@ function M:_back_scene_f(count,options)
 	if result_scene then
 		self:_load_scene_f(result_scene)
 	end
+	collectgarbage()
 end
 
 ---@return Scene

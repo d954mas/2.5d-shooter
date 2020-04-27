@@ -11,9 +11,7 @@ function Creator:initialize(world)
 end
 
 function Creator:create()
-	self:create_floor()
-	self:create_ceil()
-	self:create_wall()
+	self:create_walls_floor_and_ceil()
 	self:create_level_objects()
 	self:create_lights()
 end
@@ -25,29 +23,21 @@ function Creator:create_lights()
 
 end
 
-function Creator:create_floor()
+function Creator:create_walls_floor_and_ceil()
+	local add_floor, add_ceil = true, true
+	local data = self.level.data
+	local floors, ceils, walls = data.floor, data.ceil, data.walls
+	local ecs, entities = self.ecs, self.entities
 	for id = 0, self.level.cell_max_id, 1 do
-		local floor = self.level.data.floor[id]
-		if (floor) then
-			self.ecs:add_entity(self.entities:create_floor(id))
-		end
-	end
-end
-function Creator:create_ceil()
-	for id = 0, self.level.cell_max_id, 1 do
-		local ceil = self.level.data.ceil[id]
-		if (ceil) then
-			self.ecs:add_entity(self.entities:create_ceil(id))
-		end
-	end
-end
-function Creator:create_wall()
-	for id = 0, self.level.cell_max_id, 1 do
-		local wall = self.level.data.walls[id]
-		if (wall.base ~= 0 or wall.south or wall.north or wall.west or wall.east) then
-			self.ecs:add_entity(self.entities:create_wall(id))
-		end
+		local floor = add_floor and floors[id]
+		local ceil = add_ceil and ceils[id]
+		if (floor) then ecs:add_entity(entities:create_floor(id)) end
+		if (ceil) then ecs:add_entity(entities:create_ceil(id)) end
 
+		local wall = walls[id]
+		if (wall.base ~= 0 or wall.south or wall.north or wall.west or wall.east) then
+			ecs:add_entity(entities:create_wall(id))
+		end
 	end
 end
 

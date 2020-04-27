@@ -1,4 +1,16 @@
 local M = {}
+M.hashes = {}
+setmetatable(M.hashes, {
+	__index = function(t, key)
+		local h = hash(key)
+		rawset(t, key, h)
+		return h
+	end
+})
+
+function M.hash(key)
+	return M.hashes[key]
+end
 
 M.INPUT = {
 	ACQUIRE_FOCUS = hash("acquire_input_focus"),

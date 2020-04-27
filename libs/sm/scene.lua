@@ -37,11 +37,11 @@ function Scene:load(async)
 	SCENE_LOADER.load(self):subscribe(nil, nil, function()
 		self:load_done()
 		self._state = SCENE_ENUMS.STATES.HIDE
-
 		COMMON.i(string.format("%s loaded", self._name), TAG)
 		COMMON.i(string.format("%s load time %s", self._name, os.clock() - time), TAG)
 	end)
 	while (not async and self._state == SCENE_ENUMS.STATES.LOADING) do coroutine.yield() end
+
 end
 
 function Scene:load_done() end

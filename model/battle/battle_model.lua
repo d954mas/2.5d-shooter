@@ -40,6 +40,7 @@ function Model:load_level()
 	physics3d.init()
 	self.ecs:load_level()
 	LevelCreator(self.world):create()
+	collectgarbage()
 end
 
 function Model:update(dt)
