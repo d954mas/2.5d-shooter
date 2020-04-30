@@ -8,6 +8,8 @@
 ---@class LightPatternData
 ---@field type string
 ---@field speed number|nil
+---@field power number
+---@field delay number
 
 ---@class TileProperties
 ---@field width number
