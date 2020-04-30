@@ -41,6 +41,13 @@ function Model:load_level()
 	self.ecs:load_level()
 	LevelCreator(self.world):create()
 	collectgarbage()
+
+	self.ecs.ecs:refresh()
+
+
+	--self.ecs:find_by_id("light_source_pattern")
+
+
 end
 
 function Model:update(dt)

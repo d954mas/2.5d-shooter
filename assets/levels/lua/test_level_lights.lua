@@ -9,7 +9,7 @@ return {
   tilewidth = 64,
   tileheight = 64,
   nextlayerid = 19,
-  nextobjectid = 294,
+  nextobjectid = 295,
   properties = {},
   tilesets = {
     {
@@ -1557,16 +1557,16 @@ return {
       properties = {},
       objects = {
         {
-          id = 145,
+          id = 294,
           name = "",
           type = "",
           shape = "rectangle",
-          x = 960,
-          y = 832,
+          x = 128,
+          y = 448,
           width = 64,
           height = 64,
           rotation = 0,
-          gid = 200,
+          gid = 197,
           visible = true,
           properties = {}
         }
@@ -3384,7 +3384,8 @@ return {
             ["light_color"] = "0;0.9;0.9",
             ["light_distance"] = 5,
             ["light_power"] = 0.7,
-            ["rays"] = 32
+            ["rays"] = 32,
+            ["tag"] = "light_source_pattern"
           }
         },
         {

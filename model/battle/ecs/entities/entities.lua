@@ -87,7 +87,14 @@ function Entities:initialize()
 		PLAYER = bit.bor(physics3d.GROUPS.ENEMY, physics3d.GROUPS.OBSTACLE),
 		WALL = bit.bor(physics3d.GROUPS.ENEMY, physics3d.GROUPS.PLAYER)
 	}
+	---@type Entity[]
+	self.by_tag = {}
 end
+
+function Entities:find_by_id(id)
+	return self.by_tag[assert(id)]
+end
+
 ---@param world World
 function Entities:set_world(world)
 	self.world = assert(world)
@@ -105,10 +112,19 @@ function Entities:on_entity_removed(e)
 	if (e.light_params) then
 		native_raycasting.camera_delete(e.light_params.camera)
 	end
+
+	if(e.tag) then
+		self.by_tag[e.tag] = nil
+	end
 end
 
 ---@param e Entity
 function Entities:on_entity_added(e)
+	if(e.tag) then
+		COMMON.i("entity with tag:" .. e.tag,TAG)
+		assert(not self.by_tag[e.tag])
+		self.by_tag[e.tag] = e
+	end
 end
 
 ---@param e Entity
@@ -225,6 +241,10 @@ function Entities:add_base_properties(e, properties)
 	if (properties.rotation_speed) then
 		e.rotation_speed = properties.rotation_speed
 	end
+	if (properties.tag) then
+		print("add tag:" .. properties.tag)
+		e.tag = properties.tag
+	end
 end
 
 ---@param properties TileProperties
@@ -247,7 +267,7 @@ function Entities:create_light_source(pos, properties)
 	e.light_params.camera:set_rays(properties.rays ~= -1 and properties.rays or 16)
 	e.light_params.camera:set_fov(properties.fov ~= -1 and properties.fov or math.pi * 2)
 	e.light_params.camera:set_max_dist(properties.light_distance or 1)
-	self:add_base_properties(e,properties)
+	self:add_base_properties(e, properties)
 	return e
 end
 
