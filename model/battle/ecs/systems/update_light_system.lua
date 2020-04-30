@@ -28,15 +28,12 @@ function System:process(e, dt)
 			tmpVec.y = (start_y - neigbour:get_y())
 			local dist = vmath_length(tmpVec)
 
-			e.light_params.current_light.x = e.light_params.start_light.x
-			e.light_params.current_light.y = e.light_params.start_light.y
-			e.light_params.current_light.z = e.light_params.start_light.z
+			--e.light_params.current_light.x = e.light_params.start_light.x
+			--e.light_params.current_light.y = e.light_params.start_light.y
+			--e.light_params.current_light.z = e.light_params.start_light.z
 
 			local v = e.light_params.current_light.z
-			--debug tested light pulse
-			--if(v>0.3)then
-			--	v = COMMON.LUME.clamp(v + math.sin(time/60)*v*0.8,0,1)
-			--end
+
 			local h, s = e.light_params.current_light.x, e.light_params.current_light.y
 			v = v * pow(e.light_params.light_power, dist)
 			light[#light + 1] = native_raycasting.color_hsv_to_rgbi(h, s, v)

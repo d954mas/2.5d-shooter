@@ -29,6 +29,7 @@ function EcsWorld:_init_systems()
 	self.ecs:addSystem(SYSTEMS.UpdateCameraPositionSystem)
 	self.ecs:addSystem(SYSTEMS.UpdateObjectColorSystem)
 	self.ecs:addSystem(SYSTEMS.UpdateLightSystem)
+	self.ecs:addSystem(SYSTEMS.LightsPatternUpdate)
 	--self.ecs:addSystem(SYSTEMS.LightsDynamicUpdate)
 
 	self.ecs:addSystem(SYSTEMS.InputSystem)

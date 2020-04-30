@@ -337,6 +337,13 @@ local function parse_light_sources(map, layer)
 		assert(v >= 0 and v <= 1)
 		obj.properties.light_color = { h = h, s = s, v = v }
 		table.insert(result, obj)
+
+		if (obj.properties.light_pattern) then
+			local data = assert(cjson.decode(obj.properties.light_pattern),"bad json:" .. obj.properties.light_pattern)
+			assert(data.type)
+			obj.properties.light_pattern = data
+			--@TODO add move validations
+		end
 	end
 	return result;
 end

@@ -5,6 +5,10 @@
 ---@field s number
 ---@field v number
 
+---@class LightPatternData
+---@field type string
+---@field speed number|nil
+
 ---@class TileProperties
 ---@field width number
 ---@field tag string
@@ -17,6 +21,7 @@
 ---@field blocked boolean
 ---@field transparent boolean
 ---@field light boolean
+---@field light_pattern LightPatternData
 ---@field light_type string point
 ---@field light_distance number
 ---@field light_color ColorHSV

@@ -9,7 +9,7 @@ return {
   tilewidth = 64,
   tileheight = 64,
   nextlayerid = 19,
-  nextobjectid = 295,
+  nextobjectid = 296,
   properties = {},
   tilesets = {
     {
@@ -3383,6 +3383,7 @@ return {
           properties = {
             ["light_color"] = "0;0.9;0.9",
             ["light_distance"] = 5,
+            ["light_pattern"] = "{\"type\":\"Pattern1\", \"speed\":1}",
             ["light_power"] = 0.7,
             ["rays"] = 32,
             ["tag"] = "light_source_pattern"
@@ -3529,6 +3530,26 @@ return {
             ["light_color"] = "0;0.8;0.8",
             ["light_distance"] = 3,
             ["rotation_speed"] = 90
+          }
+        },
+        {
+          id = 295,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 192,
+          y = 768,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 215,
+          visible = true,
+          properties = {
+            ["light_color"] = "0;0.9;0.9",
+            ["light_distance"] = 5,
+            ["light_pattern"] = "{\"type\":\"Pattern1\", \"speed\":3}",
+            ["light_power"] = 0.7,
+            ["rays"] = 32
           }
         }
       }
