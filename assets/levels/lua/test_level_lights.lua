@@ -3383,7 +3383,7 @@ return {
           properties = {
             ["light_color"] = "0;0.9;0.9",
             ["light_distance"] = 5,
-            ["light_pattern"] = "{\"type\":\"Pattern1\", \"speed\":1}",
+            ["light_pattern"] = "{\"type\":\"Pattern2\", \"speed\":1}",
             ["light_power"] = 0.7,
             ["rays"] = 32,
             ["tag"] = "light_source_pattern"

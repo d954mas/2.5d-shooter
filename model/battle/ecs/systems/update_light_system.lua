@@ -28,13 +28,9 @@ function System:process(e, dt)
 			tmpVec.y = (start_y - neigbour:get_y())
 			local dist = vmath_length(tmpVec)
 
-			--e.light_params.current_light.x = e.light_params.start_light.x
-			--e.light_params.current_light.y = e.light_params.start_light.y
-			--e.light_params.current_light.z = e.light_params.start_light.z
+			local v = e.light_params.light.v
 
-			local v = e.light_params.current_light.z
-
-			local h, s = e.light_params.current_light.x, e.light_params.current_light.y
+			local h, s = e.light_params.light.h, e.light_params.light.s
 			v = v * pow(e.light_params.light_power, dist)
 			light[#light + 1] = native_raycasting.color_hsv_to_rgbi(h, s, v)
 		end

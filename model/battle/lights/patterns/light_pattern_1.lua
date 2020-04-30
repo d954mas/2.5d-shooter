@@ -6,7 +6,7 @@ local Pattern = COMMON.class("LightPattern1", Base)
 
 function Pattern:update(dt)
 	Base.update(self, dt)
-	self.e.light_params.current_light.z = (math.sin(self.time)+1)/2
+	self.e.light_params.light.v = (math.sin(self.time)+1)/2
 end
 
 return Pattern

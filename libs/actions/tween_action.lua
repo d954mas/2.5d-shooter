@@ -68,7 +68,7 @@ function Action:config_value_to_table(data)
 end
 
 function Action:config_get_from()
-	assert("need impl")
+	error("need impl")
 end
 
 function Action:config_get_to()
@@ -115,8 +115,8 @@ function Action:config_table_to_value(data)
 		return self.quaternion
 	end
 
-	if data[self.config.property] then
-		return data[self.config.property]
+	if self.config.object[self.config.property] then
+		return data
 	end
 
 	if data[1] then
@@ -132,7 +132,7 @@ end
 
 --region set_value
 function Action:set_property()
-	assert("need impl")
+	error("need impl")
 end
 
 function Action:set_property_table()

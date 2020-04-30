@@ -1,4 +1,5 @@
 local COMMON = require "libs.common"
+local ActionFunction = require "libs.actions.function_action"
 local BaseAction = require "libs.actions.action"
 local table_remove = table.remove
 local table_insert = table.insert
@@ -23,7 +24,12 @@ end
 
 function Action:add_action(action, to_end)
 	assert(action)
+
+	if type(action) == "function" then
+		action = ActionFunction { fun = action }
+	end
 	assert(action:isInstanceOf(BaseAction))
+
 	assert(not self.coroutine or self.__can_add_action_while_run, "can't add to running action")
 	if to_end then
 		table_insert(self.childs, action)

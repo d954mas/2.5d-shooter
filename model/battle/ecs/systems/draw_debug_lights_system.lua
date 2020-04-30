@@ -25,7 +25,7 @@ function System:process(e, dt)
 	end
 
 	if (e.debug_light_go) then
-		local r, g, b = native_raycasting.color_hsv_to_rgb(e.light_params.current_light.x, e.light_params.current_light.y, e.light_params.current_light.z)
+		local r, g, b = native_raycasting.color_hsv_to_rgb(e.light_params.light.h, e.light_params.light.s, e.light_params.light.v)
 		local color = vmath.vector4(r / 255, g / 255, b / 255, 1)
 		sprite.set_constant(e.debug_light_go.north, "tint", color)
 		sprite.set_constant(e.debug_light_go.south, "tint", color)

@@ -29,8 +29,13 @@ local TAG = "Entities"
 ---@class PlayerInventory
 ---@field keys table
 
+---@class HSVColor
+---@field h number h(0-360)
+---@field s number s(0-1)
+---@field v number v(0-1)
+
 ---@class LightParams
----@field start_light vector3 xyz h(0-360) s(0-1) v(0-1)
+---@field light HSVColor
 ---@field light_power number decrease value per distance
 ---@field camera NativeCamera
 
@@ -263,8 +268,7 @@ function Entities:create_light_source(pos, properties)
 	e.visible = false
 	e.light_params = {
 		light_power = properties.light_power or 1,
-		start_light = vmath.vector3(properties.light_color.h, properties.light_color.s, properties.light_color.v),
-		current_light = vmath.vector3(properties.light_color.h, properties.light_color.s, properties.light_color.v),
+		light = { h = properties.light_color.h, s = properties.light_color.s, v = properties.light_color.v },
 		camera = native_raycasting.camera_new()
 	}
 	e.light_params.camera:set_pos(pos.x, pos.y)
