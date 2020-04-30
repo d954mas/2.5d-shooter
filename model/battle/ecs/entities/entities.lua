@@ -29,13 +29,10 @@ local TAG = "Entities"
 ---@class PlayerInventory
 ---@field keys table
 
----@class HSVColor
----@field h number h(0-360)
----@field s number s(0-1)
----@field v number v(0-1)
+
 
 ---@class LightParams
----@field light HSVColor
+---@field light ColorHSV
 ---@field light_power number decrease value per distance
 ---@field camera NativeCamera
 

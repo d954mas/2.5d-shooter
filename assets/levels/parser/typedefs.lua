@@ -1,9 +1,9 @@
 --Cell used in cpp and in lua.So id start from 0.
 
 ---@class ColorHSV
----@field h number
----@field s number
----@field v number
+---@field h number h(0-360)
+---@field s number s(0-1)
+---@field v number v(0-1)
 
 ---@class LightPatternData
 ---@field type string

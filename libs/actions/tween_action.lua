@@ -40,7 +40,8 @@ function Action:config_check(config)
 		by = "?",
 		object = "table|userdata|string",
 		property = "string",
-		time = "number"
+		time = "number",
+		easing = "string|function|nil"
 	})
 end
 
