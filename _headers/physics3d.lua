@@ -2,8 +2,9 @@ physics3d = {}
 
 physics3d.GROUPS = {
 	OBSTACLE = 1,
-	PLAYER = 1,
-	ENEMY = 1
+	PICKUPS = 2,
+	PLAYER = 4,
+	ENEMY = 8,
 }
 
 function physics3d.init() end

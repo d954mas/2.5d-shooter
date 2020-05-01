@@ -92,8 +92,9 @@ local Entities = COMMON.class("Entities")
 
 function Entities:initialize()
 	self.masks = {
-		PLAYER = bit.bor(physics3d.GROUPS.ENEMY, physics3d.GROUPS.OBSTACLE),
-		WALL = bit.bor(physics3d.GROUPS.ENEMY, physics3d.GROUPS.PLAYER)
+		PLAYER = bit.bor(physics3d.GROUPS.ENEMY, physics3d.GROUPS.OBSTACLE, physics3d.GROUPS.PICKUPS),
+		WALL = bit.bor(physics3d.GROUPS.ENEMY, physics3d.GROUPS.PLAYER),
+		PICKUP = bit.bor(physics3d.GROUPS.PLAYER)
 	}
 	---@type Entity[]
 	self.by_tag = {}
@@ -119,6 +120,10 @@ function Entities:on_entity_removed(e)
 	end
 	if (e.light_params) then
 		native_raycasting.camera_delete(e.light_params.camera)
+	end
+
+	if e.pickup_object_go then
+		go.delete(e.pickup_object_go.root, true)
 	end
 
 	if (e.tag) then
@@ -254,8 +259,12 @@ function Entities:create_pickup_object(object)
 	e.pickup_type = object.properties.pickup_type
 	e.map_object = object
 	e.position = vmath.vector3(object.cell_xf, object.cell_yf, object.properties.position_z or 0)
+	e.position_z_center = 0.125
 	e.visible = false
 	e.dynamic_color = true
+	e.physics_body = physics3d.create_rect(e.position.x, e.position.y, e.position_z_center, 0.25, 0.25, 0.25,
+			false, physics3d.GROUPS.PICKUPS, self.masks.PICKUP)
+	e.physics_body:set_user_data(e)
 	return e
 end
 

@@ -1,17 +1,8 @@
 local ECS = require 'libs.ecs'
----@class PhysicsCollisionsWallSystem:ECSSystem
-local System = ECS.system()
+local BaseSystem = require "model.battle.ecs.systems.physics_collision_base_system"
+---@class PhysicsCollisionsWallSystem:PhysicsCollisionBaseSystem
+local System = BaseSystem.new()
 System.name = "PhysicsCollisionsWallSystem"
-
----@param e Entity
-function System:update(dt)
-	local collisions = physics3d.get_collision_info()
-	for _, info in ipairs(collisions) do
-		if self:is_handle_collision(info) then
-			self:handle_collision(info)
-		end
-	end
-end
 
 ---@param info NativePhysicsCollisionInfo
 function System:is_handle_collision(info)
@@ -23,12 +14,9 @@ end
 function System:handle_collision(info)
 	local e1, e2 = info.body1:get_user_data(), info.body2:get_user_data()
 	local wall_first  = e1.wall and true or false;
-
 	local manifold = info.manifolds[1]
 	local point = manifold.points[1]
 	self:handle_geometry(wall_first and e2 or e1, vmath.vector3(-point.normal.x, point.normal.y, point.normal.z), point.depth)
-
-
 end
 ---@param e Entity
 function System:handle_geometry(e, normal, distance)

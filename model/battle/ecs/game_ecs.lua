@@ -45,6 +45,7 @@ function EcsWorld:_init_systems()
 	self.ecs:addSystem(SYSTEMS.PhysicsResetCorrectionSystem)
 	self.ecs:addSystem(SYSTEMS.UpdatePhysicsSystem)
 	self.ecs:addSystem(SYSTEMS.PhysicsCollisionWallSystem)
+	self.ecs:addSystem(SYSTEMS.PhysicsCollisionPickupSystem)
 
 	self.ecs:addSystem(SYSTEMS.UpdateGoSystem)
 

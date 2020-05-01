@@ -91,10 +91,10 @@ class ContactManager : public rp3d::CollisionCallback {
 
 static void bindGroupsEnum(lua_State* L){
     lua_newtable(L);
-
 	LUA_ENUM(L,"OBSTACLE",0x0001);
-	LUA_ENUM(L,"PLAYER",0x0002);
-	LUA_ENUM(L,"ENEMY",0x0004);
+	LUA_ENUM(L,"PICKUPS",0x0002);
+	LUA_ENUM(L,"PLAYER",0x0004);
+	LUA_ENUM(L,"ENEMY",0x0008);
 }
 
 
