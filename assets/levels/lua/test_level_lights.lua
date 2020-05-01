@@ -8,8 +8,8 @@ return {
   height = 32,
   tilewidth = 64,
   tileheight = 64,
-  nextlayerid = 19,
-  nextobjectid = 296,
+  nextlayerid = 20,
+  nextobjectid = 309,
   properties = {},
   tilesets = {
     {
@@ -1538,6 +1538,98 @@ return {
             ["rays"] = -1
           },
           image = "../tiles/light_sources/point.png",
+          width = 64,
+          height = 64
+        }
+      }
+    },
+    {
+      name = "pickups",
+      firstgid = 216,
+      filename = "../tilesets/pickups.tsx",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 0,
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 1,
+        height = 1
+      },
+      properties = {
+        ["type"] = "pickups"
+      },
+      terrains = {},
+      tilecount = 6,
+      tiles = {
+        {
+          id = 0,
+          properties = {
+            ["pickup_type"] = "ammo_pistol",
+            ["scale"] = 0.5,
+            ["sprite_origin_y"] = 16
+          },
+          image = "../tiles/pickups/pickup_ammo_pistol.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 1,
+          properties = {
+            ["pickup_type"] = "hp",
+            ["scale"] = 0.5,
+            ["sprite_origin_y"] = 16
+          },
+          image = "../tiles/pickups/pickup_hp.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 2,
+          properties = {
+            ["pickup_type"] = "key_blue",
+            ["scale"] = 0.25,
+            ["sprite_origin_y"] = 32
+          },
+          image = "../tiles/pickups/pickup_key_blue.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 3,
+          properties = {
+            ["pickup_type"] = "key_green",
+            ["scale"] = 0.25,
+            ["sprite_origin_y"] = 32
+          },
+          image = "../tiles/pickups/pickup_key_green.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 4,
+          properties = {
+            ["pickup_type"] = "key_white",
+            ["scale"] = 0.25,
+            ["sprite_origin_y"] = 32
+          },
+          image = "../tiles/pickups/pickup_key_white.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 5,
+          properties = {
+            ["pickup_type"] = "key_yellow",
+            ["scale"] = 0.25,
+            ["sprite_origin_y"] = 32
+          },
+          image = "../tiles/pickups/pickup_key_yellow.png",
           width = 64,
           height = 64
         }
@@ -3551,6 +3643,173 @@ return {
             ["light_power"] = 0.7,
             ["rays"] = 32
           }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      id = 19,
+      name = "pickups",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      draworder = "topdown",
+      properties = {},
+      objects = {
+        {
+          id = 296,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 256,
+          y = 512,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 216,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 297,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 384,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 216,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 298,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 128,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 216,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 299,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 64,
+          y = 128,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 216,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 300,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 64,
+          y = 832,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 218,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 301,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 448,
+          y = 512,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 219,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 302,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 512,
+          y = 768,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 220,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 303,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 512,
+          y = 832,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 221,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 304,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 256,
+          y = 640,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 217,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 305,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 64,
+          y = 384,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 217,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 308,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 192,
+          y = 256,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 216,
+          visible = true,
+          properties = {}
         }
       }
     }

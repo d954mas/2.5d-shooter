@@ -339,11 +339,24 @@ local function parse_light_sources(map, layer)
 		table.insert(result, obj)
 
 		if (obj.properties.light_pattern) then
-			local data = assert(cjson.decode(obj.properties.light_pattern),"bad json:" .. obj.properties.light_pattern)
+			local data = assert(cjson.decode(obj.properties.light_pattern), "bad json:" .. obj.properties.light_pattern)
 			assert(data.type)
 			obj.properties.light_pattern = data
 			--@TODO add move validations
 		end
+	end
+	return result;
+end
+
+local function parse_pickups(map, layer)
+	check_layer_tilesets(layer, { assert(TILESETS.tilesets["pickups"]) })
+	assert(layer.objects)
+	---@type LevelMapObject[]
+	local objects = layer.objects
+	local result = {}
+	for _, obj in ipairs(objects) do
+		assert(obj.properties.pickup_type)
+		table.insert(result, obj)
 	end
 	return result;
 end
@@ -369,6 +382,7 @@ local function parse_level(path, result_path)
 	parse_objects(data, assert(get_layer(tiled, "objects")))
 	data.level_objects = parse_level_objects(data, assert(get_layer(tiled, "level_objects")))
 	data.light_sources = parse_light_sources(data, assert(get_layer(tiled, "light_sources")))
+	data.pickups = parse_pickups(data, assert(get_layer(tiled, "pickups")))
 
 	check(data)
 	--[[

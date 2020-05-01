@@ -43,6 +43,8 @@ local TAG = "Entities"
 ---@field player boolean true if it player entity
 ---@field enemy boolean
 ---@field level_object boolean
+---@field pickup_object boolean
+---@field pickup_type string
 ---@field floor boolean
 ---@field ceil boolean
 ---@field wall boolean
@@ -56,6 +58,7 @@ local TAG = "Entities"
 ---@field ceil_go FloorGO
 ---@field wall_go WallGo
 ---@field level_object_go LevelObjectGO
+---@field pickup_object_go PickupObjectGO
 ---@field debug_physics_body_go WallGo
 ---@field debug_light_go DebugLightGo
 ---@field cell_id number
@@ -233,6 +236,22 @@ function Entities:create_level_object(object)
 	e.rotation_look_at_player = object.properties.rotation_look_at_player
 	e.rotation_global = object.properties.rotation_global
 	e.level_object = true
+	e.map_object = object
+	e.position = vmath.vector3(object.cell_xf, object.cell_yf, object.properties.position_z or 0)
+	e.visible = false
+	e.dynamic_color = true
+	return e
+end
+
+---@param object LevelMapObject
+function Entities:create_pickup_object(object)
+	assert(object)
+	---@type Entity
+	local e = {}
+	self:add_base_properties(e, object.properties)
+	e.rotation_global = true
+	e.pickup_object = true
+	e.pickup_type = object.properties.pickup_type
 	e.map_object = object
 	e.position = vmath.vector3(object.cell_xf, object.cell_yf, object.properties.position_z or 0)
 	e.visible = false

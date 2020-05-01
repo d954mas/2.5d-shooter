@@ -20,6 +20,7 @@
 ---@field texture_size number used to find scale of object.
 ---@field sprite_origin_y number used to correctly set origin for sprite
 ---@field position_z number default z position
+---@field pickup_type string
 ---@field blocked boolean
 ---@field transparent boolean
 ---@field light boolean
@@ -92,4 +93,5 @@
 ---@field player LevelDataPlayer
 ---@field level_objects LevelMapObject[]
 ---@field light_sources LevelMapObject[]
+---@field pickups LevelMapObject[]
 

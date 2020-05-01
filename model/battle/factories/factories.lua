@@ -10,6 +10,7 @@ local URLS = {
 		debug_physics_body_dynamic = msg.url("game_scene:/factories#debug_physics_body_dynamic"),
 		wall_part_transparent = msg.url("game_scene:/factories#wall_part_transparent"),
 		level_object = msg.url("game_scene:/factories#level_object"),
+		pickup = msg.url("game_scene:/factories#pickup"),
 		level_object_cup = msg.url("game_scene:/factories#level_object_cup"),
 		level_object_human = msg.url("game_scene:/factories#level_object_human"),
 		level_object_teapot = msg.url("game_scene:/factories#level_object_teapot"),
@@ -43,6 +44,11 @@ local OBJECTS_CONFIGS = {
 ---@field sprite url
 
 ---@class LevelObjectGO
+---@field root url
+---@field sprite url it have sprite or model
+---@field model url
+
+---@class PickupObjectGO
 ---@field root url
 ---@field sprite url it have sprite or model
 ---@field model url
@@ -103,8 +109,14 @@ function M.create_level_object(position, map_object)
 	elseif (tag == "cup") then
 		return M.create_level_object_from_model(position, map_object, URLS.factory.level_object_cup, OBJECTS_CONFIGS.LEVEL_OBJECTS.CUP)
 	else
-		return M.create_level_object_from_tile(position, map_object.tile_id)
+		return M.create_draw_object_from_tile(URLS.factory.level_object,position, map_object.tile_id)
 	end
+end
+
+---@return PickupObjectGO
+---@param map_object LevelMapObject
+function M.create_pickup(position, map_object)
+	return M.create_draw_object_from_tile(URLS.factory.pickup,position, map_object.tile_id)
 end
 
 function M.create_level_object_from_model(position, map_object, factory_url, config)
@@ -113,13 +125,16 @@ function M.create_level_object_from_model(position, map_object, factory_url, con
 	return { root = root, model = model_url }
 end
 
-function M.create_level_object_from_tile(position, tile_id)
+function M.create_draw_object_from_tile(factory_url,position, tile_id)
+	assert(factory_url)
+	assert(position)
+	assert(tile_id)
 	local tile = TILESET.by_id[tile_id]
 	local root_empty = tile.properties.sprite_origin_y
-	local root = msg.url(factory.create(root_empty and URLS.factory.empty or URLS.factory.level_object, position, nil, nil, tile.scale))
+	local root = msg.url(factory.create(root_empty and URLS.factory.empty or factory_url, position, nil, nil, tile.scale))
 	local sprite_go = root
 	if (root_empty) then
-		sprite_go = msg.url(factory.create(URLS.factory.level_object))
+		sprite_go = msg.url(factory.create(factory_url))
 		go.set_parent(sprite_go, root)
 		go.set_position(vmath.vector3(0, tile.properties.sprite_origin_y, 0), sprite_go)
 	end

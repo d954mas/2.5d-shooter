@@ -13,12 +13,13 @@ end
 function Creator:create()
 	self:create_walls_floor_and_ceil()
 	self:create_level_objects()
+	self:create_pickup_objects()
 	self:create_lights()
 end
 
 function Creator:create_lights()
 	for _, obj in ipairs(self.level.data.light_sources) do
-		self.ecs:add_entity(self.entities:create_light_source(vmath.vector3(obj.cell_xf, obj.cell_yf, 0.8),obj.properties))
+		self.ecs:add_entity(self.entities:create_light_source(vmath.vector3(obj.cell_xf, obj.cell_yf, 0.8), obj.properties))
 	end
 
 end
@@ -44,6 +45,13 @@ end
 function Creator:create_level_objects()
 	for _, object in ipairs(self.level.data.level_objects) do
 		self.ecs:add(self.entities:create_level_object(object))
+	end
+end
+
+function Creator:create_pickup_objects()
+	for _, object in ipairs(self.level.data.pickups) do
+		print("add pickups")
+		self.ecs:add(self.entities:create_pickup_object(object))
 	end
 end
 

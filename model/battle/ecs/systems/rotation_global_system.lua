@@ -2,14 +2,15 @@ local ECS = require 'libs.ecs'
 
 ---@class RotationGlobalSystem:ECSSystem
 local System = ECS.processingSystem()
-System.filter = ECS.requireAll("level_object_go","rotation_global")
+System.filter = ECS.filter("rotation_global&(level_object_go|pickup_object_go)")
 System.name = "RotationGlobalSystem"
 
 System.rotation_global = 0
 
 ---@param e Entity
 function System:process(e, dt)
-	local url = e.level_object_go.sprite or e.level_object_go.model
+	local go_object = e.level_object_go or e.pickup_object_go
+	local url = go_object.sprite or go_object.model
 	go.set_rotation(self.quaternion,url)
 end
 

@@ -1542,6 +1542,98 @@ return {
           height = 64
         }
       }
+    },
+    {
+      name = "pickups",
+      firstgid = 216,
+      filename = "pickups.tsx",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 0,
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 1,
+        height = 1
+      },
+      properties = {
+        ["type"] = "pickups"
+      },
+      terrains = {},
+      tilecount = 6,
+      tiles = {
+        {
+          id = 0,
+          properties = {
+            ["pickup_type"] = "ammo_pistol",
+            ["scale"] = 0.5,
+            ["sprite_origin_y"] = 16
+          },
+          image = "../tiles/pickups/pickup_ammo_pistol.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 1,
+          properties = {
+            ["pickup_type"] = "hp",
+            ["scale"] = 0.5,
+            ["sprite_origin_y"] = 16
+          },
+          image = "../tiles/pickups/pickup_hp.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 2,
+          properties = {
+            ["pickup_type"] = "key_blue",
+            ["scale"] = 0.25,
+            ["sprite_origin_y"] = 32
+          },
+          image = "../tiles/pickups/pickup_key_blue.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 3,
+          properties = {
+            ["pickup_type"] = "key_green",
+            ["scale"] = 0.25,
+            ["sprite_origin_y"] = 32
+          },
+          image = "../tiles/pickups/pickup_key_green.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 4,
+          properties = {
+            ["pickup_type"] = "key_white",
+            ["scale"] = 0.25,
+            ["sprite_origin_y"] = 32
+          },
+          image = "../tiles/pickups/pickup_key_white.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 5,
+          properties = {
+            ["pickup_type"] = "key_yellow",
+            ["scale"] = 0.25,
+            ["sprite_origin_y"] = 32
+          },
+          image = "../tiles/pickups/pickup_key_yellow.png",
+          width = 64,
+          height = 64
+        }
+      }
     }
   },
   layers = {}

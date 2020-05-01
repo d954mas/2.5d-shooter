@@ -5,4 +5,5 @@
  <tileset firstgid="197" source="objects.tsx"/>
  <tileset firstgid="201" source="level_objects.tsx"/>
  <tileset firstgid="215" source="light_sources.tsx"/>
+ <tileset firstgid="216" source="pickups.tsx"/>
 </map>

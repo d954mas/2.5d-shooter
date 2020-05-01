@@ -8,7 +8,7 @@ return {
   height = 8,
   tilewidth = 64,
   tileheight = 64,
-  nextlayerid = 18,
+  nextlayerid = 19,
   nextobjectid = 117,
   properties = {},
   tilesets = {
@@ -1467,6 +1467,18 @@ return {
           properties = {}
         }
       }
+    },
+    {
+      type = "objectgroup",
+      id = 18,
+      name = "pickups",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      draworder = "topdown",
+      properties = {},
+      objects = {}
     },
     {
       type = "objectgroup",
