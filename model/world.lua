@@ -1,6 +1,8 @@
 local COMMON = require "libs.common"
 local BattleModel = require "model.battle.battle_model"
 
+local TAG = "World"
+
 ---@class World
 ---@field battle_model BattleModel|nil
 local World = COMMON.class("World")
@@ -14,7 +16,7 @@ function World:update(dt)
 end
 
 function World:final()
-	self:battle_model_final()
+--	self:battle_model_final()
 end
 
 ---@param level Level
@@ -27,6 +29,7 @@ end
 
 function World:battle_model_final()
 	if self.battle_model then
+		COMMON.i("battle_model_final",TAG)
 		self.battle_model:final()
 		self.battle_model = nil
 	end

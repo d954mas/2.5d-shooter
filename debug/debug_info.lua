@@ -5,6 +5,7 @@ local WORLD = require "model.world"
 local M = {}
 
 M.entities = 0
+M.hero_pos = vmath.vector3(0)
 
 function M.init()
 end
@@ -35,6 +36,13 @@ end
 function M.update(dt)
 	local have_ecs = WORLD.battle_model and WORLD.battle_model.ecs and WORLD.battle_model.ecs
 	M.entities = have_ecs and #have_ecs.ecs.entities or 0
+	if(have_ecs) then
+		if WORLD.battle_model.ecs.player then
+			M.hero_pos.x = WORLD.battle_model.ecs.player.position.x
+			M.hero_pos.y = WORLD.battle_model.ecs.player.position.y
+			M.hero_pos.z = WORLD.battle_model.ecs.player.position.z
+		end
+	end
 end
 
 return M

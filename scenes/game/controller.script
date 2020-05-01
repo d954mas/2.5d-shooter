@@ -36,6 +36,7 @@ end
 function Script:final()
 	COMMON.CONTEXT:unregister(COMMON.CONTEXT.NAMES.GAME)
 	self.input.release()
+	WORLD:battle_model_final()
 end
 
 COMMON.N28S.register(Script())

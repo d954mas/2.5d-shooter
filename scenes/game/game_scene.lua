@@ -22,6 +22,7 @@ end
 function Scene:show_done()
 	WORLD.battle_model:on_scene_show()
 	CURSOR_HELPER.register_listeners()
+
 end
 
 function Scene:hide_done()
@@ -49,7 +50,6 @@ function Scene:on_input(action_id, action)
 end
 
 function Scene:unload_done()
-	WORLD:battle_model_final()
 	self.level = nil
 end
 
