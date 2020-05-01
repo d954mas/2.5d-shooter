@@ -24,11 +24,16 @@ function Pattern:add_animation()
 	color_4.v = 0.75
 	local color_5 = COMMON.LUME.clone_deep(start_hsv);
 	color_5.v = 0.5
-	self.animation_sequence:add_action(ACTIONS.TweenTable { object = self.e.light_params, from = start_hsv, to = color_2, property = "light", time = 0.3, easing = TWEEN.easing.outQuad })
-	self.animation_sequence:add_action(ACTIONS.TweenTable { object = self.e.light_params, from = color_2, to = color_3, property = "light", time = 0.15, easing = TWEEN.easing.inQuad })
-	self.animation_sequence:add_action(ACTIONS.TweenTable { object = self.e.light_params, from = color_3, to = color_4, property = "light", time = 0.35, easing = TWEEN.easing.linear })
-	self.animation_sequence:add_action(ACTIONS.TweenTable { object = self.e.light_params, from = color_4, to = color_5, property = "light", time = 0.15, easing = TWEEN.easing.linear })
-	self.animation_sequence:add_action(ACTIONS.TweenTable { object = self.e.light_params, from = color_5, to = start_hsv, property = "light", time = 0.2, easing = TWEEN.easing.inQuad })
+	self.animation_sequence:add_action(ACTIONS.TweenTable { object = self.e.light_params, from = start_hsv, to = color_2,
+															property = "light", time = 0.3, easing = TWEEN.easing.outQuad })
+	self.animation_sequence:add_action(ACTIONS.TweenTable { object = self.e.light_params, from = color_2, to = color_3,
+															property = "light", time = 0.15, easing = TWEEN.easing.inQuad })
+	self.animation_sequence:add_action(ACTIONS.TweenTable { object = self.e.light_params, from = color_3, to = color_4,
+															property = "light", time = 0.35, easing = TWEEN.easing.linear })
+	self.animation_sequence:add_action(ACTIONS.TweenTable { object = self.e.light_params, from = color_4, to = color_5,
+															property = "light", time = 0.15, easing = TWEEN.easing.linear })
+	self.animation_sequence:add_action(ACTIONS.TweenTable { object = self.e.light_params, from = color_5, to = start_hsv,
+															property = "light", time = 0.2, easing = TWEEN.easing.inQuad })
 	self.animation_sequence:add_action(function() self:add_animation() end)
 end
 

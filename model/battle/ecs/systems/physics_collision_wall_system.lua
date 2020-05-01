@@ -1,4 +1,3 @@
-local ECS = require 'libs.ecs'
 local BaseSystem = require "model.battle.ecs.systems.physics_collision_base_system"
 ---@class PhysicsCollisionsWallSystem:PhysicsCollisionBaseSystem
 local System = BaseSystem.new()

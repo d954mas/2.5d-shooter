@@ -1,4 +1,3 @@
-local COMMON = require "libs.common"
 local Animation = require "libs.animation"
 
 local M = {}

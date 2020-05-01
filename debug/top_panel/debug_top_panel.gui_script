@@ -132,8 +132,8 @@ function Script:init_gui()
 			game.childs.level_map:update(dt)
 		end
 		if config.show_game_info then
-			gui.set_text(game.childs.lbl_info_1, string.format("Player:(%.1f %.1f %.1f)\nwalls:%d\nceils/floors:%d", DEBUG_INFO.hero_pos.x, DEBUG_INFO.hero_pos.y,
-					DEBUG_INFO.hero_pos.z, DEBUG_INFO.walls, DEBUG_INFO.floors + DEBUG_INFO.ceils))
+			gui.set_text(game.childs.lbl_info_1, string.format("Player:(%.1f %.1f %.1f)\nwalls:%d\nceils/floors:%d", DEBUG_INFO.hero_pos.x,
+					DEBUG_INFO.hero_pos.y, DEBUG_INFO.hero_pos.z, DEBUG_INFO.walls, DEBUG_INFO.floors + DEBUG_INFO.ceils))
 		end
 	end
 	gui.set_enabled(self.views.panels.game.childs.level_map.vh.map_node, false)

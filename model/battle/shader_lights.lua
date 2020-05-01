@@ -14,7 +14,8 @@ local ShaderLightsConfig = {
 function ShaderLights:initialize(config)
 	checks("?", ShaderLightsConfig)
 	self.config = config
-	self.buffer_lua = buffer.create(self.config.size * self.config.size * self.config.pixel_per_cell, { { name = HASH_SHADER_LIGHTS, type = buffer.VALUE_TYPE_UINT8, count = 3 } })
+	self.buffer_lua = buffer.create(self.config.size * self.config.size * self.config.pixel_per_cell,
+			{ { name = HASH_SHADER_LIGHTS, type = buffer.VALUE_TYPE_UINT8, count = 3 } })
 	self.buffer = native_raycasting.buffer_new(self.buffer_lua, self.config.size, self.config.size, 3)
 	---@type World
 	self.world = nil
@@ -48,7 +49,8 @@ end
 function ShaderLights:on_changed()
 	local ctx = COMMON.CONTEXT:set_context_top_by_name(COMMON.CONTEXT.NAMES.DYNAMIC_LIGHT)
 	if (not self.go_header) then
-		self.go_header = { width = self.config.size, height = self.config.size, type = resource.TEXTURE_TYPE_2D, format = resource.TEXTURE_FORMAT_RGB, num_mip_maps = 0 }
+		self.go_header = { width = self.config.size, height = self.config.size, type = resource.TEXTURE_TYPE_2D,
+						   format = resource.TEXTURE_FORMAT_RGB, num_mip_maps = 0 }
 	end
 	resource.set_texture(ctx.data.model0_texture_path, self.go_header, self.buffer_lua)
 	ctx:remove()
