@@ -83,6 +83,9 @@
   <image width="64" height="64" source="../tiles/walls/wall25.png"/>
  </tile>
  <tile id="25">
+  <properties>
+   <property name="wall_animation" value="{&quot;animation&quot; : &quot;wall26&quot;}"/>
+  </properties>
   <image width="64" height="64" source="../tiles/walls/wall26.png"/>
  </tile>
  <tile id="26">

@@ -1,5 +1,8 @@
 local COMMON = require "libs.common"
 local LIGHT_PATTERNS = require "model.battle.lights.patterns.light_patterns"
+local ANIMATIONS_CONFIGS = require "model.battle.animation_configs"
+
+local Animations = require "libs.animation"
 local TAG = "Entities"
 
 ---@class FlashInfo
@@ -230,6 +233,14 @@ function Entities:create_wall(cell_id)
 		e.physics_static = true
 		e.physics_body:set_user_data(e)
 	end
+
+	if (e.wall_cell.base ~= 0) then
+		local tile = self.level:get_tile(e.wall_cell.base.tile_id)
+		if (tile.properties.wall_animation) then
+			e.wall_animation = Animations(ANIMATIONS_CONFIGS.get_animation(tile.properties.wall_animation.animation))
+		end
+	end
+
 	return e
 end
 

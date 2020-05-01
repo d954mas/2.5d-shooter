@@ -36,6 +36,7 @@ local function parse_tilesets(path)
 		tilesets[tileset.name] = { first_gid = tileset.firstgid, end_gid = tileset.firstgid + tileset.tiles[#tileset.tiles].id, name = tileset.name,
 								   properties = tileset.properties or {} }
 		for _, tile in ipairs(tileset.tiles) do
+			---@type TileProperties
 			tile.properties = tile.properties or {}
 			id_to_tile[tile.id + tileset.firstgid] = tile
 			tile.id = tile.id + tileset.firstgid
@@ -44,6 +45,11 @@ local function parse_tilesets(path)
 			if (tile.angle) then tile.angle = math.rad(tile.angle) end
 			if (tile.rotation_speed) then tile.rotation_speed = math.rad(tile.rotation_speed) end
 			if (tile.fov) then tile.fov = math.rad(tile.fov) end
+			if (tile.properties.wall_animation) then
+				local json_str = tile.properties.wall_animation
+				tile.properties.wall_animation = cjson.decode(tile.properties.wall_animation)
+				assert(tile.properties.wall_animation.animation,"bad animation:" .. json_str)
+			end
 			--copy tileset properties to tile properties
 			setmetatable(tile.properties, { __index = tileset.properties })
 			if tile.image then
@@ -365,6 +371,9 @@ end
 local function check(map)
 	assert(map.player, "no player")
 	assert(map.level_objects, "no player")
+	for _, tile in pairs(TILESETS.by_id) do
+
+	end
 end
 
 local function parse_level(path, result_path)

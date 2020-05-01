@@ -12,8 +12,9 @@ Anim.PLAYBACK = {
 	FORWARD = "FORWARD",
 	BACKWARD = "BACKWARD",
 	PING_PONG = "PING_PONG",
-
 }
+--@TODO Fixed PingPong PLAYBACK(same animations not sync)
+
 ---@param config AnimationConfig
 function Anim:initialize(config)
 	assert(config)
@@ -21,7 +22,7 @@ function Anim:initialize(config)
 	assert(#config.frames > 0)
 	self.fps = assert(config.fps)
 	self.duration = #self.frames / self.fps
-	self.playback = config.playback or go.PLAYBACK_ONCE_FORWARD
+	self.playback = config.playback or Anim.PLAYBACK.FORWARD
 	self.loops = math.ceil(config.loops or 1)
 	if self.loops == 0 then
 		self.loops = -1
@@ -57,9 +58,9 @@ function Anim:update(dt)
 	end
 	self.time = self.time + dt
 	local a = self.time / self.duration
-	if self.playback == Anim.PLAYBACK.PING_PONG then
-		a = a / 2
-	end
+	--if self.playback == Anim.PLAYBACK.PING_PONG then
+	--	a = a / 2
+	--end
 
 	local full, part = math.modf(a)
 	if self.playback == Anim.PLAYBACK.FORWARD then
@@ -67,10 +68,11 @@ function Anim:update(dt)
 	elseif self.playback == Anim.PLAYBACK.BACKWARD then
 		a = 1 - part
 	elseif self.playback == Anim.PLAYBACK.PING_PONG then
-		a = a * 2
+		a = COMMON.LUME.clamp(a * 2,0,2)
 		if a > 1 then
 			a = 2 - a
 		end
+		a = COMMON.LUME.clamp(a ,0,1)
 	end
 
 	if full >= 1 then
@@ -95,4 +97,6 @@ end
 function Anim:get_frame()
 	return self.frames[self.frame_idx]
 end
+
+return Anim
 

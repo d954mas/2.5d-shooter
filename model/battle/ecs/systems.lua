@@ -10,6 +10,7 @@ local require = function(k)
 end
 
 function M.load()
+	M.AnimationWallSystem = require "model.battle.ecs.systems.animation_wall_system"
 	M.UpdateLightSystem = require "model.battle.ecs.systems.update_light_system"
 	M.AutoDestroySystem = require "model.battle.ecs.systems.auto_destroy_system"
 	M.CameraBobSystem = require "model.battle.ecs.systems.camera_bob_system"

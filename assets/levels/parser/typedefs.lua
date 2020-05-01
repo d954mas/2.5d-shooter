@@ -11,6 +11,10 @@
 ---@field power number
 ---@field delay number
 
+---@class WallAnimationConfig
+---@field animation string
+
+
 ---@class TileProperties
 ---@field width number
 ---@field tag string
@@ -32,6 +36,7 @@
 ---@field fov number
 ---@field angle number
 ---@field rotation_speed number per second
+---@field wall_animation WallAnimationConfig
 
 ---@class LevelMapObject
 ---@field tile_id number

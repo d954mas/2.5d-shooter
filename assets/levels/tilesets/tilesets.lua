@@ -188,6 +188,9 @@ return {
         },
         {
           id = 25,
+          properties = {
+            ["wall_animation"] = "{\"animation\" : \"wall26\"}"
+          },
           image = "../tiles/walls/wall26.png",
           width = 64,
           height = 64

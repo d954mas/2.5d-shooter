@@ -13,9 +13,9 @@ function EcsWorld:initialize(world)
 	self.world = assert(world)
 	self.entities = Entities(world)
 	self:_init_systems()
-	self.ecs.on_entity_added = function(_,...) self.entities:on_entity_added(...) end
-	self.ecs.on_entity_updated = function(_,...) self.entities:on_entity_updated(...) end
-	self.ecs.on_entity_removed = function(_,...) self.entities:on_entity_removed(...) end
+	self.ecs.on_entity_added = function(_, ...) self.entities:on_entity_added(...) end
+	self.ecs.on_entity_updated = function(_, ...) self.entities:on_entity_updated(...) end
+	self.ecs.on_entity_removed = function(_, ...) self.entities:on_entity_removed(...) end
 end
 
 function EcsWorld:find_by_id(id)
@@ -56,6 +56,7 @@ function EcsWorld:_init_systems()
 	self.ecs:addSystem(SYSTEMS.DrawCeilSystem)
 	self.ecs:addSystem(SYSTEMS.DrawFloorSystem)
 	self.ecs:addSystem(SYSTEMS.DrawWallSystem)
+	self.ecs:addSystem(SYSTEMS.AnimationWallSystem)
 	self.ecs:addSystem(SYSTEMS.DrawLevelObjectSystem)
 	self.ecs:addSystem(SYSTEMS.DrawPickupsSystem)
 	self.ecs:addSystem(SYSTEMS.DrawDebugPhysicsBodiesSystem)
