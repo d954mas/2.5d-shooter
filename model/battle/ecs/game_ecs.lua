@@ -53,6 +53,9 @@ function EcsWorld:_init_systems()
 
 	self.ecs:addSystem(SYSTEMS.UpdateCameraVisibleCellsSystem)
 	self.ecs:addSystem(SYSTEMS.CheckVisibleSystem)
+
+	self.ecs:addSystem(SYSTEMS.ActionOpenDoorSystem)
+
 	self.ecs:addSystem(SYSTEMS.DrawCeilSystem)
 	self.ecs:addSystem(SYSTEMS.DrawFloorSystem)
 	self.ecs:addSystem(SYSTEMS.DrawWallSystem)
@@ -76,6 +79,15 @@ function EcsWorld:_load_player()
 	self.player = self.entities:create_player(vmath.vector3(self.level.data.player.position.x, self.level.data.player.position.y, 0))
 	self.player.angle.x = self.level.data.player.angle
 	self:add_entity(self.player)
+end
+
+---@param e Entity
+function EcsWorld:raycast(e, dist, mask)
+	local pos = vmath.vector3(e.position.x, e.position.y, 0)
+	local pos_end = vmath.normalize(vmath.rotate(vmath.quat_rotation_z(e.angle.x), pos))
+	pos_end = pos + pos_end * dist
+	return physics3d.raycast(pos.x, pos.y, pos.z, pos_end.x, pos_end.y, pos_end.z, mask)
+
 end
 
 function EcsWorld:update(dt)
