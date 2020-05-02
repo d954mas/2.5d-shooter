@@ -1,8 +1,15 @@
 local COMMON = require "libs.common"
 
+---@class GameGuiScript
 local Script = COMMON.new_n28s()
 
 function Script:bind_vh()
+	self.vh = {
+		action_info = {
+			root = gui.get_node("action_info"),
+			lbl = gui.get_node("action_info/lbl")
+		}
+	}
 	self.view = {
 
 	}
@@ -12,15 +19,21 @@ function Script:init_gui()
 
 end
 
+function Script:action_info_set_visible(visible)
+	gui.set_enabled(self.vh.action_info.root, visible)
+end
+
 function Script:init()
 	COMMON.input_acquire()
 	self:bind_vh()
 	self:init_gui()
+	COMMON.CONTEXT:register(COMMON.CONTEXT.NAMES.GAME_GUI, self)
 end
 
 function Script:update(dt) end
 
 function Script:final()
+	COMMON.CONTEXT:unregister(COMMON.CONTEXT.NAMES.GAME_GUI)
 	COMMON.input_release()
 end
 
