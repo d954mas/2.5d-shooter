@@ -42,10 +42,24 @@ static int CellDataBindGetId(lua_State *L){
 	return 1;
 }
 
+static int CellDataBindSetTransparent(lua_State *L){
+    CellData *im = CellDataCheck(L, 1);
+    bool transparent = lua_toboolean(L,2);
+    im->transparent = transparent;
+    return 0;
+}
+
 static int CellDataBindGetTransparent(lua_State *L){
  	CellData *im = CellDataCheck(L, 1);
  	lua_pushboolean(L, im->transparent);
  	return 1;
+}
+
+static int CellDataBindSetBlocked(lua_State *L){
+    CellData *im = CellDataCheck(L, 1);
+    bool blocked = lua_toboolean(L,2);
+    im->blocked = blocked;
+    return 0;
 }
 
 static int CellDataBindGetBlocked(lua_State *L){
@@ -81,8 +95,10 @@ void CellDataBind(lua_State * L){
         {"get_y",CellDataBindGetY},
         {"get_visibility",CellDataBindGetVisibility},
         {"get_blocked",CellDataBindGetBlocked},
+        {"set_blocked",CellDataBindSetBlocked},
         {"get_id",CellDataBindGetId},
         {"get_transparent",CellDataBindGetTransparent},
+        {"set_transparent",CellDataBindSetTransparent},
         {"set_color",CellDataBindSetColor},
         {"get_color",CellDataBindGetColor},
         {"__tostring",CellDataToString},

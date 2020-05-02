@@ -51,6 +51,8 @@ local TAG = "Entities"
 ---@field floor boolean
 ---@field ceil boolean
 ---@field wall boolean
+---@field obstacle boolean
+---@field door boolean
 ---@field light boolean
 ---@field light_pattern LightPattern
 ---@field light_pattern_config LightPatternData
@@ -127,6 +129,10 @@ function Entities:on_entity_removed(e)
 
 	if e.pickup_object_go then
 		go.delete(e.pickup_object_go.root, true)
+	end
+
+	if e.debug_physics_body_go then
+		go.delete(e.debug_physics_body_go.root, true)
 	end
 
 	if (e.tag) then
@@ -223,6 +229,7 @@ function Entities:create_wall(cell_id)
 	local e = {}
 	e.cell_id = cell_id
 	e.wall = true
+	e.obstacle = true
 	e.wall_cell = self.level:map_get_wall_by_id(cell_id)
 	local x, y = e.wall_cell.native_cell:get_x() + 0.5, e.wall_cell.native_cell:get_y() + 0.5
 	e.position = vmath.vector3(x, y, 0.5)
@@ -240,7 +247,30 @@ function Entities:create_wall(cell_id)
 			e.wall_animation = Animations(ANIMATIONS_CONFIGS.get_animation(tile.properties.wall_animation.animation))
 		end
 	end
+	return e
+end
 
+---@param object LevelMapObject
+function Entities:create_door(object)
+	---@type Entity
+	local e = {}
+	self:add_base_properties(e, object.properties)
+	e.door = true
+	e.obstacle = true
+	e.door_data = {
+		closed = true
+	}
+	e.map_object = object
+	e.position = vmath.vector3(object.cell_xf, object.cell_yf, 0.5)
+	e.visible = false
+	e.wall_cell = self.level:map_get_wall_by_id(self.level:coords_to_id(object.cell_x, object.cell_y))
+	e.physics_body = physics3d.create_rect(e.position.x, e.position.y, e.position.z, 1, 1, 1, true, physics3d.GROUPS.OBSTACLE, self.masks.WALL)
+	e.physics_static = true
+	e.physics_body:set_user_data(e)
+	e.wall_cell.native_cell:set_transparent(true)
+	if (e.door_data.closed) then
+		e.wall_cell.native_cell:set_blocked(e.door_data.closed)
+	end
 	return e
 end
 

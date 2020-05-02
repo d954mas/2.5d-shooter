@@ -6,13 +6,13 @@ System.name = "PhysicsCollisionsWallSystem"
 ---@param info NativePhysicsCollisionInfo
 function System:is_handle_collision(info)
 	local e1, e2 = info.body1:get_user_data(), info.body2:get_user_data()
-	return e1.wall or e2.wall
+	return e1.obstacle or e2.obstacle
 end
 
 ---@param info NativePhysicsCollisionInfo
 function System:handle_collision(info)
 	local e1, e2 = info.body1:get_user_data(), info.body2:get_user_data()
-	local wall_first  = e1.wall and true or false;
+	local wall_first  = e1.obstacle and true or false;
 	local manifold = info.manifolds[1]
 	local point = manifold.points[1]
 	self:handle_geometry(wall_first and e2 or e1, vmath.vector3(-point.normal.x, point.normal.y, point.normal.z), point.depth)

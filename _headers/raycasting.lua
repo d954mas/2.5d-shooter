@@ -49,7 +49,9 @@ function NativeCellData:set_color(color) end
 function NativeCellData:get_color() end
 function NativeCellData:get_id() end
 function NativeCellData:get_transparent() end
+function NativeCellData:set_transparent(transparent) end
 function NativeCellData:get_blocked() end
+function NativeCellData:set_blocked(blocked) end
 
 ---@class NativeCamera
 local NativeCamera = {}

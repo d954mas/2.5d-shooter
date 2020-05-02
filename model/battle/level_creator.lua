@@ -15,13 +15,19 @@ function Creator:create()
 	self:create_level_objects()
 	self:create_pickup_objects()
 	self:create_lights()
+	self:create_doors()
 end
 
 function Creator:create_lights()
 	for _, obj in ipairs(self.level.data.light_sources) do
 		self.ecs:add_entity(self.entities:create_light_source(vmath.vector3(obj.cell_xf, obj.cell_yf, 0.8), obj.properties))
 	end
+end
 
+function Creator:create_doors()
+	for _, obj in ipairs(self.level.data.doors) do
+		self.ecs:add_entity(self.entities:create_door(obj))
+	end
 end
 
 function Creator:create_walls_floor_and_ceil()
