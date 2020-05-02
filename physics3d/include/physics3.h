@@ -4,6 +4,7 @@
 #include "collision/ContactManifold.h"
 #include "constraint/ContactPoint.h"
 #include <list>
+#include <iostream>
 
 
 using namespace reactphysics3d;
@@ -27,6 +28,33 @@ struct CollisionInfo {
     std::list<CollisionInfoManifold> manifolds;
 };
 
+struct Physics3dRaycastInfo {
+    CollisionBody* body;
+    ProxyShape* shape;
+    rp3d::Vector3 position;
+};
+
+// Class WorldRaycastCallback
+class RaycastCallbackAll : public rp3d::RaycastCallback {
+
+public:
+      std::list<Physics3dRaycastInfo> objects;
+
+   virtual decimal notifyRaycastHit(const RaycastInfo& info) {
+      // Display the world hit point coordinates
+      Physics3dRaycastInfo savedInfo;
+      savedInfo.position.x = info.worldPoint.x;
+      savedInfo.position.y = info.worldPoint.y;
+      savedInfo.position.z = info.worldPoint.z;
+      savedInfo.body = info.body;
+      savedInfo.shape = info.proxyShape;
+      // Return a fraction of 1.0 to gather all hits
+      objects.push_back(savedInfo);
+      return decimal(1.0);
+    }
+
+    std::list<Physics3dRaycastInfo> getObjects() {return objects;}
+};
 
 
 // Contact manager
@@ -182,7 +210,32 @@ static void Physics3Clear(){
 }
 
 static std::list<CollisionInfo*> Physics3GetCollisionInfo(){
-    return physics.contact.getCollisionInfo();;
+    return physics.contact.getCollisionInfo();
+}
+
+static std::list<Physics3dRaycastInfo> Physics3Raycast(rp3d::Vector3 start, rp3d::Vector3 end){
+    // Create the ray
+    rp3d::Ray ray(start, end);
+    // Create an instance of your callback class
+    RaycastCallbackAll callbackObject;
+    // Raycast test
+    physics.world->raycast(ray, &callbackObject);
+    return callbackObject.getObjects();
+}
+
+static std::list<Physics3dRaycastInfo>  Physics3Raycast(rp3d::Vector3 start, rp3d::Vector3 end, unsigned short mask){
+    std::list<Physics3dRaycastInfo>  info = Physics3Raycast(start,end);
+    std::list<Physics3dRaycastInfo>::iterator i = info.begin();
+    while (i != info.end()) {
+        Physics3dRaycastInfo data = *i;
+        if ((data.shape->getCollisionCategoryBits() & mask) == 0){
+            info.erase(i++);
+        }else{
+            ++i;
+        }
+    }
+    //  info.remove_if([](RaycastInfo info) { return (info.shape->getCollisionCategoryBits() & mask) !=0;  });
+    return info;
 }
 
 

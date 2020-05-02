@@ -106,6 +106,35 @@ static int GetCollisionInfoLua(lua_State* L){
     return 1;
 }
 
+static int Raycast(lua_State* L){
+	float x = luaL_checknumber(L,1);
+	float y = luaL_checknumber(L,2);
+	float z = luaL_checknumber(L,3);
+	float x2 = luaL_checknumber(L,4);
+	float y2 = luaL_checknumber(L,5);
+	float z2 = luaL_checknumber(L,6);
+	unsigned short mask =0xFFFF;
+    if(lua_isnumber(L,7)){
+        mask = luaL_checknumber(L,7);
+    }
+    rp3d::Vector3 start(x,y,z);
+    rp3d::Vector3 end(x2,y2,z2);
+    std::list<Physics3dRaycastInfo> result =  Physics3Raycast(start,end,mask);
+
+    lua_newtable(L);
+    int i = 0;
+    for(Physics3dRaycastInfo info : result) {
+        lua_newtable(L);
+        RectBodyPush(L,((RectBody*)info.body->getUserData()));
+        lua_setfield(L,-2,"body");
+        LUA_VECTOR3(L,"position",info.position.x,info.position.y,info.position.z);
+        lua_rawseti(L, -2, i+1);
+        i++;
+    }
+    return 1;
+
+}
+
 // Functions exposed to Lua
 static const luaL_reg Module_methods[] ={
 	{"clear", ClearLua},
@@ -113,6 +142,7 @@ static const luaL_reg Module_methods[] ={
 	{"update", UpdateLua},
 	{"create_rect", CreateRectLua},
 	{"destroy_rect", DestroyRectLua},
+	{"raycast", Raycast},
 	{"get_collision_info", GetCollisionInfoLua},
 	{0, 0}
 };

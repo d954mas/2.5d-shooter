@@ -12,6 +12,7 @@ function physics3d.update() end
 function physics3d.clear() end
 function physics3d.create_rect(x, y, z, hw, hh, hl, static, group, mask) end
 function physics3d.destroy_rect(rect) end
+function physics3d.raycast(x, y, z, x2, y2, z2, mask) end
 
 ---@return NativePhysicsCollisionInfo[]
 function physics3d.get_collision_info() end
