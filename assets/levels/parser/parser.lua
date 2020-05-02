@@ -367,13 +367,23 @@ local function parse_pickups(map, layer)
 	return result;
 end
 
+local function parse_doors(map, layer)
+	check_layer_tilesets(layer, { assert(TILESETS.tilesets["doors"]) })
+	assert(layer.objects)
+	---@type LevelMapObject[]
+	local objects = layer.objects
+	local result = {}
+	for _, obj in ipairs(objects) do
+		assert(obj.properties.door)
+		table.insert(result, obj)
+	end
+	return result;
+end
+
 ---@param map LevelData
 local function check(map)
 	assert(map.player, "no player")
 	assert(map.level_objects, "no player")
-	for _, tile in pairs(TILESETS.by_id) do
-
-	end
 end
 
 local function parse_level(path, result_path)
@@ -392,6 +402,7 @@ local function parse_level(path, result_path)
 	data.level_objects = parse_level_objects(data, assert(get_layer(tiled, "level_objects")))
 	data.light_sources = parse_light_sources(data, assert(get_layer(tiled, "light_sources")))
 	data.pickups = parse_pickups(data, assert(get_layer(tiled, "pickups")))
+	data.doors = parse_doors(data, assert(get_layer(tiled, "doors")))
 
 	check(data)
 	--[[

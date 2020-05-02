@@ -1637,6 +1637,74 @@ return {
           height = 64
         }
       }
+    },
+    {
+      name = "doors",
+      firstgid = 222,
+      filename = "doors.tsx",
+      tilewidth = 64,
+      tileheight = 64,
+      spacing = 0,
+      margin = 0,
+      columns = 0,
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 1,
+        height = 1
+      },
+      properties = {
+        ["door"] = true
+      },
+      terrains = {},
+      tilecount = 5,
+      tiles = {
+        {
+          id = 0,
+          image = "../tiles/doors/door1.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 1,
+          properties = {
+            ["key"] = "blue"
+          },
+          image = "../tiles/doors/door1_blue.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 2,
+          properties = {
+            ["key"] = "green"
+          },
+          image = "../tiles/doors/door1_green.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 3,
+          properties = {
+            ["key"] = "white"
+          },
+          image = "../tiles/doors/door1_white.png",
+          width = 64,
+          height = 64
+        },
+        {
+          id = 4,
+          properties = {
+            ["key"] = "yellow"
+          },
+          image = "../tiles/doors/door1_yellow.png",
+          width = 64,
+          height = 64
+        }
+      }
     }
   },
   layers = {}

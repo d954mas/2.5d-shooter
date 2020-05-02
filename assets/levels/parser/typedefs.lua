@@ -97,6 +97,7 @@
 ---@field light_map number[]
 ---@field player LevelDataPlayer
 ---@field level_objects LevelMapObject[]
+---@field doors LevelMapObject[]
 ---@field light_sources LevelMapObject[]
 ---@field pickups LevelMapObject[]
 

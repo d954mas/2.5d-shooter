@@ -8,7 +8,7 @@ return {
   height = 256,
   tilewidth = 64,
   tileheight = 64,
-  nextlayerid = 19,
+  nextlayerid = 20,
   nextobjectid = 110,
   properties = {},
   tilesets = {
@@ -1648,6 +1648,18 @@ return {
       type = "objectgroup",
       id = 18,
       name = "pickups",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      draworder = "topdown",
+      properties = {},
+      objects = {}
+    },
+    {
+      type = "objectgroup",
+      id = 19,
+      name = "doors",
       visible = true,
       opacity = 1,
       offsetx = 0,
