@@ -63,6 +63,7 @@ local TAG = "Entities"
 ---@field ceil_go FloorGO
 ---@field wall_go WallGo
 ---@field level_object_go LevelObjectGO
+---@field door_object_go WallGo
 ---@field pickup_object_go PickupObjectGO
 ---@field debug_physics_body_go WallGo
 ---@field debug_light_go DebugLightGo

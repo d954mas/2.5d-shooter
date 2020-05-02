@@ -32,6 +32,7 @@ function M.load()
 	M.DrawLevelObjectSystem = require "model.battle.ecs.systems.draw_level_object_system"
 	M.DrawDebugLightsSystem = require "model.battle.ecs.systems.draw_debug_lights_system"
 	M.DrawDebugPhysicsBodiesSystem = require "model.battle.ecs.systems.draw_debug_physics_bodies_system"
+	M.DrawDoorSystem = require "model.battle.ecs.systems.draw_door_system"
 	M.UpdatePhysicsBodyPositionsSystem = require "model.battle.ecs.systems.update_physics_body_positions_system"
 	M.UpdatePhysicsSystem = require "model.battle.ecs.systems.update_physics_system"
 	M.PhysicsCollisionWallSystem = require "model.battle.ecs.systems.physics_collision_wall_system"
