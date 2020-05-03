@@ -472,7 +472,7 @@ function lume.clone_deep(t)
     for orig_key, orig_value in next, t, nil do
       copy[ lume.clone_deep(orig_key)] =  lume.clone_deep(orig_value)
     end
-  else -- number, string, boolean, etc
+  else -- number, string, boolean, userdata etc
     copy = t
   end
   return copy

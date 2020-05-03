@@ -267,7 +267,7 @@ local function create_node(word, parent, font, node, metrics)
 	else
 		node, metrics = create_text_node(word, font, metrics)
 	end
-	gui.set_pivot(node, gui.PIVOT_NW)
+	gui.set_pivot(node, gui.PIVOT_W)
 	gui.set_parent(node, parent)
 	gui.set_inherit_alpha(node, true)
 	return node, metrics

@@ -8,6 +8,8 @@ local FALLBACK = "en"
 ---@class Localization
 local M = {
 	example = { en = "example", ru = "пример" },
+	door_open_press_key = { en = "Press %{key} to open door", ru = "Press  %{key} to open door" },
+	door_open_need_key = { en = "Need %{key} to open door", ru = "Need %{key} to open door" },
 }
 
 function M:locale_exist(key)

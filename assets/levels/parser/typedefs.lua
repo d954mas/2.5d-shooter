@@ -37,6 +37,8 @@
 ---@field angle number
 ---@field rotation_speed number per second
 ---@field wall_animation WallAnimationConfig
+---@field door boolean
+---@field key string
 
 ---@class LevelMapObject
 ---@field tile_id number

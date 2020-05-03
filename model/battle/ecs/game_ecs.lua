@@ -82,6 +82,7 @@ function EcsWorld:_load_player()
 end
 
 ---@param e Entity
+---@return NativePhysicsRaycastInfo[]
 function EcsWorld:raycast(e, dist, mask)
 	local pos = vmath.vector3(e.position.x, e.position.y, 0)
 	local pos_end = vmath.normalize(vmath.rotate(vmath.quat_rotation_z(e.angle.x), pos))

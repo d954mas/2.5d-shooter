@@ -33,6 +33,10 @@ local TAG = "Entities"
 ---@field keys table
 
 
+---@class DoorData
+---@field closed boolean
+---@field key string|nil
+
 
 ---@class LightParams
 ---@field light ColorHSV
@@ -53,6 +57,7 @@ local TAG = "Entities"
 ---@field wall boolean
 ---@field obstacle boolean
 ---@field door boolean
+---@field door_data DoorData
 ---@field light boolean
 ---@field light_pattern LightPattern
 ---@field light_pattern_config LightPatternData
@@ -259,7 +264,8 @@ function Entities:create_door(object)
 	e.door = true
 	e.obstacle = true
 	e.door_data = {
-		closed = true
+		closed = true,
+		key =  object.properties.key
 	}
 	e.map_object = object
 	e.position = vmath.vector3(object.cell_xf, object.cell_yf, 0.5)

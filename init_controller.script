@@ -9,6 +9,8 @@ local GA = require "libs.google_analytics"
 local EVENTS = require "libs_project.events"
 local SCENE_LOADER = require "libs.sm.scene_loader"
 local WORLD = require "model.world"
+local LOCALE = require "assets.localization.localization"
+COMMON.LOCALE = LOCALE
 
 local RUN_TEST = false
 

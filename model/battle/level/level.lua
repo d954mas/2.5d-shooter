@@ -47,6 +47,8 @@ function Level:initialize(data)
 	walls_prepare_to_native(self.data.walls, self.cell_max_id)
 	objects_set_meta(data.level_objects)
 	objects_set_meta(data.light_sources)
+	objects_set_meta(data.doors)
+	objects_set_meta(data.pickups)
 	set_default_color(data.light_map, self.cell_max_id, 0xFFFFFFFF)
 end
 

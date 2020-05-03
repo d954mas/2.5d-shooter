@@ -9,7 +9,7 @@ return {
   tilewidth = 64,
   tileheight = 64,
   nextlayerid = 21,
-  nextobjectid = 318,
+  nextobjectid = 320,
   properties = {},
   tilesets = {
     {
@@ -1812,7 +1812,7 @@ return {
       encoding = "lua",
       data = {
         6, 6, 26, 26, 26, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6,
-        6, 0, 0, 0, 6, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 6, 0, 0, 0, 0, 0, 0, 6,
+        6, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 6, 0, 0, 0, 0, 0, 0, 6,
         6, 0, 0, 0, 6, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 6, 0, 0, 0, 0, 0, 0, 0, 6,
         26, 6, 0, 6, 6, 0, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6,
         6, 0, 0, 0, 6, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6,
@@ -1857,20 +1857,6 @@ return {
       properties = {},
       objects = {
         {
-          id = 310,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 128,
-          y = 256,
-          width = 64,
-          height = 64,
-          rotation = 0,
-          gid = 222,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 311,
           name = "",
           type = "",
@@ -1909,6 +1895,34 @@ return {
           height = 64,
           rotation = 0,
           gid = 226,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 318,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 128,
+          y = 256,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 224,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 319,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 256,
+          y = 128,
+          width = 64,
+          height = 64,
+          rotation = 0,
+          gid = 222,
           visible = true,
           properties = {}
         }
