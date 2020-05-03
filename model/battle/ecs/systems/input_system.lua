@@ -9,22 +9,28 @@ System.name = "InputSystem"
 
 function System:input_mouse_move()
 	local player = self.world.game.player
-	player.angle.x = player.angle.x -CURSOR_HELPER.cursor_movement.x/540
+	player.angle.x = player.angle.x - CURSOR_HELPER.cursor_movement.x / 540
+end
 
+function System:input_interact()
+	if(self.world.game.selected_object) then
+		self.world.game:select_object_interact()
+	end
 end
 
 function System:init_input()
 	self.movement = vmath.vector4(0) --up/down/left/right
 	self.input_handler = COMMON.INPUT()
 	self.input_handler:add_mouse(self.input_mouse_move)
+	self.input_handler:add(COMMON.HASHES.INPUT.INTERACT, self.input_interact, true)
 	--self.input_handler:add(COMMON.HASHES.INPUT.TOUCH,self.make_shot)
 end
 
 function System:check_movement_input()
 	self.movement.x = COMMON.INPUT.PRESSED_KEYS[COMMON.HASHES.INPUT.UP] and 1 or 0
-	self.movement.y = COMMON.INPUT.PRESSED_KEYS[COMMON.HASHES.INPUT.DOWN]  and 1 or 0
-	self.movement.z = COMMON.INPUT.PRESSED_KEYS[COMMON.HASHES.INPUT.RIGHT]  and 1 or 0
-	self.movement.w = COMMON.INPUT.PRESSED_KEYS[COMMON.HASHES.INPUT.LEFT]  and 1 or 0
+	self.movement.y = COMMON.INPUT.PRESSED_KEYS[COMMON.HASHES.INPUT.DOWN] and 1 or 0
+	self.movement.z = COMMON.INPUT.PRESSED_KEYS[COMMON.HASHES.INPUT.RIGHT] and 1 or 0
+	self.movement.w = COMMON.INPUT.PRESSED_KEYS[COMMON.HASHES.INPUT.LEFT] and 1 or 0
 end
 
 function System:update_player_direction()
@@ -39,11 +45,15 @@ function System:update_player_direction()
 	end
 end
 
+function System:preProcess()
+	--self.input_handler:on_input(self,e.input_info.action_id,e.input_info.action)
+end
+
 ---@param e Entity
 function System:process(e, dt)
-	self.input_handler:on_input(self,e.input_info.action_id,e.input_info.action)
+	self.input_handler:on_input(self, e.input_info.action_id, e.input_info.action)
 end
-function System:postProcess(dt)
+function System:postProcess()
 	self:update_player_direction()
 end
 

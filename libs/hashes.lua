@@ -22,7 +22,8 @@ M.INPUT = {
 	UP = hash("up"),
 	DOWN = hash("down"),
 	LEFT = hash("left"),
-	RIGHT = hash("right")
+	RIGHT = hash("right"),
+	INTERACT = hash("interact")
 }
 
 M.MSG = {

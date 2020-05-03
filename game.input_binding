@@ -26,6 +26,10 @@ key_trigger {
   input: KEY_D
   action: "right"
 }
+key_trigger {
+  input: KEY_E
+  action: "interact"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_1
   action: "touch"

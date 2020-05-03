@@ -16,6 +16,8 @@ function EcsWorld:initialize(world)
 	self.ecs.on_entity_added = function(_, ...) self.entities:on_entity_added(...) end
 	self.ecs.on_entity_updated = function(_, ...) self.entities:on_entity_updated(...) end
 	self.ecs.on_entity_removed = function(_, ...) self.entities:on_entity_removed(...) end
+	---@type Entity
+	self.selected_object = nil
 end
 
 function EcsWorld:find_by_id(id)
@@ -33,6 +35,7 @@ function EcsWorld:_init_systems()
 	--self.ecs:addSystem(SYSTEMS.LightsDynamicUpdate)
 
 	self.ecs:addSystem(SYSTEMS.InputSystem)
+	self.ecs:addSystem(SYSTEMS.SelectObjectResetSystem)
 	self.ecs:addSystem(SYSTEMS.UpdateAISystem)
 
 	self.ecs:addSystem(SYSTEMS.MovementSystem)
@@ -54,7 +57,8 @@ function EcsWorld:_init_systems()
 	self.ecs:addSystem(SYSTEMS.UpdateCameraVisibleCellsSystem)
 	self.ecs:addSystem(SYSTEMS.CheckVisibleSystem)
 
-	self.ecs:addSystem(SYSTEMS.ActionOpenDoorSystem)
+	self.ecs:addSystem(SYSTEMS.SelectObjectDoorSystem)
+	self.ecs:addSystem(SYSTEMS.SelectObjectShowTitleSystem)
 
 	self.ecs:addSystem(SYSTEMS.DrawCeilSystem)
 	self.ecs:addSystem(SYSTEMS.DrawFloorSystem)
@@ -82,7 +86,7 @@ function EcsWorld:_load_player()
 end
 
 function EcsWorld:player_inventory_add_key(key)
-	checks("?","string")
+	checks("?", "string")
 	self.player.player_inventory.keys[key] = true
 end
 
@@ -98,6 +102,15 @@ end
 
 function EcsWorld:update(dt)
 	self.ecs:update(dt)
+end
+
+---@param e Entity
+function EcsWorld:select_object(e)
+	self.selected_object = e
+end
+
+function EcsWorld:select_object_interact()
+	assert(self.selected_object)
 end
 
 function EcsWorld:clear()
