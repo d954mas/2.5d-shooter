@@ -190,8 +190,8 @@ local function repack_objects(array, tiled, map)
 		object_data.cell_yf = object_data.y / tiled.tileheight
 		--	object_data.cell_w = object_data.w / tiled.tilewidth
 		--object_data.cell_h = object_data.h / tiled.tileheight
-		object_data.cell_x = math.ceil(object_data.x / tiled.tilewidth)
-		object_data.cell_y = math.ceil(object_data.y / tiled.tileheight)
+		object_data.cell_x = math.floor(object_data.x / tiled.tilewidth)
+		object_data.cell_y = math.floor(object_data.y / tiled.tileheight)
 		--object_data.cell_center_x = object_data.cell_xf + object_data.cell_w/2
 		--object_data.cell_center_y = object_data.cell_yf + object_data.cell_h/2
 		object_data.cell_id = MAP_HELPER.coords_to_id(map, object_data.cell_x, object_data.cell_y)
