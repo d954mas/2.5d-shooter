@@ -17,9 +17,8 @@ function System:update(dt)
 		local data = ctx.data
 		if (e.door and e.door_data.closed) then
 			data:action_info_set_visible(true)
-			local have_key = false
 			if (e.door_data.key) then
-				if (have_key) then
+				if (game.player.player_inventory.keys[e.door_data.key]) then
 					data.view.lbl_action:set_text(COMMON.LOCALE.door_open_press_key({ key = "<size=0.66><img=gui:key_e/></size>" }))
 				else
 					data.view.lbl_action:set_text(COMMON.LOCALE.door_open_need_key({ key = ("<size=0.66><img=gui:%s/></size>"):format("icon_key_" .. e.door_data.key) }))

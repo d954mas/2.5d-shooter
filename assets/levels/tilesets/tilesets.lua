@@ -1595,7 +1595,8 @@ return {
         {
           id = 2,
           properties = {
-            ["pickup_type"] = "key_blue",
+            ["pickup_key_type"] = "blue",
+            ["pickup_type"] = "key",
             ["scale"] = 0.25,
             ["sprite_origin_y"] = 32
           },
@@ -1606,7 +1607,8 @@ return {
         {
           id = 3,
           properties = {
-            ["pickup_type"] = "key_green",
+            ["pickup_key_type"] = "green",
+            ["pickup_type"] = "key",
             ["scale"] = 0.25,
             ["sprite_origin_y"] = 32
           },
@@ -1617,7 +1619,8 @@ return {
         {
           id = 4,
           properties = {
-            ["pickup_type"] = "key_white",
+            ["pickup_key_type"] = "white",
+            ["pickup_type"] = "key",
             ["scale"] = 0.25,
             ["sprite_origin_y"] = 32
           },
@@ -1628,7 +1631,8 @@ return {
         {
           id = 5,
           properties = {
-            ["pickup_type"] = "key_yellow",
+            ["pickup_key_type"] = "yellow",
+            ["pickup_type"] = "key",
             ["scale"] = 0.25,
             ["sprite_origin_y"] = 32
           },

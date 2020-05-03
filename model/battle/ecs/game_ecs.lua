@@ -81,6 +81,11 @@ function EcsWorld:_load_player()
 	self:add_entity(self.player)
 end
 
+function EcsWorld:player_inventory_add_key(key)
+	checks("?","string")
+	self.player.player_inventory.keys[key] = true
+end
+
 ---@param e Entity
 ---@return NativePhysicsRaycastInfo[]
 function EcsWorld:raycast(e, dist, mask)

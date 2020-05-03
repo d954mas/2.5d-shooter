@@ -25,6 +25,7 @@
 ---@field sprite_origin_y number used to correctly set origin for sprite
 ---@field position_z number default z position
 ---@field pickup_type string
+---@field pickup_key_type string
 ---@field blocked boolean
 ---@field transparent boolean
 ---@field light boolean

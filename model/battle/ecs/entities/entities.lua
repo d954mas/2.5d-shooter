@@ -29,8 +29,14 @@ local TAG = "Entities"
 ---@field deaccel number
 
 
+---@class PlayerInventoryKeys
+---@field blue boolean
+---@field green boolean
+---@field white boolean
+---@field yellow boolean
+
 ---@class PlayerInventory
----@field keys table
+---@field keys PlayerInventoryKeys
 
 
 ---@class DoorData
@@ -52,6 +58,7 @@ local TAG = "Entities"
 ---@field level_object boolean
 ---@field pickup_object boolean
 ---@field pickup_type string
+---@field pickup_key_type string
 ---@field floor boolean
 ---@field ceil boolean
 ---@field wall boolean
@@ -94,6 +101,7 @@ local TAG = "Entities"
 ---@field map_object LevelMapObject
 ---@field dynamic_color boolean
 ---@field light_params LightParams
+---@field player_inventory PlayerInventory
 
 
 
@@ -195,6 +203,9 @@ function Entities:create_player(pos)
 		offset = 0,
 		offset_weapon = 0,
 	}
+	e.player_inventory = {
+		keys = { blue = false, green = false, white = false, yellow = false }
+	}
 	e.hp = 100
 	e.physics_body:set_user_data(e)
 	return e
@@ -265,7 +276,7 @@ function Entities:create_door(object)
 	e.obstacle = true
 	e.door_data = {
 		closed = true,
-		key =  object.properties.key
+		key = object.properties.key
 	}
 	e.map_object = object
 	e.position = vmath.vector3(object.cell_xf, object.cell_yf, 0.5)
@@ -305,6 +316,7 @@ function Entities:create_pickup_object(object)
 	e.rotation_global = true
 	e.pickup_object = true
 	e.pickup_type = object.properties.pickup_type
+	e.pickup_key_type = object.properties.pickup_key_type
 	e.map_object = object
 	e.position = vmath.vector3(object.cell_xf, object.cell_yf, object.properties.position_z or 0)
 	e.position_z_center = 0.125

@@ -22,7 +22,8 @@
  </tile>
  <tile id="2">
   <properties>
-   <property name="pickup_type" value="key_blue"/>
+   <property name="pickup_key_type" value="blue"/>
+   <property name="pickup_type" value="key"/>
    <property name="scale" type="float" value="0.25"/>
    <property name="sprite_origin_y" type="float" value="32"/>
   </properties>
@@ -30,7 +31,8 @@
  </tile>
  <tile id="3">
   <properties>
-   <property name="pickup_type" value="key_green"/>
+   <property name="pickup_key_type" value="green"/>
+   <property name="pickup_type" value="key"/>
    <property name="scale" type="float" value="0.25"/>
    <property name="sprite_origin_y" type="float" value="32"/>
   </properties>
@@ -38,7 +40,8 @@
  </tile>
  <tile id="4">
   <properties>
-   <property name="pickup_type" value="key_white"/>
+   <property name="pickup_key_type" value="white"/>
+   <property name="pickup_type" value="key"/>
    <property name="scale" type="float" value="0.25"/>
    <property name="sprite_origin_y" type="float" value="32"/>
   </properties>
@@ -46,7 +49,8 @@
  </tile>
  <tile id="5">
   <properties>
-   <property name="pickup_type" value="key_yellow"/>
+   <property name="pickup_key_type" value="yellow"/>
+   <property name="pickup_type" value="key"/>
    <property name="scale" type="float" value="0.25"/>
    <property name="sprite_origin_y" type="float" value="32"/>
   </properties>
