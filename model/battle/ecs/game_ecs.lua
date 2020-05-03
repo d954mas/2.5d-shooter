@@ -36,6 +36,9 @@ function EcsWorld:_init_systems()
 
 	self.ecs:addSystem(SYSTEMS.InputSystem)
 	self.ecs:addSystem(SYSTEMS.SelectObjectResetSystem)
+
+	self.ecs:addSystem(SYSTEMS.DoorOpeningSystem)
+
 	self.ecs:addSystem(SYSTEMS.UpdateAISystem)
 
 	self.ecs:addSystem(SYSTEMS.MovementSystem)
@@ -111,6 +114,22 @@ end
 
 function EcsWorld:select_object_interact()
 	assert(self.selected_object)
+	if (self.selected_object.door and self.selected_object.door_data.closed) then
+		local dd = self.selected_object.door_data
+		if (not dd.key or self.player.player_inventory.keys[dd.key]) then
+			self:door_open(self.selected_object)
+		end
+	end
+end
+
+---@param e Entity
+function EcsWorld:door_open(e)
+	assert(e)
+	assert(e.door)
+	local dd = self.selected_object.door_data
+	assert(not dd.key or self.player.player_inventory.keys[dd.key])
+	dd.closed = false
+	dd.opening = true
 end
 
 function EcsWorld:clear()

@@ -41,6 +41,8 @@ local TAG = "Entities"
 
 ---@class DoorData
 ---@field closed boolean
+---@field opening boolean
+---@field opened boolean
 ---@field key string|nil
 
 
@@ -276,14 +278,16 @@ function Entities:create_door(object)
 	e.obstacle = true
 	e.door_data = {
 		closed = true,
+		opening = false,
+		opened = false,
 		key = object.properties.key
 	}
 	e.map_object = object
 	e.position = vmath.vector3(object.cell_xf, object.cell_yf, 0.5)
 	e.visible = false
-	e.wall_cell = self.level:map_get_wall_by_id(self.level:coords_to_id(object.cell_x, object.cell_y))
-	e.physics_body = physics3d.create_rect(e.position.x, e.position.y, e.position.z, 1, 1, 1, true, physics3d.GROUPS.OBSTACLE, self.masks.WALL)
-	e.physics_static = true
+	e.wall_cell = self.level:map_get_wall_by_id(object.cell_id)
+	e.physics_body = physics3d.create_rect(e.position.x, e.position.y, e.position.z, 1, 1, 1, false, physics3d.GROUPS.OBSTACLE, self.masks.WALL)
+	e.physics_dynamic = true
 	e.physics_body:set_user_data(e)
 	e.wall_cell.native_cell:set_transparent(true)
 	if (e.door_data.closed) then

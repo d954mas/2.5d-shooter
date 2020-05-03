@@ -48,14 +48,9 @@ function View:textures_update()
 	local buf = {}
 	for i = 0, level.cell_max_id do
 		local cell = assert(level:map_get_wall_unsafe_by_id(i))
-		if cell.base == 0 then
-			buf[i + 1] = WHITE_COLOR
-		else
-			buf[i + 1] = cell.native_cell:get_blocked() and WALL_COLOR or WHITE_COLOR
-		end
+		buf[i + 1] = cell.native_cell:get_blocked() and WALL_COLOR or WHITE_COLOR
 		buf_visible[i + 1] = cell.native_cell:get_visibility() and VISIBLE_COLOR or TRANSPARENT_COLOR
 	end
-
 	gui.set_texture_data("map", map_width, map_height, "rgba", table.concat(buf), true)
 	gui.set_texture_data("map_visibility", map_width, map_height, "rgba", table.concat(buf_visible), true)
 	local scale = vmath.vector3(1)

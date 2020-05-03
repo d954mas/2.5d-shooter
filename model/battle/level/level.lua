@@ -115,7 +115,6 @@ function Level:coords_valid(x, y)
 	return x >= 0 and y >= 0 and x < self.data.size.x and y < self.data.size.y
 end
 
---some coords start from zero.Some starts from 1 =)
 function Level:coords_to_id(x, y)
 	return MAP_HELPER.coords_to_id(self.data, math.floor(x), math.floor(y))
 end
