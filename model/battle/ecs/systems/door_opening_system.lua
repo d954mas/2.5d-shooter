@@ -1,5 +1,4 @@
 local ECS = require 'libs.ecs'
-local FACTORIES = require "model.battle.factories.factories"
 
 ---@class DoorOpeningSystem:ECSSystem
 local System = ECS.processingSystem()

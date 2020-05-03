@@ -1,4 +1,3 @@
-local COMMON = require "libs.common"
 local ECS = require 'libs.ecs'
 
 ---@class SelectObjectReset:ECSSystem
