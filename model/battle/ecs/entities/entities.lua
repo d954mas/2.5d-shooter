@@ -46,6 +46,11 @@ local TAG = "Entities"
 ---@field key string|nil
 
 
+---@class HpData
+---@field current number
+---@field map number
+
+
 ---@class LightParams
 ---@field light ColorHSV
 ---@field light_power number decrease value per distance
@@ -104,6 +109,7 @@ local TAG = "Entities"
 ---@field dynamic_color boolean
 ---@field light_params LightParams
 ---@field player_inventory PlayerInventory
+---@field hp HpData
 
 
 
@@ -208,7 +214,10 @@ function Entities:create_player(pos)
 	e.player_inventory = {
 		keys = { blue = false, green = false, white = false, yellow = false }
 	}
-	e.hp = 100
+	e.hp = {
+		current = 50,
+		max = 100
+	}
 	e.physics_body:set_user_data(e)
 	return e
 end

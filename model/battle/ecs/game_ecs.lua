@@ -93,6 +93,16 @@ function EcsWorld:player_inventory_add_key(key)
 	self.player.player_inventory.keys[key] = true
 end
 
+function EcsWorld:player_can_heal()
+	return self.player.hp.current < self.player.hp.max
+end
+
+function EcsWorld:player_heal(value)
+	assert(self:player_can_heal())
+	local hp = self.player.hp
+	hp.current = COMMON.LUME.clamp(hp.current+value,0,hp.max)
+end
+
 ---@param e Entity
 ---@return NativePhysicsRaycastInfo[]
 function EcsWorld:raycast(e, dist, mask)

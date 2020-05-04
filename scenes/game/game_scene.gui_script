@@ -1,5 +1,7 @@
 local COMMON = require "libs.common"
 local GUI = require "libs.gui.gui"
+local GUI_PROJECT = require "libs_project.gui.gui_project"
+local WORLD = require "model.world"
 
 ---@class GameGuiScript
 local Script = COMMON.new_n28s()
@@ -12,7 +14,8 @@ function Script:bind_vh()
 		}
 	}
 	self.view = {
-		lbl_action = GUI.LblRichtext()
+		lbl_action = GUI.LblRichtext(),
+		hp_progress = GUI_PROJECT.HPBar("hp_bar")
 	}
 end
 
@@ -32,6 +35,12 @@ function Script:init()
 end
 
 function Script:update(dt)
+	if (WORLD.battle_model and WORLD.battle_model.ecs.player) then
+		self.view.hp_progress:set_progress_max(WORLD.battle_model.ecs.player.hp.max)
+		self.view.hp_progress:set_progress(WORLD.battle_model.ecs.player.hp.current)
+		self.view.hp_progress:update(dt)
+	end
+
 end
 
 function Script:final()

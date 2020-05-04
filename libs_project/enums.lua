@@ -1,7 +1,8 @@
 local M = {}
 
 M.PICKUP_TYPE = {
-	KEY = "key"
+	KEY = "key",
+	HP = "hp"
 }
 
 
