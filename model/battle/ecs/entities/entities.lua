@@ -37,6 +37,7 @@ local TAG = "Entities"
 
 ---@class PlayerInventory
 ---@field keys PlayerInventoryKeys
+---@field ammo AmmoData
 
 
 ---@class DoorData
@@ -49,6 +50,12 @@ local TAG = "Entities"
 ---@class HpData
 ---@field current number
 ---@field map number
+
+---@class AmmoData
+---@field bullet number
+---@field bullet_2 number
+---@field rocket number
+---@field arrow number
 
 
 ---@class LightParams
@@ -212,7 +219,8 @@ function Entities:create_player(pos)
 		offset_weapon = 0,
 	}
 	e.player_inventory = {
-		keys = { blue = false, green = false, white = false, yellow = false }
+		keys = { blue = false, green = false, white = false, yellow = false },
+		ammo = { bullet = 100, bullet_2 = 25, arrow = 5, rocket = 0 }
 	}
 	e.hp = {
 		current = 50,

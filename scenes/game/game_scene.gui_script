@@ -15,7 +15,8 @@ function Script:bind_vh()
 	}
 	self.view = {
 		lbl_action = GUI.LblRichtext(),
-		hp_progress = GUI_PROJECT.HPBar("hp_bar")
+		hp_progress = GUI_PROJECT.HPBar("hp_bar"),
+		ammo_panel = GUI_PROJECT.AmmoPanel("ammo_panel")
 	}
 end
 
@@ -39,6 +40,7 @@ function Script:update(dt)
 		self.view.hp_progress:set_progress_max(WORLD.battle_model.ecs.player.hp.max)
 		self.view.hp_progress:set_progress(WORLD.battle_model.ecs.player.hp.current)
 		self.view.hp_progress:update(dt)
+		self.view.ammo_panel:update(dt)
 	end
 
 end
