@@ -16,7 +16,8 @@ function Script:bind_vh()
 	self.view = {
 		lbl_action = GUI.LblRichtext(),
 		hp_progress = GUI_PROJECT.HPBar("hp_bar"),
-		ammo_panel = GUI_PROJECT.AmmoPanel("ammo_panel")
+		ammo_panel = GUI_PROJECT.AmmoPanel("ammo_panel"),
+		minimap = GUI_PROJECT.Map("map/map", { w = 20, h = 20 })
 	}
 end
 
@@ -37,10 +38,14 @@ end
 
 function Script:update(dt)
 	if (WORLD.battle_model and WORLD.battle_model.ecs.player) then
+		local player = WORLD.battle_model.ecs.player
 		self.view.hp_progress:set_progress_max(WORLD.battle_model.ecs.player.hp.max)
 		self.view.hp_progress:set_progress(WORLD.battle_model.ecs.player.hp.current)
 		self.view.hp_progress:update(dt)
 		self.view.ammo_panel:update(dt)
+		self.view.minimap:set_position_center(player.position.x, player.position.y)
+		self.view.minimap:update(dt)
+
 	end
 
 end

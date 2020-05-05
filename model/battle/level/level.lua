@@ -102,9 +102,15 @@ function Level:map_get_wall_by_id(id)
 	--assert(self:map_cell_id_in(id), "id:" .. id)
 	return assert(self.data.walls[id])
 end
+
 ---@return LevelDataWallBlock
 function Level:map_get_wall_unsafe_by_id(id)
 	return self.data.walls[id]
+end
+
+---@return LevelDataWallBlock
+function Level:map_get_wall_by_coords(x, y)
+	return self:map_get_wall_by_id(self:coords_to_id(x, y))
 end
 
 function Level:map_cell_id_in(id)
