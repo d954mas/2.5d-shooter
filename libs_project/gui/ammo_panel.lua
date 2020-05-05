@@ -35,7 +35,7 @@ function View:bind_vh()
 		current = {
 			root = gui.get_node(self.root_name .. "/current"),
 			icon = gui.get_node(self.root_name .. "/current/icon"),
-			icon = gui.get_node(self.root_name .. "/current/lbl_count")
+			lbl_count = gui.get_node(self.root_name .. "/current/lbl_count")
 		},
 		ammo = {
 			bullet = self:bind_vh_ammo("bullet"),
@@ -60,6 +60,7 @@ function View:ammo_update(name)
 end
 
 function View:ammo_update_all()
+	gui.set_text(self.vh.current.lbl_count, WORLD.battle_model.ecs.player.player_inventory.ammo.bullet)
 	self:ammo_update("bullet")
 	self:ammo_update("bullet_2")
 	self:ammo_update("arrow")

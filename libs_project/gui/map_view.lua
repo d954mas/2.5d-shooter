@@ -1,6 +1,5 @@
 local COMMON = require "libs.common"
 local WORLD = require "model.world"
-local COLORS = require "richtext.color"
 
 local TAG = "MapView"
 
@@ -127,7 +126,6 @@ function View:set_position_center(pos_x, pos_y)
 					vh = self:node_create_empty()
 				end
 				view = MapViewCellView(vh, wall_cell)
-			else
 			end
 			view:set_position((0.5 + x - pos_x) * 32, (0.5 + y - pos_y) * 32)
 			self.views[id] = view
