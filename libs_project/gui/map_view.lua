@@ -22,8 +22,8 @@ function MapViewCellView:dispose()
 	self.wall = nil
 end
 
-function MapViewCellView:set_position(x,y)
-	gui.set_position(self.vh.root,vmath.vector3(x,y,0))
+function MapViewCellView:set_position(x, y)
+	gui.set_position(self.vh.root, vmath.vector3(x, y, 0))
 end
 
 ---@class MapViewConfig
@@ -98,10 +98,9 @@ function View:node_create_empty()
 end
 
 function View:set_position_center(pos_x, pos_y)
-	for _, cell in ipairs(self.views) do
-		cell:dispose()
+	for _, cell in pairs(self.views) do
+		cell.__need_check = true
 	end
-	self.views = {}
 
 	local level = WORLD.battle_model.level
 	self.position = vmath.vector3(pos_x, pos_y, 0)
@@ -109,18 +108,32 @@ function View:set_position_center(pos_x, pos_y)
 
 	for y = math.floor(pos_y - v_half), math.ceil(pos_y + v_half) do
 		for x = math.floor(pos_x - h_half), math.ceil(pos_x + h_half) do
-			local vh
-			---@type LevelDataWallBlock
-			local wall_cell
-			if level:coords_valid(x, y) then
-				wall_cell = level:map_get_wall_by_coords(x, y)
-				vh = wall_cell.native_cell:get_blocked() and self:node_create_wall() or self:node_create_empty()
+			local id = level:coords_to_id(x, y)
+			---@type MapViewCellView
+			local view = self.views[id]
+			if not view then
+				local vh
+				---@type LevelDataWallBlock
+				local wall_cell
+				if level:coords_valid(x, y) then
+					wall_cell = level:map_get_wall_by_id(id)
+					vh = wall_cell.native_cell:get_blocked() and self:node_create_wall() or self:node_create_empty()
+				else
+					vh = self:node_create_empty()
+				end
+				view = MapViewCellView(vh, wall_cell)
 			else
-				vh = self:node_create_empty()
 			end
-			local view = MapViewCellView(vh, wall_cell)
-			view:set_position((0.5+x - pos_x)*32,(0.5+y - pos_y)*32)
-			table.insert(self.views, view)
+			view:set_position((0.5 + x - pos_x) * 32, (0.5 + y - pos_y) * 32)
+			self.views[id] = view
+			view.__need_check = nil
+		end
+	end
+
+	for id, cell in pairs(self.views) do
+		if (cell.__need_check) then
+			cell:dispose()
+			self.views[id] = nil
 		end
 	end
 
