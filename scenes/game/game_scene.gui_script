@@ -8,9 +8,10 @@ local Script = COMMON.new_n28s()
 
 function Script:bind_vh()
 	self.vh = {
+		map_player = gui.get_node("map/player"),
 		action_info = {
 			root = gui.get_node("action_info"),
-			lbl_root = gui.get_node("action_info/lbl_root")
+			lbl_root = gui.get_node("action_info/lbl_root"),
 		}
 	}
 	self.view = {
@@ -45,6 +46,7 @@ function Script:update(dt)
 		self.view.ammo_panel:update(dt)
 		self.view.minimap:set_position_center(player.position.x, player.position.y)
 		self.view.minimap:update(dt)
+		gui.set_rotation(self.vh.map_player,vmath.vector3(0,0,math.deg(player.angle.x)))
 
 	end
 

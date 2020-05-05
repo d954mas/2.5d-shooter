@@ -14,6 +14,7 @@ local MapViewCellView = COMMON.CLASS("MapViewCellView")
 function MapViewCellView:initialize(vh, wall)
 	self.vh = assert(vh)
 	self.wall = wall
+	self.blocked = self.wall and self.wall.native_cell:get_blocked()
 end
 
 function MapViewCellView:dispose()
@@ -111,6 +112,10 @@ function View:set_position_center(pos_x, pos_y)
 			local id = level:coords_to_id(x, y)
 			---@type MapViewCellView
 			local view = self.views[id]
+			if (view and view.wall and view.blocked ~= view.wall.native_cell:get_blocked()) then
+				view:dispose()
+				view = nil
+			end
 			if not view then
 				local vh
 				---@type LevelDataWallBlock
