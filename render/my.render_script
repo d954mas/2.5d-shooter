@@ -65,6 +65,7 @@ function Render:init_predicates()
 		sprite_3d = render.predicate({ "sprite_3d" }),
 		sprite_3d_object = render.predicate({ "sprite_3d_object" }),
 		sprite_3d_enemy = render.predicate({ "sprite_3d_enemy" }),
+		tile_top = render.predicate({ "tile_top" }),--for example hero weapon.
 		light_map = render.predicate({ "light_map" }),
 		dynamic_light_walls = render.predicate({ "dynamic_light_walls" }),
 		debug_physics = render.predicate({ "debug_physics" }),
@@ -142,6 +143,39 @@ function Render:render_sprites()
 	render.draw(self.predicates.particle)
 end
 
+function Render:render_sprites_top()
+	render.set_viewport(0, 0, RENDERCAM.window.x, RENDERCAM.window.y)
+	render.set_view(vmath.matrix4())
+
+	--try keep weapon art same on different resolutions
+	local width = render.get_width()
+	local height = render.get_height()
+	local aspect = width/height
+	local window_width = render.get_window_width()
+	local window_height = render.get_window_height()
+	local window_aspect = window_width/window_height
+	local zoom
+	if window_aspect > aspect then
+		zoom = math.min(window_width / width, window_height / height)
+	else
+		zoom = math.max(window_width / width, window_height / height)
+	end
+	local projected_width = window_width / (zoom or 1)
+	local projected_height = window_height / (zoom or 1)
+	local xoffset = -(projected_width - width) / 2
+
+	render.set_projection(vmath.matrix4_orthographic(xoffset, xoffset + projected_width, 0,  projected_height, -1, 1))
+	render.set_depth_mask(false)
+
+	render.disable_state(render.STATE_DEPTH_TEST)
+	render.disable_state(render.STATE_STENCIL_TEST)
+	render.disable_state(render.STATE_CULL_FACE)
+	render.enable_state(render.STATE_BLEND)
+	render.set_blend_func(render.BLEND_SRC_ALPHA, render.BLEND_ONE_MINUS_SRC_ALPHA)
+
+	render.draw(self.predicates.tile_top)
+end
+
 function Render:render_3d()
 	if (not self.targets.light_map) then return end
 
@@ -190,6 +224,7 @@ function Render:render_light_map(debug)
 	end
 end
 
+--Dynamic lights not impl
 function Render:render_lights_dynamic()
 	if (WORLD.battle_model and WORLD.battle_model.shader_lights and CONSTANTS.DEBUG.draw_light_dynamic) then
 		WORLD.battle_model.shader_lights:draw_debug_walls()
@@ -204,7 +239,9 @@ function Render:update(dt)
 	self:render_sprites()
 
 	self:render_light_map(true)
-	self:render_lights_dynamic()
+
+
+	self:render_sprites_top()
 
 	self:render_gui()
 end
