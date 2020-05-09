@@ -29,8 +29,8 @@ function View:ammo_current_change(ammo)
 end
 
 ---@class AmmoPanelViewAmmoVH
----@field root
----@field lbl
+---@field root any
+---@field lbl any
 
 ---@return AmmoPanelViewAmmoVH
 function View:bind_vh_ammo(name)
