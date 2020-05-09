@@ -38,10 +38,10 @@ function View:bind_vh()
 			lbl_count = gui.get_node(self.root_name .. "/current/lbl_count")
 		},
 		ammo = {
-			bullet = self:bind_vh_ammo("bullet"),
-			bullet_2 = self:bind_vh_ammo("bullet_2"),
-			arrow = self:bind_vh_ammo("arrow"),
-			rocket = self:bind_vh_ammo("rocket"),
+			pistol = self:bind_vh_ammo("pistol"),
+			shotgun = self:bind_vh_ammo("shotgun"),
+			rifle = self:bind_vh_ammo("rifle"),
+			minigun = self:bind_vh_ammo("minigun"),
 		}
 	}
 
@@ -60,11 +60,11 @@ function View:ammo_update(name)
 end
 
 function View:ammo_update_all()
-	gui.set_text(self.vh.current.lbl_count, WORLD.battle_model.ecs.player.player_inventory.ammo.bullet)
-	self:ammo_update("bullet")
-	self:ammo_update("bullet_2")
-	self:ammo_update("arrow")
-	self:ammo_update("rocket")
+	gui.set_text(self.vh.current.lbl_count, WORLD.battle_model.ecs.player.player_inventory.ammo.pistol)
+	self:ammo_update("pistol")
+	self:ammo_update("shotgun")
+	self:ammo_update("rifle")
+	self:ammo_update("minigun")
 end
 
 function View:update(dt)

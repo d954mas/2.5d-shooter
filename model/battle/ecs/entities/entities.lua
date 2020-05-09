@@ -220,7 +220,7 @@ function Entities:create_player(pos)
 	}
 	e.player_inventory = {
 		keys = { blue = false, green = false, white = false, yellow = false },
-		ammo = { bullet = 100, bullet_2 = 25, arrow = 5, rocket = 0 }
+		ammo = { pistol = 50, shotgun = 25, rifle = 15, minigun = 0 }
 	}
 	e.hp = {
 		current = 50,

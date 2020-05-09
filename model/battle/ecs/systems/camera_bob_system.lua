@@ -1,6 +1,6 @@
 local ECS = require 'libs.ecs'
 
---local URL_WEAPON = msg.url("/weapon")
+local URL_WEAPON = msg.url("game_scene:/weapon")
 ---@class CameraBobSystem:ECSSystem
 local System = ECS.processingSystem()
 System.filter = ECS.requireAll("camera_bob_info")
@@ -17,9 +17,9 @@ function System:process(e, dt)
 end
 
 function System:weapon_set_bob_offset(offset)
-	--offset = offset * 150 - 15 -- -10 is dy to hide weapon bottom edge
-	--local pos = vmath.vector3(960,offset,0)
---	go.set_position(pos,URL_WEAPON)
+	offset = offset * 150 - 15 -- -10 is dy to hide weapon bottom edge
+	local pos = vmath.vector3(960,offset,0)
+	go.set_position(pos,URL_WEAPON)
 end
 
 return System
