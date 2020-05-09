@@ -5,5 +5,19 @@ M.PICKUP_TYPE = {
 	HP = "hp"
 }
 
+M.AMMO = {
+	PISTOL = "pistol",
+	SHOTGUN = "shotgun",
+	RIFLE = "rifle",
+	MINIGUN = "minigun"
+}
+
+M.WEAPON = {
+	PISTOL = "pistol",
+	SHOTGUN = "shotgun",
+	RIFLE = "rifle",
+	MINIGUN = "minigun"
+}
+
 
 return M

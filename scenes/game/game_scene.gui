@@ -811,8 +811,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 3.0
-    y: 3.0
+    x: 10.0
+    y: 19.0
     z: 0.0
     w: 1.0
   }
@@ -824,7 +824,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "gui/empty"
+  texture: "gui/icon_ammo_pistol"
   id: "ammo_panel/current"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -915,14 +915,14 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.9
-    y: 0.9
+    x: 4.0
+    y: 4.0
     z: 1.0
     w: 1.0
   }
   size {
-    x: 64.0
-    y: 100.0
+    x: 10.0
+    y: 19.0
     z: 0.0
     w: 1.0
   }
@@ -934,7 +934,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "gui/icon_ammo_bullet"
+  texture: "gui/icon_ammo_pistol"
   id: "ammo_panel/current/icon"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -1053,7 +1053,7 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "gui/empty"
-  id: "ammo_panel/bullet"
+  id: "ammo_panel/pistol"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -1088,14 +1088,14 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.0
-    y: 1.0
+    x: 3.0
+    y: 3.0
     z: 1.0
     w: 1.0
   }
   size {
-    x: 64.0
-    y: 100.0
+    x: 10.0
+    y: 19.0
     z: 0.0
     w: 1.0
   }
@@ -1107,13 +1107,13 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "gui/icon_ammo_bullet"
-  id: "ammo_panel/bullet/icon"
+  texture: "gui/icon_ammo_pistol"
+  id: "ammo_panel/pistol/icon"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "ammo_panel/bullet"
+  parent: "ammo_panel/pistol"
   layer: "below"
   inherit_alpha: true
   slice9 {
@@ -1164,7 +1164,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "100"
   font: "roboto_regular"
-  id: "ammo_panel/bullet/lbl_count"
+  id: "ammo_panel/pistol/lbl_count"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_E
@@ -1182,7 +1182,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "ammo_panel/bullet"
+  parent: "ammo_panel/pistol"
   layer: "text"
   inherit_alpha: true
   alpha: 1.0
@@ -1212,8 +1212,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 3.0
-    y: 3.0
+    x: 13.0
+    y: 23.0
     z: 0.0
     w: 1.0
   }
@@ -1225,8 +1225,8 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "gui/empty"
-  id: "ammo_panel/bullet_2"
+  texture: "gui/icon_ammo_shotgun"
+  id: "ammo_panel/shotgun"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -1261,14 +1261,14 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.0
-    y: 1.0
+    x: 3.0
+    y: 3.0
     z: 1.0
     w: 1.0
   }
   size {
-    x: 47.0
-    y: 100.0
+    x: 13.0
+    y: 23.0
     z: 0.0
     w: 1.0
   }
@@ -1280,13 +1280,13 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "gui/icon_ammo_bullet_2"
-  id: "ammo_panel/bullet_2/icon"
+  texture: "gui/icon_ammo_shotgun"
+  id: "ammo_panel/shotgun/icon"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "ammo_panel/bullet_2"
+  parent: "ammo_panel/shotgun"
   layer: "below"
   inherit_alpha: true
   slice9 {
@@ -1337,7 +1337,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "6"
   font: "roboto_regular"
-  id: "ammo_panel/bullet_2/lbl_count"
+  id: "ammo_panel/shotgun/lbl_count"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_E
@@ -1355,7 +1355,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "ammo_panel/bullet_2"
+  parent: "ammo_panel/shotgun"
   layer: "text"
   inherit_alpha: true
   alpha: 1.0
@@ -1399,7 +1399,7 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "gui/empty"
-  id: "ammo_panel/arrow"
+  id: "ammo_panel/rifle"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -1434,14 +1434,14 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.0
-    y: 1.0
+    x: 3.0
+    y: 3.0
     z: 1.0
     w: 1.0
   }
   size {
-    x: 14.0
-    y: 100.0
+    x: 10.0
+    y: 22.0
     z: 0.0
     w: 1.0
   }
@@ -1453,13 +1453,13 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "gui/icon_ammo_arrow"
-  id: "ammo_panel/arrow/icon"
+  texture: "gui/icon_ammo_rifle"
+  id: "ammo_panel/rifle/icon"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "ammo_panel/arrow"
+  parent: "ammo_panel/rifle"
   layer: "below"
   inherit_alpha: true
   slice9 {
@@ -1510,7 +1510,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "99"
   font: "roboto_regular"
-  id: "ammo_panel/arrow/lbl_count"
+  id: "ammo_panel/rifle/lbl_count"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_E
@@ -1528,7 +1528,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "ammo_panel/arrow"
+  parent: "ammo_panel/rifle"
   layer: "text"
   inherit_alpha: true
   alpha: 1.0
@@ -1572,7 +1572,7 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "gui/empty"
-  id: "ammo_panel/rocket"
+  id: "ammo_panel/minigun"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -1607,14 +1607,14 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.0
-    y: 1.0
+    x: 2.3
+    y: 2.3
     z: 1.0
     w: 1.0
   }
   size {
-    x: 23.0
-    y: 100.0
+    x: 10.0
+    y: 31.0
     z: 0.0
     w: 1.0
   }
@@ -1626,13 +1626,13 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "gui/icon_ammo_rocket"
-  id: "ammo_panel/rocket/icon"
+  texture: "gui/icon_ammo_minigun"
+  id: "ammo_panel/minigun/icon"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "ammo_panel/rocket"
+  parent: "ammo_panel/minigun"
   layer: "below"
   inherit_alpha: true
   slice9 {
@@ -1683,7 +1683,7 @@ nodes {
   blend_mode: BLEND_MODE_ALPHA
   text: "0"
   font: "roboto_regular"
-  id: "ammo_panel/rocket/lbl_count"
+  id: "ammo_panel/minigun/lbl_count"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_E
@@ -1701,7 +1701,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  parent: "ammo_panel/rocket"
+  parent: "ammo_panel/minigun"
   layer: "text"
   inherit_alpha: true
   alpha: 1.0

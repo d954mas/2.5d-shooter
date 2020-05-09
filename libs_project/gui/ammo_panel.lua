@@ -1,6 +1,7 @@
 local COMMON = require "libs.common"
 local WORLD = require "model.world"
 local COLORS = require "richtext.color"
+local ENUMS = require "libs_project.enums"
 
 local View = COMMON.class("AmmoPanelView")
 
@@ -38,10 +39,10 @@ function View:bind_vh()
 			lbl_count = gui.get_node(self.root_name .. "/current/lbl_count")
 		},
 		ammo = {
-			pistol = self:bind_vh_ammo("pistol"),
-			shotgun = self:bind_vh_ammo("shotgun"),
-			rifle = self:bind_vh_ammo("rifle"),
-			minigun = self:bind_vh_ammo("minigun"),
+			pistol = self:bind_vh_ammo(ENUMS.AMMO.PISTOL),
+			shotgun = self:bind_vh_ammo(ENUMS.AMMO.SHOTGUN),
+			rifle = self:bind_vh_ammo(ENUMS.AMMO.RIFLE),
+			minigun = self:bind_vh_ammo(ENUMS.AMMO.MINIGUN),
 		}
 	}
 
@@ -60,11 +61,11 @@ function View:ammo_update(name)
 end
 
 function View:ammo_update_all()
-	gui.set_text(self.vh.current.lbl_count, WORLD.battle_model.ecs.player.player_inventory.ammo.pistol)
-	self:ammo_update("pistol")
-	self:ammo_update("shotgun")
-	self:ammo_update("rifle")
-	self:ammo_update("minigun")
+	gui.set_text(self.vh.current.lbl_count, WORLD.battle_model.ecs.player.player_inventory.ammo[ENUMS.AMMO.PISTOL])
+	self:ammo_update(ENUMS.AMMO.PISTOL)
+	self:ammo_update(ENUMS.AMMO.SHOTGUN)
+	self:ammo_update(ENUMS.AMMO.RIFLE)
+	self:ammo_update(ENUMS.AMMO.MINIGUN)
 end
 
 function View:update(dt)
