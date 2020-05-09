@@ -1,6 +1,8 @@
 local COMMON = require "libs.common"
 local ECS = require "libs.ecs"
 local SYSTEMS = require "model.battle.ecs.systems"
+local ENUMS = require "libs_project.enums"
+local EVENTS = require "libs_project.events"
 local Entities = require "model.battle.ecs.entities.entities"
 
 ---@class GameEcsWorld
@@ -93,6 +95,30 @@ function EcsWorld:player_inventory_add_key(key)
 	self.player.player_inventory.keys[key] = true
 end
 
+function EcsWorld:player_weapon_get_active()
+	for _, weapon in pairs(self.player.weapons) do
+		if (weapon:state_is_active()) then return weapon end
+	end
+	error("no active assert")
+end
+
+function EcsWorld:player_weapon_get(key)
+	checks("?", "string")
+	return assert(self.player.weapons[key], "unknown weapon:" .. key)
+end
+
+function EcsWorld:player_weapon_change(new_weapon_key)
+	checks("?", "string")
+	local new_weapon = self:player_weapon_get(new_weapon_key)
+	local current = self:player_weapon_get_active()
+	if (current == new_weapon) then return end
+
+	COMMON.i(string.format("weapon change from:%s to:%s", current.config.key, new_weapon.config.key))
+	current:state_set(current.STATES.HIDE)
+	new_weapon:state_set(current.STATES.ACTIVE)
+	COMMON.EVENT_BUS:event(EVENTS.GAME_PLAYER_WEAPON_CHANGED)
+end
+
 function EcsWorld:player_can_heal()
 	return self.player.hp.current < self.player.hp.max
 end
@@ -100,7 +126,7 @@ end
 function EcsWorld:player_heal(value)
 	assert(self:player_can_heal())
 	local hp = self.player.hp
-	hp.current = COMMON.LUME.clamp(hp.current+value,0,hp.max)
+	hp.current = COMMON.LUME.clamp(hp.current + value, 0, hp.max)
 end
 
 ---@param e Entity

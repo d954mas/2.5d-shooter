@@ -1,6 +1,7 @@
 local ECS = require 'libs.ecs'
 local CURSOR_HELPER = require "libs_project.cursor_helper"
 local COMMON = require "libs.common"
+local ENUMS = require "libs_project.enums"
 
 ---@class InputSystem:ECSSystem
 local System = ECS.processingSystem()
@@ -12,8 +13,12 @@ function System:input_mouse_move()
 	player.angle.x = player.angle.x - CURSOR_HELPER.cursor_movement.x / 540
 end
 
+function System:input_weapon_select(weapon)
+	self.world.game:player_weapon_change(weapon)
+end
+
 function System:input_interact()
-	if(self.world.game.selected_object) then
+	if (self.world.game.selected_object) then
 		self.world.game:select_object_interact()
 	end
 end
@@ -23,6 +28,10 @@ function System:init_input()
 	self.input_handler = COMMON.INPUT()
 	self.input_handler:add_mouse(self.input_mouse_move)
 	self.input_handler:add(COMMON.HASHES.INPUT.INTERACT, self.input_interact, true)
+	self.input_handler:add(COMMON.HASHES.INPUT.WEAPON_1, function() self:input_weapon_select(ENUMS.WEAPON.PISTOL) end, true)
+	self.input_handler:add(COMMON.HASHES.INPUT.WEAPON_2, function() self:input_weapon_select(ENUMS.WEAPON.SHOTGUN) end, true)
+	self.input_handler:add(COMMON.HASHES.INPUT.WEAPON_3, function() self:input_weapon_select(ENUMS.WEAPON.RIFLE) end, true)
+	self.input_handler:add(COMMON.HASHES.INPUT.WEAPON_4, function() self:input_weapon_select(ENUMS.WEAPON.MINIGUN) end, true)
 	--self.input_handler:add(COMMON.HASHES.INPUT.TOUCH,self.make_shot)
 end
 

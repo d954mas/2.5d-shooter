@@ -30,6 +30,22 @@ key_trigger {
   input: KEY_E
   action: "interact"
 }
+key_trigger {
+  input: KEY_1
+  action: "weapon_1"
+}
+key_trigger {
+  input: KEY_2
+  action: "weapon_2"
+}
+key_trigger {
+  input: KEY_3
+  action: "weapon_3"
+}
+key_trigger {
+  input: KEY_4
+  action: "weapon_4"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_1
   action: "touch"

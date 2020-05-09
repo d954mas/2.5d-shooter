@@ -14,6 +14,8 @@ M.Thread = require "libs.thread"
 M.ThreadManager = require "libs.thread_manager"
 M.EventBus = EventBus
 
+
+
 M.EVENT_BUS = EventBus() --global event_bus
 M.GLOBAL = {
     speed_game = 1

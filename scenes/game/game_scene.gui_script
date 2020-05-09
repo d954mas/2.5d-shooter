@@ -46,7 +46,7 @@ function Script:update(dt)
 		self.view.ammo_panel:update(dt)
 		self.view.minimap:set_position_center(player.position.x, player.position.y)
 		self.view.minimap:update(dt)
-		gui.set_rotation(self.vh.map_player,vmath.vector3(0,0,math.deg(player.angle.x)))
+		gui.set_rotation(self.vh.map_player, vmath.vector3(0, 0, math.deg(player.angle.x)))
 
 	end
 
@@ -55,6 +55,7 @@ end
 function Script:final()
 	COMMON.CONTEXT:unregister(COMMON.CONTEXT.NAMES.GAME_GUI)
 	COMMON.input_release()
+	self.view.ammo_panel:final()
 end
 
 function Script:on_input(action_id, action)

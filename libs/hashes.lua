@@ -23,7 +23,11 @@ M.INPUT = {
 	DOWN = hash("down"),
 	LEFT = hash("left"),
 	RIGHT = hash("right"),
-	INTERACT = hash("interact")
+	INTERACT = hash("interact"),
+	WEAPON_1 = hash("weapon_1"),
+	WEAPON_2 = hash("weapon_2"),
+	WEAPON_3 = hash("weapon_3"),
+	WEAPON_4 = hash("weapon_4"),
 }
 
 M.MSG = {

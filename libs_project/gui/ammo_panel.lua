@@ -2,6 +2,7 @@ local COMMON = require "libs.common"
 local WORLD = require "model.world"
 local COLORS = require "richtext.color"
 local ENUMS = require "libs_project.enums"
+local EVENTS = require "libs_project.events"
 
 local View = COMMON.class("AmmoPanelView")
 
@@ -15,6 +16,16 @@ function View:initialize(root_name)
 	self.root_name = root_name
 	self:bind_vh()
 	self:gui_init()
+	self.scheduler = COMMON.RX.CooperativeScheduler.create()
+	self:ammo_current_change(ENUMS.AMMO.PISTOL)
+	self.subscription = COMMON.EVENT_BUS:subscribe(EVENTS.GAME_PLAYER_WEAPON_CHANGED):go_distinct(self.scheduler):subscribe(function()
+		self:ammo_current_change(WORLD.battle_model.ecs:player_weapon_get_active().config.ammo)
+	end)
+end
+
+function View:ammo_current_change(ammo)
+	self.ammo_current = ammo
+	gui.play_flipbook(self.vh.current.icon,"icon_ammo_" .. ammo )
 end
 
 ---@class AmmoPanelViewAmmoVH
@@ -61,7 +72,7 @@ function View:ammo_update(name)
 end
 
 function View:ammo_update_all()
-	gui.set_text(self.vh.current.lbl_count, WORLD.battle_model.ecs.player.player_inventory.ammo[ENUMS.AMMO.PISTOL])
+	gui.set_text(self.vh.current.lbl_count, WORLD.battle_model.ecs.player.player_inventory.ammo[self.ammo_current])
 	self:ammo_update(ENUMS.AMMO.PISTOL)
 	self:ammo_update(ENUMS.AMMO.SHOTGUN)
 	self:ammo_update(ENUMS.AMMO.RIFLE)
@@ -69,7 +80,12 @@ function View:ammo_update_all()
 end
 
 function View:update(dt)
+	self.scheduler:update(dt)
 	self:ammo_update_all()
+end
+
+function View:final()
+	self.subscription:unsubscribe()
 end
 
 return View
