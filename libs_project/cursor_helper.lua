@@ -93,9 +93,9 @@ function M.update_cursor_movement()
 	if not IS_HTML then
 		if M.locked then
 			local x, y = defos.get_cursor_pos_view()
-			M.cursor_movement.x = x - RENDERCAM.window.x / 2
-			M.cursor_movement.y = y - RENDERCAM.window.y / 2
-			defos.set_cursor_pos_view(RENDERCAM.window.x / 2, RENDERCAM.window.y / 2) -- In game view coordinates
+			M.cursor_movement.x = x - COMMON.RENDER.screen_size.w / 2
+			M.cursor_movement.y = y - COMMON.RENDER.screen_size.h / 2
+			defos.set_cursor_pos_view(COMMON.RENDER.screen_size.w / 2, COMMON.RENDER.screen_size.h / 2) -- In game view coordinates
 		--	x, y = defos.get_cursor_pos_view()
 		end
 	end

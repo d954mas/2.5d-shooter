@@ -10,6 +10,7 @@ local EVENTS = require "libs_project.events"
 local SCENE_LOADER = require "libs.sm.scene_loader"
 local WORLD = require "model.world"
 local LOCALE = require "assets.localization.localization"
+local CAMERAS = require "libs_project.cameras"
 COMMON.LOCALE = LOCALE
 
 local RUN_TEST = false
@@ -47,6 +48,7 @@ function Script:init()
 	self:init_msg()
 	GA.init("UA-93117606-2")
 	SM:register_scenes()
+	CAMERAS:init()
 
 	self.subscriptions = RX.CompositeSubscription()
 	COMMON.CONTEXT:register(COMMON.CONTEXT.NAMES.MAIN, self)
@@ -77,6 +79,7 @@ function Script:update(dt)
 	GA.update(dt)
 	WORLD:update(dt)
 	DEBUG_INFO.update(dt)
+	CAMERAS:update(dt)
 	if self.test_runner then
 		self.test_runner.update(dt)
 	end
@@ -92,6 +95,7 @@ function Script:final()
 	WORLD:final()
 	COMMON.INPUT.clear()
 	COMMON.CONTEXT:unregister(COMMON.CONTEXT.NAMES.MAIN)
+	CAMERAS:final()
 end
 
 function Script:on_input(action_id, action)

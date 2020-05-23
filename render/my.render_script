@@ -1,8 +1,8 @@
 local COMMON = require "libs.common"
-local RENDERCAM = require "rendercam.rendercam"
 local EVENTS = require "libs_project.events"
 local WORLD = require "model.world"
 local CONSTANTS = require "libs_project.constants"
+local CAMERAS = require "libs_project.cameras"
 
 local TAG = "Render"
 
@@ -11,12 +11,17 @@ local Render = COMMON.new_n28s()
 --region init
 function Render:init()
 	self.clear_color = vmath.vector4(0, 0, 0, 0)
+	--самый первый размер это размер игры. Иначе камеры плохо отрабатывыют в html  билде
 	self.screen_size = {
-		w = render.get_window_width(),
-		h = render.get_window_height(),
+		w = CONSTANTS.HTML5 and render.get_width() or render.get_window_width(),
+		h = CONSTANTS.HTML5 and render.get_height() or render.get_window_height(),
 	}
+	self.config_size = {
+		w = render.get_width(),
+		h = render.get_height()
+	}
+	self.view_empty = vmath.matrix4()
 	self:init_predicates()
-	self:init_rendercam()
 	self:init_render_targets()
 	self:init_buffers()
 	self:init_constants_buffers()
@@ -72,13 +77,6 @@ function Render:init_predicates()
 	}
 end
 
-function Render:init_rendercam()
-	RENDERCAM.configWin.x = render.get_width();
-	RENDERCAM.configWin.y = render.get_height()
-	RENDERCAM.update_window_size(self.screen_size.w, self.screen_size.h)
-	self:window_size_changed()
-end
-
 function Render:init_constants_buffers()
 	self.constants_buffers = {
 		light_map = render.constant_buffer(),
@@ -90,8 +88,6 @@ function Render:register_messages()
 	self.msg_receiver:add(COMMON.HASHES.MSG.RENDER.CLEAR_COLOR, function(_, _, message)
 		self.clear_color = message.color
 	end)
-	-- sent by rendercam when a camera is activated ("window_resized" engine message requires data)
-	self.msg_receiver:add("update window", self.window_size_changed)
 	self.msg_receiver:add(COMMON.HASHES.MSG.RENDER.WINDOW_RESIZED, function(...)
 		local prev_w = self.screen_size.w
 		local prev_h = self.screen_size.h
@@ -109,17 +105,16 @@ end
 
 
 function Render:window_size_changed()
-	RENDERCAM.update_window(self.screen_size.w, self.screen_size.h)
-	self.gui_proj = vmath.matrix4_orthographic(0, self.screen_size.w, 0, self.screen_size.h, -1, 1)
+	self.proj_gui = vmath.matrix4_orthographic(0, self.screen_size.w, 0, self.screen_size.h, -1, 1)
 end
 
 
 --region draw
 function Render:render_gui()
 	-- GUI Rendering
-	render.set_viewport(0, 0, RENDERCAM.window.x, RENDERCAM.window.y)
-	render.set_view(vmath.matrix4())
-	render.set_projection(vmath.matrix4_orthographic(0, render.get_window_width(), 0, render.get_window_height(), -1, 1))
+	render.set_viewport(0, 0, render.get_window_width(), render.get_window_height())
+	render.set_view(self.view_empty)
+	render.set_projection(self.proj_gui)
 
 	render.enable_state(render.STATE_STENCIL_TEST)
 	render.draw(self.predicates.gui)
@@ -128,9 +123,10 @@ function Render:render_gui()
 end
 
 function Render:render_sprites()
-	render.set_viewport(RENDERCAM.viewport.x, RENDERCAM.viewport.y, RENDERCAM.viewport.width, RENDERCAM.viewport.height)
-	render.set_view(RENDERCAM.calculate_view())
-	render.set_projection(RENDERCAM.calculate_proj())
+	local camera = CAMERAS.current
+	render.set_viewport(camera.viewport.x, camera.viewport.y, camera.viewport.width, camera.viewport.height)
+	render.set_view(camera:get_view())
+	render.set_projection(camera:get_proj())
 
 	render.set_depth_mask(false)
 	render.disable_state(render.STATE_DEPTH_TEST)
@@ -144,8 +140,9 @@ function Render:render_sprites()
 end
 
 function Render:render_sprites_top()
-	render.set_viewport(0, 0, RENDERCAM.window.x, RENDERCAM.window.y)
-	render.set_view(vmath.matrix4())
+	local camera = CAMERAS.current
+	render.set_viewport(camera.viewport.x, camera.viewport.y, camera.viewport.width, camera.viewport.height)
+	render.set_view(self.view_empty)
 
 	--try keep weapon art same on different resolutions
 	local width = render.get_width()
@@ -178,10 +175,11 @@ end
 
 function Render:render_3d()
 	if (not self.targets.light_map) then return end
+	local camera = CAMERAS.current
 
-	render.set_viewport(RENDERCAM.viewport.x, RENDERCAM.viewport.y, RENDERCAM.viewport.width, RENDERCAM.viewport.height)
-	render.set_view(RENDERCAM.calculate_view())
-	render.set_projection(RENDERCAM.calculate_proj())
+	render.set_viewport(camera.viewport.x, camera.viewport.y, camera.viewport.width, camera.viewport.height)
+	render.set_view(camera:get_view())
+	render.set_projection(camera:get_proj())
 
 	render.enable_state(render.STATE_DEPTH_TEST)
 	render.set_depth_mask(true)

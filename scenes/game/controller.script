@@ -1,6 +1,7 @@
 requiref = require -- to fix cyclic dependencies
 local COMMON = require "libs.common"
 local WORLD = require "model.world"
+local CAMERAS = require "libs_project.cameras"
 ---@class ScriptGameController
 local Script = COMMON.new_n28s()
 
@@ -18,6 +19,7 @@ function Script:init()
 	self:init_msg()
 	WORLD.battle_model:load_level()
 	COMMON.CONTEXT:register(COMMON.CONTEXT.NAMES.GAME, self)
+	CAMERAS:set_current(CAMERAS.game_camera)
 end
 
 function Script:on_message(message_id, message, sender)
@@ -37,6 +39,7 @@ function Script:final()
 	COMMON.CONTEXT:unregister(COMMON.CONTEXT.NAMES.GAME)
 	self.input.release()
 	WORLD:battle_model_final()
+	CAMERAS:set_current(CAMERAS.fallback_camera)
 end
 
 COMMON.N28S.register(Script())

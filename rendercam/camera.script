@@ -7,6 +7,8 @@
 local PERLIN = require "libs.perlin"
 local rendercam = require "rendercam.rendercam"
 
+local HASHES = require "libs.hashes"
+
 go.property("active", true)
 go.property("orthographic", true)
 go.property("nearZ", -1)
@@ -137,94 +139,90 @@ function final(self)
 	rendercam.camera_final(self.id)
 end
 
+local VMATH_ROTATE = vmath.rotate
+
 function update(self, dt)
 	self.dt = dt -- faster to store than to send in message
-	msg.post("#", "post-update")
-end
 
-function on_message(self, message_id, message, sender)
-	if message_id == hash("post-update") then
-		-- have to update pos after update or it jitters like crazy
-		-- Update transform stuff
-		self.data.lpos = go.get_position()
-		self.lrot = go.get_rotation()
-		self.data.lforwardVec = vmath.rotate(self.lrot, FORWARDVEC)
-		self.data.lupVec = vmath.rotate(self.lrot, UPVEC)
-		self.data.lrightVec = vmath.rotate(self.lrot, RIGHTVEC)
+	-- have to update pos after update or it jitters like crazy
+	-- Update transform stuff
+	self.data.lpos = go.get_position()
+	self.lrot = go.get_rotation()
+	self.data.lforwardVec = VMATH_ROTATE(self.lrot, FORWARDVEC)
+	self.data.lupVec = VMATH_ROTATE(self.lrot, UPVEC)
+	self.data.lrightVec = VMATH_ROTATE(self.lrot, RIGHTVEC)
 
-		-- Camera Shake
-		self.data.lpos = self.data.lpos - self.shake -- subtract last frame's shake
-		self.shake.x = 0;  self.shake.y = 0;  self.shake.z = 0
-		for i=#self.data.shakes, 1, -1 do -- iterate backwards so I can remove arbitrary elements without problems
-			local v = self.data.shakes[i]
-			local d = math.random() * v.dist * v.t / v.dur -- linear falloff
-			local angle = math.random() * TWO_PI
-			self.shake = self.shake + self.data.lrightVec * math.sin(angle) * d
-			self.shake = self.shake + self.data.lupVec * math.cos(angle) * d
-			v.t = v.t - self.dt
-			if v.t <= 0 then table.remove(self.data.shakes, i) end
-		end
-
-		-- Camera Recoil
-		for i=#self.data.recoils, 1, -1 do
-			local v = self.data.recoils[i]
-			local d = v.t / v.dur
-			d = d*d -- square falloff
-			self.shake = self.shake + vmath.rotate(self.lrot, v.vec * d) -- rotate recoil vec so it's relative to the camera
-			v.t = v.t - self.dt
-			if v.t <= 0 then table.remove(self.data.recoils, i) end
-		end
-
-		-- Camera Follow
-		if self.data.following then
-			self.followPos.x = 0;  self.followPos.y = 0;
-			for i, v in ipairs(self.data.follows) do
-				self.followPos = self.followPos + go.get_world_position(v)
-			end
-			self.followPos = self.followPos * (1/#self.data.follows)
-			self.followPos = rendercam.follow_lerp_func(self.data.lpos, self.followPos, self.dt)
-			self.data.lpos.x = self.followPos.x;  self.data.lpos.y = self.followPos.y
-		end
-
-		if #self.data.recoils + #self.data.shakes + #self.data.follows > 0 then
-			self.data.lpos = self.data.lpos + self.shake
-			go.set_position(self.data.lpos)
-		end
-
-		self.wrot = go.get_world_rotation()
-
-		--Camera Rotation
-		if self.data.rotations[1] then
-			if self.dt ~= 0 then
-				self.dt = self.dt
-				local rotation = self.data.rotations[1]
-				local time = os.clock()
-				local shake = rotation.trauma * rotation.trauma
-				local up = rotation.value.x  * shake * (PERLIN.noise(time*7,0,self.data.perlin_seeds[1]))
-				local right =rotation.value.y * shake * (PERLIN.noise(time*7,0,self.data.perlin_seeds[2]))
-				local around = rotation.value.z * shake * (PERLIN.noise(time*7,0,self.data.perlin_seeds[3]))
-
-				rotation.trauma = rotation.trauma - rotation.speed * self.dt
-				if rotation.trauma <= 0 then table.remove(self.data.rotations, 1) end
-
-				local rot_x = vmath.quat_rotation_x(up)
-				local rot_y = vmath.quat_rotation_y(right)
-				local rot_z = vmath.quat_rotation_z(around)
-				self.prev_rotation = rot_x * rot_y * rot_z
-			end
-
-			self.wrot = self.wrot * self.prev_rotation
-
-		end
-
-		-- Save world transform data for calculating view matrix
-		self.data.wpos = go.get_world_position()
-
-		self.data.wforwardVec = vmath.rotate(self.wrot, FORWARDVEC)
-		self.data.wupVec = vmath.rotate(self.wrot, UPVEC)
-		-- Absolute/world near and far positions for screen-to-world transform
-		self.data.abs_nearZ = self.data.wpos.z - self.data.nearZ
-		self.data.abs_farZ = self.data.wpos.z - self.data.farZ
+	-- Camera Shake
+	self.data.lpos = self.data.lpos - self.shake -- subtract last frame's shake
+	self.shake.x = 0;  self.shake.y = 0;  self.shake.z = 0
+	for i=#self.data.shakes, 1, -1 do -- iterate backwards so I can remove arbitrary elements without problems
+		local v = self.data.shakes[i]
+		local d = math.random() * v.dist * v.t / v.dur -- linear falloff
+		local angle = math.random() * TWO_PI
+		self.shake = self.shake + self.data.lrightVec * math.sin(angle) * d
+		self.shake = self.shake + self.data.lupVec * math.cos(angle) * d
+		v.t = v.t - self.dt
+		if v.t <= 0 then table.remove(self.data.shakes, i) end
 	end
-end
 
+	-- Camera Recoil
+	for i=#self.data.recoils, 1, -1 do
+		local v = self.data.recoils[i]
+		local d = v.t / v.dur
+		d = d*d -- square falloff
+		self.shake = self.shake + vmath.rotate(self.lrot, v.vec * d) -- rotate recoil vec so it's relative to the camera
+		v.t = v.t - self.dt
+		if v.t <= 0 then table.remove(self.data.recoils, i) end
+	end
+
+	-- Camera Follow
+	if self.data.following then
+		self.followPos.x = 0;  self.followPos.y = 0;
+		for i, v in ipairs(self.data.follows) do
+			self.followPos = self.followPos + go.get_world_position(v)
+		end
+		self.followPos = self.followPos * (1/#self.data.follows)
+		self.followPos = rendercam.follow_lerp_func(self.data.lpos, self.followPos, self.dt)
+		self.data.lpos.x = self.followPos.x;  self.data.lpos.y = self.followPos.y
+	end
+
+	if #self.data.recoils + #self.data.shakes + #self.data.follows > 0 then
+		self.data.lpos = self.data.lpos + self.shake
+		go.set_position(self.data.lpos)
+	end
+
+	self.wrot = go.get_world_rotation()
+
+	--Camera Rotation
+	if self.data.rotations[1] then
+		if self.dt ~= 0 then
+			self.dt = self.dt
+			local rotation = self.data.rotations[1]
+			local time = os.clock()
+			local shake = rotation.trauma * rotation.trauma
+			local up = rotation.value.x  * shake * (PERLIN.noise(time*7,0,self.data.perlin_seeds[1]))
+			local right =rotation.value.y * shake * (PERLIN.noise(time*7,0,self.data.perlin_seeds[2]))
+			local around = rotation.value.z * shake * (PERLIN.noise(time*7,0,self.data.perlin_seeds[3]))
+
+			rotation.trauma = rotation.trauma - rotation.speed * self.dt
+			if rotation.trauma <= 0 then table.remove(self.data.rotations, 1) end
+
+			local rot_x = vmath.quat_rotation_x(up)
+			local rot_y = vmath.quat_rotation_y(right)
+			local rot_z = vmath.quat_rotation_z(around)
+			self.prev_rotation = rot_x * rot_y * rot_z
+		end
+
+		self.wrot = self.wrot * self.prev_rotation
+
+	end
+
+	-- Save world transform data for calculating view matrix
+	self.data.wpos = go.get_world_position()
+
+	self.data.wforwardVec = VMATH_ROTATE(self.wrot, FORWARDVEC)
+	self.data.wupVec = VMATH_ROTATE(self.wrot, UPVEC)
+	-- Absolute/world near and far positions for screen-to-world transform
+	self.data.abs_nearZ = self.data.wpos.z - self.data.nearZ
+	self.data.abs_farZ = self.data.wpos.z - self.data.farZ
+end

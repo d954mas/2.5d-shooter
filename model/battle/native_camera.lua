@@ -1,6 +1,6 @@
 local COMMON = require "libs.common"
 local EVENTS = require "libs_project.events"
-local RENDER_CAM = require "rendercam.rendercam"
+local CAMERAS = require "libs_project.cameras"
 
 local Camera = COMMON.class("NativeCamera")
 
@@ -25,8 +25,8 @@ function Camera:final()
 end
 
 function Camera:camera_update_fov()
-	local aspect = RENDER_CAM.window.x / RENDER_CAM.window.y
-	local v_fov = assert(RENDER_CAM.get_current_camera(), "no active camera").fov
+	local aspect = COMMON.RENDER.screen_size.w /  COMMON.RENDER.screen_size.h
+	local v_fov = assert(CAMERAS.current, "no active camera").fov
 	assert(v_fov,"no fov in camera")
 	local h_fov = 2 * math.atan(math.tan(v_fov / 2) * aspect);
 	self.camera:set_fov(h_fov * 1.2)
