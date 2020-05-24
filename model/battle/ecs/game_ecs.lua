@@ -74,6 +74,7 @@ function EcsWorld:_init_systems()
 	self.ecs:addSystem(SYSTEMS.DrawPickupsSystem)
 	self.ecs:addSystem(SYSTEMS.DrawDebugPhysicsBodiesSystem)
 	self.ecs:addSystem(SYSTEMS.DrawDebugLightsSystem)
+	self.ecs:addSystem(SYSTEMS.WeaponTintSystem)
 	self.ecs:addSystem(SYSTEMS.AutoDestroySystem)
 end
 

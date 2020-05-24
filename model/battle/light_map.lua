@@ -61,7 +61,7 @@ function LightMap:draw_light_map(debug)
 	render.disable_state(render.STATE_CULL_FACE)
 	if debug then
 		local size = math.max(512, self.size)
-		render.set_viewport(20, 20, size, size)
+		render.set_viewport(20, 100, size, size)
 	else
 		render.set_viewport(0, 0, self.size, self.size)
 	end

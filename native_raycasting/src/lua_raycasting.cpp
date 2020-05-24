@@ -246,6 +246,7 @@ static int LightMapSetColorsLUA(lua_State* L){
             color = MAP.cells[id].color;
         }else{
             color = luaL_checknumber(L,-1);
+            MAP.cells[id].color = color;
         }
         int r,g,b;RGBIntToRGB(color, r,g,b);
         BufferSetColorYTop(buffer,id,r,g,b);
