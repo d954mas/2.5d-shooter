@@ -57,7 +57,7 @@ emitters {
     key: EMITTER_KEY_SIZE_Z
     points {
       x: 0.0
-      y: 20.0
+      y: 0.0
       t_x: 1.0
       t_y: 0.0
     }

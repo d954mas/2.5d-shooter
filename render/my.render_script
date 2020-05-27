@@ -65,7 +65,7 @@ function Render:init_predicates()
 		text = render.predicate({ "text" }),
 		particle = render.predicate({ "particle" }),
 		wall = render.predicate({ "wall" }),
-		transparent3d = render.predicate({ "transparent3d" }),
+		transparent3d = render.predicate({ "transparent3d", }),
 
 		tile_top = render.predicate({ "tile_top" }),--for example hero weapon.
 		light_map = render.predicate({ "light_map" }),
