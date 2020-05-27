@@ -20,6 +20,7 @@ function Script:init()
 	WORLD.battle_model:load_level()
 	COMMON.CONTEXT:register(COMMON.CONTEXT.NAMES.GAME, self)
 	CAMERAS:set_current(CAMERAS.game_camera)
+	particlefx.play("/particles#test_1")
 end
 
 function Script:on_message(message_id, message, sender)

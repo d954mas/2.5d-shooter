@@ -219,3 +219,38 @@ embedded_instances {
     z: 1.0
   }
 }
+embedded_instances {
+  id: "particles"
+  data: "components {\n"
+  "  id: \"test_1\"\n"
+  "  component: \"/assets/particles/test_1.particlefx\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 4.0
+    y: 0.0
+    z: -25.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+    z: 0.01
+  }
+}

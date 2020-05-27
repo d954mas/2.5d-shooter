@@ -179,6 +179,7 @@ function Render:render_3d()
 	render.set_projection(camera:get_proj())
 
 	render.enable_state(render.STATE_DEPTH_TEST)
+	render.set_depth_func(render.COMPARE_FUNC_LEQUAL)
 
 	render.enable_texture(1, self.targets.light_map, render.BUFFER_COLOR_BIT)
 
