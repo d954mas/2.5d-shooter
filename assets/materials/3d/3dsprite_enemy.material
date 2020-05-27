@@ -1,5 +1,5 @@
 name: "sprite3d"
-tags: "sprite_3d_enemy"
+tags: "transparent3d"
 vertex_program: "/assets/materials/3d/3d.vp"
 fragment_program: "/assets/materials/3d/3dsprite_object.fp"
 vertex_space: VERTEX_SPACE_WORLD

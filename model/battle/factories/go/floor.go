@@ -3,7 +3,7 @@ embedded_components {
   type: "sprite"
   data: "tile_set: \"/assets/images/game/walls/walls.atlas\"\n"
   "default_animation: \"wall10\"\n"
-  "material: \"/assets/materials/3d/wall_transparent.material\"\n"
+  "material: \"/assets/materials/3d/wall.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {

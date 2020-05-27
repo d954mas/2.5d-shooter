@@ -1,5 +1,5 @@
 name: "particle"
-tags: "sprite_3d_object"
+tags: "transparent3d"
 vertex_program: "/builtins/materials/particlefx.vp"
 fragment_program: "/assets/materials/3d/3dparticlefx.fp"
 vertex_space: VERTEX_SPACE_WORLD

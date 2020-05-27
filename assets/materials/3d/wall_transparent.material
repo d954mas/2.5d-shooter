@@ -1,5 +1,5 @@
 name: "sprite3d"
-tags: "wall_transparent"
+tags: "transparent3d"
 vertex_program: "/assets/materials/3d/3d.vp"
 fragment_program: "/assets/materials/3d/wall.fp"
 vertex_space: VERTEX_SPACE_WORLD

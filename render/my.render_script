@@ -63,13 +63,10 @@ function Render:init_predicates()
 		tile = render.predicate({ "tile" }),
 		gui = render.predicate({ "gui" }),
 		text = render.predicate({ "text" }),
-		model = render.predicate({ "model" }),
 		particle = render.predicate({ "particle" }),
 		wall = render.predicate({ "wall" }),
-		wall_transparent = render.predicate({ "wall_transparent" }),
-		sprite_3d = render.predicate({ "sprite_3d" }),
-		sprite_3d_object = render.predicate({ "sprite_3d_object" }),
-		sprite_3d_enemy = render.predicate({ "sprite_3d_enemy" }),
+		transparent3d = render.predicate({ "transparent3d" }),
+
 		tile_top = render.predicate({ "tile_top" }),--for example hero weapon.
 		light_map = render.predicate({ "light_map" }),
 		dynamic_light_walls = render.predicate({ "dynamic_light_walls" }),
@@ -182,26 +179,23 @@ function Render:render_3d()
 	render.set_projection(camera:get_proj())
 
 	render.enable_state(render.STATE_DEPTH_TEST)
-	render.set_depth_mask(true)
+
 	render.enable_texture(1, self.targets.light_map, render.BUFFER_COLOR_BIT)
 
+	render.set_depth_mask(true)
 	render.draw(self.predicates.wall, self.constants_buffers.light_map)
 
-	render.enable_state(render.STATE_CULL_FACE)
-	render.draw(self.predicates.model, self.constants_buffers.light_map)
+	render.enable_state(render.STATE_BLEND)
+	render.set_blend_func(render.BLEND_SRC_ALPHA, render.BLEND_ONE_MINUS_SRC_ALPHA)
+
 	render.disable_state(render.STATE_CULL_FACE)
-
-	render.draw(self.predicates.sprite_3d, self.constants_buffers.light_map)
-
-	render.draw(self.predicates.sprite_3d_object, self.constants_buffers.light_map)
-	render.draw(self.predicates.sprite_3d_enemy, self.constants_buffers.light_map)
-
-	render.draw(self.predicates.wall_transparent, self.constants_buffers.light_map)
+	render.draw(self.predicates.transparent3d, self.constants_buffers.light_map)
 
 	if CONSTANTS.DEBUG.draw_physics then render.draw(self.predicates.debug_physics) end
 	render.draw_debug3d()
 
 	render.disable_state(render.STATE_DEPTH_TEST)
+	render.enable_state(render.STATE_CULL_FACE)
 	render.set_depth_mask(false)
 	render.disable_texture(1)
 end

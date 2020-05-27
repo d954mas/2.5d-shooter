@@ -1,5 +1,5 @@
 name: "sprite3d"
-tags: "sprite_3d"
+tags: "transparent3d"
 vertex_program: "/builtins/materials/sprite.vp"
 fragment_program: "/assets/materials/3d/3d_no_light_and_no_fog.fp"
 vertex_space: VERTEX_SPACE_WORLD
