@@ -41,7 +41,8 @@ function Script:bind_vh()
 					btn_ecs_systems = GUI.ButtonIconTest("panel_game/btn_ecs_systems"),
 					btn_level_map = GUI.ButtonIconTest("panel_game/btn_level_map"),
 					btn_game_info = GUI.ButtonIconTest("panel_game/btn_game_info"),
-					btn_draw_physics = GUI.ButtonIconTest("panel_game/btn_draw_physics"),
+					checkbox_draw_physics = GUI.CheckboxWithLabel("panel_game/checkbox_draw_physics"),
+					checkbox_draw_debug_light = GUI.CheckboxWithLabel("panel_game/checkbox_draw_debug_light"),
 					lbl_ecs_systems = gui.get_node("panel_game/lbl_ecs_systems"),
 					lbl_info_1 = gui.get_node("panel_game/info_1"),
 					level_map = LEVEL_MAP("panel_game/level_map")
@@ -91,10 +92,6 @@ function Script:init_gui()
 		game.config.show_systems = not game.config.show_systems
 		gui.set_enabled(game.childs.lbl_ecs_systems, game.config.show_systems)
 	end)
-	self.views.panels.game.childs.btn_draw_physics:set_input_listener(function()
-		CONSTANTS.DEBUG.draw_physics = not CONSTANTS.DEBUG.draw_physics
-	end)
-
 	self.views.panels.game.childs.btn_level_map:set_input_listener(function()
 		local game = self.views.panels.game
 		game.config.show_level_map = not game.config.show_level_map
@@ -106,6 +103,17 @@ function Script:init_gui()
 		game.config.show_game_info = not game.config.show_game_info
 		gui.set_enabled(game.childs.lbl_info_1, game.config.show_game_info)
 	end)
+
+	self.views.panels.game.childs.checkbox_draw_debug_light:set_checked(CONSTANTS.DEBUG.draw_light_debug_object)
+	self.views.panels.game.childs.checkbox_draw_debug_light:set_input_listener(function()
+		CONSTANTS.DEBUG.draw_light_debug_object = self.views.panels.game.childs.checkbox_draw_debug_light.checked
+	end)
+
+	self.views.panels.game.childs.checkbox_draw_physics:set_checked(CONSTANTS.DEBUG.draw_physics)
+	self.views.panels.game.childs.checkbox_draw_physics:set_input_listener(function()
+		CONSTANTS.DEBUG.draw_physics = self.views.panels.game.childs.checkbox_draw_physics.checked
+	end)
+
 
 	self.views.panels.game.update = function(dt)
 		local game = self.views.panels.game

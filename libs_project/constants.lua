@@ -11,6 +11,7 @@ M.GAME_SIZE = {
 M.DEBUG = {
 	draw_light_map = false,
 	draw_physics = false,
+	draw_light_debug_object = false,
 	draw_light_dynamic = false
 }
 
