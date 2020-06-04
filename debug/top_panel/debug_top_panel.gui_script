@@ -208,9 +208,10 @@ function Script:update(dt)
 		gui.set_text(self.vh.lbl_game_speed, string.format("Speed:%.2f", COMMON.GLOBAL.speed_game))
 		gui.set_text(self.vh.lbl_cpu, "Cpu:" .. string.format("%.2f", profiler.get_cpu_usage()))
 		gui.set_text(self.vh.lbl_memory, "Mem:" .. string.format("%.2f Mb", profiler.get_memory_usage() / 1024 / 1024))
-		self.views.scene_debug_view:update(dt)
 		self:panel_update(dt)
 	end
+
+	self.views.scene_debug_view:update(dt)
 
 	local scene = SM.stack:peek()
 	if scene and (scene ~= self.scene_current or self.speed_game_changed) then
