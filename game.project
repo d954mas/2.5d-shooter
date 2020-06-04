@@ -51,9 +51,6 @@ texture_profiles = /render/fast.texture_profiles
 default_texture_min_filter = nearest
 default_texture_mag_filter = nearest
 
-[sound]
-max_sound_buffers = 32
-
 [sprite]
 max_count = 8192
 

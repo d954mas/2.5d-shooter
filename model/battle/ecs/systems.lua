@@ -44,7 +44,8 @@ function M.load()
 	M.PhysicsResetCorrectionSystem = require "model.battle.ecs.systems.physics_reset_correction_system"
 	M.LightsDynamicUpdate = require "model.battle.ecs.systems.lights_dynamic_update"
 	M.LightsPatternUpdate = require "model.battle.ecs.systems.lights_pattern_update"
-	M.WeaponTintSystem = require "model.battle.ecs.systems.weapon_tint_system"
+	M.WeaponPlayerTintSystem = require "model.battle.ecs.systems.weapon_player_tint_system"
+	M.WeaponPlayerUpdateSystem = require "model.battle.ecs.systems.weapon_player_update_system"
 end
 
 return M

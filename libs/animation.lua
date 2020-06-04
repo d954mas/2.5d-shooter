@@ -45,7 +45,7 @@ function Anim:restart(loops)
 		self.loops = 1
 	end
 	self.time = 0
-	self.frame_idx = 1
+	self.frame_idx =  self.playback == Anim.PLAYBACK.BACKWARD and #self.frames or 1
 	self.subject:onNext(self:get_frame())
 end
 
@@ -88,7 +88,11 @@ function Anim:update(dt)
 			a = 1
 		end
 	end
+
 	self.frame_idx = math.ceil(#self.frames * a)
+	if(self.frame_idx == 0)then
+		self.frame_idx = 1
+	end
 	local frame = self:get_frame()
 	if self.subject:get_value() ~= frame then
 		self.subject:onNext(frame)

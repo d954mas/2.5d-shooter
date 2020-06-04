@@ -50,6 +50,8 @@ function Script:init()
 	SM:register_scenes()
 	CAMERAS:init()
 
+	sound.set_group_gain("master", 1)
+
 	self.subscriptions = RX.CompositeSubscription()
 	COMMON.CONTEXT:register(COMMON.CONTEXT.NAMES.MAIN, self)
 	sys.set_error_handler(function(source, message, traceback)

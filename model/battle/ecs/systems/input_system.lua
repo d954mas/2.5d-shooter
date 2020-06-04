@@ -23,11 +23,21 @@ function System:input_interact()
 	end
 end
 
+function System:input_shoot(action_id, action)
+	if (action.pressed) then
+		self.world.game:player_weapon_get_active():input_pressed()
+	elseif (action.released) then
+		self.world.game:player_weapon_get_active():input_released()
+	end
+
+end
+
 function System:init_input()
 	self.movement = vmath.vector4(0) --up/down/left/right
 	self.input_handler = COMMON.INPUT()
 	self.input_handler:add_mouse(self.input_mouse_move)
 	self.input_handler:add(COMMON.HASHES.INPUT.INTERACT, self.input_interact, true)
+	self.input_handler:add(COMMON.HASHES.INPUT.TOUCH, self.input_shoot, true,false,true)
 	self.input_handler:add(COMMON.HASHES.INPUT.WEAPON_1, function() self:input_weapon_select(ENUMS.WEAPON.PISTOL) end, true)
 	self.input_handler:add(COMMON.HASHES.INPUT.WEAPON_2, function() self:input_weapon_select(ENUMS.WEAPON.SHOTGUN) end, true)
 	self.input_handler:add(COMMON.HASHES.INPUT.WEAPON_3, function() self:input_weapon_select(ENUMS.WEAPON.RIFLE) end, true)

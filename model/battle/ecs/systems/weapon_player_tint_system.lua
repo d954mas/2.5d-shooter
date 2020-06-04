@@ -1,9 +1,9 @@
 local ECS = require 'libs.ecs'
 local COMMON = require "libs.common"
 
----@class WeaponTintSystem:ECSSystem
+---@class WeaponPlayerTintSystem:ECSSystem
 local System = ECS.system()
-System.name = "WeaponTintSystem"
+System.name = "WeaponPlayerTintSystem"
 
 local WEAPON_URL = msg.url("game_scene:/weapon/origin#sprite")
 

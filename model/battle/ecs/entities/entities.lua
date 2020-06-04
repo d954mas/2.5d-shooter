@@ -4,7 +4,7 @@ local ANIMATIONS_CONFIGS = require "model.battle.animation_configs"
 local CONSTANTS = require "libs_project.constants"
 local ENUMS = require "libs_project.enums"
 local WEAPONS = require "model.battle.weapon.weapons"
-local WeaponBase = require "model.battle.weapon.weapon_base"
+local WeaponBase = require "model.battle.weapon.player_weapon_base"
 
 local Animations = require "libs.animation"
 local TAG = "Entities"
@@ -120,7 +120,7 @@ local TAG = "Entities"
 ---@field dynamic_color boolean
 ---@field light_params LightParams
 ---@field player_inventory PlayerInventory
----@field weapons WeaponBase[]
+---@field weapons PlayerWeaponBase[]
 ---@field hp HpData
 
 
@@ -238,7 +238,7 @@ function Entities:create_player(pos)
 		[ENUMS.WEAPON.MINIGUN] = WEAPONS.Minigun(),
 	}
 
-	e.weapons[ENUMS.WEAPON.PISTOL]:state_set(WeaponBase.STATES.ACTIVE)
+	e.weapons[ENUMS.WEAPON.PISTOL]:state_active_set(true)
 	e.hp = {
 		current = 50,
 		max = 100

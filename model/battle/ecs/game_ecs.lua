@@ -57,6 +57,7 @@ function EcsWorld:_init_systems()
 
 	self.ecs:addSystem(SYSTEMS.UpdateGoSystem)
 
+	self.ecs:addSystem(SYSTEMS.WeaponPlayerUpdateSystem)
 	self.ecs:addSystem(SYSTEMS.CameraBobSystem)
 
 	self.ecs:addSystem(SYSTEMS.UpdateCameraVisibleCellsSystem)
@@ -74,7 +75,7 @@ function EcsWorld:_init_systems()
 	self.ecs:addSystem(SYSTEMS.DrawPickupsSystem)
 	self.ecs:addSystem(SYSTEMS.DrawDebugPhysicsBodiesSystem)
 	self.ecs:addSystem(SYSTEMS.DrawDebugLightsSystem)
-	self.ecs:addSystem(SYSTEMS.WeaponTintSystem)
+	self.ecs:addSystem(SYSTEMS.WeaponPlayerTintSystem)
 	self.ecs:addSystem(SYSTEMS.AutoDestroySystem)
 end
 
@@ -115,8 +116,8 @@ function EcsWorld:player_weapon_change(new_weapon_key)
 	if (current == new_weapon) then return end
 
 	COMMON.i(string.format("weapon change from:%s to:%s", current.config.key, new_weapon.config.key))
-	current:state_set(current.STATES.HIDE)
-	new_weapon:state_set(current.STATES.ACTIVE)
+	current:state_active_set(false)
+	new_weapon:state_active_set(true)
 	COMMON.EVENT_BUS:event(EVENTS.GAME_PLAYER_WEAPON_CHANGED)
 end
 

@@ -49,7 +49,7 @@ function M.init_log()
     M.LOG.set_appname("WordsBattle")
     M.LOG.toggle_print()
     M.LOG.override_print()
-    M.LOG.add_to_blacklist("Sound")
+   -- M.LOG.add_to_blacklist("Sound")
     M.LOG.add_to_blacklist("States")
     M.LOG.use_tag_blacklist = true
 end
