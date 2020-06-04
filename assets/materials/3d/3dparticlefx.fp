@@ -14,7 +14,7 @@ void main()
     if(spriteColor.a < 0.01){discard;}
     vec4 lightColor = texture2D(LIGHT_MAP_TEXTURE, vec2((object_position.x+0.00001)/light_map.x,(-object_position.y+0.00001)/light_map.y));// multiply to fix wall on cell borders
     float power = 0.0;
-    vec3 color  = spriteColor.rgb * (lightColor.rgb*(1-power) + vec3(power));
+    vec3 color  = spriteColor.rgb * (lightColor.rgb*(1.0-power) + vec3(power));
 
     float f = 1.0/exp((dist-fog.x) * fog.z);
     f = clamp(f, 0.0, 1.0);
