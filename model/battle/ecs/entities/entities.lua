@@ -81,6 +81,7 @@ local TAG = "Entities"
 ---@field ceil boolean
 ---@field wall boolean
 ---@field obstacle boolean
+---@field bullet boolean
 ---@field door boolean
 ---@field door_data DoorData
 ---@field light boolean
@@ -93,6 +94,7 @@ local TAG = "Entities"
 ---@field ceil_go FloorGO
 ---@field wall_go WallGo
 ---@field level_object_go LevelObjectGO
+---@field bullet_object_go LevelObjectGO
 ---@field door_object_go WallGo
 ---@field pickup_object_go PickupObjectGO
 ---@field debug_physics_body_go WallGo
@@ -122,6 +124,7 @@ local TAG = "Entities"
 ---@field player_inventory PlayerInventory
 ---@field weapons PlayerWeaponBase[]
 ---@field hp HpData
+---@field bullet_type string
 
 
 
@@ -132,8 +135,12 @@ local Entities = COMMON.class("Entities")
 function Entities:initialize()
 	self.masks = {
 		PLAYER = bit.bor(physics3d.GROUPS.ENEMY, physics3d.GROUPS.OBSTACLE, physics3d.GROUPS.PICKUPS),
-		WALL = bit.bor(physics3d.GROUPS.ENEMY, physics3d.GROUPS.PLAYER),
-		PICKUP = bit.bor(physics3d.GROUPS.PLAYER)
+		WALL = bit.bor(physics3d.GROUPS.ENEMY, physics3d.GROUPS.PLAYER, physics3d.GROUPS.BULLET_PLAYER),
+		PICKUP = bit.bor(physics3d.GROUPS.PLAYER),
+		BULLET_PLAYER = bit.bor(physics3d.GROUPS.ENEMY, physics3d.GROUPS.OBSTACLE),
+	}
+	self.bullets = {
+		PLAYER_PISTOL = "PLAYER_PISTOL"
 	}
 	---@type Entity[]
 	self.by_tag = {}
@@ -168,6 +175,9 @@ function Entities:on_entity_removed(e)
 	if e.debug_physics_body_go then
 		go.delete(e.debug_physics_body_go.root, true)
 	end
+	if e.bullet_object_go then
+		go.delete(e.bullet_object_go.root, true)
+	end
 
 	if (e.tag) then
 		self.by_tag[e.tag] = nil
@@ -191,6 +201,37 @@ end
 
 
 --region Entities
+
+---@param pos vector3
+---@return Entity
+function Entities:create_player_weapon_bullet(pos)
+	assert(pos)
+	---@type Entity
+	local e = {}
+	e.bullet = true
+	e.position = vmath.vector3(pos.x, pos.y, pos.z)
+	e.angle = vmath.vector3(0, 0, 0)
+	e.movement = {
+		velocity = vmath.vector3(0, 0, 0),
+		direction = vmath.vector3(0, 0, 0),
+		max_speed = 40,
+		accel = math.huge,
+		deaccel = 0
+	}
+	e.visible = true
+	e.physics_body = physics3d.create_rect(e.position.x, e.position.y, e.position.z, 0.1, 0.1, 0.1,
+			false, physics3d.GROUPS.BULLET_PLAYER, self.masks.BULLET_PLAYER)
+	e.physics_dynamic = true
+	e.physics_body:set_user_data(e)
+	return e
+end
+
+function Entities:create_player_weapon_bullet_pistol(pos)
+	local e = self:create_player_weapon_bullet(pos)
+	e.bullet_type = self.bullets.PLAYER_PISTOL
+	e.rotation_look_at_player = true
+	return e
+end
 
 ---@param pos vector3
 ---@return Entity

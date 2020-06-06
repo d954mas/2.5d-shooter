@@ -123,6 +123,7 @@ static void bindGroupsEnum(lua_State* L){
 	LUA_ENUM(L,"PICKUPS",0x0002);
 	LUA_ENUM(L,"PLAYER",0x0004);
 	LUA_ENUM(L,"ENEMY",0x0008);
+	LUA_ENUM(L,"BULLET_PLAYER",0x0010);
 }
 
 

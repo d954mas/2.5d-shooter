@@ -24,7 +24,7 @@ M.GAME_CONFIG = {
 			animations = {
 				origin = vmath.vector3(0, 84 / 2, 0),
 				idle = Animation { frames = { hash("pistol")}, fps = 30, loops = -1, playback = Animation.PLAYBACK.PING_PONG },
-				shoot = Animation { frames = { hash("pistol"),hash("pistol_2")}, fps = 10, loops = 1, playback = Animation.PLAYBACK.FORWARD },
+				shoot = Animation { frames = { hash("pistol"),hash("pistol_2")}, fps = 60, loops = 1, playback = Animation.PLAYBACK.FORWARD },
 			},
 			sounds = {
 				shoot = msg.url("game_scene:/sounds#weapon_pistol_shoot")

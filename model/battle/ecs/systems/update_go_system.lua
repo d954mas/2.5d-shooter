@@ -1,12 +1,12 @@
 local ECS = require 'libs.ecs'
 ---@class UpdateGoSystem:ECSSystem
 local System = ECS.processingSystem()
-System.filter = ECS.filter("level_object_go|debug_light_go|door_object_go")
+System.filter = ECS.filter("level_object_go|debug_light_go|door_object_go|bullet_object_go")
 System.name = "UpdateGoSystem"
 
 ---@param e Entity
 function System:process(e, dt)
-	local go_object = e.level_object_go or e.debug_light_go or e.door_object_go
+	local go_object = e.level_object_go or e.debug_light_go or e.door_object_go or e.bullet_object_go
 	local url_go = assert(go_object.root)
 
 	if (not url_go) then return end

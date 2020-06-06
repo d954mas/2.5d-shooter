@@ -14,7 +14,8 @@ local URLS = {
 		level_object_cup = msg.url("game_scene:/factories#level_object_cup"),
 		level_object_human = msg.url("game_scene:/factories#level_object_human"),
 		level_object_teapot = msg.url("game_scene:/factories#level_object_teapot"),
-		light_debug = msg.url("game_scene:/factories#light_debug")
+		light_debug = msg.url("game_scene:/factories#light_debug"),
+		effect_sprite = msg.url("game_scene:/factories#effect_sprite")
 	}
 }
 
@@ -80,6 +81,8 @@ local OBJECTS_CONFIGS = {
 
 local M = {}
 
+M.URLS = URLS
+
 ---@return FloorGO
 function M.create_floor(position, tile_id)
 	local tile = TILESET.by_id[tile_id]
@@ -109,14 +112,14 @@ function M.create_level_object(position, map_object)
 	elseif (tag == "cup") then
 		return M.create_level_object_from_model(position, map_object, URLS.factory.level_object_cup, OBJECTS_CONFIGS.LEVEL_OBJECTS.CUP)
 	else
-		return M.create_draw_object_from_tile(URLS.factory.level_object,position, map_object.tile_id)
+		return M.create_draw_object_from_tile(URLS.factory.level_object, position, map_object.tile_id)
 	end
 end
 
 ---@return PickupObjectGO
 ---@param map_object LevelMapObject
 function M.create_pickup(position, map_object)
-	return M.create_draw_object_from_tile(URLS.factory.pickup,position, map_object.tile_id)
+	return M.create_draw_object_from_tile(URLS.factory.pickup, position, map_object.tile_id)
 end
 
 function M.create_level_object_from_model(position, map_object, factory_url, config)
@@ -125,7 +128,7 @@ function M.create_level_object_from_model(position, map_object, factory_url, con
 	return { root = root, model = model_url }
 end
 
-function M.create_draw_object_from_tile(factory_url,position, tile_id)
+function M.create_draw_object_from_tile(factory_url, position, tile_id)
 	assert(factory_url)
 	assert(position)
 	assert(tile_id)
@@ -142,6 +145,22 @@ function M.create_draw_object_from_tile(factory_url,position, tile_id)
 	local sprite_url = msg.url(sprite_go.socket, sprite_go.path, "sprite")
 
 	sprite.play_flipbook(sprite_url, tile.image_hash)
+	return { root = root, sprite = sprite_url }
+end
+
+function M.create_draw_object_with_sprite(sprite_factory_url, position, sprite_hash, scale)
+	assert(sprite_factory_url)
+	assert(position)
+	assert(sprite)
+	local root = msg.url(factory.create(URLS.factory.empty, position, nil, nil, scale))
+	local sprite_go = root
+	sprite_go = msg.url(factory.create(sprite_factory_url))
+	go.set_parent(sprite_go, root)
+	go.set_position(vmath.vector3(0, 0, 0), sprite_go)
+
+	local sprite_url = msg.url(sprite_go.socket, sprite_go.path, COMMON.HASHES.hash("sprite"))
+
+	sprite.play_flipbook(sprite_url, sprite_hash)
 	return { root = root, sprite = sprite_url }
 end
 

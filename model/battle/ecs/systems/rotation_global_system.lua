@@ -2,7 +2,7 @@ local ECS = require 'libs.ecs'
 
 ---@class RotationGlobalSystem:ECSSystem
 local System = ECS.processingSystem()
-System.filter = ECS.filter("rotation_global&(level_object_go|pickup_object_go)")
+System.filter = ECS.filter("rotation_global&(level_object_go|pickup_object_go|bullet_object_go)")
 System.name = "RotationGlobalSystem"
 
 System.rotation_global = 0

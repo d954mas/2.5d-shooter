@@ -284,7 +284,7 @@ embedded_instances {
   "  data: \"sound: \\\"/assets/sounds/weapon_pistol_shoot.ogg\\\"\\n"
   "looping: 0\\n"
   "group: \\\"weapon\\\"\\n"
-  "gain: 1.0\\n"
+  "gain: 0.5\\n"
   "pan: 0.0\\n"
   "speed: 1.0\\n"
   "\"\n"

@@ -6,7 +6,8 @@ System.name = "PhysicsCollisionsWallSystem"
 ---@param info NativePhysicsCollisionInfo
 function System:is_handle_collision(info)
 	local e1, e2 = info.body1:get_user_data(), info.body2:get_user_data()
-	return e1.obstacle or e2.obstacle
+	local bullet = e1.bullet or e2.bullet
+	return not bullet and (e1.obstacle or e2.obstacle)
 end
 
 ---@param info NativePhysicsCollisionInfo

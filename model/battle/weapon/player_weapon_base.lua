@@ -134,4 +134,19 @@ function Weapon:shoot_one()
 	self:animation_set(self.config.animations.idle)
 end
 
+function Weapon:create_bullet()
+	local world = requiref "model.world"
+	local player = world.battle_model.ecs.player
+	local pos = vmath.vector3(player.position)
+	pos.z = 0.5
+
+	local dir = vmath.rotate(vmath.quat_rotation_z(player.angle.x),vmath.vector3(0,1,0))
+	local bullet = world.battle_model.ecs.entities:create_player_weapon_bullet_pistol(pos)
+	bullet.angle = player.angle
+	bullet.movement.velocity = dir * 10
+	world.battle_model.ecs:add_entity(bullet)
+
+	return bullet
+end
+
 return Weapon

@@ -101,3 +101,6 @@ verbose = 0
 speaker_mode = stereo
 lib_path = .helpeditor/fmod/res
 
+[sound]
+max_sound_buffers = 256
+

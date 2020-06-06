@@ -5,6 +5,7 @@ physics3d.GROUPS = {
 	PICKUPS = 2,
 	PLAYER = 4,
 	ENEMY = 8,
+	BULLET_PLAYER = 16,
 }
 
 function physics3d.init() end
